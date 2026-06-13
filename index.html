@@ -3343,7 +3343,7 @@ async function speakText(text) {
 async function speakWithSupertonic(text) {
   const requestId=++ttsRequestId;
   if(!ttsWs||ttsWs.readyState!==WebSocket.OPEN) {
-    ttsWs=new WebSocket('ws://127.0.0.1:8765'); ttsWs.binaryType='arraybuffer';
+    ttsWs=new WebSocket('wss://hy-station-tts.onrender.com/ws'); ttsWs.binaryType='arraybuffer';
     await new Promise((resolve,reject)=>{const timer=setTimeout(()=>reject(new Error('timeout')),3000);ttsWs.onopen=()=>{clearTimeout(timer);resolve();};ttsWs.onerror=()=>{clearTimeout(timer);reject(new Error('ws error'));};});
   }
   return new Promise((resolve,reject)=>{
