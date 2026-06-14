@@ -298,6 +298,42 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
 .excel-drop:hover{background:var(--pk);border-color:var(--pk4)}
 .excel-drop i{font-size:36px;color:var(--pk4);margin-bottom:8px;display:block}
 
+/* ── HỌC TỪ VIDEO ── */
+.vl-folder-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+.vl-folder{background:#fff;border:1.5px solid var(--brd);border-radius:14px;overflow:hidden;cursor:pointer;transition:all .15s}
+.vl-folder:hover{border-color:var(--pk3);transform:translateY(-2px)}
+.vl-folder-thumb{width:100%;aspect-ratio:16/9;background:var(--pk2) center/cover no-repeat;display:flex;align-items:center;justify-content:center;font-size:30px;color:var(--pk4)}
+.vl-folder-body{padding:10px}
+.vl-folder-name{font-size:12px;font-weight:700;color:var(--txt);margin-bottom:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.vl-folder-count{font-size:10px;color:#b0a0a8}
+.vl-source-tabs{display:flex;gap:6px;margin-bottom:14px}
+.vl-source-tab{flex:1;text-align:center;padding:8px 10px;border-radius:10px;font-size:12px;font-weight:600;border:1.5px solid var(--brd);background:#fff;color:#8a7a84;cursor:pointer;transition:all .15s}
+.vl-source-tab.active{background:var(--pk);border-color:var(--pk3);color:var(--pk4)}
+.vl-source-panel{display:none}
+.vl-source-panel.active{display:block}
+.vl-player-wrap{position:relative;width:100%;aspect-ratio:16/9;background:#000;border-radius:14px;overflow:hidden;margin-bottom:14px}
+.vl-player-wrap iframe,.vl-player-wrap video{width:100%;height:100%;border:none;display:block}
+.vl-player-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;color:#fff;font-size:13px;gap:6px;opacity:.7}
+.vl-player-empty i{font-size:32px}
+.vl-tabs{display:flex;gap:6px;margin-bottom:14px;border-bottom:1.5px solid var(--brd)}
+.vl-tab{padding:9px 14px;font-size:13px;font-weight:600;color:#8a7a84;cursor:pointer;border-bottom:2px solid transparent;transition:all .15s}
+.vl-tab.active{color:var(--pk4);border-bottom-color:var(--pk4)}
+.vl-tab-content{display:none}
+.vl-tab-content.active{display:block}
+.vl-item{display:flex;align-items:flex-start;gap:10px;padding:12px 14px;background:#fff;border:1.5px solid var(--brd);border-radius:12px;margin-bottom:8px}
+.vl-item-time{flex-shrink:0;background:var(--pk2);color:var(--pk4);font-size:11px;font-weight:700;padding:5px 9px;border-radius:8px;cursor:pointer;display:flex;align-items:center;gap:4px;transition:background .15s;white-space:nowrap}
+.vl-item-time:hover{background:var(--pk)}
+.vl-item-main{flex:1;min-width:0}
+.vl-item-type{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:8px;margin-bottom:4px}
+.vl-item-type.word{background:#e8f4ff;color:#3a7bc8}
+.vl-item-type.sentence{background:#fef0e0;color:#c8843a}
+.vl-item-kr{font-family:'Noto Sans KR',sans-serif;font-size:14px;font-weight:700;color:var(--txt)}
+.vl-item-vn{font-size:12px;color:#8a7a84;margin-top:3px}
+.vl-item-pron{font-size:11px;color:#b0a0a8;margin-top:2px;font-style:italic}
+.vl-item-actions{display:flex;gap:4px;flex-shrink:0}
+.vl-time-input-row{display:flex;gap:8px;align-items:flex-end}
+.vl-time-input-row .form-group{flex:1;margin-bottom:0}
+
 /* TARGET */
 .topik-header{background:linear-gradient(135deg,var(--lav),var(--pk));border-radius:16px;padding:20px;margin-bottom:16px;text-align:center}
 .topik-level{font-size:32px;font-weight:700;color:var(--pk4);font-family:'Noto Sans KR',sans-serif}
@@ -385,7 +421,7 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
   .sidebar{display:none !important}
   .main{width:100%;height:auto;overflow-y:auto;padding-bottom:76px}
   .page{padding:18px 14px 90px}
-  .doc-grid,.fc-folder-grid{grid-template-columns:1fr !important}
+  .doc-grid,.fc-folder-grid,.vl-folder-grid{grid-template-columns:1fr !important}
   .topbar{gap:8px}
   .btn{font-size:12px;padding:8px 12px}
   .write-page{padding:14px}
@@ -554,7 +590,7 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
 .topik-question-block.no-answer{border-color:#f5a0a0;background:#fff9f9}
 .topik-q-no{font-size:14px;font-weight:600;color:var(--txt);margin-bottom:12px}
 /* Passage box */
-.topik-passage{background:#fff;border:1.5px solid #e0d0f0;border-left:4px solid var(--pk3);border-radius:10px;padding:16px 20px;margin-bottom:20px;font-size:13.5px;line-height:2;color:#333;font-family:'Noto Sans KR',sans-serif;white-space:pre-wrap;box-shadow:0 2px 8px rgba(180,120,200,.08)}
+.topik-passage{background:#fff;border:1.5px solid #e0d0f0;border-left:4px solid var(--pk3);border-radius:10px;padding:16px 20px;margin-bottom:20px;font-size:14.5px;line-height:2;color:#333;font-family:'Noto Sans KR',sans-serif;white-space:pre-wrap;box-shadow:0 2px 8px rgba(180,120,200,.08)}
 /* Question image */
 .topik-question-img{width:100%;max-width:100%;height:auto;display:block;margin:12px 0;border-radius:10px}
 /* Image choice grid */
@@ -577,7 +613,7 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
 .topik-img-placeholder i{font-size:30px;color:#c0b0cc}
 /* Text options */
 .topik-options{display:flex;flex-direction:column;gap:8px}
-.topik-option{display:flex;align-items:flex-start;gap:10px;padding:10px 14px;border:1.5px solid var(--brd);border-radius:10px;cursor:pointer;transition:all .15s;font-size:13px;line-height:1.6;font-family:'Noto Sans KR',sans-serif;background:#fff}
+.topik-option{display:flex;align-items:flex-start;gap:10px;padding:10px 14px;border:1.5px solid var(--brd);border-radius:10px;cursor:pointer;transition:all .15s;font-size:14px;line-height:1.6;font-family:'Noto Sans KR',sans-serif;background:#fff}
 .topik-option:hover{border-color:var(--pk3);background:var(--pk2)}
 .topik-option.selected{border-color:var(--pk4);background:var(--pk2)}
 .topik-option.correct{border-color:#52a060;background:#e8f5e9}
@@ -726,6 +762,11 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
   .topik-timer{font-size:11px;padding:5px 8px}
 }
 
+
+/* ── Video fullpage ── */
+.app.vl-fullpage .sidebar { display: none !important; }
+.app.vl-fullpage #main-content { width: 100% !important; }
+#page-video-learn-detail { max-width: 900px; margin: 0 auto; }
 </style>
 </head>
 <body>
@@ -768,6 +809,7 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
     <nav class="nav" id="main-nav">
       <a class="nav-item active" href="/dashboard" data-page="dashboard" onclick="navTo(event,'dashboard')"><i class="ti ti-home"></i> Dashboard</a>
       <a class="nav-item" href="/flashcard" data-page="flashcard" onclick="navTo(event,'flashcard')"><i class="ti ti-cards"></i> Flashcard</a>
+      <a class="nav-item" href="/video-learn" data-page="video-learn" onclick="navTo(event,'video-learn')"><i class="ti ti-video"></i> Học từ Video</a>
       <a class="nav-item" href="/topik-exam" data-page="topik-exam" onclick="navTo(event,'topik-exam')"><i class="ti ti-award"></i> Luyện đề TOPIK</a>
       <a class="nav-item" href="/studyplan" data-page="studyplan" onclick="navTo(event,'studyplan')"><i class="ti ti-calendar"></i> Lịch học</a>
       <a class="nav-item" href="/community" data-page="community" onclick="navTo(event,'community')"><i class="ti ti-message-circle"></i> Góc chia sẻ</a>
@@ -879,6 +921,53 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
         <div style="display:flex;gap:8px" id="folder-detail-actions"></div>
       </div>
       <div id="folder-detail-content"></div>
+    </div>
+
+    <!-- HỌC TỪ VIDEO - LIST -->
+    <div class="page" id="page-video-learn">
+      <div class="topbar">
+        <div class="page-title">🎬 Học từ Video</div>
+        <button class="btn btn-primary btn-sm" onclick="openVideoLessonModal()"><i class="ti ti-plus"></i> Thêm video mới</button>
+      </div>
+      <!-- SEARCH BAR -->
+<div style="display:flex;gap:8px;margin-bottom:14px;align-items:center">
+  <div style="position:relative;flex:1">
+    <i class="ti ti-search"
+       style="position:absolute;left:12px;top:50%;
+       transform:translateY(-50%);
+       color:#b0a0a8;font-size:15px;
+       pointer-events:none"></i>
+
+    <input
+      class="form-input"
+      id="vl-search"
+      style="padding-left:36px"
+      placeholder="Nhập nội dung cần tìm..."
+      oninput="vlFilterLessons(this.value)"
+      autocomplete="off"
+    />
+  </div>
+
+  <button
+    class="btn"
+    id="vl-search-clear"
+    style="display:none;flex-shrink:0"
+    onclick="vlClearSearch()">
+
+    <i class="ti ti-x"></i> Xoá
+  </button>
+</div>
+      <div class="section-title">Video đã lưu</div>
+      <div class="vl-folder-grid" id="vl-folder-list"><div class="loading"><div class="spinner"></div></div></div>
+    </div>
+
+    <!-- HỌC TỪ VIDEO - DETAIL -->
+    <div class="page" id="page-video-learn-detail">
+      <div class="topbar">
+        <button class="btn btn-sm" onclick="navTo(null,'video-learn')"><i class="ti ti-arrow-left"></i> Học từ Video</button>
+        <div style="display:flex;gap:8px" id="vl-detail-actions"></div>
+      </div>
+      <div id="vl-detail-content"></div>
     </div>
 
     <!-- PLAN DETAIL PAGE -->
@@ -1258,6 +1347,36 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
   </div>
 </div>
 
+<div class="modal-overlay" id="video-lesson-modal">
+  <div class="modal">
+    <div class="modal-title">🎬 Thêm video học từ vựng <span class="modal-close" onclick="closeModal('video-lesson-modal')"><i class="ti ti-x"></i></span></div>
+    <div class="form-group"><label class="form-label">Tên / Tag bài học *</label><input class="form-input" id="vl-title" placeholder="Ví dụ: Bài giảng ngữ pháp TOPIK II - Bài 5"/></div>
+    <div class="form-group"><label class="form-label">Mô tả</label><textarea class="form-input" id="vl-desc" placeholder="Ghi chú về video này..."></textarea></div>
+    <div class="vl-source-tabs">
+      <div class="vl-source-tab active" onclick="switchVlSourceTab('link',this)">🔗 Dán link video</div>
+      <div class="vl-source-tab" onclick="switchVlSourceTab('file',this)">📤 Import file video</div>
+    </div>
+    <div class="vl-source-panel active" id="vlsrc-link">
+      <div class="form-group"><label class="form-label">Link video (YouTube hoặc link video trực tiếp)</label><input class="form-input" id="vl-url" placeholder="https://www.youtube.com/watch?v=..."/></div>
+      <div class="word-hint">Hỗ trợ link YouTube (youtube.com, youtu.be) hoặc link file video (.mp4, .webm...).</div>
+    </div>
+    <div class="vl-source-panel" id="vlsrc-file">
+      <div class="excel-drop" onclick="document.getElementById('vl-file').click()">
+        <i class="ti ti-movie"></i>
+        <div style="font-size:14px;font-weight:700;color:var(--pk4);margin-bottom:4px">Nhấn để chọn file video</div>
+        <div style="font-size:12px;color:#8a7a84">MP4, WebM, MOV...</div>
+      </div>
+      <input type="file" id="vl-file" accept="video/*" style="display:none" onchange="onVlFileSelect(this)"/>
+      <div id="vl-file-name" style="font-size:12px;color:#8a7a84;margin-top:8px;text-align:center"></div>
+    </div>
+    <div id="vl-err" class="inline-err"></div>
+    <div style="display:flex;gap:8px;margin-top:8px">
+      <button class="btn" style="flex:1;justify-content:center" onclick="closeModal('video-lesson-modal')">Hủy</button>
+      <button class="btn btn-primary" style="flex:1;justify-content:center" id="vl-save-btn" onclick="saveVideoLesson()">Tạo bài học</button>
+    </div>
+  </div>
+</div>
+
 <div class="modal-overlay" id="edit-word-modal">
   <div class="modal">
     <div class="modal-title">✏️ Chỉnh sửa từ <span class="modal-close" onclick="closeModal('edit-word-modal')"><i class="ti ti-x"></i></span></div>
@@ -1454,6 +1573,23 @@ const DS = {
   async deleteVocabLookup(id) { return db.from('topik_vocab_lookup').delete().eq('id', id); },
   async getTopikAttemptAnswers(attemptId) { return db.from('topik_attempt_answers').select('*').eq('attempt_id', attemptId).order('question_no',{ascending:true}); },
   async getTopikAttemptById(attemptId) { return db.from('topik_attempts').select('*, topik_exams(*)').eq('id', attemptId).single(); },
+  async getVideoLessons(ownerId) { return db.from('video_lessons').select('*').eq('owner_id', ownerId).is('deleted_at', null).order('created_at',{ascending:false}); },
+  async createVideoLesson(data) { return db.from('video_lessons').insert(data).select().single(); },
+  async updateVideoLesson(id, data) { return db.from('video_lessons').update({...data, updated_at:new Date().toISOString()}).eq('id', id); },
+  async deleteVideoLesson(id) { return db.from('video_lessons').update({deleted_at:new Date().toISOString()}).eq('id', id); },
+  async getVideoLessonById(id, ownerId) { return db.from('video_lessons').select('*').eq('id', id).eq('owner_id', ownerId).is('deleted_at', null).single(); },
+  async getVideoItems(lessonId, ownerId) { return db.from('video_lesson_items').select('*').eq('lesson_id', lessonId).eq('owner_id', ownerId).is('deleted_at', null).order('timestamp_seconds',{ascending:true, nullsFirst:false}).order('created_at',{ascending:true}); },
+  async createVideoItems(rows) { return db.from('video_lesson_items').insert(rows).select(); },
+  async updateVideoItem(id, data) { return db.from('video_lesson_items').update({...data, updated_at:new Date().toISOString()}).eq('id', id); },
+  async deleteVideoItem(id) { return db.from('video_lesson_items').update({deleted_at:new Date().toISOString()}).eq('id', id); },
+  async uploadVideoStorage(file, ownerId) {
+    const ext = file.name.split('.').pop();
+    const path = `${ownerId}/${Date.now()}.${ext}`;
+    const {data, error} = await db.storage.from('documents').upload(path, file, { cacheControl:'3600' });
+    if (error) throw error;
+    const { data: pub } = db.storage.from('documents').getPublicUrl(path);
+    return pub.publicUrl;
+  },
 };
 
 // ============================================================
@@ -1578,6 +1714,7 @@ const ROUTES = {
   '/flashcard':'flashcard', '/community':'community', '/topik':'topik',
   '/studyplan':'studyplan', '/topik-exam':'topik-exam',
   '/profile':'profile', '/write-post':'write-post',
+  '/video-learn':'video-learn',
 };
 
 function navTo(e, page, param=null) {
@@ -1598,9 +1735,12 @@ function renderRoute() {
   if (postMatch) { showPage('post-detail'); loadPostDetail(postMatch[1]); updateNav('community'); return; }
   const folderMatch = path.match(/^\/flashcard\/folder\/([^/]+)$/);
   if (folderMatch) { showPage('folder-detail'); loadFolderDetail(folderMatch[1]); updateNav('flashcard'); return; }
+  const vlMatch = path.match(/^\/video-learn\/lesson\/([^/]+)$/);
+  if (vlMatch) { showPage('video-learn-detail'); loadVideoLessonDetail(vlMatch[1]); updateNav('video-learn'); enterVlFullpage(); return; }
   const topikExamMatch = path.match(/^\/topik-exam\/run\/([^/]+)$/);
   if (topikExamMatch) { showPage('topik-exam-run'); loadTopikExamRunner(topikExamMatch[1]); updateNav('topik-exam'); return; }
   const pageId = ROUTES[path] || 'dashboard';
+  exitVlFullpage();
   showPage(pageId); updateNav(pageId); onPageLoad(pageId);
 }
 
@@ -1621,6 +1761,7 @@ function onPageLoad(pageId) {
   if (pageId === 'dashboard') loadDashboard();
   else if (pageId === 'library') loadLibrary();
   else if (pageId === 'flashcard') loadFoldersList();
+  else if (pageId === 'video-learn') loadVideoLessonsList();
   else if (pageId === 'community') loadPosts();
   else if (pageId === 'topik') loadPlans();
   else if (pageId === 'studyplan') loadStudyPlan();
@@ -4040,7 +4181,7 @@ async function teViewAttempt(attemptId) {
     return `<div style="
       background:#fff;border:1.5px solid #e0d0f0;border-left:4px solid var(--pk3);
       border-radius:10px;padding:18px 22px;margin-bottom:16px;
-      font-size:13.5px;line-height:2.1;color:#333;
+      font-size:14.5px;line-height:2.1;color:#333;
       font-family:'Noto Sans KR',sans-serif;white-space:pre-wrap;
       box-shadow:0 2px 10px rgba(180,120,200,.10)
     ">${safe}</div>`;
@@ -4700,7 +4841,7 @@ async function loadTopikExamRunner(examId) {
     return `<div style="
       background:#fff;border:1.5px solid #e0d0f0;border-left:4px solid var(--pk3);
       border-radius:10px;padding:18px 22px;margin-bottom:16px;
-      font-size:13.5px;line-height:2.1;color:#333;
+      font-size:14.5px;line-height:2.1;color:#333;
       font-family:'Noto Sans KR',sans-serif;white-space:pre-wrap;
       box-shadow:0 2px 10px rgba(180,120,200,.10)
     ">${safe}</div>`;
@@ -7257,10 +7398,10 @@ window.teFibInput = function(qno, blankId, input) {
     const btn = document.getElementById('te-vocab-add-btn');
     if (!btn) return;
 
-    // Chỉ cho phép sau khi đã nộp bài (review mode)
+    // Cho phép cả trong lúc làm bài và sau khi đã nộp bài (review mode)
     if (!window.topikRunState && typeof topikRunState === 'undefined') return;
     const runState = (typeof topikRunState !== 'undefined') ? topikRunState : window.topikRunState;
-    if (!runState || !runState.submitted) { btn.classList.remove('show'); return; }
+    if (!runState) { btn.classList.remove('show'); return; }
 
     const sel = window.getSelection();
     const text = sel ? sel.toString().trim() : '';
@@ -7454,5 +7595,434 @@ window.teFibInput = function(qno, blankId, input) {
 })();
 </script>
 
+
+<!-- ============================================================
+     HỌC TỪ VIDEO
+============================================================ -->
+<script>
+let vlLessons = [];
+let vlCurrentLesson = null;
+let vlItems = [];
+let vlPendingFile = null;
+let vlYtPlayer = null;
+let vlVideoEl = null;
+let vlYtApiReady = false;
+let vlYtApiLoading = false;
+let vlPendingYtInit = null;
+
+// ── Helpers ──
+function vlExtractYoutubeId(url) {
+  if (!url) return null;
+  const m = String(url).match(/(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([A-Za-z0-9_-]{11})/);
+  return m ? m[1] : null;
+}
+function vlIsTikTok(url) {
+  if (!url) return false;
+  return /tiktok\.com\/@[\w.]+\/video\/\d+/.test(String(url));
+}
+function vlExtractTikTokId(url) {
+  if (!url) return null;
+  const m = String(url).match(/tiktok\.com\/@[\w.]+\/video\/(\d+)/);
+  return m ? m[1] : null;
+}
+function vlSecondsToMMSS(sec) {
+  sec = Math.max(0, Math.floor(sec || 0));
+  const h = Math.floor(sec/3600), m = Math.floor((sec%3600)/60), s = sec%60;
+  if (h > 0) return `${h}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+  return `${m}:${String(s).padStart(2,'0')}`;
+}
+function vlParseTimeToSeconds(str) {
+  if (str === undefined || str === null) return null;
+  str = String(str).trim();
+  if (!str) return null;
+  if (/^\d+$/.test(str)) return parseInt(str, 10);
+  const parts = str.split(':').map(x => parseInt(x, 10));
+  if (parts.some(isNaN)) return null;
+  if (parts.length === 2) return parts[0]*60 + parts[1];
+  if (parts.length === 3) return parts[0]*3600 + parts[1]*60 + parts[2];
+  return null;
+}
+function vlItemSort(a, b) {
+  const ta = a.timestamp_seconds, tb = b.timestamp_seconds;
+  if (ta == null && tb == null) return 0;
+  if (ta == null) return 1;
+  if (tb == null) return -1;
+  return ta - tb;
+}
+function vlThumbHtml(l) {
+  const url = l.video_url || '';
+  const ytId = vlExtractYoutubeId(url);
+  if (ytId) return { style: 'style="background-image:url(\'https://img.youtube.com/vi/' + ytId + '/mqdefault.jpg\')"', inner: '' };
+  if (vlIsTikTok(url)) return { style: 'style="background:linear-gradient(135deg,#010101,#161823)"', inner: '<i class="ti ti-brand-tiktok" style="color:#fff;font-size:32px"></i>' };
+  return { style: '', inner: '<i class="ti ti-movie"></i>' };
+}
+
+// ── Player ──
+function vlLoadYoutubeApi() {
+  if (window.YT && window.YT.Player) { vlYtApiReady = true; return; }
+  if (vlYtApiLoading) return;
+  vlYtApiLoading = true;
+  const tag = document.createElement('script');
+  tag.src = 'https://www.youtube.com/iframe_api';
+  document.head.appendChild(tag);
+  window.onYouTubeIframeAPIReady = function () {
+    vlYtApiReady = true;
+    if (vlPendingYtInit) { const fn = vlPendingYtInit; vlPendingYtInit = null; fn(); }
+  };
+}
+function vlRenderPlayer(lesson) {
+  const wrap = document.getElementById('vl-player-wrap');
+  if (!wrap) return;
+  vlYtPlayer = null; vlVideoEl = null; vlPendingYtInit = null;
+
+  const url = lesson.video_url || '';
+  const ytId = vlExtractYoutubeId(url);
+
+  // YouTube
+  if (ytId) {
+    wrap.style.aspectRatio = '16/9';
+    wrap.style.maxWidth = '';
+    wrap.style.margin = '0 0 14px';
+    wrap.innerHTML = '<div id="vl-yt-target"></div>';
+    const init = () => {
+      vlYtPlayer = new YT.Player('vl-yt-target', { videoId: ytId, playerVars: { rel: 0 } });
+    };
+    vlLoadYoutubeApi();
+    if (vlYtApiReady) init(); else vlPendingYtInit = init;
+    return;
+  }
+
+  // TikTok
+  if (vlIsTikTok(url)) {
+    const tikId = vlExtractTikTokId(url);
+    wrap.style.aspectRatio = '9/16';
+    wrap.style.maxWidth = '340px';
+    wrap.style.margin = '0 auto 14px';
+    wrap.innerHTML = '<iframe'
+      + ' src="https://www.tiktok.com/embed/v2/' + tikId + '"'
+      + ' allowfullscreen allow="encrypted-media"'
+      + ' style="width:100%;height:100%;border:none;display:block"></iframe>';
+    return;
+  }
+
+  // File video trực tiếp
+  if (url) {
+    wrap.style.aspectRatio = '16/9';
+    wrap.style.maxWidth = '';
+    wrap.style.margin = '0 0 14px';
+    wrap.innerHTML = '<video id="vl-video-target" controls src="' + escHtmlSafe(url) + '" style="width:100%;height:100%;display:block"></video>';
+    vlVideoEl = document.getElementById('vl-video-target');
+    return;
+  }
+
+  // Không có video
+  wrap.style.aspectRatio = '16/9';
+  wrap.style.maxWidth = '';
+  wrap.style.margin = '0 0 14px';
+  wrap.innerHTML = '<div class="vl-player-empty"><i class="ti ti-movie-off"></i>Chưa có video</div>';
+}
+function vlSeekTo(seconds) {
+  if (seconds == null) return;
+  if (vlYtPlayer && typeof vlYtPlayer.seekTo === 'function') {
+    vlYtPlayer.seekTo(seconds, true);
+    vlYtPlayer.playVideo?.();
+  } else if (vlVideoEl) {
+    vlVideoEl.currentTime = seconds;
+    vlVideoEl.play?.().catch?.(()=>{});
+  }
+  document.getElementById('vl-player-wrap')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+function vlGetCurrentTime() {
+  if (vlYtPlayer && typeof vlYtPlayer.getCurrentTime === 'function') return Math.floor(vlYtPlayer.getCurrentTime());
+  if (vlVideoEl) return Math.floor(vlVideoEl.currentTime || 0);
+  return 0;
+}
+
+// ── List page ──
+async function loadVideoLessonsList() {
+  if (!currentUser) return;
+  const list = document.getElementById('vl-folder-list');
+  const { data, error } = await DS.getVideoLessons(currentUser.id);
+  if (error) {
+    list.innerHTML = '<div class="empty" style="grid-column:1/-1"><i class="ti ti-alert-circle"></i>Không tải được dữ liệu.</div>';
+    return;
+  }
+  vlLessons = data || [];
+
+  // Reset ô tìm kiếm mỗi khi reload danh sách
+  const searchEl = document.getElementById('vl-search');
+  if (searchEl) searchEl.value = '';
+  const clearBtn = document.getElementById('vl-search-clear');
+  if (clearBtn) clearBtn.style.display = 'none';
+
+  vlRenderLessonList(vlLessons);
+}
+
+// Render danh sách (dùng chung cho full list & kết quả lọc)
+function vlRenderLessonList(lessons) {
+  const list    = document.getElementById('vl-folder-list');
+  const badge   = document.getElementById('vl-count-badge');
+  const total   = vlLessons.length;
+  const showing = lessons.length;
+
+  if (badge) {
+    badge.textContent = (showing < total)
+      ? '(' + showing + ' / ' + total + ' video)'
+      : '(' + total + ' video)';
+  }
+
+  if (!lessons.length) {
+    list.innerHTML = (total === 0)
+      ? '<div class="empty" style="grid-column:1/-1"><i class="ti ti-movie-off"></i>Chưa có video nào.<br>Dán link YouTube hoặc import video để bắt đầu!</div>'
+      : '<div class="empty" style="grid-column:1/-1"><i class="ti ti-search-off"></i>Không tìm thấy video nào khớp với từ khoá.</div>';
+    return;
+  }
+
+  list.innerHTML = lessons.map(function(l) {
+    var thumb = vlThumbHtml(l);
+    return '<div class="vl-folder" onclick="navTo(null,\'video-learn\',\'lesson/' + l.id + '\')">'
+      + '<div class="vl-folder-thumb" ' + thumb.style + '>' + thumb.inner + '</div>'
+      + '<div class="vl-folder-body">'
+      + '<div class="vl-folder-name">' + escHtmlSafe(l.title) + '</div>'
+      + '<div class="vl-folder-count">' + (l.item_count || 0) + ' mục đã lưu</div>'
+      + '</div>'
+      + '</div>';
+  }).join('');
+}
+
+// Lọc theo tiêu đề (gõ realtime)
+function vlFilterLessons(query) {
+  var clearBtn = document.getElementById('vl-search-clear');
+  if (clearBtn) clearBtn.style.display = query ? '' : 'none';
+  var q = (query || '').trim().toLowerCase();
+  vlRenderLessonList(q ? vlLessons.filter(function(l) {
+    return l.title.toLowerCase().includes(q);
+  }) : vlLessons);
+}
+
+// Xoá tìm kiếm
+function vlClearSearch() {
+  var searchEl = document.getElementById('vl-search');
+  if (searchEl) { searchEl.value = ''; searchEl.focus(); }
+  var clearBtn = document.getElementById('vl-search-clear');
+  if (clearBtn) clearBtn.style.display = 'none';
+  vlRenderLessonList(vlLessons);
+}
+
+// ── Create lesson modal ──
+function openVideoLessonModal() {
+  document.getElementById('vl-title').value = '';
+  document.getElementById('vl-desc').value = '';
+  document.getElementById('vl-url').value = '';
+  document.getElementById('vl-file-name').textContent = '';
+  const errEl = document.getElementById('vl-err'); errEl.textContent = ''; errEl.style.display = 'none';
+  vlPendingFile = null;
+  const firstTab = document.querySelector('#video-lesson-modal .vl-source-tab');
+  if (firstTab) switchVlSourceTab('link', firstTab);
+  openModal('video-lesson-modal');
+}
+function switchVlSourceTab(tab, el) {
+  document.querySelectorAll('#video-lesson-modal .vl-source-tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  document.querySelectorAll('#video-lesson-modal .vl-source-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('vlsrc-' + tab).classList.add('active');
+}
+function onVlFileSelect(input) {
+  const f = input.files[0]; if (!f) return;
+  vlPendingFile = f;
+  document.getElementById('vl-file-name').textContent = `${f.name} (${(f.size/1024/1024).toFixed(1)} MB)`;
+}
+async function saveVideoLesson() {
+  const title = document.getElementById('vl-title').value.trim();
+  const desc = document.getElementById('vl-desc').value.trim() || null;
+  const url = document.getElementById('vl-url').value.trim();
+  const errEl = document.getElementById('vl-err');
+  errEl.textContent = ''; errEl.style.display = 'none';
+  if (!title) { errEl.textContent = 'Vui lòng nhập tên / tag bài học!'; errEl.style.display = 'block'; return; }
+  const isFileTab = document.getElementById('vlsrc-file').classList.contains('active');
+  if (isFileTab && !vlPendingFile) { errEl.textContent = 'Vui lòng chọn file video!'; errEl.style.display = 'block'; return; }
+  if (!isFileTab && !url) { errEl.textContent = 'Vui lòng dán link video!'; errEl.style.display = 'block'; return; }
+
+  const btn = document.getElementById('vl-save-btn');
+  btn.disabled = true;
+  const originalLabel = btn.innerHTML;
+  try {
+    let videoUrl = url, videoType = 'direct';
+    if (isFileTab) {
+      btn.innerHTML = '<div class="spinner"></div> Đang upload...';
+      videoUrl = await DS.uploadVideoStorage(vlPendingFile, currentUser.id);
+      videoType = 'file';
+    } else if (vlExtractYoutubeId(url)) {
+      videoType = 'youtube';
+    } else if (vlIsTikTok(url)) {
+      videoType = 'tiktok';
+    }
+    const { data, error } = await DS.createVideoLesson({ owner_id: currentUser.id, title, description: desc, video_url: videoUrl, video_type: videoType, item_count: 0 });
+    if (error) throw error;
+    closeModal('video-lesson-modal');
+    showToast('Đã tạo bài học video! 🎬');
+    navTo(null, 'video-learn', 'lesson/' + data.id);
+  } catch (e) {
+    errEl.textContent = 'Lỗi: ' + (e.message || e); errEl.style.display = 'block';
+  } finally {
+    btn.disabled = false; btn.innerHTML = originalLabel;
+  }
+}
+async function deleteVideoLesson(id) {
+  if (!confirm('Xóa bài học video này? Toàn bộ từ vựng/câu đã lưu sẽ bị xóa.')) return;
+  const { error } = await DS.deleteVideoLesson(id);
+  if (error) { showToast('Lỗi xóa: ' + error.message); return; }
+  showToast('Đã xóa bài học.');
+  navTo(null, 'video-learn');
+}
+
+// ── Lesson detail page ──
+async function loadVideoLessonDetail(id) {
+  const wrap = document.getElementById('vl-detail-content');
+  wrap.innerHTML = '<div class="loading"><div class="spinner"></div> Đang tải...</div>';
+  if (!currentUser) return;
+  const { data: lesson, error } = await DS.getVideoLessonById(id, currentUser.id);
+  if (error || !lesson) { wrap.innerHTML = '<div class="empty"><i class="ti ti-movie-off"></i>Không tìm thấy bài học.</div>'; document.getElementById('vl-detail-actions').innerHTML=''; return; }
+  vlCurrentLesson = lesson;
+  const { data: items } = await DS.getVideoItems(id, currentUser.id);
+  vlItems = (items || []).sort(vlItemSort);
+  document.getElementById('vl-detail-actions').innerHTML =
+    `<button class="btn btn-sm btn-danger" onclick="deleteVideoLesson('${lesson.id}')"><i class="ti ti-trash"></i> Xóa</button>`;
+  wrap.innerHTML = `
+    <div style="margin-bottom:10px">
+      <div class="folder-page-name" style="font-size:16px">${escHtmlSafe(lesson.title)}</div>
+      ${lesson.description ? `<div class="folder-page-desc">${escHtmlSafe(lesson.description)}</div>` : ''}
+    </div>
+    <div class="vl-player-wrap" id="vl-player-wrap"></div>
+    <div class="vl-tabs">
+      <div class="vl-tab active" onclick="switchVlTab('list',this)">📋 Nội dung đã lưu (${vlItems.length})</div>
+      <div class="vl-tab" onclick="switchVlTab('add',this)">➕ Thêm nội dung</div>
+    </div>
+    <div class="vl-tab-content active" id="vltab-list">${buildVlItemsList()}</div>
+    <div class="vl-tab-content" id="vltab-add">${buildVlAddTab()}</div>`;
+  vlRenderPlayer(lesson);
+}
+function switchVlTab(tab, el) {
+  document.querySelectorAll('.vl-tab').forEach(t => t.classList.remove('active')); el.classList.add('active');
+  document.querySelectorAll('.vl-tab-content').forEach(p => p.classList.remove('active'));
+  document.getElementById('vltab-' + tab).classList.add('active');
+}
+function refreshVlListTab() {
+  const listEl = document.getElementById('vltab-list');
+  if (listEl) listEl.innerHTML = buildVlItemsList();
+  const tabBtn = document.querySelectorAll('.vl-tab')[0];
+  if (tabBtn) tabBtn.textContent = `📋 Nội dung đã lưu (${vlItems.length})`;
+}
+function buildVlItemsList() {
+  if (!vlItems.length) return '<div class="empty"><i class="ti ti-bookmark-off"></i>Chưa có từ vựng hoặc mẫu câu nào.<br>Chuyển sang tab "Thêm nội dung" để bắt đầu lưu!</div>';
+  return vlItems.map(it => `
+    <div class="vl-item">
+      ${it.timestamp_seconds != null ? `<div class="vl-item-time" onclick="vlSeekTo(${it.timestamp_seconds})" title="Tua đến ${vlSecondsToMMSS(it.timestamp_seconds)}"><i class="ti ti-player-play"></i> ${vlSecondsToMMSS(it.timestamp_seconds)}</div>` : ''}
+      <div class="vl-item-main">
+        <span class="vl-item-type ${it.content_type}">${it.content_type === 'sentence' ? 'Mẫu câu' : 'Từ vựng'}</span>
+        <div class="vl-item-kr">${escHtmlSafe(it.korean)}</div>
+        <div class="vl-item-vn">${escHtmlSafe(it.vietnamese)}</div>
+        ${it.pronunciation ? `<div class="vl-item-pron">${escHtmlSafe(it.pronunciation)}</div>` : ''}
+      </div>
+      <div class="vl-item-actions">
+        <button class="btn btn-sm btn-icon btn-danger" onclick="deleteVlItem('${it.id}')" title="Xoá"><i class="ti ti-trash"></i></button>
+      </div>
+    </div>`).join('');
+}
+async function deleteVlItem(id) {
+  if (!confirm('Xóa mục này?')) return;
+  const { error } = await DS.deleteVideoItem(id);
+  if (error) { showToast('Lỗi xóa: ' + error.message); return; }
+  vlItems = vlItems.filter(x => x.id !== id);
+  refreshVlListTab();
+  await DS.updateVideoLesson(vlCurrentLesson.id, { item_count: vlItems.length });
+  showToast('Đã xóa.');
+}
+
+// ── Add content tab ──
+function buildVlAddTab() {
+  return `<div style="margin-top:4px">
+    <div class="add-words-tabs">
+      <div class="add-words-tab active" onclick="switchVlAddSubTab('single',this)">Thêm từng mục</div>
+      <div class="add-words-tab" onclick="switchVlAddSubTab('bulk',this)">Nhập hàng loạt</div>
+    </div>
+    <div class="add-words-panel active" id="vlawpanel-single">
+      <div class="single-word-grid">
+        <div class="form-group"><label class="form-label">Loại nội dung</label>
+          <select class="form-input form-select" id="vl-sw-type"><option value="word">Từ vựng</option><option value="sentence">Mẫu câu</option></select>
+        </div>
+        <div class="form-group"><label class="form-label">Phiên âm</label><input class="form-input" id="vl-sw-pron" placeholder="han-guk-eo"/></div>
+      </div>
+      <div class="form-group"><label class="form-label">Tiếng Hàn *</label><input class="form-input" id="vl-sw-kr" placeholder="한국어"/></div>
+      <div class="form-group"><label class="form-label">Nghĩa *</label><input class="form-input" id="vl-sw-vn" placeholder="Nghĩa tiếng Việt"/></div>
+      <div class="vl-time-input-row">
+        <div class="form-group"><label class="form-label">Thời điểm trong video (mm:ss)</label><input class="form-input" id="vl-sw-time" placeholder="1:23"/></div>
+        <button class="btn btn-sm" onclick="vlUseCurrentTime('vl-sw-time')"><i class="ti ti-clock-play"></i> Lấy thời điểm hiện tại</button>
+      </div>
+      <button class="btn btn-primary" style="margin-top:12px" onclick="saveVlSingleItem()"><i class="ti ti-plus"></i> Lưu</button>
+    </div>
+    <div class="add-words-panel" id="vlawpanel-bulk">
+      <div class="form-group">
+        <label class="form-label">Nhập nhiều mục</label>
+        <textarea class="form-input" id="vl-bulk" style="min-height:160px" placeholder="từ | 환경 | Môi trường | 1:23&#10;câu | 환경을 보호합시다 | Hãy bảo vệ môi trường | 2:05"></textarea>
+        <div class="word-hint">Mỗi dòng 1 mục: <strong>Loại (từ/câu) | Tiếng Hàn | Nghĩa | Thời điểm mm:ss (tuỳ chọn)</strong><br>"từ" = Từ vựng, "câu" = Mẫu câu. Có thể bỏ trống thời điểm.</div>
+      </div>
+      <button class="btn btn-primary" onclick="saveVlBulkItems()"><i class="ti ti-file-import"></i> Lưu các mục</button>
+    </div>
+  </div>`;
+}
+function switchVlAddSubTab(tab, el) {
+  const scope = document.getElementById('vltab-add');
+  scope.querySelectorAll('.add-words-tab').forEach(t => t.classList.remove('active')); el.classList.add('active');
+  scope.querySelectorAll('.add-words-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('vlawpanel-' + tab).classList.add('active');
+}
+function vlUseCurrentTime(inputId) {
+  const t = vlGetCurrentTime();
+  const el = document.getElementById(inputId);
+  if (el) el.value = vlSecondsToMMSS(t);
+}
+async function saveVlSingleItem() {
+  const korean = document.getElementById('vl-sw-kr')?.value.trim();
+  const vn = document.getElementById('vl-sw-vn')?.value.trim();
+  if (!korean || !vn) { showToast('Tiếng Hàn và nghĩa là bắt buộc!'); return; }
+  const type = document.getElementById('vl-sw-type').value;
+  const pron = document.getElementById('vl-sw-pron').value.trim() || null;
+  const ts = vlParseTimeToSeconds(document.getElementById('vl-sw-time').value.trim());
+  const row = { lesson_id: vlCurrentLesson.id, owner_id: currentUser.id, content_type: type, korean, vietnamese: vn, pronunciation: pron, timestamp_seconds: ts };
+  const { data, error } = await DS.createVideoItems([row]);
+  if (error) { showToast('Lỗi: ' + error.message); return; }
+  vlItems.push(...(data || [])); vlItems.sort(vlItemSort);
+  ['vl-sw-kr','vl-sw-vn','vl-sw-pron','vl-sw-time'].forEach(id => { const el = document.getElementById(id); if (el) el.value=''; });
+  document.getElementById('vl-sw-type').value = 'word';
+  await DS.updateVideoLesson(vlCurrentLesson.id, { item_count: vlItems.length });
+  refreshVlListTab();
+  showToast('Đã lưu nội dung! 🎬');
+}
+async function saveVlBulkItems() {
+  const raw = document.getElementById('vl-bulk')?.value.trim();
+  if (!raw) { showToast('Vui lòng nhập ít nhất 1 mục!'); return; }
+  const rows = raw.split('\n').map(r => r.trim()).filter(Boolean).map(line => {
+    const p = line.split('|').map(x => x.trim());
+    const typeRaw = (p[0] || '').toLowerCase();
+    const type = (typeRaw.startsWith('c') || typeRaw.includes('sentence') || typeRaw.includes('mẫu')) ? 'sentence' : 'word';
+    return { lesson_id: vlCurrentLesson.id, owner_id: currentUser.id, content_type: type, korean: p[1] || '새 단어', vietnamese: p[2] || 'Nghĩa', timestamp_seconds: vlParseTimeToSeconds(p[3]) };
+  });
+  const { data, error } = await DS.createVideoItems(rows);
+  if (error) { showToast('Lỗi thêm nội dung: ' + error.message); return; }
+  document.getElementById('vl-bulk').value = '';
+  vlItems.push(...(data || [])); vlItems.sort(vlItemSort);
+  await DS.updateVideoLesson(vlCurrentLesson.id, { item_count: vlItems.length });
+  refreshVlListTab();
+  showToast('Đã thêm ' + rows.length + ' mục! 🎉');
+}
+
+function enterVlFullpage() {
+  document.getElementById('main-app').classList.add('vl-fullpage');
+}
+function exitVlFullpage() {
+  document.getElementById('main-app').classList.remove('vl-fullpage');
+}
+</script>
 </body>
 </html>
