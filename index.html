@@ -1991,7 +1991,11 @@ async function folderMarkCard(type) {
 function folderSpeakCurrent(mode) {
   if (!filteredCards.length) return;
   const c = filteredCards[folderCardIdx];
-  speakText(mode === 'word' ? c.korean : (c.example_kr || c.korean));
+  if (mode === 'word') {
+    speakText(c.korean, c.id, 'word');
+  } else {
+    speakText(c.example_kr || c.korean, c.id, c.example_kr ? 'example' : 'word');
+  }
 }
 
 // Word list
@@ -2001,7 +2005,7 @@ function buildWordListTable() {
     <table class="word-table">
       <thead><tr><th>Tiếng Hàn</th><th>Nghĩa</th><th>Loại từ</th><th>Ví dụ</th><th>Trạng thái</th><th>Ôn lại</th><th></th></tr></thead>
       <tbody>${allCards.map(c=>`<tr id="wrow-${c.id}">
-        <td style="font-family:'Noto Sans KR';font-weight:700;color:var(--pk4)">${c.korean}<button class="btn btn-sm btn-icon" onclick="speakText('${c.korean}')" style="margin-left:4px"><i class="ti ti-volume" style="font-size:11px"></i></button></td>
+        <td style="font-family:'Noto Sans KR';font-weight:700;color:var(--pk4)">${c.korean}<button class="btn btn-sm btn-icon" onclick="speakText('${c.korean}', '${c.id}', 'word')" style="margin-left:4px"><i class="ti ti-volume" style="font-size:11px"></i></button></td>
         <td>${c.vietnamese}</td>
         <td style="color:#b0a0a8;font-size:11px">${c.word_type||'—'}</td>
         <td style="font-size:11px;font-style:italic;color:#8a7a84;max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${c.example_kr||'—'}</td>
@@ -2443,13 +2447,13 @@ function dictOnInput(inp) {
   dashEl.innerHTML = html;
 }
 
-/* Speak via Supertonic (with browser fallback) */
+/* Speak via pre-generated audio (with browser fallback) */
 async function dictSpeak() {
   const c = dictState.cards[dictState.idx];
   if (!c) return;
   const btn = document.getElementById('dict-play-btn');
   if (btn) btn.classList.add('playing');
-  try { await speakText(c.example_kr.trim()); }
+  try { await speakText(c.example_kr.trim(), c.id, 'example'); }
   finally { if (btn) btn.classList.remove('playing'); }
 }
 
@@ -3333,32 +3337,43 @@ function build7DayBars() {
 }
 
 // ============================================================
-// TTS
+// TTS (phát file MP3 đã tạo sẵn từ Supertonic, lưu trên Supabase Storage)
 // ============================================================
-let ttsWs=null, ttsRequestId=0;
-async function speakText(text) {
+const AUDIO_BUCKET = 'flashcard-audio'; // phải khớp với BUCKET_NAME trong generate_audio.py
+let _ttsAudioEl = null;
+
+/**
+ * Phát âm.
+ * - cardId + kind ('word' | 'example'): phát file MP3 có sẵn (ưu tiên).
+ * - Nếu không có cardId/kind, hoặc file MP3 chưa tồn tại / lỗi tải: fallback giọng máy.
+ *
+ * Tương thích ngược: speakText(text) vẫn hoạt động (chỉ dùng giọng máy).
+ */
+async function speakText(text, cardId, kind) {
   if(!text) return;
-  try { await speakWithSupertonic(text); } catch(err) { speakWithBrowser(text); }
-}
-async function speakWithSupertonic(text) {
-  const requestId=++ttsRequestId;
-  if(!ttsWs||ttsWs.readyState!==WebSocket.OPEN) {
-    ttsWs=new WebSocket('wss://hy-station-tts.onrender.com/ws'); ttsWs.binaryType='arraybuffer';
-    await new Promise((resolve,reject)=>{const timer=setTimeout(()=>reject(new Error('timeout')),3000);ttsWs.onopen=()=>{clearTimeout(timer);resolve();};ttsWs.onerror=()=>{clearTimeout(timer);reject(new Error('ws error'));};});
+  if(cardId && kind) {
+    try { await speakFromStorage(cardId, kind); return; }
+    catch(err) { /* rơi xuống fallback giọng máy */ }
   }
-  return new Promise((resolve,reject)=>{
-    const timer=setTimeout(()=>reject(new Error('timeout')),12000);
-    ttsWs.onmessage=async ev=>{
-      if(requestId!==ttsRequestId)return;if(typeof ev.data==='string')return;
-      clearTimeout(timer);
-      const url=URL.createObjectURL(new Blob([ev.data],{type:'audio/wav'}));
-      const audio=new Audio(url); audio.onended=()=>{URL.revokeObjectURL(url);resolve();}; audio.onerror=()=>{URL.revokeObjectURL(url);reject(new Error('play error'));};
-      await audio.play();
-    };
-    ttsWs.onerror=()=>{clearTimeout(timer);reject(new Error('ws error'));};
-    ttsWs.send(JSON.stringify({text,lang:'ko',voice:'F1',speed:0.75}));
+  speakWithBrowser(text);
+}
+
+function speakFromStorage(cardId, kind) {
+  const filename = `${kind}_${cardId}.mp3`; // ví dụ: word_12.mp3 / example_12.mp3
+  const { data } = db.storage.from(AUDIO_BUCKET).getPublicUrl(filename);
+  const url = data?.publicUrl;
+  if(!url) return Promise.reject(new Error('no url'));
+
+  return new Promise((resolve, reject) => {
+    if(_ttsAudioEl) { _ttsAudioEl.pause(); _ttsAudioEl = null; }
+    const audio = new Audio(url);
+    _ttsAudioEl = audio;
+    audio.onended = () => resolve();
+    audio.onerror = () => reject(new Error('audio not found'));
+    audio.play().catch(reject);
   });
 }
+
 function speakWithBrowser(text) {
   if(!('speechSynthesis' in window)){showToast('Không phát âm được.');return;}
   const utt=new SpeechSynthesisUtterance(text); utt.lang='ko-KR'; utt.rate=0.9;
