@@ -346,6 +346,31 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
 .inline-err{font-size:11px;color:#e05252;margin-top:4px;display:none}
 .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--pk4);color:#fff;padding:10px 20px;border-radius:12px;font-size:13px;font-weight:600;z-index:300;opacity:0;transition:opacity .3s;pointer-events:none;box-shadow:0 4px 16px rgba(212,112,154,.4)}
 .toast.show{opacity:1}
+
+/* VOCAB LOOKUP — "Từ cần tra" (selection -> save -> profile folders) */
+.te-vocab-add-btn{position:fixed;transform:translate(-50%,-100%);background:var(--pk4);color:#fff;border:none;padding:8px 14px;border-radius:10px;font-size:12px;font-weight:700;cursor:pointer;z-index:400;opacity:0;pointer-events:none;transition:opacity .12s;box-shadow:0 4px 14px rgba(212,112,154,.35);white-space:nowrap;font-family:inherit;display:flex;align-items:center;gap:6px}
+.te-vocab-add-btn.show{opacity:1;pointer-events:auto}
+.te-vocab-add-btn::after{content:'';position:absolute;left:50%;bottom:-6px;transform:translateX(-50%);border:6px solid transparent;border-top-color:var(--pk4)}
+.te-vocab-add-btn.below{transform:translate(-50%,0)}
+.te-vocab-add-btn.below::after{bottom:auto;top:-6px;border-top-color:transparent;border-bottom-color:var(--pk4)}
+.vocab-folder{background:#fff;border:1.5px solid var(--brd);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.vocab-folder-header{display:flex;align-items:center;gap:10px;padding:14px 16px;cursor:pointer;user-select:none}
+.vocab-folder-title{font-size:13px;font-weight:700;color:var(--txt);display:flex;align-items:center;gap:8px;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.vocab-folder-title i{color:var(--pk4);flex-shrink:0}
+.vocab-folder-count{font-size:11px;color:#8a7a84;background:var(--pk2);padding:2px 8px;border-radius:8px;flex-shrink:0}
+.vocab-folder-copy-btn{display:flex;align-items:center;gap:4px;font-size:11px;font-weight:700;color:var(--pk4);background:var(--pk2);border:none;padding:5px 10px;border-radius:8px;cursor:pointer;flex-shrink:0;transition:background .15s,transform .1s;font-family:inherit}
+.vocab-folder-copy-btn:hover{background:var(--pk)}
+.vocab-folder-copy-btn:active{transform:scale(.95)}
+.vocab-folder-arrow{color:#b0a0a8;transition:transform .2s;flex-shrink:0}
+.vocab-folder.open .vocab-folder-arrow{transform:rotate(180deg)}
+.vocab-folder-body{display:none;border-top:1.5px solid var(--brd)}
+.vocab-folder.open .vocab-folder-body{display:block}
+.vocab-item{display:flex;align-items:flex-start;gap:10px;padding:12px 16px;border-bottom:1px solid var(--brd)}
+.vocab-item:last-child{border-bottom:none}
+.vocab-item-main{flex:1;min-width:0}
+.vocab-item-term{font-size:14px;font-weight:700;color:var(--pk4);font-family:'Noto Sans KR',sans-serif}
+.vocab-item-context{font-size:12px;color:#8a7a84;margin-top:4px;line-height:1.6;font-family:'Noto Sans KR',sans-serif}
+.vocab-item-meta{font-size:10px;color:#b0a0a8;margin-top:6px;font-weight:600}
 .loading{display:inline-flex;align-items:center;gap:8px;color:#b0a0a8;font-size:13px;padding:16px}
 .spinner{width:18px;height:18px;border:2px solid var(--brd);border-top-color:var(--pk4);border-radius:50%;animation:spin .7s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
@@ -529,7 +554,7 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
 .topik-question-block.no-answer{border-color:#f5a0a0;background:#fff9f9}
 .topik-q-no{font-size:14px;font-weight:600;color:var(--txt);margin-bottom:12px}
 /* Passage box */
-.topik-passage{background:#f8f8f6;border-left:3px solid var(--pk3);border-radius:0 8px 8px 0;padding:12px 16px;margin-bottom:14px;font-size:13px;line-height:1.8;color:#444;font-family:'Noto Sans KR',sans-serif;white-space:pre-wrap}
+.topik-passage{background:#fff;border:1.5px solid #e0d0f0;border-left:4px solid var(--pk3);border-radius:10px;padding:16px 20px;margin-bottom:20px;font-size:13.5px;line-height:2;color:#333;font-family:'Noto Sans KR',sans-serif;white-space:pre-wrap;box-shadow:0 2px 8px rgba(180,120,200,.08)}
 /* Question image */
 .topik-question-img{width:100%;max-width:100%;height:auto;display:block;margin:12px 0;border-radius:10px}
 /* Image choice grid */
@@ -1039,7 +1064,7 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
 
       <div class="topik-exam-hero">
         <div class="topik-exam-title">Luyện đề TOPIK</div>
-        <div class="topik-exam-sub">Chọn đề theo kỹ năng Nghe, Đọc, Viết. Kết quả sẽ được lưu vào Lịch sử thi.</div>
+        <div class="topik-exam-sub">Kết quả sẽ được lưu vào Lịch sử thi. Chúc bạn thi tốt và yêu tiếng Hàn hơn nhé!</div>
       </div>
 
       <div class="topik-exam-tabs" id="topik-exam-tabs">
@@ -1069,10 +1094,12 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
       <div class="profile-tabs">
         <div class="profile-tab active" onclick="switchProfileTab('fav',this)">💕 Yêu thích</div>
         <div class="profile-tab" onclick="switchProfileTab('uploads',this)">📤 Đã upload</div>
+        <div class="profile-tab" onclick="switchProfileTab('vocab',this)">📖 Từ cần tra</div>
         <div class="profile-tab" onclick="switchProfileTab('settings',this)">⚙️ Cài đặt</div>
       </div>
       <div class="profile-section active" id="prof-fav"><div id="fav-list"><div class="loading"><div class="spinner"></div></div></div></div>
       <div class="profile-section" id="prof-uploads"><div id="upload-list"><div class="loading"><div class="spinner"></div></div></div></div>
+      <div class="profile-section" id="prof-vocab"><div id="vocab-folder-list"><div class="loading"><div class="spinner"></div></div></div></div>
       <div class="profile-section" id="prof-settings">
         <div style="background:var(--pk2);border-radius:12px;padding:14px;margin-bottom:16px;font-size:12px;color:#8a7a84"><i class="ti ti-info-circle"></i> Tên hiển thị được quản lý bởi Hy. Nếu muốn thay đổi, nhắn Hy nhé!</div>
         <hr style="border:none;border-top:1px solid var(--brd);margin:20px 0"/>
@@ -1278,6 +1305,7 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
 </div>
 
 <div id="toast" class="toast"></div>
+<button id="te-vocab-add-btn" class="te-vocab-add-btn" onclick="teAddVocabFromSelection()"><i class="ti ti-bookmark-plus"></i> Thêm vào Từ cần tra</button>
 
 <script>
 // ============================================================
@@ -1421,6 +1449,9 @@ const DS = {
   async saveTopikAttemptAnswers(rows) { return db.from('topik_attempt_answers').insert(rows); },
   async getTopikAttempts(ownerId) { return db.from('topik_attempts').select('*, topik_exams(title,level,skill,session)').eq('owner_id', ownerId).order('submitted_at',{ascending:false}); },
   async getAllTopikAttempts() { return db.from('topik_attempts').select('*, topik_exams(title,level,skill,session), app_users!owner_id(display_name,initials)').order('submitted_at',{ascending:false}); },
+  async addVocabLookup(data) { return db.from('topik_vocab_lookup').insert(data).select().single(); },
+  async getVocabLookups(ownerId) { return db.from('topik_vocab_lookup').select('*').eq('user_id', ownerId).order('created_at',{ascending:false}); },
+  async deleteVocabLookup(id) { return db.from('topik_vocab_lookup').delete().eq('id', id); },
   async getTopikAttemptAnswers(attemptId) { return db.from('topik_attempt_answers').select('*').eq('attempt_id', attemptId).order('question_no',{ascending:true}); },
   async getTopikAttemptById(attemptId) { return db.from('topik_attempts').select('*, topik_exams(*)').eq('id', attemptId).single(); },
 };
@@ -1991,11 +2022,7 @@ async function folderMarkCard(type) {
 function folderSpeakCurrent(mode) {
   if (!filteredCards.length) return;
   const c = filteredCards[folderCardIdx];
-  if (mode === 'word') {
-    speakText(c.korean, c.id, 'word');
-  } else {
-    speakText(c.example_kr || c.korean, c.id, c.example_kr ? 'example' : 'word');
-  }
+  speakText(mode === 'word' ? c.korean : (c.example_kr || c.korean));
 }
 
 // Word list
@@ -2005,7 +2032,7 @@ function buildWordListTable() {
     <table class="word-table">
       <thead><tr><th>Tiếng Hàn</th><th>Nghĩa</th><th>Loại từ</th><th>Ví dụ</th><th>Trạng thái</th><th>Ôn lại</th><th></th></tr></thead>
       <tbody>${allCards.map(c=>`<tr id="wrow-${c.id}">
-        <td style="font-family:'Noto Sans KR';font-weight:700;color:var(--pk4)">${c.korean}<button class="btn btn-sm btn-icon" onclick="speakText('${c.korean}', '${c.id}', 'word')" style="margin-left:4px"><i class="ti ti-volume" style="font-size:11px"></i></button></td>
+        <td style="font-family:'Noto Sans KR';font-weight:700;color:var(--pk4)">${c.korean}<button class="btn btn-sm btn-icon" onclick="speakText('${c.korean}')" style="margin-left:4px"><i class="ti ti-volume" style="font-size:11px"></i></button></td>
         <td>${c.vietnamese}</td>
         <td style="color:#b0a0a8;font-size:11px">${c.word_type||'—'}</td>
         <td style="font-size:11px;font-style:italic;color:#8a7a84;max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${c.example_kr||'—'}</td>
@@ -2447,13 +2474,13 @@ function dictOnInput(inp) {
   dashEl.innerHTML = html;
 }
 
-/* Speak via pre-generated audio (with browser fallback) */
+/* Speak via Supertonic (with browser fallback) */
 async function dictSpeak() {
   const c = dictState.cards[dictState.idx];
   if (!c) return;
   const btn = document.getElementById('dict-play-btn');
   if (btn) btn.classList.add('playing');
-  try { await speakText(c.example_kr.trim(), c.id, 'example'); }
+  try { await speakText(c.example_kr.trim()); }
   finally { if (btn) btn.classList.remove('playing'); }
 }
 
@@ -3261,6 +3288,7 @@ function switchProfileTab(tab, el) {
   document.getElementById('prof-'+tab).classList.add('active');
   if(tab==='fav') loadFavDocs();
   else if(tab==='uploads') loadUploadedDocs();
+  else if(tab==='vocab') loadVocabFolders();
 }
 
 // ============================================================
@@ -3337,43 +3365,32 @@ function build7DayBars() {
 }
 
 // ============================================================
-// TTS (phát file MP3 đã tạo sẵn từ Supertonic, lưu trên Supabase Storage)
+// TTS
 // ============================================================
-const AUDIO_BUCKET = 'flashcard-audio'; // phải khớp với BUCKET_NAME trong generate_audio.py
-let _ttsAudioEl = null;
-
-/**
- * Phát âm.
- * - cardId + kind ('word' | 'example'): phát file MP3 có sẵn (ưu tiên).
- * - Nếu không có cardId/kind, hoặc file MP3 chưa tồn tại / lỗi tải: fallback giọng máy.
- *
- * Tương thích ngược: speakText(text) vẫn hoạt động (chỉ dùng giọng máy).
- */
-async function speakText(text, cardId, kind) {
+let ttsWs=null, ttsRequestId=0;
+async function speakText(text) {
   if(!text) return;
-  if(cardId && kind) {
-    try { await speakFromStorage(cardId, kind); return; }
-    catch(err) { /* rơi xuống fallback giọng máy */ }
-  }
-  speakWithBrowser(text);
+  try { await speakWithSupertonic(text); } catch(err) { speakWithBrowser(text); }
 }
-
-function speakFromStorage(cardId, kind) {
-  const filename = `${kind}_${cardId}.mp3`; // ví dụ: word_12.mp3 / example_12.mp3
-  const { data } = db.storage.from(AUDIO_BUCKET).getPublicUrl(filename);
-  const url = data?.publicUrl;
-  if(!url) return Promise.reject(new Error('no url'));
-
-  return new Promise((resolve, reject) => {
-    if(_ttsAudioEl) { _ttsAudioEl.pause(); _ttsAudioEl = null; }
-    const audio = new Audio(url);
-    _ttsAudioEl = audio;
-    audio.onended = () => resolve();
-    audio.onerror = () => reject(new Error('audio not found'));
-    audio.play().catch(reject);
+async function speakWithSupertonic(text) {
+  const requestId=++ttsRequestId;
+  if(!ttsWs||ttsWs.readyState!==WebSocket.OPEN) {
+    ttsWs=new WebSocket('ws://127.0.0.1:8765'); ttsWs.binaryType='arraybuffer';
+    await new Promise((resolve,reject)=>{const timer=setTimeout(()=>reject(new Error('timeout')),3000);ttsWs.onopen=()=>{clearTimeout(timer);resolve();};ttsWs.onerror=()=>{clearTimeout(timer);reject(new Error('ws error'));};});
+  }
+  return new Promise((resolve,reject)=>{
+    const timer=setTimeout(()=>reject(new Error('timeout')),12000);
+    ttsWs.onmessage=async ev=>{
+      if(requestId!==ttsRequestId)return;if(typeof ev.data==='string')return;
+      clearTimeout(timer);
+      const url=URL.createObjectURL(new Blob([ev.data],{type:'audio/wav'}));
+      const audio=new Audio(url); audio.onended=()=>{URL.revokeObjectURL(url);resolve();}; audio.onerror=()=>{URL.revokeObjectURL(url);reject(new Error('play error'));};
+      await audio.play();
+    };
+    ttsWs.onerror=()=>{clearTimeout(timer);reject(new Error('ws error'));};
+    ttsWs.send(JSON.stringify({text,lang:'ko',voice:'F1',speed:0.75}));
   });
 }
-
 function speakWithBrowser(text) {
   if(!('speechSynthesis' in window)){showToast('Không phát âm được.');return;}
   const utt=new SpeechSynthesisUtterance(text); utt.lang='ko-KR'; utt.rate=0.9;
@@ -4007,15 +4024,80 @@ async function teViewAttempt(attemptId) {
     `<div class="topik-answer-dot" id="te-dot-${q.no}" onclick="teScrollToQ(${q.no})" title="Câu ${q.no}">${q.no}</div>`
   ).join('');
 
-  // Build questions HTML
+  // Build questions HTML — group_passage tự động detect từ group_title
   let questionsHtml = '';
-  let lastGroup = null;
+
+  // Helper: tách đoạn văn chính (trước [문제 XX]) và câu hỏi phụ (từ [문제 XX] trở đi)
+  function splitPassage(passage) {
+    if (!passage) return { main: '', sub: '' };
+    const m = passage.match(/^([\s\S]*?)(\n*\[문제\s*\d+\][\s\S]*)$/);
+    if (m) return { main: m[1].trim(), sub: m[2].trim() };
+    return { main: '', sub: passage.trim() };
+  }
+  function groupPassageBlockHtml(text) {
+    if (!text) return '';
+    const safe = text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>');
+    return `<div style="
+      background:#fff;border:1.5px solid #e0d0f0;border-left:4px solid var(--pk3);
+      border-radius:10px;padding:18px 22px;margin-bottom:16px;
+      font-size:13.5px;line-height:2.1;color:#333;
+      font-family:'Noto Sans KR',sans-serif;white-space:pre-wrap;
+      box-shadow:0 2px 10px rgba(180,120,200,.10)
+    ">${safe}</div>`;
+  }
+
+  // Gom questions theo nhóm — parse range [X~Y] từ group_title
+  function parseGroupRange(title) {
+    if (!title) return null;
+    const m = title.match(/\[(\d+)[~～](\d+)\]/);
+    return m ? { from: parseInt(m[1]), to: parseInt(m[2]) } : null;
+  }
+
+  const groups = [];
+  const usedNos = new Set();
+  // Gom theo group_title có range [X~Y]
   for (const q of qs) {
-    if (q.group_title && q.group_title !== lastGroup) {
-      questionsHtml += `<div class="topik-q-group">${q.group_title}</div>`;
-      lastGroup = q.group_title;
+    if (usedNos.has(q.no)) continue;
+    if (q.group_title) {
+      const range = parseGroupRange(q.group_title);
+      if (range) {
+        const members = qs.filter(x => x.no >= range.from && x.no <= range.to);
+        members.forEach(x => usedNos.add(x.no));
+        groups.push({ title: q.group_title, questions: members });
+      } else {
+        usedNos.add(q.no);
+        groups.push({ title: q.group_title, questions: [q] });
+      }
+    } else {
+      usedNos.add(q.no);
+      groups.push({ title: null, questions: [q] });
     }
-    questionsHtml += teRenderQuestion(q);
+  }
+
+  for (const grp of groups) {
+    if (grp.title) {
+      questionsHtml += `<div class="topik-q-group">${grp.title}</div>`;
+    }
+
+    // Tìm group_passage từ bất kỳ câu nào trong nhóm có đoạn văn chính
+    let groupPassage = '';
+    for (const q of grp.questions) {
+      const { main } = splitPassage(q.passage || '');
+      if (main) { groupPassage = main; break; }
+    }
+
+    if (groupPassage) {
+      questionsHtml += groupPassageBlockHtml(groupPassage);
+    }
+
+    for (const q of grp.questions) {
+      if (groupPassage && q.passage) {
+        const { sub } = splitPassage(q.passage);
+        questionsHtml += teRenderQuestion(Object.assign({}, q, { passage: sub || null }));
+      } else {
+        questionsHtml += teRenderQuestion(q);
+      }
+    }
   }
 
   // Compute stats
@@ -4333,19 +4415,20 @@ async function teOpenIntro(examId) {
       🎵 File nghe sẽ <strong>tự động phát</strong> ngay khi bấm bắt đầu.<br>
       🚫 Bạn <strong>không thể tua lại</strong> hoặc phát lại audio.<br>
       ⏱️ Đồng hồ đếm ngược bắt đầu khi bạn bấm bắt đầu.<br>
-      📋 Bài sẽ tự nộp sau khi audio kết thúc + 60 giây.`;
+      📋 Bài sẽ tự nộp sau khi hết thời gian.`;
   } else if (sk === 'reading') {
     noticeEl.className = 'te-modal-notice te-notice-read';
     noticeEl.innerHTML = `<strong>Lưu ý trước khi làm bài:</strong><br>
-      📖 Đây là bài thi phần <strong>Đọc</strong> — không có audio.<br>
+      📖 Đây là bài thi phần <strong>Đọc</strong>.<br>
       ⏱️ Đồng hồ đếm ngược bắt đầu khi bạn bấm bắt đầu.<br>
       🔎 Sau khi nộp bài, bấm nút <strong>🔎</strong> dưới mỗi câu để xem giải thích.`;
   } else {
     noticeEl.className = 'te-modal-notice te-notice-write';
     noticeEl.innerHTML = `<strong>Lưu ý trước khi làm bài:</strong><br>
-      ✏️ Đây là bài thi phần <strong>Viết tự luận</strong> — không có audio.<br>
+      ✏️ Đây là bài thi <strong>tự luận</strong> phần <strong>Viết</strong>.<br>
       ⏱️ Đồng hồ đếm ngược bắt đầu khi bạn bấm bắt đầu.<br>
-      📝 Viết bài vào ô bên dưới mỗi câu. Sau khi nộp xem gợi ý đáp án.`;
+      📝 Viết bài vào ô bên dưới mỗi câu.<br>
+      📋 Phần này <strong>không có chấm điểm</strong>, tham khảo gợi ý để tự đánh giá bài làm nhé!`;
   }
   document.getElementById('te-intro-overlay').classList.add('open');
 }
@@ -4602,15 +4685,73 @@ async function loadTopikExamRunner(examId) {
     `<div class="topik-answer-dot" id="te-dot-${q.no}" onclick="teScrollToQ(${q.no})" title="Câu ${q.no}">${q.no}</div>`
   ).join('');
 
-  // Build questions HTML
+  // Build questions HTML — group_passage tự động detect từ group_title
   let questionsHtml = '';
-  let lastGroup = null;
+
+  function splitPassage2(passage) {
+    if (!passage) return { main: '', sub: '' };
+    const m = passage.match(/^([\s\S]*?)(\n*\[문제\s*\d+\][\s\S]*)$/);
+    if (m) return { main: m[1].trim(), sub: m[2].trim() };
+    return { main: '', sub: passage.trim() };
+  }
+  function groupPassageBlockHtml2(text) {
+    if (!text) return '';
+    const safe = text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>');
+    return `<div style="
+      background:#fff;border:1.5px solid #e0d0f0;border-left:4px solid var(--pk3);
+      border-radius:10px;padding:18px 22px;margin-bottom:16px;
+      font-size:13.5px;line-height:2.1;color:#333;
+      font-family:'Noto Sans KR',sans-serif;white-space:pre-wrap;
+      box-shadow:0 2px 10px rgba(180,120,200,.10)
+    ">${safe}</div>`;
+  }
+
+  function parseGroupRange2(title) {
+    if (!title) return null;
+    const m = title.match(/\[(\d+)[~～](\d+)\]/);
+    return m ? { from: parseInt(m[1]), to: parseInt(m[2]) } : null;
+  }
+
+  const groups2 = [];
+  const usedNos2 = new Set();
   for (const q of qs) {
-    if (q.group_title && q.group_title !== lastGroup) {
-      questionsHtml += `<div class="topik-q-group">${q.group_title}</div>`;
-      lastGroup = q.group_title;
+    if (usedNos2.has(q.no)) continue;
+    if (q.group_title) {
+      const range = parseGroupRange2(q.group_title);
+      if (range) {
+        const members = qs.filter(x => x.no >= range.from && x.no <= range.to);
+        members.forEach(x => usedNos2.add(x.no));
+        groups2.push({ title: q.group_title, questions: members });
+      } else {
+        usedNos2.add(q.no);
+        groups2.push({ title: q.group_title, questions: [q] });
+      }
+    } else {
+      usedNos2.add(q.no);
+      groups2.push({ title: null, questions: [q] });
     }
-    questionsHtml += teRenderQuestion(q);
+  }
+
+  for (const grp of groups2) {
+    if (grp.title) {
+      questionsHtml += `<div class="topik-q-group">${grp.title}</div>`;
+    }
+    let groupPassage = '';
+    for (const q of grp.questions) {
+      const { main } = splitPassage2(q.passage || '');
+      if (main) { groupPassage = main; break; }
+    }
+    if (groupPassage) {
+      questionsHtml += groupPassageBlockHtml2(groupPassage);
+    }
+    for (const q of grp.questions) {
+      if (groupPassage && q.passage) {
+        const { sub } = splitPassage2(q.passage);
+        questionsHtml += teRenderQuestion(Object.assign({}, q, { passage: sub || null }));
+      } else {
+        questionsHtml += teRenderQuestion(q);
+      }
+    }
   }
 
   const isListen = exam.skill === 'listening';
@@ -6674,8 +6815,23 @@ window.teFibInput = function(qno, blankId, input) {
       .replace(/'/g,'&#39;');
   }
 
+  // Cho phép một số thẻ định dạng an toàn (gạch dưới, đậm, nghiêng...) hiển thị
+  // đúng như HTML thay vì bị escape thành chữ "<u>...</u>" hiển thị thô.
+  // Áp dụng SAU khi đã escHtml() toàn bộ chuỗi, nên các thẻ/script khác vẫn
+  // được escape an toàn — chỉ "mở khoá" lại đúng các thẻ trong SAFE_TAGS.
+  var SAFE_TAGS = ['u','b','i','strong','em','mark','sup','sub'];
+  function allowSafeTags(escaped){
+    var out = escaped;
+    SAFE_TAGS.forEach(function(tag){
+      out = out
+        .replace(new RegExp('&lt;' + tag + '&gt;', 'gi'), '<' + tag + '>')
+        .replace(new RegExp('&lt;/' + tag + '&gt;', 'gi'), '</' + tag + '>');
+    });
+    return out;
+  }
+
   function nl2br(v){
-    return escHtml(v).replace(/\n/g, '<br>');
+    return allowSafeTags(escHtml(v)).replace(/\n/g, '<br>');
   }
 
   function getMaxLen(q){
@@ -6907,7 +7063,7 @@ window.teFibInput = function(qno, blankId, input) {
         role="radio" tabindex="0"
         onkeydown="if(event.key==='Enter'||event.key===' ')teSelectAnswer(${q.no},${i+1})">
         <div class="topik-opt-num">${i+1}</div>
-        <span>${escHtml(opt)}</span>
+        <span>${allowSafeTags(escHtml(opt))}</span>
       </div>`).join('');
 
     return `
@@ -7050,6 +7206,253 @@ window.teFibInput = function(qno, blankId, input) {
     <div id="quiz-run-area"></div>
   </div>
 </div>
+
+<script>
+// ============================================================
+// "TỪ CẦN TRA" — tô đen từ/câu sau khi nộp bài TOPIK để lưu vào
+// thư mục theo đề thi trong trang Cá nhân.
+// ============================================================
+(function () {
+
+  function teEscHtml(v) {
+    return String(v ?? '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  // Tìm khối nội dung gần nhất (đoạn văn, lựa chọn, giải thích...) chứa đoạn được tô
+  function teFindContextBlock(node) {
+    const selectors = '.topik-passage,.topik-write-prompt,.topik-option,.topik-explain-panel,.topik-q-group,.topik-question-block';
+    let el = node && node.nodeType === Node.TEXT_NODE ? node.parentElement : node;
+    while (el && el.nodeType === 1) {
+      if (el.matches && el.matches(selectors)) return el;
+      if (el.id === 'topik-exam-run-content') break;
+      el = el.parentElement;
+    }
+    return null;
+  }
+
+  // Lấy câu chứa từ được tô làm ngữ cảnh (cắt theo dấu kết câu . ! ? …)
+  function teExtractContextSentence(term, blockText) {
+    const clean = String(blockText || '').replace(/\s+/g, ' ').trim();
+    if (!clean) return '';
+    const sentences = clean.split(/(?<=[.!?…])\s+/).map(s => s.trim()).filter(Boolean);
+    const found = sentences.find(s => s.includes(term));
+    const cap = (s) => s.length > 240 ? s.slice(0, 240) + '…' : s;
+    if (found) return cap(found);
+    const idx = clean.indexOf(term);
+    if (idx === -1) return cap(clean);
+    const start = Math.max(0, idx - 60);
+    const end = Math.min(clean.length, idx + term.length + 60);
+    return (start > 0 ? '…' : '') + clean.slice(start, end).trim() + (end < clean.length ? '…' : '');
+  }
+
+  let teVocabPending = null;
+  let teVocabFoldersCache = [];
+
+  function teHandleVocabSelection() {
+    const btn = document.getElementById('te-vocab-add-btn');
+    if (!btn) return;
+
+    // Chỉ cho phép sau khi đã nộp bài (review mode)
+    if (!window.topikRunState && typeof topikRunState === 'undefined') return;
+    const runState = (typeof topikRunState !== 'undefined') ? topikRunState : window.topikRunState;
+    if (!runState || !runState.submitted) { btn.classList.remove('show'); return; }
+
+    const sel = window.getSelection();
+    const text = sel ? sel.toString().trim() : '';
+    if (!text || sel.rangeCount === 0 || text.length > 120) {
+      btn.classList.remove('show'); teVocabPending = null; return;
+    }
+
+    const range = sel.getRangeAt(0);
+    const anchorEl = range.commonAncestorContainer.nodeType === Node.TEXT_NODE
+      ? range.commonAncestorContainer.parentElement
+      : range.commonAncestorContainer;
+    const wrap = document.getElementById('topik-exam-run-content');
+    if (!wrap || !anchorEl || !wrap.contains(anchorEl)) { btn.classList.remove('show'); return; }
+
+    const rect = range.getBoundingClientRect();
+    if (!rect || (rect.width === 0 && rect.height === 0)) { btn.classList.remove('show'); return; }
+
+    const blockEl = teFindContextBlock(range.commonAncestorContainer);
+    const qBlockEl = anchorEl.closest ? anchorEl.closest('[data-qno]') : null;
+
+    teVocabPending = {
+      term: text,
+      context: teExtractContextSentence(text, blockEl ? blockEl.textContent : ''),
+      qno: qBlockEl ? parseInt(qBlockEl.dataset.qno, 10) : null,
+    };
+
+    let top = rect.top - 10;
+    let below = false;
+    if (top < 50) { top = rect.bottom + 10; below = true; }
+    let left = rect.left + rect.width / 2;
+    left = Math.min(Math.max(left, 90), window.innerWidth - 90);
+
+    btn.style.top = top + 'px';
+    btn.style.left = left + 'px';
+    btn.classList.toggle('below', below);
+    btn.classList.add('show');
+  }
+
+  document.addEventListener('mouseup', (e) => {
+    if (e.target.closest && e.target.closest('#te-vocab-add-btn')) return;
+    setTimeout(teHandleVocabSelection, 0);
+  });
+  document.addEventListener('touchend', (e) => {
+    if (e.target.closest && e.target.closest('#te-vocab-add-btn')) return;
+    setTimeout(teHandleVocabSelection, 60);
+  });
+  document.addEventListener('mousedown', (e) => {
+    if (!(e.target.closest && e.target.closest('#te-vocab-add-btn'))) {
+      document.getElementById('te-vocab-add-btn')?.classList.remove('show');
+    }
+  });
+  // Đóng nút khi cuộn trang để tránh trôi sai vị trí
+  document.addEventListener('scroll', () => {
+    document.getElementById('te-vocab-add-btn')?.classList.remove('show');
+  }, true);
+
+  window.teAddVocabFromSelection = async function () {
+    const btn = document.getElementById('te-vocab-add-btn');
+    if (!teVocabPending || !currentUser?.id) { btn?.classList.remove('show'); return; }
+    const pending = teVocabPending;
+    const runState = (typeof topikRunState !== 'undefined') ? topikRunState : window.topikRunState;
+    const exam = runState?.exam || {};
+
+    if (btn) btn.disabled = true;
+    const payload = {
+      user_id: currentUser.id,
+      exam_id: exam.id || null,
+      exam_title: exam.title || 'Đề TOPIK',
+      exam_level: exam.level || null,
+      exam_session: exam.session ? String(exam.session) : null,
+      question_no: pending.qno,
+      term: pending.term,
+      context: pending.context || null,
+    };
+
+    let error = null;
+    try {
+      const res = await DS.addVocabLookup(payload);
+      error = res?.error || null;
+    } catch (e) { error = e; }
+
+    if (btn) { btn.disabled = false; btn.classList.remove('show'); }
+    window.getSelection()?.removeAllRanges();
+    teVocabPending = null;
+
+    if (error) {
+      console.warn('addVocabLookup error:', error);
+      showToast?.('⚠️ Không lưu được từ. Vui lòng thử lại.');
+      return;
+    }
+    showToast?.(`✅ Đã lưu "${pending.term}" vào Từ cần tra`);
+  };
+
+  function teVocabDate(ts) {
+    if (!ts) return '';
+    try { return new Date(ts).toLocaleDateString('vi-VN'); } catch (e) { return ''; }
+  }
+
+  window.loadVocabFolders = async function () {
+    const el = document.getElementById('vocab-folder-list');
+    if (!el) return;
+    el.innerHTML = '<div class="loading"><div class="spinner"></div></div>';
+
+    const { data, error } = await DS.getVocabLookups(currentUser.id);
+    if (error) {
+      el.innerHTML = '<div class="empty"><i class="ti ti-alert-circle"></i>Không tải được danh sách. Thử lại sau.</div>';
+      console.warn('getVocabLookups error:', error);
+      return;
+    }
+    if (!data || !data.length) {
+      el.innerHTML = '<div class="empty"><i class="ti ti-bookmark-off"></i>Chưa có từ nào trong danh sách.<br>Sau khi nộp bài thi TOPIK, tô đen một từ hoặc câu rồi bấm "Thêm vào Từ cần tra" để lưu lại đây.</div>';
+      return;
+    }
+
+    // Nhóm theo đề thi (tự tạo "thư mục" theo từng đề)
+    const folders = new Map();
+    data.forEach(row => {
+      const key = row.exam_id || row.exam_title || 'khac';
+      if (!folders.has(key)) {
+        folders.set(key, {
+          title: row.exam_title || 'Đề chưa rõ',
+          level: row.exam_level, session: row.exam_session,
+          items: [],
+        });
+      }
+      folders.get(key).items.push(row);
+    });
+
+    const folderList = [...folders.values()];
+    teVocabFoldersCache = folderList;
+
+    el.innerHTML = folderList.map((folder, idx) => {
+      const sub = [folder.level, folder.session ? '제' + folder.session + '회' : null].filter(Boolean).join(' · ');
+      return `
+      <div class="vocab-folder${idx === 0 ? ' open' : ''}">
+        <div class="vocab-folder-header" onclick="this.parentElement.classList.toggle('open')">
+          <div class="vocab-folder-title"><i class="ti ti-folder"></i> ${teEscHtml(folder.title)}${sub ? ` <span style="color:#b0a0a8;font-weight:500">(${teEscHtml(sub)})</span>` : ''}</div>
+          <div class="vocab-folder-count">${folder.items.length} từ</div>
+          <button class="vocab-folder-copy-btn" onclick="event.stopPropagation();teCopyFolderTerms(${idx})" title="Sao chép danh sách từ trong thư mục này"><i class="ti ti-copy"></i> Sao chép</button>
+          <i class="ti ti-chevron-down vocab-folder-arrow"></i>
+        </div>
+        <div class="vocab-folder-body">
+          ${folder.items.map(it => `
+            <div class="vocab-item">
+              <div class="vocab-item-main">
+                <div class="vocab-item-term">${teEscHtml(it.term)}</div>
+                ${it.context ? `<div class="vocab-item-context">${teEscHtml(it.context)}</div>` : ''}
+                <div class="vocab-item-meta">${it.question_no ? 'Câu ' + it.question_no + ' · ' : ''}${teVocabDate(it.created_at)}</div>
+              </div>
+              <button class="btn btn-sm btn-icon btn-danger" onclick="teDeleteVocabLookup('${it.id}')" title="Xoá"><i class="ti ti-trash"></i></button>
+            </div>`).join('')}
+        </div>
+      </div>`;
+    }).join('');
+  };
+
+  window.teDeleteVocabLookup = async function (id) {
+    const { error } = await DS.deleteVocabLookup(id);
+    if (error) { showToast?.('⚠️ Không xoá được.'); console.warn(error); return; }
+    showToast?.('🗑️ Đã xoá khỏi Từ cần tra');
+    loadVocabFolders();
+  };
+
+  // Sao chép toàn bộ danh sách từ trong 1 thư mục (mỗi từ 1 dòng)
+  window.teCopyFolderTerms = async function (idx) {
+    const folder = teVocabFoldersCache[idx];
+    if (!folder || !folder.items?.length) return;
+    const text = folder.items.map(it => it.term).join('\n');
+
+    try {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(text);
+      } else {
+        throw new Error('no clipboard api');
+      }
+    } catch (e) {
+      // Fallback cho môi trường không có Clipboard API (http, webview cũ...)
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.focus(); ta.select();
+      try { document.execCommand('copy'); } catch (e2) { /* ignore */ }
+      document.body.removeChild(ta);
+    }
+
+    showToast?.(`📋 Đã sao chép ${folder.items.length} từ`);
+  };
+
+})();
+</script>
 
 </body>
 </html>
