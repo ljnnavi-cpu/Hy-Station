@@ -306,6 +306,22 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
 .vl-folder-body{padding:10px}
 .vl-folder-name{font-size:12px;font-weight:700;color:var(--txt);margin-bottom:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .vl-folder-count{font-size:10px;color:#b0a0a8}
+/* ── Video tag picker (modal) ── */
+.vl-tag-picker{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.vl-tag-btn{padding:5px 11px;border-radius:20px;border:1.5px solid var(--border);background:var(--card);color:var(--txt);font-size:12px;cursor:pointer;transition:all .15s}
+.vl-tag-btn.active{background:var(--pk4);color:#fff;border-color:var(--pk4)}
+/* ── Tag badge on card ── */
+.vl-tag-badge{display:inline-block;font-size:10px;padding:2px 8px;border-radius:10px;font-weight:700;margin-bottom:4px;letter-spacing:.3px}
+.vl-tag-badge.knowledge{background:#e8f4ff;color:#2980b9}
+.vl-tag-badge.skill{background:#eafaf1;color:#1e8449}
+.vl-tag-badge.entertainment{background:#f9f0ff;color:#8e44ad}
+.vl-tag-badge.podcast{background:#fff8e1;color:#d68910}
+.vl-tag-badge.news{background:#fef9ec;color:#ca8a04}
+.vl-tag-badge.drama{background:#fdecea;color:#c0392b}
+/* ── Tag filter bar ── */
+.vl-tag-filter{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.vl-tag-filter-btn{padding:5px 12px;border-radius:20px;border:1.5px solid var(--border);background:var(--card);color:var(--txt);font-size:12px;cursor:pointer;transition:all .15s;white-space:nowrap}
+.vl-tag-filter-btn.active{background:var(--pk4);color:#fff;border-color:var(--pk4)}
 .vl-source-tabs{display:flex;gap:6px;margin-bottom:14px}
 .vl-source-tab{flex:1;text-align:center;padding:8px 10px;border-radius:10px;font-size:12px;font-weight:600;border:1.5px solid var(--brd);background:#fff;color:#8a7a84;cursor:pointer;transition:all .15s}
 .vl-source-tab.active{background:var(--pk);border-color:var(--pk3);color:var(--pk4)}
@@ -957,7 +973,16 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
     <i class="ti ti-x"></i> Xoá
   </button>
 </div>
-      <div class="section-title">Video đã lưu</div>
+      <div class="vl-tag-filter" id="vl-tag-filter">
+        <button class="vl-tag-filter-btn active" data-tag="" onclick="vlSetTagFilter('',this)">🎞 Tất cả</button>
+        <button class="vl-tag-filter-btn" data-tag="knowledge" onclick="vlSetTagFilter('knowledge',this)">📚 Kiến thức</button>
+        <button class="vl-tag-filter-btn" data-tag="skill" onclick="vlSetTagFilter('skill',this)">🛠 Kỹ năng</button>
+        <button class="vl-tag-filter-btn" data-tag="entertainment" onclick="vlSetTagFilter('entertainment',this)">🎮 Giải trí</button>
+        <button class="vl-tag-filter-btn" data-tag="podcast" onclick="vlSetTagFilter('podcast',this)">🎧 Podcast</button>
+        <button class="vl-tag-filter-btn" data-tag="news" onclick="vlSetTagFilter('news',this)">📰 Tin tức</button>
+        <button class="vl-tag-filter-btn" data-tag="drama" onclick="vlSetTagFilter('drama',this)">🎬 Drama</button>
+      </div>
+      <div class="section-title" id="vl-section-title">Video đã lưu</div>
       <div class="vl-folder-grid" id="vl-folder-list"><div class="loading"><div class="spinner"></div></div></div>
     </div>
 
@@ -1351,6 +1376,18 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
   <div class="modal">
     <div class="modal-title">🎬 Thêm video học từ vựng <span class="modal-close" onclick="closeModal('video-lesson-modal')"><i class="ti ti-x"></i></span></div>
     <div class="form-group"><label class="form-label">Tên / Tag bài học *</label><input class="form-input" id="vl-title" placeholder="Ví dụ: Bài giảng ngữ pháp TOPIK II - Bài 5"/></div>
+    <div class="form-group">
+      <label class="form-label">Thể loại</label>
+      <div class="vl-tag-picker" id="vl-tag-picker">
+        <button type="button" class="vl-tag-btn active" data-tag="knowledge" onclick="vlSelectTag('knowledge',this)">📚 Kiến thức</button>
+        <button type="button" class="vl-tag-btn" data-tag="skill" onclick="vlSelectTag('skill',this)">🛠 Kỹ năng</button>
+        <button type="button" class="vl-tag-btn" data-tag="entertainment" onclick="vlSelectTag('entertainment',this)">🎮 Giải trí</button>
+        <button type="button" class="vl-tag-btn" data-tag="podcast" onclick="vlSelectTag('podcast',this)">🎧 Podcast</button>
+        <button type="button" class="vl-tag-btn" data-tag="news" onclick="vlSelectTag('news',this)">📰 Tin tức</button>
+        <button type="button" class="vl-tag-btn" data-tag="drama" onclick="vlSelectTag('drama',this)">🎬 Drama</button>
+      </div>
+      <input type="hidden" id="vl-tag" value="knowledge"/>
+    </div>
     <div class="form-group"><label class="form-label">Mô tả</label><textarea class="form-input" id="vl-desc" placeholder="Ghi chú về video này..."></textarea></div>
     <div class="vl-source-tabs">
       <div class="vl-source-tab active" onclick="switchVlSourceTab('link',this)">🔗 Dán link video</div>
@@ -2163,7 +2200,7 @@ async function folderMarkCard(type) {
 function folderSpeakCurrent(mode) {
   if (!filteredCards.length) return;
   const c = filteredCards[folderCardIdx];
-  speakText(mode === 'word' ? c.korean : (c.example_kr || c.korean));
+  speakText(mode === 'word' ? c.korean : (c.example_kr || c.korean), c.id, mode);
 }
 
 // Word list
@@ -2173,7 +2210,7 @@ function buildWordListTable() {
     <table class="word-table">
       <thead><tr><th>Tiếng Hàn</th><th>Nghĩa</th><th>Loại từ</th><th>Ví dụ</th><th>Trạng thái</th><th>Ôn lại</th><th></th></tr></thead>
       <tbody>${allCards.map(c=>`<tr id="wrow-${c.id}">
-        <td style="font-family:'Noto Sans KR';font-weight:700;color:var(--pk4)">${c.korean}<button class="btn btn-sm btn-icon" onclick="speakText('${c.korean}')" style="margin-left:4px"><i class="ti ti-volume" style="font-size:11px"></i></button></td>
+        <td style="font-family:'Noto Sans KR';font-weight:700;color:var(--pk4)">${c.korean}<button class="btn btn-sm btn-icon" onclick="speakText('${c.korean}','${c.id}','word')" style="margin-left:4px"><i class="ti ti-volume" style="font-size:11px"></i></button></td>
         <td>${c.vietnamese}</td>
         <td style="color:#b0a0a8;font-size:11px">${c.word_type||'—'}</td>
         <td style="font-size:11px;font-style:italic;color:#8a7a84;max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${c.example_kr||'—'}</td>
@@ -2621,7 +2658,7 @@ async function dictSpeak() {
   if (!c) return;
   const btn = document.getElementById('dict-play-btn');
   if (btn) btn.classList.add('playing');
-  try { await speakText(c.example_kr.trim()); }
+  try { await speakText(c.example_kr.trim(), c.id, 'example'); }
   finally { if (btn) btn.classList.remove('playing'); }
 }
 
@@ -3505,13 +3542,52 @@ function build7DayBars() {
   }).join('');
 }
 
-// ============================================================
 // TTS
 // ============================================================
 let ttsWs=null, ttsRequestId=0;
-async function speakText(text) {
+const SUPABASE_AUDIO_BUCKET = 'flashcard-audio'; // tên bucket trên Supabase
+
+async function speakText(text, cardId=null, mode='word') {
   if(!text) return;
-  try { await speakWithSupertonic(text); } catch(err) { speakWithBrowser(text); }
+
+  // Ưu tiên 1: file audio đã pre-generate trên Supabase (nếu có cardId)
+  if(cardId) {
+    const fileName = mode === 'example'
+      ? `example_${cardId}.mp3`
+      : `word_${cardId}.mp3`;
+    const { data } = db.storage.from(SUPABASE_AUDIO_BUCKET).getPublicUrl(fileName);
+    if(data?.publicUrl) {
+      try {
+        await playAudioUrl(data.publicUrl);
+        return;
+      } catch(e) { /* file không tồn tại hoặc lỗi → fallback */ }
+    }
+  }
+
+  // Ưu tiên 2: Web Speech API (giọng trình duyệt)
+  speakWithBrowser(text);
+}
+
+async function playAudioUrl(url) {
+  return new Promise((resolve, reject) => {
+    const audio = new Audio(url);
+    audio.onended = resolve;
+    audio.onerror = () => reject(new Error('audio error'));
+    // Nếu file không tồn tại (404) → reject sau 3s
+    const timeout = setTimeout(() => reject(new Error('timeout')), 3000);
+    audio.oncanplaythrough = () => {
+      clearTimeout(timeout);
+      audio.play().catch(reject);
+    };
+    audio.load();
+  });
+}
+
+async function speakWithSupertonic(text) { /* giữ lại để không báo lỗi nếu có chỗ gọi */ }
+function speakWithBrowser(text) {
+  if(!('speechSynthesis' in window)){showToast('Không phát âm được.');return;}
+  const utt=new SpeechSynthesisUtterance(text); utt.lang='ko-KR'; utt.rate=0.9;
+  speechSynthesis.cancel(); speechSynthesis.speak(utt);
 }
 async function speakWithSupertonic(text) {
   const requestId=++ttsRequestId;
@@ -4554,7 +4630,7 @@ async function teOpenIntro(examId) {
     noticeEl.className = 'te-modal-notice te-notice-listen';
     noticeEl.innerHTML = `<strong>Lưu ý trước khi làm bài:</strong><br>
       🎵 File nghe sẽ <strong>tự động phát</strong> ngay khi bấm bắt đầu.<br>
-      🚫 Bạn <strong>không thể tua lại</strong> hoặc <strong>tạm dừng</strong> audio.<br>
+      🚫 Bạn <strong>không thể tua lại</strong> hoặc phát lại audio.<br>
       ⏱️ Đồng hồ đếm ngược bắt đầu khi bạn bấm bắt đầu.<br>
       📋 Bài sẽ tự nộp sau khi hết thời gian.`;
   } else if (sk === 'reading') {
@@ -7749,11 +7825,17 @@ async function loadVideoLessonsList() {
   }
   vlLessons = data || [];
 
-  // Reset ô tìm kiếm mỗi khi reload danh sách
+  // Reset ô tìm kiếm và bộ lọc tag mỗi khi reload danh sách
   const searchEl = document.getElementById('vl-search');
   if (searchEl) searchEl.value = '';
   const clearBtn = document.getElementById('vl-search-clear');
   if (clearBtn) clearBtn.style.display = 'none';
+  vlActiveTagFilter = '';
+  document.querySelectorAll('.vl-tag-filter-btn').forEach(function(b) {
+    b.classList.toggle('active', b.dataset.tag === '');
+  });
+  const titleEl = document.getElementById('vl-section-title');
+  if (titleEl) titleEl.textContent = 'Video đã lưu';
 
   vlRenderLessonList(vlLessons);
 }
@@ -7780,9 +7862,11 @@ function vlRenderLessonList(lessons) {
 
   list.innerHTML = lessons.map(function(l) {
     var thumb = vlThumbHtml(l);
+    var tagBadge = vlTagBadgeHtml(l.tag);
     return '<div class="vl-folder" onclick="navTo(null,\'video-learn\',\'lesson/' + l.id + '\')">'
       + '<div class="vl-folder-thumb" ' + thumb.style + '>' + thumb.inner + '</div>'
       + '<div class="vl-folder-body">'
+      + tagBadge
       + '<div class="vl-folder-name">' + escHtmlSafe(l.title) + '</div>'
       + '<div class="vl-folder-count">' + (l.item_count || 0) + ' mục đã lưu</div>'
       + '</div>'
@@ -7790,14 +7874,56 @@ function vlRenderLessonList(lessons) {
   }).join('');
 }
 
+// Tag meta — nhãn hiển thị và class CSS
+const VL_TAGS = {
+  knowledge:     { label: '📚 Kiến thức',  cls: 'knowledge' },
+  skill:         { label: '🛠 Kỹ năng',    cls: 'skill' },
+  entertainment: { label: '🎮 Giải trí',   cls: 'entertainment' },
+  podcast:       { label: '🎧 Podcast',    cls: 'podcast' },
+  news:          { label: '📰 Tin tức',    cls: 'news' },
+  drama:         { label: '🎬 Drama',      cls: 'drama' },
+};
+
+function vlTagBadgeHtml(tag) {
+  if (!tag || !VL_TAGS[tag]) return '';
+  var t = VL_TAGS[tag];
+  return '<div class="vl-tag-badge ' + t.cls + '">' + t.label + '</div>';
+}
+
+// Trạng thái bộ lọc tag hiện tại
+var vlActiveTagFilter = '';
+
+function vlSetTagFilter(tag, el) {
+  vlActiveTagFilter = tag;
+  document.querySelectorAll('.vl-tag-filter-btn').forEach(function(b) { b.classList.remove('active'); });
+  if (el) el.classList.add('active');
+  vlApplyFilters();
+}
+
+function vlApplyFilters() {
+  var q = (document.getElementById('vl-search')?.value || '').trim().toLowerCase();
+  var filtered = vlLessons.filter(function(l) {
+    var matchTag = !vlActiveTagFilter || (l.tag || '') === vlActiveTagFilter;
+    var matchQ   = !q || l.title.toLowerCase().includes(q);
+    return matchTag && matchQ;
+  });
+  // Cập nhật tiêu đề section
+  var titleEl = document.getElementById('vl-section-title');
+  if (titleEl) {
+    if (vlActiveTagFilter && VL_TAGS[vlActiveTagFilter]) {
+      titleEl.textContent = VL_TAGS[vlActiveTagFilter].label;
+    } else {
+      titleEl.textContent = 'Video đã lưu';
+    }
+  }
+  vlRenderLessonList(filtered);
+}
+
 // Lọc theo tiêu đề (gõ realtime)
 function vlFilterLessons(query) {
   var clearBtn = document.getElementById('vl-search-clear');
   if (clearBtn) clearBtn.style.display = query ? '' : 'none';
-  var q = (query || '').trim().toLowerCase();
-  vlRenderLessonList(q ? vlLessons.filter(function(l) {
-    return l.title.toLowerCase().includes(q);
-  }) : vlLessons);
+  vlApplyFilters();
 }
 
 // Xoá tìm kiếm
@@ -7806,7 +7932,14 @@ function vlClearSearch() {
   if (searchEl) { searchEl.value = ''; searchEl.focus(); }
   var clearBtn = document.getElementById('vl-search-clear');
   if (clearBtn) clearBtn.style.display = 'none';
-  vlRenderLessonList(vlLessons);
+  vlApplyFilters();
+}
+
+// Hàm chọn tag trong modal
+function vlSelectTag(tag, el) {
+  document.querySelectorAll('#vl-tag-picker .vl-tag-btn').forEach(function(b) { b.classList.remove('active'); });
+  el.classList.add('active');
+  document.getElementById('vl-tag').value = tag;
 }
 
 // ── Create lesson modal ──
@@ -7815,6 +7948,10 @@ function openVideoLessonModal() {
   document.getElementById('vl-desc').value = '';
   document.getElementById('vl-url').value = '';
   document.getElementById('vl-file-name').textContent = '';
+  document.getElementById('vl-tag').value = 'knowledge';
+  document.querySelectorAll('#vl-tag-picker .vl-tag-btn').forEach(function(b) {
+    b.classList.toggle('active', b.dataset.tag === 'knowledge');
+  });
   const errEl = document.getElementById('vl-err'); errEl.textContent = ''; errEl.style.display = 'none';
   vlPendingFile = null;
   const firstTab = document.querySelector('#video-lesson-modal .vl-source-tab');
@@ -7857,7 +7994,8 @@ async function saveVideoLesson() {
     } else if (vlIsTikTok(url)) {
       videoType = 'tiktok';
     }
-    const { data, error } = await DS.createVideoLesson({ owner_id: currentUser.id, title, description: desc, video_url: videoUrl, video_type: videoType, item_count: 0 });
+    const tag = document.getElementById('vl-tag').value || 'knowledge';
+    const { data, error } = await DS.createVideoLesson({ owner_id: currentUser.id, title, description: desc, video_url: videoUrl, video_type: videoType, tag, item_count: 0 });
     if (error) throw error;
     closeModal('video-lesson-modal');
     showToast('Đã tạo bài học video! 🎬');
@@ -8024,5 +8162,6 @@ function exitVlFullpage() {
   document.getElementById('main-app').classList.remove('vl-fullpage');
 }
 </script>
+
 </body>
 </html>
