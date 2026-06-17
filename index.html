@@ -8237,7 +8237,9 @@ function vlSeekTo(seconds) {
     vlVideoEl.currentTime = seconds;
     vlVideoEl.play?.().catch?.(()=>{});
   }
-  document.getElementById('vl-player-wrap')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  if (window.innerWidth > 768) {
+    document.getElementById('vl-player-wrap')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
 }
 function vlGetCurrentTime() {
   if (vlYtPlayer && typeof vlYtPlayer.getCurrentTime === 'function') return Math.floor(vlYtPlayer.getCurrentTime());
@@ -8864,49 +8866,11 @@ async function saveVlBulkItems() {
 
 function enterVlFullpage() {
   document.getElementById('main-app').classList.add('vl-fullpage');
-  if (window.innerWidth <= 768) _vlMobileLayout();
+  document.querySelector('.main')?.classList.add('vl-detail-active');
 }
 function exitVlFullpage() {
   document.getElementById('main-app').classList.remove('vl-fullpage');
-  _vlMobileReset();
-}
-function _vlMobileLayout() {
-  if (window.innerWidth > 768) return;
-  const main = document.querySelector('.main');
-  const page = document.getElementById('page-video-learn-detail');
-  const left = page?.querySelector('.vl-detail-left');
-  const right = page?.querySelector('.vl-detail-right');
-  const layout = page?.querySelector('.vl-detail-layout');
-  const header = page?.querySelector('.vl-detail-header');
-  if (!main || !page || !left || !right) return;
-
-  const bottomNavH = 76;
-  const vw = window.innerWidth;
-  // Tính chiều cao video theo đúng tỷ lệ 16:9
-  const videoW = vw - 20; // trừ padding 2 bên
-  const videoH = Math.round(videoW * 9 / 16);
-  const headerH = 56;       // tiêu đề cố định
-  const leftH = videoH + 16; // video + padding-bottom 8px*2
-  const totalH = window.innerHeight - bottomNavH;
-  const rightH = Math.max(totalH - headerH - leftH, 120);
-
-  main.style.overflow = 'hidden';
-  main.style.height = totalH + 'px';
-  page.style.cssText = `height:${totalH}px;overflow:hidden;display:flex;flex-direction:column;padding:0 !important;min-height:unset;`;
-  if (header) header.style.cssText = `height:${headerH}px;overflow:hidden;padding:8px 12px 4px;flex-shrink:0;box-sizing:border-box;`;
-  if (layout) layout.style.cssText = `display:flex;flex-direction:column;flex:1;overflow:hidden;gap:0;align-items:unset;`;
-  left.style.cssText = `flex-shrink:0;padding:0 10px 8px;`;
-  right.style.cssText = `height:${rightH}px;min-height:0;max-height:none;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:4px 12px 16px;box-sizing:border-box;`;
-}
-function _vlMobileReset() {
-  const main = document.querySelector('.main');
-  const page = document.getElementById('page-video-learn-detail');
-  if (main) { main.style.overflow = ''; main.style.height = ''; }
-  if (!page) return;
-  page.style.cssText = '';
-  ['vl-detail-header','vl-detail-layout','vl-detail-left','vl-detail-right'].forEach(cls => {
-    page.querySelector('.' + cls)?.removeAttribute('style');
-  });
+  document.querySelector('.main')?.classList.remove('vl-detail-active');
 }
 </script>
 
