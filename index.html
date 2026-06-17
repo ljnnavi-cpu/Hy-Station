@@ -441,6 +441,7 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
 .toast.show{opacity:1}
 
 /* VOCAB LOOKUP — "Từ cần tra" (selection -> save -> profile folders) */
+@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 .te-vocab-add-btn{position:fixed;transform:translate(-50%,-100%);background:var(--pk4);color:#fff;border:none;padding:8px 14px;border-radius:10px;font-size:12px;font-weight:700;cursor:pointer;z-index:400;opacity:0;pointer-events:none;transition:opacity .12s;box-shadow:0 4px 14px rgba(212,112,154,.35);white-space:nowrap;font-family:inherit;display:flex;align-items:center;gap:6px}
 .te-vocab-add-btn.show{opacity:1;pointer-events:auto}
 .te-vocab-add-btn::after{content:'';position:absolute;left:50%;bottom:-6px;transform:translateX(-50%);border:6px solid transparent;border-top-color:var(--pk4)}
@@ -7668,13 +7669,16 @@ window.teFibInput = function(qno, blankId, input) {
         </div>
         <div class="vocab-folder-body">
           ${folder.items.map(it => `
-            <div class="vocab-item">
+            <div class="vocab-item" id="vocab-item-${it.id}">
               <div class="vocab-item-main">
                 <div class="vocab-item-term">${teEscHtml(it.term)}</div>
                 ${it.context ? `<div class="vocab-item-context">${teEscHtml(it.context)}</div>` : ''}
                 <div class="vocab-item-meta">${it.question_no ? 'Câu ' + it.question_no + ' · ' : ''}${teVocabDate(it.created_at)}</div>
               </div>
-              <button class="btn btn-sm btn-icon btn-danger" onclick="teDeleteVocabLookup('${it.id}')" title="Xoá"><i class="ti ti-trash"></i></button>
+              <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-end;flex-shrink:0">
+                <button class="btn btn-sm vocab-fc-btn" id="fc-btn-${it.id}" onclick="teAddVocabToFlashcard('${it.id}','${teEscHtml(it.term).replace(/'/g,"\\'")}','${(it.exam_title||'').replace(/'/g,"\\'")}','${(it.exam_level||'').replace(/'/g,"\\'")}','${(it.exam_session||'').replace(/'/g,"\\'")}','${(it.context||'').replace(/'/g,"\\'")}')" title="Thêm vào Flashcard" style="white-space:nowrap;color:var(--pk4);border-color:var(--pk3);font-size:11px;padding:5px 9px"><i class="ti ti-cards"></i> + Flashcard</button>
+                <button class="btn btn-sm btn-icon btn-danger" onclick="teDeleteVocabLookup('${it.id}')" title="Xoá"><i class="ti ti-trash"></i></button>
+              </div>
             </div>`).join('')}
         </div>
       </div>`;
@@ -7686,6 +7690,56 @@ window.teFibInput = function(qno, blankId, input) {
     if (error) { showToast?.('⚠️ Không xoá được.'); console.warn(error); return; }
     showToast?.('🗑️ Đã xoá khỏi Từ cần tra');
     loadVocabFolders();
+  };
+
+  // ── Thêm từ cần tra vào Flashcard ──
+  window.teAddVocabToFlashcard = async function (id, term, examTitle, examLevel, examSession, context) {
+    const btn = document.getElementById('fc-btn-' + id);
+    if (btn) { btn.disabled = true; btn.innerHTML = '<i class="ti ti-loader" style="animation:spin 1s linear infinite"></i> Đang lưu...'; }
+
+    try {
+      // Tên thư mục dựa theo đề thi
+      const sub = [examLevel, examSession ? '제' + examSession + '회' : null].filter(Boolean).join(' · ');
+      const folderName = examTitle ? (examTitle + (sub ? ' (' + sub + ')' : '')) : 'Từ cần tra';
+
+      // Tìm thư mục flashcard có tên trùng, hoặc tạo mới
+      const { data: folders } = await DS.getFolders(currentUser.id);
+      let folder = (folders || []).find(f => f.name === folderName);
+
+      if (!folder) {
+        const { data: newFolder, error: folderErr } = await DS.createFolder({
+          owner_id: currentUser.id,
+          name: folderName,
+          description: 'Tự động tạo từ "Từ cần tra"' + (sub ? ' – ' + sub : ''),
+          card_count: 0,
+        });
+        if (folderErr) throw new Error(folderErr.message);
+        folder = newFolder;
+      }
+
+      // Thêm flashcard
+      const row = {
+        folder_id: folder.id,
+        owner_id: currentUser.id,
+        korean: term,
+        vietnamese: '',
+        example_kr: context || null,
+        status: 'new',
+      };
+      const { error: cardErr } = await DS.createCards([row]);
+      if (cardErr) throw new Error(cardErr.message);
+
+      // Cập nhật card_count
+      const { data: cards } = await DS.getCards(folder.id, currentUser.id);
+      await DS.updateFolder(folder.id, { card_count: (cards || []).length });
+
+      if (btn) { btn.innerHTML = '<i class="ti ti-check"></i> Đã thêm'; btn.style.background = 'var(--grn)'; btn.style.borderColor = '#80c090'; btn.style.color = '#306040'; }
+      showToast?.('✅ Đã thêm "' + term + '" vào thư mục Flashcard!');
+    } catch (err) {
+      console.warn('teAddVocabToFlashcard error:', err);
+      if (btn) { btn.disabled = false; btn.innerHTML = '<i class="ti ti-cards"></i> + Flashcard'; }
+      showToast?.('⚠️ Lỗi: ' + (err.message || 'Thử lại sau'));
+    }
   };
 
   // Sao chép toàn bộ danh sách từ trong 1 thư mục (mỗi từ 1 dòng)
