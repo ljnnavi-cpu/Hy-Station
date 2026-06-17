@@ -851,46 +851,63 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
 #page-video-learn-detail { max-width: 1400px; margin: 0 auto; padding-left: 8px; padding-right: 8px; }
 
 @media(max-width:768px){
-  #page-video-learn-detail { padding: 0 !important; }
+  /* Khi ở trang video: khóa toàn bộ layout về full-height */
+  body.vl-mobile-open,
+  body.vl-mobile-open .app,
+  body.vl-mobile-open .main {
+    height: 100dvh !important;
+    overflow: hidden !important;
+  }
+  body.vl-mobile-open .page {
+    padding: 0 !important;
+    min-height: unset !important;
+  }
 
-  /* Tiêu đề */
+  /* Page là flex column chiếm toàn bộ main */
+  body.vl-mobile-open #page-video-learn-detail.active {
+    display: flex !important;
+    flex-direction: column;
+    height: calc(100dvh - 76px);
+    overflow: hidden;
+  }
+
+  /* Tiêu đề gọn */
   .vl-detail-header {
-    padding: 12px 12px 4px;
-    background: var(--bg);
+    padding: 10px 12px 4px;
+    flex-shrink: 0;
   }
   .vl-detail-header .folder-page-name { font-size: 13px !important; }
   .vl-detail-header .folder-page-desc { font-size: 11px; }
 
-  /* Layout 1 cột */
+  /* Layout 1 cột flex */
   .vl-detail-layout {
     flex-direction: column;
     gap: 0;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+    display: flex;
   }
 
-  /* Video sticky — dính ở đầu khi scroll */
+  /* Video cố định — không scroll */
   .vl-detail-left {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: var(--bg);
+    flex-shrink: 0;
     padding: 0 10px 8px;
-    flex: none;
-    width: 100%;
-    align-self: auto;
+    position: relative;
+    top: unset;
   }
-  .vl-player-wrap {
-    border-radius: 10px;
-    margin-bottom: 0;
-  }
+  .vl-player-wrap { border-radius: 10px; margin-bottom: 0; }
 
-  /* Nội dung bên dưới cuộn tự nhiên */
+  /* Nội dung scroll độc lập */
   .vl-detail-right {
-    flex: none;
-    width: 100%;
+    flex: 1;
+    min-height: 0;
     max-height: none;
-    overflow-y: visible;
-    padding: 8px 12px 100px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 4px 12px 16px;
   }
+  .vl-detail-right::-webkit-scrollbar { display: none; }
 }
 </style>
 </head>
@@ -8846,9 +8863,11 @@ async function saveVlBulkItems() {
 
 function enterVlFullpage() {
   document.getElementById('main-app').classList.add('vl-fullpage');
+  if (window.innerWidth <= 768) document.body.classList.add('vl-mobile-open');
 }
 function exitVlFullpage() {
   document.getElementById('main-app').classList.remove('vl-fullpage');
+  document.body.classList.remove('vl-mobile-open');
 }
 </script>
 
