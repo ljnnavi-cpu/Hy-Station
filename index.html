@@ -330,6 +330,13 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
 .vl-source-panel{display:none}
 .vl-source-panel.active{display:block}
 .vl-player-wrap{position:relative;width:100%;aspect-ratio:16/9;background:#000;border-radius:14px;overflow:hidden;margin-bottom:14px}
+/* ── Layout 2 cột cho trang chi tiết video ── */
+.vl-detail-layout{display:flex;gap:24px;align-items:flex-start}
+.vl-detail-left{flex:0 0 65%;min-width:0;position:sticky;top:24px;align-self:flex-start}
+.vl-detail-right{flex:1;min-width:0;max-height:calc(100vh - 160px);overflow-y:auto;padding-right:6px}
+.vl-detail-right::-webkit-scrollbar{width:4px}
+.vl-detail-right::-webkit-scrollbar-track{background:transparent}
+.vl-detail-right::-webkit-scrollbar-thumb{background:var(--pk3);border-radius:4px}
 .vl-player-wrap iframe,.vl-player-wrap video{width:100%;height:100%;border:none;display:block}
 .vl-player-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;color:#fff;font-size:13px;gap:6px;opacity:.7}
 .vl-player-empty i{font-size:32px}
@@ -338,7 +345,8 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
 .vl-tab.active{color:var(--pk4);border-bottom-color:var(--pk4)}
 .vl-tab-content{display:none}
 .vl-tab-content.active{display:block}
-.vl-item{display:flex;align-items:flex-start;gap:10px;padding:12px 14px;background:#fff;border:1.5px solid var(--brd);border-radius:12px;margin-bottom:8px}
+.vl-item{display:flex;align-items:flex-start;gap:10px;padding:12px 14px;background:#fff;border:1.5px solid var(--brd);border-radius:12px;margin-bottom:4px}
+.vl-item-left{display:flex;flex-direction:column;align-items:center;gap:6px;flex-shrink:0}
 .vl-item-time{flex-shrink:0;background:var(--pk2);color:var(--pk4);font-size:11px;font-weight:700;padding:5px 9px;border-radius:8px;cursor:pointer;display:flex;align-items:center;gap:4px;transition:background .15s;white-space:nowrap}
 .vl-item-time:hover{background:var(--pk)}
 .vl-item-main{flex:1;min-width:0}
@@ -347,10 +355,41 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
 .vl-item-type.sentence{background:#fef0e0;color:#c8843a}
 .vl-item-kr{font-family:'Noto Sans KR',sans-serif;font-size:14px;font-weight:700;color:var(--txt)}
 .vl-item-vn{font-size:12px;color:#8a7a84;margin-top:3px}
-.vl-item-pron{font-size:11px;color:#b0a0a8;margin-top:2px;font-style:italic}
-.vl-item-actions{display:flex;gap:4px;flex-shrink:0}
+.vl-item-pron{font-size:10px;font-weight:600;color:#7a6a9a;background:#f0eaff;padding:2px 8px;border-radius:6px;display:inline-block;margin-top:4px}
+.vl-item-actions{display:flex;flex-direction:column;gap:6px;flex-shrink:0;align-items:flex-end}
+.vl-item-actions-top{display:flex;gap:4px;align-items:center;justify-content:flex-end}
 .vl-time-input-row{display:flex;gap:8px;align-items:flex-end}
 .vl-time-input-row .form-group{flex:1;margin-bottom:0}
+/* ── Inline edit form ── */
+.vl-edit-form{background:#fffbf0;border:1.5px solid #f0c060;border-top:none;border-radius:0 0 12px 12px;padding:12px 14px;display:none}
+.vl-edit-form.open{display:block}
+.vl-edit-form input,.vl-edit-form select{padding:7px 10px;border:1.5px solid var(--brd);border-radius:8px;font-size:12px;font-family:inherit;outline:none;width:100%;color:var(--txt);background:#fff;transition:border .15s}
+.vl-edit-form input:focus,.vl-edit-form select:focus{border-color:#f0c060}
+.vl-item.editing{border-radius:12px 12px 0 0;border-bottom-color:transparent}
+
+.btn-edit{padding:5px 8px;font-size:11px;font-weight:700;border-radius:8px;border:1.5px solid #f0c060;background:#fffbf0;color:#b08000;cursor:pointer;display:inline-flex;align-items:center;gap:3px;transition:all .15s;font-family:inherit}
+.btn-edit:hover{background:#fef3c0}
+.btn-edit.active{background:#f0c060;color:#fff;border-color:#f0c060}
+
+.vl-item-group{margin-bottom:10px}
+.vl-item-group>.vl-item.has-children{border-radius:12px 12px 0 0;margin-bottom:0;border-bottom-color:transparent}
+.vl-nested-wrap{border-left:3px solid var(--pk3);margin-left:18px;margin-bottom:0;display:none}
+.vl-nested-wrap.visible{display:block}
+.vl-item-child{background:var(--pk2);border:1.5px solid var(--pk3);border-radius:0;margin-bottom:0;border-top:none;padding:9px 14px}
+.vl-item-child:last-of-type{border-radius:0 0 10px 10px}
+.vl-item-child .vl-item-kr{font-size:13px}
+.vl-item-child .vl-item-type{font-size:9px}
+.vl-expand-form{margin-left:18px;background:#fff8fc;border:1.5px solid var(--pk3);border-top:none;border-radius:0 0 10px 10px;padding:10px 12px;display:none}
+.vl-expand-form.open{display:block}
+.vl-expand-form-grid{display:grid;grid-template-columns:1fr 1fr auto;gap:8px;align-items:end}
+.vl-expand-form input,.vl-expand-form select{padding:7px 10px;border:1.5px solid var(--brd);border-radius:8px;font-size:12px;font-family:inherit;outline:none;width:100%;color:var(--txt);background:#fff;transition:border .15s}
+.vl-expand-form input:focus,.vl-expand-form select:focus{border-color:var(--pk3)}
+.btn-expand-toggle{padding:5px 10px;font-size:11px;font-weight:700;border-radius:8px;border:1.5px solid var(--pk3);background:var(--pk2);color:var(--pk4);cursor:pointer;display:inline-flex;align-items:center;gap:4px;transition:all .15s;font-family:inherit;white-space:nowrap}
+.btn-expand-toggle:hover{background:var(--pk)}
+.btn-expand-toggle.active{background:var(--pk4);color:#fff;border-color:var(--pk4)}
+.btn-collapse{padding:5px 8px;font-size:11px;font-weight:700;border-radius:8px;border:1.5px solid var(--pk3);background:var(--pk2);color:var(--pk4);cursor:pointer;display:none;align-items:center;gap:3px;transition:all .15s;font-family:inherit;white-space:nowrap}
+.btn-collapse.visible{display:inline-flex}
+.btn-collapse:hover{background:var(--pk)}
 
 /* TARGET */
 .topik-header{background:linear-gradient(135deg,var(--lav),var(--pk));border-radius:16px;padding:20px;margin-bottom:16px;text-align:center}
@@ -784,7 +823,7 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
 /* ── Video fullpage ── */
 .app.vl-fullpage .sidebar { display: none !important; }
 .app.vl-fullpage #main-content { width: 100% !important; }
-#page-video-learn-detail { max-width: 900px; margin: 0 auto; }
+#page-video-learn-detail { max-width: 1400px; margin: 0 auto; padding-left: 8px; padding-right: 8px; }
 </style>
 </head>
 <body>
@@ -7681,6 +7720,7 @@ window.teFibInput = function(qno, blankId, input) {
 let vlLessons = [];
 let vlCurrentLesson = null;
 let vlItems = [];
+let vlExpandedItems = {}; // { parentId: [{korean, vietnamese, content_type, id?}] }
 let vlPendingFile = null;
 let vlYtPlayer = null;
 let vlVideoEl = null;
@@ -8025,7 +8065,14 @@ async function loadVideoLessonDetail(id) {
   if (error || !lesson) { wrap.innerHTML = '<div class="empty"><i class="ti ti-movie-off"></i>Không tìm thấy bài học.</div>'; document.getElementById('vl-detail-actions').innerHTML=''; return; }
   vlCurrentLesson = lesson;
   const { data: items } = await DS.getVideoItems(id, currentUser.id);
-  vlItems = (items || []).sort(vlItemSort);
+  const allItems = (items || []).sort(vlItemSort);
+  // Tách items gốc và items mở rộng (có parent_id)
+  vlExpandedItems = {};
+  vlItems = allItems.filter(it => !it.parent_id);
+  allItems.filter(it => it.parent_id).forEach(child => {
+    if (!vlExpandedItems[child.parent_id]) vlExpandedItems[child.parent_id] = [];
+    vlExpandedItems[child.parent_id].push(child);
+  });
   document.getElementById('vl-detail-actions').innerHTML =
     `<button class="btn btn-sm btn-danger" onclick="deleteVideoLesson('${lesson.id}')"><i class="ti ti-trash"></i> Xóa</button>`;
   wrap.innerHTML = `
@@ -8033,13 +8080,19 @@ async function loadVideoLessonDetail(id) {
       <div class="folder-page-name" style="font-size:16px">${escHtmlSafe(lesson.title)}</div>
       ${lesson.description ? `<div class="folder-page-desc">${escHtmlSafe(lesson.description)}</div>` : ''}
     </div>
-    <div class="vl-player-wrap" id="vl-player-wrap"></div>
-    <div class="vl-tabs">
-      <div class="vl-tab active" onclick="switchVlTab('list',this)">📋 Nội dung đã lưu (${vlItems.length})</div>
-      <div class="vl-tab" onclick="switchVlTab('add',this)">➕ Thêm nội dung</div>
-    </div>
-    <div class="vl-tab-content active" id="vltab-list">${buildVlItemsList()}</div>
-    <div class="vl-tab-content" id="vltab-add">${buildVlAddTab()}</div>`;
+    <div class="vl-detail-layout">
+      <div class="vl-detail-left">
+        <div class="vl-player-wrap" id="vl-player-wrap"></div>
+      </div>
+      <div class="vl-detail-right">
+        <div class="vl-tabs">
+          <div class="vl-tab active" onclick="switchVlTab('list',this)">📋 Nội dung đã lưu (${vlItems.length})</div>
+          <div class="vl-tab" onclick="switchVlTab('add',this)">➕ Thêm nội dung</div>
+        </div>
+        <div class="vl-tab-content active" id="vltab-list">${buildVlItemsList()}</div>
+        <div class="vl-tab-content" id="vltab-add">${buildVlAddTab()}</div>
+      </div>
+    </div>`;
   vlRenderPlayer(lesson);
 }
 function switchVlTab(tab, el) {
@@ -8053,30 +8106,280 @@ function refreshVlListTab() {
   const tabBtn = document.querySelectorAll('.vl-tab')[0];
   if (tabBtn) tabBtn.textContent = `📋 Nội dung đã lưu (${vlItems.length})`;
 }
+function buildVlItemCard(it, isChild) {
+  const cls = isChild ? 'vl-item vl-item-child' : 'vl-item';
+  return `<div class="${cls}" id="vl-item-${it.id}">
+    <div class="vl-item-left">
+      ${it.timestamp_seconds != null ? `<div class="vl-item-time" onclick="vlSeekTo(${it.timestamp_seconds})" title="Tua đến ${vlSecondsToMMSS(it.timestamp_seconds)}"><i class="ti ti-player-play"></i> ${vlSecondsToMMSS(it.timestamp_seconds)}</div>` : ''}
+      <button class="btn-edit" id="vl-edit-btn-${it.id}" onclick="toggleVlEditForm('${it.id}')" title="Chỉnh sửa"><i class="ti ti-pencil"></i></button>
+    </div>
+    <div class="vl-item-main">
+      <span class="vl-item-type ${it.content_type}">${it.content_type === 'sentence' ? 'Mẫu câu' : 'Từ vựng'}</span>
+      ${isChild ? '<span style="font-size:10px;color:var(--pk4);margin-left:4px;font-weight:600">↳ mở rộng</span>' : ''}
+      <div class="vl-item-kr">${escHtmlSafe(it.korean)}</div>
+      <div class="vl-item-vn">${escHtmlSafe(it.vietnamese)}</div>
+      ${it.pronunciation ? `<div class="vl-item-pron">${escHtmlSafe(it.pronunciation)}</div>` : ''}
+    </div>
+    <div class="vl-item-actions">
+      ${!isChild ? `<button class="btn-expand-toggle" id="vl-expand-btn-${it.id}" onclick="toggleVlExpandForm('${it.id}')" title="Thêm từ mở rộng"><i class="ti ti-plus"></i> Mở rộng</button>` : ''}
+      <button class="btn btn-sm btn-icon btn-danger" onclick="deleteVlItem('${it.id}')" title="Xoá"><i class="ti ti-trash"></i></button>
+    </div>
+  </div>
+  <div class="vl-edit-form" id="vl-edit-form-${it.id}" style="margin-left:0;border-radius:0 0 10px 10px">
+    <div style="font-size:11px;font-weight:700;color:#b08000;margin-bottom:10px;display:flex;align-items:center;gap:4px"><i class="ti ti-pencil"></i> Chỉnh sửa mục</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px">
+      <div><label style="font-size:10px;font-weight:700;color:#8a7a84;display:block;margin-bottom:4px">Loại nội dung</label>
+        <select id="vl-edit-type-${it.id}">
+          <option value="word" ${it.content_type==='word'?'selected':''}>Từ vựng</option>
+          <option value="sentence" ${it.content_type==='sentence'?'selected':''}>Mẫu câu</option>
+        </select>
+      </div>
+      <div><label style="font-size:10px;font-weight:700;color:#8a7a84;display:block;margin-bottom:4px">Loại từ</label>
+        <select id="vl-edit-wordclass-${it.id}">
+          <option value="" ${!it.pronunciation?'selected':''}>-- Không chọn --</option>
+          <option value="Danh từ" ${it.pronunciation==='Danh từ'?'selected':''}>Danh từ</option>
+          <option value="Động từ" ${it.pronunciation==='Động từ'?'selected':''}>Động từ</option>
+          <option value="Tính từ" ${it.pronunciation==='Tính từ'?'selected':''}>Tính từ</option>
+          <option value="Trạng từ" ${it.pronunciation==='Trạng từ'?'selected':''}>Trạng từ</option>
+          <option value="Đại từ" ${it.pronunciation==='Đại từ'?'selected':''}>Đại từ</option>
+          <option value="Liên từ" ${it.pronunciation==='Liên từ'?'selected':''}>Liên từ</option>
+          <option value="Thán từ" ${it.pronunciation==='Thán từ'?'selected':''}>Thán từ</option>
+          <option value="Mẫu câu" ${it.pronunciation==='Mẫu câu'?'selected':''}>Mẫu câu</option>
+        </select>
+      </div>
+    </div>
+    <div style="margin-bottom:8px"><label style="font-size:10px;font-weight:700;color:#8a7a84;display:block;margin-bottom:4px">Tiếng Hàn *</label><input id="vl-edit-kr-${it.id}" value="${escHtmlSafe(it.korean)}" placeholder="한국어" onkeydown="if(event.key==='Enter')saveVlEditItem('${it.id}')"/></div>
+    <div style="margin-bottom:8px"><label style="font-size:10px;font-weight:700;color:#8a7a84;display:block;margin-bottom:4px">Nghĩa *</label><input id="vl-edit-vn-${it.id}" value="${escHtmlSafe(it.vietnamese)}" placeholder="Nghĩa tiếng Việt" onkeydown="if(event.key==='Enter')saveVlEditItem('${it.id}')"/></div>
+    <div style="margin-bottom:10px"><label style="font-size:10px;font-weight:700;color:#8a7a84;display:block;margin-bottom:4px">Thời điểm (mm:ss)</label><input id="vl-edit-time-${it.id}" value="${it.timestamp_seconds != null ? vlSecondsToMMSS(it.timestamp_seconds) : ''}" placeholder="1:23"/></div>
+    <div style="display:flex;gap:6px">
+      <button class="btn btn-sm btn-primary" onclick="saveVlEditItem('${it.id}')"><i class="ti ti-check"></i> Lưu</button>
+      <button class="btn btn-sm" onclick="toggleVlEditForm('${it.id}')">Huỷ</button>
+    </div>
+  </div>`;
+}
+
 function buildVlItemsList() {
   if (!vlItems.length) return '<div class="empty"><i class="ti ti-bookmark-off"></i>Chưa có từ vựng hoặc mẫu câu nào.<br>Chuyển sang tab "Thêm nội dung" để bắt đầu lưu!</div>';
-  return vlItems.map(it => `
-    <div class="vl-item">
-      ${it.timestamp_seconds != null ? `<div class="vl-item-time" onclick="vlSeekTo(${it.timestamp_seconds})" title="Tua đến ${vlSecondsToMMSS(it.timestamp_seconds)}"><i class="ti ti-player-play"></i> ${vlSecondsToMMSS(it.timestamp_seconds)}</div>` : ''}
-      <div class="vl-item-main">
-        <span class="vl-item-type ${it.content_type}">${it.content_type === 'sentence' ? 'Mẫu câu' : 'Từ vựng'}</span>
-        <div class="vl-item-kr">${escHtmlSafe(it.korean)}</div>
-        <div class="vl-item-vn">${escHtmlSafe(it.vietnamese)}</div>
-        ${it.pronunciation ? `<div class="vl-item-pron">${escHtmlSafe(it.pronunciation)}</div>` : ''}
+  return vlItems.map(it => {
+    const children = vlExpandedItems[it.id] || [];
+    const hasChildren = children.length > 0;
+    const parentExtraCls = hasChildren ? ' has-children' : '';
+    const nestedVisibleCls = hasChildren ? ' visible' : '';
+    return `<div class="vl-item-group">
+      <div class="vl-item${parentExtraCls}" id="vl-item-${it.id}">
+        <div class="vl-item-left">
+          ${it.timestamp_seconds != null ? `<div class="vl-item-time" onclick="vlSeekTo(${it.timestamp_seconds})" title="Tua đến ${vlSecondsToMMSS(it.timestamp_seconds)}"><i class="ti ti-player-play"></i> ${vlSecondsToMMSS(it.timestamp_seconds)}</div>` : ''}
+          <button class="btn-edit" id="vl-edit-btn-${it.id}" onclick="toggleVlEditForm('${it.id}')" title="Chỉnh sửa"><i class="ti ti-pencil"></i></button>
+        </div>
+        <div class="vl-item-main">
+          <span class="vl-item-type ${it.content_type}">${it.content_type === 'sentence' ? 'Mẫu câu' : 'Từ vựng'}</span>
+          <div class="vl-item-kr">${escHtmlSafe(it.korean)}</div>
+          <div class="vl-item-vn">${escHtmlSafe(it.vietnamese)}</div>
+          ${it.pronunciation ? `<div class="vl-item-pron">${escHtmlSafe(it.pronunciation)}</div>` : ''}
+        </div>
+        <div class="vl-item-actions">
+          <div class="vl-item-actions-top">
+            <button class="btn-expand-toggle" id="vl-expand-btn-${it.id}" onclick="toggleVlExpandForm('${it.id}')" title="Thêm từ mở rộng"><i class="ti ti-plus"></i> Mở rộng</button>
+            <button class="btn btn-sm btn-icon btn-danger" onclick="deleteVlItem('${it.id}')" title="Xoá"><i class="ti ti-trash"></i></button>
+          </div>
+          <button class="btn-collapse${hasChildren ? ' visible' : ''}" id="vl-collapse-btn-${it.id}" onclick="toggleVlNested('${it.id}')" title="Ẩn/hiện từ mở rộng"><i class="ti ti-chevron-down"></i></button>
+        </div>
       </div>
-      <div class="vl-item-actions">
-        <button class="btn btn-sm btn-icon btn-danger" onclick="deleteVlItem('${it.id}')" title="Xoá"><i class="ti ti-trash"></i></button>
+      <div class="vl-nested-wrap${nestedVisibleCls}" id="vl-nested-${it.id}">${hasChildren ? children.map(ch => buildVlItemCard(ch, true)).join('') : ''}</div>
+      <div class="vl-expand-form" id="vl-expand-form-${it.id}">
+        <div style="font-size:11px;font-weight:700;color:var(--pk4);margin-bottom:8px;display:flex;align-items:center;gap:4px"><i class="ti ti-corner-down-right"></i> Thêm từ mở rộng từ "<span style="font-family:'Noto Sans KR'">${escHtmlSafe(it.korean)}</span>"</div>
+        <div class="vl-expand-form-grid">
+          <div><label style="font-size:10px;font-weight:700;color:#8a7a84;display:block;margin-bottom:4px">Tiếng Hàn *</label><input id="vl-exp-kr-${it.id}" placeholder="한국어" onkeydown="if(event.key==='Enter')saveVlExpandItem('${it.id}')"/></div>
+          <div><label style="font-size:10px;font-weight:700;color:#8a7a84;display:block;margin-bottom:4px">Nghĩa *</label><input id="vl-exp-vn-${it.id}" placeholder="Nghĩa tiếng Việt" onkeydown="if(event.key==='Enter')saveVlExpandItem('${it.id}')"/></div>
+          <div style="display:flex;flex-direction:column;gap:4px">
+            <label style="font-size:10px;font-weight:700;color:#8a7a84">Loại</label>
+            <select id="vl-exp-type-${it.id}" style="padding:7px 8px;border:1.5px solid var(--brd);border-radius:8px;font-size:12px;font-family:inherit;outline:none;background:#fff;color:var(--txt)">
+              <option value="word">Từ vựng</option>
+              <option value="sentence">Mẫu câu</option>
+            </select>
+          </div>
+        </div>
+        <div style="margin-top:8px;display:flex;gap:6px">
+          <button class="btn btn-primary btn-sm" onclick="saveVlExpandItem('${it.id}')"><i class="ti ti-check"></i> Lưu</button>
+          <button class="btn btn-sm" onclick="toggleVlExpandForm('${it.id}')">Huỷ</button>
+        </div>
       </div>
-    </div>`).join('');
+      <div class="vl-edit-form" id="vl-edit-form-${it.id}">
+        <div style="font-size:11px;font-weight:700;color:#b08000;margin-bottom:10px;display:flex;align-items:center;gap:4px"><i class="ti ti-pencil"></i> Chỉnh sửa mục</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px">
+          <div><label style="font-size:10px;font-weight:700;color:#8a7a84;display:block;margin-bottom:4px">Loại nội dung</label>
+            <select id="vl-edit-type-${it.id}">
+              <option value="word" ${it.content_type==='word'?'selected':''}>Từ vựng</option>
+              <option value="sentence" ${it.content_type==='sentence'?'selected':''}>Mẫu câu</option>
+            </select>
+          </div>
+          <div><label style="font-size:10px;font-weight:700;color:#8a7a84;display:block;margin-bottom:4px">Loại từ</label>
+            <select id="vl-edit-wordclass-${it.id}">
+              <option value="" ${!it.pronunciation?'selected':''}>-- Không chọn --</option>
+              <option value="Danh từ" ${it.pronunciation==='Danh từ'?'selected':''}>Danh từ</option>
+              <option value="Động từ" ${it.pronunciation==='Động từ'?'selected':''}>Động từ</option>
+              <option value="Tính từ" ${it.pronunciation==='Tính từ'?'selected':''}>Tính từ</option>
+              <option value="Trạng từ" ${it.pronunciation==='Trạng từ'?'selected':''}>Trạng từ</option>
+              <option value="Đại từ" ${it.pronunciation==='Đại từ'?'selected':''}>Đại từ</option>
+              <option value="Liên từ" ${it.pronunciation==='Liên từ'?'selected':''}>Liên từ</option>
+              <option value="Thán từ" ${it.pronunciation==='Thán từ'?'selected':''}>Thán từ</option>
+              <option value="Mẫu câu" ${it.pronunciation==='Mẫu câu'?'selected':''}>Mẫu câu</option>
+            </select>
+          </div>
+        </div>
+        <div style="margin-bottom:8px"><label style="font-size:10px;font-weight:700;color:#8a7a84;display:block;margin-bottom:4px">Tiếng Hàn *</label><input id="vl-edit-kr-${it.id}" value="${escHtmlSafe(it.korean)}" placeholder="한국어" onkeydown="if(event.key==='Enter')saveVlEditItem('${it.id}')"/></div>
+        <div style="margin-bottom:8px"><label style="font-size:10px;font-weight:700;color:#8a7a84;display:block;margin-bottom:4px">Nghĩa *</label><input id="vl-edit-vn-${it.id}" value="${escHtmlSafe(it.vietnamese)}" placeholder="Nghĩa tiếng Việt" onkeydown="if(event.key==='Enter')saveVlEditItem('${it.id}')"/></div>
+        <div style="margin-bottom:10px"><label style="font-size:10px;font-weight:700;color:#8a7a84;display:block;margin-bottom:4px">Thời điểm (mm:ss)</label><input id="vl-edit-time-${it.id}" value="${it.timestamp_seconds != null ? vlSecondsToMMSS(it.timestamp_seconds) : ''}" placeholder="1:23"/></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-sm btn-primary" onclick="saveVlEditItem('${it.id}')"><i class="ti ti-check"></i> Lưu</button>
+          <button class="btn btn-sm" onclick="toggleVlEditForm('${it.id}')">Huỷ</button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
 }
 async function deleteVlItem(id) {
   if (!confirm('Xóa mục này?')) return;
   const { error } = await DS.deleteVideoItem(id);
   if (error) { showToast('Lỗi xóa: ' + error.message); return; }
   vlItems = vlItems.filter(x => x.id !== id);
+  delete vlExpandedItems[id];
+  // Xóa các từ con nếu là từ gốc (tìm theo parent_id nếu có)
+  vlItems = vlItems.filter(x => x.parent_id !== id);
   refreshVlListTab();
   await DS.updateVideoLesson(vlCurrentLesson.id, { item_count: vlItems.length });
   showToast('Đã xóa.');
+}
+function toggleVlEditForm(id) {
+  const form = document.getElementById('vl-edit-form-' + id);
+  const btn = document.getElementById('vl-edit-btn-' + id);
+  const itemEl = document.getElementById('vl-item-' + id);
+  if (!form) return;
+  const isOpen = form.classList.contains('open');
+  // Đóng tất cả edit form khác
+  document.querySelectorAll('.vl-edit-form.open').forEach(f => f.classList.remove('open'));
+  document.querySelectorAll('.btn-edit.active').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.vl-item.editing').forEach(el => el.classList.remove('editing'));
+  if (!isOpen) {
+    form.classList.add('open');
+    btn?.classList.add('active');
+    itemEl?.classList.add('editing');
+    document.getElementById('vl-edit-kr-' + id)?.focus();
+  }
+}
+async function saveVlEditItem(id) {
+  const korean = document.getElementById('vl-edit-kr-' + id)?.value.trim();
+  const vn = document.getElementById('vl-edit-vn-' + id)?.value.trim();
+  if (!korean || !vn) { showToast('Tiếng Hàn và nghĩa là bắt buộc!'); return; }
+  const type = document.getElementById('vl-edit-type-' + id)?.value;
+  const wordClass = document.getElementById('vl-edit-wordclass-' + id)?.value || null;
+  const ts = vlParseTimeToSeconds(document.getElementById('vl-edit-time-' + id)?.value.trim());
+  const updates = { content_type: type, korean, vietnamese: vn, pronunciation: wordClass, timestamp_seconds: ts };
+  const { error } = await DS.updateVideoItem(id, updates);
+  if (error) { showToast('Lỗi lưu: ' + error.message); return; }
+  // Cập nhật local state
+  const idx = vlItems.findIndex(x => x.id === id);
+  if (idx !== -1) Object.assign(vlItems[idx], updates);
+  // Cập nhật trong vlExpandedItems nếu là child
+  for (const pid in vlExpandedItems) {
+    const cidx = vlExpandedItems[pid].findIndex(x => x.id === id);
+    if (cidx !== -1) { Object.assign(vlExpandedItems[pid][cidx], updates); break; }
+  }
+  refreshVlListTab();
+  showToast('Đã lưu thay đổi! ✏️');
+}
+
+// ── Toggle ẩn/hiện nested children ──
+function toggleVlNested(parentId) {
+  const nested = document.getElementById('vl-nested-' + parentId);
+  const btn = document.getElementById('vl-collapse-btn-' + parentId);
+  const parentEl = document.getElementById('vl-item-' + parentId);
+  const form = document.getElementById('vl-expand-form-' + parentId);
+  if (!nested) return;
+  const isVisible = nested.classList.contains('visible');
+  if (isVisible) {
+    nested.classList.remove('visible');
+    // Đóng form nếu đang mở
+    if (form) { form.classList.remove('open'); document.getElementById('vl-expand-btn-' + parentId)?.classList.remove('active'); }
+    if (btn) { btn.innerHTML = '<i class="ti ti-chevron-right"></i>'; btn.title = 'Hiện từ mở rộng'; }
+    if (parentEl) parentEl.classList.remove('has-children'); // bo góc bình thường
+  } else {
+    nested.classList.add('visible');
+    if (btn) { btn.innerHTML = '<i class="ti ti-chevron-down"></i>'; btn.title = 'Ẩn từ mở rộng'; }
+    if (parentEl) parentEl.classList.add('has-children');
+  }
+}
+
+// ── Expand form toggle ──
+function toggleVlExpandForm(parentId) {
+  const form = document.getElementById('vl-expand-form-' + parentId);
+  const btn = document.getElementById('vl-expand-btn-' + parentId);
+  if (!form) return;
+  const isOpen = form.classList.contains('open');
+  // Đóng tất cả form khác trước
+  document.querySelectorAll('.vl-expand-form.open').forEach(f => f.classList.remove('open'));
+  document.querySelectorAll('.btn-expand-toggle.active').forEach(b => b.classList.remove('active'));
+  if (!isOpen) {
+    form.classList.add('open');
+    if (btn) btn.classList.add('active');
+    setTimeout(() => document.getElementById('vl-exp-kr-' + parentId)?.focus(), 50);
+  }
+}
+
+// ── Save expanded item ──
+async function saveVlExpandItem(parentId) {
+  const krEl = document.getElementById('vl-exp-kr-' + parentId);
+  const vnEl = document.getElementById('vl-exp-vn-' + parentId);
+  const typeEl = document.getElementById('vl-exp-type-' + parentId);
+  const korean = krEl?.value.trim();
+  const vietnamese = vnEl?.value.trim();
+  if (!korean || !vietnamese) { showToast('Vui lòng điền tiếng Hàn và nghĩa!'); return; }
+  const type = typeEl?.value || 'word';
+
+  const row = {
+    lesson_id: vlCurrentLesson.id,
+    owner_id: currentUser.id,
+    content_type: type,
+    korean,
+    vietnamese,
+    pronunciation: null,
+    timestamp_seconds: null,
+    parent_id: parentId   // lưu parent_id để biết là từ mở rộng
+  };
+  const { data, error } = await DS.createVideoItems([row]);
+  if (error) { showToast('Lỗi lưu: ' + error.message); return; }
+
+  const saved = data?.[0];
+  if (saved) {
+    // Thêm vào vlExpandedItems để render nested
+    if (!vlExpandedItems[parentId]) vlExpandedItems[parentId] = [];
+    vlExpandedItems[parentId].push(saved);
+    vlItems.push(saved);
+
+    // Cập nhật DOM trực tiếp (không rebuild toàn bộ — giữ state form)
+    const nestedWrap = document.getElementById('vl-nested-' + parentId);
+    if (nestedWrap) {
+      nestedWrap.classList.add('visible');
+      nestedWrap.insertAdjacentHTML('beforeend', buildVlItemCard(saved, true));
+    }
+    // Cập nhật parent item: thêm has-children, hiện nút collapse
+    const parentEl = document.getElementById('vl-item-' + parentId);
+    if (parentEl) parentEl.classList.add('has-children');
+    const collapseBtn = document.getElementById('vl-collapse-btn-' + parentId);
+    if (collapseBtn) collapseBtn.classList.add('visible');
+
+    // Reset form
+    if (krEl) krEl.value = '';
+    if (vnEl) vnEl.value = '';
+    if (typeEl) typeEl.value = 'word';
+    krEl?.focus();
+
+    // Cập nhật tab count
+    await DS.updateVideoLesson(vlCurrentLesson.id, { item_count: vlItems.length });
+    const tabBtn = document.querySelectorAll('.vl-tab')[0];
+    if (tabBtn) tabBtn.textContent = `📋 Nội dung đã lưu (${vlItems.length})`;
+    showToast('Đã thêm "' + korean + '" ↳ mở rộng! ✨');
+  }
 }
 
 // ── Add content tab ──
@@ -8091,7 +8394,19 @@ function buildVlAddTab() {
         <div class="form-group"><label class="form-label">Loại nội dung</label>
           <select class="form-input form-select" id="vl-sw-type"><option value="word">Từ vựng</option><option value="sentence">Mẫu câu</option></select>
         </div>
-        <div class="form-group"><label class="form-label">Phiên âm</label><input class="form-input" id="vl-sw-pron" placeholder="han-guk-eo"/></div>
+        <div class="form-group"><label class="form-label">Loại từ</label>
+          <select class="form-input form-select" id="vl-sw-wordclass">
+            <option value="">-- Không chọn --</option>
+            <option value="Danh từ">Danh từ</option>
+            <option value="Động từ">Động từ</option>
+            <option value="Tính từ">Tính từ</option>
+            <option value="Trạng từ">Trạng từ</option>
+            <option value="Đại từ">Đại từ</option>
+            <option value="Liên từ">Liên từ</option>
+            <option value="Thán từ">Thán từ</option>
+            <option value="Mẫu câu">Mẫu câu</option>
+          </select>
+        </div>
       </div>
       <div class="form-group"><label class="form-label">Tiếng Hàn *</label><input class="form-input" id="vl-sw-kr" placeholder="한국어"/></div>
       <div class="form-group"><label class="form-label">Nghĩa *</label><input class="form-input" id="vl-sw-vn" placeholder="Nghĩa tiếng Việt"/></div>
@@ -8127,13 +8442,14 @@ async function saveVlSingleItem() {
   const vn = document.getElementById('vl-sw-vn')?.value.trim();
   if (!korean || !vn) { showToast('Tiếng Hàn và nghĩa là bắt buộc!'); return; }
   const type = document.getElementById('vl-sw-type').value;
-  const pron = document.getElementById('vl-sw-pron').value.trim() || null;
+  const wordClass = document.getElementById('vl-sw-wordclass').value || null;
   const ts = vlParseTimeToSeconds(document.getElementById('vl-sw-time').value.trim());
-  const row = { lesson_id: vlCurrentLesson.id, owner_id: currentUser.id, content_type: type, korean, vietnamese: vn, pronunciation: pron, timestamp_seconds: ts };
+  const row = { lesson_id: vlCurrentLesson.id, owner_id: currentUser.id, content_type: type, korean, vietnamese: vn, pronunciation: wordClass, timestamp_seconds: ts };
   const { data, error } = await DS.createVideoItems([row]);
   if (error) { showToast('Lỗi: ' + error.message); return; }
   vlItems.push(...(data || [])); vlItems.sort(vlItemSort);
-  ['vl-sw-kr','vl-sw-vn','vl-sw-pron','vl-sw-time'].forEach(id => { const el = document.getElementById(id); if (el) el.value=''; });
+  ['vl-sw-kr','vl-sw-vn','vl-sw-time'].forEach(id => { const el = document.getElementById(id); if (el) el.value=''; });
+  document.getElementById('vl-sw-wordclass').value = '';
   document.getElementById('vl-sw-type').value = 'word';
   await DS.updateVideoLesson(vlCurrentLesson.id, { item_count: vlItems.length });
   refreshVlListTab();
