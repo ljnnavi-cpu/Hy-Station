@@ -853,27 +853,49 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
 @media(max-width:768px){
   /* Trên mobile: 1 cột, video trên - nội dung dưới */
   #page-video-learn-detail { padding-left: 0; padding-right: 0; }
-  .vl-detail-layout { flex-direction: column; gap: 0; }
 
-  /* Video sticky cố định ở trên */
+  /* Khi ở trang video detail, khóa scroll của .main */
+  .main.vl-detail-active { overflow-y: hidden !important; }
+
+  /* Page chiếm đúng viewport, không overflow */
+  .main.vl-detail-active #page-video-learn-detail {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 76px); /* trừ bottom nav */
+    overflow: hidden;
+    padding: 0;
+    min-height: unset;
+  }
+
+  /* Header title bên trên layout */
+  .main.vl-detail-active .vl-detail-header {
+    padding: 10px 12px 6px;
+    flex-shrink: 0;
+  }
+
+  .vl-detail-layout { flex-direction: column; gap: 0; flex: 1; overflow: hidden; display: flex; }
+
+  /* Video cố định, không scroll */
   .vl-detail-left {
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    position: relative;
+    top: unset;
+    z-index: unset;
     background: var(--bg);
-    padding: 10px 12px 0;
-    flex: none;
+    padding: 0 12px 8px;
+    flex-shrink: 0;
     width: 100%;
   }
   .vl-player-wrap { border-radius: 10px; margin-bottom: 0; }
 
-  /* Nội dung bên dưới, scroll tự nhiên theo trang */
+  /* Nội dung scroll độc lập trong vùng còn lại */
   .vl-detail-right {
-    flex: none;
+    flex: 1;
     width: 100%;
+    min-height: 0;
     max-height: none;
-    overflow-y: visible;
-    padding: 12px 12px 120px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 12px 20px;
   }
   .vl-detail-right::-webkit-scrollbar { display: none; }
 }
@@ -8432,7 +8454,7 @@ async function loadVideoLessonDetail(id) {
   document.getElementById('vl-detail-actions').innerHTML =
     `<button class="btn btn-sm btn-danger" onclick="deleteVideoLesson('${lesson.id}')"><i class="ti ti-trash"></i> Xóa</button>`;
   wrap.innerHTML = `
-    <div style="margin-bottom:10px">
+    <div class="vl-detail-header">
       <div class="folder-page-name" style="font-size:16px">${escHtmlSafe(lesson.title)}</div>
       ${lesson.description ? `<div class="folder-page-desc">${escHtmlSafe(lesson.description)}</div>` : ''}
     </div>
@@ -8831,9 +8853,11 @@ async function saveVlBulkItems() {
 
 function enterVlFullpage() {
   document.getElementById('main-app').classList.add('vl-fullpage');
+  document.querySelector('.main')?.classList.add('vl-detail-active');
 }
 function exitVlFullpage() {
   document.getElementById('main-app').classList.remove('vl-fullpage');
+  document.querySelector('.main')?.classList.remove('vl-detail-active');
 }
 </script>
 
