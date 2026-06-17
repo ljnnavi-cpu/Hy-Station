@@ -8834,66 +8834,96 @@ function _applyMobileVideoLayout() {
   const right = page?.querySelector('.vl-detail-right');
   if (!main || !page || !layout || !left || !right) return;
 
-  const bottomNavH = 88; // mobile-nav height + gap
-  const totalH = window.innerHeight - bottomNavH;
+  // mobile-nav: bottom:12px + height:68px => top of nav = innerHeight - 80
+  const NAV_H = 80;
 
-  // Lock main from scrolling
+  // Lock .main from scrolling
   main.style.overflow = 'hidden';
-  main.style.height = totalH + 'px';
+  main.style.height = (window.innerHeight - NAV_H) + 'px';
   main.style.paddingBottom = '0';
+  main.style.width = '100%';
 
-  // Page: fixed full-screen column
-  page.style.cssText = [
-    'position:fixed',
-    'top:0','left:0','right:0',
-    'bottom:' + bottomNavH + 'px',
-    'padding:0',
-    'min-height:unset',
-    'overflow:hidden',
-    'display:flex',
-    'flex-direction:column',
-    'background:var(--bg)',
-    'z-index:1',
-  ].join(';');
+  // Page: fixed full viewport column
+  page.style.position = 'fixed';
+  page.style.top = '0';
+  page.style.left = '0';
+  page.style.right = '0';
+  page.style.bottom = NAV_H + 'px';
+  page.style.padding = '0';
+  page.style.margin = '0';
+  page.style.minHeight = 'unset';
+  page.style.maxWidth = 'none';
+  page.style.overflow = 'hidden';
+  page.style.display = 'flex';
+  page.style.flexDirection = 'column';
+  page.style.background = 'var(--bg)';
+  page.style.zIndex = '1';
 
-  // Header: compact, fixed height
+  // Header: single compact line
   if (header) {
-    header.style.cssText = 'flex-shrink:0;padding:8px 12px 4px;background:var(--bg);';
+    header.style.flexShrink = '0';
+    header.style.padding = '8px 12px 4px';
+    header.style.background = 'var(--bg)';
+    header.style.overflow = 'hidden';
     const nameEl = header.querySelector('.folder-page-name');
-    if (nameEl) nameEl.style.cssText = 'font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;';
+    if (nameEl) { nameEl.style.fontSize = '13px'; nameEl.style.whiteSpace = 'nowrap'; nameEl.style.overflow = 'hidden'; nameEl.style.textOverflow = 'ellipsis'; nameEl.style.margin = '0'; }
+    const descEl = header.querySelector('.folder-page-desc');
+    if (descEl) { descEl.style.fontSize = '11px'; descEl.style.whiteSpace = 'nowrap'; descEl.style.overflow = 'hidden'; descEl.style.textOverflow = 'ellipsis'; }
   }
 
-  // Layout: flex column, fills remaining space
-  layout.style.cssText = 'display:flex;flex-direction:column;flex:1;overflow:hidden;gap:0;min-height:0;';
+  // Layout: flex column — overrides the desktop two-column rule
+  layout.style.display = 'flex';
+  layout.style.flexDirection = 'column';
+  layout.style.flex = '1 1 auto';
+  layout.style.overflow = 'hidden';
+  layout.style.gap = '0';
+  layout.style.minHeight = '0';
+  layout.style.alignItems = 'unset';
 
-  // Left (video): shrink to natural size, no scroll
-  left.style.cssText = 'flex-shrink:0;padding:0 10px 6px;background:var(--bg);';
+  // Left (video): full width, auto height from aspect ratio
+  left.style.flex = '0 0 auto';
+  left.style.width = '100%';
+  left.style.padding = '0 10px 6px';
+  left.style.position = 'relative';
+  left.style.top = 'auto';
+  left.style.alignSelf = 'auto';
 
-  // Right (word list): fills rest, scrollable
-  right.style.cssText = [
-    'flex:1',
-    'min-height:0',
-    'max-height:none',
-    'overflow-y:auto',
-    '-webkit-overflow-scrolling:touch',
-    'padding:4px 12px 16px',
-    'box-sizing:border-box',
-  ].join(';');
+  // Ensure player wrap fills full width
+  const playerWrap = left.querySelector('.vl-player-wrap');
+  if (playerWrap) {
+    playerWrap.style.width = '100%';
+    playerWrap.style.aspectRatio = '16/9';
+    playerWrap.style.borderRadius = '10px';
+    playerWrap.style.marginBottom = '0';
+  }
+
+  // Right (word list): fill all remaining height, independent scroll
+  right.style.flex = '1 1 0';
+  right.style.minHeight = '0';
+  right.style.maxHeight = 'none';
+  right.style.overflowY = 'auto';
+  right.style.webkitOverflowScrolling = 'touch';
+  right.style.padding = '4px 12px 16px';
+  right.style.boxSizing = 'border-box';
 }
 function _resetMobileVideoLayout() {
   const main = document.getElementById('main-content');
   const page = document.getElementById('page-video-learn-detail');
-  if (main) { main.style.overflow = ''; main.style.height = ''; main.style.paddingBottom = ''; }
+  if (main) { main.style.overflow = ''; main.style.height = ''; main.style.paddingBottom = ''; main.style.width = ''; }
   if (!page) return;
   page.style.cssText = '';
   ['vl-detail-header','vl-detail-layout','vl-detail-left','vl-detail-right'].forEach(cls => {
     const el = page.querySelector('.' + cls);
-    if (el) el.style.cssText = '';
-    if (cls === 'vl-detail-header') {
-      const nameEl = el?.querySelector('.folder-page-name');
-      if (nameEl) nameEl.style.cssText = '';
-    }
+    if (el) el.removeAttribute('style');
   });
+  // Reset header children
+  const header = page.querySelector('.vl-detail-header');
+  if (header) {
+    header.querySelector('.folder-page-name')?.removeAttribute('style');
+    header.querySelector('.folder-page-desc')?.removeAttribute('style');
+  }
+  // Reset player wrap
+  page.querySelector('.vl-player-wrap')?.removeAttribute('style');
 }
 </script>
 
