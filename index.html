@@ -204,6 +204,8 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
 .wt-btn{width:30px;height:30px;border-radius:6px;border:1.5px solid var(--brd);background:#fff;cursor:pointer;font-size:13px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;transition:all .15s;color:var(--txt);font-family:inherit}
 .wt-btn:hover{background:var(--pk2);border-color:var(--pk3)}
 .wt-btn.active{background:var(--pk);border-color:var(--pk4);color:var(--pk4)}
+.wt-select{height:30px;border-radius:6px;border:1.5px solid var(--brd);background:#fff;font-size:12px;font-family:inherit;color:var(--txt);padding:0 6px;cursor:pointer;outline:none}
+.wt-select:hover{border-color:var(--pk3)}
 .color-picker-wrap{position:relative;display:inline-flex}
 .color-swatch{width:30px;height:30px;border-radius:6px;border:1.5px solid var(--brd);cursor:pointer;background:#ff6b6b;display:flex;align-items:center;justify-content:center}
 .color-dropdown{position:absolute;top:36px;left:0;background:#fff;border:1.5px solid var(--brd);border-radius:10px;padding:8px;display:none;z-index:50;box-shadow:0 4px 20px rgba(0,0,0,.12);width:160px}
@@ -218,6 +220,9 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
 .blog-editor iframe{max-width:100%;border-radius:10px;margin:8px 0;display:block}
 .blog-editor a{color:var(--pk4);text-decoration:underline}
 .blog-editor ul,.blog-editor ol{padding-left:24px;margin:8px 0}
+.blog-editor table,#blog-preview table,.post-detail-content table{width:100%;border-collapse:collapse;margin:10px 0}
+.blog-editor th,.blog-editor td,#blog-preview th,#blog-preview td,.post-detail-content th,.post-detail-content td{border:1.5px solid #e8c8d8;padding:8px 10px;min-width:60px}
+.blog-editor th,#blog-preview th,.post-detail-content th{background:var(--pk2);font-weight:700}
 .write-meta-bar{background:#fff;border:1.5px solid var(--brd);border-radius:12px;padding:16px;margin-bottom:16px}
 
 /* POST DETAIL */
@@ -1106,14 +1111,15 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
     <!-- WRITE POST PAGE (full blog editor) -->
     <div class="page" id="page-write-post">
       <div class="topbar">
-        <button class="btn btn-sm" onclick="navTo(null,'community')"><i class="ti ti-arrow-left"></i> Góc chia sẻ</button>
+        <button class="btn btn-sm" onclick="backFromWritePage()"><i class="ti ti-arrow-left"></i> Góc chia sẻ</button>
         <div style="display:flex;gap:8px">
-          <button class="btn btn-sm" onclick="saveDraft()"><i class="ti ti-device-floppy"></i> Lưu nháp</button>
-          <button class="btn btn-primary btn-sm" onclick="submitBlogPost()"><i class="ti ti-send"></i> Đăng bài</button>
+          <button class="btn btn-sm" id="write-post-draft-btn" onclick="saveDraft()"><i class="ti ti-device-floppy"></i> Lưu nháp</button>
+          <button class="btn btn-primary btn-sm" id="write-post-submit-btn" onclick="submitBlogPost()"><i class="ti ti-send"></i> Đăng bài</button>
         </div>
       </div>
       <div class="write-page">
         <div class="write-meta-bar">
+          <div id="write-post-mode-title" style="font-size:13px;font-weight:700;color:var(--pk4);margin-bottom:12px;display:flex;align-items:center;gap:6px"><i class="ti ti-pencil"></i> Bài viết mới</div>
           <div class="form-group" style="margin-bottom:12px">
             <label class="form-label">Tiêu đề bài viết *</label>
             <input class="form-input" id="blog-title" placeholder="Nhập tiêu đề hấp dẫn..." style="font-size:16px;font-weight:700"/>
@@ -1134,6 +1140,18 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
         </div>
         <!-- Toolbar -->
         <div class="write-toolbar">
+          <select class="wt-select" id="font-size-select" title="Cỡ chữ" onchange="applyFontSize(this.value); this.value=''">
+            <option value="">Cỡ chữ</option>
+            <option value="12">12px</option>
+            <option value="14">14px</option>
+            <option value="16">16px</option>
+            <option value="18">18px</option>
+            <option value="20">20px</option>
+            <option value="24">24px</option>
+            <option value="28">28px</option>
+            <option value="32">32px</option>
+          </select>
+          <div class="write-toolbar-sep"></div>
           <button class="wt-btn" title="In đậm (Ctrl+B)" onclick="blogFmt('bold')"><b>B</b></button>
           <button class="wt-btn" title="In nghiêng (Ctrl+I)" onclick="blogFmt('italic')"><i>I</i></button>
           <button class="wt-btn" title="Gạch dưới (Ctrl+U)" onclick="blogFmt('underline')"><u>U</u></button>
@@ -1146,9 +1164,15 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
             </div>
           </div>
           <div class="write-toolbar-sep"></div>
+          <button class="wt-btn" title="Căn trái" onclick="blogFmt('justifyLeft')"><i class="ti ti-align-left"></i></button>
+          <button class="wt-btn" title="Căn giữa" onclick="blogFmt('justifyCenter')"><i class="ti ti-align-center"></i></button>
+          <button class="wt-btn" title="Căn phải" onclick="blogFmt('justifyRight')"><i class="ti ti-align-right"></i></button>
+          <button class="wt-btn" title="Căn đều hai bên" onclick="blogFmt('justifyFull')"><i class="ti ti-align-justified"></i></button>
+          <div class="write-toolbar-sep"></div>
           <button class="wt-btn" title="Danh sách Bullet" onclick="blogFmt('insertUnorderedList')"><i class="ti ti-list"></i></button>
           <button class="wt-btn" title="Danh sách số" onclick="blogFmt('insertOrderedList')"><i class="ti ti-list-numbers"></i></button>
           <div class="write-toolbar-sep"></div>
+          <button class="wt-btn" title="Chèn bảng" onclick="openInsertTable()"><i class="ti ti-table"></i></button>
           <button class="wt-btn" title="Chèn Link" onclick="openInsertLink()"><i class="ti ti-link"></i></button>
           <button class="wt-btn" title="Chèn ảnh từ URL" onclick="openInsertImage()"><i class="ti ti-photo"></i></button>
           <button class="wt-btn" title="Upload ảnh" onclick="document.getElementById('blog-img-upload').click()"><i class="ti ti-upload"></i></button>
@@ -1157,6 +1181,7 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
           <div class="write-toolbar-sep"></div>
           <button class="wt-btn" title="Xem trước" onclick="togglePreview()"><i class="ti ti-eye"></i></button>
         </div>
+        <div style="font-size:11px;color:#b0a0a8;padding:6px 14px 0;display:flex;align-items:center;gap:5px"><i class="ti ti-clipboard" style="font-size:13px"></i> Mẹo: bạn có thể dán (Ctrl+V) ảnh trực tiếp từ clipboard vào nội dung</div>
         <!-- Editor -->
         <div class="blog-editor" id="blog-editor" contenteditable="true" placeholder="Bắt đầu viết câu chuyện của bạn... ✨&#10;&#10;Mẹo: Ctrl+B in đậm, Ctrl+I in nghiêng, Ctrl+U gạch dưới"></div>
         <!-- Preview -->
@@ -1183,6 +1208,19 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
           <div style="display:flex;gap:8px;margin-top:8px">
             <button class="btn" style="flex:1;justify-content:center" onclick="closeInsertImage()">Hủy</button>
             <button class="btn btn-primary" style="flex:1;justify-content:center" onclick="doInsertImage()">Chèn</button>
+          </div>
+        </div>
+      </div>
+      <div id="insert-table-modal" class="modal-overlay">
+        <div class="mini-modal">
+          <div style="font-size:14px;font-weight:700;margin-bottom:14px;display:flex;justify-content:space-between">Chèn bảng <span style="cursor:pointer;color:#b0a0a8" onclick="closeInsertTable()">✕</span></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+            <div class="form-group"><label class="form-label">Số dòng</label><input class="form-input" id="table-rows" type="number" min="1" max="20" value="3"/></div>
+            <div class="form-group"><label class="form-label">Số cột</label><input class="form-input" id="table-cols" type="number" min="1" max="10" value="3"/></div>
+          </div>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <button class="btn" style="flex:1;justify-content:center" onclick="closeInsertTable()">Hủy</button>
+            <button class="btn btn-primary" style="flex:1;justify-content:center" onclick="doInsertTable()">Chèn</button>
           </div>
         </div>
       </div>
@@ -1372,19 +1410,6 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
   </div>
 </div>
 
-<div class="modal-overlay" id="edit-post-modal">
-  <div class="modal">
-    <div class="modal-title">✏️ Chỉnh sửa bài viết <span class="modal-close" onclick="closeModal('edit-post-modal')"><i class="ti ti-x"></i></span></div>
-    <input type="hidden" id="edit-post-id"/>
-    <div class="form-group"><label class="form-label">Tiêu đề</label><input class="form-input" id="edit-post-title" placeholder="Tiêu đề..."/></div>
-    <div class="form-group"><label class="form-label">Nội dung</label><textarea class="form-input" id="edit-post-content" style="min-height:120px"></textarea></div>
-    <div style="display:flex;gap:8px;margin-top:8px">
-      <button class="btn" style="flex:1;justify-content:center" onclick="closeModal('edit-post-modal')">Hủy</button>
-      <button class="btn btn-primary" style="flex:1;justify-content:center" onclick="saveEditPost()">Lưu</button>
-    </div>
-  </div>
-</div>
-
 <div class="modal-overlay" id="plan-modal">
   <div class="modal">
     <div class="modal-title">🎯 Tạo kế hoạch <span class="modal-close" onclick="closeModal('plan-modal')"><i class="ti ti-x"></i></span></div>
@@ -1562,6 +1587,9 @@ let studyEvents = {};
 let userPinnedPosts = new Set(); // NEW: per-user pins stored in localStorage
 let blogSavedRange = null; // NEW: save cursor for editor insertions
 let previewMode = false;
+let currentPostDetail = null;
+let editingPostId = null;
+let editingPostData = null;
 
 // ============================================================
 // USER-PINNED POSTS (localStorage per user)
@@ -3203,6 +3231,7 @@ async function loadPostDetail(id) {
   const {data:p, error} = await DS.getPostById(id);
   if(error||!p){wrap.innerHTML='<div class="empty"><i class="ti ti-message-off"></i>Không tìm thấy bài viết.</div>';return;}
   DS.incPostView(id);
+  currentPostDetail = p;
   const canEdit = currentUser?.role==='admin' || p.owner_id===currentUser?.id;
   const liked = await DS.isLiked(currentUser.id, id);
   const pinned = isUserPinned(id);
@@ -3210,7 +3239,7 @@ async function loadPostDetail(id) {
     <button class="btn btn-sm ${pinned?'btn-primary':''}" onclick="togglePinFromDetail('${id}',this)">
       <i class="ti ti-${pinned?'bookmark-filled':'bookmark'}"></i> ${pinned?'Bỏ ghim':'Ghim'}
     </button>
-    ${canEdit?`<button class="btn btn-sm" onclick="openEditPost('${p.id}','${encodeURIComponent(p.title)}','${encodeURIComponent(p.content||'')}')"><i class="ti ti-pencil"></i> Sửa</button><button class="btn btn-sm btn-danger" onclick="deletePost('${p.id}')"><i class="ti ti-trash"></i> Xóa</button>`:''}`;
+    ${canEdit?`<button class="btn btn-sm" onclick="openEditPostFull(currentPostDetail)"><i class="ti ti-pencil"></i> Sửa</button><button class="btn btn-sm btn-danger" onclick="deletePost('${p.id}')"><i class="ti ti-trash"></i> Xóa</button>`:''}`;
   const authorName = p.app_users?.display_name||'Ẩn danh';
   const authorInitials = authorName.split(' ').filter(Boolean).map(w=>w[0]).join('').toUpperCase().slice(0,2)||'?';
   wrap.innerHTML=`<div class="post-detail-wrap">
@@ -3320,21 +3349,21 @@ async function deleteCommentById(id) {
   document.getElementById('comment-'+id)?.remove(); showToast('Đã xóa bình luận.');
 }
 
-function openEditPost(id, titleEnc, contentEnc) {
-  document.getElementById('edit-post-id').value=id;
-  document.getElementById('edit-post-title').value=decodeURIComponent(titleEnc);
-  document.getElementById('edit-post-content').value=decodeURIComponent(contentEnc);
-  openModal('edit-post-modal');
+function openEditPostFull(post) {
+  if (!post) return;
+  editingPostId = post.id;
+  editingPostData = { title: post.title || '', content: post.content || '', tags: post.tags || [] };
+  navTo(null, 'write-post');
 }
 
-async function saveEditPost() {
-  const id=document.getElementById('edit-post-id').value;
-  const title=document.getElementById('edit-post-title').value.trim();
-  const content=document.getElementById('edit-post-content').value.trim();
-  if(!title||!content){showToast('Vui lòng điền đầy đủ!');return;}
-  const {error} = await DS.updatePost(id,{title,content});
-  if (error) { showToast('Lỗi: '+error.message); return; }
-  closeModal('edit-post-modal'); showToast('Đã cập nhật bài viết!'); loadPostDetail(id);
+function backFromWritePage() {
+  if (editingPostId) {
+    const id = editingPostId;
+    editingPostId = null; editingPostData = null;
+    navTo(null, 'community', 'post/' + id);
+  } else {
+    navTo(null, 'community');
+  }
 }
 
 async function deletePost(id) {
@@ -3352,14 +3381,32 @@ async function deletePost(id) {
 // ============================================================
 function initWritePage() {
   const editor = document.getElementById('blog-editor');
-  if (editor) editor.innerHTML = '';
   const titleEl = document.getElementById('blog-title');
-  if (titleEl) titleEl.value = '';
+  const modeTitleEl = document.getElementById('write-post-mode-title');
+  const submitBtn = document.getElementById('write-post-submit-btn');
+  const draftBtn = document.getElementById('write-post-draft-btn');
   document.querySelectorAll('#blog-tags-row .filter-tab').forEach(t=>t.classList.remove('active'));
   previewMode = false;
   const preview = document.getElementById('blog-preview');
   if (preview) { preview.style.display='none'; }
   if (editor) { editor.style.display='block'; }
+
+  if (editingPostId && editingPostData) {
+    if (titleEl) titleEl.value = editingPostData.title || '';
+    if (editor) editor.innerHTML = editingPostData.content || '';
+    document.querySelectorAll('#blog-tags-row .filter-tab').forEach(t=>{
+      if ((editingPostData.tags||[]).includes(t.textContent)) t.classList.add('active');
+    });
+    if (modeTitleEl) modeTitleEl.innerHTML = '<i class="ti ti-pencil"></i> Chỉnh sửa bài viết';
+    if (submitBtn) submitBtn.innerHTML = '<i class="ti ti-device-floppy"></i> Lưu thay đổi';
+    if (draftBtn) draftBtn.style.display = 'none';
+  } else {
+    if (editor) editor.innerHTML = '';
+    if (titleEl) titleEl.value = '';
+    if (modeTitleEl) modeTitleEl.innerHTML = '<i class="ti ti-pencil"></i> Bài viết mới';
+    if (submitBtn) submitBtn.innerHTML = '<i class="ti ti-send"></i> Đăng bài';
+    if (draftBtn) draftBtn.style.display = '';
+  }
   buildTopToolbarState();
 }
 
@@ -3411,15 +3458,81 @@ function blogFmt(cmd) {
 }
 
 function buildTopToolbarState() {
-  document.getElementById('blog-editor')?.addEventListener('keydown', e => {
+  const editor = document.getElementById('blog-editor');
+  if (!editor || editor.dataset.toolbarBound) return;
+  editor.dataset.toolbarBound = '1';
+  editor.addEventListener('keydown', e => {
     if (e.ctrlKey || e.metaKey) {
       if (e.key === 'b') { e.preventDefault(); blogFmt('bold'); }
       else if (e.key === 'i') { e.preventDefault(); blogFmt('italic'); }
       else if (e.key === 'u') { e.preventDefault(); blogFmt('underline'); }
     }
   });
-  document.getElementById('blog-editor')?.addEventListener('mouseup', saveEditorSelection);
-  document.getElementById('blog-editor')?.addEventListener('keyup', saveEditorSelection);
+  editor.addEventListener('mouseup', saveEditorSelection);
+  editor.addEventListener('keyup', saveEditorSelection);
+  editor.addEventListener('paste', handleEditorPaste);
+}
+
+function handleEditorPaste(e) {
+  const items = (e.clipboardData || window.clipboardData)?.items;
+  if (!items) return;
+  for (const item of items) {
+    if (item.type && item.type.indexOf('image') === 0) {
+      e.preventDefault();
+      const file = item.getAsFile();
+      if (!file) continue;
+      const reader = new FileReader();
+      reader.onload = ev => {
+        restoreEditorFocus();
+        document.execCommand('insertHTML', false, `<img src="${ev.target.result}" alt="Ảnh" style="max-width:100%;border-radius:10px;margin:8px 0"/>`);
+        showToast('Đã dán ảnh!');
+      };
+      reader.readAsDataURL(file);
+      return;
+    }
+  }
+}
+
+function applyFontSize(px) {
+  if (!px) return;
+  restoreEditorFocus();
+  document.execCommand('styleWithCSS', false, true);
+  document.execCommand('fontSize', false, '7');
+  const editor = document.getElementById('blog-editor');
+  if (!editor) return;
+  editor.querySelectorAll('font[size="7"]').forEach(f => {
+    const span = document.createElement('span');
+    span.style.fontSize = px + 'px';
+    span.innerHTML = f.innerHTML;
+    f.replaceWith(span);
+  });
+}
+
+// Insert table
+function openInsertTable() {
+  saveEditorSelection();
+  document.getElementById('table-rows').value = 3;
+  document.getElementById('table-cols').value = 3;
+  document.getElementById('insert-table-modal').classList.add('open');
+}
+function closeInsertTable() { document.getElementById('insert-table-modal').classList.remove('open'); }
+function doInsertTable() {
+  let rows = parseInt(document.getElementById('table-rows').value) || 3;
+  let cols = parseInt(document.getElementById('table-cols').value) || 3;
+  rows = Math.max(1, Math.min(20, rows));
+  cols = Math.max(1, Math.min(10, cols));
+  closeInsertTable(); restoreEditorFocus();
+  let html = '<table class="blog-table"><tbody>';
+  for (let r = 0; r < rows; r++) {
+    html += '<tr>';
+    for (let c = 0; c < cols; c++) {
+      const tag = r === 0 ? 'th' : 'td';
+      html += `<${tag}>&nbsp;</${tag}>`;
+    }
+    html += '</tr>';
+  }
+  html += '</tbody></table><p><br></p>';
+  document.execCommand('insertHTML', false, html);
 }
 
 function togglePreview() {
@@ -3522,6 +3635,17 @@ async function submitBlogPost() {
   if (!content.trim() || content === '<br>') { errEl.textContent='Vui lòng nhập nội dung!'; errEl.style.display='block'; return; }
   errEl.style.display='none';
   const tags = [...document.querySelectorAll('#blog-tags-row .filter-tab.active')].map(t=>t.textContent);
+
+  if (editingPostId) {
+    const id = editingPostId;
+    const {error} = await DS.updatePost(id, {title, content, tags});
+    if (error) { errEl.textContent='Lỗi: '+error.message; errEl.style.display='block'; return; }
+    editingPostId = null; editingPostData = null;
+    showToast('Đã cập nhật bài viết! ✨');
+    navTo(null,'community','post/'+id);
+    return;
+  }
+
   const colors = ['gradient-1','gradient-2','gradient-3'];
   const {data, error} = await DS.createPost({owner_id:currentUser.id, user_id:currentUser.id, title, content, tags, cover_color:colors[Math.floor(Math.random()*3)], visibility:'public'});
   if (error) { errEl.textContent='Lỗi: '+error.message; errEl.style.display='block'; return; }
