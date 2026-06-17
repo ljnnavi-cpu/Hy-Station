@@ -498,16 +498,23 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
 .mini-modal{background:#fff;border-radius:14px;padding:20px;width:360px;max-width:95vw;border:1.5px solid var(--brd);box-shadow:0 8px 32px rgba(0,0,0,.12)}
 
 @media(max-width:640px){
+  html,body{height:auto;overflow-y:auto;-webkit-overflow-scrolling:touch}
   .app{display:block;height:auto;overflow:visible}
   .sidebar{display:none !important}
-  .main{width:100%;height:auto;overflow-y:auto;padding-bottom:76px}
+  .main{width:100%;height:auto;overflow-y:visible;padding-bottom:76px}
   .page{padding:18px 14px 90px}
   .doc-grid,.fc-folder-grid,.vl-folder-grid{grid-template-columns:1fr !important}
   .topbar{gap:8px}
   .btn{font-size:12px;padding:8px 12px}
   .write-page{padding:14px}
   .blog-editor{min-height:280px;padding:14px}
+  .vl-detail-layout{flex-direction:column;gap:14px}
+  .vl-detail-left{position:static;flex:none;width:100%}
+  .vl-detail-right{flex:none;width:100%;max-height:none;overflow-y:visible;padding-right:0}
 }
+
+
+
 
 .mobile-nav{display:none}
 @media(max-width:640px){
@@ -845,10 +852,150 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
 }
 
 
-/* ── Video fullpage ── */
-.app.vl-fullpage .sidebar { display: none !important; }
-.app.vl-fullpage #main-content { width: 100% !important; }
-#page-video-learn-detail { max-width: 1400px; margin: 0 auto; padding-left: 8px; padding-right: 8px; }
+
+/* ══ VIDEO DETAIL LAYOUT ══ */
+/* Desktop: 2 cột, video sticky bên trái */
+.vl-detail-layout { display:flex; gap:24px; align-items:flex-start; }
+.vl-detail-left   { flex:0 0 65%; min-width:0; position:sticky; top:24px; align-self:flex-start; }
+.vl-detail-right  { flex:1; min-width:0; max-height:calc(100vh - 160px); overflow-y:auto; padding-right:6px; }
+.vl-detail-right::-webkit-scrollbar { width:4px; }
+.vl-detail-right::-webkit-scrollbar-thumb { background:var(--pk3); border-radius:4px; }
+
+/* Desktop fullpage */
+.app.vl-fullpage .sidebar { display:none !important; }
+.app.vl-fullpage #main-content { width:100% !important; }
+
+/* ── MOBILE: video 16:9 full-width, word list scroll độc lập ── */
+@media (max-width:768px) {
+  /* Layout: stack dọc */
+  .vl-detail-layout {
+    flex-direction: column !important;
+    gap: 0 !important;
+    align-items: stretch !important;
+  }
+
+  /* Header tên video: thu gọn */
+  .vl-detail-header .folder-page-desc { display: none !important; }
+  .vl-detail-header .folder-page-name { font-size: 13px !important; }
+
+  /* Video: full width, sticky top (dính khi scroll danh sách) */
+  .vl-detail-left {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 20 !important;
+    background: var(--bg) !important;
+    padding: 0 0 6px !important;
+    align-self: auto !important;
+  }
+
+  /* Player: bo góc nhỏ lại cho mobile */
+  .vl-player-wrap {
+    border-radius: 8px !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* Danh sách từ: chiều cao = viewport - video(56.25vw) - header(~44px) - bottom-nav(76px) */
+  /* Dùng dvh để tính đúng trên iOS Safari khi có address bar */
+  .vl-detail-right {
+    flex: 1 1 auto !important;
+    max-height: calc(100dvh - 56.25vw - 44px - 76px) !important;
+    min-height: 200px !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding: 8px 0 90px !important;
+  }
+}
+
+/* MOBILE VIDEO DETAIL: video ở trên, danh sách kéo dài gần tới Bottom Nav */
+@media (max-width:768px) {
+  .app.vl-fullpage {
+    display: flex !important;
+    flex-direction: column !important;
+    height: calc(100dvh - 92px) !important; /* chừa chỗ cho Bottom Navigation */
+    overflow: hidden !important;
+  }
+
+  .app.vl-fullpage .main {
+    flex: 1 1 0 !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+    padding-bottom: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .app.vl-fullpage #page-video-learn-detail {
+    flex: 1 1 0 !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 8px 10px 0 !important;
+    animation: none !important;
+  }
+
+  .app.vl-fullpage #page-video-learn-detail .topbar {
+    flex: 0 0 auto !important;
+    margin-bottom: 6px !important;
+  }
+
+  .app.vl-fullpage #vl-detail-content {
+    flex: 1 1 0 !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .app.vl-fullpage .vl-detail-header {
+    flex: 0 0 auto !important;
+    margin-bottom: 6px !important;
+  }
+
+  .app.vl-fullpage .vl-detail-layout {
+    flex: 1 1 0 !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+  }
+
+  .app.vl-fullpage .vl-detail-left {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    position: relative !important;
+    top: auto !important;
+    padding: 0 !important;
+    background: var(--bg) !important;
+  }
+
+  .app.vl-fullpage .vl-player-wrap {
+    width: 100% !important;
+    aspect-ratio: 16 / 9 !important;
+    border-radius: 10px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .app.vl-fullpage .vl-detail-right {
+    flex: 1 1 0 !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding: 4px 2px 14px !important;
+  }
+
+  .app.vl-fullpage .vl-tabs {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 5 !important;
+    background: var(--bg) !important;
+    margin-bottom: 8px !important;
+  }
+}
 </style>
 </head>
 <body>
@@ -1859,12 +2006,7 @@ function navTo(e, page, param=null) {
 }
 
 window.addEventListener('hashchange', renderRoute);
-window.addEventListener('resize', () => {
-  if (currentPage === 'video-learn-detail') {
-    if (window.innerWidth <= 768) _applyMobileVideoLayout();
-    else _resetMobileVideoLayout();
-  }
-});
+
 
 function renderRoute() {
   const path = location.hash.replace('#', '') || '/dashboard';
@@ -8430,10 +8572,8 @@ async function loadVideoLessonDetail(id) {
       </div>
     </div>`;
   vlRenderPlayer(lesson);
-  // Re-apply mobile layout after DOM is fully rendered
   if (window.innerWidth <= 768) {
-    requestAnimationFrame(() => requestAnimationFrame(() => _applyMobileVideoLayout()));
-  }
+}
 }
 function switchVlTab(tab, el) {
   document.querySelectorAll('.vl-tab').forEach(t => t.classList.remove('active')); el.classList.add('active');
@@ -8815,116 +8955,11 @@ async function saveVlBulkItems() {
 
 function enterVlFullpage() {
   document.getElementById('main-app').classList.add('vl-fullpage');
-  if (window.innerWidth <= 768) {
-    // Defer until after DOM is rendered by loadVideoLessonDetail
-    requestAnimationFrame(() => requestAnimationFrame(() => _applyMobileVideoLayout()));
-  }
 }
 function exitVlFullpage() {
   document.getElementById('main-app').classList.remove('vl-fullpage');
-  _resetMobileVideoLayout();
 }
-function _applyMobileVideoLayout() {
-  if (window.innerWidth > 768) return;
-  const main = document.getElementById('main-content');
-  const page = document.getElementById('page-video-learn-detail');
-  const header = page?.querySelector('.vl-detail-header');
-  const layout = page?.querySelector('.vl-detail-layout');
-  const left = page?.querySelector('.vl-detail-left');
-  const right = page?.querySelector('.vl-detail-right');
-  if (!main || !page || !layout || !left || !right) return;
 
-  // mobile-nav: bottom:12px + height:68px => top of nav = innerHeight - 80
-  const NAV_H = 80;
-
-  // Lock .main from scrolling
-  main.style.overflow = 'hidden';
-  main.style.height = (window.innerHeight - NAV_H) + 'px';
-  main.style.paddingBottom = '0';
-  main.style.width = '100%';
-
-  // Page: fixed full viewport column
-  page.style.position = 'fixed';
-  page.style.top = '0';
-  page.style.left = '0';
-  page.style.right = '0';
-  page.style.bottom = NAV_H + 'px';
-  page.style.padding = '0';
-  page.style.margin = '0';
-  page.style.minHeight = 'unset';
-  page.style.maxWidth = 'none';
-  page.style.overflow = 'hidden';
-  page.style.display = 'flex';
-  page.style.flexDirection = 'column';
-  page.style.background = 'var(--bg)';
-  page.style.zIndex = '1';
-
-  // Header: single compact line
-  if (header) {
-    header.style.flexShrink = '0';
-    header.style.padding = '8px 12px 4px';
-    header.style.background = 'var(--bg)';
-    header.style.overflow = 'hidden';
-    const nameEl = header.querySelector('.folder-page-name');
-    if (nameEl) { nameEl.style.fontSize = '13px'; nameEl.style.whiteSpace = 'nowrap'; nameEl.style.overflow = 'hidden'; nameEl.style.textOverflow = 'ellipsis'; nameEl.style.margin = '0'; }
-    const descEl = header.querySelector('.folder-page-desc');
-    if (descEl) { descEl.style.fontSize = '11px'; descEl.style.whiteSpace = 'nowrap'; descEl.style.overflow = 'hidden'; descEl.style.textOverflow = 'ellipsis'; }
-  }
-
-  // Layout: flex column — overrides the desktop two-column rule
-  layout.style.display = 'flex';
-  layout.style.flexDirection = 'column';
-  layout.style.flex = '1 1 auto';
-  layout.style.overflow = 'hidden';
-  layout.style.gap = '0';
-  layout.style.minHeight = '0';
-  layout.style.alignItems = 'unset';
-
-  // Left (video): full width, auto height from aspect ratio
-  left.style.flex = '0 0 auto';
-  left.style.width = '100%';
-  left.style.padding = '0 10px 6px';
-  left.style.position = 'relative';
-  left.style.top = 'auto';
-  left.style.alignSelf = 'auto';
-
-  // Ensure player wrap fills full width
-  const playerWrap = left.querySelector('.vl-player-wrap');
-  if (playerWrap) {
-    playerWrap.style.width = '100%';
-    playerWrap.style.aspectRatio = '16/9';
-    playerWrap.style.borderRadius = '10px';
-    playerWrap.style.marginBottom = '0';
-  }
-
-  // Right (word list): fill all remaining height, independent scroll
-  right.style.flex = '1 1 0';
-  right.style.minHeight = '0';
-  right.style.maxHeight = 'none';
-  right.style.overflowY = 'auto';
-  right.style.webkitOverflowScrolling = 'touch';
-  right.style.padding = '4px 12px 16px';
-  right.style.boxSizing = 'border-box';
-}
-function _resetMobileVideoLayout() {
-  const main = document.getElementById('main-content');
-  const page = document.getElementById('page-video-learn-detail');
-  if (main) { main.style.overflow = ''; main.style.height = ''; main.style.paddingBottom = ''; main.style.width = ''; }
-  if (!page) return;
-  page.style.cssText = '';
-  ['vl-detail-header','vl-detail-layout','vl-detail-left','vl-detail-right'].forEach(cls => {
-    const el = page.querySelector('.' + cls);
-    if (el) el.removeAttribute('style');
-  });
-  // Reset header children
-  const header = page.querySelector('.vl-detail-header');
-  if (header) {
-    header.querySelector('.folder-page-name')?.removeAttribute('style');
-    header.querySelector('.folder-page-desc')?.removeAttribute('style');
-  }
-  // Reset player wrap
-  page.querySelector('.vl-player-wrap')?.removeAttribute('style');
-}
 </script>
 
 </body>
