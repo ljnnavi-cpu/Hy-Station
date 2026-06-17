@@ -153,6 +153,12 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
 .fc-filter-count{background:rgba(0,0,0,.08);border-radius:10px;padding:1px 6px;font-size:10px;font-weight:700}
 .fc-filter-btn.active .fc-filter-count{background:rgba(212,112,154,.25)}
 .fc-7day{background:#fff;border:1.5px solid var(--brd);border-radius:14px;padding:14px;margin-bottom:16px}
+/* Swipe hint overlay */
+.fc-swipe-hint{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:22px;font-weight:800;border-radius:14px;padding:8px 18px;opacity:0;pointer-events:none;transition:opacity .15s;z-index:5}
+.fc-swipe-hint.show-left{opacity:1;background:rgba(253,232,232,.92);color:#c05050;border:2px solid #f5a0a0}
+.fc-swipe-hint.show-right{opacity:1;background:rgba(168,213,181,.92);color:#306040;border:2px solid #80c090}
+.fc-card-wrap{position:relative}
+.fc-card.swiping{transition:none}
 .fc-bars{display:flex;gap:6px;align-items:flex-end;height:60px}
 .fc-bar-col{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px}
 .fc-bar{width:100%;background:var(--pk3);border-radius:4px 4px 0 0;min-height:4px}
@@ -2162,7 +2168,7 @@ function buildFolderFlashcardTab() {
       <div class="fc-filter-btn" onclick="folderFilterCards('known',this)">Đã thuộc <span class="fc-filter-count">${counts.known}</span></div>
       <div class="fc-filter-btn" onclick="folderFilterCards('due',this)">Đến hạn <span class="fc-filter-count">${counts.due}</span></div>
     </div>
-    <div class="fc-card-wrap">
+    <div class="fc-card-wrap" id="folder-fc-swipe-wrap">
       <div class="fc-card" id="folder-fc-card" onclick="folderFlipCard()">
         <div class="fc-front">
           <div class="fc-kr" id="folder-fc-kr">—</div>
@@ -2176,17 +2182,16 @@ function buildFolderFlashcardTab() {
           <div class="fc-ex" id="folder-fc-ex"></div>
         </div>
       </div>
+      <div class="fc-swipe-hint" id="folder-fc-swipe-hint"></div>
     </div>
-    <div style="display:flex;gap:8px;justify-content:center;margin-bottom:10px">
-      <button class="btn btn-sm" onclick="folderSpeakCurrent('word')">🔊 Đọc từ</button>
-      <button class="btn btn-sm" onclick="folderSpeakCurrent('example')">🔊 Đọc ví dụ</button>
-    </div>
-    <div class="fc-controls">
-      <div class="fc-prog" id="folder-fc-prog">0/0</div>
-      <div style="display:flex;gap:6px">
-        <button class="btn btn-sm btn-icon" onclick="folderPrevCard()"><i class="ti ti-arrow-left"></i></button>
-        <button class="btn btn-sm btn-icon" onclick="folderNextCard()"><i class="ti ti-arrow-right"></i></button>
+    <div class="fc-controls" style="flex-direction:column;align-items:center;gap:6px">
+      <div style="display:flex;gap:6px;align-items:center;justify-content:center">
+        <button class="btn btn-sm btn-icon" onclick="folderPrevCard()" title="Thẻ trước"><i class="ti ti-arrow-left"></i></button>
+        <button class="btn btn-sm" onclick="folderSpeakCurrent('word')">🔊 Đọc từ</button>
+        <button class="btn btn-sm" onclick="folderSpeakCurrent('example')">🔊 Đọc ví dụ</button>
+        <button class="btn btn-sm btn-icon" onclick="folderNextCard()" title="Thẻ tiếp theo"><i class="ti ti-arrow-right"></i></button>
       </div>
+      <div class="fc-prog" id="folder-fc-prog">0/0</div>
     </div>
     <div class="fc-actions">
       <button class="fc-btn wrong" onclick="folderMarkCard('wrong')">❌ Chưa thuộc</button>
@@ -2258,6 +2263,48 @@ function folderSpeakCurrent(mode) {
   const c = filteredCards[folderCardIdx];
   speakText(mode === 'word' ? c.korean : (c.example_kr || c.korean), c.id, mode);
 }
+
+// ── Swipe support for flashcard ──
+(function() {
+  let touchStartX = 0, touchStartY = 0, dragging = false;
+  const SWIPE_THRESHOLD = 60;
+  function getCard() { return document.getElementById('folder-fc-card'); }
+  function getHint() { return document.getElementById('folder-fc-swipe-hint'); }
+  document.addEventListener('touchstart', function(e) {
+    const card = getCard();
+    if (!card || !card.contains(e.target)) return;
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+    dragging = true;
+  }, { passive: true });
+  document.addEventListener('touchmove', function(e) {
+    if (!dragging) return;
+    const card = getCard(), hint = getHint();
+    if (!card) return;
+    const dx = e.touches[0].clientX - touchStartX;
+    const dy = e.touches[0].clientY - touchStartY;
+    if (Math.abs(dy) > Math.abs(dx) + 10) { dragging = false; return; }
+    card.classList.add('swiping');
+    card.style.transform = `translateX(${dx}px) rotate(${dx * 0.04}deg)`;
+    if (hint) {
+      hint.className = 'fc-swipe-hint';
+      if (dx < -30) { hint.textContent = '❌ Chưa thuộc'; hint.classList.add('show-left'); }
+      else if (dx > 30) { hint.textContent = '✅ Đã thuộc'; hint.classList.add('show-right'); }
+    }
+  }, { passive: true });
+  document.addEventListener('touchend', function(e) {
+    if (!dragging) return;
+    dragging = false;
+    const card = getCard(), hint = getHint();
+    if (!card) return;
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    card.classList.remove('swiping');
+    card.style.transform = '';
+    if (hint) hint.className = 'fc-swipe-hint';
+    if (dx < -SWIPE_THRESHOLD) { folderMarkCard('wrong'); }
+    else if (dx > SWIPE_THRESHOLD) { folderMarkCard('correct'); }
+  }, { passive: true });
+})();
 
 // Word list
 function buildWordListTable() {
