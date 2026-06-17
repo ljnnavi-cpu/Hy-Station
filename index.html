@@ -1797,16 +1797,16 @@ const ROUTES = {
 
 function navTo(e, page, param=null) {
   if (e) e.preventDefault();
-  const path = param ? `/${page}/${param}` : `/${page}`;
-  history.pushState({page,param},'', path);
+  const path = param ? `#/${page}/${param}` : `#/${page}`;
+  location.hash = path;
   renderRoute();
   document.getElementById('main-content')?.scrollTo(0,0);
 }
 
-window.addEventListener('popstate', renderRoute);
+window.addEventListener('hashchange', renderRoute);
 
 function renderRoute() {
-  const path = location.pathname || '/dashboard';
+  const path = location.hash.replace('#', '') || '/dashboard';
   const docMatch = path.match(/^\/library\/document\/([^/]+)$/);
   if (docMatch) { showPage('doc-detail'); loadDocDetail(docMatch[1]); updateNav(null); return; }
   const postMatch = path.match(/^\/community\/post\/([^/]+)$/);
