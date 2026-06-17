@@ -849,53 +849,64 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
 .app.vl-fullpage .sidebar { display: none !important; }
 .app.vl-fullpage #main-content { width: 100% !important; }
 #page-video-learn-detail { max-width: 1400px; margin: 0 auto; padding-left: 8px; padding-right: 8px; }
+/* Mobile: khi active, page cần display flex để layout hoạt động */
+@media(max-width:768px){
+  .main.vl-detail-active #page-video-learn-detail.active { display: flex !important; flex-direction: column; }
+}
 
 @media(max-width:768px){
-  /* Trên mobile: 1 cột, video trên - nội dung dưới */
   #page-video-learn-detail { padding-left: 0; padding-right: 0; }
 
-  /* Khi ở trang video detail, khóa scroll của .main */
+  /* Khóa scroll của .main khi ở trang video */
   .main.vl-detail-active { overflow-y: hidden !important; }
 
-  /* Page chiếm đúng viewport, không overflow */
+  /* Page chiếm toàn bộ chiều cao còn lại sau bottom nav */
   .main.vl-detail-active #page-video-learn-detail {
-    display: flex;
-    flex-direction: column;
-    height: calc(100vh - 76px); /* trừ bottom nav */
-    overflow: hidden;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    bottom: 76px; /* cao bottom nav */
     padding: 0;
     min-height: unset;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
   }
 
-  /* Header title bên trên layout */
-  .main.vl-detail-active .vl-detail-header {
-    padding: 10px 12px 6px;
+  /* Header title */
+  .vl-detail-header {
+    padding: 10px 12px 4px;
     flex-shrink: 0;
+    background: var(--bg);
+  }
+  .vl-detail-header .folder-page-name { font-size: 13px !important; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .vl-detail-header .folder-page-desc { font-size: 11px; }
+
+  /* Layout flex column */
+  .vl-detail-layout {
+    flex-direction: column;
+    gap: 0;
+    flex: 1;
+    overflow: hidden;
+    display: flex;
   }
 
-  .vl-detail-layout { flex-direction: column; gap: 0; flex: 1; overflow: hidden; display: flex; }
-
-  /* Video cố định, không scroll */
+  /* Video cố định — không scroll */
   .vl-detail-left {
     position: relative;
-    top: unset;
-    z-index: unset;
-    background: var(--bg);
-    padding: 0 12px 8px;
     flex-shrink: 0;
-    width: 100%;
+    padding: 0 10px 8px;
+    background: var(--bg);
   }
   .vl-player-wrap { border-radius: 10px; margin-bottom: 0; }
 
-  /* Nội dung scroll độc lập trong vùng còn lại */
+  /* Nội dung scroll độc lập */
   .vl-detail-right {
     flex: 1;
-    width: 100%;
-    min-height: 0;
+    min-height: 0; /* quan trọng để flex child scroll được */
     max-height: none;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    padding: 0 12px 20px;
+    padding: 0 12px 16px;
   }
   .vl-detail-right::-webkit-scrollbar { display: none; }
 }
