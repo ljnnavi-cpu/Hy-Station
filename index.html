@@ -8601,7 +8601,7 @@ function buildVlItemCard(it, isChild) {
       ${it.pronunciation ? `<div class="vl-item-pron">${escHtmlSafe(it.pronunciation)}</div>` : ''}
     </div>
     <div class="vl-item-actions">
-      ${!isChild ? `<button class="btn-expand-toggle" id="vl-expand-btn-${it.id}" onclick="toggleVlExpandForm('${it.id}')" title="Thêm từ mở rộng"><i class="ti ti-plus"></i> Mở rộng</button>` : ''}
+      ${!isChild ? `<button class="btn-expand-toggle" id="vl-expand-btn-${it.id}" onclick="toggleVlExpandForm('${it.id}')" title="Thêm từ mở rộng"><i class="ti ti-plus"></i> </button>` : ''}
       <button class="btn btn-sm btn-icon btn-danger" onclick="deleteVlItem('${it.id}')" title="Xoá"><i class="ti ti-trash"></i></button>
     </div>
   </div>
