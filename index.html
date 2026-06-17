@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Hy Station 🌸 Korean Study Space</title>
 <link rel="apple-touch-icon" sizes="180x180" href="https://pnqxiyhtpkwkqhrofiwl.supabase.co/storage/v1/object/public/app-icon/Icon.jpg?v=6">
-<link rel="icon" type="image/png" href="https://https://pnqxiyhtpkwkqhrofiwl.supabase.co/storage/v1/object/public/app-icon/Icon.jpg?v=6">
+<link rel="icon" type="image/png" href="https://pnqxiyhtpkwkqhrofiwl.supabase.co/storage/v1/object/public/app-icon/Icon.jpg?v=6">
 
 <meta name="apple-mobile-web-app-title" content="🌸 Hy Station">
 <meta name="application-name" content="🌸 Hy Station">
@@ -8800,8 +8800,8 @@ function buildVlItemsList() {
   return vlItems.map(it => {
     const children = vlExpandedItems[it.id] || [];
     const hasChildren = children.length > 0;
-    const parentExtraCls = hasChildren ? ' has-children' : '';
-    const nestedVisibleCls = hasChildren ? ' visible' : '';
+    const parentExtraCls = '';
+    const nestedVisibleCls = '';
     return `<div class="vl-item-group">
       <div class="vl-item${parentExtraCls}" id="vl-item-${it.id}">
         <div class="vl-item-left">
@@ -8819,7 +8819,7 @@ function buildVlItemsList() {
             <button class="btn-expand-toggle" id="vl-expand-btn-${it.id}" onclick="toggleVlExpandForm('${it.id}')" title="Thêm từ mở rộng"><i class="ti ti-plus"> </i></button>
             <button class="btn btn-sm btn-icon btn-danger" onclick="deleteVlItem('${it.id}')" title="Xoá"><i class="ti ti-trash"></i></button>
           </div>
-          <button class="btn-collapse${hasChildren ? ' visible' : ''}" id="vl-collapse-btn-${it.id}" onclick="toggleVlNested('${it.id}')" title="Ẩn/hiện từ mở rộng"><i class="ti ti-chevron-down"></i></button>
+          <button class="btn-collapse${hasChildren ? ' visible' : ''}" id="vl-collapse-btn-${it.id}" onclick="toggleVlNested('${it.id}')" title="Hiện từ mở rộng"><i class="ti ti-chevron-right"></i></button>
         </div>
       </div>
       <div class="vl-nested-wrap${nestedVisibleCls}" id="vl-nested-${it.id}">${hasChildren ? children.map(ch => buildVlItemCard(ch, true)).join('') : ''}</div>
