@@ -849,67 +849,6 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
 .app.vl-fullpage .sidebar { display: none !important; }
 .app.vl-fullpage #main-content { width: 100% !important; }
 #page-video-learn-detail { max-width: 1400px; margin: 0 auto; padding-left: 8px; padding-right: 8px; }
-/* Mobile: khi active, page cần display flex để layout hoạt động */
-@media(max-width:768px){
-  .main.vl-detail-active #page-video-learn-detail.active { display: flex !important; flex-direction: column; }
-}
-
-@media(max-width:768px){
-  #page-video-learn-detail { padding-left: 0; padding-right: 0; }
-
-  /* Khóa scroll của .main khi ở trang video */
-  .main.vl-detail-active { overflow-y: hidden !important; }
-
-  /* Page chiếm toàn bộ chiều cao còn lại sau bottom nav */
-  .main.vl-detail-active #page-video-learn-detail {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    bottom: 76px; /* cao bottom nav */
-    padding: 0;
-    min-height: unset;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-  }
-
-  /* Header title */
-  .vl-detail-header {
-    padding: 10px 12px 4px;
-    flex-shrink: 0;
-    background: var(--bg);
-  }
-  .vl-detail-header .folder-page-name { font-size: 13px !important; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .vl-detail-header .folder-page-desc { font-size: 11px; }
-
-  /* Layout flex column */
-  .vl-detail-layout {
-    flex-direction: column;
-    gap: 0;
-    flex: 1;
-    overflow: hidden;
-    display: flex;
-  }
-
-  /* Video cố định — không scroll */
-  .vl-detail-left {
-    position: relative;
-    flex-shrink: 0;
-    padding: 0 10px 8px;
-    background: var(--bg);
-  }
-  .vl-player-wrap { border-radius: 10px; margin-bottom: 0; }
-
-  /* Nội dung scroll độc lập */
-  .vl-detail-right {
-    flex: 1;
-    min-height: 0; /* quan trọng để flex child scroll được */
-    max-height: none;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    padding: 0 12px 16px;
-  }
-  .vl-detail-right::-webkit-scrollbar { display: none; }
-}
 </style>
 </head>
 <body>
@@ -1920,6 +1859,12 @@ function navTo(e, page, param=null) {
 }
 
 window.addEventListener('hashchange', renderRoute);
+window.addEventListener('resize', () => {
+  if (currentPage === 'video-learn-detail') {
+    if (window.innerWidth <= 768) _applyMobileVideoLayout();
+    else _resetMobileVideoLayout();
+  }
+});
 
 function renderRoute() {
   const path = location.hash.replace('#', '') || '/dashboard';
@@ -8485,6 +8430,10 @@ async function loadVideoLessonDetail(id) {
       </div>
     </div>`;
   vlRenderPlayer(lesson);
+  // Re-apply mobile layout after DOM is fully rendered
+  if (window.innerWidth <= 768) {
+    requestAnimationFrame(() => requestAnimationFrame(() => _applyMobileVideoLayout()));
+  }
 }
 function switchVlTab(tab, el) {
   document.querySelectorAll('.vl-tab').forEach(t => t.classList.remove('active')); el.classList.add('active');
@@ -8866,11 +8815,85 @@ async function saveVlBulkItems() {
 
 function enterVlFullpage() {
   document.getElementById('main-app').classList.add('vl-fullpage');
-  document.querySelector('.main')?.classList.add('vl-detail-active');
+  if (window.innerWidth <= 768) {
+    // Defer until after DOM is rendered by loadVideoLessonDetail
+    requestAnimationFrame(() => requestAnimationFrame(() => _applyMobileVideoLayout()));
+  }
 }
 function exitVlFullpage() {
   document.getElementById('main-app').classList.remove('vl-fullpage');
-  document.querySelector('.main')?.classList.remove('vl-detail-active');
+  _resetMobileVideoLayout();
+}
+function _applyMobileVideoLayout() {
+  if (window.innerWidth > 768) return;
+  const main = document.getElementById('main-content');
+  const page = document.getElementById('page-video-learn-detail');
+  const header = page?.querySelector('.vl-detail-header');
+  const layout = page?.querySelector('.vl-detail-layout');
+  const left = page?.querySelector('.vl-detail-left');
+  const right = page?.querySelector('.vl-detail-right');
+  if (!main || !page || !layout || !left || !right) return;
+
+  const bottomNavH = 88; // mobile-nav height + gap
+  const totalH = window.innerHeight - bottomNavH;
+
+  // Lock main from scrolling
+  main.style.overflow = 'hidden';
+  main.style.height = totalH + 'px';
+  main.style.paddingBottom = '0';
+
+  // Page: fixed full-screen column
+  page.style.cssText = [
+    'position:fixed',
+    'top:0','left:0','right:0',
+    'bottom:' + bottomNavH + 'px',
+    'padding:0',
+    'min-height:unset',
+    'overflow:hidden',
+    'display:flex',
+    'flex-direction:column',
+    'background:var(--bg)',
+    'z-index:1',
+  ].join(';');
+
+  // Header: compact, fixed height
+  if (header) {
+    header.style.cssText = 'flex-shrink:0;padding:8px 12px 4px;background:var(--bg);';
+    const nameEl = header.querySelector('.folder-page-name');
+    if (nameEl) nameEl.style.cssText = 'font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;';
+  }
+
+  // Layout: flex column, fills remaining space
+  layout.style.cssText = 'display:flex;flex-direction:column;flex:1;overflow:hidden;gap:0;min-height:0;';
+
+  // Left (video): shrink to natural size, no scroll
+  left.style.cssText = 'flex-shrink:0;padding:0 10px 6px;background:var(--bg);';
+
+  // Right (word list): fills rest, scrollable
+  right.style.cssText = [
+    'flex:1',
+    'min-height:0',
+    'max-height:none',
+    'overflow-y:auto',
+    '-webkit-overflow-scrolling:touch',
+    'padding:4px 12px 16px',
+    'box-sizing:border-box',
+  ].join(';');
+}
+function _resetMobileVideoLayout() {
+  const main = document.getElementById('main-content');
+  const page = document.getElementById('page-video-learn-detail');
+  if (main) { main.style.overflow = ''; main.style.height = ''; main.style.paddingBottom = ''; }
+  if (!page) return;
+  page.style.cssText = '';
+  ['vl-detail-header','vl-detail-layout','vl-detail-left','vl-detail-right'].forEach(cls => {
+    const el = page.querySelector('.' + cls);
+    if (el) el.style.cssText = '';
+    if (cls === 'vl-detail-header') {
+      const nameEl = el?.querySelector('.folder-page-name');
+      if (nameEl) nameEl.style.cssText = '';
+    }
+  });
 }
 </script>
 
