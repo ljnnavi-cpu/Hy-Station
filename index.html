@@ -849,32 +849,64 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
 .app.vl-fullpage .sidebar { display: none !important; }
 .app.vl-fullpage #main-content { width: 100% !important; }
 #page-video-learn-detail { max-width: 1400px; margin: 0 auto; padding-left: 8px; padding-right: 8px; }
+/* Mobile: khi active, page cần display flex để layout hoạt động */
+@media(max-width:768px){
+  .main.vl-detail-active #page-video-learn-detail.active { display: flex !important; flex-direction: column; }
+}
 
 @media(max-width:768px){
-  #page-video-learn-detail { padding: 0 !important; }
+  #page-video-learn-detail { padding-left: 0; padding-right: 0; }
 
+  /* Khóa scroll của .main khi ở trang video */
+  .main.vl-detail-active { overflow-y: hidden !important; }
+
+  /* Page chiếm toàn bộ chiều cao còn lại sau bottom nav */
+  .main.vl-detail-active #page-video-learn-detail {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    bottom: 76px; /* cao bottom nav */
+    padding: 0;
+    min-height: unset;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Header title */
   .vl-detail-header {
     padding: 10px 12px 4px;
+    flex-shrink: 0;
+    background: var(--bg);
   }
-  .vl-detail-header .folder-page-name { font-size: 13px !important; }
+  .vl-detail-header .folder-page-name { font-size: 13px !important; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .vl-detail-header .folder-page-desc { font-size: 11px; }
 
+  /* Layout flex column */
   .vl-detail-layout {
     flex-direction: column;
     gap: 0;
+    flex: 1;
+    overflow: hidden;
+    display: flex;
   }
 
+  /* Video cố định — không scroll */
   .vl-detail-left {
+    position: relative;
     flex-shrink: 0;
     padding: 0 10px 8px;
-    position: relative;
+    background: var(--bg);
   }
   .vl-player-wrap { border-radius: 10px; margin-bottom: 0; }
 
+  /* Nội dung scroll độc lập */
   .vl-detail-right {
+    flex: 1;
+    min-height: 0; /* quan trọng để flex child scroll được */
+    max-height: none;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    padding: 4px 12px 16px;
+    padding: 0 12px 16px;
   }
   .vl-detail-right::-webkit-scrollbar { display: none; }
 }
@@ -8462,7 +8494,6 @@ function refreshVlListTab() {
   if (listEl) listEl.innerHTML = buildVlItemsList();
   const tabBtn = document.querySelectorAll('.vl-tab')[0];
   if (tabBtn) tabBtn.textContent = `📋 Nội dung đã lưu (${vlItems.length})`;
-  if (window.innerWidth <= 768) requestAnimationFrame(_vlMobileLayout);
 }
 function buildVlItemCard(it, isChild) {
   const cls = isChild ? 'vl-item vl-item-child' : 'vl-item';
@@ -8837,53 +8868,45 @@ function enterVlFullpage() {
 }
 function exitVlFullpage() {
   document.getElementById('main-app').classList.remove('vl-fullpage');
-  document.body.classList.remove('vl-mobile-open');
   _vlMobileReset();
 }
 function _vlMobileLayout() {
   if (window.innerWidth > 768) return;
-  // Đợi player render xong rồi mới tính
-  requestAnimationFrame(() => {
-    const main = document.querySelector('.main');
-    const page = document.getElementById('page-video-learn-detail');
-    const left = page?.querySelector('.vl-detail-left');
-    const right = page?.querySelector('.vl-detail-right');
-    if (!main || !page || !left || !right) return;
+  const main = document.querySelector('.main');
+  const page = document.getElementById('page-video-learn-detail');
+  const left = page?.querySelector('.vl-detail-left');
+  const right = page?.querySelector('.vl-detail-right');
+  const layout = page?.querySelector('.vl-detail-layout');
+  const header = page?.querySelector('.vl-detail-header');
+  if (!main || !page || !left || !right) return;
 
-    const bottomNavH = 76;
-    const totalH = window.innerHeight - bottomNavH;
+  const bottomNavH = 76;
+  const vw = window.innerWidth;
+  // Tính chiều cao video theo đúng tỷ lệ 16:9
+  const videoW = vw - 20; // trừ padding 2 bên
+  const videoH = Math.round(videoW * 9 / 16);
+  const headerH = 56;       // tiêu đề cố định
+  const leftH = videoH + 16; // video + padding-bottom 8px*2
+  const totalH = window.innerHeight - bottomNavH;
+  const rightH = Math.max(totalH - headerH - leftH, 120);
 
-    // Khóa scroll main, set chiều cao cố định
-    main.style.overflow = 'hidden';
-    main.style.height = totalH + 'px';
-    page.style.height = totalH + 'px';
-    page.style.overflow = 'hidden';
-    page.style.display = 'flex';
-    page.style.flexDirection = 'column';
-    page.style.padding = '0';
-    page.style.minHeight = 'unset';
-
-    // Sau khi render, đo chiều cao phần video + header
-    requestAnimationFrame(() => {
-      const header = page.querySelector('.vl-detail-header');
-      const layout = page.querySelector('.vl-detail-layout');
-      const headerH = header ? header.offsetHeight : 0;
-      const leftH = left.offsetHeight;
-      const availH = totalH - headerH - leftH;
-      right.style.height = Math.max(availH, 100) + 'px';
-      right.style.overflowY = 'auto';
-      right.style.maxHeight = 'none';
-      if (layout) { layout.style.display = 'block'; layout.style.overflow = 'hidden'; }
-    });
-  });
+  main.style.overflow = 'hidden';
+  main.style.height = totalH + 'px';
+  page.style.cssText = `height:${totalH}px;overflow:hidden;display:flex;flex-direction:column;padding:0 !important;min-height:unset;`;
+  if (header) header.style.cssText = `height:${headerH}px;overflow:hidden;padding:8px 12px 4px;flex-shrink:0;box-sizing:border-box;`;
+  if (layout) layout.style.cssText = `display:flex;flex-direction:column;flex:1;overflow:hidden;gap:0;align-items:unset;`;
+  left.style.cssText = `flex-shrink:0;padding:0 10px 8px;`;
+  right.style.cssText = `height:${rightH}px;min-height:0;max-height:none;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:4px 12px 16px;box-sizing:border-box;`;
 }
 function _vlMobileReset() {
   const main = document.querySelector('.main');
   const page = document.getElementById('page-video-learn-detail');
-  const right = page?.querySelector('.vl-detail-right');
   if (main) { main.style.overflow = ''; main.style.height = ''; }
-  if (page) { page.style.cssText = ''; }
-  if (right) { right.style.height = ''; right.style.overflowY = ''; right.style.maxHeight = ''; }
+  if (!page) return;
+  page.style.cssText = '';
+  ['vl-detail-header','vl-detail-layout','vl-detail-left','vl-detail-right'].forEach(cls => {
+    page.querySelector('.' + cls)?.removeAttribute('style');
+  });
 }
 </script>
 
