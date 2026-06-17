@@ -1797,9 +1797,15 @@ const ROUTES = {
 
 function navTo(e, page, param=null) {
   if (e) e.preventDefault();
-  const path = param ? `#/${page}/${param}` : `#/${page}`;
-  location.hash = path;
-  renderRoute();
+
+  const path = param ? `/${page}/${param}` : `/${page}`;
+
+  if (location.hash !== '#' + path) {
+    location.hash = path;
+  } else {
+    renderRoute();
+  }
+
   document.getElementById('main-content')?.scrollTo(0,0);
 }
 
