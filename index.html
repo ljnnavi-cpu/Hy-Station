@@ -2119,7 +2119,14 @@ async function loadFolderDetail(folderId) {
     selectedFolder = fData;
   }
   const {data:cards} = await DS.getCards(folderId, currentUser.id);
-  allCards = cards || []; filteredCards = [...allCards]; folderCardIdx = 0; folderFlipped = false; folderFilterMode = 'all';
+  allCards = cards || [];
+  filteredCards = [...allCards];
+  folderFlipped = false;
+  folderFilterMode = 'all';
+  // Khôi phục vị trí thẻ đã lưu (Bug 2)
+  const savedKey = `fc_idx_${currentUser.id}_${folderId}`;
+  const savedIdx = parseInt(sessionStorage.getItem(savedKey)||'0', 10);
+  folderCardIdx = (savedIdx > 0 && savedIdx < allCards.length) ? savedIdx : 0;
   document.getElementById('folder-detail-actions').innerHTML =
     `<button class="btn btn-sm btn-danger" onclick="deleteFolderById('${folderId}')"><i class="ti ti-trash"></i> Xóa thư mục</button>`;
   const total=allCards.length, known=allCards.filter(c=>c.status==='young'||c.status==='mature').length;
@@ -2160,6 +2167,18 @@ function getCardCounts() {
     known: allCards.filter(c=>c.status==='young'||c.status==='mature').length,
     due: allCards.filter(c=>!c.next_review_at||new Date(c.next_review_at)<=new Date()).length,
   };
+}
+
+function updateFilterCounts() {
+  const counts = getCardCounts();
+  const tab = document.getElementById('ftab-flashcard');
+  if (!tab) return;
+  const btns = tab.querySelectorAll('.fc-filter-btn');
+  const keys = ['all','new','learning','known','due'];
+  btns.forEach((btn, i) => {
+    const span = btn.querySelector('.fc-filter-count');
+    if (span && keys[i] !== undefined) span.textContent = counts[keys[i]];
+  });
 }
 
 function buildFolderFlashcardTab() {
@@ -2227,11 +2246,16 @@ function loadFolderCard() {
 }
 
 function folderFlipCard() { folderFlipped=!folderFlipped; document.getElementById('folder-fc-card')?.classList.toggle('flipped',folderFlipped); }
-function folderNextCard() { if(!filteredCards.length)return; folderCardIdx=(folderCardIdx+1)%filteredCards.length; loadFolderCard(); }
-function folderPrevCard() { if(!filteredCards.length)return; folderCardIdx=(folderCardIdx-1+filteredCards.length)%filteredCards.length; loadFolderCard(); }
+function saveCardIdx() {
+  if (!selectedFolder || !currentUser) return;
+  sessionStorage.setItem(`fc_idx_${currentUser.id}_${selectedFolder.id}`, folderCardIdx);
+}
+function folderNextCard() { if(!filteredCards.length)return; folderCardIdx=(folderCardIdx+1)%filteredCards.length; saveCardIdx(); loadFolderCard(); }
+function folderPrevCard() { if(!filteredCards.length)return; folderCardIdx=(folderCardIdx-1+filteredCards.length)%filteredCards.length; saveCardIdx(); loadFolderCard(); }
 
 function folderFilterCards(f, btn) {
   folderFilterMode = f; filteredCards = getFilteredCards(); folderCardIdx = 0;
+  saveCardIdx();
   document.querySelectorAll('#ftab-flashcard .fc-filter-btn').forEach(b=>b.classList.remove('active'));
   if(btn) btn.classList.add('active');
   if(!filteredCards.length) showToast('Không có thẻ nào thuộc bộ lọc này!');
@@ -2252,15 +2276,36 @@ async function folderMarkCard(type) {
   if (!filteredCards.length) return;
   const c = filteredCards[folderCardIdx];
   const now = new Date(), intervals = [1,3,7,14,30];
-  const correctCount = (c.correct_count||0)+(type==='correct'?1:0);
-  const nextReview = new Date(now); nextReview.setDate(nextReview.getDate()+intervals[Math.min(correctCount,intervals.length-1)]);
-  const newStatus = type==='correct'?(correctCount>=2?'mature':'young'):'learning';
-  const updates = {status:newStatus,review_count:(c.review_count||0)+1,correct_count:type==='correct'?correctCount:(c.correct_count||0),wrong_count:type==='wrong'?(c.wrong_count||0)+1:(c.wrong_count||0),last_reviewed_at:now.toISOString(),next_review_at:nextReview.toISOString()};
+  let updates;
+  if (type === 'review') {
+    // Ôn lại: giữ nguyên status & correct_count, chỉ đặt next_review_at = +1 ngày
+    const nextReview = new Date(now); nextReview.setDate(nextReview.getDate()+1);
+    updates = {
+      review_count: (c.review_count||0)+1,
+      last_reviewed_at: now.toISOString(),
+      next_review_at: nextReview.toISOString()
+    };
+  } else {
+    const correctCount = (c.correct_count||0)+(type==='correct'?1:0);
+    const nextReview = new Date(now); nextReview.setDate(nextReview.getDate()+intervals[Math.min(correctCount,intervals.length-1)]);
+    const newStatus = type==='correct'?(correctCount>=2?'mature':'young'):'learning';
+    updates = {
+      status: newStatus,
+      review_count: (c.review_count||0)+1,
+      correct_count: type==='correct' ? correctCount : (c.correct_count||0),
+      wrong_count: type==='wrong' ? (c.wrong_count||0)+1 : (c.wrong_count||0),
+      last_reviewed_at: now.toISOString(),
+      next_review_at: nextReview.toISOString()
+    };
+  }
   await DS.updateCard(c.id, updates); Object.assign(c, updates);
   const inAll = allCards.find(x=>x.id===c.id); if(inAll) Object.assign(inAll, updates);
-  todayStats.total++; if(type==='correct') todayStats.correct++; else todayStats.wrong++;
+  todayStats.total++;
+  if(type==='correct') todayStats.correct++;
+  else if(type==='wrong') todayStats.wrong++;
   updateTodayStatsUI(); recordStudyDay();
   showToast({wrong:'Cố lên! ❌',review:'Ôn lại 🔄',correct:'Tuyệt! ✅'}[type]);
+  updateFilterCounts();
   folderNextCard();
 }
 
