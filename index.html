@@ -6,10 +6,10 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Hy Station 🌸 Korean Study Space</title>
 <link rel="apple-touch-icon" sizes="180x180" href="https://pnqxiyhtpkwkqhrofiwl.supabase.co/storage/v1/object/public/app-icon/Icon.jpg?v=6">
-<link rel="icon" type="image/png" href="https://pnqxiyhtpkwkqhrofiwl.supabase.co/storage/v1/object/public/app-icon/Icon.jpg?v=6">
+<link rel="icon" type="image/png" href="https://https://pnqxiyhtpkwkqhrofiwl.supabase.co/storage/v1/object/public/app-icon/Icon.jpg?v=6">
 
-<meta name="apple-mobile-web-app-title" content="🌸Hy Station">
-<meta name="application-name" content="🌸Hy Station">
+<meta name="apple-mobile-web-app-title" content="🌸 Hy Station">
+<meta name="application-name" content="🌸 Hy Station">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 
@@ -852,6 +852,163 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
 }
 
 
+
+/* FIX: Mobile layout cho quiz Nghe chép — tránh chồng chéo */
+@media(max-width:640px){
+  .quiz-run-overlay{
+    padding:16px 14px 90px !important;
+    overflow-x:hidden !important;
+  }
+  .quiz-run-header{
+    gap:8px !important;
+    flex-wrap:wrap !important;
+    align-items:center !important;
+    margin-bottom:16px !important;
+  }
+  .quiz-run-back{
+    padding:8px 12px !important;
+    font-size:13px !important;
+    border-radius:12px !important;
+  }
+  .quiz-run-title{
+    font-size:18px !important;
+    line-height:1.2 !important;
+  }
+  .quiz-run-content{
+    width:100% !important;
+    max-width:100% !important;
+  }
+  .dict-wrap{
+    width:100% !important;
+    max-width:100% !important;
+    overflow-x:hidden !important;
+  }
+  .dict-progress-row{
+    gap:8px !important;
+  }
+  .dict-card{
+    padding:18px 14px !important;
+    border-radius:18px !important;
+    overflow:visible !important;
+  }
+  .dict-instruction{
+    font-size:13px !important;
+    margin-bottom:16px !important;
+    line-height:1.4 !important;
+  }
+  .dict-content-row{
+    flex-direction:column !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:16px !important;
+    min-height:0 !important;
+  }
+  .dict-play-btn{
+    width:76px !important;
+    height:76px !important;
+  }
+  .dict-play-btn i{
+    font-size:28px !important;
+  }
+  .dict-dashes{
+    width:100% !important;
+    flex:0 0 auto !important;
+    justify-content:center !important;
+    align-items:flex-end !important;
+    gap:8px 10px !important;
+    overflow:hidden !important;
+    padding:0 2px !important;
+  }
+  .dict-word-group{
+    flex-wrap:nowrap !important;
+    max-width:100% !important;
+  }
+  .dict-ch{
+    min-width:12px !important;
+  }
+  .dict-ch-line{
+    min-width:14px !important;
+    height:2.5px !important;
+  }
+  .dict-ch-char{
+    min-width:14px !important;
+    font-size:18px !important;
+  }
+  .dict-typing-input{
+    margin-top:18px !important;
+    padding:14px 8px 8px !important;
+    font-size:16px !important;
+    letter-spacing:0 !important;
+    line-height:1.5 !important;
+  }
+  .dict-typing-input::placeholder{
+    font-size:14px !important;
+  }
+  .dict-btn-row{
+    display:grid !important;
+    grid-template-columns:minmax(0,1fr) minmax(0,2fr) !important;
+    gap:10px !important;
+  }
+  .dict-hint-btn,.dict-check-btn{
+    width:100% !important;
+    min-height:52px !important;
+    border-radius:14px !important;
+  }
+}
+
+@media(max-width:390px){
+  .dict-card{padding:16px 12px !important}
+  .dict-play-btn{width:68px !important;height:68px !important}
+  .dict-dashes{gap:7px 8px !important}
+  .dict-word-group{gap:2px !important}
+  .dict-ch-line{min-width:12px !important}
+  .dict-ch-char{min-width:12px !important;font-size:17px !important}
+  .dict-hint-btn,.dict-check-btn{font-size:12px !important;padding:10px 8px !important}
+}
+/* FIX: Tăng khoảng cách trên dưới cho quiz Nghe chép trên mobile */
+@media(max-width:640px){
+  .dict-card{
+    padding:26px 18px 30px !important;
+  }
+
+  .dict-card-title,
+  .dict-title{
+    margin-bottom:24px !important;
+    line-height:1.6 !important;
+  }
+
+  .dict-content-row{
+    gap:22px !important;
+    margin-top:8px !important;
+    margin-bottom:18px !important;
+  }
+
+  .dict-play-btn{
+    margin:4px auto 8px !important;
+  }
+
+  .dict-dashes{
+    margin-top:8px !important;
+    margin-bottom:20px !important;
+    row-gap:12px !important;
+  }
+
+  .dict-typing-input{
+    margin-top:24px !important;
+    padding-top:18px !important;
+    line-height:1.7 !important;
+  }
+
+  .dict-btn-row{
+    margin-top:22px !important;
+    gap:12px !important;
+  }
+
+  .dict-hint-btn,
+  .dict-check-btn{
+    min-height:58px !important;
+  }
+}
 
 /* ══ VIDEO DETAIL LAYOUT ══ */
 /* Desktop: 2 cột, video sticky bên trái */
@@ -8643,8 +8800,8 @@ function buildVlItemsList() {
   return vlItems.map(it => {
     const children = vlExpandedItems[it.id] || [];
     const hasChildren = children.length > 0;
-    const parentExtraCls = '';
-    const nestedVisibleCls = '';
+    const parentExtraCls = hasChildren ? ' has-children' : '';
+    const nestedVisibleCls = hasChildren ? ' visible' : '';
     return `<div class="vl-item-group">
       <div class="vl-item${parentExtraCls}" id="vl-item-${it.id}">
         <div class="vl-item-left">
@@ -8658,11 +8815,11 @@ function buildVlItemsList() {
           ${it.pronunciation ? `<div class="vl-item-pron">${escHtmlSafe(it.pronunciation)}</div>` : ''}
         </div>
         <div class="vl-item-actions">
-          <div class="vl-item-actions-top">
-            <button class="btn-expand-toggle" id="vl-expand-btn-${it.id}" onclick="toggleVlExpandForm('${it.id}')" title="Thêm từ mở rộng"><i class="ti ti-plus"></i> Mở rộng</button>
+          <div class="vl-item-actions-top"
+            <button class="btn-expand-toggle" id="vl-expand-btn-${it.id}" onclick="toggleVlExpandForm('${it.id}')" title="Thêm từ mở rộng"><i class="ti ti-plus"> </i></button>
             <button class="btn btn-sm btn-icon btn-danger" onclick="deleteVlItem('${it.id}')" title="Xoá"><i class="ti ti-trash"></i></button>
           </div>
-          <button class="btn-collapse${hasChildren ? ' visible' : ''}" id="vl-collapse-btn-${it.id}" onclick="toggleVlNested('${it.id}')" title="Hiện từ mở rộng"><i class="ti ti-chevron-right"></i></button>
+          <button class="btn-collapse${hasChildren ? ' visible' : ''}" id="vl-collapse-btn-${it.id}" onclick="toggleVlNested('${it.id}')" title="Ẩn/hiện từ mở rộng"><i class="ti ti-chevron-down"></i></button>
         </div>
       </div>
       <div class="vl-nested-wrap${nestedVisibleCls}" id="vl-nested-${it.id}">${hasChildren ? children.map(ch => buildVlItemCard(ch, true)).join('') : ''}</div>
