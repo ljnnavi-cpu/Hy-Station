@@ -2729,6 +2729,17 @@ function folderSpeakCurrent(mode) {
 })();
 
 // Word list
+function wordExampleHtml(c) {
+  const kr = (c.example_kr || '').trim();
+  const vi = (c.example_vi || '').trim();
+
+  if (!kr && !vi) return '—';
+
+  return `
+    ${kr ? `<div style="font-family:'Noto Sans KR';font-style:italic;color:#8a7a84;line-height:1.5">${kr}</div>` : ''}
+    ${vi ? `<div style="font-size:11px;color:#b0a0a8;line-height:1.5;margin-top:3px">→ ${vi}</div>` : ''}
+  `;
+}
 function buildWordListTable() {
   if (!allCards.length) return '<div class="empty"><i class="ti ti-table-off"></i>Chưa có từ nào.</div>';
   return `<div style="overflow-x:auto;margin-top:4px">
@@ -2738,8 +2749,9 @@ function buildWordListTable() {
         <td style="font-family:'Noto Sans KR';font-weight:700;color:var(--pk4)">${c.korean}<button class="btn btn-sm btn-icon" onclick="speakText('${c.korean}','${c.id}','word')" style="margin-left:4px"><i class="ti ti-volume" style="font-size:11px"></i></button></td>
         <td>${c.vietnamese}</td>
         <td style="color:#b0a0a8;font-size:11px">${c.word_type||'—'}</td>
-        <td style="font-size:11px;font-style:italic;color:#8a7a84;max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${c.example_kr||'—'}</td>
-        <td><span class="status-pill status-${c.status||'new'}">${statusLabel(c.status)}</span></td>
+        <td style="font-size:11px;max-width:220px;white-space:normal">
+  ${wordExampleHtml(c)}
+</td>
         <td style="font-size:11px;color:#b0a0a8">${c.next_review_at?new Date(c.next_review_at).toLocaleDateString('vi'):'—'}</td>
         <td><div style="display:flex;gap:4px">
           <button class="btn btn-sm btn-icon" onclick="openEditWord('${c.id}')"><i class="ti ti-pencil"></i></button>
