@@ -2746,7 +2746,7 @@ function buildWordListTable() {
     <table class="word-table">
       <thead><tr><th>Tiếng Hàn</th><th>Nghĩa</th><th>Loại từ</th><th>Ví dụ</th><th>Trạng thái</th><th>Ôn lại</th><th></th></tr></thead>
       <tbody>${allCards.map(c=>`<tr id="wrow-${c.id}">
-        <td style="font-family:'Noto Sans KR';font-weight:700;color:var(--pk4)">${c.korean}<button class="btn btn-sm btn-icon" onclick="speakText('${c.korean}','${c.id}','word')" style="margin-left:4px"><i class="ti ti-volume" style="font-size:11px"></i></button></td>
+        <td style="font-family:'Noto Sans KR';font-weight:700;color:var(--pk4)"><button class="btn btn-sm btn-icon" onclick="speakCardById('${c.id}')" style="margin-right:4px" title="Phát âm"><i class="ti ti-volume" style="font-size:11px"></i></button>${c.korean}</td>
         <td>${c.vietnamese}</td>
         <td style="color:#b0a0a8;font-size:11px">${c.word_type||'—'}</td>
         <td style="font-size:11px;max-width:220px;white-space:normal">
