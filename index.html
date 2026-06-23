@@ -1877,8 +1877,13 @@ let folderCardIdx = 0;
 let folderFlipped = false;
 let folderFilterMode = 'all';
 let quizType = null, quizCards = [], quizIdx = 0, quizCorrect = 0, quizAnswered = false;
-let quizWrongCards = []; // NEW: track wrong answers for review
+let quizWrongCards = []; // wrong answers of the CURRENT round (carried to next round)
 let quizFillMode = 'vi'; // NEW: 'vi' or 'kr'
+// ── "Học đến khi thuộc" multi-round quiz session state ──
+let quizRound = 1;                 // lượt hiện tại
+let quizSessionWords = [];         // toàn bộ từ của phiên quiz này (cố định từ lượt 1)
+let quizSessionMistakes = {};      // {cardId: số lần làm sai trong cả phiên} — dùng để báo "từ hay sai"
+let _pendingRoundWrong = [];       // danh sách thẻ sai của lượt vừa xong, chờ qua lượt tiếp theo
 let sessionStart = null, sessionCards = 0;
 let todayStats = { total:0, correct:0, wrong:0, newCards:0, reviewCards:0, timeSecs:0 };
 let sessions = [];
@@ -2835,6 +2840,112 @@ function setFillMode(mode, btn) {
 }
 
 // ============================================================
+// "HỌC ĐẾN KHI THUỘC" — multi-round quiz engine helpers
+// Áp dụng cho quiz Trắc nghiệm / Tự điền / Nghe chép:
+// lượt 1 xong → từ sai dồn sang lượt 2 → ... → đến khi hết từ sai
+// thì dừng. Từ vừa làm đúng (thoát khỏi vòng lặp) sẽ được tự
+// nâng trạng thái "đã thuộc" bên Flashcard ngay lập tức.
+// ============================================================
+function dedupeCards(arr) {
+  const seen = new Set(); const out = [];
+  for (const c of (arr||[])) { if (c && !seen.has(c.id)) { seen.add(c.id); out.push(c); } }
+  return out;
+}
+
+// Đánh dấu 1 thẻ đã "thuộc" sau khi trả lời đúng trong quiz → đồng bộ qua Flashcard
+async function quizMarkMastered(card) {
+  if (!card) return;
+  if (card.status === 'mature') return; // đã ở mức cao nhất, không cần cập nhật thêm
+  const now = new Date(), intervals = [1,3,7,14,30];
+  const correctCount = (card.correct_count||0) + 1;
+  const newStatus = correctCount >= 2 ? 'mature' : 'young';
+  const nextReview = new Date(now); nextReview.setDate(nextReview.getDate()+intervals[Math.min(correctCount,intervals.length-1)]);
+  const updates = { status:newStatus, correct_count:correctCount, review_count:(card.review_count||0)+1, last_reviewed_at: now.toISOString(), next_review_at: nextReview.toISOString() };
+  try {
+    await DS.updateCard(card.id, updates);
+    Object.assign(card, updates);
+    const inAll = allCards.find(x=>x.id===card.id); if (inAll) Object.assign(inAll, updates);
+  } catch(e) {}
+}
+
+// Ghi nhận 1 lần làm sai trong phiên quiz (để tính "từ hay sai") + đẩy về "Đang học" bên Flashcard
+function quizMarkWrong(card) {
+  if (!card) return;
+  quizSessionMistakes[card.id] = (quizSessionMistakes[card.id]||0) + 1;
+  const updates = { status:'learning', wrong_count:(card.wrong_count||0)+1 };
+  DS.updateCard(card.id, updates).catch(()=>{});
+  Object.assign(card, updates);
+  const inAll = allCards.find(x=>x.id===card.id); if (inAll) Object.assign(inAll, updates);
+}
+
+// Xây HTML danh sách "từ hay sai" để hiện ở màn hoàn thành cuối phiên
+function buildMistakeSummaryHtml() {
+  const entries = Object.entries(quizSessionMistakes).filter(([,c])=>c>0).sort((a,b)=>b[1]-a[1]);
+  if (!entries.length) return '';
+  const rows = entries.map(([id,count])=>{
+    const card = quizSessionWords.find(c=>c.id===id) || allCards.find(c=>c.id===id);
+    if (!card) return '';
+    return `<div class="quiz-wrong-item">
+      <span style="font-family:'Noto Sans KR';font-weight:700;color:var(--pk4);font-size:13px">${card.korean}</span>
+      <span style="color:#b0a0a8">→</span>
+      <span style="font-size:12px;color:var(--txt);flex:1">${card.vietnamese}</span>
+      <span class="badge" style="background:#fde8e8;color:#c05050;margin-left:auto;white-space:nowrap">sai ${count} lần</span>
+    </div>`;
+  }).join('');
+  return `<div class="quiz-wrong-list">
+    <div style="font-size:12px;font-weight:700;color:#c05050;margin-bottom:8px">📌 ${entries.length} từ hay sai trong phiên này — hãy chú ý ôn lại:</div>
+    ${rows}
+  </div>`;
+}
+
+// Hiện màn "Hoàn thành lượt N" + danh sách từ cần làm lại, chờ bấm để qua lượt kế tiếp
+function showRoundTransition(wrongCardsThisRound) {
+  _pendingRoundWrong = dedupeCards(wrongCardsThisRound);
+  const area = document.getElementById('quiz-run-area'); if (!area) return;
+  area.innerHTML = `
+    <div class="quiz-result-header" style="background:linear-gradient(135deg,var(--ylw),var(--pk))">
+      <div style="font-size:36px;margin-bottom:4px">🔄</div>
+      <div class="quiz-score-label" style="font-size:15px;font-weight:700;color:var(--txt)">Hoàn thành lượt ${quizRound}!</div>
+      <div class="quiz-score-label">Còn ${_pendingRoundWrong.length} từ chưa thuộc → sẽ làm lại ở lượt ${quizRound+1}</div>
+    </div>
+    <div class="quiz-wrong-list">
+      <div style="font-size:12px;font-weight:700;color:#c05050;margin-bottom:8px">📌 Từ cần làm lại:</div>
+      ${_pendingRoundWrong.map(c=>`<div class="quiz-wrong-item">
+        <span style="font-family:'Noto Sans KR';font-weight:700;color:var(--pk4);font-size:13px">${c.korean}</span>
+        <span style="color:#b0a0a8">→</span>
+        <span style="font-size:12px;color:var(--txt)">${c.vietnamese}</span>
+      </div>`).join('')}
+    </div>
+    <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:12px" onclick="startNextQuizRound()">
+      <i class="ti ti-arrow-right"></i> Vào lượt ${quizRound+1} (${_pendingRoundWrong.length} từ)
+    </button>`;
+}
+
+// Bắt đầu lượt kế tiếp, chỉ gồm các từ vừa làm sai ở lượt trước
+function startNextQuizRound() {
+  const wrongCardsThisRound = _pendingRoundWrong;
+  quizRound++;
+  quizCards = shuffle(wrongCardsThisRound);
+  quizIdx = 0; quizCorrect = 0; quizWrongCards = [];
+  if (quizType === 'dictation') {
+    dictState = { cards: quizCards, idx:0, correct:0, wrong:0, hintsUsed:0, hintsLeft:10, answered:false, wrongCards:[] };
+    _dictHintRevealed = 0;
+    renderDictCard();
+  } else {
+    renderQuizQuestion();
+  }
+}
+
+// Kết thúc 1 lượt (Trắc nghiệm / Tự điền): nếu còn từ sai → qua lượt mới, hết thì hiện kết quả cuối
+function handleRoundComplete() {
+  if (quizWrongCards.length) {
+    showRoundTransition(quizWrongCards);
+  } else {
+    renderQuizResult();
+  }
+}
+
+// ============================================================
 // MATCHING GAME STATE
 // ============================================================
 let matchState = {
@@ -2998,6 +3109,8 @@ function startQuiz() {
   const maxCount = countSel==='all'?allCards.length:parseInt(countSel)||10;
   quizCards = shuffle([...allCards]).slice(0, Math.min(maxCount, allCards.length));
   quizIdx = 0; quizCorrect = 0; quizWrongCards = [];
+  // Reset phiên "học đến khi thuộc"
+  quizRound = 1; quizSessionMistakes = {}; quizSessionWords = [...quizCards];
 
   openQuizRunPage();
 
@@ -3012,7 +3125,7 @@ function startQuiz() {
 
 function renderQuizQuestion() {
   const area = document.getElementById('quiz-run-area'); if(!area) return;
-  if (quizIdx >= quizCards.length) { renderQuizResult(); return; }
+  if (quizIdx >= quizCards.length) { handleRoundComplete(); return; }
   const c = quizCards[quizIdx];
   const progress = ((quizIdx/quizCards.length)*100).toFixed(0);
   let qHtml = '';
@@ -3029,7 +3142,7 @@ function renderQuizQuestion() {
       <button class="btn btn-primary" style="margin-top:8px;width:100%;justify-content:center" onclick="checkFillin('${c.id}','${escJs(correctVal)}')">Kiểm tra</button>`;
   }
   area.innerHTML=`<div class="quiz-progress"><div class="quiz-progress-fill" style="width:${progress}%"></div></div>
-    <div style="font-size:11px;color:#b0a0a8;margin-bottom:12px">Câu ${quizIdx+1} / ${quizCards.length} · ✅ ${quizCorrect} đúng</div>
+    <div style="font-size:11px;color:#b0a0a8;margin-bottom:12px">${quizRound>1?`Lượt ${quizRound} · `:''}Câu ${quizIdx+1} / ${quizCards.length} · ✅ ${quizCorrect} đúng</div>
     ${qHtml}<div id="quiz-feedback" style="margin-top:10px"></div>`;
   quizAnswered = false;
   if(quizType==='fillin') setTimeout(()=>document.getElementById('fillin-input')?.focus(),50);
@@ -3040,11 +3153,14 @@ function checkMultiple(el, chosen, correct, cardId) {
   document.querySelectorAll('.quiz-option').forEach(o=>o.style.pointerEvents='none');
   const isCorrect = chosen === correct;
   el.classList.add(isCorrect?'correct':'wrong');
+  const card = quizCards[quizIdx];
   if(!isCorrect) {
     document.querySelectorAll('.quiz-option').forEach(o=>{if(o.textContent===correct)o.classList.add('correct');});
-    const card = quizCards[quizIdx]; if(card) quizWrongCards.push(card);
+    if(card) { quizWrongCards.push(card); quizMarkWrong(card); }
+  } else {
+    quizCorrect++;
+    if(card) quizMarkMastered(card);
   }
-  if(isCorrect) quizCorrect++;
   document.getElementById('quiz-feedback').innerHTML=isCorrect?'<div style="color:#306040;font-weight:700;font-size:13px">✅ Chính xác!</div>':`<div style="color:#c05050;font-weight:700;font-size:13px">❌ Đáp án đúng: <strong>${correct}</strong></div>`;
   setTimeout(()=>{quizIdx++;renderQuizQuestion();},1200);
 }
@@ -3054,8 +3170,9 @@ function checkFillin(cardId, correct) {
   const input = document.getElementById('fillin-input'); if(!input) return;
   const val = input.value.trim().toLowerCase();
   const isCorrect = val===correct.toLowerCase()||correct.toLowerCase().includes(val);
-  if(!isCorrect) { const card = quizCards[quizIdx]; if(card) quizWrongCards.push(card); }
-  if(isCorrect) quizCorrect++;
+  const card = quizCards[quizIdx];
+  if(!isCorrect) { if(card) { quizWrongCards.push(card); quizMarkWrong(card); } }
+  else { quizCorrect++; if(card) quizMarkMastered(card); }
   input.style.borderColor=isCorrect?'#80c090':'#f5a0a0';
   input.style.background=isCorrect?'var(--grn)':'#fde8e8';
   document.getElementById('quiz-feedback').innerHTML=isCorrect?'<div style="color:#306040;font-weight:700;font-size:13px">✅ Chính xác!</div>':`<div style="color:#c05050;font-weight:700;font-size:13px">❌ Đáp án: <strong>${correct}</strong></div>`;
@@ -3091,8 +3208,9 @@ function startDictationQuiz(cards) {
     </button>`;
     return;
   }
-  dictState = { cards: validCards, idx: 0, correct: 0, wrong: 0, hintsUsed: 0, hintsLeft: 10, answered: false };
+  dictState = { cards: validCards, idx: 0, correct: 0, wrong: 0, hintsUsed: 0, hintsLeft: 10, answered: false, wrongCards: [] };
   _dictHintRevealed = 0;
+  quizSessionWords = [...validCards]; // chỉ tính các câu thực sự được đưa vào quiz nghe chép
   renderDictCard();
 }
 
@@ -3108,7 +3226,7 @@ function dictBuildDashes(sentence) {
 function renderDictCard() {
   const area = document.getElementById('quiz-run-area');
   const { cards, idx, correct, wrong, hintsLeft } = dictState;
-  if (idx >= cards.length) { renderDictResult(); return; }
+  if (idx >= cards.length) { handleDictRoundComplete(); return; }
 
   const c = cards[idx];
   const sentence = c.example_kr.trim();
@@ -3120,7 +3238,7 @@ function renderDictCard() {
   area.innerHTML = `
   <div class="dict-wrap">
     <div class="dict-progress-row">
-      <span class="dict-prog">Câu ${idx + 1} / ${total}</span>
+      <span class="dict-prog">${quizRound>1?`Lượt ${quizRound} · `:''}Câu ${idx + 1} / ${total}</span>
       <span class="dict-score">✅ ${correct} · ❌ ${wrong}</span>
     </div>
     <div class="dict-progress"><div class="dict-progress-fill" style="width:${progress}%"></div></div>
@@ -3271,19 +3389,31 @@ function dictCheck() {
 
   if (isCorrect) {
     dictState.correct++;
+    quizMarkMastered(c);
     fb.className = 'dict-feedback show correct';
     fb.innerHTML = `✅ Chính xác! ${dictState.hintsUsed > 0 ? `<small>(${dictState.hintsUsed} gợi ý)</small>` : '🌟'}
       ${c.example_vi ? `<div style="margin-top:5px;font-size:12px;font-style:italic">${c.example_vi}</div>` : ''}`;
   } else {
     dictState.wrong++;
+    dictState.wrongCards = dictState.wrongCards || [];
+    dictState.wrongCards.push(c);
+    quizMarkWrong(c);
     fb.className = 'dict-feedback show wrong';
     fb.innerHTML = `❌ Đáp án đúng:<br>
       <span style="font-family:'Noto Sans KR';font-weight:700;font-size:15px;color:var(--pk4)">${sentence}</span>
       ${c.example_vi ? `<div style="margin-top:5px;font-size:12px;font-style:italic;color:#8a7a84">${c.example_vi}</div>` : ''}`;
-    if (c.status !== 'learning') DS.updateCard(c.id, {status:'learning'}).catch(()=>{});
   }
 
   if (nextBtn) nextBtn.classList.add('show');
+}
+
+// Kết thúc 1 lượt Nghe chép: nếu còn câu sai → qua lượt mới, hết thì hiện kết quả cuối
+function handleDictRoundComplete() {
+  if (dictState.wrongCards && dictState.wrongCards.length) {
+    showRoundTransition(dictState.wrongCards);
+  } else {
+    renderDictResult();
+  }
 }
 
 function dictNext() {
@@ -3296,68 +3426,49 @@ function dictNext() {
 
 function renderDictResult() {
   const area = document.getElementById('quiz-run-area');
-  const { correct, wrong, cards } = dictState;
-  const total = cards.length;
-  const pct = total > 0 ? Math.round((correct / total) * 100) : 0;
+  const totalWords = quizSessionWords.length;
+  const totalMistakes = Object.values(quizSessionMistakes).reduce((a,b)=>a+b,0);
+  const totalAttempts = totalWords + totalMistakes;
+  const pct = totalAttempts > 0 ? Math.round((totalWords / totalAttempts) * 100) : 100;
   const emoji = pct >= 80 ? '🎉' : pct >= 60 ? '👍' : '💪';
+  const roundsLabel = quizRound > 1 ? ` sau ${quizRound} lượt` : '';
+  const mistakeHtml = buildMistakeSummaryHtml();
   area.innerHTML = `
   <div class="dict-wrap">
     <div class="quiz-result-header">
-      <div class="quiz-score-big">${pct}%</div>
-      <div class="quiz-score-label">${emoji} ${correct}/${total} câu đúng</div>
+      <div style="font-size:38px;margin-bottom:4px">${emoji}</div>
+      <div class="quiz-score-label" style="font-size:16px;font-weight:700;color:var(--txt)">Hoàn thành! Đã thuộc ${totalWords}/${totalWords} câu${roundsLabel}</div>
+      <div class="quiz-score-label">Độ chính xác chung: ${pct}%</div>
     </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0">
-      <div style="background:#e8f5e9;border-radius:10px;padding:12px;text-align:center">
-        <div style="font-size:22px;font-weight:800;color:#306040">${correct}</div>
-        <div style="font-size:11px;color:#52a060">Câu đúng ✅</div>
-      </div>
-      <div style="background:#fde8e8;border-radius:10px;padding:12px;text-align:center">
-        <div style="font-size:22px;font-weight:800;color:#c05050">${wrong}</div>
-        <div style="font-size:11px;color:#c05050">Câu sai ❌</div>
-      </div>
+    <div style="font-size:12px;text-align:center;color:#8a7a84;margin:12px 0 16px">
+      ${pct>=80?'Tuyệt vời! Tai nghe và tay chép ăn ý lắm! 🌟':pct>=60?'Khá tốt, nghe thêm để quen nhé! 🎧':'Bạn đã kiên trì làm lại đến khi thuộc hết — rất đáng khen! 💪'}
     </div>
-    <div style="font-size:12px;text-align:center;color:#8a7a84;margin-bottom:16px">
-      ${pct>=80?'Tuyệt vời! Tai nghe và tay chép ăn ý lắm! 🌟':pct>=60?'Khá tốt, nghe thêm để quen nhé! 🎧':'Luyện thêm chút nữa bạn nhé! 💪'}
-    </div>
-    <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="startQuiz()">
+    ${mistakeHtml}
+    <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:12px" onclick="startQuiz()">
       <i class="ti ti-refresh"></i> Làm lại
     </button>
   </div>`;
-  DS.saveQuizResult({owner_id:currentUser.id,user_id:currentUser.id,folder_id:selectedFolder?.id||null,quiz_type:'dictation',score:pct,total_questions:total,correct_count:correct,wrong_count:wrong}).catch(()=>{});
+  DS.saveQuizResult({owner_id:currentUser.id,user_id:currentUser.id,folder_id:selectedFolder?.id||null,quiz_type:'dictation',score:pct,total_questions:totalWords,correct_count:totalWords,wrong_count:totalMistakes}).catch(()=>{});
 }
 async function renderQuizResult() {
   const area = document.getElementById('quiz-run-area'); if(!area) return;
-  const pct = Math.round((quizCorrect/quizCards.length)*100);
+  const totalWords = quizSessionWords.length;
+  const totalMistakes = Object.values(quizSessionMistakes).reduce((a,b)=>a+b,0);
+  const totalAttempts = totalWords + totalMistakes;
+  const pct = totalAttempts > 0 ? Math.round((totalWords / totalAttempts) * 100) : 100;
   const emoji = pct>=80?'🎉':pct>=60?'👍':'💪';
+  const roundsLabel = quizRound > 1 ? ` sau ${quizRound} lượt` : '';
+  const mistakeHtml = buildMistakeSummaryHtml();
 
-  // Auto-add wrong cards to "ôn tập" (status=learning) folder or note
-  let addedToReview = 0;
-  if (quizWrongCards.length && selectedFolder) {
-    for (const c of quizWrongCards) {
-      if (c.status !== 'learning') {
-        await DS.updateCard(c.id, {status:'learning'});
-        const inAll = allCards.find(x=>x.id===c.id);
-        if(inAll) inAll.status = 'learning';
-        addedToReview++;
-      }
-    }
-  }
-
-  const wrongListHtml = quizWrongCards.length ? `
-    <div class="quiz-wrong-list">
-      <div style="font-size:12px;font-weight:700;color:#c05050;margin-bottom:8px">❌ ${quizWrongCards.length} từ làm sai → đã chuyển sang "Đang học"</div>
-      ${quizWrongCards.map(c=>`<div class="quiz-wrong-item">
-        <span style="font-family:'Noto Sans KR';font-weight:700;color:var(--pk4);font-size:13px">${c.korean}</span>
-        <span style="color:#b0a0a8">→</span>
-        <span style="font-size:12px;color:var(--txt)">${c.vietnamese}</span>
-      </div>`).join('')}
-    </div>` : '';
-
-  area.innerHTML=`<div class="quiz-result-header"><div class="quiz-score-big">${pct}%</div><div class="quiz-score-label">${emoji} ${quizCorrect}/${quizCards.length} câu đúng</div></div>
-    <div style="font-size:14px;text-align:center;color:#8a7a84;margin-bottom:16px">${pct>=80?'Tuyệt vời, bạn học rất tốt!':pct>=60?'Khá tốt, cố lên nhé!':'Học thêm chút nữa bạn nhé!'}</div>
-    ${wrongListHtml}
+  area.innerHTML=`<div class="quiz-result-header">
+      <div style="font-size:38px;margin-bottom:4px">${emoji}</div>
+      <div class="quiz-score-label" style="font-size:16px;font-weight:700;color:var(--txt)">Hoàn thành! Đã thuộc ${totalWords}/${totalWords} từ${roundsLabel}</div>
+      <div class="quiz-score-label">Độ chính xác chung: ${pct}%</div>
+    </div>
+    <div style="font-size:13px;text-align:center;color:#8a7a84;margin:12px 0 16px">${pct>=80?'Tuyệt vời, bạn học rất tốt!':pct>=60?'Khá tốt, cố lên nhé!':'Bạn đã kiên trì làm lại đến khi thuộc hết — rất đáng khen! 💪'}</div>
+    ${mistakeHtml}
     <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:12px" onclick="startQuiz()"><i class="ti ti-refresh"></i> Làm lại</button>`;
-  DS.saveQuizResult({owner_id:currentUser.id,user_id:currentUser.id,folder_id:selectedFolder?.id||null,quiz_type:quizType,score:pct,total_questions:quizCards.length,correct_count:quizCorrect,wrong_count:quizCards.length-quizCorrect}).catch(()=>{});
+  DS.saveQuizResult({owner_id:currentUser.id,user_id:currentUser.id,folder_id:selectedFolder?.id||null,quiz_type:quizType,score:pct,total_questions:totalWords,correct_count:totalWords,wrong_count:totalMistakes}).catch(()=>{});
 }
 
 // Add words tab
