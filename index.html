@@ -3154,7 +3154,7 @@ function renderQuizQuestion() {
     const isKrMode = quizFillMode === 'kr';
     const prompt = isKrMode ? `<div class="quiz-question">Nhập tiếng Hàn của:<br><span style="font-size:22px;font-weight:700;color:var(--pk4)">${c.vietnamese}</span></div>` : `<div class="quiz-question">Nhập nghĩa tiếng Việt của:<br><span style="font-family:'Noto Sans KR';font-size:28px;font-weight:700;color:var(--pk4)">${c.korean}</span></div>`;
     const correctVal = isKrMode ? c.korean : c.vietnamese;
-    qHtml=`${prompt}<input class="quiz-input" id="fillin-input" placeholder="${isKrMode?'Nhập tiếng Hàn...':'Nhập nghĩa tiếng Việt...'}" onkeydown="if(event.key==='Enter')checkFillin('${c.id}','${escJs(correctVal)}')"/>
+    qHtml=`${prompt}<input class="quiz-input" id="fillin-input" placeholder="${isKrMode?'Nhập tiếng Hàn...':'Nhập nghĩa tiếng Việt...'}" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="fillin-${c.id}-${Date.now()}" onkeydown="if(event.key==='Enter')checkFillin('${c.id}','${escJs(correctVal)}')"/>
       <button class="btn btn-primary" style="margin-top:8px;width:100%;justify-content:center" onclick="checkFillin('${c.id}','${escJs(correctVal)}')">Kiểm tra</button>`;
   }
   area.innerHTML=`<div class="quiz-progress"><div class="quiz-progress-fill" style="width:${progress}%"></div></div>
