@@ -1879,6 +1879,7 @@ let folderFilterMode = 'all';
 let quizType = null, quizCards = [], quizIdx = 0, quizCorrect = 0, quizAnswered = false;
 let quizWrongCards = []; // wrong answers of the CURRENT round (carried to next round)
 let quizFillMode = 'vi'; // NEW: 'vi' or 'kr'
+let quizDictMode = 'sentence'; // 'sentence' (audio đọc câu ví dụ) or 'word' (audio đọc từ vựng)
 // ── "Học đến khi thuộc" multi-round quiz session state ──
 let quizRound = 1;                 // lượt hiện tại
 let quizSessionWords = [];         // toàn bộ từ của phiên quiz này (cố định từ lượt 1)
@@ -2817,6 +2818,14 @@ function buildQuizTab() {
         <button class="fc-filter-btn" id="fmbtn-kr" onclick="setFillMode('kr',this)">Nhập tiếng Hàn</button>
       </div>
     </div>
+    <div id="dictation-mode-row" style="display:none;margin-bottom:14px;background:var(--pk2);border-radius:10px;padding:10px 14px">
+      <div style="font-size:12px;font-weight:700;color:#8a7a84;margin-bottom:8px">Chế độ nghe chép:</div>
+      <div style="display:flex;gap:8px">
+        <button class="fc-filter-btn active" id="dmbtn-sentence" onclick="setDictMode('sentence',this)">Audio đọc câu ví dụ</button>
+        <button class="fc-filter-btn" id="dmbtn-word" onclick="setDictMode('word',this)">Audio đọc từ vựng</button>
+      </div>
+      <div style="font-size:11px;color:#b0a0a8;margin-top:8px">Câu ví dụ: nghe câu rồi chép lại. Từ vựng: nghe từ/vocab rồi nhập lại từ đó.</div>
+    </div>
     <div style="display:flex;gap:8px;align-items:center;margin-bottom:16px">
       <div style="font-size:12px;font-weight:600;color:#8a7a84">Số câu:</div>
       <select class="form-input form-select" id="quiz-count" style="width:100px;padding:6px 10px">
@@ -2832,11 +2841,18 @@ function selectQuizType(type, el) {
   document.querySelectorAll('.quiz-type-card').forEach(c=>c.classList.remove('selected')); el.classList.add('selected');
   const fillRow = document.getElementById('fillin-mode-row');
   if (fillRow) fillRow.style.display = type === 'fillin' ? 'block' : 'none';
+  const dictRow = document.getElementById('dictation-mode-row');
+  if (dictRow) dictRow.style.display = type === 'dictation' ? 'block' : 'none';
 }
 
 function setFillMode(mode, btn) {
   quizFillMode = mode;
   document.querySelectorAll('#fillin-mode-row .fc-filter-btn').forEach(b=>b.classList.remove('active')); btn.classList.add('active');
+}
+
+function setDictMode(mode, btn) {
+  quizDictMode = mode;
+  document.querySelectorAll('#dictation-mode-row .fc-filter-btn').forEach(b=>b.classList.remove('active')); btn.classList.add('active');
 }
 
 // ============================================================
@@ -2928,7 +2944,7 @@ function startNextQuizRound() {
   quizCards = shuffle(wrongCardsThisRound);
   quizIdx = 0; quizCorrect = 0; quizWrongCards = [];
   if (quizType === 'dictation') {
-    dictState = { cards: quizCards, idx:0, correct:0, wrong:0, hintsUsed:0, hintsLeft:10, answered:false, wrongCards:[] };
+    dictState = { cards: quizCards, idx:0, correct:0, wrong:0, hintsUsed:0, hintsLeft:10, answered:false, wrongCards:[], mode: dictState.mode || quizDictMode };
     _dictHintRevealed = 0;
     renderDictCard();
   } else {
@@ -3117,7 +3133,7 @@ function startQuiz() {
   if (quizType === 'matching') {
     startMatchingGame(quizCards);
   } else if (quizType === 'dictation') {
-    startDictationQuiz(quizCards);
+    startDictationQuiz(quizCards, quizDictMode);
   } else {
     renderQuizQuestion();
   }
@@ -3194,9 +3210,11 @@ let dictState = {
 };
 let _dictHintRevealed = 0;
 
-function startDictationQuiz(cards) {
-  const validCards = cards.filter(c => c.example_kr && c.example_kr.trim().length > 0);
+function startDictationQuiz(cards, mode) {
+  mode = mode || 'sentence';
   const area = document.getElementById('quiz-run-area');
+  // Chế độ "câu ví dụ": chỉ lấy thẻ có example_kr. Chế độ "từ vựng": mọi thẻ đều có sẵn tiếng Hàn nên dùng tất cả.
+  const validCards = mode === 'word' ? cards.slice() : cards.filter(c => c.example_kr && c.example_kr.trim().length > 0);
   if (!validCards.length) {
     area.innerHTML = `<div class="dict-no-example">
       <strong>⚠️ Không có câu ví dụ</strong><br>
@@ -3208,10 +3226,15 @@ function startDictationQuiz(cards) {
     </button>`;
     return;
   }
-  dictState = { cards: validCards, idx: 0, correct: 0, wrong: 0, hintsUsed: 0, hintsLeft: 10, answered: false, wrongCards: [] };
+  dictState = { cards: validCards, idx: 0, correct: 0, wrong: 0, hintsUsed: 0, hintsLeft: 10, answered: false, wrongCards: [], mode };
   _dictHintRevealed = 0;
-  quizSessionWords = [...validCards]; // chỉ tính các câu thực sự được đưa vào quiz nghe chép
+  quizSessionWords = [...validCards]; // chỉ tính các thẻ thực sự được đưa vào quiz nghe chép
   renderDictCard();
+}
+
+/* Trả về câu/từ mục tiêu cần nghe-chép tùy chế độ hiện tại */
+function dictTargetText(c) {
+  return (dictState.mode === 'word' ? c.korean : c.example_kr).trim();
 }
 
 /* Build word-level dash hint (each word = N underscores, separated by space) */
@@ -3229,7 +3252,8 @@ function renderDictCard() {
   if (idx >= cards.length) { handleDictRoundComplete(); return; }
 
   const c = cards[idx];
-  const sentence = c.example_kr.trim();
+  const isWordMode = dictState.mode === 'word';
+  const sentence = dictTargetText(c);
   const progress = ((idx / cards.length) * 100).toFixed(0);
   const total = cards.length;
   dictState.answered = false;
@@ -3243,22 +3267,22 @@ function renderDictCard() {
     </div>
     <div class="dict-progress"><div class="dict-progress-fill" style="width:${progress}%"></div></div>
 
-    <div style="font-size:12px;color:#b0a0a8;margin-bottom:10px">
+    ${isWordMode ? '' : `<div style="font-size:12px;color:#b0a0a8;margin-bottom:10px">
       📖 Từ vựng: <strong style="color:var(--pk4);font-family:'Noto Sans KR'">${c.korean}</strong>
       <span style="color:#c0b0b8;margin:0 4px">·</span><span>${c.vietnamese}</span>
-    </div>
+    </div>`}
 
     <div class="dict-card">
-      <div class="dict-instruction">🎧 Bấm nghe rồi chép lại câu</div>
+      <div class="dict-instruction">${isWordMode ? '🎧 Nghe audio rồi chép lại từ vựng.' : '🎧 Bấm nghe rồi chép lại câu'}</div>
       <div class="dict-content-row">
         <button class="dict-play-btn" id="dict-play-btn" onclick="dictSpeak()" title="Nghe lại">
-          <i class="ti ti-volume" style="font-size:24px;color:var(--pk4)"></i>
+          ${isWordMode ? '<i class="ti ti-headphones" style="font-size:24px;color:var(--pk4)"></i>' : '<i class="ti ti-volume" style="font-size:24px;color:var(--pk4)"></i>'}
         </button>
         <div class="dict-dashes" id="dict-dashes">${dictBuildDashes(sentence)}</div>
       </div>
       <input id="dict-input"
         class="dict-typing-input"
-        placeholder="Gõ lại câu bạn vừa nghe..."
+        placeholder="${isWordMode ? 'Gõ lại từ bạn vừa nghe...' : 'Gõ lại câu bạn vừa nghe...'}"
         autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
         oninput="dictOnInput(this)"
         onkeydown="if(event.key==='Enter'){event.preventDefault();dictCheck()}" />
@@ -3283,7 +3307,7 @@ function renderDictCard() {
 function dictOnInput(inp) {
   if (dictState.answered) return;
   const c = dictState.cards[dictState.idx];
-  const sentence = c.example_kr.trim();
+  const sentence = dictTargetText(c);
   const typed = inp.value;
   const words = sentence.split(' ');
   const typedWords = typed.split(' ');
@@ -3311,9 +3335,10 @@ function dictOnInput(inp) {
 async function dictSpeak() {
   const c = dictState.cards[dictState.idx];
   if (!c) return;
+  const isWordMode = dictState.mode === 'word';
   const btn = document.getElementById('dict-play-btn');
   if (btn) btn.classList.add('playing');
-  try { await speakText(c.example_kr.trim(), c.id, 'example'); }
+  try { await speakText(dictTargetText(c), c.id, isWordMode ? 'word' : 'example'); }
   finally { if (btn) btn.classList.remove('playing'); }
 }
 
@@ -3325,7 +3350,7 @@ function dictRevealHint() {
   _dictHintRevealed++;
 
   const c = dictState.cards[dictState.idx];
-  const words = c.example_kr.trim().split(' ');
+  const words = dictTargetText(c).split(' ');
   const inp = document.getElementById('dict-input');
   if (!inp) return;
 
@@ -3356,7 +3381,8 @@ function dictCheck() {
 
   const { cards, idx } = dictState;
   const c = cards[idx];
-  const sentence = c.example_kr.trim();
+  const isWordMode = dictState.mode === 'word';
+  const sentence = dictTargetText(c);
   const userVal = inp.value.trim();
 
   if (!userVal) { showToast('Hãy gõ câu trả lời trước!'); inp.focus(); return; }
@@ -3387,12 +3413,14 @@ function dictCheck() {
     dashEl.innerHTML = html;
   }
 
+  const meaningText = isWordMode ? c.vietnamese : c.example_vi;
+
   if (isCorrect) {
     dictState.correct++;
     quizMarkMastered(c);
     fb.className = 'dict-feedback show correct';
     fb.innerHTML = `✅ Chính xác! ${dictState.hintsUsed > 0 ? `<small>(${dictState.hintsUsed} gợi ý)</small>` : '🌟'}
-      ${c.example_vi ? `<div style="margin-top:5px;font-size:12px;font-style:italic">${c.example_vi}</div>` : ''}`;
+      ${meaningText ? `<div style="margin-top:5px;font-size:12px;font-style:italic">${meaningText}</div>` : ''}`;
   } else {
     dictState.wrong++;
     dictState.wrongCards = dictState.wrongCards || [];
@@ -3401,7 +3429,7 @@ function dictCheck() {
     fb.className = 'dict-feedback show wrong';
     fb.innerHTML = `❌ Đáp án đúng:<br>
       <span style="font-family:'Noto Sans KR';font-weight:700;font-size:15px;color:var(--pk4)">${sentence}</span>
-      ${c.example_vi ? `<div style="margin-top:5px;font-size:12px;font-style:italic;color:#8a7a84">${c.example_vi}</div>` : ''}`;
+      ${meaningText ? `<div style="margin-top:5px;font-size:12px;font-style:italic;color:#8a7a84">${meaningText}</div>` : ''}`;
   }
 
   if (nextBtn) nextBtn.classList.add('show');
