@@ -3182,9 +3182,11 @@ function checkMultiple(el, chosen, correct, cardId) {
 }
 
 function checkFillin(cardId, correct) {
-  if(quizAnswered) return; quizAnswered=true;
+  if(quizAnswered) return;
   const input = document.getElementById('fillin-input'); if(!input) return;
   const val = input.value.trim().toLowerCase();
+  if(!val) { input.style.borderColor='#f5a0a0'; input.focus(); return; }
+  quizAnswered=true;
   const isCorrect = val===correct.toLowerCase()||correct.toLowerCase().includes(val);
   const card = quizCards[quizIdx];
   if(!isCorrect) { if(card) { quizWrongCards.push(card); quizMarkWrong(card); } }
