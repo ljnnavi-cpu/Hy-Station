@@ -3154,8 +3154,8 @@ function renderQuizQuestion() {
     const isKrMode = quizFillMode === 'kr';
     const prompt = isKrMode ? `<div class="quiz-question">Nhập tiếng Hàn của:<br><span style="font-size:22px;font-weight:700;color:var(--pk4)">${c.vietnamese}</span></div>` : `<div class="quiz-question">Nhập nghĩa tiếng Việt của:<br><span style="font-family:'Noto Sans KR';font-size:28px;font-weight:700;color:var(--pk4)">${c.korean}</span></div>`;
     const correctVal = isKrMode ? c.korean : c.vietnamese;
-    qHtml=`${prompt}<input class="quiz-input" id="fillin-input" placeholder="${isKrMode?'Nhập tiếng Hàn...':'Nhập nghĩa tiếng Việt...'}" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="fillin-${c.id}-${Date.now()}" readonly onfocus="this.removeAttribute('readonly')" onkeydown="if(event.key==='Enter')checkFillin('${c.id}','${escJs(correctVal)}')"/>
-      <button class="btn btn-primary" style="margin-top:8px;width:100%;justify-content:center" onclick="checkFillin('${c.id}','${escJs(correctVal)}')">Kiểm tra</button>`;
+    qHtml=`${prompt}<input class="quiz-input" id="fillin-input" placeholder="${isKrMode?'Nhập tiếng Hàn...':'Nhập nghĩa tiếng Việt...'}" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="fillin-${c.id}-${Date.now()}" value="" oninput="document.getElementById('fillin-check-btn').disabled=!this.value.trim()" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFillin('${c.id}','${escJs(correctVal)}');}"/>
+      <button class="btn btn-primary" id="fillin-check-btn" disabled style="margin-top:8px;width:100%;justify-content:center" onclick="checkFillin('${c.id}','${escJs(correctVal)}')">Kiểm tra</button>`;
   }
   area.innerHTML=`<div class="quiz-progress"><div class="quiz-progress-fill" style="width:${progress}%"></div></div>
     <div style="font-size:11px;color:#b0a0a8;margin-bottom:12px">${quizRound>1?`Lượt ${quizRound} · `:''}Câu ${quizIdx+1} / ${quizCards.length} · ✅ ${quizCorrect} đúng</div>
@@ -3184,10 +3184,13 @@ function checkMultiple(el, chosen, correct, cardId) {
 function checkFillin(cardId, correct) {
   if(quizAnswered) return;
   const input = document.getElementById('fillin-input'); if(!input) return;
-  const val = input.value.trim().toLowerCase();
-  if(!val) { input.style.borderColor='#f5a0a0'; input.focus(); return; }
+  const val = (input.value||'').replace(/\s+/g,' ').trim().toLowerCase();
+  if(val.length===0) { input.style.borderColor='#f5a0a0'; input.focus(); return; }
   quizAnswered=true;
-  const isCorrect = val===correct.toLowerCase()||correct.toLowerCase().includes(val);
+  const normCorrect = (correct||'').replace(/\s+/g,' ').trim().toLowerCase();
+  // Cho phép khớp với từng nghĩa/đáp án con nếu người tạo thẻ nhập nhiều đáp án cách nhau bởi dấu , hoặc /
+  const correctParts = normCorrect.split(/[,/]/).map(s=>s.trim()).filter(Boolean);
+  const isCorrect = val===normCorrect || correctParts.includes(val);
   const card = quizCards[quizIdx];
   if(!isCorrect) { if(card) { quizWrongCards.push(card); quizMarkWrong(card); } }
   else { quizCorrect++; if(card) quizMarkMastered(card); }
@@ -9272,5 +9275,6 @@ function exitVlFullpage() {
 }
 
 </script>
+
 </body>
 </html>
