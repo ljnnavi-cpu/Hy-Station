@@ -1195,6 +1195,7 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
     <nav class="nav" id="main-nav">
       <a class="nav-item active" href="/dashboard" data-page="dashboard" onclick="navTo(event,'dashboard')"><i class="ti ti-home"></i> Dashboard</a>
       <a class="nav-item" href="/flashcard" data-page="flashcard" onclick="navTo(event,'flashcard')"><i class="ti ti-cards"></i> Flashcard</a>
+      <a class="nav-item" href="/topik30" data-page="topik30" onclick="navTo(event,'topik30')"><i class="ti ti-book-2"></i> TOPIK 30 ngày</a>
       <a class="nav-item" href="/video-learn" data-page="video-learn" onclick="navTo(event,'video-learn')"><i class="ti ti-video"></i> Học từ Video</a>
       <a class="nav-item" href="/topik-exam" data-page="topik-exam" onclick="navTo(event,'topik-exam')"><i class="ti ti-award"></i> Luyện đề TOPIK</a>
       <a class="nav-item" href="/studyplan" data-page="studyplan" onclick="navTo(event,'studyplan')"><i class="ti ti-calendar"></i> Lịch học</a>
@@ -1222,6 +1223,7 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
       </div>
       <div class="quick-nav">
         <div class="qn-card" onclick="navTo(null,'topik-exam')"><div class="qn-icon"><i class="ti ti-award"></i></div><div class="qn-label">Luyện đề TOPIK</div></div>
+        <div class="qn-card" onclick="navTo(null,'topik30')"><div class="qn-icon"><i class="ti ti-book-2"></i></div><div class="qn-label">TOPIK 30 ngày</div></div>
         <div class="qn-card" onclick="navTo(null,'flashcard')"><div class="qn-icon"><i class="ti ti-cards"></i></div><div class="qn-label">Flashcard</div></div>
         <div class="qn-card" onclick="navTo(null,'video-learn')"><div class="qn-icon"><i class="ti ti-video"></i></div><div class="qn-label">Học từ Video</div></div>
         <div class="qn-card" onclick="navTo(null,'studyplan')"><div class="qn-icon"><i class="ti ti-calendar"></i></div><div class="qn-label">Lịch học</div></div>
@@ -1621,6 +1623,37 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
         <div style="background:var(--pk2);border-radius:12px;padding:14px;margin-bottom:16px;font-size:12px;color:#8a7a84"><i class="ti ti-info-circle"></i> Tên hiển thị được quản lý bởi Hy. Nếu muốn thay đổi, nhắn Hy nhé!</div>
         <hr style="border:none;border-top:1px solid var(--brd);margin:20px 0"/>
         <button class="btn btn-danger" onclick="doLogout()"><i class="ti ti-logout"></i> Đăng xuất</button>
+      </div>
+    </div>
+
+    <!-- TOPIK 30 NGÀY — mục lục -->
+    <div class="page" id="page-topik30">
+      <div class="topbar">
+        <div class="page-title">📖 TOPIK 어휘 하루 30일</div>
+      </div>
+      <div style="font-size:12px;color:#8a7a84;margin-bottom:16px">Từ vựng TOPIK trong 30 ngày · Bấm vào một ngày để bắt đầu học</div>
+
+      <div class="section-title">DAY 01–10</div>
+      <div class="fc-folder-grid" id="topik30-week1" style="grid-template-columns:repeat(5,1fr)"></div>
+
+      <div class="section-title" style="margin-top:20px">DAY 11–20</div>
+      <div class="fc-folder-grid" id="topik30-week2" style="grid-template-columns:repeat(5,1fr)"></div>
+
+      <div class="section-title" style="margin-top:20px">DAY 21–30</div>
+      <div class="fc-folder-grid" id="topik30-week3" style="grid-template-columns:repeat(5,1fr)"></div>
+
+      <div class="section-title" style="margin-top:20px">부록 Phụ lục</div>
+      <div class="fc-folder-grid" id="topik30-appendix" style="grid-template-columns:repeat(5,1fr)"></div>
+    </div>
+
+    <!-- TOPIK 30 NGÀY — xem 1 ngày (iframe, tránh xung đột JS với từng bài) -->
+    <div class="page" id="page-topik30-day">
+      <div class="topbar">
+        <button class="btn btn-sm" onclick="navTo(null,'topik30')"><i class="ti ti-arrow-left"></i> TOPIK 30 ngày</button>
+        <div class="page-title" id="topik30-day-title"></div>
+      </div>
+      <div style="border:1.5px solid var(--brd);border-radius:16px;overflow:hidden;height:calc(100vh - 160px);background:#fff">
+        <iframe id="topik30-day-iframe" style="width:100%;height:100%;border:none" title="TOPIK day lesson"></iframe>
       </div>
     </div>
 
@@ -2151,7 +2184,7 @@ const ROUTES = {
   '/flashcard':'flashcard', '/community':'community', '/topik':'topik',
   '/studyplan':'studyplan', '/topik-exam':'topik-exam',
   '/profile':'profile', '/write-post':'write-post',
-  '/video-learn':'video-learn',
+  '/video-learn':'video-learn', '/topik30':'topik30',
 };
 
 function navTo(e, page, param=null) {
@@ -2183,6 +2216,8 @@ function renderRoute() {
   if (vlMatch) { showPage('video-learn-detail'); loadVideoLessonDetail(vlMatch[1]); updateNav('video-learn'); enterVlFullpage(); return; }
   const topikExamMatch = path.match(/^\/topik-exam\/run\/([^/]+)$/);
   if (topikExamMatch) { showPage('topik-exam-run'); loadTopikExamRunner(topikExamMatch[1]); updateNav('topik-exam'); return; }
+  const topik30Match = path.match(/^\/topik30\/day\/(\d+)$/);
+  if (topik30Match) { showPage('topik30-day'); loadTopik30Day(parseInt(topik30Match[1],10)); updateNav('topik30'); return; }
   const pageId = ROUTES[path] || 'dashboard';
   exitVlFullpage();
   showPage(pageId); updateNav(pageId); onPageLoad(pageId);
@@ -2218,6 +2253,56 @@ function onPageLoad(pageId) {
   else if (pageId === 'topik-exam') loadTopikExamModule();
   else if (pageId === 'profile') { updateSidebarUI(); loadFavDocs(); loadUploadedDocs(); }
   else if (pageId === 'write-post') initWritePage();
+  else if (pageId === 'topik30') renderTopik30Grid();
+}
+
+// ============================================================
+// TOPIK 30 NGÀY — mục lục + xem từng ngày qua iframe
+// (mỗi ngày là 1 file HTML độc lập trong thư mục /topik30/, ví dụ
+//  /topik30/day01.html — cách này tránh xung đột tên hàm/biến giữa
+//  các ngày, vì mỗi ngày có script riêng của nó)
+// ============================================================
+const TOPIK30_BASE_PATH = 'topik30/'; // đổi nếu bạn để file ở thư mục khác
+const TOPIK30_READY_DAYS = [1,2,3,4]; // cập nhật khi thêm file mới
+const TOPIK30_FILE = n => `${TOPIK30_BASE_PATH}day${String(n).padStart(2,'0')}.html`;
+
+function topik30DayCardHtml(n) {
+  const ready = TOPIK30_READY_DAYS.includes(n);
+  const onclick = ready ? `onclick="navTo(null,'topik30','day/${n}')"` : '';
+  const style = ready ? '' : 'style="opacity:.45;cursor:default"';
+  return `<div class="fc-folder" ${style} ${onclick}>
+    <div class="fc-folder-name">Day ${String(n).padStart(2,'0')}</div>
+    <div class="fc-folder-count">${ready ? 'Đã có · Vào học →' : 'Sắp có'}</div>
+  </div>`;
+}
+
+function renderTopik30Grid() {
+  const w1 = document.getElementById('topik30-week1');
+  const w2 = document.getElementById('topik30-week2');
+  const w3 = document.getElementById('topik30-week3');
+  const ap = document.getElementById('topik30-appendix');
+  if (!w1) return;
+  w1.innerHTML = Array.from({length:10},(_,i)=>topik30DayCardHtml(i+1)).join('');
+  w2.innerHTML = Array.from({length:10},(_,i)=>topik30DayCardHtml(i+11)).join('');
+  w3.innerHTML = Array.from({length:10},(_,i)=>topik30DayCardHtml(i+21)).join('');
+  const appendixLabels = ['사동사 · Causative verbs','피동사 · Passive verbs','속담 및 관용표현 · Idioms','단어장 · Self-vocab','INDEX · Tra cứu'];
+  ap.innerHTML = appendixLabels.map(l=>`<div class="fc-folder" style="opacity:.45;cursor:default">
+    <div class="fc-folder-name" style="font-size:11px">${l}</div>
+    <div class="fc-folder-count">Sắp có</div>
+  </div>`).join('');
+}
+
+function loadTopik30Day(n) {
+  const ready = TOPIK30_READY_DAYS.includes(n);
+  document.getElementById('topik30-day-title').textContent = `Day ${String(n).padStart(2,'0')}`;
+  const iframe = document.getElementById('topik30-day-iframe');
+  if (!ready) {
+    iframe.removeAttribute('src');
+    iframe.srcdoc = `<div style="font-family:sans-serif;color:#b0a0a8;display:flex;align-items:center;justify-content:center;height:100vh;font-size:14px">Ngày này chưa có bài học.</div>`;
+    return;
+  }
+  iframe.removeAttribute('srcdoc');
+  iframe.src = TOPIK30_FILE(n);
 }
 
 // ============================================================
