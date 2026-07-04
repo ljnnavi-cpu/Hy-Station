@@ -42,9 +42,9 @@ function speakText(text) {
       tabs.forEach(t => {
         const btn = document.getElementById('btn-' + t);
         if (t === tabId) {
-          btn.className = "w-full py-2.5 text-sm font-medium leading-5 rounded-lg transition-all duration-200 bg-white text-teal-700 shadow-xs font-semibold border border-slate-200/40";
+          btn.className = "w-full py-2.5 text-sm font-bold leading-5 rounded-xl transition-all duration-200 bg-[var(--pk4)] text-white shadow-[0_4px_14px_rgba(212,112,154,0.28)]";
         } else {
-          btn.className = "w-full py-2.5 text-sm font-medium leading-5 rounded-lg transition-all duration-200 text-slate-600 hover:text-slate-900 hover:bg-slate-200/40";
+          btn.className = "w-full py-2.5 text-sm font-medium leading-5 rounded-xl transition-all duration-200 text-[#8a7a84] hover:text-[var(--pk4)] hover:bg-[var(--pk2)]";
         }
       });
       scheduleMindmapRedraw(180);
@@ -585,10 +585,10 @@ function speakText(text) {
                 ${block.question_vi ? `<p class="text-sm text-slate-500 hideable-meaning vi-meaning-target" onclick="t30.toggleSingleRedSheet(this, event)">${escapeHtml(block.question_vi)}</p>` : ''}
               </div>
             </div>
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <div class="combo-box w-full sm:w-48">${rows}</div>
-              <div class="text-4xl font-light text-amber-500">+</div>
-              <div class="word-pill text-center cursor-pointer hover:scale-[1.02] transition" onclick="t30.speakText('${escapeJsText(block.word || '')}')">
+            <div class="flex flex-col sm:flex-row items-stretch justify-center gap-3 max-w-md mx-auto">
+              <div class="combo-box w-full sm:w-auto sm:flex-1 sm:min-w-[150px]">${rows}</div>
+              <div class="flex items-center justify-center text-2xl font-light text-amber-500 shrink-0">+</div>
+              <div class="word-pill text-center cursor-pointer hover:scale-[1.02] transition flex flex-col items-center justify-center sm:flex-1 sm:min-w-[130px]" onclick="t30.speakText('${escapeJsText(block.word || '')}')">
                 <span class="text-lg font-black text-slate-900">${escapeHtml(block.word || '')}</span>
                 <span class="text-sm text-slate-500 ml-1">🔊</span>
                 ${block.word_vi ? `<div class="text-xs text-teal-700 font-semibold mt-1 hideable-meaning" onclick="t30.toggleSingleRedSheet(this, event)">${escapeHtml(block.word_vi)}</div>` : ''}
