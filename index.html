@@ -1164,6 +1164,19 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
   }
 }
 </style>
+
+<!-- ===== TOPIK 30 ngày — engine dùng chung cho 30 bài (xem topik30/README.md) ===== -->
+<!-- Tailwind chỉ nạp phần "theme" + "utilities", KHÔNG nạp "preflight" (phần reset
+     mặc định thẻ h1/ul/button...) để không ảnh hưởng tới giao diện gốc của web. -->
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<style type="text/tailwindcss">
+  @layer theme, utilities;
+  @import "tailwindcss/theme.css" layer(theme);
+  @layer utilities {
+    .t30-scope { @tailwind utilities; }
+  }
+</style>
+<link rel="stylesheet" href="topik30/t30-styles.css">
 </head>
 <body>
 
@@ -1689,15 +1702,21 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
       <div class="fc-folder-grid" id="topik30-appendix" style="grid-template-columns:repeat(5,1fr)"></div>
     </div>
 
-    <!-- TOPIK 30 NGÀY — xem 1 ngày (iframe, tránh xung đột JS với từng bài) -->
+    <!-- TOPIK 30 NGÀY — xem 1 ngày (render trực tiếp vào DOM, không dùng iframe.
+         Mỗi ngày gồm 1 fragment HTML + 1 file .data.json, được t30-engine.js
+         (nạp 1 lần duy nhất, xem cuối file) render vào #topik30-day-root.
+         Nhờ engine dùng chung + t30.mount() reset state mỗi lần chuyển ngày,
+         nên không còn xung đột tên hàm/biến giữa 30 ngày. -->
     <div class="page" id="page-topik30-day">
       <div class="topbar">
         <button class="btn btn-sm" onclick="navTo(null,'topik30')"><i class="ti ti-arrow-left"></i> TOPIK 30 ngày</button>
         <div class="page-title" id="topik30-day-title"></div>
       </div>
-      <div style="border:1.5px solid var(--brd);border-radius:16px;overflow:hidden;height:calc(100vh - 160px);background:#fff">
-        <iframe id="topik30-day-iframe" style="width:100%;height:100%;border:none" title="TOPIK day lesson"></iframe>
+      <div id="topik30-day-loading" style="text-align:center;padding:80px 0;color:#b0a0a8;font-size:13px">
+        <i class="ti ti-loader-2" style="font-size:22px"></i><br><br>Đang tải bài học…
       </div>
+      <div id="topik30-day-error" style="display:none;text-align:center;padding:80px 0;color:#b0a0a8;font-size:14px"></div>
+      <div id="topik30-day-root" class="t30-scope" style="display:none"></div>
     </div>
 
   </div>
@@ -2372,14 +2391,19 @@ function onPageLoad(pageId) {
 }
 
 // ============================================================
-// TOPIK 30 NGÀY — mục lục + xem từng ngày qua iframe
-// (mỗi ngày là 1 file HTML độc lập trong thư mục /topik30/, ví dụ
-//  /topik30/day01.html — cách này tránh xung đột tên hàm/biến giữa
-//  các ngày, vì mỗi ngày có script riêng của nó)
+// TOPIK 30 NGÀY — mục lục + xem từng ngày (render trực tiếp, không iframe)
+// Mỗi ngày gồm 2 file trong /topik30/:
+//   dayNN.html       — fragment HTML (nội dung 4 tab, không có <html>/<script>)
+//   dayNN.data.json  — { vocabData: [...], dict: {...} } dữ liệu riêng của ngày
+// t30-engine.js (nạp 1 lần ở cuối trang) chịu trách nhiệm render + xử lý mọi
+// tương tác. Mỗi lần chuyển ngày, t30.mount() reset toàn bộ state trước khi
+// render ngày mới nên không xảy ra xung đột giữa các ngày.
 // ============================================================
 const TOPIK30_BASE_PATH = 'topik30/'; // đổi nếu bạn để file ở thư mục khác
-const TOPIK30_READY_DAYS = [1,2,3,4]; // cập nhật khi thêm file mới
+const TOPIK30_READY_DAYS = Array.from({length:30},(_,i)=>i+1); // 30 ngày đã có
 const TOPIK30_FILE = n => `${TOPIK30_BASE_PATH}day${String(n).padStart(2,'0')}.html`;
+const TOPIK30_DATA_FILE = n => `${TOPIK30_BASE_PATH}day${String(n).padStart(2,'0')}.data.json`;
+const TOPIK30_CACHE = {}; // cache fragment+data đã tải, tránh fetch lại khi quay lại ngày cũ
 
 function topik30DayCardHtml(n) {
   const ready = TOPIK30_READY_DAYS.includes(n);
@@ -2407,17 +2431,50 @@ function renderTopik30Grid() {
   </div>`).join('');
 }
 
-function loadTopik30Day(n) {
-  const ready = TOPIK30_READY_DAYS.includes(n);
+async function loadTopik30Day(n) {
   document.getElementById('topik30-day-title').textContent = `Day ${String(n).padStart(2,'0')}`;
-  const iframe = document.getElementById('topik30-day-iframe');
+  const loadingEl = document.getElementById('topik30-day-loading');
+  const errorEl = document.getElementById('topik30-day-error');
+  const root = document.getElementById('topik30-day-root');
+
+  root.style.display = 'none';
+  errorEl.style.display = 'none';
+  root.innerHTML = '';
+
+  const ready = TOPIK30_READY_DAYS.includes(n);
   if (!ready) {
-    iframe.removeAttribute('src');
-    iframe.srcdoc = `<div style="font-family:sans-serif;color:#b0a0a8;display:flex;align-items:center;justify-content:center;height:100vh;font-size:14px">Ngày này chưa có bài học.</div>`;
+    loadingEl.style.display = 'none';
+    errorEl.style.display = 'block';
+    errorEl.textContent = 'Ngày này chưa có bài học.';
     return;
   }
-  iframe.removeAttribute('srcdoc');
-  iframe.src = TOPIK30_FILE(n);
+
+  loadingEl.style.display = 'block';
+
+  try {
+    let entry = TOPIK30_CACHE[n];
+    if (!entry) {
+      const [fragRes, dataRes] = await Promise.all([
+        fetch(TOPIK30_FILE(n)),
+        fetch(TOPIK30_DATA_FILE(n))
+      ]);
+      if (!fragRes.ok || !dataRes.ok) throw new Error('fetch-failed');
+      const [fragHtml, data] = await Promise.all([fragRes.text(), dataRes.json()]);
+      entry = { fragHtml, data };
+      TOPIK30_CACHE[n] = entry;
+    }
+
+    root.innerHTML = entry.fragHtml;
+    loadingEl.style.display = 'none';
+    root.style.display = 'block';
+    // t30-engine.js expose sẵn window.t30 (nạp 1 lần ở cuối trang)
+    t30.mount(root, entry.data);
+  } catch (err) {
+    loadingEl.style.display = 'none';
+    errorEl.style.display = 'block';
+    errorEl.textContent = 'Không tải được bài học. Vui lòng thử lại.';
+    console.error('loadTopik30Day error:', err);
+  }
 }
 
 // ============================================================
@@ -9764,6 +9821,10 @@ function exitVlFullpage() {
 }
 
 </script>
+
+<!-- Engine dùng chung cho TOPIK 30 ngày — nạp 1 lần duy nhất, không phụ thuộc
+     ngày nào cả. Xem chi tiết cách hoạt động ở đầu file topik30/t30-engine.js -->
+<script src="topik30/t30-engine.js"></script>
 
 </body>
 </html>
