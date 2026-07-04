@@ -1,6 +1,5 @@
 (function () {
   'use strict';
-
   // ============================================================
   // TOPIK 30 Ngay - shared rendering engine (t30)
   // Dung chung cho toan bo 30 ngay, chi load 1 lan duy nhat.
