@@ -27,7 +27,7 @@
       transition: all 0.15s ease;
     }
 .t30-scope .vi-meaning-target:hover {
-      background-color: rgba(20, 184, 166, 0.08);
+      background-color: rgba(212, 112, 154, 0.08);
     }
 .t30-scope .study-extra-card {
       border-radius: 18px;
@@ -48,45 +48,45 @@
       width: fit-content;
     }
 .t30-scope .test-note-card {
-      background: linear-gradient(135deg, rgba(255,241,242,0.95), rgba(255,247,237,0.75));
-      border: 1px dashed rgba(251,113,133,0.55);
+      background: linear-gradient(135deg, rgba(253,232,232,0.95), rgba(255,247,237,0.75));
+      border: 1px dashed rgba(245,160,160,0.55);
       box-shadow: inset 0 0 0 1px rgba(255,255,255,0.5);
     }
 .t30-scope .test-note-label {
-      background: rgba(253,164,175,0.35);
-      color: #9f1239;
-      border: 1px solid rgba(251,113,133,0.35);
+      background: rgba(245,160,160,0.35);
+      color: #a83a3a;
+      border: 1px solid rgba(245,160,160,0.35);
     }
 .t30-scope .tip-card {
-      background: linear-gradient(135deg, rgba(254,252,232,0.95), rgba(240,253,250,0.88));
-      border: 1px solid rgba(245,158,11,0.25);
+      background: linear-gradient(135deg, rgba(255,248,224,0.95), rgba(255,234,244,0.88));
+      border: 1px solid rgba(240,200,64,0.25);
     }
 .t30-scope .tip-label {
-      background: #111827;
+      background: #1a1a1a;
       color: #fff;
       border-radius: 999px;
       padding: 0.2rem 0.65rem;
       font-weight: 900;
       font-size: 0.78rem;
-      box-shadow: 0 2px 8px rgba(15,23,42,0.15);
+      box-shadow: 0 2px 8px rgba(26,26,26,0.15);
     }
 .t30-scope .combo-box {
       background: rgba(255,255,255,0.82);
-      border: 1px solid rgba(245,158,11,0.28);
+      border: 1px solid rgba(240,200,64,0.28);
       border-radius: 20px;
       padding: 0.9rem 1rem;
-      box-shadow: 0 8px 20px rgba(15,23,42,0.06);
+      box-shadow: 0 8px 20px rgba(212,112,154,0.10);
     }
 .t30-scope .word-pill {
       background: rgba(255,255,255,0.92);
-      border: 1px solid rgba(45,212,191,0.35);
+      border: 1px solid rgba(232,160,192,0.35);
       border-radius: 999px;
       padding: 0.75rem 1rem;
-      box-shadow: 0 8px 20px rgba(20,184,166,0.08);
+      box-shadow: 0 8px 20px rgba(212,112,154,0.08);
     }
 .t30-scope .mindmap-card {
-      background: linear-gradient(135deg, rgba(248,250,252,0.98), rgba(236,253,245,0.9));
-      border: 1px solid rgba(20,184,166,0.24);
+      background: linear-gradient(135deg, rgba(248,250,252,0.98), rgba(224,242,229,0.9));
+      border: 1px solid rgba(212,112,154,0.24);
       overflow: hidden;
     }
 .t30-scope .mindmap-board {
@@ -110,14 +110,14 @@
     }
 .t30-scope .mindmap-connector-svg path {
       fill: none;
-      stroke: rgba(20,184,166,0.48);
+      stroke: rgba(212,112,154,0.48);
       stroke-width: 3;
       stroke-dasharray: 9 7;
       stroke-linecap: round;
       stroke-linejoin: round;
     }
 .t30-scope .mindmap-connector-svg circle {
-      fill: rgba(20,184,166,0.72);
+      fill: rgba(212,112,154,0.72);
       stroke: rgba(255,255,255,0.95);
       stroke-width: 2;
     }
@@ -126,7 +126,7 @@
       grid-row: 2 / span 2;
       min-width: 170px;
       min-height: 150px;
-      border: 3px solid rgba(94,234,212,0.68);
+      border: 3px solid rgba(232,160,192,0.68);
       background: rgba(255,255,255,0.98);
       border-radius: 24px;
       display: flex;
@@ -134,14 +134,14 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      box-shadow: 0 14px 28px rgba(20,184,166,0.10);
+      box-shadow: 0 14px 28px rgba(212,112,154,0.14);
       position: relative;
       z-index: 2;
       padding: 1rem;
     }
 .t30-scope .mind-node {
       background: rgba(255,255,255,0.97);
-      border: 1px solid rgba(148,163,184,0.22);
+      border: 1px solid rgba(176,160,168,0.30);
       border-radius: 20px;
       padding: 0.9rem 1rem;
       line-height: 1.35;
@@ -151,7 +151,7 @@
       justify-content: center;
       position: relative;
       z-index: 2;
-      box-shadow: 0 10px 24px rgba(15,23,42,0.05);
+      box-shadow: 0 10px 24px rgba(212,112,154,0.08);
     }
 .t30-scope .mind-node.left.top { grid-column: 1; grid-row: 1; }
 .t30-scope .mind-node.right.top { grid-column: 3; grid-row: 1; }
@@ -200,7 +200,7 @@
 }
 .t30-scope .review-question-card {
       background: #fff;
-      border: 1px solid rgba(148,163,184,0.28);
+      border: 1px solid rgba(176,160,168,0.35);
       border-radius: 1rem;
       padding: 1rem;
       min-height: 112px;
@@ -224,11 +224,11 @@
       min-width: 180px;
       min-height: 46px;
       width: 100%;
-      border: 2px solid rgba(148,163,184,0.38);
+      border: 2px solid rgba(176,160,168,0.45);
       border-radius: 0.85rem;
       padding: 0.7rem 0.9rem;
       font-size: 1rem;
-      color: #0f172a;
+      color: #4a4a4a;
       outline: none;
       background: #ffffff;
       transition: border-color .15s ease, box-shadow .15s ease, background .15s ease;
@@ -236,60 +236,60 @@
       user-select: text;
     }
 .t30-scope .review-input::placeholder {
-      color: #94a3b8;
+      color: #b0a0a8;
     }
 .t30-scope .review-input:focus {
-      border-color: rgba(13,148,136,0.85);
-      box-shadow: 0 0 0 4px rgba(45,212,191,0.18);
+      border-color: rgba(212,112,154,0.85);
+      box-shadow: 0 0 0 4px rgba(232,160,192,0.30);
     }
 .t30-scope .review-input.is-correct {
-      border-color: rgba(16,185,129,0.85);
-      background: rgba(236,253,245,0.95);
+      border-color: rgba(128,192,144,0.85);
+      background: rgba(224,242,229,0.95);
     }
 .t30-scope .review-input.is-wrong {
-      border-color: rgba(244,63,94,0.85);
-      background: rgba(255,241,242,0.95);
+      border-color: rgba(224,82,82,0.85);
+      background: rgba(253,232,232,0.95);
     }
 .t30-scope .review-radio-label {
       display: inline-flex;
       align-items: center;
       gap: 0.45rem;
-      border: 1px solid rgba(148,163,184,0.35);
+      border: 1px solid rgba(176,160,168,0.40);
       background: #fff;
       border-radius: 999px;
       padding: 0.55rem 0.9rem;
       font-weight: 700;
       font-size: 0.92rem;
-      color: #475569;
+      color: #6b5c64;
       cursor: pointer;
       transition: all .15s ease;
       user-select: none;
     }
 .t30-scope .review-radio-label:hover {
-      border-color: rgba(13,148,136,0.65);
-      color: #0f766e;
-      background: rgba(240,253,250,0.9);
+      border-color: rgba(212,112,154,0.65);
+      color: #c0608a;
+      background: rgba(255,234,244,0.9);
     }
 .t30-scope .review-radio-label input {
       width: 1rem;
       height: 1rem;
-      accent-color: #0d9488;
+      accent-color: #d4709a;
       cursor: pointer;
     }
 .t30-scope .review-radio-label.is-selected {
-      border-color: rgba(13,148,136,0.75);
-      background: #0d9488;
+      border-color: rgba(212,112,154,0.75);
+      background: #d4709a;
       color: #fff;
-      box-shadow: 0 6px 16px rgba(13,148,136,0.18);
+      box-shadow: 0 6px 16px rgba(212,112,154,0.18);
     }
 .t30-scope .review-radio-label.is-correct {
-      border-color: rgba(16,185,129,0.85);
-      background: #10b981;
+      border-color: rgba(128,192,144,0.85);
+      background: #6fae87;
       color: #fff;
     }
 .t30-scope .review-radio-label.is-wrong {
-      border-color: rgba(244,63,94,0.85);
-      background: #f43f5e;
+      border-color: rgba(224,82,82,0.85);
+      background: #e05252;
       color: #fff;
     }
 .t30-scope .review-action-disabled,
@@ -316,34 +316,34 @@
       min-height: 56px;
       padding: 0.8rem 1rem;
       border-radius: 1rem;
-      border: 1px solid rgba(148,163,184,0.35);
+      border: 1px solid rgba(176,160,168,0.40);
       background: #ffffff;
-      color: #0f172a;
+      color: #4a4a4a;
       font-weight: 700;
       text-align: center;
       transition: all 0.15s ease;
       cursor: pointer;
     }
 .t30-scope .matching-card:hover {
-      border-color: rgba(13,148,136,0.55);
-      background: rgba(240,253,250,0.9);
-      color: #0f766e;
+      border-color: rgba(212,112,154,0.55);
+      background: rgba(255,234,244,0.9);
+      color: #c0608a;
     }
 .t30-scope .matching-card.is-selected {
-      border-color: rgba(13,148,136,0.8);
-      background: #0d9488;
+      border-color: rgba(212,112,154,0.80);
+      background: #d4709a;
       color: #ffffff;
-      box-shadow: 0 6px 16px rgba(13,148,136,0.18);
+      box-shadow: 0 6px 16px rgba(212,112,154,0.18);
     }
 .t30-scope .matching-card.is-correct,
 .t30-scope .matching-card.is-matched {
-      border-color: rgba(16,185,129,0.85);
-      background: #10b981;
+      border-color: rgba(128,192,144,0.85);
+      background: #6fae87;
       color: #ffffff;
     }
 .t30-scope .matching-card.is-wrong {
-      border-color: rgba(244,63,94,0.85);
-      background: #f43f5e;
+      border-color: rgba(224,82,82,0.85);
+      background: #e05252;
       color: #ffffff;
     }
 @media (max-width: 640px) {
