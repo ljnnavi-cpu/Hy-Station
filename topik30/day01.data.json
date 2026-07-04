@@ -5,72 +5,216 @@
       "id": "01",
       "word": "필요하다",
       "meaning": "need",
+      "meaning_vi": "cần thiết",
       "type": "형 adjective",
       "example_ko": "호텔에 계시면서 필요한 것이 있으면 바로 전화 주세요.",
       "example_vi": "If you need anything while staying in the hotel, give us a call right away.",
-      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>필요</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>need</span></div><div><span class='font-semibold text-gray-700'>필요로 하다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>require</span></div><div><span class='font-semibold text-gray-700'>필요성</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>necessity</span></div><div><span class='font-semibold text-gray-700'>필요가 있다/없다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>necessary/unnecessary</span></div></div>"
+      "example_vi_vn": "Nếu bạn cần gì trong thời gian lưu trú tại khách sạn, hãy gọi cho chúng tôi ngay.",
+      "extra": "",
+      "detailBlocks": [
+        {
+          "type": "tip_note",
+          "label": "확장 표현",
+          "question_ko": "필요하다",
+          "question_vi": "cần thiết",
+          "examples": [
+            {
+              "ko": "필요",
+              "en": "need"
+            },
+            {
+              "ko": "필요로 하다",
+              "en": "require"
+            },
+            {
+              "ko": "필요성",
+              "en": "necessity"
+            },
+            {
+              "ko": "필요가 있다/없다",
+              "en": "necessary/unnecessary"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "02",
       "word": "방법",
       "meaning": "method",
+      "meaning_vi": "phương pháp",
       "type": "명 noun",
       "example_ko": "세탁기 사용하는 방법 좀 알려 줄래요?",
       "example_vi": "Can you tell me how to use the washing machine?",
-      "extra": ""
+      "example_vi_vn": "Bạn có thể chỉ cho tôi cách sử dụng máy giặt được không?",
+      "extra": "",
+      "detailBlocks": []
     },
     {
       "id": "03",
       "word": "이용하다",
       "meaning": "use, take",
+      "meaning_vi": "sử dụng, đi / dùng",
       "type": "동 verb",
       "example_ko": "대중교통 이용하는 게 이제는 익숙해졌어요.",
       "example_vi": "Now I am used to using public transportation.",
-      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>이용</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>use</span></div><div><span class='font-semibold text-gray-700'>이용료</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>(specific behavior) fee</span></div><div><span class='font-semibold text-gray-700'>이용증</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>using license</span></div><div><span class='font-semibold text-gray-700'>이용객</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>user</span></div><div><span class='font-semibold text-gray-700'>이용자</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>user</span></div><div><span class='font-semibold text-gray-700'>이용되다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>be used</span></div></div>"
+      "example_vi_vn": "Bây giờ tôi đã quen với việc sử dụng phương tiện công cộng.",
+      "extra": "",
+      "detailBlocks": [
+        {
+          "type": "tip_note",
+          "label": "확장 표현",
+          "question_ko": "이용하다",
+          "question_vi": "sử dụng, đi / dùng",
+          "examples": [
+            {
+              "ko": "이용",
+              "en": "use"
+            },
+            {
+              "ko": "이용료",
+              "en": "(specific behavior) fee"
+            },
+            {
+              "ko": "이용증",
+              "en": "using license"
+            },
+            {
+              "ko": "이용객",
+              "en": "user"
+            },
+            {
+              "ko": "이용자",
+              "en": "user"
+            },
+            {
+              "ko": "이용되다",
+              "en": "be used"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "04",
       "word": "생각하다",
       "meaning": "think",
+      "meaning_vi": "suy nghĩ",
       "type": "동 verb",
       "example_ko": "친구와 싸웠는데 다시 생각해 보니 내가 잘못한 것 같다.",
       "example_vi": "I had a fight with my friend, but I think it was my fault that we had a fight.",
-      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>생각</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>thought</span></div><div><span class='font-semibold text-gray-700'>생각이 나다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>remember</span></div><div><span class='font-semibold text-gray-700'>생각되다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>be regarded as</span></div><div><span class='font-semibold text-gray-700'>생각이 들다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>have a thought that~</span></div></div>"
+      "example_vi_vn": "Tôi đã cãi nhau với bạn, nhưng nghĩ lại thì có vẻ đó là lỗi của tôi.",
+      "extra": "",
+      "detailBlocks": [
+        {
+          "type": "tip_note",
+          "label": "확장 표현",
+          "question_ko": "생각하다",
+          "question_vi": "suy nghĩ",
+          "examples": [
+            {
+              "ko": "생각",
+              "en": "thought"
+            },
+            {
+              "ko": "생각이 나다",
+              "en": "remember"
+            },
+            {
+              "ko": "생각되다",
+              "en": "be regarded as"
+            },
+            {
+              "ko": "생각이 들다",
+              "en": "have a thought that~"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "05",
       "word": "관심",
       "meaning": "attention",
+      "meaning_vi": "sự quan tâm / chú ý",
       "type": "명 noun",
       "example_ko": "처음에는 사람들이 관심을 안 보였지만, 반복해서 말하자 관심을 보이기 시작했습니다.",
       "example_vi": "At first, no one gave any attention to it, but after repeating it over and over they started to give attention to the subject.",
-      "extra": "<div><span class='font-semibold text-gray-700'>관심을 갖다(가지다)</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>give attention to</span></div><div><span class='font-semibold text-gray-700'>관심을 끌다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>draw attention</span></div><div><span class='font-semibold text-gray-700'>관심이 있다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>be interested in</span></div>"
+      "example_vi_vn": "Lúc đầu không ai quan tâm, nhưng sau khi nói đi nói lại nhiều lần thì mọi người bắt đầu chú ý đến vấn đề đó.",
+      "extra": "",
+      "detailBlocks": [
+        {
+          "type": "tip_note",
+          "label": "확장 표현",
+          "question_ko": "관심",
+          "question_vi": "sự quan tâm / chú ý",
+          "examples": [
+            {
+              "ko": "관심을 갖다(가지다)",
+              "en": "give attention to"
+            },
+            {
+              "ko": "관심을 끌다",
+              "en": "draw attention"
+            },
+            {
+              "ko": "관심이 있다",
+              "en": "be interested in"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "06",
       "word": "가능하다",
       "meaning": "be possible",
+      "meaning_vi": "có thể / khả thi",
       "type": "형 adjective",
       "example_ko": "가능하면 그렇게 처리해 주십시오.",
       "example_vi": "If it is possible, please process it as such.",
-      "extra": "<div><span class='font-semibold text-gray-700'>가능</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>possible</span></div><div><span class='font-semibold text-gray-700'>가능성</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>possibility</span></div>"
+      "example_vi_vn": "Nếu có thể, xin hãy xử lý như vậy.",
+      "extra": "",
+      "detailBlocks": [
+        {
+          "type": "tip_note",
+          "label": "확장 표현",
+          "question_ko": "가능하다",
+          "question_vi": "có thể / khả thi",
+          "examples": [
+            {
+              "ko": "가능",
+              "en": "possible"
+            },
+            {
+              "ko": "가능성",
+              "en": "possibility"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "07",
       "word": "결과",
       "meaning": "result",
+      "meaning_vi": "kết quả",
       "type": "명 noun",
       "example_ko": "건강 검진 결과가 나오면 연락을 드리겠습니다.",
       "example_vi": "We will contact you right after we get the result of your checkup.",
-      "extra": ""
+      "example_vi_vn": "Chúng tôi sẽ liên lạc ngay sau khi có kết quả kiểm tra sức khỏe của bạn.",
+      "extra": "",
+      "detailBlocks": []
     },
     {
       "id": "08",
       "word": "늘다",
       "meaning": "increase",
+      "meaning_vi": "tăng lên",
       "type": "동 verb",
       "example_ko": "백화점 세일 덕분에 판매량이 30%정도 늘었다고 합니다.",
       "example_vi": "It is known that the sales have increased approximately 30% because of the sales.",
+      "example_vi_vn": "Được biết doanh số đã tăng khoảng 30% nhờ đợt giảm giá.",
       "extra": "",
       "detailBlocks": [
         {
@@ -92,54 +236,110 @@
       "id": "09",
       "word": "바꾸다",
       "meaning": "exchange",
+      "meaning_vi": "đổi / trao đổi",
       "type": "동 verb",
       "example_ko": "여기서 한국 돈을 일본 돈으로 바꿀 수 있어요?",
       "example_vi": "May I exchange Korean won to Japanese yen here?",
-      "extra": ""
+      "example_vi_vn": "Tôi có thể đổi tiền won Hàn Quốc sang yên Nhật ở đây không?",
+      "extra": "",
+      "detailBlocks": []
     },
     {
       "id": "10",
       "word": "노력하다",
       "meaning": "make an effort",
+      "meaning_vi": "nỗ lực / cố gắng",
       "type": "동 verb",
       "example_ko": "노력하면 안 되는 일이 어디 있겠어요?",
       "example_vi": "There is no such thing that you cannot do if you make an effort.",
-      "extra": "<div><span class='font-semibold text-gray-700'>노력</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>effort</span></div>"
+      "example_vi_vn": "Nếu nỗ lực thì không có việc gì là không thể làm được.",
+      "extra": "",
+      "detailBlocks": [
+        {
+          "type": "tip_note",
+          "label": "확장 표현",
+          "question_ko": "노력하다",
+          "question_vi": "nỗ lực / cố gắng",
+          "examples": [
+            {
+              "ko": "노력",
+              "en": "effort"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "11",
       "word": "느끼다",
       "meaning": "feel",
+      "meaning_vi": "cảm thấy",
       "type": "동 verb",
       "example_ko": "그 영화를 보고 느낀 점을 말해 봅시다.",
       "example_vi": "Tell us what you felt after watching the movie.",
-      "extra": "<div><span class='font-semibold text-gray-700'>느낌</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>feeling</span></div>"
+      "example_vi_vn": "Hãy nói về điều bạn cảm nhận sau khi xem bộ phim.",
+      "extra": "",
+      "detailBlocks": [
+        {
+          "type": "tip_note",
+          "label": "확장 표현",
+          "question_ko": "느끼다",
+          "question_vi": "cảm thấy",
+          "examples": [
+            {
+              "ko": "느낌",
+              "en": "feeling"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "12",
       "word": "경우",
       "meaning": "case",
+      "meaning_vi": "trường hợp",
       "type": "명 noun",
       "example_ko": "날씨가 나쁘면 비행기가 출발하지 못 하는 경우가 있습니다.",
       "example_vi": "There could be a case when the plane won’t depart if the weather is bad.",
-      "extra": ""
+      "example_vi_vn": "Có trường hợp máy bay không thể khởi hành nếu thời tiết xấu.",
+      "extra": "",
+      "detailBlocks": []
     },
     {
       "id": "13",
       "word": "상품",
       "meaning": "goods",
+      "meaning_vi": "hàng hóa / sản phẩm",
       "type": "명 noun",
       "example_ko": "백화점에 가면 여러 가지 상품들이 보기 좋게 진열되어 있다.",
       "example_vi": "If you go to the department store, various kinds of goods are displayed neatly.",
-      "extra": "<div><span class='font-semibold text-gray-700'>상품권</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>gift card</span></div>"
+      "example_vi_vn": "Nếu đến trung tâm thương mại, nhiều loại hàng hóa được trưng bày gọn gàng đẹp mắt.",
+      "extra": "",
+      "detailBlocks": [
+        {
+          "type": "tip_note",
+          "label": "확장 표현",
+          "question_ko": "상품",
+          "question_vi": "hàng hóa / sản phẩm",
+          "examples": [
+            {
+              "ko": "상품권",
+              "en": "gift card"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "14",
       "word": "생기다",
       "meaning": "come up",
+      "meaning_vi": "phát sinh / xuất hiện",
       "type": "동 verb",
       "example_ko": "회사에 문제가 생겨서 퇴근했다가 다시 회사로 돌아갔다.",
       "example_vi": "Something came up at work so I went back after leaving the office.",
+      "example_vi_vn": "Có vấn đề phát sinh ở công ty nên tôi đã quay lại sau khi tan làm.",
       "extra": "",
       "detailBlocks": [
         {
@@ -174,18 +374,40 @@
       "id": "15",
       "word": "도움",
       "meaning": "help",
+      "meaning_vi": "sự giúp đỡ",
       "type": "명 noun",
       "example_ko": "처음 미국에 갔을 때 그 친구에게 많은 도움을 받았습니다.",
       "example_vi": "When I first went to the states, that buddy helped me out a lot.",
-      "extra": "<div><span class='font-semibold text-gray-700'>돕다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>help</span></div><div><span class='font-semibold text-gray-700'>도우미</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>helper</span></div>"
+      "example_vi_vn": "Khi lần đầu đến Mỹ, người bạn đó đã giúp đỡ tôi rất nhiều.",
+      "extra": "",
+      "detailBlocks": [
+        {
+          "type": "tip_note",
+          "label": "확장 표현",
+          "question_ko": "도움",
+          "question_vi": "sự giúp đỡ",
+          "examples": [
+            {
+              "ko": "돕다",
+              "en": "help"
+            },
+            {
+              "ko": "도우미",
+              "en": "helper"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "16",
       "word": "환경",
       "meaning": "environment",
+      "meaning_vi": "môi trường",
       "type": "명 noun",
       "example_ko": "우리의 환경을 지키기 위한 노력이 필요합니다.",
       "example_vi": "We need to make an effort to protect our environment.",
+      "example_vi_vn": "Chúng ta cần nỗ lực để bảo vệ môi trường.",
       "extra": "",
       "detailBlocks": [
         {
@@ -219,36 +441,47 @@
       "id": "17",
       "word": "내용",
       "meaning": "content",
+      "meaning_vi": "nội dung",
       "type": "명 noun",
       "example_ko": "이 책은 내용이 어려워서 이해하기 어렵다.",
       "example_vi": "The content of this book is too hard to understand.",
-      "extra": ""
+      "example_vi_vn": "Nội dung cuốn sách này quá khó nên khó hiểu.",
+      "extra": "",
+      "detailBlocks": []
     },
     {
       "id": "18",
       "word": "상황",
       "meaning": "situation",
+      "meaning_vi": "tình huống / tình hình",
       "type": "명 noun",
       "example_ko": "지진 피해 상황에 대한 뉴스가 계속 보도되고 있다.",
       "example_vi": "The news that shows the situation of the earthquake’s aftermath is constantly being reported.",
-      "extra": ""
+      "example_vi_vn": "Tin tức về tình hình thiệt hại sau trận động đất đang liên tục được đưa tin.",
+      "extra": "",
+      "detailBlocks": []
     },
     {
       "id": "19",
       "word": "바로잡다",
       "meaning": "correct",
+      "meaning_vi": "sửa đúng / điều chỉnh",
       "type": "동 verb",
       "example_ko": "아이가 잘못을 하면 부모가 당연히 바로잡아야 한다.",
       "example_vi": "When the child does something wrong, the parents must correct them.",
-      "extra": ""
+      "example_vi_vn": "Khi trẻ làm sai, cha mẹ đương nhiên phải sửa dạy cho đúng.",
+      "extra": "",
+      "detailBlocks": []
     },
     {
       "id": "20",
       "word": "사회",
       "meaning": "society",
+      "meaning_vi": "xã hội",
       "type": "명 noun",
       "example_ko": "우리 사회에는 좋은 일과 나쁜 일이 모두 존재한다.",
       "example_vi": "Both good and bad things coexist in our society.",
+      "example_vi_vn": "Trong xã hội của chúng ta tồn tại cả điều tốt và điều xấu.",
       "extra": "",
       "detailBlocks": [
         {
@@ -290,9 +523,11 @@
       "id": "21",
       "word": "생활",
       "meaning": "living",
+      "meaning_vi": "đời sống / sinh hoạt",
       "type": "명 noun",
       "example_ko": "유학 생활은 힘들지만 좋은 추억을 많이 만들 수 있다.",
       "example_vi": "Studying abroad is hard, but it will let you have many good memories.",
+      "example_vi_vn": "Cuộc sống du học tuy vất vả nhưng sẽ giúp bạn có nhiều kỷ niệm đẹp.",
       "extra": "",
       "detailBlocks": [
         {
@@ -334,108 +569,278 @@
       "id": "22",
       "word": "이상하다",
       "meaning": "strange",
+      "meaning_vi": "kỳ lạ",
       "type": "형 adjective",
       "example_ko": "처음에 한국에 왔을 때 남자들이 분홍색 옷을 입고 있는 것이 이상해 보였다.",
       "example_vi": "It seemed strange to see men wearing pink clothes when I first came to Korea.",
-      "extra": ""
+      "example_vi_vn": "Khi mới đến Hàn Quốc, tôi thấy lạ khi nhìn thấy đàn ông mặc đồ màu hồng.",
+      "extra": "",
+      "detailBlocks": []
     },
     {
       "id": "23",
       "word": "경험",
       "meaning": "experience",
+      "meaning_vi": "kinh nghiệm / trải nghiệm",
       "type": "명 noun",
       "example_ko": "학력보다는 그 사람이 어떠한 경험을 했는가가 중요합니다.",
       "example_vi": "The kind of experience a person did is more important than what kind of academic background he has.",
-      "extra": "<div><span class='font-semibold text-gray-700'>경험하다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>experience</span></div><div><span class='font-semibold text-gray-700'>사회경험</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>social experience</span></div>"
+      "example_vi_vn": "Những kinh nghiệm mà một người đã trải qua quan trọng hơn học lực của người đó.",
+      "extra": "",
+      "detailBlocks": [
+        {
+          "type": "tip_note",
+          "label": "확장 표현",
+          "question_ko": "경험",
+          "question_vi": "kinh nghiệm / trải nghiệm",
+          "examples": [
+            {
+              "ko": "경험하다",
+              "en": "experience"
+            },
+            {
+              "ko": "사회경험",
+              "en": "social experience"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "24",
       "word": "다양하다",
       "meaning": "various, different kinds of",
+      "meaning_vi": "đa dạng, nhiều loại khác nhau",
       "type": "형 adjective",
       "example_ko": "요즘 서점에서는 다양한 잡지를 접할 수 있습니다.",
       "example_vi": "Nowadays, you can read many different kinds of magazines in the book store.",
-      "extra": "<div><span class='font-semibold text-gray-700'>다양성</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>diversity</span></div>"
+      "example_vi_vn": "Dạo gần đây, bạn có thể đọc nhiều loại tạp chí khác nhau ở hiệu sách.",
+      "extra": "",
+      "detailBlocks": [
+        {
+          "type": "tip_note",
+          "label": "확장 표현",
+          "question_ko": "다양하다",
+          "question_vi": "đa dạng, nhiều loại khác nhau",
+          "examples": [
+            {
+              "ko": "다양성",
+              "en": "diversity"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "25",
       "word": "최근",
       "meaning": "recently",
+      "meaning_vi": "gần đây",
       "type": "명 noun",
       "example_ko": "이 지역은 최근 3년 동안 많은 변화가 나타났습니다.",
       "example_vi": "This area has gone through a big change in the recent 3 years.",
-      "extra": ""
+      "example_vi_vn": "Khu vực này đã trải qua nhiều thay đổi lớn trong 3 năm gần đây.",
+      "extra": "",
+      "detailBlocks": []
     },
     {
       "id": "26",
       "word": "선택하다",
       "meaning": "choose, select, decide",
+      "meaning_vi": "chọn, lựa chọn, quyết định",
       "type": "동 verb",
       "example_ko": "전공은 오랫동안 고민한 후에 선택해야 후회가 없다.",
       "example_vi": "When choosing your major, you will not regret your decision only if you make up your mind after thinking it over a lot.",
-      "extra": "<div><span class='font-semibold text-gray-700'>선택</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>decision</span></div><div><span class='font-semibold text-gray-700'>선택되다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>be selected</span></div>"
+      "example_vi_vn": "Khi chọn chuyên ngành, bạn sẽ không hối hận nếu quyết định sau khi suy nghĩ thật kỹ.",
+      "extra": "",
+      "detailBlocks": [
+        {
+          "type": "tip_note",
+          "label": "확장 표현",
+          "question_ko": "선택하다",
+          "question_vi": "chọn, lựa chọn, quyết định",
+          "examples": [
+            {
+              "ko": "선택",
+              "en": "decision"
+            },
+            {
+              "ko": "선택되다",
+              "en": "be selected"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "27",
       "word": "효과",
       "meaning": "effect",
+      "meaning_vi": "hiệu quả / tác dụng",
       "type": "명 noun",
       "example_ko": "꾸준히 운동했더니 마침내 효과가 나타났어요.",
       "example_vi": "After constantly exercising, the result finally appeared.",
-      "extra": "<div><span class='font-semibold text-gray-700'>효과적</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>effective</span></div>"
+      "example_vi_vn": "Sau khi kiên trì tập thể dục, cuối cùng hiệu quả đã xuất hiện.",
+      "extra": "",
+      "detailBlocks": [
+        {
+          "type": "tip_note",
+          "label": "확장 표현",
+          "question_ko": "효과",
+          "question_vi": "hiệu quả / tác dụng",
+          "examples": [
+            {
+              "ko": "효과적",
+              "en": "effective"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "28",
       "word": "문제",
       "meaning": "problem",
+      "meaning_vi": "vấn đề",
       "type": "명 noun",
       "example_ko": "문제가 좀 생겼는데 와서 도와줄래요?",
       "example_vi": "I have a problem, can you help me with it?",
-      "extra": "<div><span class='font-semibold text-gray-700'>문제점</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>problem</span></div><div><span class='font-semibold text-gray-700'>문제가 되다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>become a problem</span></div><div><span class='font-semibold text-gray-700'>문제거리</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>problem</span></div>"
+      "example_vi_vn": "Tôi đang có vấn đề, bạn có thể đến giúp tôi được không?",
+      "extra": "",
+      "detailBlocks": [
+        {
+          "type": "tip_note",
+          "label": "확장 표현",
+          "question_ko": "문제",
+          "question_vi": "vấn đề",
+          "examples": [
+            {
+              "ko": "문제점",
+              "en": "problem"
+            },
+            {
+              "ko": "문제가 되다",
+              "en": "become a problem"
+            },
+            {
+              "ko": "문제거리",
+              "en": "problem"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "29",
       "word": "자신",
       "meaning": "oneself",
+      "meaning_vi": "bản thân",
       "type": "명 noun",
       "example_ko": "자기 자신에 대한 사랑 없이 남을 사랑할 수 없다.",
       "example_vi": "You can never love other people if you do not love yourself.",
-      "extra": ""
+      "example_vi_vn": "Nếu không yêu thương bản thân mình thì bạn không thể yêu thương người khác.",
+      "extra": "",
+      "detailBlocks": []
     },
     {
       "id": "30",
       "word": "찾다",
       "meaning": "find",
+      "meaning_vi": "tìm thấy / tìm kiếm",
       "type": "동 verb",
       "example_ko": "외출해야 하는데 열쇠를 찾을 수가 없어요.",
       "example_vi": "I should go out, but I cannot find my keys.",
-      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>찾아 오다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>visit</span></div><div><span class='font-semibold text-gray-700'>찾아 내다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>find out</span></div><div><span class='font-semibold text-gray-700'>찾아 뵙다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>pay a visit</span></div><div><span class='font-semibold text-gray-700'>찾아 가다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>pay a visit</span></div><div><span class='font-semibold text-gray-700'>찾아 보다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>look for</span></div><div><span class='font-semibold text-gray-700'>찾아 다니다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>look around for</span></div></div>"
+      "example_vi_vn": "Tôi phải ra ngoài nhưng không thể tìm thấy chìa khóa.",
+      "extra": "",
+      "detailBlocks": [
+        {
+          "type": "tip_note",
+          "label": "확장 표현",
+          "question_ko": "찾다",
+          "question_vi": "tìm thấy / tìm kiếm",
+          "examples": [
+            {
+              "ko": "찾아 오다",
+              "en": "visit"
+            },
+            {
+              "ko": "찾아 내다",
+              "en": "find out"
+            },
+            {
+              "ko": "찾아 뵙다",
+              "en": "pay a visit"
+            },
+            {
+              "ko": "찾아 가다",
+              "en": "pay a visit"
+            },
+            {
+              "ko": "찾아 보다",
+              "en": "look for"
+            },
+            {
+              "ko": "찾아 다니다",
+              "en": "look around for"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "31",
       "word": "관계",
       "meaning": "relationship",
+      "meaning_vi": "mối quan hệ",
       "type": "명 noun",
       "example_ko": "성공한 사람들은 대부분 인간 관계가 좋았다고 합니다.",
       "example_vi": "Most of the successful men have good personal relationships.",
-      "extra": "<div><span class='font-semibold text-gray-700'>관계자</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>the persons concerned</span></div><div><span class='font-semibold text-gray-700'>관계당국</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>the authorities concerned</span></div><div><span class='font-semibold text-gray-700'>관계 없다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>have no relation to</span></div>"
+      "example_vi_vn": "Nghe nói phần lớn những người thành công đều có quan hệ cá nhân tốt.",
+      "extra": "",
+      "detailBlocks": [
+        {
+          "type": "tip_note",
+          "label": "확장 표현",
+          "question_ko": "관계",
+          "question_vi": "mối quan hệ",
+          "examples": [
+            {
+              "ko": "관계자",
+              "en": "the persons concerned"
+            },
+            {
+              "ko": "관계당국",
+              "en": "the authorities concerned"
+            },
+            {
+              "ko": "관계 없다",
+              "en": "have no relation to"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "32",
       "word": "기간",
       "meaning": "period",
+      "meaning_vi": "thời gian / thời hạn",
       "type": "명 noun",
       "example_ko": "A/S 기간은 구입 후 1년입니다.",
       "example_vi": "The limited warranty is one for a period of year.",
-      "extra": ""
+      "example_vi_vn": "Thời hạn bảo hành giới hạn là một năm kể từ sau khi mua.",
+      "extra": "",
+      "detailBlocks": []
     },
     {
       "id": "33",
       "word": "전문가",
       "meaning": "expert",
+      "meaning_vi": "chuyên gia",
       "type": "명 noun",
       "example_ko": "이 분야의 전문가가 되고 싶습니다.",
       "example_vi": "I want to be an expert in this area.",
+      "example_vi_vn": "Tôi muốn trở thành chuyên gia trong lĩnh vực này.",
       "extra": "",
       "detailBlocks": [
         {
