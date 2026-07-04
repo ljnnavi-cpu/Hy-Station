@@ -93,7 +93,12 @@ function speakText(text) {
     }
 
     function applyTranslationLanguage() {
-      document.documentElement.dataset.state.translationLanguage = state.translationLanguage;
+      // BUG CŨ: "document.documentElement.dataset.state.translationLanguage = ..."
+      // -> dataset.state là undefined (không có attribute data-state trên <html>),
+      // gán property lên undefined làm throw TypeError ngay dòng này, khiến toàn bộ
+      // phần còn lại của hàm (đổi text theo ngôn ngữ, đổi label nút) không chạy,
+      // và exception này còn lan lên tới mount() ở mọi lần load ngày.
+      document.documentElement.dataset.translationLanguage = state.translationLanguage;
       document.querySelectorAll('.hideable-meaning, [data-translatable="true"]').forEach(el => {
         prepareTranslationNode(el);
         el.textContent = state.translationLanguage === 'vi' ? el.dataset.viText : el.dataset.enText;
