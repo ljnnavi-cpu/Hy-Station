@@ -1,0 +1,756 @@
+{
+  "day": 23,
+  "vocabData": [
+    {
+      "id": "01",
+      "word": "적성",
+      "meaning": "aptitude",
+      "meaning_vi": "năng khiếu / sở trường",
+      "type": "명 noun",
+      "example_ko": "적성에 맞는 직업을 찾는 것이 중요하다.",
+      "example_vi": "It is important for you to get a job that fits your aptitude.",
+      "example_vi_vn": "Việc tìm công việc phù hợp với năng khiếu/sở trường là rất quan trọng.",
+      "extra": "<div><span class='font-semibold text-gray-700'>적성 검사</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>aptitude test</span></div>",
+      "highlight_terms": [
+        "적성에"
+      ]
+    },
+    {
+      "id": "02",
+      "word": "적절하다",
+      "meaning": "proper",
+      "meaning_vi": "phù hợp / thích hợp",
+      "type": "형 adjective",
+      "example_ko": "지위에 맞는 적절한 옷차림이 필요하다.",
+      "example_vi": "You need to wear clothes that fits your position.",
+      "example_vi_vn": "Bạn cần trang phục phù hợp với vị trí/địa vị của mình.",
+      "extra": "",
+      "highlight_terms": [
+        "적절한"
+      ]
+    },
+    {
+      "id": "03",
+      "word": "조언",
+      "meaning": "advice",
+      "meaning_vi": "lời khuyên",
+      "type": "명 noun",
+      "example_ko": "친구의 조언이 큰 도움이 됐다.",
+      "example_vi": "My friend’s advice helped me a lot.",
+      "example_vi_vn": "Lời khuyên của bạn đã giúp tôi rất nhiều.",
+      "extra": "",
+      "highlight_terms": [
+        "조언이"
+      ]
+    },
+    {
+      "id": "04",
+      "word": "좌석",
+      "meaning": "seat",
+      "meaning_vi": "chỗ ngồi / ghế",
+      "type": "명 noun",
+      "example_ko": "좌석 번호를 확인하고 탑승하시기 바랍니다.",
+      "example_vi": "Please check your seat number before you go aboard.",
+      "example_vi_vn": "Vui lòng kiểm tra số ghế trước khi lên máy bay/xe.",
+      "extra": "",
+      "highlight_terms": [
+        "좌석"
+      ]
+    },
+    {
+      "id": "05",
+      "word": "중소기업",
+      "meaning": "smaller firms",
+      "meaning_vi": "doanh nghiệp vừa và nhỏ",
+      "type": "명 noun",
+      "example_ko": "중소기업에 취직하려는 젊은이들이 많아지고 있다.",
+      "example_vi": "More and more youth are trying to get a job in the smaller firms.",
+      "example_vi_vn": "Ngày càng có nhiều người trẻ muốn xin việc vào doanh nghiệp vừa và nhỏ.",
+      "extra": "<div><span class='font-semibold text-gray-700'>대기업</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>conglomerate</span></div>",
+      "highlight_terms": [
+        "중소기업에"
+      ]
+    },
+    {
+      "id": "06",
+      "word": "지구",
+      "meaning": "the earth",
+      "meaning_vi": "Trái Đất",
+      "type": "명 noun",
+      "example_ko": "지구에는 많은 종류의 생물들이 있다.",
+      "example_vi": "There are many kinds of living creatures on the earth.",
+      "example_vi_vn": "Trên Trái Đất có nhiều loài sinh vật.",
+      "extra": "",
+      "highlight_terms": [
+        "지구에는"
+      ]
+    },
+    {
+      "id": "07",
+      "word": "슬프다",
+      "meaning": "sad",
+      "meaning_vi": "buồn",
+      "type": "형 adjective",
+      "example_ko": "오랫동안 정이 든 친구와 이별을 해야 하다니 너무 슬프다.",
+      "example_vi": "I am sad to say goodbye to my old friend.",
+      "example_vi_vn": "Phải chia tay người bạn đã gắn bó lâu năm nên tôi rất buồn.",
+      "extra": "<div><span class='font-semibold text-gray-700'>슬픔</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>sadness</span></div>",
+      "highlight_terms": [
+        "슬프다"
+      ],
+      "detailBlocks": [
+        {
+          "type": "tip_combo",
+          "label": "Tip",
+          "question_ko": "‘슬프다-슬픔’처럼 ‘A/V-(으)ㅁ’의 형태로 쓰이는 것은 또 뭐가 있을까요?",
+          "question_vi": "What kind of words use the form “슬프다 → 슬픔(sad → sadness)”?",
+          "word": "슬프다 → 슬픔",
+          "word_vi": "sad → sadness",
+          "items": [
+            {
+              "ko": "기쁘다 → 기쁨",
+              "vi": "happy → happiness"
+            },
+            {
+              "ko": "죽다 → 죽음",
+              "vi": "die → death"
+            },
+            {
+              "ko": "울다 → 울음",
+              "vi": "cry → crying"
+            },
+            {
+              "ko": "졸다 → 졸음",
+              "vi": "sleepy/drowsy → sleepiness"
+            },
+            {
+              "ko": "자다 → 잠",
+              "vi": "sleep → sleep"
+            },
+            {
+              "ko": "살다 → 삶",
+              "vi": "live → life"
+            },
+            {
+              "ko": "걷다 → 걸음",
+              "vi": "walk → step/walk"
+            }
+          ],
+          "body_ko": "형용사나 동사의 어간에 ‘-(으)ㅁ’을 붙여 명사처럼 쓰는 표현입니다.",
+          "body_vi": "This form makes an adjective or verb stem into a noun by adding “-(으)ㅁ”.",
+          "no_speak": true
+        }
+      ]
+    },
+    {
+      "id": "08",
+      "word": "지적하다",
+      "meaning": "point out",
+      "meaning_vi": "chỉ ra / chỉ trích",
+      "type": "동 verb",
+      "example_ko": "김 과장님이 지적한 문제들을 다 수정했어요?",
+      "example_vi": "Did you change all the part that Mr.Kim pointed out?",
+      "example_vi_vn": "Bạn đã sửa hết các vấn đề mà trưởng phòng Kim chỉ ra chưa?",
+      "extra": "<div><span class='font-semibold text-gray-700'>지적</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>pointing out</span></div>",
+      "highlight_terms": [
+        "지적한"
+      ]
+    },
+    {
+      "id": "09",
+      "word": "첫인상",
+      "meaning": "the first impression",
+      "meaning_vi": "ấn tượng đầu tiên",
+      "type": "명 noun",
+      "example_ko": "첫인상은 쉽게 바뀌지 않아요.",
+      "example_vi": "The first impression does not easily change.",
+      "example_vi_vn": "Ấn tượng đầu tiên không dễ thay đổi.",
+      "extra": "",
+      "highlight_terms": [
+        "첫인상은"
+      ]
+    },
+    {
+      "id": "10",
+      "word": "초",
+      "meaning": "candle",
+      "meaning_vi": "nến",
+      "type": "명 noun",
+      "example_ko": "생일 케이크의 초는 몇 개가 필요하세요?",
+      "example_vi": "How many candles do you need for your cake?",
+      "example_vi_vn": "Bạn cần mấy cây nến cho bánh sinh nhật?",
+      "extra": "",
+      "highlight_terms": [
+        "초는"
+      ]
+    },
+    {
+      "id": "11",
+      "word": "최대한",
+      "meaning": "at most",
+      "meaning_vi": "tối đa / hết mức có thể",
+      "type": "부 adverb",
+      "example_ko": "손님, 최대한 빠른 시간 안에 고쳐드리겠습니다.",
+      "example_vi": "Sir, I will fix it as fast as I can.",
+      "example_vi_vn": "Thưa quý khách, tôi sẽ sửa trong thời gian nhanh nhất có thể.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>최대</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>maximum</span></div><div><span class='font-semibold text-gray-700'>최소한</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>at least</span></div><div><span class='font-semibold text-gray-700'>최소</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>minimum</span></div></div>",
+      "highlight_terms": [
+        "최대한"
+      ]
+    },
+    {
+      "id": "12",
+      "word": "추천하다",
+      "meaning": "recommend",
+      "meaning_vi": "giới thiệu / đề xuất",
+      "type": "동 verb",
+      "example_ko": "이 일에 적당한 사람을 좀 추천해 주시겠습니까?",
+      "example_vi": "Can you recommend someone who is suitable for this job?",
+      "example_vi_vn": "Bạn có thể giới thiệu cho tôi người phù hợp với việc này không?",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>추천</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>recommendation</span></div><div><span class='font-semibold text-gray-700'>추천서</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>recommendation letter</span></div></div>",
+      "highlight_terms": [
+        "추천해"
+      ]
+    },
+    {
+      "id": "13",
+      "word": "치우다",
+      "meaning": "clean",
+      "meaning_vi": "dọn dẹp",
+      "type": "동 verb",
+      "example_ko": "손님들이 오기 전에 집을 좀 치워야겠어요.",
+      "example_vi": "I should clean up my house before the guest comes.",
+      "example_vi_vn": "Tôi phải dọn nhà trước khi khách đến.",
+      "extra": "",
+      "highlight_terms": [
+        "치워야겠어요"
+      ]
+    },
+    {
+      "id": "14",
+      "word": "내",
+      "meaning": "in",
+      "meaning_vi": "trong / trong vòng",
+      "type": "명 noun",
+      "example_ko": "시간 내에 끝내 주시기 바랍니다.",
+      "example_vi": "Please finish the work in time.",
+      "example_vi_vn": "Vui lòng hoàn thành trong thời gian quy định.",
+      "extra": "",
+      "highlight_terms": [
+        "내에"
+      ],
+      "detailBlocks": [
+        {
+          "type": "tip_combo",
+          "label": "Tip",
+          "question_ko": "‘N 내’는 어떤 단어와 같이 사용할까요?",
+          "question_vi": "What words can you use with “N 내(in/within)”?",
+          "word": "내",
+          "word_vi": "in / within",
+          "items": [
+            {
+              "ko": "아파트 내",
+              "vi": "in my apartment"
+            },
+            {
+              "ko": "지역 내",
+              "vi": "in my area"
+            },
+            {
+              "ko": "회사 내",
+              "vi": "in my company"
+            }
+          ],
+          "no_speak": true
+        }
+      ]
+    },
+    {
+      "id": "15",
+      "word": "통행",
+      "meaning": "pass by",
+      "meaning_vi": "sự đi lại / lưu thông",
+      "type": "명 noun",
+      "example_ko": "공사로 인해 차들의 통행을 금지하고 있습니다.",
+      "example_vi": "We are prohibiting cars to pass by because of the construction.",
+      "example_vi_vn": "Do đang thi công nên cấm xe lưu thông.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>통행금지</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>no passing</span></div><div><span class='font-semibold text-gray-700'>통행료</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>toll</span></div></div>",
+      "highlight_terms": [
+        "통행을"
+      ]
+    },
+    {
+      "id": "16",
+      "word": "튼튼하다",
+      "meaning": "solid",
+      "meaning_vi": "vững chắc / khỏe mạnh",
+      "type": "형 adjective",
+      "example_ko": "저 건물은 정말 튼튼하게 지어진 것 같습니다.",
+      "example_vi": "That building was solidly built.",
+      "example_vi_vn": "Tòa nhà đó có vẻ được xây rất vững chắc.",
+      "extra": "",
+      "highlight_terms": [
+        "튼튼하게"
+      ]
+    },
+    {
+      "id": "17",
+      "word": "퍼센트",
+      "meaning": "percent",
+      "meaning_vi": "phần trăm",
+      "type": "명 noun",
+      "example_ko": "유학생의 30퍼센트 이상이 장학금을 받고 있습니다.",
+      "example_vi": "More than thirty percent of the students studying abroad are receiving scholarship.",
+      "example_vi_vn": "Hơn 30% du học sinh đang nhận học bổng.",
+      "extra": "",
+      "highlight_terms": [
+        "30퍼센트"
+      ],
+      "detailBlocks": [
+        {
+          "type": "test_note",
+          "label_ko": "출제 경향",
+          "label_vi": "how this word appears in the test",
+          "title_ko": "‘퍼센트’는 그래프 문제에서 항상 등장하는 어휘입니다.",
+          "title_vi": "The word “퍼센트(percent)” always appears in graph questions.",
+          "body_ko": "‘퍼센트’를 비교하고 분석해야 하는 점 등을 유의합니다.",
+          "body_vi": "You should pay attention to comparing and analyzing percentages in order to solve the questions better.",
+          "tags": [
+            {
+              "ko": "퍼센트",
+              "en": "percent"
+            },
+            {
+              "ko": "증가하다",
+              "en": "increase"
+            },
+            {
+              "ko": "감소하다",
+              "en": "decrease"
+            }
+          ],
+          "no_speak": true
+        }
+      ]
+    },
+    {
+      "id": "18",
+      "word": "한자",
+      "meaning": "Chinese character",
+      "meaning_vi": "Hán tự / chữ Hán",
+      "type": "명 noun",
+      "example_ko": "한자를 알면 한국어를 배우기가 쉽습니다.",
+      "example_vi": "It is easy for you to learn Korean if you know many Chinese characters.",
+      "example_vi_vn": "Nếu biết chữ Hán thì học tiếng Hàn sẽ dễ hơn.",
+      "extra": "",
+      "highlight_terms": [
+        "한자를"
+      ]
+    },
+    {
+      "id": "19",
+      "word": "한참",
+      "meaning": "(for) a while",
+      "meaning_vi": "một lúc lâu",
+      "type": "부 adverb",
+      "example_ko": "한참 기다려도 친구가 오지 않았어요.",
+      "example_vi": "I waited for a while, but my friend didn’t show up.",
+      "example_vi_vn": "Tôi đã đợi rất lâu nhưng bạn vẫn không đến.",
+      "extra": "",
+      "highlight_terms": [
+        "한참"
+      ]
+    },
+    {
+      "id": "20",
+      "word": "허락하다",
+      "meaning": "give one a permission",
+      "meaning_vi": "cho phép",
+      "type": "동 verb",
+      "example_ko": "부모님께서 유학가는 것을 허락해 주셨다.",
+      "example_vi": "My parents gave me permission to go abroad and study.",
+      "example_vi_vn": "Bố mẹ đã cho phép tôi đi du học.",
+      "extra": "<div><span class='font-semibold text-gray-700'>허락</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>permission</span></div>",
+      "highlight_terms": [
+        "허락해"
+      ]
+    },
+    {
+      "id": "21",
+      "word": "혜택",
+      "meaning": "benefit",
+      "meaning_vi": "lợi ích / ưu đãi",
+      "type": "명 noun",
+      "example_ko": "이 보험을 가입하면 어떤 혜택을 받을 수 있나요?",
+      "example_vi": "What kinds of benefit can I get if I sign up for this insurance?",
+      "example_vi_vn": "Nếu tham gia bảo hiểm này thì tôi có thể nhận được những quyền lợi gì?",
+      "extra": "",
+      "highlight_terms": [
+        "혜택을"
+      ]
+    },
+    {
+      "id": "22",
+      "word": "호기심",
+      "meaning": "curiosity",
+      "meaning_vi": "sự tò mò",
+      "type": "명 noun",
+      "example_ko": "그 아이는 호기심이 많아요.",
+      "example_vi": "The kid is filled with curiosity.",
+      "example_vi_vn": "Đứa trẻ đó rất tò mò.",
+      "extra": "",
+      "highlight_terms": [
+        "호기심이"
+      ]
+    },
+    {
+      "id": "23",
+      "word": "흘러가다",
+      "meaning": "pass",
+      "meaning_vi": "trôi qua",
+      "type": "동 verb",
+      "example_ko": "시간이 정말 빠르게 흘러갑니다.",
+      "example_vi": "Time passes very fast.",
+      "example_vi_vn": "Thời gian trôi qua thật nhanh.",
+      "extra": "",
+      "highlight_terms": [
+        "흘러갑니다"
+      ]
+    },
+    {
+      "id": "24",
+      "word": "늙다",
+      "meaning": "get older",
+      "meaning_vi": "già đi / lớn tuổi",
+      "type": "동 verb",
+      "example_ko": "오랜만에 뵌 부모님이 많이 늙으신 것 같아 가슴이 아파요.",
+      "example_vi": "Seeing my parents in a while, it is sad to realize that they are getting old.",
+      "example_vi_vn": "Lâu rồi mới gặp bố mẹ, thấy bố mẹ già đi nhiều nên tôi thấy đau lòng.",
+      "extra": "",
+      "highlight_terms": [
+        "늙으신"
+      ],
+      "detailBlocks": [
+        {
+          "type": "test_note",
+          "label_ko": "출제 경향",
+          "label_vi": "how this word appears in the test",
+          "title_ko": "‘늙다’는 형용사가 아니라 동사라는 것을 주의하세요.",
+          "title_vi": "Do not forget that “늙다(old/get older)” is a verb, not an adjective.",
+          "body_ko": "문법적으로 활용할 때 실수하기 쉬우므로 문장 속 형태를 잘 확인해야 합니다.",
+          "body_vi": "Many learners make mistakes in its grammatical use, so check its form carefully in sentences.",
+          "tags": [
+            {
+              "ko": "늙다",
+              "en": "get older"
+            },
+            {
+              "ko": "늙으신 부모님",
+              "en": "parents who have gotten older"
+            }
+          ],
+          "no_speak": true
+        }
+      ]
+    },
+    {
+      "id": "25",
+      "word": "흥미",
+      "meaning": "interest",
+      "meaning_vi": "hứng thú / quan tâm",
+      "type": "명 noun",
+      "example_ko": "그는 새로운 것보다는 전통적인 것들에 흥미가 있어요.",
+      "example_vi": "He is more interested in traditional things rather than new things.",
+      "example_vi_vn": "Anh ấy hứng thú với những thứ truyền thống hơn là những thứ mới.",
+      "extra": "",
+      "highlight_terms": [
+        "흥미가"
+      ]
+    },
+    {
+      "id": "26",
+      "word": "일상생활",
+      "meaning": "daily life",
+      "meaning_vi": "đời sống hằng ngày",
+      "type": "명 noun",
+      "example_ko": "바쁜 일상생활 속에서 여유를 가지기가 쉽지 않다.",
+      "example_vi": "It is hard to relax during your busy days.",
+      "example_vi_vn": "Trong cuộc sống hằng ngày bận rộn, không dễ có thời gian thư thả.",
+      "extra": "",
+      "highlight_terms": [
+        "일상생활"
+      ]
+    },
+    {
+      "id": "27",
+      "word": "특정",
+      "meaning": "certain",
+      "meaning_vi": "nhất định / cụ thể",
+      "type": "명 noun",
+      "example_ko": "비행기를 탈 때 몇 가지 특정 물품을 가지고 들어갈 수 없다.",
+      "example_vi": "There are certain things that you are not allowed to take when you get on the plane.",
+      "example_vi_vn": "Khi lên máy bay, có một số vật phẩm nhất định không được mang theo.",
+      "extra": "",
+      "highlight_terms": [
+        "특정"
+      ]
+    },
+    {
+      "id": "28",
+      "word": "두통",
+      "meaning": "headache",
+      "meaning_vi": "đau đầu",
+      "type": "명 noun",
+      "example_ko": "두통이 심하면 약이라도 좀 먹어 보세요.",
+      "example_vi": "Try some pills if you have severe headache.",
+      "example_vi_vn": "Nếu đau đầu nặng thì hãy thử uống thuốc xem sao.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>치통</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>toothache</span></div><div><span class='font-semibold text-gray-700'>복통</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>stomachache</span></div></div>",
+      "highlight_terms": [
+        "두통이"
+      ]
+    },
+    {
+      "id": "29",
+      "word": "이상",
+      "meaning": "more than",
+      "meaning_vi": "trên / hơn",
+      "type": "명 noun",
+      "example_ko": "한 달에 50만원 이상을 용돈으로 사용하고 있어요.",
+      "example_vi": "I spend more than five hundred thousand won in a month as an allowance.",
+      "example_vi_vn": "Tôi dùng hơn 500.000 won mỗi tháng làm tiền tiêu vặt.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>미만</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>below</span></div><div><span class='font-semibold text-gray-700'>초과</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>above</span></div><div><span class='font-semibold text-gray-700'>이하</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>less than</span></div></div>",
+      "highlight_terms": [
+        "이상을"
+      ]
+    },
+    {
+      "id": "30",
+      "word": "간식",
+      "meaning": "snack",
+      "meaning_vi": "đồ ăn vặt",
+      "type": "명 noun",
+      "example_ko": "군대에서 인기 있는 간식은 초코파이라고요.",
+      "example_vi": "The popular snack in the military is Choco-pie.",
+      "example_vi_vn": "Đồ ăn vặt được yêu thích trong quân đội là Choco-pie đấy.",
+      "extra": "",
+      "highlight_terms": [
+        "간식은"
+      ]
+    },
+    {
+      "id": "31",
+      "word": "감동적",
+      "meaning": "emotional",
+      "meaning_vi": "cảm động",
+      "type": "형 adjective",
+      "example_ko": "한 아버지의 감동적인 이야기가 영화로 만들어졌다.",
+      "example_vi": "One emotional story of a father has been made into a movie.",
+      "example_vi_vn": "Câu chuyện cảm động về một người cha đã được dựng thành phim.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>감동</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>emotion</span></div><div><span class='font-semibold text-gray-700'>감동을 주다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>move one’s heart</span></div></div>",
+      "highlight_terms": [
+        "감동적인"
+      ]
+    },
+    {
+      "id": "32",
+      "word": "거칠다",
+      "meaning": "rough",
+      "meaning_vi": "thô ráp / sần sùi",
+      "type": "형 adjective",
+      "example_ko": "나이가 들수록 피부가 거칠어지는 것 같아요.",
+      "example_vi": "I am afraid that my skin is getting rougher as I am getting older.",
+      "example_vi_vn": "Tôi thấy hình như càng lớn tuổi thì da càng thô ráp hơn.",
+      "extra": "",
+      "highlight_terms": [
+        "거칠어지는"
+      ]
+    },
+    {
+      "id": "33",
+      "word": "건설",
+      "meaning": "construction",
+      "meaning_vi": "xây dựng",
+      "type": "명 noun",
+      "example_ko": "건설 회사들 간의 경쟁이 치열하다.",
+      "example_vi": "The competition among construction companies is high.",
+      "example_vi_vn": "Cạnh tranh giữa các công ty xây dựng rất khốc liệt.",
+      "extra": "",
+      "highlight_terms": [
+        "건설"
+      ]
+    },
+    {
+      "id": "34",
+      "word": "경향",
+      "meaning": "tendency",
+      "meaning_vi": "xu hướng / khuynh hướng",
+      "type": "명 noun",
+      "example_ko": "토픽 출제 경향을 알고 싶으시면 이 책을 보십시오.",
+      "example_vi": "You may read this book if you want to know the tendency of the TOPIK test.",
+      "example_vi_vn": "Nếu muốn biết xu hướng ra đề TOPIK, hãy đọc cuốn sách này.",
+      "extra": "<div><span class='font-semibold text-gray-700'>경향이 있다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>have a tendency in</span></div>",
+      "highlight_terms": [
+        "경향을"
+      ]
+    }
+  ],
+  "dict": {
+    "how this word appears in the test": "cách từ này xuất hiện trong đề thi",
+    "Words to memorize together": "Nhóm từ nên học cùng nhau",
+    "Words that are easy to confuse in TOPIK": "Những từ dễ nhầm lẫn trong TOPIK",
+    "Polysemy": "Từ đa nghĩa",
+    "Antonym": "Từ trái nghĩa",
+    "Synonym": "Từ đồng nghĩa",
+    "Write Korean in English, and English in Korean.": "Hãy viết từ tiếng Hàn sang tiếng Việt, và từ tiếng Việt sang tiếng Hàn.",
+    "Connect the Korean words with the English words of same meaning.": "Hãy nối từ tiếng Hàn với nghĩa tiếng Việt tương ứng.",
+    "Pick and write the suitable word among <the options> in the blank space.": "Hãy chọn từ phù hợp trong <gợi ý> để điền vào chỗ trống.",
+    "Pick and write the suitable word among in the blank space.": "Hãy chọn từ phù hợp trong gợi ý để điền vào chỗ trống.",
+    "Choose the proper word that fits the sentence more naturally.": "Hãy chọn từ phù hợp để câu tự nhiên hơn.",
+    "aptitude": "năng khiếu / sở trường",
+    "proper": "phù hợp / thích hợp",
+    "advice": "lời khuyên",
+    "seat": "chỗ ngồi / ghế",
+    "smaller firms": "doanh nghiệp vừa và nhỏ",
+    "the earth": "Trái Đất",
+    "sad": "buồn",
+    "point out": "chỉ ra / chỉ trích",
+    "the first impression": "ấn tượng đầu tiên",
+    "candle": "nến",
+    "at most": "tối đa / hết mức có thể",
+    "recommend": "giới thiệu / đề xuất",
+    "clean": "dọn dẹp",
+    "in": "trong / trong vòng",
+    "pass by": "sự đi lại / lưu thông",
+    "solid": "vững chắc / khỏe mạnh",
+    "percent": "phần trăm",
+    "Chinese character": "Hán tự / chữ Hán",
+    "(for) a while": "một lúc lâu",
+    "give one a permission": "cho phép",
+    "benefit": "lợi ích / ưu đãi",
+    "curiosity": "sự tò mò",
+    "pass": "trôi qua",
+    "get older": "già đi / lớn tuổi",
+    "interest": "hứng thú / quan tâm",
+    "daily life": "đời sống hằng ngày",
+    "certain": "nhất định / cụ thể",
+    "headache": "đau đầu",
+    "more than": "trên / hơn",
+    "snack": "đồ ăn vặt",
+    "emotional": "cảm động",
+    "rough": "thô ráp / sần sùi",
+    "construction": "xây dựng",
+    "tendency": "xu hướng / khuynh hướng",
+    "aptitude test": "bài kiểm tra năng khiếu/sở trường",
+    "conglomerate": "tập đoàn lớn / doanh nghiệp lớn",
+    "sadness": "nỗi buồn",
+    "pointing out": "sự chỉ ra / chỉ trích",
+    "maximum": "tối đa",
+    "at least": "ít nhất",
+    "minimum": "tối thiểu",
+    "recommendation": "sự giới thiệu / đề xuất",
+    "recommendation letter": "thư giới thiệu",
+    "in my apartment": "trong chung cư/căn hộ của tôi",
+    "in my area": "trong khu vực của tôi",
+    "in my company": "trong công ty của tôi",
+    "no passing": "cấm đi qua / cấm lưu thông",
+    "toll": "phí qua đường",
+    "increase": "tăng",
+    "decrease": "giảm",
+    "permission": "sự cho phép",
+    "parents who have gotten older": "bố mẹ đã già đi",
+    "toothache": "đau răng",
+    "stomachache": "đau bụng",
+    "below": "dưới / chưa đến",
+    "above": "vượt quá / trên",
+    "less than": "dưới hoặc bằng / ít hơn",
+    "emotion": "sự cảm động / cảm xúc",
+    "move one’s heart": "làm cảm động",
+    "have a tendency in": "có xu hướng",
+    "What kind of words use the form “슬프다 → 슬픔(sad → sadness)”?": "Có những từ nào dùng dạng “슬프다 → 슬픔” như vậy?",
+    "happy → happiness": "vui → niềm vui",
+    "die → death": "chết → cái chết",
+    "cry → crying": "khóc → tiếng khóc",
+    "sleepy/drowsy → sleepiness": "buồn ngủ → cơn buồn ngủ",
+    "sleep → sleep": "ngủ → giấc ngủ",
+    "live → life": "sống → cuộc sống",
+    "walk → step/walk": "đi bộ → bước đi",
+    "This form makes an adjective or verb stem into a noun by adding “-(으)ㅁ”.": "Dạng này biến thân tính từ/động từ thành danh từ bằng cách gắn “-(으)ㅁ”.",
+    "What words can you use with “N 내(in/within)”?": "Có thể dùng “N 내” với những từ nào?",
+    "The word “퍼센트(percent)” always appears in graph questions.": "Từ “퍼센트” thường xuất hiện trong câu hỏi biểu đồ.",
+    "You should pay attention to comparing and analyzing percentages in order to solve the questions better.": "Để làm tốt dạng này, hãy chú ý so sánh và phân tích các tỉ lệ phần trăm.",
+    "Do not forget that “늙다(old/get older)” is a verb, not an adjective.": "Hãy nhớ “늙다” là động từ, không phải tính từ.",
+    "Many learners make mistakes in its grammatical use, so check its form carefully in sentences.": "Người học dễ nhầm khi chia ngữ pháp của từ này, nên hãy kiểm tra kỹ hình thái trong câu.",
+    "(get) burned": "bị cháy nắng / bị bỏng",
+    "get (allowance)": "nhận tiền tiêu vặt",
+    "get (cold)": "dễ bị lạnh / dễ cảm thấy lạnh",
+    "turn on": "mở / bật",
+    "turn off": "tắt / khóa",
+    "repair": "sửa chữa",
+    "fix": "sửa",
+    "I was sad to see my close friend go back to his hometown.": "Tôi buồn vì người bạn thân đã trở về quê.",
+    "I waited for a while, but my friend didn’t show up.": "Tôi đã đợi rất lâu nhưng bạn vẫn không đến.",
+    "My skin got burned while I was on my vacation.": "Da tôi bị cháy nắng khi đi nghỉ.",
+    "I am still getting allowance from my parents since I don’t have a job.": "Vì chưa có việc làm nên tôi vẫn đang nhận tiền tiêu vặt từ bố mẹ.",
+    "Compared to others I easily feel cold.": "So với người khác, tôi dễ cảm thấy lạnh.",
+    "You should not keep the water on while taking a shower.": "Khi tắm, đừng cứ mở nước liên tục.",
+    "You should turn off the water tap well in order not to have a leak.": "Phải khóa kỹ vòi nước để nước không bị rò rỉ.",
+    "I am trying to get my computer repaired since it is broken.": "Máy tính bị hỏng nên tôi định đem đi sửa.",
+    "a. advice": "a. lời khuyên",
+    "b. point out": "b. chỉ ra",
+    "a. aptitude": "a. năng khiếu / sở trường",
+    "b. application": "b. áp dụng",
+    "a. tendency": "a. xu hướng",
+    "b. experience": "b. trải nghiệm",
+    "a. interrupt": "a. cản trở",
+    "b. permit": "b. cho phép",
+    "a. recommend": "a. giới thiệu",
+    "a. limited": "a. bị giới hạn",
+    "b. proper": "b. phù hợp",
+    "a. 적성": "a. năng khiếu / sở trường",
+    "b. 적용": "b. áp dụng",
+    "a. 경향": "a. xu hướng",
+    "b. 경험": "b. kinh nghiệm",
+    "a. 방해해": "a. cản trở",
+    "b. 허락해": "b. cho phép",
+    "a. 추천해": "a. giới thiệu",
+    "b. 체험해": "b. trải nghiệm",
+    "a. 제한한": "a. bị giới hạn",
+    "b. 적절한": "b. phù hợp",
+    "It is important for you to get a job that fits your aptitude.": "Việc tìm công việc phù hợp với năng khiếu/sở trường là rất quan trọng.",
+    "You may read this book if you want to know the tendency of the TOPIK test.": "Nếu muốn biết xu hướng ra đề TOPIK, hãy đọc cuốn sách này.",
+    "My parents gave me permission to go abroad and study.": "Bố mẹ đã cho phép tôi đi du học.",
+    "Can you recommend someone who is suitable for this job?": "Bạn có thể giới thiệu cho tôi người phù hợp với việc này không?",
+    "You need to wear clothes that fits your position.": "Bạn cần trang phục phù hợp với vị trí/địa vị của mình.",
+    "You should not keep the water on while you are taking a shower.": "Khi tắm, đừng cứ mở nước liên tục.",
+    "in / within": "trong / trong vòng",
+    "sad → sadness": "buồn → nỗi buồn",
+    "My friend’s advice helped me a lot.": "Lời khuyên của bạn đã giúp tôi rất nhiều.",
+    "Please check your seat number before you go aboard.": "Vui lòng kiểm tra số ghế trước khi lên máy bay/xe.",
+    "More and more youth are trying to get a job in the smaller firms.": "Ngày càng có nhiều người trẻ muốn xin việc vào doanh nghiệp vừa và nhỏ.",
+    "There are many kinds of living creatures on the earth.": "Trên Trái Đất có nhiều loài sinh vật.",
+    "I am sad to say goodbye to my old friend.": "Phải chia tay người bạn đã gắn bó lâu năm nên tôi rất buồn.",
+    "Did you change all the part that Mr.Kim pointed out?": "Bạn đã sửa hết các vấn đề mà trưởng phòng Kim chỉ ra chưa?",
+    "The first impression does not easily change.": "Ấn tượng đầu tiên không dễ thay đổi.",
+    "How many candles do you need for your cake?": "Bạn cần mấy cây nến cho bánh sinh nhật?",
+    "Sir, I will fix it as fast as I can.": "Thưa quý khách, tôi sẽ sửa trong thời gian nhanh nhất có thể.",
+    "I should clean up my house before the guest comes.": "Tôi phải dọn nhà trước khi khách đến.",
+    "Please finish the work in time.": "Vui lòng hoàn thành trong thời gian quy định.",
+    "We are prohibiting cars to pass by because of the construction.": "Do đang thi công nên cấm xe lưu thông.",
+    "That building was solidly built.": "Tòa nhà đó có vẻ được xây rất vững chắc.",
+    "More than thirty percent of the students studying abroad are receiving scholarship.": "Hơn 30% du học sinh đang nhận học bổng.",
+    "It is easy for you to learn Korean if you know many Chinese characters.": "Nếu biết chữ Hán thì học tiếng Hàn sẽ dễ hơn.",
+    "What kinds of benefit can I get if I sign up for this insurance?": "Nếu tham gia bảo hiểm này thì tôi có thể nhận được những quyền lợi gì?",
+    "The kid is filled with curiosity.": "Đứa trẻ đó rất tò mò.",
+    "Time passes very fast.": "Thời gian trôi qua thật nhanh.",
+    "Seeing my parents in a while, it is sad to realize that they are getting old.": "Lâu rồi mới gặp bố mẹ, thấy bố mẹ già đi nhiều nên tôi thấy đau lòng.",
+    "He is more interested in traditional things rather than new things.": "Anh ấy hứng thú với những thứ truyền thống hơn là những thứ mới.",
+    "It is hard to relax during your busy days.": "Trong cuộc sống hằng ngày bận rộn, không dễ có thời gian thư thả.",
+    "There are certain things that you are not allowed to take when you get on the plane.": "Khi lên máy bay, có một số vật phẩm nhất định không được mang theo.",
+    "Try some pills if you have severe headache.": "Nếu đau đầu nặng thì hãy thử uống thuốc xem sao.",
+    "I spend more than five hundred thousand won in a month as an allowance.": "Tôi dùng hơn 500.000 won mỗi tháng làm tiền tiêu vặt.",
+    "The popular snack in the military is Choco-pie.": "Đồ ăn vặt được yêu thích trong quân đội là Choco-pie đấy.",
+    "One emotional story of a father has been made into a movie.": "Câu chuyện cảm động về một người cha đã được dựng thành phim.",
+    "I am afraid that my skin is getting rougher as I am getting older.": "Tôi thấy hình như càng lớn tuổi thì da càng thô ráp hơn.",
+    "The competition among construction companies is high.": "Cạnh tranh giữa các công ty xây dựng rất khốc liệt."
+  }
+}

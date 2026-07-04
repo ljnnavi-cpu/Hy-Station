@@ -1,0 +1,948 @@
+{
+  "day": 17,
+  "vocabData": [
+    {
+      "id": "01",
+      "word": "접수하다",
+      "meaning": "sign up",
+      "meaning_vi": "đăng ký / tiếp nhận",
+      "type": "동 verb",
+      "example_ko": "이 강좌에 접수하려면 무엇이 필요합니까?",
+      "example_vi": "I want to sign up for this class, what do I need?",
+      "example_vi_vn": "Nếu muốn đăng ký khóa học này thì cần gì?",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>접수</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>sign up</span></div><div><span class='font-semibold text-gray-700'>접수기간</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>application period</span></div></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "접수하려면"
+      ]
+    },
+    {
+      "id": "02",
+      "word": "정서 발달",
+      "meaning": "emotional development",
+      "meaning_vi": "phát triển cảm xúc",
+      "type": "명 noun",
+      "example_ko": "음악은 아이의 정서 발달에 큰 도움이 된다.",
+      "example_vi": "Music greatly helps children with their emotional development.",
+      "example_vi_vn": "Âm nhạc giúp ích rất nhiều cho sự phát triển cảm xúc của trẻ.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>정서</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>emotion</span></div><div><span class='font-semibold text-gray-700'>정서적으로</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>emotionally</span></div></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "정서 발달에"
+      ]
+    },
+    {
+      "id": "03",
+      "word": "정성",
+      "meaning": "one’s heart",
+      "meaning_vi": "tấm lòng / sự tận tâm",
+      "type": "명 noun",
+      "example_ko": "그 사람으로부터 정성이 가득 담긴 선물을 받았다.",
+      "example_vi": "I received a heartfelt gift from him.",
+      "example_vi_vn": "Tôi đã nhận được món quà chứa đầy tấm lòng từ người đó.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>정성을 다하다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>sincerity</span></div><div><span class='font-semibold text-gray-700'>정성스럽게</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>sedulously</span></div></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "정성이"
+      ]
+    },
+    {
+      "id": "04",
+      "word": "정하다",
+      "meaning": "settle",
+      "meaning_vi": "quyết định / ấn định",
+      "type": "동 verb",
+      "example_ko": "이번 회의 일정을 다음과 같이 정했습니다.",
+      "example_vi": "We have settled the schedule for the meeting as such.",
+      "example_vi_vn": "Chúng tôi đã ấn định lịch họp lần này như sau.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>정해지다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>be settled</span></div><div><span class='font-semibold text-gray-700'>정하다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>settle</span></div></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "정했습니다"
+      ]
+    },
+    {
+      "id": "05",
+      "word": "제한하다",
+      "meaning": "limit",
+      "meaning_vi": "hạn chế",
+      "type": "동 verb",
+      "example_ko": "행사장에 음식을 반입을 제한합니다.",
+      "example_vi": "Bringing food into the event hall is limited.",
+      "example_vi_vn": "Việc mang đồ ăn vào hội trường sự kiện bị hạn chế.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>제한</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>limitation</span></div><div><span class='font-semibold text-gray-700'>제한 시간</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>limited time</span></div></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "제한합니다"
+      ]
+    },
+    {
+      "id": "06",
+      "word": "짐",
+      "meaning": "baggage",
+      "meaning_vi": "hành lý",
+      "type": "명 noun",
+      "example_ko": "무거운 짐을 들고 계단을 오르는 할머니를 도와드렸어요.",
+      "example_vi": "I helped an old lady carry heavy baggage up the stairs.",
+      "example_vi_vn": "Tôi đã giúp bà cụ mang hành lý nặng lên cầu thang.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "짐을"
+      ]
+    },
+    {
+      "id": "07",
+      "word": "창업하다",
+      "meaning": "establish a business",
+      "meaning_vi": "khởi nghiệp / lập công ty",
+      "type": "동 verb",
+      "example_ko": "요즘 대학생들은 졸업하기 전에 회사 창업하기도 한다.",
+      "example_vi": "University students these days establish their own business before they graduate.",
+      "example_vi_vn": "Dạo này sinh viên đại học cũng khởi nghiệp trước khi tốt nghiệp.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>창업</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>establish a business</span></div><div><span class='font-semibold text-gray-700'>창업지원센터</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>center that supports to start a business</span></div></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "창업하기도"
+      ]
+    },
+    {
+      "id": "08",
+      "word": "창의력",
+      "meaning": "creativity",
+      "meaning_vi": "khả năng sáng tạo",
+      "type": "명 noun",
+      "example_ko": "창의력이 뛰어난 사람이 예술가가 될 수 있다.",
+      "example_vi": "People with great creativity can be an artist.",
+      "example_vi_vn": "Người có khả năng sáng tạo vượt trội có thể trở thành nghệ sĩ.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>창의성</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>creativity</span></div><div><span class='font-semibold text-gray-700'>창의적</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>creative</span></div></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "창의력이"
+      ]
+    },
+    {
+      "id": "09",
+      "word": "출퇴근하다",
+      "meaning": "commute",
+      "meaning_vi": "đi làm và tan làm",
+      "type": "동 verb",
+      "example_ko": "출퇴근하는 데에 보통 얼마정도 걸리세요?",
+      "example_vi": "How long does it take for you to commute?",
+      "example_vi_vn": "Bạn thường mất bao lâu để đi làm và tan làm?",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>출근</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>go to work</span></div><div><span class='font-semibold text-gray-700'>출근길</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>on one’s way to office</span></div><div><span class='font-semibold text-gray-700'>퇴근</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>leave from office</span></div><div><span class='font-semibold text-gray-700'>퇴근길</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>on one’s way home</span></div><div><span class='font-semibold text-gray-700'>출퇴근</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>commute</span></div></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "출퇴근하는"
+      ]
+    },
+    {
+      "id": "10",
+      "word": "토론하다",
+      "meaning": "discuss",
+      "meaning_vi": "thảo luận",
+      "type": "동 verb",
+      "example_ko": "두 사람은 책을 읽고 내용에 대해 토론하고 있었다.",
+      "example_vi": "Two people are discussing the details of the book after reading it.",
+      "example_vi_vn": "Hai người đang thảo luận về nội dung sau khi đọc sách.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>토론</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>discussion</span></div><div><span class='font-semibold text-gray-700'>토론을 벌이다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>debate</span></div><div><span class='font-semibold text-gray-700'>토론문화</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>discussing culture</span></div></div>",
+      "detailBlocks": [
+        {
+          "type": "test_note",
+          "label_ko": "출제 경향",
+          "label_vi": "how this word appears in the test",
+          "title_ko": "토론하기 지시문이 문제로 나올 때는 찬성인지 반대인지 파악하는 것이 중요합니다.",
+          "title_vi": "When an instruction for discussion appears in the test, it is important to figure out whether the speaker is insisting, what kind of attitude the speaker is taking, and what kind of proof the speaker is suggesting to support his claim.",
+          "body_ko": "또 능동적인 태도인지, 어떠한 근거를 제시하는지까지 봐야 합니다.",
+          "body_vi": "In listening and speaking questions, identify the speaker’s position and reasons.",
+          "tags": [],
+          "no_speak": true
+        }
+      ],
+      "highlight_terms": [
+        "토론하고"
+      ]
+    },
+    {
+      "id": "11",
+      "word": "파악하다",
+      "meaning": "figure out",
+      "meaning_vi": "nắm bắt / tìm hiểu",
+      "type": "동 verb",
+      "example_ko": "그 사고의 원인을 파악하기 위해 노력하고 있다.",
+      "example_vi": "We are trying hard to figure out the cause of the accident.",
+      "example_vi_vn": "Chúng tôi đang cố gắng tìm hiểu nguyên nhân của tai nạn đó.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>파악</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>figuring</span></div><div><span class='font-semibold text-gray-700'>파악하다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>be figured out</span></div></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "파악하기"
+      ]
+    },
+    {
+      "id": "12",
+      "word": "평범하다",
+      "meaning": "normal",
+      "meaning_vi": "bình thường",
+      "type": "형 adjective",
+      "example_ko": "외모는 평범하지만 그가 가진 실력은 놀랍습니다.",
+      "example_vi": "His appearance is normal, but his ability is spectacular.",
+      "example_vi_vn": "Ngoại hình thì bình thường nhưng năng lực của anh ấy thật đáng kinh ngạc.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "평범하지만"
+      ]
+    },
+    {
+      "id": "13",
+      "word": "함부로",
+      "meaning": "indiscreetly",
+      "meaning_vi": "tùy tiện / bừa bãi",
+      "type": "부 adverb",
+      "example_ko": "사람의 첫인상을 보고 함부로 판단하지 마세요.",
+      "example_vi": "Do not indiscreetly judge him only based on the first impression.",
+      "example_vi_vn": "Đừng tùy tiện phán xét người khác chỉ qua ấn tượng đầu tiên.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "함부로"
+      ]
+    },
+    {
+      "id": "14",
+      "word": "화재",
+      "meaning": "fire",
+      "meaning_vi": "hỏa hoạn",
+      "type": "명 noun",
+      "example_ko": "어젯밤 화재로 인해 많은 피해가 있었어요.",
+      "example_vi": "Last night, there was much damage done because of the fire.",
+      "example_vi_vn": "Đêm qua có nhiều thiệt hại do hỏa hoạn.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>소방서</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>fire station</span></div><div><span class='font-semibold text-gray-700'>소방관</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>fire fighter</span></div><div><span class='font-semibold text-gray-700'>소화기</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>fire extinguisher</span></div><div><span class='font-semibold text-gray-700'>화재가 나다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>there is a fire</span></div></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "화재로"
+      ]
+    },
+    {
+      "id": "15",
+      "word": "화제",
+      "meaning": "issue",
+      "meaning_vi": "chủ đề / đề tài",
+      "type": "명 noun",
+      "example_ko": "대화의 화제를 잘 찾아야 해요.",
+      "example_vi": "We should choose the topic of our conversation very well.",
+      "example_vi_vn": "Chúng ta cần chọn chủ đề trò chuyện thật phù hợp.",
+      "extra": "<div><span class='font-semibold text-gray-700'>화제가 되다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>become an issue</span></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "화제를"
+      ]
+    },
+    {
+      "id": "16",
+      "word": "활발하다",
+      "meaning": "active",
+      "meaning_vi": "năng động / hoạt bát",
+      "type": "형 adjective",
+      "example_ko": "그는 활발하고 외향적인 사람입니다.",
+      "example_vi": "He is an active and outgoing person.",
+      "example_vi_vn": "Anh ấy là người năng động và hướng ngoại.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "활발하고"
+      ]
+    },
+    {
+      "id": "17",
+      "word": "후회하다",
+      "meaning": "regret",
+      "meaning_vi": "hối hận",
+      "type": "동 verb",
+      "example_ko": "지금까지 살면서 가장 후회하는 일이 뭐예요?",
+      "example_vi": "What are the things you regret the most so far?",
+      "example_vi_vn": "Từ trước đến nay, điều bạn hối hận nhất là gì?",
+      "extra": "<div><span class='font-semibold text-gray-700'>후회</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>regret</span></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "후회하는"
+      ]
+    },
+    {
+      "id": "18",
+      "word": "흔히",
+      "meaning": "usually",
+      "meaning_vi": "thường / phổ biến",
+      "type": "부 adverb",
+      "example_ko": "이 꽃은 흔히 볼 수 있는 꽃이 아닙니다.",
+      "example_vi": "This flower is not the one that you can usually see.",
+      "example_vi_vn": "Đây không phải là loài hoa thường có thể nhìn thấy.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "흔히"
+      ]
+    },
+    {
+      "id": "19",
+      "word": "부정적",
+      "meaning": "negative",
+      "meaning_vi": "tiêu cực",
+      "type": "명 noun",
+      "example_ko": "부정적인 생각은 가능한 한 하지 말고 좋게 생각하세요.",
+      "example_vi": "You should not think about negativity as much as possible but you should think positively.",
+      "example_vi_vn": "Hãy cố gắng không suy nghĩ tiêu cực mà hãy nghĩ tích cực.",
+      "extra": "",
+      "detailBlocks": [
+        {
+          "type": "tip_combo",
+          "label": "Tip",
+          "question_ko": "‘N적’의 형태로 쓰이는 성격은 또 뭐가 있을까요?",
+          "question_vi": "What are the words that ends with “N적(-tive)”?",
+          "word": "N적",
+          "word_vi": "-tive",
+          "items": [
+            {
+              "ko": "부정적",
+              "vi": "negative"
+            },
+            {
+              "ko": "긍정적",
+              "vi": "positive"
+            },
+            {
+              "ko": "외향적",
+              "vi": "outgoing"
+            },
+            {
+              "ko": "내성적",
+              "vi": "passive"
+            },
+            {
+              "ko": "개방적",
+              "vi": "open-minded"
+            },
+            {
+              "ko": "보수적",
+              "vi": "conservative"
+            }
+          ],
+          "no_speak": true
+        }
+      ],
+      "highlight_terms": [
+        "부정적인"
+      ]
+    },
+    {
+      "id": "20",
+      "word": "연습하다",
+      "meaning": "practice",
+      "meaning_vi": "luyện tập",
+      "type": "동 verb",
+      "example_ko": "아무리 어려운 발음도 연습하다보면 좋아질 거예요.",
+      "example_vi": "No matter how hard it is, you will get better practicing the hard pronunciation.",
+      "example_vi_vn": "Dù phát âm khó đến đâu, nếu luyện tập thì sẽ tốt hơn.",
+      "extra": "<div><span class='font-semibold text-gray-700'>연습</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>practice</span></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "연습하다보면"
+      ]
+    },
+    {
+      "id": "21",
+      "word": "상",
+      "meaning": "award",
+      "meaning_vi": "giải thưởng",
+      "type": "명 noun",
+      "example_ko": "이번 대회에서 상을 받으면 친구들에게 한턱내려고 한다.",
+      "example_vi": "If I get an award on this competition, I will buy a meal for my friends.",
+      "example_vi_vn": "Nếu nhận giải trong cuộc thi này, tôi định đãi bạn bè một bữa.",
+      "extra": "",
+      "detailBlocks": [
+        {
+          "type": "test_note",
+          "label_ko": "출제 경향",
+          "label_vi": "how this word appears in the test",
+          "title_ko": "독해 지문에서 상을 받은 인물이나 기관에 대한 정보가 자주 출제됩니다.",
+          "title_vi": "Reading passages often ask about the person or organization that received an award.",
+          "body_ko": "어떤 상인지도 잘 봐야겠지요. 대상, 금상, 환경상, 공로상, 상품개발상 등을 함께 기억하세요.",
+          "body_vi": "Remember related prize names such as grand prize, gold prize, environmental award, achievement award, and product development award.",
+          "tags": [
+            {
+              "ko": "대상",
+              "en": "grand prize"
+            },
+            {
+              "ko": "금상",
+              "en": "gold prize"
+            },
+            {
+              "ko": "환경상",
+              "en": "environmental award"
+            },
+            {
+              "ko": "공로상",
+              "en": "achievement award"
+            },
+            {
+              "ko": "상품개발상",
+              "en": "product development award"
+            }
+          ],
+          "no_speak": true
+        }
+      ],
+      "highlight_terms": [
+        "상을"
+      ]
+    },
+    {
+      "id": "22",
+      "word": "가만히",
+      "meaning": "stay still",
+      "meaning_vi": "ngồi/đứng yên",
+      "type": "부 adverb",
+      "example_ko": "가만히 앉아 있지만 말고 빨리 와서 도와 줘.",
+      "example_vi": "Don’t just stay still but come here quickly and help me!",
+      "example_vi_vn": "Đừng chỉ ngồi yên đó, hãy nhanh đến giúp đi.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "가만히"
+      ]
+    },
+    {
+      "id": "23",
+      "word": "개성",
+      "meaning": "individuality",
+      "meaning_vi": "cá tính",
+      "type": "명 noun",
+      "example_ko": "앞으로는 개성이 중요한 시대가 될 것입니다.",
+      "example_vi": "I think it will be an important time for one’s individuality.",
+      "example_vi_vn": "Trong tương lai sẽ là thời đại mà cá tính rất quan trọng.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "개성이"
+      ]
+    },
+    {
+      "id": "24",
+      "word": "개최하다",
+      "meaning": "host",
+      "meaning_vi": "tổ chức / đăng cai",
+      "type": "동 verb",
+      "example_ko": "강원도 평창에서 2018년 동계올림픽을 개최하게 되었습니다.",
+      "example_vi": "Pyeongchang, the city of Kangwon province, has been decided to host the Olympics in 2018.",
+      "example_vi_vn": "Pyeongchang, Gangwon-do đã được quyết định đăng cai Thế vận hội mùa đông 2018.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>개최</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>host</span></div><div><span class='font-semibold text-gray-700'>개최되다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>be held</span></div></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "개최하게"
+      ]
+    },
+    {
+      "id": "25",
+      "word": "공포감",
+      "meaning": "fear",
+      "meaning_vi": "cảm giác sợ hãi",
+      "type": "명 noun",
+      "example_ko": "그 뉴스 기사는 사람들에게 공포감을 주었습니다.",
+      "example_vi": "The article on the news scared people.",
+      "example_vi_vn": "Bản tin đó đã gây cảm giác sợ hãi cho mọi người.",
+      "extra": "<div><span class='font-semibold text-gray-700'>공포</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>fear</span></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "공포감을"
+      ]
+    },
+    {
+      "id": "26",
+      "word": "관련되다",
+      "meaning": "be related to",
+      "meaning_vi": "liên quan",
+      "type": "동 verb",
+      "example_ko": "그 사건과 관련된 사람들을 모두 만나야 할까요?",
+      "example_vi": "Do I have to meet all the people who are related to the case?",
+      "example_vi_vn": "Tôi có phải gặp tất cả những người liên quan đến vụ việc đó không?",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>관련</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>relations</span></div><div><span class='font-semibold text-gray-700'>관련하다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>relate</span></div></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "관련된"
+      ]
+    },
+    {
+      "id": "27",
+      "word": "그립다",
+      "meaning": "miss",
+      "meaning_vi": "nhớ / thương nhớ",
+      "type": "형 adjective",
+      "example_ko": "고향을 떠나온 지 20년이 넘었지만 아직도 고향이 그립습니다.",
+      "example_vi": "I still miss my hometown even after it has been 20 years.",
+      "example_vi_vn": "Dù đã rời quê hơn 20 năm nhưng tôi vẫn nhớ quê hương.",
+      "extra": "<div><span class='font-semibold text-gray-700'>그리워하다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>miss</span></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "그립습니다"
+      ]
+    },
+    {
+      "id": "28",
+      "word": "그만",
+      "meaning": "stop",
+      "meaning_vi": "dừng / thôi",
+      "type": "부 adverb",
+      "example_ko": "벌써 10시야! 그만 자고 일어나!",
+      "example_vi": "It’s already 10! Stop sleeping, and wake up!",
+      "example_vi_vn": "Đã 10 giờ rồi! Đừng ngủ nữa, dậy đi!",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "그만"
+      ]
+    },
+    {
+      "id": "29",
+      "word": "근거",
+      "meaning": "reason",
+      "meaning_vi": "căn cứ / lý do",
+      "type": "명 noun",
+      "example_ko": "그렇게 말씀하시는 근거가 있습니까?",
+      "example_vi": "What is the reason for you saying that?",
+      "example_vi_vn": "Bạn có căn cứ gì để nói như vậy không?",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "근거가"
+      ]
+    },
+    {
+      "id": "30",
+      "word": "기념",
+      "meaning": "commemoration",
+      "meaning_vi": "kỷ niệm",
+      "type": "명 noun",
+      "example_ko": "지금부터 기념 사진을 찍겠습니다.",
+      "example_vi": "We will now take the commemoration picture.",
+      "example_vi_vn": "Bây giờ chúng tôi sẽ chụp ảnh kỷ niệm.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>기념일</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>commemoration day</span></div><div><span class='font-semibold text-gray-700'>기념하다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>commemorate</span></div><div><span class='font-semibold text-gray-700'>기념행사</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>commemorative event</span></div></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "기념"
+      ]
+    },
+    {
+      "id": "31",
+      "word": "금방",
+      "meaning": "soon",
+      "meaning_vi": "sắp / ngay",
+      "type": "부 adverb",
+      "example_ko": "기차가 금방 도착할 테니까 내릴 준비를 하세요.",
+      "example_vi": "The train will soon arrive, so please get ready to get off.",
+      "example_vi_vn": "Tàu sắp đến ngay bây giờ, hãy chuẩn bị xuống.",
+      "extra": "",
+      "detailBlocks": [
+        {
+          "type": "tip_combo",
+          "label": "Tip",
+          "question_ko": "시간을 나타내는 부사는 뭐가 있을까요?",
+          "question_vi": "What kind of adverbs do we have that describe the time?",
+          "word": "시간 부사",
+          "word_vi": "time adverbs",
+          "items": [
+            {
+              "ko": "아까",
+              "vi": "a while ago"
+            },
+            {
+              "ko": "방금/금방",
+              "vi": "a moment ago"
+            },
+            {
+              "ko": "현재",
+              "vi": "now"
+            },
+            {
+              "ko": "금방",
+              "vi": "soon"
+            },
+            {
+              "ko": "이따가",
+              "vi": "later"
+            },
+            {
+              "ko": "나중에",
+              "vi": "later"
+            }
+          ],
+          "no_speak": true
+        }
+      ],
+      "highlight_terms": [
+        "금방"
+      ]
+    },
+    {
+      "id": "32",
+      "word": "기뻐하다",
+      "meaning": "be happy",
+      "meaning_vi": "vui mừng",
+      "type": "동 verb",
+      "example_ko": "제가 대학에 합격했다는 소식을 듣고 부모님께서 기뻐하셨습니다.",
+      "example_vi": "My parents were happy to hear the news that I got an admission from the university.",
+      "example_vi_vn": "Bố mẹ tôi đã rất vui khi nghe tin tôi đỗ đại học.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "기뻐하셨습니다"
+      ]
+    },
+    {
+      "id": "33",
+      "word": "날개",
+      "meaning": "wings",
+      "meaning_vi": "cánh",
+      "type": "명 noun",
+      "example_ko": "새들이 날개를 활짝 펴고 높이 날아올랐다.",
+      "example_vi": "The birds flew up the sky spreading their wings.",
+      "example_vi_vn": "Những chú chim dang rộng cánh và bay cao lên trời.",
+      "extra": "<div><span class='font-semibold text-gray-700'>날갯짓</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>flapping</span></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "날개를"
+      ]
+    }
+  ],
+  "dict": {
+    "how this word appears in the test": "cách từ này xuất hiện trong đề thi",
+    "Words to memorize together": "Nhóm từ nên học cùng nhau",
+    "Words that are easy to confuse in TOPIK": "Những từ dễ nhầm lẫn trong TOPIK",
+    "Polysemy": "Từ đa nghĩa",
+    "Antonym": "Từ trái nghĩa",
+    "Synonym": "Từ đồng nghĩa",
+    "Write Korean in English, and English in Korean.": "Hãy viết từ tiếng Hàn sang tiếng Việt, và từ tiếng Việt sang tiếng Hàn.",
+    "Connect the Korean words with the English words of same meaning.": "Hãy nối từ tiếng Hàn với nghĩa tiếng Việt tương ứng.",
+    "Pick and write the suitable word among <the options> in the blank space.": "Hãy chọn từ phù hợp trong <gợi ý> để điền vào chỗ trống.",
+    "Choose the proper word that fits the sentence more naturally.": "Hãy chọn từ phù hợp để câu tự nhiên hơn.",
+    "ask": "hỏi",
+    "reflect": "phản ánh",
+    "bright": "sáng",
+    "development": "sự phát triển",
+    "progress": "sự tiến bộ",
+    "disease": "bệnh",
+    "protection": "sự bảo vệ",
+    "hit": "va vào",
+    "emergency exit": "cửa thoát hiểm",
+    "get along": "kết bạn / hòa hợp",
+    "case": "trường hợp",
+    "regardless of": "bất kể",
+    "prefer": "ưa thích",
+    "income": "thu nhập",
+    "guest": "khách",
+    "sleep": "giấc ngủ",
+    "at the moment": "khoảnh khắc",
+    "noise": "tiếng ồn",
+    "ability": "năng lực",
+    "position": "chức vụ",
+    "practice": "luyện tập",
+    "psychology": "tâm lý học",
+    "promise": "lời hứa",
+    "enterprise": "doanh nghiệp",
+    "consider": "coi là / cân nhắc",
+    "business": "kinh doanh",
+    "be polluted": "bị ô nhiễm",
+    "be required": "được yêu cầu",
+    "originally": "vốn dĩ",
+    "care for": "quan tâm / chăm lo",
+    "music": "âm nhạc",
+    "respondent": "người trả lời",
+    "write": "viết",
+    "sign up": "đăng ký / tiếp nhận",
+    "emotional development": "phát triển cảm xúc",
+    "one’s heart": "tấm lòng / chân thành",
+    "settle": "quyết định / ấn định",
+    "limit": "hạn chế",
+    "baggage": "hành lý",
+    "establish a business": "khởi nghiệp / lập công ty",
+    "creativity": "khả năng sáng tạo",
+    "commute": "đi làm và tan làm",
+    "discuss": "thảo luận",
+    "figure out": "nắm bắt / tìm hiểu",
+    "normal": "bình thường",
+    "indiscreetly": "hấp tấp / thiếu suy nghĩ",
+    "fire": "hỏa hoạn",
+    "issue": "chủ đề / đề tài",
+    "active": "năng động / tích cực",
+    "regret": "hối hận",
+    "usually": "thường / thường thường",
+    "negative": "tiêu cực",
+    "award": "giải thưởng",
+    "stay still": "ngồi yên / ở yên",
+    "individuality": "cá tính / tính cá nhân",
+    "host": "đăng cai / tổ chức",
+    "fear": "cảm giác sợ hãi",
+    "be related to": "liên quan",
+    "miss": "nhớ / thương nhớ",
+    "stop": "dừng / thôi",
+    "reason": "lý do / căn cứ",
+    "commemoration": "kỷ niệm",
+    "soon": "sắp / ngay sau đây",
+    "be happy": "vui mừng",
+    "wings": "cánh",
+    "fly": "bay",
+    "turn down": "giảm / hạ thấp",
+    "flood": "tràn / ngập",
+    "be surprised": "ngạc nhiên",
+    "promotion": "thăng chức",
+    "representative": "đại diện",
+    "readers": "độc giả",
+    "take care of": "chăm sóc",
+    "club": "câu lạc bộ",
+    "mountain climber": "người leo núi",
+    "sweat": "mồ hôi",
+    "robot": "robot",
+    "marathon": "marathon",
+    "anyone": "bất cứ ai",
+    "just": "vừa mới",
+    "(many) ways": "nhiều mặt / khía cạnh",
+    "anonymous": "ẩn danh",
+    "mosquito": "muỗi",
+    "slippery": "trơn",
+    "repeat": "lặp lại",
+    "law": "luật",
+    "wall": "tường",
+    "not allowed to": "không được phép",
+    "secret": "bí mật",
+    "object": "sự vật / đồ vật",
+    "excuse": "lý do / hoàn cảnh",
+    "speed": "tốc độ",
+    "timing": "thời điểm",
+    "create": "tạo mới / thành lập",
+    "age": "thời đại",
+    "plant": "trồng",
+    "rice": "gạo",
+    "somehow": "dù sao / có lẽ",
+    "conscience": "lương tâm",
+    "performance": "biểu diễn",
+    "overconsumption": "tiêu dùng quá mức",
+    "artist": "nghệ sĩ",
+    "manner": "lễ nghĩa",
+    "but also": "ngoài ra",
+    "appearance": "ngoại hình",
+    "go out": "ra ngoài",
+    "superb": "xuất sắc",
+    "crisis": "khủng hoảng",
+    "in": "trong vòng",
+    "move": "chuyển nhà",
+    "get a ticket": "mua vé",
+    "profit": "lợi nhuận",
+    "now": "bây giờ",
+    "brag": "khoe",
+    "cheap": "rẻ",
+    "major": "chuyên ngành",
+    "all over the country": "toàn quốc",
+    "electricity": "điện",
+    "electronic": "điện tử",
+    "whole": "toàn bộ",
+    "not at all": "hoàn toàn không",
+    "never": "tuyệt đối không",
+    "rearrange": "điều chỉnh",
+    "graduation": "tốt nghiệp",
+    "sleepy": "buồn ngủ",
+    "exchange": "trao đổi",
+    "give out": "tặng / phát",
+    "the best": "tốt nhất",
+    "appear": "xuất hiện",
+    "be canceled": "bị hủy",
+    "grow": "trồng / chăm sóc",
+    "be reflected": "được phản ánh",
+    "brightness": "độ sáng",
+    "future": "tương lai",
+    "facial expression": "biểu cảm gương mặt",
+    "color": "màu sắc",
+    "be developed": "được phát triển",
+    "develop": "phát triển",
+    "institution": "cơ sở bảo vệ",
+    "protect": "bảo vệ",
+    "first-aid medicine": "thuốc cấp cứu",
+    "have nothing to do with": "không liên quan",
+    "preference": "sự ưa thích",
+    "for every income": "theo từng mức thu nhập",
+    "go to sleep": "đi ngủ",
+    "momentary": "trong khoảnh khắc",
+    "power of execution": "năng lực thực hiện",
+    "psychological": "thuộc tâm lý",
+    "psychologist": "nhà tâm lý học",
+    "institute of psychology": "viện nghiên cứu tâm lý",
+    "sales job": "nhân viên kinh doanh",
+    "business hour": "giờ kinh doanh",
+    "do business": "kinh doanh",
+    "pollution": "ô nhiễm",
+    "pollutant": "chất gây ô nhiễm",
+    "contaminate": "làm ô nhiễm",
+    "demand": "yêu cầu",
+    "require": "yêu cầu",
+    "requirement": "yêu cầu / điều kiện",
+    "musician": "nhạc sĩ",
+    "concert": "buổi hòa nhạc",
+    "answer": "câu trả lời / trả lời",
+    "the response rate": "tỉ lệ phản hồi",
+    "surveying target": "đối tượng khảo sát",
+    "research facility": "cơ quan khảo sát",
+    "the result of the survey": "kết quả khảo sát",
+    "application period": "thời gian tiếp nhận hồ sơ",
+    "emotion": "cảm xúc",
+    "emotionally": "về mặt cảm xúc",
+    "sincerity": "sự chân thành",
+    "sedulously": "một cách tận tâm",
+    "be settled": "được quyết định",
+    "limitation": "sự giới hạn",
+    "limited time": "thời gian giới hạn",
+    "center that supports to start a business": "trung tâm hỗ trợ khởi nghiệp",
+    "creative": "mang tính sáng tạo",
+    "go to work": "đi làm",
+    "on one’s way to office": "trên đường đi làm",
+    "leave from office": "tan làm",
+    "on one’s way home": "trên đường về nhà",
+    "discussion": "sự thảo luận",
+    "debate": "tranh luận",
+    "discussing culture": "văn hóa thảo luận",
+    "fire station": "trạm cứu hỏa",
+    "fire fighter": "lính cứu hỏa",
+    "fire extinguisher": "bình chữa cháy",
+    "there is a fire": "có hỏa hoạn",
+    "become an issue": "trở thành chủ đề/vấn đề",
+    "positive": "tích cực",
+    "outgoing": "hướng ngoại",
+    "passive": "hướng nội / thụ động",
+    "open-minded": "cởi mở",
+    "conservative": "bảo thủ",
+    "grand prize": "giải lớn / giải đặc biệt",
+    "gold prize": "giải vàng",
+    "environmental award": "giải môi trường",
+    "achievement award": "giải thành tựu / công lao",
+    "product development award": "giải phát triển sản phẩm",
+    "relations": "mối liên quan",
+    "relate": "liên hệ",
+    "commemoration day": "ngày kỷ niệm",
+    "commemorate": "kỷ niệm",
+    "commemorative event": "sự kiện kỷ niệm",
+    "time adverbs": "trạng từ thời gian",
+    "a while ago": "lúc nãy / trước đó",
+    "a moment ago": "vừa mới / vừa rồi",
+    "later": "lát nữa / sau này",
+    "flapping": "vỗ cánh",
+    "national team": "đội tuyển quốc gia",
+    "represent": "đại diện",
+    "hiking people": "người leo núi",
+    "hiking clothes": "quần áo leo núi",
+    "audience": "khán giả",
+    "passenger": "hành khách",
+    "spectator": "người xem / khách tham quan",
+    "whatever": "bất cứ cái gì",
+    "wherever": "bất cứ đâu",
+    "whoever": "bất cứ ai",
+    "overflow": "tràn",
+    "slide": "cầu trượt",
+    "slip": "trượt",
+    "repeatedly": "lặp đi lặp lại",
+    "legislation": "pháp luật / luật lệ",
+    "tapestry": "giấy dán tường",
+    "impossible": "không thể",
+    "password": "mật khẩu",
+    "keep a secret": "giữ bí mật",
+    "businessman": "doanh nhân",
+    "unforeseen circumstance": "hoàn cảnh bất ngờ",
+    "change of the times": "sự thay đổi của thời đại",
+    "the status of the male and female": "địa vị nam nữ",
+    "increasing divorce rate": "tỉ lệ ly hôn tăng",
+    "the problem of the low birth rate": "vấn đề tỉ lệ sinh thấp",
+    "the aging society": "xã hội già hóa",
+    "instrument": "nhạc cụ",
+    "instrumentalist": "người chơi nhạc cụ",
+    "instrumental music": "bản nhạc hòa tấu",
+    "art": "nghệ thuật",
+    "art center": "trung tâm nghệ thuật",
+    "keep the manner": "giữ phép lịch sự",
+    "boast": "sự khoe khoang",
+    "be proud of": "tự hào",
+    "something to boast about": "điều đáng tự hào",
+    "textbook": "sách chuyên ngành",
+    "a student majoring in": "sinh viên chuyên ngành",
+    "electric rice cooker": "nồi cơm điện",
+    "consuming rate of electricity": "lượng sử dụng điện",
+    "electricity bill": "hóa đơn điện",
+    "overall": "toàn thể",
+    "graduate": "tốt nghiệp",
+    "graduation ceremony": "lễ tốt nghiệp",
+    "university graduate": "sinh viên tốt nghiệp",
+    "drive while drowsy": "lái xe khi buồn ngủ",
+    "free gifts": "quà tặng",
+    "the worst": "tệ nhất",
+    "the first": "đầu tiên",
+    "the final": "cuối cùng",
+    "the latest": "mới nhất",
+    "the longest": "dài nhất",
+    "cast": "diễn viên",
+    "cancel": "hủy",
+    "I want to sign up for this class, what do I need?": "Tôi muốn đăng ký khóa học này, cần những gì?",
+    "Music greatly helps children with their emotional development.": "Âm nhạc giúp ích rất nhiều cho sự phát triển cảm xúc của trẻ.",
+    "I received a heartfelt gift from him.": "Tôi đã nhận được món quà chứa đầy tấm lòng từ người đó.",
+    "We have settled the schedule for the meeting as such.": "Chúng tôi đã ấn định lịch họp như sau.",
+    "Bringing food into the event hall is limited.": "Việc mang đồ ăn vào hội trường sự kiện bị hạn chế.",
+    "I helped an old lady carry heavy baggage up the stairs.": "Tôi đã giúp bà cụ mang hành lý nặng lên cầu thang.",
+    "University students these days establish their own business before they graduate.": "Dạo này sinh viên đại học cũng khởi nghiệp trước khi tốt nghiệp.",
+    "People with great creativity can be an artist.": "Người có khả năng sáng tạo vượt trội có thể trở thành nghệ sĩ.",
+    "How long does it take for you to commute?": "Bạn thường mất bao lâu để đi làm và tan làm?",
+    "Two people are discussing the details of the book after reading it.": "Hai người đang thảo luận về nội dung sau khi đọc sách.",
+    "When an instruction for discussion appears in the test, it is important to figure out whether the speaker is insisting, what kind of attitude the speaker is taking, and what kind of proof the speaker is suggesting to support his claim.": "Khi dạng chỉ thị thảo luận xuất hiện trong đề, điều quan trọng là phải xác định người nói đang tán thành hay phản đối, có thái độ ra sao và đưa ra căn cứ nào để bảo vệ ý kiến của mình.",
+    "In listening and speaking questions, identify the speaker’s position and reasons.": "Trong câu hỏi nghe/nói, hãy xác định lập trường và căn cứ của người nói.",
+    "We are trying hard to figure out the cause of the accident.": "Chúng tôi đang nỗ lực tìm ra nguyên nhân của vụ tai nạn.",
+    "His appearance is normal, but his ability is spectacular.": "Ngoại hình thì bình thường nhưng năng lực của anh ấy thật đáng kinh ngạc.",
+    "Do not indiscreetly judge him only based on the first impression.": "Đừng tùy tiện phán xét người khác chỉ qua ấn tượng đầu tiên.",
+    "Last night, there was much damage done because of the fire.": "Đêm qua có nhiều thiệt hại do hỏa hoạn.",
+    "We should choose the topic of our conversation very well.": "Chúng ta cần chọn chủ đề trò chuyện thật phù hợp.",
+    "He is an active and outgoing person.": "Anh ấy là người năng động và hướng ngoại.",
+    "What are the things you regret the most so far?": "Điều bạn hối hận nhất cho đến nay là gì?",
+    "This flower is not the one that you can usually see.": "Đây không phải là loài hoa thường có thể nhìn thấy.",
+    "You should not think about negativity as much as possible but you should think positively.": "Hãy cố gắng không suy nghĩ tiêu cực mà hãy nghĩ tích cực.",
+    "What are the words that ends with “N적(-tive)”?": "Có những từ chỉ tính cách nào dùng ở dạng “N적”?",
+    "-tive": "mang tính...",
+    "No matter how hard it is, you will get better practicing the hard pronunciation.": "Dù phát âm khó đến đâu, nếu luyện tập thì sẽ tốt hơn.",
+    "If I get an award on this competition, I will buy a meal for my friends.": "Nếu nhận giải trong cuộc thi này, tôi định đãi bạn bè một bữa.",
+    "Reading passages often ask about the person or organization that received an award.": "Trong bài đọc, các đoạn về người hoặc tổ chức nhận giải thưởng thường xuất hiện.",
+    "Remember related prize names such as grand prize, gold prize, environmental award, achievement award, and product development award.": "Hãy ghi nhớ tên các giải thưởng liên quan như giải lớn, giải vàng, giải môi trường, giải công lao và giải phát triển sản phẩm.",
+    "Don’t just stay still but come here quickly and help me!": "Đừng chỉ ngồi yên, hãy mau đến đây giúp tôi!",
+    "I think it will be an important time for one’s individuality.": "Trong tương lai sẽ là thời đại mà cá tính rất quan trọng.",
+    "Pyeongchang, the city of Kangwon province, has been decided to host the Olympics in 2018.": "Pyeongchang, Gangwon-do đã được quyết định đăng cai Thế vận hội mùa đông 2018.",
+    "The article on the news scared people.": "Bản tin đó đã gây cảm giác sợ hãi cho mọi người.",
+    "Do I have to meet all the people who are related to the case?": "Tôi có phải gặp tất cả những người liên quan đến vụ việc đó không?",
+    "I still miss my hometown even after it has been 20 years.": "Dù đã rời quê hơn 20 năm nhưng tôi vẫn nhớ quê hương.",
+    "It’s already 10! Stop sleeping, and wake up!": "Đã 10 giờ rồi! Đừng ngủ nữa, dậy đi!",
+    "What is the reason for you saying that?": "Bạn có căn cứ gì để nói như vậy không?",
+    "We will now take the commemoration picture.": "Bây giờ chúng tôi sẽ chụp ảnh kỷ niệm.",
+    "The train will soon arrive, so please get ready to get off.": "Tàu sắp đến ngay bây giờ, hãy chuẩn bị xuống.",
+    "What kind of adverbs do we have that describe the time?": "Có những trạng từ chỉ thời gian nào?",
+    "My parents were happy to hear the news that I got an admission from the university.": "Bố mẹ tôi đã rất vui khi nghe tin tôi đỗ đại học.",
+    "The birds flew up the sky spreading their wings.": "Những chú chim dang rộng cánh và bay cao lên trời.",
+    "pour water": "đổ nước",
+    "I poured all the water out of the cup.": "Tôi đã đổ hết nước trong cốc đi.",
+    "put life in to something": "dồn tâm huyết vào",
+    "I was so happy that my friend gave me a cake that she put her life in.": "Tôi rất vui vì bạn tặng tôi chiếc bánh mà bạn ấy dồn hết tâm huyết làm.",
+    "dark": "tối",
+    "feel anxious about": "lo lắng",
+    "be worry about": "lo lắng",
+    "It was too dark in the room, so I turned on the light.": "Trong phòng quá tối nên tôi bật đèn.",
+    "A sunny house would be better.": "Một căn nhà sáng sủa sẽ tốt hơn.",
+    "Even though I failed this test, I will study harder from now on so do not feel anxious about it.": "Dù kỳ thi này tôi trượt, từ nay tôi sẽ học chăm chỉ hơn nên đừng lo lắng.",
+    "There were circumstances that wouldn’t allow me to come to school so far.": "Vì có hoàn cảnh riêng nên thời gian qua tôi không thể đến trường.",
+    "What happened today somehow seems to be my fault.": "Việc hôm nay dù thế nào cũng có vẻ là lỗi của tôi.",
+    "You should practice your plan.": "Nếu đã lập kế hoạch thì hãy thực hiện.",
+    "The more I work, the faster it gets.": "Càng làm việc thì tốc độ càng nhanh.",
+    "When I am in trouble, I remembered the saying that says “You should make the opportunity out of your crisis.”": "Khi gặp khó khăn, tôi nhớ đến câu nói hãy biến nguy thành cơ.",
+    "Pick and write the suitable word among the options in the blank space.": "Hãy chọn từ phù hợp trong các lựa chọn để điền vào chỗ trống.",
+    "past": "quá khứ",
+    "present": "hiện tại"
+  }
+}

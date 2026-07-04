@@ -1,0 +1,192 @@
+<div class="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+    <div class="text-center mb-8">
+      <span class="text-xs uppercase tracking-widest bg-teal-100 text-teal-800 font-bold px-3 py-1 rounded-full">TOPIK 30일 완성</span>
+      <h2 class="text-xl font-medium text-slate-500 mt-2">DAY 13 Vocabulary · PDF Interactive · EN ⇄ VI</h2>
+    </div>
+
+    <!-- Tab Navigation Bar -->
+    <div class="flex justify-center space-x-2 p-1 bg-teal-950/5 rounded-xl mb-6 max-w-3xl mx-auto">
+      <button onclick="t30.switchTab('check-tab')" id="btn-check-tab" class="w-full py-2.5 text-sm font-medium leading-5 rounded-lg transition-all duration-200 bg-white text-teal-700 shadow font-semibold">
+        Bảng Kiểm Tra (Trang 141)
+      </button>
+      <button onclick="t30.switchTab('detail-tab')" id="btn-detail-tab" class="w-full py-2.5 text-sm font-medium leading-5 rounded-lg transition-all duration-200 text-slate-600 hover:text-slate-900">
+        Học Chi Tiết (Trang 142–148)
+      </button>
+      <button onclick="t30.switchTab('confuse-tab')" id="btn-confuse-tab" class="w-full py-2.5 text-sm font-medium leading-5 rounded-lg transition-all duration-200 text-slate-600 hover:text-slate-900">
+        Từ Dễ Lẫn (Trang 149)
+      </button>
+      <button onclick="t30.switchTab('review-tab')" id="btn-review-tab" class="w-full py-2.5 text-sm font-medium leading-5 rounded-lg transition-all duration-200 text-slate-600 hover:text-slate-900">
+        Ôn Tập (Trang 150)
+      </button>
+    </div>
+
+    <!-- Translation Language Toggle -->
+    <div class="flex justify-center mb-6">
+      <button type="button" onclick="t30.toggleTranslationLanguage()" class="inline-flex items-center gap-2 px-4 py-2 bg-white border border-teal-200 text-teal-700 hover:bg-teal-50 rounded-full text-sm font-bold shadow-sm transition-all">
+        <span>🌐</span>
+        <span id="translation-language-label">Bản dịch: English</span>
+      </button>
+    </div>
+
+    <div class="max-w-5xl mx-auto">
+      <!-- ================= TAB 1: CHECK LIST ================= -->
+      <div id="check-tab" class="tab-content">
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8">
+          <div class="flex justify-between items-center border-b border-slate-100 pb-4 mb-6">
+            <h1 class="text-3xl font-bold tracking-tight text-teal-700">DAY 13</h1>
+            <button type="button" onclick="t30.toggleVietnameseInTab('check-tab')" class="px-3 py-1.5 bg-teal-600 hover:bg-teal-700 text-white rounded-full text-xs font-semibold transition-all shadow-xs whitespace-nowrap">Ẩn/Hiện bản dịch</button>
+          </div>
+          
+          <div class="bg-teal-50/50 border border-teal-100 rounded-xl p-6 mb-8">
+            <h2 class="text-xl font-bold text-teal-800 mb-2 flex items-center gap-2">
+              <span class="inline-block w-2 h-6 bg-teal-500 rounded-full"></span>
+              확인해 보세요 (Hãy kiểm tra thử)
+            </h2>
+            <p class="text-gray-600 text-sm leading-relaxed mb-2">
+              단어의 뜻을 가리고 뜻을 알면, <span class="border border-gray-400 px-1 py-0.5 rounded text-xs">✔</span> 에 <span class="font-bold text-teal-700">✔</span> 해 보세요.
+            </p>
+            <p class="text-gray-500 text-xs italic">
+              (Mẹo: bấm “Ẩn/Hiện bản dịch” ở từng tab, hoặc click trực tiếp vào nghĩa/bản dịch để ẩn/hiện riêng từng dòng.)
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="checklist-container"></div>
+        </div>
+      </div>
+
+      <!-- ================= TAB 2: DETAILED STUDY ================= -->
+      <div id="detail-tab" class="tab-content hidden">
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8 space-y-6">
+          <div class="flex justify-between items-center border-b border-slate-100 pb-4 mb-6">
+            <h1 class="text-3xl font-bold tracking-tight text-teal-700">DAY 13 - Học chi tiết</h1>
+            <button type="button" onclick="t30.toggleVietnameseInTab('detail-tab')" class="px-3 py-1.5 bg-teal-600 hover:bg-teal-700 text-white rounded-full text-xs font-semibold transition-all shadow-xs whitespace-nowrap">Ẩn/Hiện bản dịch</button>
+          </div>
+          <div class="grid grid-cols-1 gap-6" id="detail-list-container"></div>
+        </div>
+      </div>
+
+
+      <!-- ================= TAB 3: CONFUSING WORDS ================= -->
+      <div id="confuse-tab" class="tab-content hidden">
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8 space-y-6">
+          <div class="flex justify-between items-center border-b border-slate-100 pb-4 mb-6">
+            <h1 class="text-3xl font-bold tracking-tight text-teal-700">TOPIK에서 혼동하기 쉬운 단어</h1>
+            <button type="button" onclick="t30.toggleVietnameseInTab('confuse-tab')" class="px-3 py-1.5 bg-teal-600 hover:bg-teal-700 text-white rounded-full text-xs font-semibold transition-all shadow-xs whitespace-nowrap">Ẩn/Hiện bản dịch</button>
+          </div>
+          <p class="text-gray-500 italic text-sm mb-4 hideable-meaning vi-meaning-target" onclick="t30.toggleSingleRedSheet(this, event)">Words that are easy to confuse in TOPIK</p>
+
+          <div class="confuse-book-card border border-amber-200 rounded-2xl overflow-hidden bg-[#fffaf0]">
+            <div class="bg-amber-100/90 px-5 py-3 flex items-center gap-3 border-b border-amber-200">
+              <span class="text-2xl">🧍</span>
+              <span class="text-xl font-black text-amber-900">다의어</span>
+              <span class="hideable-meaning text-sm font-semibold text-slate-600" onclick="t30.toggleSingleRedSheet(this, event)">Polysemy</span>
+            </div>
+            <div class="p-5 md:p-6 space-y-5">
+              <h2 class="text-3xl font-black text-indigo-700 cursor-pointer hover:text-teal-600" onclick="t30.speakText('바르다')">바르다 🔊</h2>
+              <div class="space-y-4">
+                <div class="pl-1">
+                  <div class="flex items-center gap-3 mb-2"><span class="inline-flex w-7 h-7 items-center justify-center rounded-full bg-slate-700 text-white text-sm font-black">1</span><span class="text-xl font-semibold text-slate-800 hideable-meaning" onclick="t30.toggleSingleRedSheet(this, event)">put on</span></div>
+                  <div class="ml-10 border-l-4 border-amber-300 pl-4 py-1 cursor-pointer hover:bg-white/70 rounded-r-xl transition" onclick="t30.speakText('세수를 하고 얼굴에 화장품을 발랐다.')"><p class="text-lg text-slate-900"><span class="inline-flex px-2 py-0.5 bg-orange-100 text-orange-700 rounded-full text-xs font-bold mr-2">예</span>세수를 하고 얼굴에 화장품을 <span class="text-indigo-700 font-bold">발랐다.</span> 🔊</p><p class="mt-1 text-sm text-slate-600 hideable-meaning vi-meaning-target" onclick="t30.toggleSingleRedSheet(this, event)">After washing my face, I put on a makeup.</p></div>
+                </div>
+                <div class="pl-1">
+                  <div class="flex items-center gap-3 mb-2"><span class="inline-flex w-7 h-7 items-center justify-center rounded-full bg-slate-700 text-white text-sm font-black">2</span><span class="text-xl font-semibold text-slate-800 hideable-meaning" onclick="t30.toggleSingleRedSheet(this, event)">correct</span></div>
+                  <div class="ml-10 border-l-4 border-amber-300 pl-4 py-1 cursor-pointer hover:bg-white/70 rounded-r-xl transition" onclick="t30.speakText('바른 자세로 앉아서 컴퓨터를 해야 한다.')"><p class="text-lg text-slate-900"><span class="inline-flex px-2 py-0.5 bg-orange-100 text-orange-700 rounded-full text-xs font-bold mr-2">예</span><span class="text-indigo-700 font-bold">바른</span> 자세로 앉아서 컴퓨터를 해야 한다. 🔊</p><p class="mt-1 text-sm text-slate-600 hideable-meaning vi-meaning-target" onclick="t30.toggleSingleRedSheet(this, event)">I should use the computer with the correct posture.</p></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="confuse-book-card border border-purple-200 rounded-2xl overflow-hidden bg-[#fbf7ff]">
+            <div class="bg-purple-100/90 px-5 py-3 flex items-center gap-3 border-b border-purple-200">
+              <span class="text-2xl">🧍‍♀️🧍‍♂️</span>
+              <span class="text-xl font-black text-purple-900">반의어</span>
+              <span class="hideable-meaning text-sm font-semibold text-slate-600" onclick="t30.toggleSingleRedSheet(this, event)">Antonym</span>
+            </div>
+            <div class="p-5 md:p-6 space-y-5">
+              <div class="flex flex-wrap items-center gap-4">
+                <span class="text-3xl font-black text-indigo-700 cursor-pointer hover:text-teal-600" onclick="t30.speakText('사라지다')">사라지다 🔊</span>
+                <span class="text-lg text-slate-600 hideable-meaning" onclick="t30.toggleSingleRedSheet(this, event)">disappear</span>
+                <span class="text-3xl font-black text-purple-600">↔</span>
+                <span class="text-3xl font-black text-indigo-700 cursor-pointer hover:text-teal-600" onclick="t30.speakText('나타나다')">나타나다 🔊</span>
+                <span class="text-lg text-slate-600 hideable-meaning" onclick="t30.toggleSingleRedSheet(this, event)">appear</span>
+              </div>
+              <div class="space-y-3 border-l-4 border-purple-300 pl-4">
+                <div class="cursor-pointer hover:bg-white/70 rounded-xl p-2 transition" onclick="t30.speakText('아까 의자 옆에 두었던 가방이 사라졌어요.')"><p class="text-lg text-slate-900"><span class="inline-flex px-2 py-0.5 bg-orange-100 text-orange-700 rounded-full text-xs font-bold mr-2">예</span>아까 의자 옆에 두었던 가방이 <span class="text-indigo-700 font-bold">사라졌어요.</span> 🔊</p><p class="mt-1 text-sm text-slate-600 hideable-meaning vi-meaning-target" onclick="t30.toggleSingleRedSheet(this, event)">The bag I left next to the chair has disappeared.</p></div>
+                <div class="cursor-pointer hover:bg-white/70 rounded-xl p-2 transition" onclick="t30.speakText('하늘에 갑자기 큰 별이 나타났다.')"><p class="text-lg text-slate-900">하늘에 갑자기 큰 별이 <span class="text-indigo-700 font-bold">나타났다.</span> 🔊</p><p class="mt-1 text-sm text-slate-600 hideable-meaning vi-meaning-target" onclick="t30.toggleSingleRedSheet(this, event)">Suddenly, a big star appeared in the sky.</p></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="confuse-book-card border border-emerald-200 rounded-2xl overflow-hidden bg-[#f5fff9]">
+            <div class="bg-emerald-100/90 px-5 py-3 flex items-center gap-3 border-b border-emerald-200">
+              <span class="text-2xl">🧍‍♀️🧍‍♀️</span>
+              <span class="text-xl font-black text-emerald-900">유의어</span>
+              <span class="hideable-meaning text-sm font-semibold text-slate-600" onclick="t30.toggleSingleRedSheet(this, event)">Synonym</span>
+            </div>
+            <div class="p-5 md:p-6 space-y-5">
+              <div class="flex flex-wrap items-center gap-4">
+                <span class="text-3xl font-black text-indigo-700 cursor-pointer hover:text-teal-600" onclick="t30.speakText('참다')">참다 🔊</span>
+                <span class="text-lg text-slate-600 hideable-meaning" onclick="t30.toggleSingleRedSheet(this, event)">bear</span>
+                <span class="text-3xl font-black text-emerald-600">≒</span>
+                <span class="text-3xl font-black text-indigo-700 cursor-pointer hover:text-teal-600" onclick="t30.speakText('견디다')">견디다 🔊</span>
+                <span class="text-lg text-slate-600 hideable-meaning" onclick="t30.toggleSingleRedSheet(this, event)">endure</span>
+              </div>
+              <div class="space-y-2 border-l-4 border-emerald-300 pl-4">
+                <div class="cursor-pointer hover:bg-white/70 rounded-xl p-2 transition" onclick="t30.speakText('참기 어려운 통증 때문에 잠에서 깼어요.')"><p class="text-lg text-slate-900"><span class="inline-flex px-2 py-0.5 bg-orange-100 text-orange-700 rounded-full text-xs font-bold mr-2">예</span><span class="text-indigo-700 font-bold">참기</span> 어려운 통증 때문에 잠에서 깼어요. 🔊</p></div>
+                <div class="cursor-pointer hover:bg-white/70 rounded-xl p-2 transition" onclick="t30.speakText('견디기 어려운 통증 때문에 잠에서 깼어요.')"><p class="text-lg text-slate-900"><span class="text-indigo-700 font-bold">견디기</span> 어려운 통증 때문에 잠에서 깼어요. 🔊</p></div>
+                <p class="mt-1 text-sm text-slate-600 hideable-meaning vi-meaning-target pl-2" onclick="t30.toggleSingleRedSheet(this, event)">I woke up because it was too hard to bare the pain.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= TAB 4: REVIEW ================= -->
+      <div id="review-tab" class="tab-content hidden">
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8 space-y-6">
+          <div class="flex flex-wrap justify-between items-center gap-3 border-b border-slate-100 pb-4 mb-6">
+            <div>
+              <h1 class="text-3xl font-bold tracking-tight text-teal-700">복습해 보세요</h1>
+              <p class="text-sm text-slate-500 mt-1">Nhập đáp án hoặc chọn đáp án trực tiếp, sau đó bấm kiểm tra.</p>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <button type="button" onclick="t30.checkReviewAnswers()" class="px-4 py-2 bg-teal-600 hover:bg-teal-700 text-white rounded-full text-xs font-bold transition-all shadow-xs whitespace-nowrap">Kiểm tra đáp án</button>
+              <button id="show-review-answers-btn" type="button" onclick="t30.showReviewAnswers()" disabled class="px-4 py-2 bg-amber-500 hover:bg-amber-600 text-white rounded-full text-xs font-bold transition-all shadow-xs whitespace-nowrap">Hiện đáp án</button>
+              <button type="button" onclick="t30.resetReviewAnswers()" class="px-4 py-2 bg-slate-200 hover:bg-slate-300 text-slate-700 rounded-full text-xs font-bold transition-all whitespace-nowrap">Làm lại</button>
+            </div>
+          </div>
+
+          <section class="bg-teal-50/40 border border-teal-100 rounded-2xl p-5">
+            <h2 class="text-lg font-bold text-teal-800 mb-2">한국어는 영어로, 영어는 한국어로 써 보세요.</h2>
+            <p id="review-translation-instruction" class="text-sm text-slate-500 hideable-meaning vi-meaning-target" onclick="t30.toggleSingleRedSheet(this, event)">Write Korean in English, and English in Korean.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-4 text-sm">
+              <div class="review-question-card"><div class="review-answer-row"><label class="font-semibold text-slate-800 text-base" for="review-input-1">1. 포장하다 →</label><input type="text" id="review-input-1" class="review-input" data-review-input="1" data-direction="ko-to-meaning" data-answer-en="wrap up|wrap" data-answer-vi="gói|bọc" data-answer="wrap up|wrap" placeholder="Nhập nghĩa tiếng Anh" autocomplete="off" inputmode="text"></div><div class="review-feedback" data-review-feedback="1"></div></div>
+              <div class="review-question-card"><div class="review-answer-row"><label class="font-semibold text-slate-800 text-base" for="review-input-6" data-review-label="6" data-prompt-en="approach" data-prompt-vi="tiếp cận / đến gần">6. approach →</label><input type="text" id="review-input-6" class="review-input" data-review-input="6" data-direction="meaning-to-ko" data-answer-en="다가가다" data-answer-vi="다가가다" data-answer="다가가다" placeholder="Nhập tiếng Hàn" autocomplete="off" inputmode="text"></div><div class="review-feedback" data-review-feedback="6"></div></div>
+              <div class="review-question-card"><div class="review-answer-row"><label class="font-semibold text-slate-800 text-base" for="review-input-2">2. 훌륭하다 →</label><input type="text" id="review-input-2" class="review-input" data-review-input="2" data-direction="ko-to-meaning" data-answer-en="excellent" data-answer-vi="xuất sắc|tuyệt vời" data-answer="excellent" placeholder="Nhập nghĩa tiếng Anh" autocomplete="off" inputmode="text"></div><div class="review-feedback" data-review-feedback="2"></div></div>
+              <div class="review-question-card"><div class="review-answer-row"><label class="font-semibold text-slate-800 text-base" for="review-input-7" data-review-label="7" data-prompt-en="be in charge of" data-prompt-vi="phụ trách">7. be in charge of →</label><input type="text" id="review-input-7" class="review-input" data-review-input="7" data-direction="meaning-to-ko" data-answer-en="담당하다" data-answer-vi="담당하다" data-answer="담당하다" placeholder="Nhập tiếng Hàn" autocomplete="off" inputmode="text"></div><div class="review-feedback" data-review-feedback="7"></div></div>
+              <div class="review-question-card"><div class="review-answer-row"><label class="font-semibold text-slate-800 text-base" for="review-input-3">3. 간단하다 →</label><input type="text" id="review-input-3" class="review-input" data-review-input="3" data-direction="ko-to-meaning" data-answer-en="simple" data-answer-vi="đơn giản" data-answer="simple" placeholder="Nhập nghĩa tiếng Anh" autocomplete="off" inputmode="text"></div><div class="review-feedback" data-review-feedback="3"></div></div>
+              <div class="review-question-card"><div class="review-answer-row"><label class="font-semibold text-slate-800 text-base" for="review-input-8" data-review-label="8" data-prompt-en="challenge" data-prompt-vi="thử thách / thách thức">8. challenge →</label><input type="text" id="review-input-8" class="review-input" data-review-input="8" data-direction="meaning-to-ko" data-answer-en="도전하다" data-answer-vi="도전하다" data-answer="도전하다" placeholder="Nhập tiếng Hàn" autocomplete="off" inputmode="text"></div><div class="review-feedback" data-review-feedback="8"></div></div>
+              <div class="review-question-card"><div class="review-answer-row"><label class="font-semibold text-slate-800 text-base" for="review-input-4">4. 구체적 →</label><input type="text" id="review-input-4" class="review-input" data-review-input="4" data-direction="ko-to-meaning" data-answer-en="in detail" data-answer-vi="cụ thể|chi tiết" data-answer="in detail" placeholder="Nhập nghĩa tiếng Anh" autocomplete="off" inputmode="text"></div><div class="review-feedback" data-review-feedback="4"></div></div>
+              <div class="review-question-card"><div class="review-answer-row"><label class="font-semibold text-slate-800 text-base" for="review-input-9" data-review-label="9" data-prompt-en="fluent" data-prompt-vi="xuất sắc / giỏi">9. fluent →</label><input type="text" id="review-input-9" class="review-input" data-review-input="9" data-direction="meaning-to-ko" data-answer-en="뛰어나다" data-answer-vi="뛰어나다" data-answer="뛰어나다" placeholder="Nhập tiếng Hàn" autocomplete="off" inputmode="text"></div><div class="review-feedback" data-review-feedback="9"></div></div>
+              <div class="review-question-card"><div class="review-answer-row"><label class="font-semibold text-slate-800 text-base" for="review-input-5">5. 기본 →</label><input type="text" id="review-input-5" class="review-input" data-review-input="5" data-direction="ko-to-meaning" data-answer-en="basic" data-answer-vi="cơ bản" data-answer="basic" placeholder="Nhập nghĩa tiếng Anh" autocomplete="off" inputmode="text"></div><div class="review-feedback" data-review-feedback="5"></div></div>
+              <div class="review-question-card"><div class="review-answer-row"><label class="font-semibold text-slate-800 text-base" for="review-input-10" data-review-label="10" data-prompt-en="interview" data-prompt-vi="phỏng vấn">10. interview →</label><input type="text" id="review-input-10" class="review-input" data-review-input="10" data-direction="meaning-to-ko" data-answer-en="면접" data-answer-vi="면접" data-answer="면접" placeholder="Nhập tiếng Hàn" autocomplete="off" inputmode="text"></div><div class="review-feedback" data-review-feedback="10"></div></div>
+            </div>
+          </section>
+
+          <section class="bg-slate-50/70 border border-slate-100 rounded-2xl p-5">
+            <h2 class="text-lg font-bold text-slate-800 mb-2">문장이 자연스럽도록 둘 중에서 알맞은 단어를 고르세요.</h2>
+            <p class="text-sm text-slate-500 hideable-meaning vi-meaning-target" onclick="t30.toggleSingleRedSheet(this, event)">Choose the proper word that fits the sentence more naturally.</p>
+            <div class="space-y-4 mt-4 text-sm">
+              <div class="bg-white border border-slate-100 rounded-xl p-4" data-review-choice-question="11" data-answer="a" data-answer-label="a. 변화를"><p class="font-medium">11. 핸드폰의 발달은 우리 사회에 큰 (　　　　) 가져왔습니다.</p><p class="text-xs text-slate-500 mt-1 hideable-meaning vi-meaning-target review-choice-translation hidden" onclick="t30.toggleSingleRedSheet(this, event)">The development of the cell phone has brought a big change in our society.</p><div class="flex flex-wrap gap-2 mt-3"><label class="review-radio-label" data-choice-label="11-a"><input type="radio" name="review-choice-11" value="a" onchange="t30.selectReviewRadio(11, 'a')"><span>a. 변화를</span></label><label class="review-radio-label" data-choice-label="11-b"><input type="radio" name="review-choice-11" value="b" onchange="t30.selectReviewRadio(11, 'b')"><span>b. 성화를</span></label></div><div class="review-feedback" data-review-feedback="11"></div></div>
+              <div class="bg-white border border-slate-100 rounded-xl p-4" data-review-choice-question="12" data-answer="a" data-answer-label="a. 극복하면"><p class="font-medium">12. 어려움을 (　　　　) 반드시 좋은 일이 있을 거예요.</p><p class="text-xs text-slate-500 mt-1 hideable-meaning vi-meaning-target review-choice-translation hidden" onclick="t30.toggleSingleRedSheet(this, event)">If you overcome your difficulties, good thing will happen.</p><div class="flex flex-wrap gap-2 mt-3"><label class="review-radio-label" data-choice-label="12-a"><input type="radio" name="review-choice-12" value="a" onchange="t30.selectReviewRadio(12, 'a')"><span>a. 극복하면</span></label><label class="review-radio-label" data-choice-label="12-b"><input type="radio" name="review-choice-12" value="b" onchange="t30.selectReviewRadio(12, 'b')"><span>b. 연기하면</span></label></div><div class="review-feedback" data-review-feedback="12"></div></div>
+              <div class="bg-white border border-slate-100 rounded-xl p-4" data-review-choice-question="13" data-answer="b" data-answer-label="b. 먹이나"><p class="font-medium">13. 동물원의 동물한테 아무 (　　　　) 주면 안 됩니다.</p><p class="text-xs text-slate-500 mt-1 hideable-meaning vi-meaning-target review-choice-translation hidden" onclick="t30.toggleSingleRedSheet(this, event)">You should not give random food to the animals in the zoo.</p><div class="flex flex-wrap gap-2 mt-3"><label class="review-radio-label" data-choice-label="13-a"><input type="radio" name="review-choice-13" value="a" onchange="t30.selectReviewRadio(13, 'a')"><span>a. 거리나</span></label><label class="review-radio-label" data-choice-label="13-b"><input type="radio" name="review-choice-13" value="b" onchange="t30.selectReviewRadio(13, 'b')"><span>b. 먹이나</span></label></div><div class="review-feedback" data-review-feedback="13"></div></div>
+              <div class="bg-white border border-slate-100 rounded-xl p-4" data-review-choice-question="14" data-answer="a" data-answer-label="a. 무시하지"><p class="font-medium">14. 나이가 어리다고 (　　　　) 마세요.</p><p class="text-xs text-slate-500 mt-1 hideable-meaning vi-meaning-target review-choice-translation hidden" onclick="t30.toggleSingleRedSheet(this, event)">Do not look down on me because I am younger.</p><div class="flex flex-wrap gap-2 mt-3"><label class="review-radio-label" data-choice-label="14-a"><input type="radio" name="review-choice-14" value="a" onchange="t30.selectReviewRadio(14, 'a')"><span>a. 무시하지</span></label><label class="review-radio-label" data-choice-label="14-b"><input type="radio" name="review-choice-14" value="b" onchange="t30.selectReviewRadio(14, 'b')"><span>b. 담당하지</span></label></div><div class="review-feedback" data-review-feedback="14"></div></div>
+              <div class="bg-white border border-slate-100 rounded-xl p-4" data-review-choice-question="15" data-answer="b" data-answer-label="b. 비율이"><p class="font-medium">15. 매년 태어나는 아기들 중에서 남자 아기가 차지하는 (　　　　) 높아지고 있다.</p><p class="text-xs text-slate-500 mt-1 hideable-meaning vi-meaning-target review-choice-translation hidden" onclick="t30.toggleSingleRedSheet(this, event)">The rate of the male babies that are being born is increasing every year.</p><div class="flex flex-wrap gap-2 mt-3"><label class="review-radio-label" data-choice-label="15-a"><input type="radio" name="review-choice-15" value="a" onchange="t30.selectReviewRadio(15, 'a')"><span>a. 효과가</span></label><label class="review-radio-label" data-choice-label="15-b"><input type="radio" name="review-choice-15" value="b" onchange="t30.selectReviewRadio(15, 'b')"><span>b. 비율이</span></label></div><div class="review-feedback" data-review-feedback="15"></div></div>
+            </div>
+          </section>
+        </div>
+      </div>
+
+
+    </div>
+  </div>

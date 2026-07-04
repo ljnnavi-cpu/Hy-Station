@@ -1,0 +1,485 @@
+{
+  "day": 9,
+  "vocabData": [
+    {
+      "id": "01",
+      "word": "연장하다",
+      "meaning": "extend",
+      "type": "동 verb",
+      "example_ko": "비자를 연장하기 위해서는 어떤 서류가 필요합니까?",
+      "example_vi": "What kind of documents do I need to extend my visa?",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>연장</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>extension</span></div><div><span class='font-semibold text-gray-700'>연장 신청</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>apply for extension</span></div><div><span class='font-semibold text-gray-700'>연장되다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>be extended</span></div></div>"
+    },
+    {
+      "id": "02",
+      "word": "옮기다",
+      "meaning": "move",
+      "type": "동 verb",
+      "example_ko": "한국에서 직장을 자주 옮기는 것은 사회성에 문제가 있어 보일 수 있다.",
+      "example_vi": "Changing jobs frequently in Korea may be considered as a problem in sociability.",
+      "extra": ""
+    },
+    {
+      "id": "03",
+      "word": "유행하다",
+      "meaning": "be in fashion",
+      "type": "동 verb",
+      "example_ko": "요즘은 짧은 머리에 짧은 치마가 유행한다고 해요.",
+      "example_vi": "They say wearing short skirts with short hair is in fashion these days.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>유행</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>fashion</span></div><div><span class='font-semibold text-gray-700'>유행을 따르다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>follow the fashion</span></div></div>"
+    },
+    {
+      "id": "04",
+      "word": "일부",
+      "meaning": "part, portion, section",
+      "type": "명 noun",
+      "example_ko": "생존자들 가운데 일부는 사고의 충격으로 정신과 치료가 필요하다고 한다.",
+      "example_vi": "Some people among the survivors got a shock from the accident and should receive psychotherapy.",
+      "extra": ""
+    },
+    {
+      "id": "05",
+      "word": "전시회",
+      "meaning": "exhibition",
+      "type": "명 noun",
+      "example_ko": "시간 있으면 주말에 전시회에 같이 갈래?",
+      "example_vi": "Do you want to go to an exhibition on the weekend if you have time?",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>전시장</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>exhibition hall</span></div><div><span class='font-semibold text-gray-700'>전시되다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>be exhibited</span></div><div><span class='font-semibold text-gray-700'>전시하다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>exhibit</span></div></div>"
+    },
+    {
+      "id": "06",
+      "word": "처리하다",
+      "meaning": "handle",
+      "type": "동 verb",
+      "example_ko": "밀린 일을 다 처리하느라고 퇴근이 늦었어요.",
+      "example_vi": "I left the office late after handling all the delayed work.",
+      "extra": "<div><span class='font-semibold text-gray-700'>처리</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>handle</span></div>"
+    },
+    {
+      "id": "07",
+      "word": "처음",
+      "meaning": "for the first time",
+      "type": "명 noun",
+      "example_ko": "처음 듣는 노래인데 왠지 익숙하네요.",
+      "example_vi": "I am hearing this song for the first time, but it sounds familiar.",
+      "extra": ""
+    },
+    {
+      "id": "08",
+      "word": "선배",
+      "meaning": "senior alumnus",
+      "type": "명 noun",
+      "example_ko": "퇴근 후에 대학교 선배를 만나서 같이 식사하기로 했다.",
+      "example_vi": "I am having dinner with one of my seniors from university after work.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>선배님</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>senior</span></div><div><span class='font-semibold text-gray-700'>후배</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>junior</span></div></div>"
+    },
+    {
+      "id": "09",
+      "word": "고생",
+      "meaning": "(have a) hard time +-ing",
+      "type": "명 noun",
+      "example_ko": "부모님께서는 저희들 때문에 고생을 많이 하셨습니다.",
+      "example_vi": "Parents had a hard time raising us.",
+      "extra": ""
+    },
+    {
+      "id": "10",
+      "word": "구매하다",
+      "meaning": "purchase",
+      "type": "동 verb",
+      "example_ko": "사치품을 구매하려는 사람들이 점점 늘어나고 있다.",
+      "example_vi": "People who are trying to buy luxurious goods are increasing.",
+      "extra": "<div><span class='font-semibold text-gray-700'>구매</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>purchase</span></div>"
+    },
+    {
+      "id": "11",
+      "word": "기업",
+      "meaning": "firm",
+      "type": "명 noun",
+      "example_ko": "삼성은 한국을 대표하는 기업입니다.",
+      "example_vi": "Samsung is one of the firms that represents the Republic of Korea.",
+      "extra": "<div><span class='font-semibold text-gray-700'>기업인</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>business man</span></div>"
+    },
+    {
+      "id": "12",
+      "word": "남",
+      "meaning": "other people",
+      "type": "명 noun",
+      "example_ko": "남들 앞에만 서면 얼굴이 빨개져서 큰일이에요.",
+      "example_vi": "Every time I am in front of other people, I can’t help blushing.",
+      "extra": ""
+    },
+    {
+      "id": "13",
+      "word": "다치다",
+      "meaning": "injured",
+      "type": "형 adjective",
+      "example_ko": "다리를 다쳐서 걸을 수가 없어요.",
+      "example_vi": "I injured my leg and cannot walk.",
+      "extra": ""
+    },
+    {
+      "id": "14",
+      "word": "마침",
+      "meaning": "just (about to)",
+      "type": "부 adverb",
+      "example_ko": "친구에게 전화하려고 했는데 마침 전화가 왔어요.",
+      "example_vi": "My friend called me when I was just about to call him.",
+      "extra": ""
+    },
+    {
+      "id": "15",
+      "word": "물질",
+      "meaning": "material",
+      "type": "명 noun",
+      "example_ko": "인스턴트 음식에는 몸에 좋지 않은 물질이 들어 있으니까 먹지 마세요.",
+      "example_vi": "Do not eat instant foods since they are filled with bad materials for your health.",
+      "extra": ""
+    },
+    {
+      "id": "16",
+      "word": "미래",
+      "meaning": "future",
+      "type": "명 noun",
+      "example_ko": "아이의 미래를 생각해서 유학을 보내기로 했어요.",
+      "example_vi": "I have decided to let my son study abroad since it is good for his future.",
+      "extra": "<div><span class='font-semibold text-gray-700'>미래가 없다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>there is no future</span></div>"
+    },
+    {
+      "id": "17",
+      "word": "미술",
+      "meaning": "art",
+      "type": "명 noun",
+      "example_ko": "미술을 공부하기 위해서 프랑스로 유학가게 되었습니다.",
+      "example_vi": "I decided to go to France to study art.",
+      "extra": "",
+      "detailBlocks": [
+        {
+          "type": "mindmap",
+          "title_ko": "관련어",
+          "title_vi": "Words to memorize together",
+          "center_ko": "미술",
+          "center_vi": "Art",
+          "nodes": [
+            {
+              "ko": "미술품",
+              "vi": "work of art"
+            },
+            {
+              "ko": "미술가",
+              "vi": "artist"
+            },
+            {
+              "ko": "미술관",
+              "vi": "art museum"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "18",
+      "word": "별로",
+      "meaning": "particularly",
+      "type": "부 adverb",
+      "example_ko": "고기는 별로 좋아하지 않는 편이에요.",
+      "example_vi": "I do not particularly like meat.",
+      "extra": ""
+    },
+    {
+      "id": "19",
+      "word": "분석하다",
+      "meaning": "analyze",
+      "type": "동 verb",
+      "example_ko": "그 연구원은 설문 조사를 분석해서 그 결과를 발표했다.",
+      "example_vi": "The researcher analyzed the result of the survey and announced it.",
+      "extra": "<div><span class='font-semibold text-gray-700'>분석되다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>be analyzed</span></div>"
+    },
+    {
+      "id": "20",
+      "word": "비교하다",
+      "meaning": "compare",
+      "type": "동 verb",
+      "example_ko": "좋은 물건을 사려면 여러 물건을 비교한 후에 사야 한다.",
+      "example_vi": "You should compare many products before you purchase in order to get a good one.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>비교</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>comparison</span></div><div><span class='font-semibold text-gray-700'>비교적</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>comparatively</span></div></div>"
+    },
+    {
+      "id": "21",
+      "word": "사무실",
+      "meaning": "office",
+      "type": "명 noun",
+      "example_ko": "어려운 문제가 생기면 사무실에 와서 이야기하세요.",
+      "example_vi": "If you have something bothering you, please come to the office and tell me.",
+      "extra": ""
+    },
+    {
+      "id": "22",
+      "word": "살펴보다",
+      "meaning": "look around",
+      "type": "동 verb",
+      "example_ko": "중고 물건을 살 때는 문제가 없는지 잘 살펴보고 사야 한다.",
+      "example_vi": "When you are buying the used product, you should look carefully whether the product has any problems.",
+      "extra": ""
+    },
+    {
+      "id": "23",
+      "word": "어른",
+      "meaning": "an adult",
+      "type": "명 noun",
+      "example_ko": "어린 아이들은 어른들의 행동을 쉽게 따라한다.",
+      "example_vi": "Children behave like the adults do.",
+      "extra": ""
+    },
+    {
+      "id": "24",
+      "word": "예방하다",
+      "meaning": "prevent",
+      "type": "동 verb",
+      "example_ko": "손을 자주 씻는 것만으로도 많은 질병을 예방할 수 있다.",
+      "example_vi": "You can prevent yourself from getting a disease only by washing your hands often.",
+      "extra": "<div><span class='font-semibold text-gray-700'>예방</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>prevention</span></div>"
+    },
+    {
+      "id": "25",
+      "word": "음식",
+      "meaning": "food",
+      "type": "명 noun",
+      "example_ko": "한국 음식 중에서 불고기는 외국인들에게 인기가 많아요.",
+      "example_vi": "The Bulgogi is one of the most popular foods loved by foreigners.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>음식점</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>restaurant</span></div><div><span class='font-semibold text-gray-700'>음식물</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>food</span></div><div><span class='font-semibold text-gray-700'>음식물 쓰레기</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>food garbage</span></div></div>"
+    },
+    {
+      "id": "26",
+      "word": "의미",
+      "meaning": "(the) meaning",
+      "type": "명 noun",
+      "example_ko": "비싸지 않아도 의미가 있는 선물을 하고 싶어요.",
+      "example_vi": "I want to buy a product that has a special meaning even though it is not expensive.",
+      "extra": ""
+    },
+    {
+      "id": "27",
+      "word": "일시적",
+      "meaning": "temporary",
+      "type": "명 noun",
+      "example_ko": "일시적인 문제이니 곧 해결될 것입니다.",
+      "example_vi": "It is only a temporary matter, and therefore it will soon be solved.",
+      "extra": ""
+    },
+    {
+      "id": "28",
+      "word": "일으키다",
+      "meaning": "raise",
+      "type": "동 verb",
+      "example_ko": "그 사람의 무례한 말이 싸움을 일으켰다.",
+      "example_vi": "His insulting words raised an argument.",
+      "extra": ""
+    },
+    {
+      "id": "29",
+      "word": "자신감",
+      "meaning": "self-esteem",
+      "type": "명 noun",
+      "example_ko": "무슨 일이든 자신감을 갖고 일하는 것이 중요하다.",
+      "example_vi": "It is important for you to always have your self-esteem whatever you do.",
+      "extra": ""
+    },
+    {
+      "id": "30",
+      "word": "재산",
+      "meaning": "asset, property",
+      "type": "명 noun",
+      "example_ko": "그 사업가는 자신의 재산을 모두 사회에 환원했다.",
+      "example_vi": "The businessman donated his whole property to the society.",
+      "extra": "<div><span class='font-semibold text-gray-700'>재산피해</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>property damage</span></div>"
+    },
+    {
+      "id": "31",
+      "word": "정신",
+      "meaning": "mind",
+      "type": "명 noun",
+      "example_ko": "너무 정신이 없어서 밥 먹는 것도 잊었어요.",
+      "example_vi": "It drove me out of my mind, and I even forgot to eat.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>정신적</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>psychological</span></div><div><span class='font-semibold text-gray-700'>정신차리다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>be awakened</span></div></div>"
+    },
+    {
+      "id": "32",
+      "word": "얻다",
+      "meaning": "get, gain",
+      "type": "동 verb",
+      "example_ko": "인터넷을 통해 많은 정보를 얻을 수 있다.",
+      "example_vi": "You can get much information from using the internet.",
+      "extra": "",
+      "detailBlocks": [
+        {
+          "type": "tip_combo",
+          "label": "Tip",
+          "question_ko": "‘얻다’는 어떤 단어와 같이 사용할까요?",
+          "question_vi": "What kind of word can be used together with the word “얻다(get)”?",
+          "word": "얻다",
+          "word_vi": "get",
+          "items": [
+            {
+              "ko": "인기",
+              "vi": "popularity"
+            },
+            {
+              "ko": "기회",
+              "vi": "chance"
+            },
+            {
+              "ko": "결과",
+              "vi": "result"
+            },
+            {
+              "ko": "공감",
+              "vi": "sympathy"
+            },
+            {
+              "ko": "반응",
+              "vi": "reaction"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "33",
+      "word": "제도",
+      "meaning": "policy",
+      "type": "명 noun",
+      "example_ko": "어려운 이웃을 위한 다양한 제도가 필요하다.",
+      "example_vi": "You need various kinds of policy to help the neighbors who are going through difficulties.",
+      "extra": ""
+    }
+  ],
+  "dict": {
+    "extend": "gia hạn / kéo dài",
+    "move": "chuyển / di chuyển",
+    "be in fashion": "thịnh hành / theo mốt",
+    "part, portion, section": "một phần / bộ phận / phần",
+    "exhibition": "triển lãm",
+    "handle": "xử lý",
+    "for the first time": "lần đầu tiên",
+    "senior alumnus": "tiền bối / đàn anh, đàn chị",
+    "(have a) hard time +-ing": "vất vả / gặp khó khăn",
+    "purchase": "mua / mua sắm",
+    "firm": "doanh nghiệp / công ty",
+    "other people": "người khác / người ngoài",
+    "injured": "bị thương",
+    "just (about to)": "vừa đúng lúc / vừa định",
+    "material": "vật chất / chất liệu / chất",
+    "future": "tương lai",
+    "art": "mỹ thuật / nghệ thuật",
+    "particularly": "đặc biệt / không mấy",
+    "analyze": "phân tích",
+    "compare": "so sánh",
+    "office": "văn phòng",
+    "look around": "xem xét / quan sát kỹ",
+    "an adult": "người lớn",
+    "prevent": "phòng ngừa / ngăn ngừa",
+    "food": "thức ăn / món ăn",
+    "(the) meaning": "ý nghĩa",
+    "temporary": "tạm thời",
+    "raise": "gây ra / làm phát sinh",
+    "self-esteem": "sự tự tin",
+    "asset, property": "tài sản",
+    "mind": "tinh thần / đầu óc",
+    "get, gain": "nhận được / có được",
+    "policy": "chế độ / chính sách",
+    "extension": "sự gia hạn",
+    "apply for extension": "đăng ký gia hạn",
+    "be extended": "được gia hạn",
+    "fashion": "xu hướng / thời trang",
+    "follow the fashion": "theo xu hướng / theo mốt",
+    "exhibition hall": "phòng triển lãm / nơi triển lãm",
+    "be exhibited": "được trưng bày",
+    "exhibit": "trưng bày / triển lãm",
+    "senior": "tiền bối",
+    "junior": "hậu bối / đàn em",
+    "business man": "doanh nhân",
+    "there is no future": "không có tương lai",
+    "Words to memorize together": "Nhóm từ nên học cùng nhau",
+    "Art": "Mỹ thuật",
+    "work of art": "tác phẩm mỹ thuật / tác phẩm nghệ thuật",
+    "artist": "họa sĩ / nghệ sĩ",
+    "art museum": "bảo tàng mỹ thuật",
+    "be analyzed": "được phân tích",
+    "comparison": "sự so sánh",
+    "comparatively": "tương đối",
+    "prevention": "sự phòng ngừa",
+    "restaurant": "nhà hàng / quán ăn",
+    "food garbage": "rác thải thực phẩm",
+    "property damage": "thiệt hại tài sản",
+    "psychological": "mang tính tinh thần / tâm lý",
+    "be awakened": "tỉnh táo lại / lấy lại tinh thần",
+    "What kind of word can be used together with the word “얻다(get)”?": "‘얻다’ thường dùng cùng với những từ nào?",
+    "get": "nhận được / có được",
+    "popularity": "sự nổi tiếng / sự yêu thích",
+    "chance": "cơ hội",
+    "result": "kết quả",
+    "sympathy": "sự đồng cảm",
+    "reaction": "phản ứng",
+    "What kind of documents do I need to extend my visa?": "Để gia hạn visa thì cần những giấy tờ nào?",
+    "Changing jobs frequently in Korea may be considered as a problem in sociability.": "Ở Hàn Quốc, việc thường xuyên chuyển chỗ làm có thể bị xem là có vấn đề về tính xã hội.",
+    "They say wearing short skirts with short hair is in fashion these days.": "Nghe nói dạo này tóc ngắn và váy ngắn đang thịnh hành.",
+    "Some people among the survivors got a shock from the accident and should receive psychotherapy.": "Một số người sống sót nói rằng do cú sốc của tai nạn nên cần điều trị tâm lý.",
+    "Do you want to go to an exhibition on the weekend if you have time?": "Nếu cuối tuần có thời gian, bạn đi triển lãm cùng tôi không?",
+    "I left the office late after handling all the delayed work.": "Tôi tan làm muộn vì xử lý hết những việc bị tồn lại.",
+    "I am hearing this song for the first time, but it sounds familiar.": "Đây là bài hát tôi nghe lần đầu, nhưng không hiểu sao lại thấy quen.",
+    "I am having dinner with one of my seniors from university after work.": "Sau khi tan làm, tôi hẹn gặp một người tiền bối đại học để cùng ăn tối.",
+    "Parents had a hard time raising us.": "Bố mẹ đã rất vất vả vì chúng tôi.",
+    "People who are trying to buy luxurious goods are increasing.": "Số người muốn mua hàng xa xỉ đang dần tăng lên.",
+    "Samsung is one of the firms that represents the Republic of Korea.": "Samsung là doanh nghiệp tiêu biểu đại diện cho Hàn Quốc.",
+    "Every time I am in front of other people, I can’t help blushing.": "Cứ đứng trước người khác là mặt tôi đỏ lên nên rất khổ.",
+    "I injured my leg and cannot walk.": "Tôi bị thương ở chân nên không thể đi được.",
+    "My friend called me when I was just about to call him.": "Tôi vừa định gọi cho bạn thì đúng lúc bạn gọi đến.",
+    "Do not eat instant foods since they are filled with bad materials for your health.": "Đồ ăn liền chứa những chất không tốt cho cơ thể nên đừng ăn.",
+    "I have decided to let my son study abroad since it is good for his future.": "Nghĩ cho tương lai của con, tôi đã quyết định cho con đi du học.",
+    "I decided to go to France to study art.": "Tôi đã quyết định đi du học Pháp để học mỹ thuật.",
+    "I do not particularly like meat.": "Tôi thuộc kiểu không thích thịt cho lắm.",
+    "The researcher analyzed the result of the survey and announced it.": "Nhà nghiên cứu đã phân tích kết quả khảo sát và công bố kết quả đó.",
+    "You should compare many products before you purchase in order to get a good one.": "Muốn mua được món đồ tốt thì nên so sánh nhiều sản phẩm rồi mới mua.",
+    "If you have something bothering you, please come to the office and tell me.": "Nếu có vấn đề khó khăn, hãy đến văn phòng và nói với tôi.",
+    "When you are buying the used product, you should look carefully whether the product has any problems.": "Khi mua đồ cũ, bạn nên xem xét kỹ xem sản phẩm có vấn đề gì không rồi hãy mua.",
+    "Children behave like the adults do.": "Trẻ nhỏ dễ bắt chước hành động của người lớn.",
+    "You can prevent yourself from getting a disease only by washing your hands often.": "Chỉ bằng việc rửa tay thường xuyên, bạn cũng có thể phòng ngừa nhiều bệnh.",
+    "The Bulgogi is one of the most popular foods loved by foreigners.": "Trong các món ăn Hàn Quốc, bulgogi rất được người nước ngoài yêu thích.",
+    "I want to buy a product that has a special meaning even though it is not expensive.": "Dù không đắt, tôi muốn tặng một món quà có ý nghĩa.",
+    "It is only a temporary matter, and therefore it will soon be solved.": "Đây chỉ là vấn đề tạm thời nên sẽ sớm được giải quyết.",
+    "His insulting words raised an argument.": "Lời nói vô lễ của người đó đã gây ra một cuộc cãi vã.",
+    "It is important for you to always have your self-esteem whatever you do.": "Dù làm việc gì, điều quan trọng là luôn làm với sự tự tin.",
+    "The businessman donated his whole property to the society.": "Doanh nhân đó đã hoàn trả toàn bộ tài sản của mình cho xã hội.",
+    "It drove me out of my mind, and I even forgot to eat.": "Tôi bận rối đến mức quên cả ăn cơm.",
+    "You can get much information from using the internet.": "Bạn có thể nhận được rất nhiều thông tin thông qua Internet.",
+    "You need various kinds of policy to help the neighbors who are going through difficulties.": "Cần có nhiều chế độ/chính sách khác nhau để giúp đỡ những người hàng xóm đang gặp khó khăn.",
+    "Words that are easy to confuse in TOPIK": "Những từ dễ nhầm lẫn trong TOPIK",
+    "Polysemy": "Từ đa nghĩa",
+    "Antonym": "Từ trái nghĩa",
+    "Synonym": "Từ đồng nghĩa",
+    "have": "có / đặt / để",
+    "rise": "mọc / nổi lên",
+    "knit": "đan",
+    "I want to see the sunrise with you on the New Year’s Day.": "Tôi muốn cùng bạn ngắm mặt trời mọc vào ngày đầu năm mới.",
+    "I knitted gloves and a muffler for the Christmas gifts.": "Tôi đã đan găng tay và khăn quàng cổ làm quà Giáng sinh.",
+    "rare, unusual": "hiếm / ít gặp",
+    "common": "phổ biến / thường gặp",
+    "It is hard to find a man who is as honest as he is.": "Thật khó tìm được người ngay thẳng như người đó.",
+    "Rocks are the most common thing in Jeju.": "Ở Jeju, đá là thứ phổ biến nhất.",
+    "suddenly": "đột nhiên / bỗng nhiên",
+    "all of a sudden": "bỗng nhiên / chợt",
+    "While walking around, I suddenly missed my friend from high school.": "Đang đi dạo, tôi bỗng nhớ người bạn cũ thời trung học.",
+    "Write Korean in English, and English in Korean.": "Hãy viết từ tiếng Hàn sang tiếng Việt, và từ tiếng Việt sang tiếng Hàn.",
+    "Choose the proper word that fits the sentence more naturally.": "Hãy chọn từ phù hợp để câu tự nhiên hơn.",
+    "Connect the Korean words with the English words of same meaning.": "Hãy nối từ tiếng Hàn với nghĩa tiếng Việt tương ứng.",
+    "Pick and write the suitable word among the options in the blank space.": "Hãy chọn từ phù hợp trong các lựa chọn để điền vào chỗ trống.",
+    "a. extend": "a. gia hạn / kéo dài",
+    "b. senior alumnus": "b. tiền bối / đàn anh, đàn chị",
+    "c. material": "c. vật chất / chất",
+    "d. prevent": "d. phòng ngừa",
+    "e. firm": "e. doanh nghiệp / công ty",
+    "f. meaning": "f. ý nghĩa",
+    "g. other people": "g. người khác"
+  }
+}

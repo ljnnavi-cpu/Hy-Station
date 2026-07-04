@@ -1,0 +1,606 @@
+{
+  "day": 14,
+  "vocabData": [
+    {
+      "id": "01",
+      "word": "비판하다",
+      "meaning": "criticize",
+      "type": "동 verb",
+      "example_ko": "그 사람은 자주 다른 사람의 생각을 비판하는 경향이 있다.",
+      "example_vi": "He has a tendency to criticize other’s opinion.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>비판</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>critique</span></div><div><span class='font-semibold text-gray-700'>비판을 받다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>be criticized</span></div><div><span class='font-semibold text-gray-700'>비판적</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>critical</span></div></div>",
+      "highlight_terms": [
+        "비판하는"
+      ]
+    },
+    {
+      "id": "02",
+      "word": "소설",
+      "meaning": "novel",
+      "type": "명 noun",
+      "example_ko": "언젠가 기회가 되면 우리 어머니의 삶에 대한 소설을 쓰고 싶다.",
+      "example_vi": "When the opportunity comes, I would like to write a novel about my mother’s life.",
+      "extra": "<div><span class='font-semibold text-gray-700'>소설가</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>novelist</span></div>",
+      "highlight_terms": [
+        "소설"
+      ]
+    },
+    {
+      "id": "03",
+      "word": "소재",
+      "meaning": "material",
+      "type": "명 noun",
+      "example_ko": "최근 더 얇고 따뜻한 옷을 만들 수 있는 새로운 소재를 개발했다.",
+      "example_vi": "Recently, a new material that can make thinner and warmer clothes was invented.",
+      "extra": "",
+      "highlight_terms": [
+        "소재를"
+      ]
+    },
+    {
+      "id": "04",
+      "word": "속",
+      "meaning": "inside",
+      "type": "명 noun",
+      "example_ko": "그 사람은 겉과 속이 다르다.",
+      "example_vi": "He is different inside and out.",
+      "extra": "",
+      "highlight_terms": [
+        "속이"
+      ]
+    },
+    {
+      "id": "05",
+      "word": "승객",
+      "meaning": "passenger",
+      "type": "명 noun",
+      "example_ko": "지하철이 도착하자 승객들이 내리기 시작했다.",
+      "example_vi": "As the subway arrived, passengers started to get off the train.",
+      "extra": "",
+      "highlight_terms": [
+        "승객들이"
+      ]
+    },
+    {
+      "id": "06",
+      "word": "시",
+      "meaning": "poem",
+      "type": "명 noun",
+      "example_ko": "그 사람은 자연에 대한 시를 많이 쓴 것으로 유명하다.",
+      "example_vi": "He is famous with writing many poems on nature.",
+      "extra": "<div><span class='font-semibold text-gray-700'>시인</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>poet</span></div>",
+      "highlight_terms": [
+        "시를"
+      ]
+    },
+    {
+      "id": "07",
+      "word": "시절",
+      "meaning": "time",
+      "type": "명 noun",
+      "example_ko": "이 노래만 들으면 어린 시절 추억이 떠오른다.",
+      "example_vi": "When I listen to this song, it reminds me of my childhood.",
+      "extra": "",
+      "highlight_terms": [
+        "시절"
+      ]
+    },
+    {
+      "id": "08",
+      "word": "싸다",
+      "meaning": "pack",
+      "type": "동 verb",
+      "example_ko": "여행을 갈 짐을 싸느라 정신이 없어요.",
+      "example_vi": "I am so busy packing for the trip.",
+      "extra": "",
+      "highlight_terms": [
+        "싸느라"
+      ]
+    },
+    {
+      "id": "09",
+      "word": "쓰레기",
+      "meaning": "waste",
+      "type": "명 noun",
+      "example_ko": "쓰레기를 아무데나 버리지 마세요.",
+      "example_vi": "Don’t throw wastes just anywhere.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>쓰레기통</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>waste bin</span></div><div><span class='font-semibold text-gray-700'>쓰레기 처리장</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>waste disposal site</span></div></div>",
+      "detailBlocks": [
+        {
+          "type": "test_note",
+          "label_ko": "출제 경향",
+          "label_vi": "how this word appears in the test",
+          "title_ko": "토픽에 환경 오염에 대한 문제가 자주 출제되는데 그때 쓰레기와 관계 있는 문제가 자주 언급이 됩니다.",
+          "title_vi": "TOPIK frequently has questions related to environmental pollution. Often they are related to wastes.",
+          "body_ko": "쓰레기와 관계 있는 다양한 주제가 무엇인지 생각해 두면 도움이 되겠지요?",
+          "body_vi": "It would be helpful, if you think about diverse issues related to wastes.",
+          "tags": [
+            {
+              "ko": "재활용 문제",
+              "en": "recycle issues"
+            },
+            {
+              "ko": "음식물 쓰레기 처리 문제",
+              "en": "food waste disposals"
+            },
+            {
+              "ko": "바다 쓰레기 문제",
+              "en": "sea waste issues"
+            },
+            {
+              "ko": "일회용품 사용 문제",
+              "en": "using disposable products"
+            }
+          ],
+          "no_speak": true
+        }
+      ],
+      "highlight_terms": [
+        "쓰레기를"
+      ]
+    },
+    {
+      "id": "10",
+      "word": "아까",
+      "meaning": "a while ago",
+      "type": "부 adverb",
+      "example_ko": "아까 어떤 사람이 김 선생님을 찾아 왔어요.",
+      "example_vi": "A person came by to look for Mr. Kim a while ago.",
+      "extra": "",
+      "highlight_terms": [
+        "아까"
+      ]
+    },
+    {
+      "id": "11",
+      "word": "앞장서다",
+      "meaning": "lead",
+      "type": "동 verb",
+      "example_ko": "그 사람은 다른 사람을 돕는 일이라면 누구보다 앞장서서 열심히 해요.",
+      "example_vi": "He leads to help other people.",
+      "extra": "",
+      "highlight_terms": [
+        "앞장서서"
+      ]
+    },
+    {
+      "id": "12",
+      "word": "약하다",
+      "meaning": "weak",
+      "type": "형 adjective",
+      "example_ko": "몸이 약해서 무리하면 안 됩니다.",
+      "example_vi": "I can’t overwork because I’m weak.",
+      "extra": "<div><span class='font-semibold text-gray-700'>약화시키다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>weaken</span></div>",
+      "highlight_terms": [
+        "약해서"
+      ]
+    },
+    {
+      "id": "13",
+      "word": "에너지",
+      "meaning": "energy",
+      "type": "명 noun",
+      "example_ko": "요즘 에너지 절약을 위해 불필요한 전기 사용을 줄이려고 노력하고 있다.",
+      "example_vi": "Recently, people are trying to lessen the unnecessary use of electricity to save energy.",
+      "extra": "<div><span class='font-semibold text-gray-700'>에너지원</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>energy source</span></div>",
+      "detailBlocks": [
+        {
+          "type": "test_note",
+          "label_ko": "출제 경향",
+          "label_vi": "how this word appears in the test",
+          "title_ko": "토픽에 출제된 ‘에너지’ 관련 주제는 ‘에너지 절약’과 ‘신에너지 개발’입니다.",
+          "title_vi": "Energy-related topics in TOPIK usually deal with “energy saving” and “developing new energy.”",
+          "body_ko": "이런 지문은 배경 지식이 없으면 이해하기 어려워요.",
+          "body_vi": "Some passages are hard to understand without background knowledge.",
+          "tags": [
+            {
+              "ko": "에너지 절약",
+              "en": "saving energy"
+            },
+            {
+              "ko": "신에너지 개발",
+              "en": "developing new energy"
+            }
+          ],
+          "no_speak": true
+        }
+      ],
+      "highlight_terms": [
+        "에너지"
+      ]
+    },
+    {
+      "id": "14",
+      "word": "연기하다",
+      "meaning": "act",
+      "type": "동 verb",
+      "example_ko": "이번 영화에서 연기하면서 가장 힘들었던 장면이 뭐예요?",
+      "example_vi": "What was the most challenging scene while you were acting in this movie?",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>연기</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>act</span></div><div><span class='font-semibold text-gray-700'>연기자</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>actor/actress</span></div></div>",
+      "highlight_terms": [
+        "연기하면서"
+      ]
+    },
+    {
+      "id": "15",
+      "word": "예상되다",
+      "meaning": "be expected",
+      "type": "동 verb",
+      "example_ko": "올해도 청년 실업자가 증가할 것으로 예상된다.",
+      "example_vi": "The number of unemployed youths, this year, is expected to rise.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>예상</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>expectation</span></div><div><span class='font-semibold text-gray-700'>예상하다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>expect</span></div><div><span class='font-semibold text-gray-700'>예상치</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>expected rate</span></div></div>",
+      "highlight_terms": [
+        "예상된다"
+      ]
+    },
+    {
+      "id": "16",
+      "word": "온도",
+      "meaning": "temperature",
+      "type": "명 noun",
+      "example_ko": "여름철 냉방 온도를 1도만 높여도 큰 에너지 절약을 할 수 있다.",
+      "example_vi": "Even raising up 1 degree of room temperature in summer will save a large amount of energy.",
+      "extra": "",
+      "highlight_terms": [
+        "온도를"
+      ]
+    },
+    {
+      "id": "17",
+      "word": "원고",
+      "meaning": "manuscript",
+      "type": "명 noun",
+      "example_ko": "우리 출판사에 좋은 원고를 주셔서 감사합니다.",
+      "example_vi": "Thank you for giving a good manuscript to our company.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>원고지</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>squared manuscript paper</span></div><div><span class='font-semibold text-gray-700'>원고료</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>manuscript fee</span></div></div>",
+      "highlight_terms": [
+        "원고를"
+      ]
+    },
+    {
+      "id": "18",
+      "word": "N위",
+      "meaning": "rank",
+      "type": "명 noun",
+      "example_ko": "두 사람은 늘 1위를 다투는 라이벌입니다.",
+      "example_vi": "Those two are rivals fighting for the number 1 spot in the rank.",
+      "extra": "",
+      "highlight_terms": [
+        "1위를"
+      ]
+    },
+    {
+      "id": "19",
+      "word": "의심하다",
+      "meaning": "suspect",
+      "type": "동 verb",
+      "example_ko": "정확한 근거 없이 남을 의심하면 안 된다.",
+      "example_vi": "Don’t suspect others without accurate grounds.",
+      "extra": "<div><span class='font-semibold text-gray-700'>의심스럽다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>suspicious</span></div>",
+      "highlight_terms": [
+        "의심하면"
+      ]
+    },
+    {
+      "id": "20",
+      "word": "이어지다",
+      "meaning": "lead",
+      "type": "동 verb",
+      "example_ko": "작은 충돌 사고가 미끄러운 길 때문에 대형 사고로 이어졌다.",
+      "example_vi": "Slippery road has led minor accidents to major ones.",
+      "extra": "",
+      "highlight_terms": [
+        "이어졌다"
+      ]
+    },
+    {
+      "id": "21",
+      "word": "인물",
+      "meaning": "person",
+      "type": "명 noun",
+      "example_ko": "가장 존경하는 인물은 누구예요?",
+      "example_vi": "Who is the person you admire the most?",
+      "extra": "",
+      "highlight_terms": [
+        "인물은"
+      ]
+    },
+    {
+      "id": "22",
+      "word": "인생",
+      "meaning": "life",
+      "type": "명 noun",
+      "example_ko": "직업 선택은 인생에서 가장 중요한 문제 중의 하나입니다.",
+      "example_vi": "Choosing an occupation is one of the most important issues in one’s life.",
+      "extra": "",
+      "highlight_terms": [
+        "인생에서"
+      ]
+    },
+    {
+      "id": "23",
+      "word": "인식하다",
+      "meaning": "recognize",
+      "type": "동 verb",
+      "example_ko": "미래에는 사람의 목소리를 인식할 수 있는 로봇이 실용화될 것이다.",
+      "example_vi": "In the future, robots that recognize a human’s voice will be commercialized.",
+      "extra": "<div><span class='font-semibold text-gray-700'>인식</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>recognition</span></div>",
+      "highlight_terms": [
+        "인식할"
+      ]
+    },
+    {
+      "id": "24",
+      "word": "자유롭다",
+      "meaning": "free",
+      "type": "형 adjective",
+      "example_ko": "현대인들은 누구나 자유로운 생활을 꿈꾼다.",
+      "example_vi": "Any modern person dreams about living a free life.",
+      "extra": "<div><span class='font-semibold text-gray-700'>자유롭게</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>freely</span></div>",
+      "highlight_terms": [
+        "자유로운"
+      ]
+    },
+    {
+      "id": "25",
+      "word": "절약하다",
+      "meaning": "save",
+      "type": "동 verb",
+      "example_ko": "물을 절약하는 방법으로 뭐가 있죠?",
+      "example_vi": "What are the ways to save water?",
+      "extra": "<div><span class='font-semibold text-gray-700'>절약</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>save</span></div>",
+      "highlight_terms": [
+        "절약하는"
+      ]
+    },
+    {
+      "id": "26",
+      "word": "정책",
+      "meaning": "policy",
+      "type": "명 noun",
+      "example_ko": "정부가 서민들을 위한 새로운 정책을 내놓았습니다.",
+      "example_vi": "The government has presented a new policy for the people.",
+      "extra": "",
+      "highlight_terms": [
+        "정책을"
+      ]
+    },
+    {
+      "id": "27",
+      "word": "종류",
+      "meaning": "kinds",
+      "type": "명 noun",
+      "example_ko": "손님, 여기 여러 종류의 핸드폰이 있습니다.",
+      "example_vi": "There are many kinds of cellular phones here.",
+      "extra": "",
+      "highlight_terms": [
+        "종류의"
+      ]
+    },
+    {
+      "id": "28",
+      "word": "종종",
+      "meaning": "often",
+      "type": "부 adverb",
+      "example_ko": "돌아가신 할머니가 종종 생각이 난다.",
+      "example_vi": "I often think about my grandmother who passed away.",
+      "extra": "",
+      "highlight_terms": [
+        "종종"
+      ]
+    },
+    {
+      "id": "29",
+      "word": "주장하다",
+      "meaning": "argue",
+      "type": "동 verb",
+      "example_ko": "자신의 의견만 주장하지 말고 상대방의 의견도 들어야 합니다.",
+      "example_vi": "You shouldn’t be only arguing your opinions but also listening to what others have to say.",
+      "extra": "<div><span class='font-semibold text-gray-700'>주장</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>argument</span></div>",
+      "detailBlocks": [
+        {
+          "type": "test_note",
+          "label_ko": "출제 경향",
+          "label_vi": "how this word appears in the test",
+          "title_ko": "토픽 듣기에서 누가 주장하는지, 무엇을 주장하는지, 주장하는 태도가 어떠한지를 고르는 문제가 자주 나옵니다. 꼭 알아두세요.",
+          "title_vi": "In TOPIK listening part, questions on choosing who is arguing, on what and how one argues are often asked. So don’t forget.",
+          "body_ko": "",
+          "body_vi": "",
+          "tags": [],
+          "no_speak": true
+        }
+      ],
+      "highlight_terms": [
+        "주장하지"
+      ]
+    },
+    {
+      "id": "30",
+      "word": "주제",
+      "meaning": "theme",
+      "type": "명 noun",
+      "example_ko": "이번 글쓰기의 주제는 ‘나의 인생’입니다.",
+      "example_vi": "The topic of this writing assignment is “my life”.",
+      "extra": "",
+      "highlight_terms": [
+        "주제는"
+      ]
+    },
+    {
+      "id": "31",
+      "word": "소식",
+      "meaning": "news",
+      "type": "명 noun",
+      "example_ko": "고향에 돌아가면 자주 소식을 전해 주세요.",
+      "example_vi": "When you go back to your hometown, please send us news frequently.",
+      "extra": "<div><span class='font-semibold text-gray-700'>소식을 주고받다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>exchange news</span></div>",
+      "detailBlocks": [
+        {
+          "type": "tip_note",
+          "label": "Tip",
+          "question_ko": "‘소식’과 ‘소문’은 어떤 차이가 있을까요?",
+          "question_vi": "What is the difference between “소식(news)” and “소문(rumor)”?",
+          "body_ko": "멀리 있는 사람의 상황을 들으면 ‘소식’이에요. 반면에 사람들이 많이 이야기하지만 진짜인지 아닌지 모를 때는 ‘소문’이지요.",
+          "body_vi": "소식(news) is things you hear about people living far away. Whereas 소문(rumor) is what many people talk about but they are not sure if it is true or not.",
+          "examples": [],
+          "no_speak": true
+        }
+      ],
+      "highlight_terms": [
+        "소식을"
+      ]
+    },
+    {
+      "id": "32",
+      "word": "중심",
+      "meaning": "main",
+      "type": "명 noun",
+      "example_ko": "이 글의 중심 생각이 무엇인지 고르십시오.",
+      "example_vi": "Choose the main idea of this passage.",
+      "extra": "",
+      "highlight_terms": [
+        "중심"
+      ]
+    },
+    {
+      "id": "33",
+      "word": "지나다",
+      "meaning": "pass",
+      "type": "동 verb",
+      "example_ko": "한국에 온 지 1년이 지나자 향수병이 생겼다.",
+      "example_vi": "After living in Korea for about a year I became homesick.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>지나가다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>pass</span></div><div><span class='font-semibold text-gray-700'>지나오다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>pass by</span></div></div>",
+      "highlight_terms": [
+        "지나자"
+      ]
+    }
+  ],
+  "dict": {
+    "criticize": "phê phán / chỉ trích",
+    "novel": "tiểu thuyết",
+    "material": "chất liệu / vật liệu",
+    "inside": "bên trong",
+    "passenger": "hành khách",
+    "poem": "bài thơ",
+    "time": "thời / thời kỳ",
+    "pack": "gói / xếp hành lý",
+    "waste": "rác thải",
+    "a while ago": "lúc nãy / ban nãy",
+    "lead": "dẫn đến / đi đầu",
+    "weak": "yếu",
+    "energy": "năng lượng",
+    "act": "diễn / diễn xuất",
+    "be expected": "được dự đoán / được dự kiến",
+    "temperature": "nhiệt độ",
+    "manuscript": "bản thảo",
+    "rank": "thứ hạng",
+    "suspect": "nghi ngờ",
+    "person": "nhân vật / người",
+    "life": "cuộc đời / đời người",
+    "recognize": "nhận biết / nhận dạng",
+    "free": "tự do",
+    "save": "tiết kiệm",
+    "policy": "chính sách",
+    "kinds": "loại / chủng loại",
+    "often": "thỉnh thoảng / thường xuyên",
+    "argue": "chủ trương / khẳng định / tranh luận",
+    "theme": "chủ đề",
+    "news": "tin tức / tin",
+    "main": "trọng tâm / chính",
+    "pass": "trôi qua / đi qua",
+    "critique": "sự phê phán / lời phê bình",
+    "be criticized": "bị phê phán / bị chỉ trích",
+    "critical": "mang tính phê phán",
+    "novelist": "tiểu thuyết gia",
+    "poet": "nhà thơ",
+    "waste bin": "thùng rác",
+    "waste disposal site": "bãi xử lý rác",
+    "how this word appears in the test": "cách từ này xuất hiện trong đề thi",
+    "TOPIK frequently has questions related to environmental pollution. Often they are related to wastes.": "TOPIK thường ra các câu hỏi liên quan đến ô nhiễm môi trường, và khi đó các vấn đề liên quan đến rác thải thường được nhắc đến.",
+    "It would be helpful, if you think about diverse issues related to wastes.": "Sẽ rất hữu ích nếu bạn nghĩ trước về nhiều chủ đề khác nhau liên quan đến rác thải.",
+    "recycle issues": "vấn đề tái chế",
+    "food waste disposals": "vấn đề xử lý rác thải thực phẩm",
+    "sea waste issues": "vấn đề rác thải biển",
+    "using disposable products": "vấn đề sử dụng đồ dùng một lần",
+    "weaken": "làm yếu đi / làm suy yếu",
+    "energy source": "nguồn năng lượng",
+    "Energy-related topics in TOPIK usually deal with “energy saving” and “developing new energy.”": "Các chủ đề liên quan đến năng lượng trong TOPIK thường là “tiết kiệm năng lượng” và “phát triển năng lượng mới”.",
+    "Some passages are hard to understand without background knowledge.": "Một số đoạn văn sẽ khó hiểu nếu không có kiến thức nền.",
+    "saving energy": "tiết kiệm năng lượng",
+    "developing new energy": "phát triển năng lượng mới",
+    "actor/actress": "diễn viên nam/nữ",
+    "expectation": "sự dự đoán / kỳ vọng",
+    "expect": "dự đoán / kỳ vọng",
+    "expected rate": "mức dự đoán / tỉ lệ dự đoán",
+    "squared manuscript paper": "giấy viết bản thảo ô vuông",
+    "manuscript fee": "nhuận bút",
+    "suspicious": "đáng nghi / khả nghi",
+    "recognition": "sự nhận biết / nhận dạng",
+    "freely": "một cách tự do",
+    "argument": "ý kiến chủ trương / lập luận",
+    "In TOPIK listening part, questions on choosing who is arguing, on what and how one argues are often asked. So don’t forget.": "Trong phần nghe TOPIK, thường xuất hiện câu hỏi chọn ai đang đưa ra ý kiến, đang chủ trương điều gì và thái độ lập luận như thế nào. Hãy nhớ kỹ.",
+    "exchange news": "trao đổi tin tức / báo tin cho nhau",
+    "What is the difference between “소식(news)” and “소문(rumor)”?": "‘소식’ và ‘소문’ khác nhau như thế nào?",
+    "소식(news) is things you hear about people living far away. Whereas 소문(rumor) is what many people talk about but they are not sure if it is true or not.": "‘소식’ là tin tức/tình hình bạn nghe được về người ở xa. Ngược lại, ‘소문’ là lời đồn mà nhiều người nói đến nhưng không chắc có thật hay không.",
+    "pass by": "đi ngang qua / trôi qua",
+    "He has a tendency to criticize other’s opinion.": "Người đó có khuynh hướng thường phê phán suy nghĩ của người khác.",
+    "When the opportunity comes, I would like to write a novel about my mother’s life.": "Nếu một ngày nào đó có cơ hội, tôi muốn viết tiểu thuyết về cuộc đời của mẹ tôi.",
+    "Recently, a new material that can make thinner and warmer clothes was invented.": "Gần đây, người ta đã phát triển một chất liệu mới có thể làm ra quần áo mỏng hơn và ấm hơn.",
+    "He is different inside and out.": "Người đó bên ngoài và bên trong khác nhau.",
+    "As the subway arrived, passengers started to get off the train.": "Khi tàu điện ngầm đến, hành khách bắt đầu xuống tàu.",
+    "He is famous with writing many poems on nature.": "Người đó nổi tiếng vì viết nhiều bài thơ về thiên nhiên.",
+    "When I listen to this song, it reminds me of my childhood.": "Mỗi khi nghe bài hát này, ký ức thời thơ ấu lại hiện lên.",
+    "I am so busy packing for the trip.": "Tôi bận rộn đến mức rối cả lên vì đang xếp hành lý đi du lịch.",
+    "Don’t throw wastes just anywhere.": "Đừng vứt rác bừa bãi.",
+    "A person came by to look for Mr. Kim a while ago.": "Lúc nãy có người đến tìm thầy Kim.",
+    "He leads to help other people.": "Người đó luôn đi đầu và nhiệt tình trong việc giúp đỡ người khác.",
+    "I can’t overwork because I’m weak.": "Cơ thể yếu nên không được làm quá sức.",
+    "Recently, people are trying to lessen the unnecessary use of electricity to save energy.": "Gần đây, mọi người đang cố gắng giảm việc sử dụng điện không cần thiết để tiết kiệm năng lượng.",
+    "What was the most challenging scene while you were acting in this movie?": "Cảnh khó nhất khi diễn trong bộ phim này là gì?",
+    "The number of unemployed youths, this year, is expected to rise.": "Số người trẻ thất nghiệp năm nay được dự đoán sẽ tăng.",
+    "Even raising up 1 degree of room temperature in summer will save a large amount of energy.": "Chỉ cần tăng nhiệt độ điều hòa mùa hè lên 1 độ cũng có thể tiết kiệm được nhiều năng lượng.",
+    "Thank you for giving a good manuscript to our company.": "Cảm ơn vì đã gửi bản thảo hay cho nhà xuất bản chúng tôi.",
+    "Those two are rivals fighting for the number 1 spot in the rank.": "Hai người đó là đối thủ luôn tranh vị trí số 1.",
+    "Don’t suspect others without accurate grounds.": "Không được nghi ngờ người khác khi không có căn cứ chính xác.",
+    "Slippery road has led minor accidents to major ones.": "Các va chạm nhỏ đã dẫn đến tai nạn lớn do đường trơn.",
+    "Who is the person you admire the most?": "Nhân vật bạn kính trọng nhất là ai?",
+    "Choosing an occupation is one of the most important issues in one’s life.": "Việc lựa chọn nghề nghiệp là một trong những vấn đề quan trọng nhất trong cuộc đời.",
+    "In the future, robots that recognize a human’s voice will be commercialized.": "Trong tương lai, robot có thể nhận diện giọng nói con người sẽ được thương mại hóa.",
+    "Any modern person dreams about living a free life.": "Người hiện đại ai cũng mơ ước một cuộc sống tự do.",
+    "What are the ways to save water?": "Có những cách nào để tiết kiệm nước?",
+    "The government has presented a new policy for the people.": "Chính phủ đã đưa ra chính sách mới dành cho người dân.",
+    "There are many kinds of cellular phones here.": "Thưa quý khách, ở đây có nhiều loại điện thoại di động.",
+    "I often think about my grandmother who passed away.": "Tôi thường nghĩ đến bà đã mất.",
+    "You shouldn’t be only arguing your opinions but also listening to what others have to say.": "Không nên chỉ khăng khăng với ý kiến của mình mà còn phải lắng nghe ý kiến của đối phương.",
+    "The topic of this writing assignment is “my life”.": "Chủ đề của bài viết lần này là “cuộc đời của tôi”.",
+    "When you go back to your hometown, please send us news frequently.": "Khi về quê, hãy thường xuyên gửi tin tức cho chúng tôi nhé.",
+    "Choose the main idea of this passage.": "Hãy chọn ý chính của bài viết này.",
+    "After living in Korea for about a year I became homesick.": "Sau khi đến Hàn Quốc được khoảng một năm, tôi bắt đầu nhớ nhà.",
+    "Words that are easy to confuse in TOPIK": "Những từ dễ nhầm lẫn trong TOPIK",
+    "Polysemy": "Từ đa nghĩa",
+    "Antonym": "Từ trái nghĩa",
+    "Synonym": "Từ đồng nghĩa",
+    "spread around": "lan rộng / lan truyền",
+    "be smudged": "bị nhòe / bị lem",
+    "In the battlefield, epidemics are spreading around.": "Nghe nói dịch bệnh đang lan rộng đến cả chiến trường.",
+    "The rumors on singer K is spreading around on line very fast.": "Tin đồn về ca sĩ K đang lan truyền rất nhanh trên mạng.",
+    "It is very well-painted picture, but I’m sorry it’s a little smudged.": "Đó là bức tranh rất đẹp, nhưng tiếc là màu hơi bị lem.",
+    "produce": "sản xuất",
+    "consume": "tiêu thụ",
+    "Air conditioners are produced from this factory.": "Máy điều hòa được sản xuất tại nhà máy này.",
+    "Which department in our company is consuming the most energy?": "Bộ phận nào trong công ty chúng ta đang tiêu thụ nhiều năng lượng nhất?",
+    "facial expression": "biểu cảm khuôn mặt",
+    "complexion": "sắc mặt",
+    "Your bad facial expression says you might have some concerns.": "Biểu cảm/sắc mặt không tốt cho thấy có vẻ bạn đang lo lắng điều gì đó.",
+    "Connect the Korean words with the English words of same meaning.": "Hãy nối từ tiếng Hàn với nghĩa tiếng Việt tương ứng.",
+    "Pick and write the suitable word among <the options> in the blank space.": "Hãy chọn từ phù hợp trong các lựa chọn để điền vào chỗ trống.",
+    "Pick and write the suitable word among the options in the blank space.": "Hãy chọn từ phù hợp trong các lựa chọn để điền vào chỗ trống.",
+    "a. criticize": "a. phê phán / chỉ trích",
+    "b. weak": "b. yếu",
+    "c. argue": "c. chủ trương / khẳng định",
+    "d. kinds": "d. loại / chủng loại",
+    "e. material": "e. chất liệu / vật liệu",
+    "f. be expected": "f. được dự đoán",
+    "g. recognize": "g. nhận biết / nhận dạng"
+  }
+}

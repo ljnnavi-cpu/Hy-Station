@@ -1,0 +1,999 @@
+{
+  "day": 16,
+  "vocabData": [
+    {
+      "id": "01",
+      "word": "묻다",
+      "meaning": "ask",
+      "meaning_vi": "hỏi",
+      "type": "동 verb",
+      "example_ko": "수업 내용이 잘 이해가 안 되면 선생님께 물어 보세요.",
+      "example_vi": "If you do not understand what you learn from the class, ask your teacher.",
+      "example_vi_vn": "Nếu không hiểu rõ nội dung bài học, hãy hỏi giáo viên.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "물어 보세요"
+      ]
+    },
+    {
+      "id": "02",
+      "word": "반영하다",
+      "meaning": "reflect",
+      "meaning_vi": "phản ánh",
+      "type": "동 verb",
+      "example_ko": "이번에 직원들의 의견을 반영해서 회사에 쉴 수 있는 공간을 마련했습니다.",
+      "example_vi": "The company has reflected the opinion of the employees and provided the place where they can rest in the building.",
+      "example_vi_vn": "Lần này công ty đã phản ánh ý kiến của nhân viên và chuẩn bị không gian nghỉ ngơi trong tòa nhà.",
+      "extra": "<div><span class='font-semibold text-gray-700'>반영되다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>be reflected</span></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "반영해서"
+      ]
+    },
+    {
+      "id": "03",
+      "word": "밝다",
+      "meaning": "bright",
+      "meaning_vi": "sáng sủa",
+      "type": "형 adjective",
+      "example_ko": "오랜만에 만난 부모님은 얼굴이 밝아 보이셨다.",
+      "example_vi": "I met my parents in a while and they looked bright and happy.",
+      "example_vi_vn": "Lâu rồi mới gặp, trông gương mặt bố mẹ tôi sáng sủa và vui vẻ.",
+      "extra": "<div><span class='font-semibold text-gray-700'>밝기</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>brightness</span></div>",
+      "detailBlocks": [
+        {
+          "type": "tip_combo",
+          "label": "Tip",
+          "question_ko": "‘밝다’는 어떤 단어와 같이 사용할까요?",
+          "question_vi": "What words can you use with “밝다(bright)”?",
+          "word": "밝다",
+          "word_vi": "bright",
+          "items": [
+            {
+              "ko": "미래",
+              "vi": "future"
+            },
+            {
+              "ko": "표정",
+              "vi": "facial expression"
+            },
+            {
+              "ko": "색깔",
+              "vi": "color"
+            }
+          ],
+          "no_speak": true
+        }
+      ],
+      "highlight_terms": [
+        "밝아"
+      ]
+    },
+    {
+      "id": "04",
+      "word": "발달",
+      "meaning": "development",
+      "meaning_vi": "sự phát triển",
+      "type": "명 noun",
+      "example_ko": "의학의 발달로 사람들의 평균 수명이 길어졌다.",
+      "example_vi": "Due to the development of the medical technology, the average of life expectancy has lengthened.",
+      "example_vi_vn": "Nhờ sự phát triển của y học, tuổi thọ trung bình của con người đã kéo dài.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>발달</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>development</span></div><div><span class='font-semibold text-gray-700'>발달되다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>be developed</span></div><div><span class='font-semibold text-gray-700'>발달하다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>develop</span></div></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "발달로"
+      ]
+    },
+    {
+      "id": "05",
+      "word": "발전",
+      "meaning": "progress",
+      "meaning_vi": "sự tiến bộ / phát triển",
+      "type": "명 noun",
+      "example_ko": "유은이의 피아노 실력은 작년에 비해 발전을 보이고 있습니다.",
+      "example_vi": "Yu Eun’s ability to play piano has shown a great progress compared to last year.",
+      "example_vi_vn": "Khả năng chơi piano của Yu-eun đang cho thấy sự tiến bộ lớn so với năm ngoái.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>발전하다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>progress</span></div><div><span class='font-semibold text-gray-700'>발전시키다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>develop one’s ability</span></div></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "발전을"
+      ]
+    },
+    {
+      "id": "06",
+      "word": "병",
+      "meaning": "disease",
+      "meaning_vi": "bệnh",
+      "type": "명 noun",
+      "example_ko": "병에 걸리면 마음도 약해지는 것 같아요.",
+      "example_vi": "It seems that your mind also gets weaker when you get sick.",
+      "example_vi_vn": "Khi mắc bệnh thì dường như tinh thần cũng yếu đi.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "병에"
+      ]
+    },
+    {
+      "id": "07",
+      "word": "보호",
+      "meaning": "protection",
+      "meaning_vi": "sự bảo vệ",
+      "type": "명 noun",
+      "example_ko": "아이는 부모의 보호를 받으며 자란다.",
+      "example_vi": "The child grows up under his parents’ protection.",
+      "example_vi_vn": "Đứa trẻ lớn lên dưới sự bảo vệ của cha mẹ.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>보호시설</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>institution</span></div><div><span class='font-semibold text-gray-700'>보호하다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>protect</span></div></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "보호를"
+      ]
+    },
+    {
+      "id": "08",
+      "word": "부딪치다",
+      "meaning": "hit",
+      "meaning_vi": "va vào / đụng phải",
+      "type": "동 verb",
+      "example_ko": "달려오는 자전거에 부딪칠 뻔했다.",
+      "example_vi": "I was almost hit by a bike running toward me.",
+      "example_vi_vn": "Tôi suýt bị chiếc xe đạp đang lao tới va vào.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "부딪칠"
+      ]
+    },
+    {
+      "id": "09",
+      "word": "비상구",
+      "meaning": "emergency exit",
+      "meaning_vi": "cửa thoát hiểm",
+      "type": "명 noun",
+      "example_ko": "불이 나면 비상구로 빨리 나가야 한다.",
+      "example_vi": "When a fire breaks out, you should quickly get yourself out to the emergency exit.",
+      "example_vi_vn": "Khi có cháy thì phải nhanh chóng đi ra bằng cửa thoát hiểm.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>비상구</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>emergency exit</span></div><div><span class='font-semibold text-gray-700'>비상약</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>first-aid medicine</span></div></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "비상구로"
+      ]
+    },
+    {
+      "id": "10",
+      "word": "사귀다",
+      "meaning": "get along",
+      "meaning_vi": "kết bạn / giao du",
+      "type": "동 verb",
+      "example_ko": "유학 생활을 하면서 많은 친구를 사귀게 되었다.",
+      "example_vi": "While studying abroad, I got along with many friends there.",
+      "example_vi_vn": "Trong thời gian du học, tôi đã kết bạn được với nhiều người.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "사귀게"
+      ]
+    },
+    {
+      "id": "11",
+      "word": "사례",
+      "meaning": "case",
+      "meaning_vi": "trường hợp / ví dụ",
+      "type": "명 noun",
+      "example_ko": "교수님이 여러 가지 사례를 들어 주면서 설명하시니까 이해하기가 쉬웠다.",
+      "example_vi": "It was easy for us to understand the lecture since the professor explained with many different cases.",
+      "example_vi_vn": "Vì giáo sư giải thích bằng nhiều ví dụ/trường hợp nên rất dễ hiểu.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "사례를"
+      ]
+    },
+    {
+      "id": "12",
+      "word": "상관없이",
+      "meaning": "regardless of",
+      "meaning_vi": "bất kể / không liên quan đến",
+      "type": "부 adverb",
+      "example_ko": "나이나 국적에 상관없이 누구나 이 일을 할 수 있다.",
+      "example_vi": "Regardless of the age or the nationality, anyone can do this work.",
+      "example_vi_vn": "Không phân biệt tuổi tác hay quốc tịch, ai cũng có thể làm việc này.",
+      "extra": "<div><span class='font-semibold text-gray-700'>상관이 없다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>have nothing to do with</span></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "상관없이"
+      ]
+    },
+    {
+      "id": "13",
+      "word": "선호하다",
+      "meaning": "prefer",
+      "meaning_vi": "ưa thích / ưu tiên",
+      "type": "동 verb",
+      "example_ko": "요즘 젊은 사람들은 월급보다 복지가 좋은 회사를 선호한다.",
+      "example_vi": "The young people these days prefer the company with a better welfare, to the company with a higher salary.",
+      "example_vi_vn": "Giới trẻ ngày nay thích công ty có phúc lợi tốt hơn là công ty lương cao.",
+      "extra": "<div><span class='font-semibold text-gray-700'>선호</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>preference</span></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "선호한다"
+      ]
+    },
+    {
+      "id": "14",
+      "word": "소득",
+      "meaning": "income",
+      "meaning_vi": "thu nhập",
+      "type": "명 noun",
+      "example_ko": "사람들의 소득 수준이 올라가면서 문화비 지출이 늘었다.",
+      "example_vi": "As the level of people’s income increased people spends more on cultural products.",
+      "example_vi_vn": "Khi mức thu nhập của mọi người tăng lên, chi tiêu cho văn hóa cũng tăng.",
+      "extra": "<div><span class='font-semibold text-gray-700'>소득별</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>for every income</span></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "소득"
+      ]
+    },
+    {
+      "id": "15",
+      "word": "손님",
+      "meaning": "guest",
+      "meaning_vi": "khách",
+      "type": "명 noun",
+      "example_ko": "오늘 우리집에 손님이 오셔서 청소를 해야 한다.",
+      "example_vi": "Today, we have a guest coming over, therefore we should clean our house.",
+      "example_vi_vn": "Hôm nay nhà tôi có khách đến nên phải dọn dẹp.",
+      "extra": "<div><span class='font-semibold text-gray-700'>손님</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>guest</span></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "손님이"
+      ]
+    },
+    {
+      "id": "16",
+      "word": "수면",
+      "meaning": "sleep",
+      "meaning_vi": "giấc ngủ",
+      "type": "명 noun",
+      "example_ko": "아이들이 잘 자라기 위해서는 충분한 수면 시간을 갖는 것이 중요하다.",
+      "example_vi": "It is important for the children to get enough hours of sleep in order to grow.",
+      "example_vi_vn": "Để trẻ em phát triển tốt, việc có đủ thời gian ngủ là rất quan trọng.",
+      "extra": "<div><span class='font-semibold text-gray-700'>수면을 취하다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>go to sleep</span></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "수면"
+      ]
+    },
+    {
+      "id": "17",
+      "word": "순간",
+      "meaning": "at the moment",
+      "meaning_vi": "khoảnh khắc",
+      "type": "명 noun",
+      "example_ko": "길이 위험하다고 생각하는 순간 사고가 나 버렸다.",
+      "example_vi": "The moment I thought it was dangerous, the accident happened.",
+      "example_vi_vn": "Ngay khoảnh khắc tôi nghĩ con đường nguy hiểm thì tai nạn đã xảy ra.",
+      "extra": "<div><span class='font-semibold text-gray-700'>순간적</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>momentary</span></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "순간"
+      ]
+    },
+    {
+      "id": "18",
+      "word": "시끄럽다",
+      "meaning": "noise",
+      "meaning_vi": "ồn ào",
+      "type": "형 adjective",
+      "example_ko": "밖에서 사람들이 싸워서 너무 시끄럽다.",
+      "example_vi": "It was so noisy since people were fighting outside.",
+      "example_vi_vn": "Bên ngoài có người cãi nhau nên rất ồn ào.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "시끄럽다"
+      ]
+    },
+    {
+      "id": "19",
+      "word": "실력",
+      "meaning": "ability",
+      "meaning_vi": "năng lực / thực lực",
+      "type": "명 noun",
+      "example_ko": "모든 그 사람의 실력이 최고라고 인정한다.",
+      "example_vi": "Everyone admits that he has the best ability.",
+      "example_vi_vn": "Mọi người đều công nhận năng lực của người đó là tốt nhất.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "실력이"
+      ]
+    },
+    {
+      "id": "20",
+      "word": "직급",
+      "meaning": "position",
+      "meaning_vi": "chức vụ / cấp bậc",
+      "type": "명 noun",
+      "example_ko": "직급이 높을수록 책임도 많아져요.",
+      "example_vi": "As one’s position gets higher, so does one’s responsibility.",
+      "example_vi_vn": "Chức vụ càng cao thì trách nhiệm càng nhiều.",
+      "extra": "",
+      "detailBlocks": [
+        {
+          "type": "tip_combo",
+          "label": "Tip",
+          "question_ko": "회사 내 직위는 어떤 것이 있을까요?",
+          "question_vi": "What kind of position exists in a company?",
+          "word": "직급",
+          "word_vi": "position",
+          "items": [
+            {
+              "ko": "인턴 사원",
+              "vi": "intern"
+            },
+            {
+              "ko": "신입사원",
+              "vi": "new employee"
+            },
+            {
+              "ko": "대리",
+              "vi": "deputy section chief"
+            },
+            {
+              "ko": "과장",
+              "vi": "section chief"
+            },
+            {
+              "ko": "부장",
+              "vi": "head of department"
+            },
+            {
+              "ko": "사장",
+              "vi": "CEO"
+            }
+          ],
+          "no_speak": true
+        }
+      ],
+      "highlight_terms": [
+        "직급이"
+      ]
+    },
+    {
+      "id": "21",
+      "word": "실천하다",
+      "meaning": "practice",
+      "meaning_vi": "thực hiện",
+      "type": "동 verb",
+      "example_ko": "계획을 세웠으면 실천하세요.",
+      "example_vi": "You should practice your plan.",
+      "example_vi_vn": "Nếu đã lập kế hoạch thì hãy thực hiện.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>실천</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>practice</span></div><div><span class='font-semibold text-gray-700'>실천력</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>power of execution</span></div></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "실천하세요"
+      ]
+    },
+    {
+      "id": "22",
+      "word": "심리",
+      "meaning": "psychology",
+      "meaning_vi": "tâm lý",
+      "type": "명 noun",
+      "example_ko": "어른들이 아이들의 심리를 이해하는 것은 쉬운 일이 아니다.",
+      "example_vi": "It is hard for the adults to understand the psychology of the children.",
+      "example_vi_vn": "Người lớn không dễ hiểu được tâm lý của trẻ em.",
+      "extra": "",
+      "detailBlocks": [
+        {
+          "type": "mindmap",
+          "title_ko": "관련어",
+          "title_vi": "Words to memorize together",
+          "center_ko": "심리",
+          "center_vi": "psychology",
+          "nodes": [
+            {
+              "ko": "심리적",
+              "vi": "psychological"
+            },
+            {
+              "ko": "심리학자",
+              "vi": "psychologist"
+            },
+            {
+              "ko": "심리 전문가",
+              "vi": "psychologist"
+            },
+            {
+              "ko": "심리 연구소",
+              "vi": "institute of psychology"
+            },
+            {
+              "ko": "심리학",
+              "vi": "psychology"
+            }
+          ]
+        }
+      ],
+      "highlight_terms": [
+        "심리를"
+      ]
+    },
+    {
+      "id": "23",
+      "word": "약속",
+      "meaning": "promise",
+      "meaning_vi": "lời hứa / cuộc hẹn",
+      "type": "명 noun",
+      "example_ko": "그 사람은 약속을 틀림없이 지키는 사람이다.",
+      "example_vi": "He is the person that always keeps his promise.",
+      "example_vi_vn": "Người đó là người luôn giữ lời hứa.",
+      "extra": "<div><span class='font-semibold text-gray-700'>약속하다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>promise</span></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "약속을"
+      ]
+    },
+    {
+      "id": "24",
+      "word": "업체",
+      "meaning": "enterprise",
+      "meaning_vi": "doanh nghiệp / công ty",
+      "type": "명 noun",
+      "example_ko": "경쟁 업체끼리 너무 심하게 경쟁하면 결국 서로에게 피해만 주게 된다.",
+      "example_vi": "When the enterprises are overly competitive they end up harming one another.",
+      "example_vi_vn": "Nếu các doanh nghiệp cạnh tranh quá gay gắt thì cuối cùng chỉ gây hại cho nhau.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "업체끼리"
+      ]
+    },
+    {
+      "id": "25",
+      "word": "여기다",
+      "meaning": "consider",
+      "meaning_vi": "coi là / xem là",
+      "type": "동 verb",
+      "example_ko": "나는 내 강아지를 자식처럼 여기고 있다.",
+      "example_vi": "I consider my dog my child.",
+      "example_vi_vn": "Tôi coi chú chó của mình như con.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "여기고"
+      ]
+    },
+    {
+      "id": "26",
+      "word": "영업",
+      "meaning": "business",
+      "meaning_vi": "kinh doanh",
+      "type": "명 noun",
+      "example_ko": "영업 시간이 어떻게 되나요?",
+      "example_vi": "What are the business hour?",
+      "example_vi_vn": "Giờ kinh doanh như thế nào?",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>영업직</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>sales job</span></div><div><span class='font-semibold text-gray-700'>영업시간</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>business hour</span></div><div><span class='font-semibold text-gray-700'>영업하다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>do business</span></div></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "영업"
+      ]
+    },
+    {
+      "id": "27",
+      "word": "오염되다",
+      "meaning": "be polluted",
+      "meaning_vi": "bị ô nhiễm",
+      "type": "동 verb",
+      "example_ko": "오염된 물로 물고기들이 떼죽음을 당했다.",
+      "example_vi": "The fishes suffered death en masse because of the polluted water.",
+      "example_vi_vn": "Cá chết hàng loạt vì nước bị ô nhiễm.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>오염</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>pollution</span></div><div><span class='font-semibold text-gray-700'>오염 물질</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>pollutant</span></div><div><span class='font-semibold text-gray-700'>오염시키다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>contaminate</span></div></div>",
+      "detailBlocks": [
+        {
+          "type": "tip_combo",
+          "label": "Tip",
+          "question_ko": "환경 오염의 종류는 무엇이 있을까요?",
+          "question_vi": "What kinds of pollution are there?",
+          "word": "오염",
+          "word_vi": "pollution",
+          "items": [
+            {
+              "ko": "대기 오염",
+              "vi": "air pollution"
+            },
+            {
+              "ko": "수질 오염",
+              "vi": "water pollution"
+            },
+            {
+              "ko": "토양 오염",
+              "vi": "soil pollution"
+            }
+          ],
+          "no_speak": true
+        }
+      ],
+      "highlight_terms": [
+        "오염된"
+      ]
+    },
+    {
+      "id": "28",
+      "word": "요구되다",
+      "meaning": "be required",
+      "meaning_vi": "được yêu cầu",
+      "type": "동 verb",
+      "example_ko": "지원자에게 요구되는 자격이 어떻게 되지요?",
+      "example_vi": "What are the requirements for the applicants?",
+      "example_vi_vn": "Các điều kiện/yêu cầu dành cho ứng viên là gì?",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>요구</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>demand</span></div><div><span class='font-semibold text-gray-700'>요구하다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>require</span></div><div><span class='font-semibold text-gray-700'>요구사항</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>requirement</span></div></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "요구되는"
+      ]
+    },
+    {
+      "id": "29",
+      "word": "원래",
+      "meaning": "originally",
+      "meaning_vi": "vốn dĩ / ban đầu",
+      "type": "부 adverb",
+      "example_ko": "여기에 원래 병원이 있었어요.",
+      "example_vi": "Originally a hospital was located here.",
+      "example_vi_vn": "Vốn dĩ ở đây từng có một bệnh viện.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "원래"
+      ]
+    },
+    {
+      "id": "30",
+      "word": "위하다",
+      "meaning": "care for",
+      "meaning_vi": "vì / nghĩ cho",
+      "type": "동 verb",
+      "example_ko": "그 사람은 어떤 상황이든 자신보다 남을 위하는 편이다.",
+      "example_vi": "That person cares for others more than himself whatever situation he is in.",
+      "example_vi_vn": "Người đó dù trong hoàn cảnh nào cũng thường nghĩ cho người khác hơn bản thân.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "위하는"
+      ]
+    },
+    {
+      "id": "31",
+      "word": "음악",
+      "meaning": "music",
+      "meaning_vi": "âm nhạc",
+      "type": "명 noun",
+      "example_ko": "저는 한국 전통 음악에 대해 연구하고 있습니다.",
+      "example_vi": "I am studying traditional Korean music.",
+      "example_vi_vn": "Tôi đang nghiên cứu về âm nhạc truyền thống Hàn Quốc.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>음악가</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>musician</span></div><div><span class='font-semibold text-gray-700'>음악회</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>concert</span></div></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "음악에"
+      ]
+    },
+    {
+      "id": "32",
+      "word": "응답자",
+      "meaning": "respondent",
+      "meaning_vi": "người trả lời",
+      "type": "명 noun",
+      "example_ko": "이번 설문의 응답자 가운데 반 이상이 반대하고 있다.",
+      "example_vi": "More than half of the respondents are opposing.",
+      "example_vi_vn": "Hơn một nửa số người trả lời trong khảo sát lần này đang phản đối.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>응답</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>answer</span></div><div><span class='font-semibold text-gray-700'>응답하다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>answer</span></div></div>",
+      "detailBlocks": [
+        {
+          "type": "test_note",
+          "label_ko": "출제 경향",
+          "label_vi": "how this word appears in the test",
+          "title_ko": "다양한 분야에서 회원을 모집하는 공고문이 자주 출제되고 있습니다.\n회원이 될 수 있는 자격 및 주의 사항 등을 꼼꼼하게 확인해야 합니다.",
+          "title_vi": "Questions that contain the statement notification recruiting the members in the various areas are frequently appearing in the actual tests. While taking the test, you should check the qualification, and notice carefully.",
+          "body_ko": "설문조사에 자주 나오는 단어들은 정리해서 기억하세요.\n이런 단어들은 반복해서 나옵니다.",
+          "body_vi": "Be sure to remember the words that often appear in the survey. Words as following appear repeatedly.",
+          "tags": [
+            {
+              "ko": "응답자",
+              "en": "respondent"
+            },
+            {
+              "ko": "응답률",
+              "en": "the response rate"
+            },
+            {
+              "ko": "조사 대상",
+              "en": "surveying target"
+            },
+            {
+              "ko": "조사 기관",
+              "en": "research facility"
+            },
+            {
+              "ko": "조사 결과",
+              "en": "the result of the survey"
+            }
+          ],
+          "no_speak": true
+        }
+      ],
+      "highlight_terms": [
+        "응답자"
+      ]
+    },
+    {
+      "id": "33",
+      "word": "작성하다",
+      "meaning": "write",
+      "meaning_vi": "viết / soạn thảo",
+      "type": "동 verb",
+      "example_ko": "오늘 5시까지 이력서를 작성해서 보내 주십시오.",
+      "example_vi": "Please write your resume and send it by 5 o’clock today.",
+      "example_vi_vn": "Vui lòng viết sơ yếu lý lịch và gửi trước 5 giờ hôm nay.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "작성해서"
+      ]
+    }
+  ],
+  "dict": {
+    "how this word appears in the test": "cách từ này xuất hiện trong đề thi",
+    "Words to memorize together": "Nhóm từ nên học cùng nhau",
+    "Words that are easy to confuse in TOPIK": "Những từ dễ nhầm lẫn trong TOPIK",
+    "Polysemy": "Từ đa nghĩa",
+    "Antonym": "Từ trái nghĩa",
+    "Synonym": "Từ đồng nghĩa",
+    "Write Korean in English, and English in Korean.": "Hãy viết từ tiếng Hàn sang tiếng Việt, và từ tiếng Việt sang tiếng Hàn.",
+    "Connect the Korean words with the English words of same meaning.": "Hãy nối từ tiếng Hàn với nghĩa tiếng Việt tương ứng.",
+    "Pick and write the suitable word among <the options> in the blank space.": "Hãy chọn từ phù hợp trong <gợi ý> để điền vào chỗ trống.",
+    "Choose the proper word that fits the sentence more naturally.": "Hãy chọn từ phù hợp để câu tự nhiên hơn.",
+    "ask": "hỏi",
+    "reflect": "phản ánh",
+    "bright": "sáng / tươi sáng",
+    "development": "sự phát triển",
+    "progress": "sự tiến bộ / phát triển",
+    "disease": "bệnh",
+    "protection": "sự bảo vệ",
+    "hit": "va vào / đụng phải",
+    "emergency exit": "cửa thoát hiểm",
+    "get along": "kết bạn / giao du",
+    "case": "trường hợp / ví dụ",
+    "regardless of": "bất kể / không liên quan đến",
+    "prefer": "ưa thích / ưu tiên",
+    "income": "thu nhập",
+    "guest": "khách",
+    "sleep": "giấc ngủ",
+    "at the moment": "khoảnh khắc",
+    "noise": "ồn ào",
+    "ability": "năng lực / thực lực",
+    "position": "chức vụ / cấp bậc",
+    "practice": "thực hiện",
+    "psychology": "tâm lý học / tâm lý",
+    "promise": "lời hứa / cuộc hẹn",
+    "enterprise": "doanh nghiệp / công ty",
+    "consider": "coi là / xem là",
+    "business": "kinh doanh",
+    "be polluted": "bị ô nhiễm",
+    "be required": "được yêu cầu",
+    "originally": "vốn dĩ / ban đầu",
+    "care for": "vì / nghĩ cho",
+    "music": "âm nhạc",
+    "respondent": "người trả lời khảo sát",
+    "write": "viết / soạn thảo",
+    "sign up": "đăng ký",
+    "emotional development": "phát triển cảm xúc",
+    "one’s heart": "tấm lòng",
+    "settle": "ấn định / quyết định",
+    "limit": "hạn chế",
+    "baggage": "hành lý",
+    "establish a business": "khởi nghiệp",
+    "creativity": "sáng tạo",
+    "commute": "đi làm và tan làm",
+    "discuss": "thảo luận",
+    "figure out": "tìm hiểu / nắm bắt",
+    "normal": "bình thường",
+    "indiscreetly": "tùy tiện",
+    "fire": "hỏa hoạn",
+    "issue": "chủ đề / vấn đề",
+    "active": "năng động",
+    "regret": "hối hận",
+    "usually": "thường",
+    "negative": "tiêu cực",
+    "award": "giải thưởng",
+    "stay still": "ngồi yên",
+    "individuality": "cá tính",
+    "host": "tổ chức / đăng cai",
+    "fear": "nỗi sợ",
+    "be related to": "liên quan",
+    "miss": "nhớ",
+    "stop": "dừng",
+    "reason": "lý do / căn cứ",
+    "commemoration": "kỷ niệm",
+    "soon": "sắp / ngay",
+    "be happy": "vui mừng",
+    "wings": "cánh",
+    "fly": "bay",
+    "turn down": "giảm / hạ thấp",
+    "flood": "tràn / ngập",
+    "be surprised": "ngạc nhiên",
+    "promotion": "thăng chức",
+    "representative": "đại diện",
+    "readers": "độc giả",
+    "take care of": "chăm sóc",
+    "club": "câu lạc bộ",
+    "mountain climber": "người leo núi",
+    "sweat": "mồ hôi",
+    "robot": "robot",
+    "marathon": "marathon",
+    "anyone": "bất cứ ai",
+    "just": "vừa mới",
+    "(many) ways": "nhiều mặt / khía cạnh",
+    "anonymous": "ẩn danh",
+    "mosquito": "muỗi",
+    "slippery": "trơn",
+    "repeat": "lặp lại",
+    "law": "luật",
+    "wall": "tường",
+    "not allowed to": "không được phép",
+    "secret": "bí mật",
+    "object": "sự vật / đồ vật",
+    "excuse": "lý do / hoàn cảnh",
+    "speed": "tốc độ",
+    "timing": "thời điểm",
+    "create": "tạo mới / thành lập",
+    "age": "thời đại",
+    "plant": "trồng",
+    "rice": "gạo",
+    "somehow": "dù sao / có lẽ",
+    "conscience": "lương tâm",
+    "performance": "biểu diễn",
+    "overconsumption": "tiêu dùng quá mức",
+    "artist": "nghệ sĩ",
+    "manner": "lễ nghĩa",
+    "but also": "ngoài ra",
+    "appearance": "ngoại hình",
+    "go out": "ra ngoài",
+    "superb": "xuất sắc",
+    "crisis": "khủng hoảng",
+    "in": "trong vòng",
+    "move": "chuyển nhà",
+    "get a ticket": "mua vé",
+    "profit": "lợi nhuận",
+    "now": "bây giờ",
+    "brag": "khoe",
+    "cheap": "rẻ",
+    "major": "chuyên ngành",
+    "all over the country": "toàn quốc",
+    "electricity": "điện",
+    "electronic": "điện tử",
+    "whole": "toàn bộ",
+    "not at all": "hoàn toàn không",
+    "never": "tuyệt đối không",
+    "rearrange": "điều chỉnh",
+    "graduation": "tốt nghiệp",
+    "sleepy": "buồn ngủ",
+    "exchange": "trao đổi",
+    "give out": "tặng / phát",
+    "the best": "tốt nhất",
+    "appear": "xuất hiện",
+    "be canceled": "bị hủy",
+    "grow": "trồng / chăm sóc",
+    "be reflected": "được phản ánh",
+    "brightness": "độ sáng",
+    "future": "tương lai",
+    "facial expression": "biểu cảm / nét mặt",
+    "color": "màu sắc",
+    "be developed": "được phát triển",
+    "develop": "phát triển",
+    "institution": "cơ sở bảo vệ",
+    "protect": "bảo vệ",
+    "first-aid medicine": "thuốc cấp cứu",
+    "have nothing to do with": "không liên quan",
+    "preference": "sự ưa thích",
+    "for every income": "theo từng mức thu nhập",
+    "go to sleep": "đi ngủ",
+    "momentary": "trong khoảnh khắc",
+    "power of execution": "năng lực thực hiện",
+    "psychological": "mang tính tâm lý",
+    "psychologist": "nhà tâm lý học / chuyên gia tâm lý",
+    "institute of psychology": "viện nghiên cứu tâm lý",
+    "sales job": "nhân viên kinh doanh",
+    "business hour": "giờ kinh doanh",
+    "do business": "kinh doanh",
+    "pollution": "ô nhiễm",
+    "pollutant": "chất gây ô nhiễm",
+    "contaminate": "làm ô nhiễm",
+    "demand": "yêu cầu",
+    "require": "yêu cầu",
+    "requirement": "yêu cầu / điều kiện",
+    "musician": "nhạc sĩ",
+    "concert": "buổi hòa nhạc",
+    "answer": "câu trả lời / trả lời",
+    "the response rate": "tỉ lệ phản hồi",
+    "surveying target": "đối tượng khảo sát",
+    "research facility": "cơ quan khảo sát",
+    "the result of the survey": "kết quả khảo sát",
+    "application period": "thời gian tiếp nhận hồ sơ",
+    "emotion": "cảm xúc",
+    "emotionally": "về mặt cảm xúc",
+    "sincerity": "sự chân thành",
+    "sedulously": "một cách tận tâm",
+    "be settled": "được quyết định",
+    "limitation": "sự giới hạn",
+    "limited time": "thời gian giới hạn",
+    "center that supports to start a business": "trung tâm hỗ trợ khởi nghiệp",
+    "creative": "mang tính sáng tạo",
+    "go to work": "đi làm",
+    "on one’s way to office": "trên đường đi làm",
+    "leave from office": "tan làm",
+    "on one’s way home": "trên đường về nhà",
+    "discussion": "sự thảo luận",
+    "debate": "tranh luận",
+    "discussing culture": "văn hóa thảo luận",
+    "fire station": "trạm cứu hỏa",
+    "fire fighter": "lính cứu hỏa",
+    "fire extinguisher": "bình chữa cháy",
+    "there is a fire": "có hỏa hoạn",
+    "become an issue": "trở thành chủ đề/vấn đề",
+    "positive": "tích cực",
+    "outgoing": "hướng ngoại",
+    "passive": "hướng nội / thụ động",
+    "open-minded": "cởi mở",
+    "conservative": "bảo thủ",
+    "grand prize": "giải lớn",
+    "gold prize": "giải vàng",
+    "environmental award": "giải môi trường",
+    "achievement award": "giải công lao",
+    "product development award": "giải phát triển sản phẩm",
+    "relations": "mối liên quan",
+    "relate": "liên hệ",
+    "commemoration day": "ngày kỷ niệm",
+    "commemorate": "kỷ niệm",
+    "commemorative event": "sự kiện kỷ niệm",
+    "time adverbs": "trạng từ thời gian",
+    "a while ago": "lúc nãy",
+    "a moment ago": "vừa nãy",
+    "later": "sau đó",
+    "flapping": "vỗ cánh",
+    "national team": "đội tuyển quốc gia",
+    "represent": "đại diện",
+    "hiking people": "người leo núi",
+    "hiking clothes": "quần áo leo núi",
+    "audience": "khán giả",
+    "passenger": "hành khách",
+    "spectator": "người xem / khách tham quan",
+    "whatever": "bất cứ cái gì",
+    "wherever": "bất cứ đâu",
+    "whoever": "bất cứ ai",
+    "overflow": "tràn",
+    "slide": "cầu trượt",
+    "slip": "trượt",
+    "repeatedly": "lặp đi lặp lại",
+    "legislation": "pháp luật / luật lệ",
+    "tapestry": "giấy dán tường",
+    "impossible": "không thể",
+    "password": "mật khẩu",
+    "keep a secret": "giữ bí mật",
+    "businessman": "doanh nhân",
+    "unforeseen circumstance": "hoàn cảnh bất ngờ",
+    "change of the times": "sự thay đổi của thời đại",
+    "the status of the male and female": "địa vị nam nữ",
+    "increasing divorce rate": "tỉ lệ ly hôn tăng",
+    "the problem of the low birth rate": "vấn đề tỉ lệ sinh thấp",
+    "the aging society": "xã hội già hóa",
+    "instrument": "nhạc cụ",
+    "instrumentalist": "người chơi nhạc cụ",
+    "instrumental music": "bản nhạc hòa tấu",
+    "art": "nghệ thuật",
+    "art center": "trung tâm nghệ thuật",
+    "keep the manner": "giữ phép lịch sự",
+    "boast": "sự khoe khoang",
+    "be proud of": "tự hào",
+    "something to boast about": "điều đáng tự hào",
+    "textbook": "sách chuyên ngành",
+    "a student majoring in": "sinh viên chuyên ngành",
+    "electric rice cooker": "nồi cơm điện",
+    "consuming rate of electricity": "lượng sử dụng điện",
+    "electricity bill": "hóa đơn điện",
+    "overall": "toàn thể",
+    "graduate": "tốt nghiệp",
+    "graduation ceremony": "lễ tốt nghiệp",
+    "university graduate": "sinh viên tốt nghiệp",
+    "drive while drowsy": "lái xe khi buồn ngủ",
+    "free gifts": "quà tặng",
+    "the worst": "tệ nhất",
+    "the first": "đầu tiên",
+    "the final": "cuối cùng",
+    "the latest": "mới nhất",
+    "the longest": "dài nhất",
+    "cast": "diễn viên",
+    "cancel": "hủy",
+    "If you do not understand what you learn from the class, ask your teacher.": "Nếu không hiểu rõ nội dung bài học, hãy hỏi giáo viên.",
+    "The company has reflected the opinion of the employees and provided the place where they can rest in the building.": "Lần này công ty đã phản ánh ý kiến của nhân viên và chuẩn bị không gian nghỉ ngơi trong tòa nhà.",
+    "I met my parents in a while and they looked bright and happy.": "Lâu rồi mới gặp, trông gương mặt bố mẹ tôi sáng sủa và vui vẻ.",
+    "What words can you use with “밝다(bright)”?": "Có thể dùng “밝다” cùng với những từ nào?",
+    "Due to the development of the medical technology, the average of life expectancy has lengthened.": "Nhờ sự phát triển của y học, tuổi thọ trung bình của con người đã kéo dài.",
+    "Yu Eun’s ability to play piano has shown a great progress compared to last year.": "Khả năng chơi piano của Yu-eun đang cho thấy sự tiến bộ lớn so với năm ngoái.",
+    "It seems that your mind also gets weaker when you get sick.": "Khi mắc bệnh thì dường như tinh thần cũng yếu đi.",
+    "The child grows up under his parents’ protection.": "Đứa trẻ lớn lên dưới sự bảo vệ của cha mẹ.",
+    "I was almost hit by a bike running toward me.": "Tôi suýt bị chiếc xe đạp đang lao tới va vào.",
+    "When a fire breaks out, you should quickly get yourself out to the emergency exit.": "Khi có cháy thì phải nhanh chóng đi ra bằng cửa thoát hiểm.",
+    "While studying abroad, I got along with many friends there.": "Trong thời gian du học, tôi đã kết bạn được với nhiều người.",
+    "It was easy for us to understand the lecture since the professor explained with many different cases.": "Vì giáo sư giải thích bằng nhiều ví dụ/trường hợp nên rất dễ hiểu.",
+    "Regardless of the age or the nationality, anyone can do this work.": "Bất kể tuổi tác hay quốc tịch, bất kỳ ai cũng có thể làm việc này.",
+    "The young people these days prefer the company with a better welfare, to the company with a higher salary.": "Giới trẻ ngày nay thích công ty có phúc lợi tốt hơn là công ty lương cao.",
+    "As the level of people’s income increased people spends more on cultural products.": "Khi mức thu nhập của mọi người tăng lên, chi tiêu cho văn hóa cũng tăng.",
+    "Today, we have a guest coming over, therefore we should clean our house.": "Hôm nay nhà tôi có khách đến nên phải dọn dẹp.",
+    "It is important for the children to get enough hours of sleep in order to grow.": "Để trẻ em phát triển tốt, việc có đủ thời gian ngủ là rất quan trọng.",
+    "The moment I thought it was dangerous, the accident happened.": "Ngay khoảnh khắc tôi nghĩ là nguy hiểm thì tai nạn xảy ra.",
+    "It was so noisy since people were fighting outside.": "Bên ngoài có người cãi nhau nên rất ồn ào.",
+    "Everyone admits that he has the best ability.": "Mọi người đều công nhận năng lực của người đó là tốt nhất.",
+    "As one’s position gets higher, so does one’s responsibility.": "Chức vụ càng cao thì trách nhiệm càng nhiều.",
+    "What kind of position exists in a company?": "Trong công ty có những chức vụ nào?",
+    "intern": "thực tập sinh",
+    "new employee": "nhân viên mới",
+    "deputy section chief": "đại lý / cấp phó nhóm",
+    "section chief": "trưởng nhóm / trưởng phòng nhỏ",
+    "head of department": "trưởng bộ phận",
+    "CEO": "giám đốc / tổng giám đốc",
+    "You should practice your plan.": "Bạn nên thực hiện kế hoạch đã lập.",
+    "It is hard for the adults to understand the psychology of the children.": "Người lớn không dễ hiểu được tâm lý của trẻ em.",
+    "He is the person that always keeps his promise.": "Người đó là người luôn giữ lời hứa.",
+    "When the enterprises are overly competitive they end up harming one another.": "Nếu các doanh nghiệp cạnh tranh quá gay gắt thì cuối cùng chỉ gây hại cho nhau.",
+    "I consider my dog my child.": "Tôi coi chú chó của mình như con.",
+    "What are the business hour?": "Giờ kinh doanh như thế nào?",
+    "The fishes suffered death en masse because of the polluted water.": "Cá chết hàng loạt vì nước bị ô nhiễm.",
+    "What kinds of pollution are there?": "Có những loại ô nhiễm nào?",
+    "air pollution": "ô nhiễm không khí",
+    "water pollution": "ô nhiễm nước",
+    "soil pollution": "ô nhiễm đất",
+    "What are the requirements for the applicants?": "Các điều kiện/yêu cầu dành cho ứng viên là gì?",
+    "Originally a hospital was located here.": "Ban đầu ở đây từng có một bệnh viện.",
+    "That person cares for others more than himself whatever situation he is in.": "Người đó dù trong hoàn cảnh nào cũng thường nghĩ cho người khác hơn bản thân.",
+    "I am studying traditional Korean music.": "Tôi đang nghiên cứu về âm nhạc truyền thống Hàn Quốc.",
+    "More than half of the respondents are opposing.": "Hơn một nửa số người trả lời trong khảo sát lần này đang phản đối.",
+    "Questions that contain the statement notification recruiting the members in the various areas are frequently appearing in the actual tests. While taking the test, you should check the qualification, and notice carefully. Be sure to remember the words that often appear in the survey.": "Questions that contain the statement notification recruiting the members in the various areas are frequently appearing in the actual tests. While taking the test, you should check the qualification, and notice carefully. Be sure to remember the words that often appear in the survey.",
+    "Survey-related words appear repeatedly.": "Survey-related words appear repeatedly.",
+    "Please write your resume and send it by 5 o’clock today.": "Vui lòng viết sơ yếu lý lịch và gửi trước 5 giờ hôm nay.",
+    "park (a car)": "đỗ xe",
+    "Someone parked his car in front of our house.": "Có ai đó đỗ xe trước nhà chúng tôi.",
+    "set (a plan)": "lập kế hoạch",
+    "I will set a great plan for the vacation and have a great time.": "Tôi sẽ lập kế hoạch thật tốt cho kỳ nghỉ và đi chơi vui vẻ.",
+    "build (a building)": "xây dựng",
+    "They are building an apartment building next to the department store.": "Người ta đang xây chung cư bên cạnh trung tâm thương mại.",
+    "move up": "dời lên / đẩy sớm",
+    "postpone": "hoãn lại / dời muộn",
+    "be sorry to": "thấy tiếc / áy náy",
+    "be hurt": "tổn thương / buồn lòng",
+    "We have decided to move my grandfather’s operation date up since his condition is worse.": "Vì tình trạng của ông xấu đi nên chúng tôi quyết định dời ngày phẫu thuật lên sớm hơn.",
+    "Let’s postpone the date of the trip if the weather gets bad.": "Nếu thời tiết xấu thì hãy hoãn ngày đi du lịch lại.",
+    "I often tell my friend right away when I am hurt by their words.": "Tôi thường nói ngay với bạn khi bị tổn thương vì lời nói của bạn.",
+    "There were circumstances that wouldn’t allow me to come to school so far.": "Vì có hoàn cảnh riêng nên thời gian qua tôi không thể đến trường.",
+    "What happened today somehow seems to be my fault.": "Việc hôm nay dù thế nào cũng có vẻ là lỗi của tôi.",
+    "I want to sign up for this class, what do I need?": "Nếu muốn đăng ký khóa học này thì cần gì?",
+    "We have settled the schedule for the meeting as such.": "Chúng tôi đã ấn định lịch họp lần này như sau.",
+    "We are trying hard to figure out the cause of the accident.": "Chúng tôi đang cố gắng tìm hiểu nguyên nhân của tai nạn đó.",
+    "What are the things you regret the most so far?": "Điều bạn hối hận nhất từ trước đến nay là gì?",
+    "Don’t just stay still but come here quickly and help me!": "Đừng chỉ ngồi yên đó, hãy nhanh đến giúp đi.",
+    "The more I work, the faster it gets.": "Càng làm việc thì tốc độ càng nhanh.",
+    "When I am in trouble, I remembered the saying that says “You should make the opportunity out of your crisis.”": "Khi gặp khó khăn, tôi nhớ đến câu nói hãy biến nguy thành cơ.",
+    "Pick and write the suitable word among the options in the blank space.": "Hãy chọn từ phù hợp trong các lựa chọn để điền vào chỗ trống.",
+    "Questions that contain the statement notification recruiting the members in the various areas are frequently appearing in the actual tests. While taking the test, you should check the qualification, and notice carefully.": "Các thông báo tuyển thành viên trong nhiều lĩnh vực thường xuất hiện trong đề thi thật. Khi làm bài, hãy kiểm tra kỹ tư cách tham gia và các điều cần chú ý.",
+    "Be sure to remember the words that often appear in the survey. Words as following appear repeatedly.": "Hãy ghi nhớ các từ thường xuất hiện trong khảo sát. Những từ dưới đây thường lặp lại trong đề.",
+    "a. position": "a. chức vụ / cấp bậc",
+    "b. hit": "b. đâm / va vào",
+    "c. respondent": "c. người trả lời khảo sát",
+    "d. be required": "d. được yêu cầu / cần thiết",
+    "e. care for": "e. quan tâm / chăm lo",
+    "f. prefer": "f. thích hơn / ưu tiên",
+    "g. be polluted": "g. bị ô nhiễm"
+  }
+}

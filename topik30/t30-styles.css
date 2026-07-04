@@ -1,0 +1,355 @@
+.t30-scope .red-sheet-hidden {
+      color: transparent !important;
+      text-shadow: none !important;
+      background: transparent !important;
+      box-shadow: none !important;
+      cursor: pointer;
+      user-select: none;
+    }
+.t30-scope .red-sheet-hidden * {
+      color: transparent !important;
+      background: transparent !important;
+      box-shadow: none !important;
+    }
+.t30-scope .hideable-meaning {
+      min-height: 1.75rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+.t30-scope .vi-meaning-target {
+      display: block;
+      width: 100%;
+      min-height: 1.75rem;
+      cursor: pointer;
+      border-radius: 8px;
+      padding: 0.35rem 0.5rem;
+      transition: all 0.15s ease;
+    }
+.t30-scope .vi-meaning-target:hover {
+      background-color: rgba(20, 184, 166, 0.08);
+    }
+.t30-scope .study-extra-card {
+      border-radius: 18px;
+      padding: 1rem;
+      margin-top: 0.75rem;
+      position: relative;
+      overflow: hidden;
+    }
+.t30-scope .study-extra-title {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.01em;
+      border-radius: 999px;
+      padding: 0.28rem 0.72rem;
+      width: fit-content;
+    }
+.t30-scope .test-note-card {
+      background: linear-gradient(135deg, rgba(255,241,242,0.95), rgba(255,247,237,0.75));
+      border: 1px dashed rgba(251,113,133,0.55);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.5);
+    }
+.t30-scope .test-note-label {
+      background: rgba(253,164,175,0.35);
+      color: #9f1239;
+      border: 1px solid rgba(251,113,133,0.35);
+    }
+.t30-scope .tip-card {
+      background: linear-gradient(135deg, rgba(254,252,232,0.95), rgba(240,253,250,0.88));
+      border: 1px solid rgba(245,158,11,0.25);
+    }
+.t30-scope .tip-label {
+      background: #111827;
+      color: #fff;
+      border-radius: 999px;
+      padding: 0.2rem 0.65rem;
+      font-weight: 900;
+      font-size: 0.78rem;
+      box-shadow: 0 2px 8px rgba(15,23,42,0.15);
+    }
+.t30-scope .combo-box {
+      background: rgba(255,255,255,0.82);
+      border: 1px solid rgba(245,158,11,0.28);
+      border-radius: 20px;
+      padding: 0.9rem 1rem;
+      box-shadow: 0 8px 20px rgba(15,23,42,0.06);
+    }
+.t30-scope .word-pill {
+      background: rgba(255,255,255,0.92);
+      border: 1px solid rgba(45,212,191,0.35);
+      border-radius: 999px;
+      padding: 0.75rem 1rem;
+      box-shadow: 0 8px 20px rgba(20,184,166,0.08);
+    }
+.t30-scope .mindmap-card {
+      background: linear-gradient(135deg, rgba(248,250,252,0.98), rgba(236,253,245,0.9));
+      border: 1px solid rgba(20,184,166,0.24);
+      overflow: hidden;
+    }
+.t30-scope .mindmap-board {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0,1fr) 220px minmax(0,1fr);
+      grid-template-rows: repeat(4, minmax(92px, auto));
+      gap: 1rem 2.6rem;
+      align-items: center;
+      margin-top: 0.6rem;
+      padding: 0.35rem 0.2rem;
+    }
+.t30-scope .mindmap-connector-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      overflow: visible;
+    }
+.t30-scope .mindmap-connector-svg path {
+      fill: none;
+      stroke: rgba(20,184,166,0.48);
+      stroke-width: 3;
+      stroke-dasharray: 9 7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+.t30-scope .mindmap-connector-svg circle {
+      fill: rgba(20,184,166,0.72);
+      stroke: rgba(255,255,255,0.95);
+      stroke-width: 2;
+    }
+.t30-scope .mindmap-center {
+      grid-column: 2;
+      grid-row: 2 / span 2;
+      min-width: 170px;
+      min-height: 150px;
+      border: 3px solid rgba(94,234,212,0.68);
+      background: rgba(255,255,255,0.98);
+      border-radius: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      box-shadow: 0 14px 28px rgba(20,184,166,0.10);
+      position: relative;
+      z-index: 2;
+      padding: 1rem;
+    }
+.t30-scope .mind-node {
+      background: rgba(255,255,255,0.97);
+      border: 1px solid rgba(148,163,184,0.22);
+      border-radius: 20px;
+      padding: 0.9rem 1rem;
+      line-height: 1.35;
+      min-height: 110px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 10px 24px rgba(15,23,42,0.05);
+    }
+.t30-scope .mind-node.left.top { grid-column: 1; grid-row: 1; }
+.t30-scope .mind-node.right.top { grid-column: 3; grid-row: 1; }
+.t30-scope .mind-node.left.upper { grid-column: 1; grid-row: 2; }
+.t30-scope .mind-node.right.upper { grid-column: 3; grid-row: 2; }
+.t30-scope .mind-node.left.middle { grid-column: 1; grid-row: 2; }
+.t30-scope .mind-node.right.middle { grid-column: 3; grid-row: 2; }
+.t30-scope .mind-node.left.lower { grid-column: 1; grid-row: 3; }
+.t30-scope .mind-node.right.lower { grid-column: 3; grid-row: 3; }
+.t30-scope .mind-node.left.bottom { grid-column: 1; grid-row: 4; }
+.t30-scope .mind-node.right.bottom { grid-column: 3; grid-row: 4; }
+@media (max-width: 640px) {
+.t30-scope .mindmap-board {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 0.9rem;
+      }
+.t30-scope .mindmap-connector-svg {
+        display: none;
+      }
+.t30-scope .mindmap-center,
+.t30-scope .mind-node.left.top,
+.t30-scope .mind-node.right.top,
+.t30-scope .mind-node.left.middle,
+.t30-scope .mind-node.right.middle,
+.t30-scope .mind-node.left.upper,
+.t30-scope .mind-node.right.upper,
+.t30-scope .mind-node.left.lower,
+.t30-scope .mind-node.right.lower,
+.t30-scope .mind-node.left.bottom,
+.t30-scope .mind-node.right.bottom {
+        grid-column: 1;
+        grid-row: auto;
+      }
+.t30-scope .mindmap-center {
+        width: 100%;
+        min-width: 0;
+        min-height: 124px;
+        order: -1;
+      }
+.t30-scope .mind-node {
+        min-height: 88px;
+      }
+
+    
+}
+.t30-scope .review-question-card {
+      background: #fff;
+      border: 1px solid rgba(148,163,184,0.28);
+      border-radius: 1rem;
+      padding: 1rem;
+      min-height: 112px;
+    }
+.t30-scope .review-answer-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+.t30-scope .review-answer-row label {
+      flex: 0 0 auto;
+      margin: 0;
+    }
+.t30-scope .review-input {
+      display: block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      pointer-events: auto !important;
+      flex: 1 1 220px;
+      min-width: 180px;
+      min-height: 46px;
+      width: 100%;
+      border: 2px solid rgba(148,163,184,0.38);
+      border-radius: 0.85rem;
+      padding: 0.7rem 0.9rem;
+      font-size: 1rem;
+      color: #0f172a;
+      outline: none;
+      background: #ffffff;
+      transition: border-color .15s ease, box-shadow .15s ease, background .15s ease;
+      -webkit-user-select: text;
+      user-select: text;
+    }
+.t30-scope .review-input::placeholder {
+      color: #94a3b8;
+    }
+.t30-scope .review-input:focus {
+      border-color: rgba(13,148,136,0.85);
+      box-shadow: 0 0 0 4px rgba(45,212,191,0.18);
+    }
+.t30-scope .review-input.is-correct {
+      border-color: rgba(16,185,129,0.85);
+      background: rgba(236,253,245,0.95);
+    }
+.t30-scope .review-input.is-wrong {
+      border-color: rgba(244,63,94,0.85);
+      background: rgba(255,241,242,0.95);
+    }
+.t30-scope .review-radio-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      border: 1px solid rgba(148,163,184,0.35);
+      background: #fff;
+      border-radius: 999px;
+      padding: 0.55rem 0.9rem;
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: #475569;
+      cursor: pointer;
+      transition: all .15s ease;
+      user-select: none;
+    }
+.t30-scope .review-radio-label:hover {
+      border-color: rgba(13,148,136,0.65);
+      color: #0f766e;
+      background: rgba(240,253,250,0.9);
+    }
+.t30-scope .review-radio-label input {
+      width: 1rem;
+      height: 1rem;
+      accent-color: #0d9488;
+      cursor: pointer;
+    }
+.t30-scope .review-radio-label.is-selected {
+      border-color: rgba(13,148,136,0.75);
+      background: #0d9488;
+      color: #fff;
+      box-shadow: 0 6px 16px rgba(13,148,136,0.18);
+    }
+.t30-scope .review-radio-label.is-correct {
+      border-color: rgba(16,185,129,0.85);
+      background: #10b981;
+      color: #fff;
+    }
+.t30-scope .review-radio-label.is-wrong {
+      border-color: rgba(244,63,94,0.85);
+      background: #f43f5e;
+      color: #fff;
+    }
+.t30-scope .review-action-disabled,
+.t30-scope button:disabled {
+      opacity: 0.45;
+      cursor: not-allowed !important;
+      filter: grayscale(0.15);
+    }
+.t30-scope .review-choice-translation.hidden {
+      display: none !important;
+    }
+.t30-scope .matching-board {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+.t30-scope .matching-column {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+.t30-scope .matching-card {
+      min-height: 56px;
+      padding: 0.8rem 1rem;
+      border-radius: 1rem;
+      border: 1px solid rgba(148,163,184,0.35);
+      background: #ffffff;
+      color: #0f172a;
+      font-weight: 700;
+      text-align: center;
+      transition: all 0.15s ease;
+      cursor: pointer;
+    }
+.t30-scope .matching-card:hover {
+      border-color: rgba(13,148,136,0.55);
+      background: rgba(240,253,250,0.9);
+      color: #0f766e;
+    }
+.t30-scope .matching-card.is-selected {
+      border-color: rgba(13,148,136,0.8);
+      background: #0d9488;
+      color: #ffffff;
+      box-shadow: 0 6px 16px rgba(13,148,136,0.18);
+    }
+.t30-scope .matching-card.is-correct,
+.t30-scope .matching-card.is-matched {
+      border-color: rgba(16,185,129,0.85);
+      background: #10b981;
+      color: #ffffff;
+    }
+.t30-scope .matching-card.is-wrong {
+      border-color: rgba(244,63,94,0.85);
+      background: #f43f5e;
+      color: #ffffff;
+    }
+@media (max-width: 640px) {
+.t30-scope .matching-board {
+        grid-template-columns: 1fr;
+      }
+
+    
+}

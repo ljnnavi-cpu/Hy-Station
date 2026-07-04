@@ -1,0 +1,643 @@
+{
+  "day": 12,
+  "vocabData": [
+    {
+      "id": "01",
+      "word": "목적",
+      "meaning": "goal",
+      "type": "명 noun",
+      "example_ko": "한국어를 공부하는 목적이 뭐예요?",
+      "example_vi": "What is your goal to study Korean?",
+      "extra": "<div><span class='font-semibold text-gray-700'>목적지</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>destination</span></div>",
+      "highlight_terms": [
+        "목적"
+      ]
+    },
+    {
+      "id": "02",
+      "word": "문의",
+      "meaning": "inquire",
+      "type": "명 noun",
+      "example_ko": "드라마 주인공이 입었던 옷에 대한 문의 전화가 많이 왔다.",
+      "example_vi": "Phone calls flooded in inquiring about the clothes worn by the main character that starred in the drama.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>문의처</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>a reference</span></div><div><span class='font-semibold text-gray-700'>문의하다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>inquire</span></div></div>",
+      "highlight_terms": [
+        "문의"
+      ]
+    },
+    {
+      "id": "03",
+      "word": "및",
+      "meaning": "and",
+      "type": "부 adverb",
+      "example_ko": "이 자료에는 각각의 보험에 대한 설명 및 비교 내용이 들어 있습니다.",
+      "example_vi": "This data contains the explanation and the comparison of each insurance.",
+      "extra": "",
+      "detailBlocks": [
+        {
+          "type": "test_note",
+          "label_ko": "출제 경향",
+          "label_vi": "how this word appears in the test",
+          "title_ko": "이 단어는 모집 공고문이나 안내문 등에 주로 쓰입니다.",
+          "title_vi": "This word is mostly used in a notice or an instruction.",
+          "body_ko": "단어의 뜻을 정확하게 알아야 정답을 맞출 수 있겠지요?\n‘N 및 N’으로 제시되면 두 가지 모두 포함된다는 것을 꼭 기억하세요.",
+          "body_vi": "In order to find the correct answer, wouldn’t you need to know the meaning accurately?\nYou should always remember that when it is said “N 및 N (N and N),” it means the two are included.",
+          "tags": [],
+          "no_speak": true
+        }
+      ],
+      "highlight_terms": [
+        "및"
+      ]
+    },
+    {
+      "id": "04",
+      "word": "바라보다",
+      "meaning": "look",
+      "type": "동 verb",
+      "example_ko": "그 사람은 말없이 바다를 바라보고 있었다.",
+      "example_vi": "He was looking at the sea in silence.",
+      "extra": "",
+      "highlight_terms": [
+        "바라보고"
+      ]
+    },
+    {
+      "id": "05",
+      "word": "발견하다",
+      "meaning": "find out",
+      "type": "동 verb",
+      "example_ko": "이번에 병원에서 검사를 받으면서 암을 발견했어요.",
+      "example_vi": "I found out that I had cancer from the last test I got from the hospital.",
+      "extra": "<div><span class='font-semibold text-gray-700'>발견되다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>be found</span></div>",
+      "highlight_terms": [
+        "발견했어요"
+      ]
+    },
+    {
+      "id": "06",
+      "word": "보고서",
+      "meaning": "report",
+      "type": "명 noun",
+      "example_ko": "보고서를 쓰려고 지금 자료를 모으고 있어요.",
+      "example_vi": "I am now collecting the data to write a report.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>보고</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>report</span></div><div><span class='font-semibold text-gray-700'>논문</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>thesis</span></div><div><span class='font-semibold text-gray-700'>보고하다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>report</span></div><div><span class='font-semibold text-gray-700'>리포트</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>report</span></div></div>",
+      "highlight_terms": [
+        "보고서를"
+      ]
+    },
+    {
+      "id": "07",
+      "word": "부담",
+      "meaning": "pressure",
+      "type": "명 noun",
+      "example_ko": "부모님이 너무 기대하시고 계시니까 정말 부담이 커요.",
+      "example_vi": "I feel so much pressure, because my parents have great expectation for me.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>부담감</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>a great pressure</span></div><div><span class='font-semibold text-gray-700'>부담스럽다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>feel pressure</span></div></div>",
+      "highlight_terms": [
+        "부담이"
+      ]
+    },
+    {
+      "id": "08",
+      "word": "부분",
+      "meaning": "part",
+      "type": "명 noun",
+      "example_ko": "소설의 앞 부분은 별로 재미가 없는데 뒤로 가면서 아주 재미있어져요.",
+      "example_vi": "The earlier part of the novel is somewhat boring, but it becomes interesting towards the end.",
+      "extra": "",
+      "highlight_terms": [
+        "부분은"
+      ]
+    },
+    {
+      "id": "09",
+      "word": "분야",
+      "meaning": "area",
+      "type": "명 noun",
+      "example_ko": "그 사람은 이 분야에서 가장 유명한 전문가다.",
+      "example_vi": "He is the most famous expert in this area.",
+      "extra": "",
+      "highlight_terms": [
+        "분야에서"
+      ]
+    },
+    {
+      "id": "10",
+      "word": "상상력",
+      "meaning": "imagination",
+      "type": "명 noun",
+      "example_ko": "그 사람은 상상력이 풍부해서 재미있는 이야기를 잘 만들어낸다.",
+      "example_vi": "He is filled with imagination since he is good at making up interesting stories.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>상상</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>imagine</span></div><div><span class='font-semibold text-gray-700'>상상하기 어렵다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>it is hard to imagine</span></div></div>",
+      "highlight_terms": [
+        "상상력이"
+      ]
+    },
+    {
+      "id": "11",
+      "word": "서두르다",
+      "meaning": "hurry",
+      "type": "동 verb",
+      "example_ko": "비행기를 놓치지 않으려면 빨리 서두르세요.",
+      "example_vi": "You should hurry not to miss your flight.",
+      "extra": "",
+      "highlight_terms": [
+        "서두르세요"
+      ]
+    },
+    {
+      "id": "12",
+      "word": "서류",
+      "meaning": "document",
+      "type": "명 noun",
+      "example_ko": "요즘 대학원 입학에 필요한 서류를 준비하느라 바쁘다.",
+      "example_vi": "I am busy preparing the document required for getting admission from graduate school.",
+      "extra": "<div><span class='font-semibold text-gray-700'>서류 심사</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>document screening</span></div>",
+      "highlight_terms": [
+        "서류를"
+      ]
+    },
+    {
+      "id": "13",
+      "word": "설득하다",
+      "meaning": "persuade",
+      "type": "동 verb",
+      "example_ko": "반대 의견을 갖고 있던 사람들을 설득하는데 성공했다.",
+      "example_vi": "I was successful to persuade the person with the opposite opinion.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>설득</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>persuasion</span></div><div><span class='font-semibold text-gray-700'>설득시키다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>persuade one to</span></div></div>",
+      "highlight_terms": [
+        "설득하는데"
+      ]
+    },
+    {
+      "id": "14",
+      "word": "본",
+      "meaning": "this",
+      "type": "관 determiner",
+      "example_ko": "본 제품은 치료를 위한 것이 아니라 영양 보충을 위한 것입니다.",
+      "example_vi": "This product is not for the treatment but to supplement the nutrition.",
+      "extra": "",
+      "detailBlocks": [
+        {
+          "type": "tip_combo",
+          "label": "Tip",
+          "question_ko": "‘본 N’의 형태로 쓰이는 것은 또 뭐가 있을까요?",
+          "question_vi": "What other words can be used in the form of “본 N(this N)”?,",
+          "word": "본",
+          "word_vi": "this",
+          "items": [
+            {
+              "ko": "사업",
+              "vi": "business"
+            },
+            {
+              "ko": "계획",
+              "vi": "plan"
+            },
+            {
+              "ko": "연구",
+              "vi": "research"
+            },
+            {
+              "ko": "발표",
+              "vi": "presentation"
+            }
+          ]
+        }
+      ],
+      "highlight_terms": [
+        "본"
+      ]
+    },
+    {
+      "id": "15",
+      "word": "성장하다",
+      "meaning": "grow",
+      "type": "동 verb",
+      "example_ko": "우리 나라 경제가 빠르게 성장하고 있다.",
+      "example_vi": "Our country’s economy is growing fast.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>성장</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>growing</span></div><div><span class='font-semibold text-gray-700'>성장률</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>growth rate</span></div></div>",
+      "highlight_terms": [
+        "성장하고"
+      ]
+    },
+    {
+      "id": "16",
+      "word": "소중하다",
+      "meaning": "be precious",
+      "type": "형 adjective",
+      "example_ko": "나에게는 무엇보다 어머니가 써 주신 편지가 소중하다.",
+      "example_vi": "For me, the most precious thing is the letter from my mom.",
+      "extra": "",
+      "highlight_terms": [
+        "소중하다"
+      ]
+    },
+    {
+      "id": "17",
+      "word": "숲",
+      "meaning": "forest",
+      "type": "명 noun",
+      "example_ko": "숲에서 산책을 하면 마음이 편안해진다.",
+      "example_vi": "When I take a walk in the forest, I feel comfortable.",
+      "extra": "<div><span class='font-semibold text-gray-700'>숲길</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>forest road</span></div>",
+      "highlight_terms": [
+        "숲에서"
+      ]
+    },
+    {
+      "id": "18",
+      "word": "시각",
+      "meaning": "vision",
+      "type": "명 noun",
+      "example_ko": "큰 사고로 그 사람은 시각을 잃었다.",
+      "example_vi": "That person lost his vision because of a big accident.",
+      "extra": "",
+      "detailBlocks": [
+        {
+          "type": "tip_combo",
+          "label": "Tip",
+          "question_ko": "다른 감각에는 또 뭐가 있을까요?",
+          "question_vi": "What other senses do human beings have?",
+          "word": "시각",
+          "word_vi": "vision",
+          "items": [
+            {
+              "ko": "미각",
+              "vi": "sense of taste"
+            },
+            {
+              "ko": "청각",
+              "vi": "sense of hearing"
+            },
+            {
+              "ko": "촉각",
+              "vi": "sense of touch"
+            },
+            {
+              "ko": "후각",
+              "vi": "sense of smell"
+            }
+          ]
+        }
+      ],
+      "highlight_terms": [
+        "시각을"
+      ]
+    },
+    {
+      "id": "19",
+      "word": "영양",
+      "meaning": "ingredient",
+      "type": "명 noun",
+      "example_ko": "성장기에 영양을 골고루 섭취하는 것이 중요합니다.",
+      "example_vi": "It is important to take a broad variety of nutrients while you’re growing up.",
+      "extra": "<div><span class='font-semibold text-gray-700'>영양소</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>ingredients</span></div>",
+      "highlight_terms": [
+        "영양을"
+      ]
+    },
+    {
+      "id": "20",
+      "word": "옛",
+      "meaning": "old",
+      "type": "관 determiner",
+      "example_ko": "남대문의 옛 모습을 복원하기 위해 여러 분야의 전문가들이 노력하고 있다.",
+      "example_vi": "Experts are doing their best to restore the original image of Namdaemun.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>옛날</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>the old days</span></div><div><span class='font-semibold text-gray-700'>옛말</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>old saying</span></div></div>",
+      "highlight_terms": [
+        "옛"
+      ]
+    },
+    {
+      "id": "21",
+      "word": "운동",
+      "meaning": "movement, campaign",
+      "type": "명 noun",
+      "example_ko": "환경의 날을 맞이하여 환경 보호 운동이 전국에서 일어났다.",
+      "example_vi": "To welcome the Environment Day, the environmental campaign was held across the country.",
+      "extra": "<div><span class='font-semibold text-gray-700'>캠페인</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>campaign</span></div>",
+      "highlight_terms": [
+        "운동이"
+      ]
+    },
+    {
+      "id": "22",
+      "word": "일정하다",
+      "meaning": "steady",
+      "type": "형 adjective",
+      "example_ko": "수입이 일정하지 않아서 살기가 힘들어요.",
+      "example_vi": "It is hard to manage living since I don’t have a steady income.",
+      "extra": "",
+      "highlight_terms": [
+        "일정하지"
+      ]
+    },
+    {
+      "id": "23",
+      "word": "자원봉사",
+      "meaning": "volunteer",
+      "type": "명 noun",
+      "example_ko": "이번 여름 방학 때에는 자원봉사를 하기로 했다.",
+      "example_vi": "I have decided to do volunteer work for this summer vacation.",
+      "extra": "<div><span class='font-semibold text-gray-700'>자원봉사자</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>volunteer (worker)</span></div>",
+      "highlight_terms": [
+        "자원봉사를"
+      ]
+    },
+    {
+      "id": "24",
+      "word": "재료",
+      "meaning": "ingredient",
+      "type": "명 noun",
+      "example_ko": "이 요리의 재료는 주변에서 쉽게 살 수 없는 것이군요.",
+      "example_vi": "The ingredients for this dish are not the ones that you can easily get from the nearest stores.",
+      "extra": "<div><span class='font-semibold text-gray-700'>재료비</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>the cost of ingredients</span></div>",
+      "highlight_terms": [
+        "재료는"
+      ]
+    },
+    {
+      "id": "25",
+      "word": "전달하다",
+      "meaning": "give",
+      "type": "동 verb",
+      "example_ko": "이 소포를 룸메이트에게 전달해 주세요.",
+      "example_vi": "Please give this package to your roommate.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>전달</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>give</span></div><div><span class='font-semibold text-gray-700'>전달되다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>be given</span></div></div>",
+      "highlight_terms": [
+        "전달해"
+      ]
+    },
+    {
+      "id": "26",
+      "word": "점점",
+      "meaning": "more and more",
+      "type": "부 adverb",
+      "example_ko": "그 사람이 점점 좋아지기 시작했다.",
+      "example_vi": "I am starting to like him more and more.",
+      "extra": "",
+      "highlight_terms": [
+        "점점"
+      ]
+    },
+    {
+      "id": "27",
+      "word": "정기적",
+      "meaning": "regular",
+      "type": "명 noun",
+      "example_ko": "정기적인 모임을 갖기 위해 노력해 봅시다.",
+      "example_vi": "Let us try to have a regular meeting.",
+      "extra": "",
+      "detailBlocks": [
+        {
+          "type": "mindmap",
+          "title_ko": "관련어",
+          "title_vi": "Words to memorize together",
+          "center_ko": "정기",
+          "center_vi": "Regular",
+          "nodes": [
+            {
+              "ko": "정기 검진",
+              "vi": "regular check-up"
+            },
+            {
+              "ko": "정기 구독",
+              "vi": "subscription to"
+            },
+            {
+              "ko": "정기 모임",
+              "vi": "regular meeting"
+            },
+            {
+              "ko": "정기 세일",
+              "vi": "regular discount"
+            }
+          ]
+        }
+      ],
+      "highlight_terms": [
+        "정기적인"
+      ]
+    },
+    {
+      "id": "28",
+      "word": "정작",
+      "meaning": "actually",
+      "type": "부 adverb",
+      "example_ko": "정작 사과해야 할 사람은 바로 나다.",
+      "example_vi": "Actually, I am the one who has to apologize.",
+      "extra": "",
+      "highlight_terms": [
+        "정작"
+      ]
+    },
+    {
+      "id": "29",
+      "word": "정치",
+      "meaning": "politics",
+      "type": "명 noun",
+      "example_ko": "국민들은 정치에 대한 관심을 가져야 합니다.",
+      "example_vi": "People should have interest in politics.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>정치가</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>a politician</span></div><div><span class='font-semibold text-gray-700'>정치학</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>political science</span></div><div><span class='font-semibold text-gray-700'>정치인</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>statesman</span></div></div>",
+      "highlight_terms": [
+        "정치에"
+      ]
+    },
+    {
+      "id": "30",
+      "word": "즐겁다",
+      "meaning": "enjoy",
+      "type": "형 adjective",
+      "example_ko": "여가 생활을 즐겁게 보내기 위해 필요한 것은 무엇일까?",
+      "example_vi": "What do I need in order to enjoy my free time?",
+      "extra": "",
+      "highlight_terms": [
+        "즐겁게"
+      ]
+    },
+    {
+      "id": "31",
+      "word": "진정하다",
+      "meaning": "calm down",
+      "type": "동 verb",
+      "example_ko": "그렇게 화만 내지 말고 좀 진정하세요.",
+      "example_vi": "Don’t get angry, calm down.",
+      "extra": "",
+      "highlight_terms": [
+        "진정하세요"
+      ]
+    },
+    {
+      "id": "32",
+      "word": "집안일",
+      "meaning": "housework",
+      "type": "명 noun",
+      "example_ko": "남편이 집안일을 많이 도와주는 편이에요?",
+      "example_vi": "Does your husband often help you with the housework?",
+      "extra": "",
+      "highlight_terms": [
+        "집안일"
+      ]
+    },
+    {
+      "id": "33",
+      "word": "축제",
+      "meaning": "festival",
+      "type": "명 noun",
+      "example_ko": "한국 대학들은 보통 5월에 축제를 한다.",
+      "example_vi": "Usually most of the universities in Korea have their festival in May.",
+      "extra": "",
+      "highlight_terms": [
+        "축제를"
+      ]
+    }
+  ],
+  "dict": {
+    "goal": "mục đích / mục tiêu",
+    "inquire": "hỏi / thắc mắc",
+    "and": "và",
+    "look": "nhìn / nhìn ngắm",
+    "find out": "phát hiện / tìm ra",
+    "report": "báo cáo",
+    "pressure": "áp lực",
+    "part": "phần / bộ phận",
+    "area": "lĩnh vực",
+    "imagination": "trí tưởng tượng",
+    "hurry": "vội / vội vàng",
+    "document": "hồ sơ / giấy tờ",
+    "persuade": "thuyết phục",
+    "this": "này / bản",
+    "grow": "phát triển / trưởng thành",
+    "be precious": "quý giá / quan trọng",
+    "forest": "rừng",
+    "vision": "thị giác / tầm nhìn",
+    "ingredient": "dinh dưỡng / thành phần",
+    "old": "xưa / cũ",
+    "movement, campaign": "phong trào / chiến dịch",
+    "steady": "đều đặn / ổn định",
+    "volunteer": "tình nguyện / hoạt động tình nguyện",
+    "give": "chuyển / giao / đưa",
+    "more and more": "dần dần / ngày càng",
+    "regular": "định kỳ / thường kỳ",
+    "actually": "thực ra / thực chất",
+    "politics": "chính trị",
+    "enjoy": "vui vẻ / tận hưởng",
+    "calm down": "bình tĩnh / trấn tĩnh",
+    "housework": "việc nhà",
+    "festival": "lễ hội",
+    "destination": "điểm đến / nơi đến",
+    "a reference": "nơi liên hệ / địa chỉ hỏi đáp",
+    "The word “및” is frequently used in notices and instructions.": "Từ “및” thường được dùng trong thông báo và hướng dẫn.",
+    "“및” has a meaning similar to “and.” In the form N 및 N, it means both nouns are included.": "“및” có nghĩa gần giống “và”. Ở dạng N 및 N, nó có nghĩa là bao gồm cả hai danh từ.",
+    "N and N": "N và N",
+    "explanation and comparison": "giải thích và so sánh",
+    "confirmation and application": "xác nhận và đăng ký",
+    "be found": "được phát hiện",
+    "thesis": "luận văn",
+    "a great pressure": "áp lực lớn",
+    "feel pressure": "cảm thấy áp lực",
+    "persuasion": "sự thuyết phục",
+    "persuade one to": "thuyết phục ai đó",
+    "What other words can be used in the form of “본 N(this N)”?,": "Còn những từ nào có thể dùng ở dạng “본 N” nữa?",
+    "business": "việc kinh doanh / doanh nghiệp",
+    "plan": "kế hoạch",
+    "research": "nghiên cứu",
+    "presentation": "bài 발표 / bài thuyết trình",
+    "growing": "sự phát triển",
+    "growth rate": "tỉ lệ tăng trưởng",
+    "forest road": "đường rừng",
+    "What other senses do human beings have?": "Con người còn có những giác quan nào khác?",
+    "sense of taste": "vị giác",
+    "sense of hearing": "thính giác",
+    "sense of touch": "xúc giác",
+    "sense of smell": "khứu giác",
+    "nutrients": "chất dinh dưỡng",
+    "ingredients": "thành phần / nguyên liệu",
+    "the old days": "ngày xưa",
+    "old saying": "câu nói xưa / tục ngữ xưa",
+    "campaign": "chiến dịch / phong trào",
+    "volunteer (worker)": "người làm tình nguyện",
+    "the cost of ingredients": "chi phí nguyên liệu",
+    "be given": "được chuyển / được giao",
+    "Words to memorize together": "Nhóm từ nên học cùng nhau",
+    "Regular": "Định kỳ",
+    "regular check-up": "khám định kỳ",
+    "subscription to": "đăng ký định kỳ",
+    "regular meeting": "cuộc họp định kỳ",
+    "regular discount": "đợt giảm giá định kỳ",
+    "a politician": "nhà chính trị",
+    "political science": "chính trị học",
+    "statesman": "chính trị gia",
+    "What is your goal to study Korean?": "Mục đích học tiếng Hàn của bạn là gì?",
+    "Phone calls flooded in inquiring about the clothes worn by the main character that starred in the drama.": "Có rất nhiều cuộc gọi hỏi về bộ quần áo mà nhân vật chính trong phim đã mặc.",
+    "This data contains the explanation and the comparison of each insurance.": "Tài liệu này có nội dung giải thích và so sánh về từng loại bảo hiểm.",
+    "He was looking at the sea in silence.": "Người đó đang lặng lẽ nhìn ra biển.",
+    "I found out that I had cancer from the last test I got from the hospital.": "Tôi đã phát hiện mình bị ung thư qua lần kiểm tra ở bệnh viện lần này.",
+    "I am now collecting the data to write a report.": "Bây giờ tôi đang thu thập tài liệu để viết báo cáo.",
+    "I feel so much pressure, because my parents have great expectation for me.": "Vì bố mẹ đang kỳ vọng quá nhiều nên tôi cảm thấy rất áp lực.",
+    "The earlier part of the novel is somewhat boring, but it becomes interesting towards the end.": "Phần đầu của tiểu thuyết hơi chán, nhưng càng về sau càng trở nên rất thú vị.",
+    "He is the most famous expert in this area.": "Người đó là chuyên gia nổi tiếng nhất trong lĩnh vực này.",
+    "He is filled with imagination since he is good at making up interesting stories.": "Người đó có trí tưởng tượng phong phú nên rất giỏi tạo ra những câu chuyện thú vị.",
+    "You should hurry not to miss your flight.": "Bạn nên nhanh lên để không bị lỡ máy bay.",
+    "I am busy preparing the document required for getting admission from graduate school.": "Dạo này tôi bận chuẩn bị hồ sơ cần thiết để nhập học cao học.",
+    "I was successful to persuade the person with the opposite opinion.": "Tôi đã thuyết phục thành công những người có ý kiến phản đối.",
+    "This product is not for the treatment but to supplement the nutrition.": "Sản phẩm này không dùng để điều trị mà dùng để bổ sung dinh dưỡng.",
+    "Our country’s economy is growing fast.": "Kinh tế nước ta đang phát triển nhanh.",
+    "For me, the most precious thing is the letter from my mom.": "Đối với tôi, quý giá hơn bất cứ thứ gì là bức thư mẹ viết cho tôi.",
+    "When I take a walk in the forest, I feel comfortable.": "Khi đi dạo trong rừng, tôi thấy lòng thoải mái hơn.",
+    "That person lost his vision because of a big accident.": "Người đó đã mất thị giác vì một vụ tai nạn lớn.",
+    "It is important to take a broad variety of nutrients while you’re growing up.": "Trong thời kỳ trưởng thành, việc hấp thụ dinh dưỡng đa dạng là rất quan trọng.",
+    "Experts are doing their best to restore the original image of Namdaemun.": "Các chuyên gia trong nhiều lĩnh vực đang nỗ lực để phục hồi dáng vẻ xưa của Namdaemun.",
+    "To welcome the Environment Day, the environmental campaign was held across the country.": "Nhân ngày Môi trường, phong trào bảo vệ môi trường đã diễn ra trên toàn quốc.",
+    "It is hard to manage living since I don’t have a steady income.": "Vì thu nhập không ổn định nên cuộc sống rất khó khăn.",
+    "I have decided to do volunteer work for this summer vacation.": "Kỳ nghỉ hè này tôi đã quyết định làm hoạt động tình nguyện.",
+    "The ingredients for this dish are not the ones that you can easily get from the nearest stores.": "Nguyên liệu của món ăn này là những thứ không dễ mua được ở xung quanh.",
+    "Please give this package to your roommate.": "Hãy chuyển gói hàng này cho bạn cùng phòng của tôi.",
+    "I am starting to like him more and more.": "Tôi bắt đầu ngày càng thích người đó hơn.",
+    "Let us try to have a regular meeting.": "Chúng ta hãy cố gắng tổ chức cuộc họp định kỳ.",
+    "Actually, I am the one who has to apologize.": "Thực ra, người phải xin lỗi chính là tôi.",
+    "People should have interest in politics.": "Người dân cần quan tâm đến chính trị.",
+    "What do I need in order to enjoy my free time?": "Tôi cần gì để tận hưởng thời gian rảnh một cách vui vẻ?",
+    "Don’t get angry, calm down.": "Đừng chỉ nổi giận như vậy, hãy bình tĩnh lại.",
+    "Does your husband often help you with the housework?": "Chồng bạn có thường giúp bạn nhiều việc nhà không?",
+    "Usually most of the universities in Korea have their festival in May.": "Thông thường, các trường đại học ở Hàn Quốc tổ chức lễ hội vào tháng 5.",
+    "Words that are easy to confuse in TOPIK": "Những từ dễ nhầm lẫn trong TOPIK",
+    "Polysemy": "Từ đa nghĩa",
+    "Antonym": "Từ trái nghĩa",
+    "Synonym": "Từ đồng nghĩa",
+    "get (a seat)": "giữ / lấy được chỗ ngồi",
+    "smell": "ngửi / cảm nhận mùi",
+    "care": "trông nom / chăm sóc",
+    "Wearing clothes that fits your age is most natural and beautiful.": "Mặc quần áo phù hợp với tuổi là tự nhiên và đẹp nhất.",
+    "After the test was over, I checked my answers with my friends.": "Sau khi thi xong, tôi đã dò đáp án với bạn bè.",
+    "The focus of the telescope should properly be adjusted in order to see the view.": "Phải điều chỉnh tiêu điểm của kính viễn vọng thật đúng thì mới có thể nhìn rõ.",
+    "It is really hard to get a seat in the library since it is the mid-term season.": "Vì đang mùa thi giữa kỳ nên rất khó giữ/lấy chỗ ở thư viện.",
+    "I cannot smell since I have a cold.": "Vì bị cảm nên tôi không ngửi được mùi.",
+    "I wish there are many more facilities that provide daycare services.": "Ước gì có nhiều cơ sở trông trẻ hơn.",
+    "disagree with": "phản đối / không đồng ý",
+    "agree with": "tán thành / đồng ý",
+    "Is there anyone who disagrees with Minho’s opinion?": "Có ai phản đối ý kiến của Minho không?",
+    "It is impossible for all of the members to agree with the opinion.": "Việc tất cả thành viên đều đồng ý với ý kiến đó là không thể.",
+    "endurance": "sự chịu đựng / tính nhẫn nại",
+    "patience": "sự kiên nhẫn",
+    "It is necessary for the adults to teach the children endurance through sports.": "Người lớn cần rèn cho trẻ tính kiên nhẫn thông qua vận động.",
+    "Write Korean in English, and English in Korean.": "Hãy viết từ tiếng Hàn sang tiếng Việt, và từ tiếng Việt sang tiếng Hàn.",
+    "Connect the Korean words with the English words of same meaning.": "Hãy nối từ tiếng Hàn với nghĩa tiếng Việt tương ứng.",
+    "Pick and write the suitable word among the options in the blank space.": "Hãy chọn từ phù hợp trong các lựa chọn để điền vào chỗ trống.",
+    "a. report": "a. báo cáo",
+    "b. goal": "b. mục tiêu",
+    "c. area": "c. lĩnh vực",
+    "d. grow": "d. phát triển",
+    "e. document": "e. hồ sơ / giấy tờ",
+    "f. regular": "f. định kỳ",
+    "g. ingredient": "g. dinh dưỡng / thành phần",
+    "This word is mostly used in a notice or an instruction.": "Từ này chủ yếu được dùng trong thông báo tuyển dụng hoặc thông báo/hướng dẫn.",
+    "In order to find the correct answer, wouldn’t you need to know the meaning accurately?\nYou should always remember that when it is said “N 및 N (N and N),” it means the two are included.": "Để chọn đúng đáp án, bạn cần biết chính xác nghĩa của từ, đúng không?\nHãy luôn nhớ rằng khi được đưa ra dưới dạng “N 및 N (N và N)” thì cả hai đều được bao gồm.",
+    "In order to find the correct answer, wouldn’t you need to know the meaning accurately?": "Để chọn đúng đáp án, bạn cần biết chính xác nghĩa của từ, đúng không?",
+    "You should always remember that when it is said “N 및 N (N and N),” it means the two are included.": "Hãy luôn nhớ rằng khi được đưa ra dưới dạng “N 및 N (N và N)” thì cả hai đều được bao gồm.",
+    "In order to find the correct answer, wouldn’t you need to know the meaning accurately? You should always remember that when it is said “N 및 N (N and N),” it means the two are included.": "Để chọn đúng đáp án, bạn cần biết chính xác nghĩa của từ, đúng không? Hãy luôn nhớ rằng khi được đưa ra dưới dạng “N 및 N (N và N)” thì cả hai đều được bao gồm.",
+    "how this word appears in the test": "cách từ này xuất hiện trong đề thi"
+  }
+}

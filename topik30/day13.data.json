@@ -1,0 +1,670 @@
+{
+  "day": 13,
+  "vocabData": [
+    {
+      "id": "01",
+      "word": "편",
+      "meaning": "piece",
+      "type": "명 noun",
+      "example_ko": "재미있는 영화 한 편 보고 싶은데 시간이 없네요.",
+      "example_vi": "I would like to watch an interesting movie but I have no time.",
+      "extra": "",
+      "detailBlocks": [
+        {
+          "type": "tip_combo",
+          "label": "Tip",
+          "question_ko": "‘편’으로 셀 수 있는 것은 뭐가 있을까요?",
+          "question_vi": "What can be counted with the word “편(piece)”?",
+          "word": "편",
+          "word_vi": "piece",
+          "items": [
+            {
+              "ko": "시",
+              "vi": "poetry"
+            },
+            {
+              "ko": "영화",
+              "vi": "movie"
+            },
+            {
+              "ko": "소설",
+              "vi": "novel"
+            }
+          ],
+          "no_speak": true
+        }
+      ],
+      "highlight_terms": [
+        "한 편"
+      ]
+    },
+    {
+      "id": "02",
+      "word": "포장하다",
+      "meaning": "wrap (up)",
+      "type": "동 verb",
+      "example_ko": "이제 선물을 포장하기만 하면 되니까 조금만 기다리세요.",
+      "example_vi": "Can you please wait for a moment, I only need to wrap up the present.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>포장</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>wrap up</span></div><div><span class='font-semibold text-gray-700'>포장지</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>wrapping paper</span></div></div>",
+      "highlight_terms": [
+        "포장하기만"
+      ]
+    },
+    {
+      "id": "03",
+      "word": "품질",
+      "meaning": "quality",
+      "type": "명 noun",
+      "example_ko": "제품의 품질을 높이지 않으면 성공할 수 없어요.",
+      "example_vi": "If you don’t improve the quality of the product, you won’t be able to succeed.",
+      "extra": "",
+      "highlight_terms": [
+        "품질을"
+      ]
+    },
+    {
+      "id": "04",
+      "word": "화",
+      "meaning": "angry",
+      "type": "명 noun",
+      "example_ko": "친구의 심한 장난 때문에 화가 났어요.",
+      "example_vi": "I got angry because of my friend’s practical jokes.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>화가 나다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>get angry</span></div><div><span class='font-semibold text-gray-700'>화를 내다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>be upset</span></div><div><span class='font-semibold text-gray-700'>화를 풀다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>blow off steam</span></div><div><span class='font-semibold text-gray-700'>화가 풀리다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>calm down</span></div></div>",
+      "highlight_terms": [
+        "화가"
+      ]
+    },
+    {
+      "id": "05",
+      "word": "훌륭하다",
+      "meaning": "excellent",
+      "type": "형 adjective",
+      "example_ko": "우리 회사에는 훌륭한 인재가 많습니다.",
+      "example_vi": "There are many excellent employees in our company.",
+      "extra": "",
+      "highlight_terms": [
+        "훌륭한"
+      ]
+    },
+    {
+      "id": "06",
+      "word": "이웃",
+      "meaning": "neighbor",
+      "type": "명 noun",
+      "example_ko": "아파트에 살아 보니 이웃에 누가 사는지조차 모르는 경우가 많아요.",
+      "example_vi": "Living in the apartment, often we do not know who our neighbors are.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>이웃집</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>neighbor’s house</span></div><div><span class='font-semibold text-gray-700'>이웃 사람</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>a neighbor</span></div><div><span class='font-semibold text-gray-700'>이웃 사랑</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>love for neighbors</span></div></div>",
+      "detailBlocks": [
+        {
+          "type": "test_note",
+          "label_ko": "출제 경향",
+          "label_vi": "how this word appears in the test",
+          "title_ko": "읽기 영역에서 ‘불우 이웃 돕기’에 대한 주제로 문제가 출제된 적이 있어요.",
+          "title_vi": "There was a question that appeared in the test with the topic of “불우 이웃 돕기(helping unfortunate neighbors).”",
+          "body_ko": "다른 사람을 돕는 것에 대한 단어는 꾸준히 나오고 있습니다.\n‘불우 이웃’이라는 단어를 기억하세요.",
+          "body_vi": "Likewise, questions that deal with helping other people are constantly appearing in the test.\nDo not forget to remember the phrase “불우 이웃(unfortunate neighbors).”",
+          "tags": [],
+          "no_speak": true
+        }
+      ],
+      "highlight_terms": [
+        "이웃에"
+      ]
+    },
+    {
+      "id": "07",
+      "word": "고등학교",
+      "meaning": "high school",
+      "type": "명 noun",
+      "example_ko": "이 친구는 고등학교 다닐 때 만난 친구예요.",
+      "example_vi": "This is my good friend from high school.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>유치원</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>kindergarten</span></div><div><span class='font-semibold text-gray-700'>초등학교</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>elementary school</span></div><div><span class='font-semibold text-gray-700'>중학교</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>middle school</span></div><div><span class='font-semibold text-gray-700'>대학교</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>university</span></div><div><span class='font-semibold text-gray-700'>대학원</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>graduate school</span></div></div>",
+      "highlight_terms": [
+        "고등학교"
+      ]
+    },
+    {
+      "id": "08",
+      "word": "가장",
+      "meaning": "head of the household",
+      "type": "명 noun",
+      "example_ko": "아버지로서 가장의 역할을 잘 해야 합니다.",
+      "example_vi": "As a father, it is important to partake a good role as the head of the household.",
+      "extra": "",
+      "highlight_terms": [
+        "가장의"
+      ]
+    },
+    {
+      "id": "09",
+      "word": "가져오다",
+      "meaning": "bring (about)",
+      "type": "동 verb",
+      "example_ko": "핸드폰의 발달은 우리 사회에 큰 변화를 가져왔습니다.",
+      "example_vi": "The development of the cell phone has brought a big change in our society.",
+      "extra": "<div><span class='font-semibold text-gray-700'>가져가다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>take away</span></div>",
+      "highlight_terms": [
+        "가져왔습니다"
+      ]
+    },
+    {
+      "id": "10",
+      "word": "간단하다",
+      "meaning": "simple",
+      "type": "형 adjective",
+      "example_ko": "사장님께서 간단한 식사를 준비해 달라고 하셨어요.",
+      "example_vi": "My boss asked me for a simple meal.",
+      "extra": "<div><span class='font-semibold text-gray-700'>간단히</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>simply</span></div>",
+      "highlight_terms": [
+        "간단한"
+      ]
+    },
+    {
+      "id": "11",
+      "word": "거리",
+      "meaning": "distance",
+      "type": "명 noun",
+      "example_ko": "저희 회사는 지하철역 2번 출구로 나오시면 5분 거리에 있습니다.",
+      "example_vi": "Our company is in 5 minute distance from exit 2 of the subway station.",
+      "extra": "",
+      "highlight_terms": [
+        "거리에"
+      ]
+    },
+    {
+      "id": "12",
+      "word": "구체적",
+      "meaning": "in detail",
+      "type": "명 noun",
+      "example_ko": "구체적인 방법을 알려 주십시오.",
+      "example_vi": "Please tell me the way in detail.",
+      "extra": "",
+      "highlight_terms": [
+        "구체적인"
+      ]
+    },
+    {
+      "id": "13",
+      "word": "극복하다",
+      "meaning": "overcome",
+      "type": "동 verb",
+      "example_ko": "어려움을 극복하면 반드시 좋은 일이 있을 거예요.",
+      "example_vi": "If you overcome your difficulties, good thing will happen.",
+      "extra": "",
+      "highlight_terms": [
+        "극복하면"
+      ]
+    },
+    {
+      "id": "14",
+      "word": "기름",
+      "meaning": "oil",
+      "type": "명 noun",
+      "example_ko": "차에 기름 넣을 때가 된 것 같은데요.",
+      "example_vi": "I think it is time to fill up the gas tank.",
+      "extra": "<div><span class='font-semibold text-gray-700'>기름기</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>greasy</span></div>",
+      "highlight_terms": [
+        "기름"
+      ]
+    },
+    {
+      "id": "15",
+      "word": "먹이",
+      "meaning": "food",
+      "type": "명 noun",
+      "example_ko": "동물원의 동물한테 아무 먹이나 주면 안 됩니다.",
+      "example_vi": "You should not give random food to the animals in the zoo.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>먹잇감</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>prey</span></div><div><span class='font-semibold text-gray-700'>먹을거리</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>things to eat</span></div></div>",
+      "detailBlocks": [
+        {
+          "type": "tip_combo",
+          "label": "Tip",
+          "question_ko": "‘V-(으)ㄹ거리’의 형태로 쓰이는 것은 또 뭐가 있을까요?",
+          "question_vi": "What are other things that you can express with the form of “V-(으)ㄹ 거리(things to V)”?",
+          "word": "V-(으)ㄹ거리",
+          "word_vi": "things to V",
+          "items": [
+            {
+              "ko": "읽을거리",
+              "vi": "things to read"
+            },
+            {
+              "ko": "볼거리",
+              "vi": "things to watch"
+            },
+            {
+              "ko": "놀거리",
+              "vi": "things to play with"
+            },
+            {
+              "ko": "마실거리",
+              "vi": "things to drink"
+            }
+          ],
+          "no_speak": true
+        }
+      ],
+      "highlight_terms": [
+        "먹이나"
+      ]
+    },
+    {
+      "id": "16",
+      "word": "기본",
+      "meaning": "basic",
+      "type": "명 noun",
+      "example_ko": "언어를 배우기 위해서는 단어 공부가 기본이 된다고 생각합니다.",
+      "example_vi": "I think studying the vocabulary is the basic thing when learning the language.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>기본적</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>basically</span></div><div><span class='font-semibold text-gray-700'>기본 요금</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>basic fee</span></div></div>",
+      "highlight_terms": [
+        "기본이"
+      ]
+    },
+    {
+      "id": "17",
+      "word": "기사",
+      "meaning": "article",
+      "type": "명 noun",
+      "example_ko": "오늘 아침 신문에 난 기사 보셨어요?",
+      "example_vi": "Have you seen the article in this paper this morning?",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>기자</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>reporter</span></div><div><span class='font-semibold text-gray-700'>보도 기사</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>news story</span></div></div>",
+      "highlight_terms": [
+        "기사"
+      ]
+    },
+    {
+      "id": "18",
+      "word": "냄새",
+      "meaning": "smell",
+      "type": "명 noun",
+      "example_ko": "이상한 냄새가 나는 것 같아요.",
+      "example_vi": "I think there is a strange smell.",
+      "extra": "",
+      "highlight_terms": [
+        "냄새가"
+      ]
+    },
+    {
+      "id": "19",
+      "word": "다가가다",
+      "meaning": "approach",
+      "type": "동 verb",
+      "example_ko": "누군가와 친해지고 싶으면 마음을 열고 먼저 다가가세요.",
+      "example_vi": "If you want to make friends, then you should open up and approach them first.",
+      "extra": "<div><span class='font-semibold text-gray-700'>다가오다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>come up to</span></div>",
+      "highlight_terms": [
+        "다가가세요"
+      ]
+    },
+    {
+      "id": "20",
+      "word": "담당하다",
+      "meaning": "be in charge of",
+      "type": "동 verb",
+      "example_ko": "저는 은행에서 주로 환전 업무를 담당하고 있어요.",
+      "example_vi": "I am mostly in charge of currency exchange in the bank.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>담당자</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>the person in charge</span></div><div><span class='font-semibold text-gray-700'>담당 기관</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>the agency in charge</span></div></div>",
+      "highlight_terms": [
+        "담당하고"
+      ]
+    },
+    {
+      "id": "21",
+      "word": "도전하다",
+      "meaning": "challenge",
+      "type": "동 verb",
+      "example_ko": "그 선수는 이번 대회에서 세계 신기록에 도전합니다.",
+      "example_vi": "The athlete is challenging to break the world record in this competition.",
+      "extra": "<div><span class='font-semibold text-gray-700'>도전</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>challenging</span></div>",
+      "highlight_terms": [
+        "도전합니다"
+      ]
+    },
+    {
+      "id": "22",
+      "word": "뛰어나다",
+      "meaning": "fluent",
+      "type": "형 adjective",
+      "example_ko": "우리 회사는 외국어 실력이 뛰어난 사람을 찾고 있습니다.",
+      "example_vi": "Our company is looking for a person who can speak foreign language fluently.",
+      "extra": "",
+      "highlight_terms": [
+        "뛰어난"
+      ]
+    },
+    {
+      "id": "23",
+      "word": "면접",
+      "meaning": "interview",
+      "type": "명 noun",
+      "example_ko": "면접을 볼 때 긴장하지 않으려면 어떻게 해야 할까요?",
+      "example_vi": "What can I do to not be nervous during the interview?",
+      "extra": "<div><span class='font-semibold text-gray-700'>면접관</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>interviewer</span></div>",
+      "highlight_terms": [
+        "면접을"
+      ]
+    },
+    {
+      "id": "24",
+      "word": "목소리",
+      "meaning": "voice",
+      "type": "명 noun",
+      "example_ko": "그 사람의 노래하는 목소리는 다른 사람들에게 감동을 준다.",
+      "example_vi": "His singing voice deeply moves the listeners.",
+      "extra": "",
+      "highlight_terms": [
+        "목소리는"
+      ]
+    },
+    {
+      "id": "25",
+      "word": "무시하다",
+      "meaning": "look down on",
+      "type": "동 verb",
+      "example_ko": "나이가 어리다고 무시하지 마세요.",
+      "example_vi": "Do not look down on me because I am younger.",
+      "extra": "",
+      "highlight_terms": [
+        "무시하지"
+      ]
+    },
+    {
+      "id": "26",
+      "word": "바닷가",
+      "meaning": "the seaside",
+      "type": "명 noun",
+      "example_ko": "바닷가에 가서 수영도 하고 사진도 찍자.",
+      "example_vi": "Let’s go to the seaside, take pictures and swim.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>바다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>sea</span></div><div><span class='font-semibold text-gray-700'>바닷물</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>seawater</span></div></div>",
+      "detailBlocks": [
+        {
+          "type": "tip_combo",
+          "label": "Tip",
+          "question_ko": "‘N가’의 형태로 쓰이는 것은 또 뭐가 있을까요?",
+          "question_vi": "What are the other words that have the structure of “N가(N-side)”?",
+          "word": "N가",
+          "word_vi": "N-side",
+          "items": [
+            {
+              "ko": "강가",
+              "vi": "riverside"
+            },
+            {
+              "ko": "물가",
+              "vi": "waterside"
+            },
+            {
+              "ko": "창가",
+              "vi": "window side"
+            }
+          ],
+          "no_speak": true
+        }
+      ],
+      "highlight_terms": [
+        "바닷가에"
+      ]
+    },
+    {
+      "id": "27",
+      "word": "밤새우다",
+      "meaning": "stay up all night",
+      "type": "동 verb",
+      "example_ko": "내일이 휴일이라서 오늘은 밤새워 영화를 볼 생각이에요.",
+      "example_vi": "Because tomorrow is a holiday, I am planning to stay up all night and watch movies.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>밤새</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>all night</span></div><div><span class='font-semibold text-gray-700'>밤늦게</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>late at night</span></div><div><span class='font-semibold text-gray-700'>밤새도록</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>all night long</span></div></div>",
+      "highlight_terms": [
+        "밤새워"
+      ]
+    },
+    {
+      "id": "28",
+      "word": "배달",
+      "meaning": "delivery",
+      "type": "명 noun",
+      "example_ko": "지금 음식 배달이 가능한가요?",
+      "example_vi": "Is it possible to get food delivered now?",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>배달비</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>delivery fee</span></div><div><span class='font-semibold text-gray-700'>배달되다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>be delivered</span></div><div><span class='font-semibold text-gray-700'>배달하다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>deliver</span></div></div>",
+      "highlight_terms": [
+        "배달이"
+      ]
+    },
+    {
+      "id": "29",
+      "word": "벌다",
+      "meaning": "earn",
+      "type": "동 verb",
+      "example_ko": "나는 요즘 아르바이트로 돈을 벌고 있다.",
+      "example_vi": "I am earning money by working part time these days.",
+      "extra": "",
+      "highlight_terms": [
+        "벌고"
+      ]
+    },
+    {
+      "id": "30",
+      "word": "보관하다",
+      "meaning": "store",
+      "type": "동 verb",
+      "example_ko": "근처에 짐을 보관할 만한 장소가 있을까요?",
+      "example_vi": "Is there any place around here where I can store my luggage?",
+      "extra": "<div><span class='font-semibold text-gray-700'>보관함</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>storage box</span></div>",
+      "highlight_terms": [
+        "보관할"
+      ]
+    },
+    {
+      "id": "31",
+      "word": "부드럽다",
+      "meaning": "soften",
+      "type": "형 adjective",
+      "example_ko": "화장품을 바꿨더니 피부가 부드러워졌어요.",
+      "example_vi": "After changing my cosmetic products, my skin has softened.",
+      "extra": "",
+      "highlight_terms": [
+        "부드러워졌어요"
+      ]
+    },
+    {
+      "id": "32",
+      "word": "불러일으키다",
+      "meaning": "cause",
+      "type": "동 verb",
+      "example_ko": "그런 수상한 행동은 다른 사람들의 오해를 불러일으킬 수 있으니까 조심하세요.",
+      "example_vi": "That kind of strange behavior can cause misunderstanding, so be careful.",
+      "extra": "",
+      "highlight_terms": [
+        "불러일으킬"
+      ]
+    },
+    {
+      "id": "33",
+      "word": "비율",
+      "meaning": "rate",
+      "type": "명 noun",
+      "example_ko": "매년 태어나는 아기들 중에서 남자 아기가 차지하는 비율이 높아지고 있다.",
+      "example_vi": "The rate of the male babies that are being born is increasing every year.",
+      "extra": "",
+      "detailBlocks": [
+        {
+          "type": "test_note",
+          "label_ko": "출제 경향",
+          "label_vi": "how this word appears in the test",
+          "title_ko": "그래프 정보 읽기 문제에서 ‘N에 따른 비율’의 형태로 많이 출제가 됩니다.",
+          "title_vi": "This word often appears in graph-reading questions in the form of “N에 따른 비율(the rate according to N).”",
+          "body_ko": "지역에 따른 비율, 계층에 따른 비율, 성별에 따른 비율, 연령에 따른 비율 같은 표현을 함께 기억하세요.",
+          "body_vi": "Remember related expressions such as rate according to area, social class, gender, and age.",
+          "tags": [
+            {
+              "ko": "지역에 따른 비율",
+              "en": "rate according to area"
+            },
+            {
+              "ko": "계층에 따른 비율",
+              "en": "rate according to the social class"
+            },
+            {
+              "ko": "성별에 따른 비율",
+              "en": "rate according to gender"
+            },
+            {
+              "ko": "연령에 따른 비율",
+              "en": "rate according to age"
+            }
+          ],
+          "no_speak": true
+        }
+      ],
+      "highlight_terms": [
+        "비율이"
+      ]
+    }
+  ],
+  "dict": {
+    "piece": "một phần / một tác phẩm",
+    "wrap (up)": "gói / bọc",
+    "quality": "chất lượng",
+    "angry": "giận / tức giận",
+    "excellent": "xuất sắc / tuyệt vời",
+    "neighbor": "hàng xóm",
+    "high school": "trường trung học phổ thông",
+    "head of the household": "chủ gia đình / trụ cột gia đình",
+    "bring (about)": "mang lại / gây ra",
+    "simple": "đơn giản",
+    "distance": "khoảng cách",
+    "in detail": "cụ thể / chi tiết",
+    "overcome": "vượt qua / khắc phục",
+    "oil": "dầu / xăng",
+    "food": "thức ăn / đồ ăn",
+    "basic": "cơ bản",
+    "article": "bài báo",
+    "smell": "mùi",
+    "approach": "tiếp cận / đến gần",
+    "be in charge of": "phụ trách",
+    "challenge": "thử thách / thách thức",
+    "fluent": "xuất sắc / giỏi",
+    "interview": "phỏng vấn",
+    "voice": "giọng nói",
+    "look down on": "coi thường / xem thường",
+    "the seaside": "bờ biển / ven biển",
+    "stay up all night": "thức trắng đêm",
+    "delivery": "giao hàng / giao đồ ăn",
+    "earn": "kiếm tiền",
+    "store": "bảo quản / cất giữ",
+    "soften": "mềm ra / trở nên mềm mại",
+    "cause": "gây ra / làm phát sinh",
+    "rate": "tỉ lệ",
+    "What can be counted with the word “편(piece)”?": "Có thể đếm những gì bằng từ “편”?",
+    "poetry": "thơ",
+    "movie": "phim",
+    "novel": "tiểu thuyết",
+    "wrap up": "gói / bọc",
+    "wrapping paper": "giấy gói",
+    "get angry": "nổi giận",
+    "be upset": "nổi cáu / tức giận",
+    "blow off steam": "nguôi giận / giải tỏa cơn giận",
+    "calm down": "nguôi giận / bình tĩnh lại",
+    "neighbor’s house": "nhà hàng xóm",
+    "a neighbor": "người hàng xóm",
+    "love for neighbors": "tình yêu thương hàng xóm / tình làng nghĩa xóm",
+    "how this word appears in the test": "cách từ này xuất hiện trong đề thi",
+    "There was a question that appeared in the test with the topic of “불우 이웃 돕기(helping unfortunate neighbors).”": "Đã từng có câu hỏi trong đề thi đọc với chủ đề “giúp đỡ hàng xóm/người có hoàn cảnh khó khăn”.",
+    "Likewise, questions that deal with helping other people are constantly appearing in the test.\nDo not forget to remember the phrase “불우 이웃(unfortunate neighbors).”": "Tương tự, các câu hỏi liên quan đến việc giúp đỡ người khác vẫn thường xuyên xuất hiện trong đề thi.\nĐừng quên ghi nhớ cụm “불우 이웃” nghĩa là những người có hoàn cảnh khó khăn.",
+    "kindergarten": "mẫu giáo",
+    "elementary school": "trường tiểu học",
+    "middle school": "trường trung học cơ sở",
+    "university": "đại học",
+    "graduate school": "cao học / trường sau đại học",
+    "take away": "mang đi / lấy đi",
+    "simply": "một cách đơn giản",
+    "greasy": "có dầu / nhờn",
+    "prey": "con mồi",
+    "things to eat": "đồ ăn / thứ để ăn",
+    "What are other things that you can express with the form of “V-(으)ㄹ 거리(things to V)”?": "Có những từ nào khác dùng theo dạng “V-(으)ㄹ 거리”?",
+    "things to V": "thứ để V",
+    "things to read": "đồ để đọc / thứ để đọc",
+    "things to watch": "thứ để xem",
+    "things to play with": "thứ để chơi",
+    "things to drink": "đồ uống / thứ để uống",
+    "basically": "một cách cơ bản",
+    "basic fee": "phí cơ bản",
+    "reporter": "phóng viên",
+    "news story": "bài báo tin tức",
+    "come up to": "tiến đến / đến gần",
+    "the person in charge": "người phụ trách",
+    "the agency in charge": "cơ quan phụ trách",
+    "challenging": "sự thử thách / thử thách",
+    "interviewer": "người phỏng vấn",
+    "sea": "biển",
+    "seawater": "nước biển",
+    "What are the other words that have the structure of “N가(N-side)”?": "Có những từ nào khác có cấu trúc “N가”?",
+    "N-side": "phía/bên N",
+    "riverside": "bờ sông",
+    "waterside": "bờ nước / ven nước",
+    "window side": "bên cửa sổ",
+    "all night": "suốt đêm",
+    "late at night": "đêm muộn",
+    "all night long": "suốt cả đêm",
+    "delivery fee": "phí giao hàng",
+    "be delivered": "được giao",
+    "deliver": "giao hàng",
+    "storage box": "tủ/hộp bảo quản",
+    "This word often appears in graph-reading questions in the form of “N에 따른 비율(the rate according to N).”": "Từ này thường xuất hiện trong câu đọc thông tin biểu đồ dưới dạng “N에 따른 비율” nghĩa là tỉ lệ theo N.",
+    "Remember related expressions such as rate according to area, social class, gender, and age.": "Hãy ghi nhớ các cách nói liên quan như tỉ lệ theo khu vực, tầng lớp, giới tính và độ tuổi.",
+    "rate according to area": "tỉ lệ theo khu vực",
+    "rate according to the social class": "tỉ lệ theo tầng lớp xã hội",
+    "rate according to gender": "tỉ lệ theo giới tính",
+    "rate according to age": "tỉ lệ theo độ tuổi",
+    "I would like to watch an interesting movie but I have no time.": "Tôi muốn xem một bộ phim thú vị nhưng không có thời gian.",
+    "Can you please wait for a moment, I only need to wrap up the present.": "Giờ chỉ cần gói quà nữa thôi nên hãy đợi một chút nhé.",
+    "If you don’t improve the quality of the product, you won’t be able to succeed.": "Nếu không nâng cao chất lượng sản phẩm thì không thể thành công.",
+    "I got angry because of my friend’s practical jokes.": "Tôi đã nổi giận vì trò đùa quá trớn của bạn.",
+    "There are many excellent employees in our company.": "Công ty chúng tôi có nhiều nhân tài xuất sắc.",
+    "Living in the apartment, often we do not know who our neighbors are.": "Sống ở chung cư thì nhiều khi thậm chí không biết hàng xóm là ai.",
+    "This is my good friend from high school.": "Đây là người bạn thân tôi quen hồi học cấp ba.",
+    "As a father, it is important to partake a good role as the head of the household.": "Là một người cha, cần làm tốt vai trò trụ cột gia đình.",
+    "The development of the cell phone has brought a big change in our society.": "Sự phát triển của điện thoại di động đã mang lại thay đổi lớn cho xã hội chúng ta.",
+    "My boss asked me for a simple meal.": "Sếp bảo tôi chuẩn bị một bữa ăn đơn giản.",
+    "Our company is in 5 minute distance from exit 2 of the subway station.": "Công ty chúng tôi cách cửa ra số 2 của ga tàu điện ngầm khoảng 5 phút.",
+    "Please tell me the way in detail.": "Xin hãy cho tôi biết phương pháp một cách cụ thể.",
+    "If you overcome your difficulties, good thing will happen.": "Nếu vượt qua khó khăn, chắc chắn điều tốt đẹp sẽ xảy ra.",
+    "I think it is time to fill up the gas tank.": "Có vẻ đã đến lúc đổ xăng cho xe rồi.",
+    "You should not give random food to the animals in the zoo.": "Không được cho động vật trong sở thú ăn bất cứ thức ăn nào.",
+    "I think studying the vocabulary is the basic thing when learning the language.": "Tôi nghĩ khi học ngôn ngữ thì học từ vựng là điều cơ bản.",
+    "Have you seen the article in this paper this morning?": "Bạn đã xem bài báo trên báo sáng nay chưa?",
+    "I think there is a strange smell.": "Tôi nghĩ có mùi lạ.",
+    "If you want to make friends, then you should open up and approach them first.": "Nếu muốn thân với ai đó, hãy mở lòng và chủ động đến gần trước.",
+    "I am mostly in charge of currency exchange in the bank.": "Tôi chủ yếu phụ trách nghiệp vụ đổi tiền ở ngân hàng.",
+    "The athlete is challenging to break the world record in this competition.": "Vận động viên đó đang thử thách kỷ lục thế giới trong giải đấu lần này.",
+    "Our company is looking for a person who can speak foreign language fluently.": "Công ty chúng tôi đang tìm người có năng lực ngoại ngữ xuất sắc.",
+    "What can I do to not be nervous during the interview?": "Làm thế nào để không căng thẳng khi phỏng vấn?",
+    "His singing voice deeply moves the listeners.": "Giọng hát của người đó làm người nghe cảm động sâu sắc.",
+    "Do not look down on me because I am younger.": "Đừng coi thường tôi chỉ vì tôi còn nhỏ tuổi.",
+    "Let’s go to the seaside, take pictures and swim.": "Hãy ra bờ biển, vừa bơi vừa chụp ảnh nhé.",
+    "Because tomorrow is a holiday, I am planning to stay up all night and watch movies.": "Vì ngày mai là ngày nghỉ nên hôm nay tôi định thức trắng đêm xem phim.",
+    "Is it possible to get food delivered now?": "Bây giờ có thể giao đồ ăn không?",
+    "I am earning money by working part time these days.": "Dạo này tôi đang kiếm tiền bằng công việc làm thêm.",
+    "Is there any place around here where I can store my luggage?": "Gần đây có chỗ nào có thể giữ hành lý không?",
+    "After changing my cosmetic products, my skin has softened.": "Sau khi đổi mỹ phẩm, da tôi trở nên mềm mại hơn.",
+    "That kind of strange behavior can cause misunderstanding, so be careful.": "Hành động đáng nghi như vậy có thể gây hiểu lầm cho người khác nên hãy cẩn thận.",
+    "The rate of the male babies that are being born is increasing every year.": "Tỉ lệ bé trai trong số trẻ được sinh ra mỗi năm đang tăng lên.",
+    "Words that are easy to confuse in TOPIK": "Những từ dễ nhầm lẫn trong TOPIK",
+    "Polysemy": "Từ đa nghĩa",
+    "Antonym": "Từ trái nghĩa",
+    "Synonym": "Từ đồng nghĩa",
+    "put on": "bôi / thoa",
+    "correct": "đúng / đúng đắn",
+    "After washing my face, I put on a makeup.": "Sau khi rửa mặt, tôi đã thoa mỹ phẩm lên mặt.",
+    "I should use the computer with the correct posture.": "Tôi nên ngồi đúng tư thế khi dùng máy tính.",
+    "disappear": "biến mất",
+    "appear": "xuất hiện",
+    "The bag I left next to the chair has disappeared.": "Chiếc túi tôi để cạnh ghế lúc nãy đã biến mất.",
+    "Suddenly, a big star appeared in the sky.": "Đột nhiên, một ngôi sao lớn xuất hiện trên bầu trời.",
+    "bear": "chịu đựng",
+    "endure": "chịu đựng / nhẫn nại",
+    "I woke up because it was too hard to bare the pain.": "Tôi tỉnh giấc vì quá khó chịu đựng cơn đau.",
+    "Write Korean in English, and English in Korean.": "Hãy viết từ tiếng Hàn sang tiếng Việt, và từ tiếng Việt sang tiếng Hàn.",
+    "Choose the proper word that fits the sentence more naturally.": "Hãy chọn từ phù hợp để câu tự nhiên hơn.",
+    "Likewise, questions that deal with helping other people are constantly appearing in the test. Do not forget to remember the phrase “불우 이웃(unfortunate neighbors).”": "Tương tự, các câu hỏi liên quan đến việc giúp đỡ người khác vẫn thường xuyên xuất hiện trong đề thi. Đừng quên ghi nhớ cụm “불우 이웃” nghĩa là những người có hoàn cảnh khó khăn."
+  }
+}

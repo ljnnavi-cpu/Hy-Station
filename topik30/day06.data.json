@@ -1,0 +1,507 @@
+{
+  "day": 6,
+  "vocabData": [
+    {
+      "id": "01",
+      "word": "삶",
+      "meaning": "life",
+      "type": "명 noun",
+      "example_ko": "우리 삶에서 제일 중요한 것이 무엇인지 잘 생각해 봐야 한다.",
+      "example_vi": "You should deeply think about what is the most important thing in our life.",
+      "extra": "<div><span class='font-semibold text-gray-700'>살다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>live</span></div>"
+    },
+    {
+      "id": "02",
+      "word": "성격",
+      "meaning": "characteristic",
+      "type": "명 noun",
+      "example_ko": "그 사람은 성격이 좋아서 친구가 많은 편이다.",
+      "example_vi": "He has a good characteristic and has many friends.",
+      "extra": "<div><span class='font-semibold text-gray-700'>성격이 좋다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>have a good personality</span></div>"
+    },
+    {
+      "id": "03",
+      "word": "습관",
+      "meaning": "habit",
+      "type": "명 noun",
+      "example_ko": "어릴 때부터 좋은 습관을 키우는 것은 매우 중요하다.",
+      "example_vi": "It is important to develop a good habit when you are young.",
+      "extra": ""
+    },
+    {
+      "id": "04",
+      "word": "업무",
+      "meaning": "work",
+      "type": "명 noun",
+      "example_ko": "요즘 그 사람은 회사 업무 때문에 정신없이 바쁘다.",
+      "example_vi": "Recently, he is overly busy with his work.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>업무내용</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>job description</span></div><div><span class='font-semibold text-gray-700'>업무시간</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>office time</span></div></div>"
+    },
+    {
+      "id": "05",
+      "word": "위험하다",
+      "meaning": "dangerous",
+      "type": "형 adjective",
+      "example_ko": "이 곳은 깊어서 어린 아이가 수영하기에 위험합니다.",
+      "example_vi": "It is dangerous for children to swim in this area since it is too deep.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>위험</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>danger</span></div><div><span class='font-semibold text-gray-700'>위험성</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>dangerousness</span></div></div>"
+    },
+    {
+      "id": "06",
+      "word": "자녀",
+      "meaning": "children",
+      "type": "명 noun",
+      "example_ko": "자녀에 대한 부모의 큰 기대가 오히려 자녀를 망칠 수 있다.",
+      "example_vi": "Too much expectation of the parents to their children rather harms their children.",
+      "extra": "",
+      "detailBlocks": [
+        {
+          "type": "test_note",
+          "label_ko": "출제 경향",
+          "label_vi": "how this word appears in the test",
+          "title_ko": "교육 관련 문제에서 자주 나오는 단어입니다.",
+          "title_vi": "This word often appears in questions related to education.",
+          "body_ko": "교육, 부모와 자녀의 관계, 입시 문제, 청소년 문제, 잘못된 자녀 교육과 관련된 글에서 자주 나옵니다.",
+          "body_vi": "It often appears in passages about education, relationships between parents and children, admission issues, youth problems, and improper child education.",
+          "tags": [
+            "교육 문제",
+            "부모와 자녀",
+            "입시 문제"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "07",
+      "word": "자연스럽다",
+      "meaning": "it is natural to",
+      "type": "형 adjective",
+      "example_ko": "외국어를 배울 때는 자연스럽게 말하는 연습이 필요합니다.",
+      "example_vi": "Practicing to speak naturally is essential when you learn a foreign language.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>자연적</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>natural</span></div><div><span class='font-semibold text-gray-700'>자연현상</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>natural phenomenon</span></div></div>"
+    },
+    {
+      "id": "08",
+      "word": "치료하다",
+      "meaning": "cure",
+      "type": "동 verb",
+      "example_ko": "이는 조금 썩었을 때 빨리 치료해야 합니다.",
+      "example_vi": "You should go for treatment when your teeth are a little bit rotten.",
+      "extra": "<div><span class='font-semibold text-gray-700'>치료</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>treatment</span></div>"
+    },
+    {
+      "id": "09",
+      "word": "함께",
+      "meaning": "together",
+      "type": "부 adverb",
+      "example_ko": "친구들과 함께 극장에 갔습니다.",
+      "example_vi": "I went to the theater with my friends.",
+      "extra": ""
+    },
+    {
+      "id": "10",
+      "word": "혼자",
+      "meaning": "alone",
+      "type": "명 noun",
+      "example_ko": "혼자 밥을 먹으면 맛이 없어요.",
+      "example_vi": "It does not taste good when you eat alone.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>혼자</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>alone</span></div><div><span class='font-semibold text-gray-700'>둘이서</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>two people together</span></div><div><span class='font-semibold text-gray-700'>셋이서</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>three people together</span></div></div>"
+    },
+    {
+      "id": "11",
+      "word": "등등",
+      "meaning": "etc. (et cetera), and so on",
+      "type": "부 adverb",
+      "example_ko": "한국의 환경, 경제, 산업 기타 등등에 대해 정리한 자료를 보내 드리겠습니다.",
+      "example_vi": "I will send you documents that include the contents about South Korea’s environment, economy and industry etc.",
+      "extra": ""
+    },
+    {
+      "id": "12",
+      "word": "국내",
+      "meaning": "domestic",
+      "type": "명 noun",
+      "example_ko": "추천할 만한 국내 여행지는 어디입니까?",
+      "example_vi": "Is there any domestic destination that you recommend?",
+      "extra": "<div><span class='font-semibold text-gray-700'>국내외</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>the inside and outside of the country</span></div>"
+    },
+    {
+      "id": "13",
+      "word": "기능",
+      "meaning": "function",
+      "type": "명 noun",
+      "example_ko": "이 컴퓨터에는 새로운 기능이 추가되었다고 합니다.",
+      "example_vi": "They say there is new function added to this computer.",
+      "extra": ""
+    },
+    {
+      "id": "14",
+      "word": "꾸준히",
+      "meaning": "constantly",
+      "type": "부 adverb",
+      "example_ko": "꾸준히 노력하면 언젠가는 합격할 거예요.",
+      "example_vi": "If you constantly try hard, you will pass the test some time or other.",
+      "extra": "<div><span class='font-semibold text-gray-700'>꾸준하다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>constant</span></div>"
+    },
+    {
+      "id": "15",
+      "word": "맛",
+      "meaning": "taste",
+      "type": "명 noun",
+      "example_ko": "국이 다 됐는데, 맛 좀 볼래?",
+      "example_vi": "The soup is ready, want to taste it?",
+      "extra": "",
+      "detailBlocks": [
+        {
+          "type": "tip_combo",
+          "label": "Tip",
+          "question_ko": "맛에는 또 뭐가 있을까요?",
+          "question_vi": "What kind of taste do we have?",
+          "word": "맛",
+          "word_vi": "taste",
+          "items": [
+            {
+              "ko": "단맛",
+              "vi": "sweet"
+            },
+            {
+              "ko": "매운 맛",
+              "vi": "hot"
+            },
+            {
+              "ko": "신맛",
+              "vi": "sour"
+            },
+            {
+              "ko": "짠맛",
+              "vi": "salty"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "16",
+      "word": "신경",
+      "meaning": "nerve",
+      "type": "명 noun",
+      "example_ko": "요즘 너무 바빠서 가족들을 신경 쓸 정신이 없어요.",
+      "example_vi": "I am too busy these days, and do not have any time to pay attention to my family.",
+      "extra": "<div><span class='font-semibold text-gray-700'>신경을 쓰다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>pay attention to</span></div>"
+    },
+    {
+      "id": "17",
+      "word": "심각하다",
+      "meaning": "serious",
+      "type": "형 adjective",
+      "example_ko": "환경 오염이 점점 심각해지고 있다.",
+      "example_vi": "The environmental pollution is becoming more serious than before.",
+      "extra": ""
+    },
+    {
+      "id": "18",
+      "word": "인정하다",
+      "meaning": "appreciate (one’s ability)",
+      "type": "동 verb",
+      "example_ko": "그 사람의 그림을 직접 본다면 실력을 인정할 수밖에 없다.",
+      "example_vi": "If you see his painting in person, you have no choice but to appreciate his ability.",
+      "extra": "<div><span class='font-semibold text-gray-700'>인정받다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>be recognized</span></div>"
+    },
+    {
+      "id": "19",
+      "word": "진행되다",
+      "meaning": "in progress",
+      "type": "동 verb",
+      "example_ko": "아침 9시부터 오후 6시까지 진행된 행사에 많은 사람들이 참여했습니다.",
+      "example_vi": "Many people joined the event that was in progress from 9am to 6pm.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>진행</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>progress</span></div><div><span class='font-semibold text-gray-700'>진행자</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>presenter</span></div><div><span class='font-semibold text-gray-700'>진행하다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>present</span></div></div>"
+    },
+    {
+      "id": "20",
+      "word": "하루",
+      "meaning": "a day",
+      "type": "명 noun",
+      "example_ko": "하루에 물을 7잔 마시면 좋대요.",
+      "example_vi": "It is good for you to drink 7 cups of water a day.",
+      "extra": "<div><span class='font-semibold text-gray-700'>하루종일</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>all day</span></div>"
+    },
+    {
+      "id": "21",
+      "word": "행복하다",
+      "meaning": "be happy",
+      "type": "형 adjective",
+      "example_ko": "사람들은 모두 행복한 삶을 살고 싶어합니다.",
+      "example_vi": "Everyone wants to live happy.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>행복</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>happiness</span></div><div><span class='font-semibold text-gray-700'>불행</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>unhappiness</span></div><div><span class='font-semibold text-gray-700'>행복감</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>euphoria</span></div><div><span class='font-semibold text-gray-700'>불행하다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>unhappy</span></div></div>"
+    },
+    {
+      "id": "22",
+      "word": "적당하다",
+      "meaning": "proper",
+      "type": "형 adjective",
+      "example_ko": "적당한 실내 온도는 20도라고 한다.",
+      "example_vi": "The proper temperature indoors is 20 degree Celsius.",
+      "extra": "<div><span class='font-semibold text-gray-700'>적당히</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>properly</span></div>"
+    },
+    {
+      "id": "23",
+      "word": "정부",
+      "meaning": "administration, government",
+      "type": "명 noun",
+      "example_ko": "이번 정부는 국민들로부터 많은 지지를 받고 있다.",
+      "example_vi": "This administration is getting a great deal of support from the citizens.",
+      "extra": ""
+    },
+    {
+      "id": "24",
+      "word": "내리다",
+      "meaning": "decrease",
+      "type": "동 verb",
+      "example_ko": "주사를 맞자 열이 내렸어요.",
+      "example_vi": "After getting a shot, the temperature decreased.",
+      "extra": ""
+    },
+    {
+      "id": "25",
+      "word": "동료",
+      "meaning": "coworker",
+      "type": "명 noun",
+      "example_ko": "직장 동료들과 좋은 관계를 유지하고 있다.",
+      "example_vi": "I am maintaining a good relationship with the coworkers.",
+      "extra": ""
+    },
+    {
+      "id": "26",
+      "word": "떠나다",
+      "meaning": "leave",
+      "type": "동 verb",
+      "example_ko": "최근 고향을 떠나는 사람들이 많아지고 있다.",
+      "example_vi": "There are many people leaving their hometowns.",
+      "extra": ""
+    },
+    {
+      "id": "27",
+      "word": "그만두다",
+      "meaning": "quit",
+      "type": "동 verb",
+      "example_ko": "다음 달부터 아르바이트를 그만두려고요.",
+      "example_vi": "I am planning to quit the part-time job from next month on.",
+      "extra": "",
+      "detailBlocks": [
+        {
+          "type": "tip_combo",
+          "label": "Tip",
+          "question_ko": "‘그만두다’는 어떤 단어와 같이 사용할까요?",
+          "question_vi": "What kind of word is used together with the word “그만두다(quit)”?",
+          "word": "그만두다",
+          "word_vi": "quit",
+          "items": [
+            {
+              "ko": "회사",
+              "vi": "job"
+            },
+            {
+              "ko": "일",
+              "vi": "work"
+            },
+            {
+              "ko": "학교",
+              "vi": "school"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "28",
+      "word": "무조건",
+      "meaning": "unconditionally",
+      "type": "부 adverb",
+      "example_ko": "무조건 아이를 야단치지 말고 왜 그런 행동을 했는지 물어 보세요.",
+      "example_vi": "Don’t just scold your child, ask why he behaved like he did.",
+      "extra": ""
+    },
+    {
+      "id": "29",
+      "word": "물론",
+      "meaning": "as well as",
+      "type": "부 adverb",
+      "example_ko": "그 사람은 영어는 물론 한국어도 잘해요.",
+      "example_vi": "He speaks fluent Korean as well as English.",
+      "extra": ""
+    },
+    {
+      "id": "30",
+      "word": "바라다",
+      "meaning": "wish",
+      "type": "동 verb",
+      "example_ko": "건강하고 행복하게 지내기를 바랍니다.",
+      "example_vi": "I wish you live happy and healthily.",
+      "extra": "<div><span class='font-semibold text-gray-700'>바람</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>wish</span></div>"
+    },
+    {
+      "id": "31",
+      "word": "발명되다",
+      "meaning": "be invented",
+      "type": "동 verb",
+      "example_ko": "최근에 전기로 가는 자동차가 발명되었다.",
+      "example_vi": "Recently, the automobile that operates by electricity was invented.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>발명</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>invention</span></div><div><span class='font-semibold text-gray-700'>발명품</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>invention</span></div><div><span class='font-semibold text-gray-700'>발명가</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>inventor</span></div></div>"
+    },
+    {
+      "id": "32",
+      "word": "방문",
+      "meaning": "visit",
+      "type": "명 noun",
+      "example_ko": "오늘 오후 3시에 방문이 가능할까요?",
+      "example_vi": "May I visit you at 3 o’clock this afternoon?",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>방문객</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>visitor</span></div><div><span class='font-semibold text-gray-700'>방문하다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>pay a visit</span></div></div>"
+    },
+    {
+      "id": "33",
+      "word": "방송",
+      "meaning": "broadcasting",
+      "type": "명 noun",
+      "example_ko": "어제 라디오 방송에 제 사연이 소개됐어요.",
+      "example_vi": "My story was introduced in the radio broadcasting yesterday.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>방송국</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>broadcasting station</span></div><div><span class='font-semibold text-gray-700'>방송사</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>broadcasting company</span></div><div><span class='font-semibold text-gray-700'>방송인</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>broadcaster</span></div><div><span class='font-semibold text-gray-700'>방송되다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>be broadcasted</span></div></div>"
+    }
+  ],
+  "dict": {
+    "life": "cuộc sống",
+    "characteristic": "tính cách",
+    "habit": "thói quen",
+    "work": "công việc",
+    "dangerous": "nguy hiểm",
+    "children": "con cái",
+    "it is natural to": "tự nhiên",
+    "cure": "điều trị / chữa trị",
+    "together": "cùng nhau",
+    "alone": "một mình",
+    "etc. (et cetera), and so on": "vân vân / v.v.",
+    "domestic": "trong nước",
+    "function": "chức năng",
+    "constantly": "đều đặn / liên tục",
+    "taste": "vị / mùi vị",
+    "nerve": "sự để ý / sự quan tâm",
+    "serious": "nghiêm trọng",
+    "appreciate (one’s ability)": "công nhận / đánh giá năng lực",
+    "in progress": "đang tiến hành",
+    "a day": "một ngày",
+    "be happy": "hạnh phúc",
+    "proper": "phù hợp / thích hợp",
+    "administration, government": "chính phủ / cơ quan hành chính",
+    "decrease": "hạ xuống / giảm",
+    "coworker": "đồng nghiệp",
+    "leave": "rời đi",
+    "quit": "nghỉ / bỏ",
+    "unconditionally": "vô điều kiện",
+    "as well as": "đương nhiên / cũng như",
+    "wish": "mong / mong muốn",
+    "be invented": "được phát minh",
+    "visit": "thăm / ghé thăm",
+    "broadcasting": "phát sóng / chương trình phát sóng",
+    "live": "sống",
+    "have a good personality": "có tính cách tốt",
+    "it is one's characteristic": "có tính cách tốt",
+    "job description": "nội dung công việc",
+    "office time": "giờ làm việc",
+    "danger": "nguy hiểm",
+    "dangerousness": "tính nguy hiểm",
+    "This word often appears in questions related to education.": "Từ này thường xuất hiện trong câu hỏi liên quan đến giáo dục.",
+    "how this word appears in the test": "cách từ này xuất hiện trong đề thi",
+    "It often appears in passages about education, relationships between parents and children, admission issues, youth problems, and improper child education.": "Từ này thường xuất hiện trong các bài về giáo dục, quan hệ cha mẹ và con cái, vấn đề thi cử, vấn đề thanh thiếu niên và cách giáo dục con chưa đúng.",
+    "natural": "tự nhiên",
+    "natural phenomenon": "hiện tượng tự nhiên",
+    "treatment": "việc điều trị / chữa trị",
+    "two people together": "hai người cùng nhau",
+    "three people together": "ba người cùng nhau",
+    "the inside and outside of the country": "trong và ngoài nước",
+    "constant": "đều đặn / liên tục",
+    "sweet": "vị ngọt",
+    "hot": "vị cay",
+    "sour": "vị chua",
+    "salty": "vị mặn",
+    "What kind of taste do we have?": "Có những vị nào?",
+    "pay attention to": "để ý / quan tâm đến",
+    "be recognized": "được công nhận",
+    "progress": "tiến hành / tiến triển",
+    "presenter": "người dẫn chương trình",
+    "present": "dẫn chương trình / trình bày",
+    "all day": "cả ngày",
+    "happiness": "hạnh phúc",
+    "unhappiness": "bất hạnh",
+    "euphoria": "cảm giác hạnh phúc",
+    "unhappy": "bất hạnh / không hạnh phúc",
+    "properly": "đúng cách / đúng mức",
+    "What kind of word is used together with the word “그만두다(quit)”?": "‘그만두다’ thường dùng với từ nào?",
+    "job": "công việc / công ty",
+    "school": "trường học",
+    "invention": "sự phát minh / phát minh",
+    "inventor": "nhà phát minh",
+    "visitor": "khách thăm",
+    "pay a visit": "đến thăm",
+    "broadcasting station": "đài phát thanh/truyền hình",
+    "broadcasting company": "công ty phát sóng",
+    "broadcaster": "người phát thanh / người làm truyền hình",
+    "be broadcasted": "được phát sóng",
+    "You should deeply think about what is the most important thing in our life.": "Bạn nên suy nghĩ sâu sắc xem điều quan trọng nhất trong cuộc sống của chúng ta là gì.",
+    "He has a good characteristic and has many friends.": "Người đó có tính cách tốt nên có nhiều bạn.",
+    "It is important to develop a good habit when you are young.": "Việc hình thành thói quen tốt từ khi còn nhỏ rất quan trọng.",
+    "Recently, he is overly busy with his work.": "Dạo này người đó bận tối mắt vì công việc ở công ty.",
+    "It is dangerous for children to swim in this area since it is too deep.": "Chỗ này sâu nên trẻ em bơi ở đây rất nguy hiểm.",
+    "Too much expectation of the parents to their children rather harms their children.": "Kỳ vọng quá lớn của cha mẹ đối với con cái ngược lại có thể làm hại con cái.",
+    "Practicing to speak naturally is essential when you learn a foreign language.": "Khi học ngoại ngữ, việc luyện nói sao cho tự nhiên là cần thiết.",
+    "You should go for treatment when your teeth are a little bit rotten.": "Khi răng mới hơi bị sâu thì phải nhanh chóng điều trị.",
+    "I went to the theater with my friends.": "Tôi đã đi rạp hát cùng bạn bè.",
+    "It does not taste good when you eat alone.": "Ăn cơm một mình thì không ngon.",
+    "I will send you documents that include the contents about South Korea’s environment, economy and industry etc.": "Tôi sẽ gửi tài liệu có nội dung về môi trường, kinh tế, công nghiệp v.v. của Hàn Quốc.",
+    "Is there any domestic destination that you recommend?": "Có địa điểm du lịch trong nước nào đáng giới thiệu không?",
+    "They say there is new function added to this computer.": "Nghe nói máy tính này đã được thêm chức năng mới.",
+    "If you constantly try hard, you will pass the test some time or other.": "Nếu kiên trì nỗ lực thì rồi một ngày nào đó bạn sẽ đỗ.",
+    "The soup is ready, want to taste it?": "Canh đã nấu xong rồi, bạn nếm thử không?",
+    "I am too busy these days, and do not have any time to pay attention to my family.": "Dạo này tôi quá bận nên không còn thời gian để quan tâm đến gia đình.",
+    "The environmental pollution is becoming more serious than before.": "Ô nhiễm môi trường đang ngày càng trở nên nghiêm trọng.",
+    "If you see his painting in person, you have no choice but to appreciate his ability.": "Nếu trực tiếp xem tranh của người đó, bạn sẽ không thể không công nhận thực lực của anh ấy.",
+    "Many people joined the event that was in progress from 9am to 6pm.": "Nhiều người đã tham gia sự kiện diễn ra từ 9 giờ sáng đến 6 giờ chiều.",
+    "It is good for you to drink 7 cups of water a day.": "Mỗi ngày uống 7 cốc nước thì tốt.",
+    "Everyone wants to live happy.": "Mọi người đều muốn sống hạnh phúc.",
+    "The proper temperature indoors is 20 degree Celsius.": "Nhiệt độ thích hợp trong phòng là 20 độ C.",
+    "This administration is getting a great deal of support from the citizens.": "Chính phủ này đang nhận được sự ủng hộ lớn từ người dân.",
+    "After getting a shot, the temperature decreased.": "Sau khi tiêm, cơn sốt đã hạ.",
+    "I am maintaining a good relationship with the coworkers.": "Tôi đang duy trì mối quan hệ tốt với đồng nghiệp.",
+    "There are many people leaving their hometowns.": "Gần đây có nhiều người rời quê hương.",
+    "I am planning to quit the part-time job from next month on.": "Từ tháng sau tôi định nghỉ việc làm thêm.",
+    "Don’t just scold your child, ask why he behaved like he did.": "Đừng chỉ la mắng trẻ vô điều kiện, hãy hỏi vì sao trẻ cư xử như vậy.",
+    "He speaks fluent Korean as well as English.": "Người đó nói tiếng Hàn trôi chảy chẳng kém gì tiếng Anh.",
+    "I wish you live happy and healthily.": "Tôi mong bạn sống khỏe mạnh và hạnh phúc.",
+    "Recently, the automobile that operates by electricity was invented.": "Gần đây ô tô chạy bằng điện đã được phát minh.",
+    "May I visit you at 3 o’clock this afternoon?": "Chiều nay 3 giờ tôi có thể đến thăm anh/chị được không?",
+    "My story was introduced in the radio broadcasting yesterday.": "Câu chuyện của tôi đã được giới thiệu trên chương trình radio hôm qua.",
+    "Words that are easy to confuse in TOPIK": "Những từ dễ nhầm lẫn trong TOPIK",
+    "Polysemy": "Từ đa nghĩa",
+    "Antonym": "Từ trái nghĩa",
+    "Synonym": "Từ đồng nghĩa",
+    "be introduced": "được giới thiệu / ra mắt",
+    "appear": "xuất hiện",
+    "attend": "tham dự đều đặn",
+    "come out": "phát ra / ra ngoài",
+    "emit": "phát ra",
+    "The new model will be introduced soon, so wait a while then buy it.": "Mẫu mới sắp ra mắt, nên hãy đợi thêm một chút rồi mua.",
+    "The commercials always appear before the movie starts.": "Quảng cáo luôn xuất hiện trước khi phim bắt đầu.",
+    "It is less than 10 people who constantly attend the meetings.": "Số người không vắng mặt và luôn tham dự buổi họp chưa đến 10 người.",
+    "After working hard for the past several days, I lost my voice.": "Do dùng giọng quá sức mấy ngày qua nên từ hôm qua giọng tôi không phát ra được.",
+    "The electromagnetic waves emit from the microwaves, so don’t stand before it.": "Lò vi sóng phát ra sóng điện từ nên đừng đứng trước nó.",
+    "precious": "quý giá",
+    "common": "thường gặp / phổ biến",
+    "finally (at last)": "cuối cùng",
+    "discuss": "thảo luận / bàn bạc",
+    "If my kid is precious, then other people’s kid is also precious.": "Nếu con mình quý giá thì con người khác cũng quý giá.",
+    "The mostly common name in the 1975 was Mi Young.": "Tên nữ phổ biến nhất năm 1975 là Mi Young.",
+    "The result of the university test has finally been announced.": "Kết quả kỳ thi đại học được chờ đợi cuối cùng cũng đã được công bố.",
+    "Write Korean in English, and English in Korean.": "Hãy viết từ tiếng Hàn sang tiếng Việt, và từ tiếng Việt sang tiếng Hàn.",
+    "Connect the Korean words with the English words of same meaning.": "Hãy nối từ tiếng Hàn với từ tiếng Anh có cùng nghĩa.",
+    "Pick the suitable word among the options in the blank space.": "Hãy chọn từ phù hợp trong các lựa chọn vào chỗ trống.",
+    "naturally": "một cách tự nhiên"
+  }
+}

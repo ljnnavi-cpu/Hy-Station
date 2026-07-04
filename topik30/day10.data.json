@@ -1,0 +1,581 @@
+{
+  "day": 10,
+  "vocabData": [
+    {
+      "id": "01",
+      "word": "제출하다",
+      "meaning": "submit",
+      "type": "동 verb",
+      "example_ko": "입학 관련 서류를 내일까지 제출해 주세요.",
+      "example_vi": "Please submit your admission document by tomorrow.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>제출</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>submission</span></div><div><span class='font-semibold text-gray-700'>제출시기</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>the deadline for the document</span></div></div>",
+      "highlight_terms": [
+        "제출해"
+      ]
+    },
+    {
+      "id": "02",
+      "word": "지속되다",
+      "meaning": "continue",
+      "type": "동 verb",
+      "example_ko": "당분간 장마가 지속될 것 같네요.",
+      "example_vi": "The monsoon will continue for a while.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>지속</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>continue</span></div><div><span class='font-semibold text-gray-700'>지속적</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>continuous</span></div></div>",
+      "highlight_terms": [
+        "지속될"
+      ]
+    },
+    {
+      "id": "03",
+      "word": "집중하다",
+      "meaning": "concentrate (on)",
+      "type": "동 verb",
+      "example_ko": "짧은 시간이라도 집중해서 공부하는 것이 효과적입니다.",
+      "example_vi": "It is effective for you to concentrate on your study even though it is for a short period of time.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>집중</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>concentration</span></div><div><span class='font-semibold text-gray-700'>집중되다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>be concentrated in</span></div></div>",
+      "highlight_terms": [
+        "집중해서"
+      ]
+    },
+    {
+      "id": "04",
+      "word": "체험하다",
+      "meaning": "experience",
+      "type": "동 verb",
+      "example_ko": "한국의 전통 시골집을 체험하러 가본 적이 있으세요?",
+      "example_vi": "What does it feel like to experience Korea’s traditional cottage?",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>체험</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>experience</span></div><div><span class='font-semibold text-gray-700'>체험비</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>experience fee</span></div><div><span class='font-semibold text-gray-700'>체험학습</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>learning by experience</span></div></div>",
+      "highlight_terms": [
+        "체험하러"
+      ]
+    },
+    {
+      "id": "05",
+      "word": "최선",
+      "meaning": "do one’s best",
+      "type": "명 noun",
+      "example_ko": "우리가 할 수 있는 최선을 다하겠습니다.",
+      "example_vi": "We will do the best we can.",
+      "extra": "",
+      "highlight_terms": [
+        "최선"
+      ]
+    },
+    {
+      "id": "06",
+      "word": "평소",
+      "meaning": "usual",
+      "type": "명 noun",
+      "example_ko": "오늘은 차가 많아서 평소보다 시간이 더 걸렸어요.",
+      "example_vi": "It took more time today since there were much more cars in the street than usual.",
+      "extra": "",
+      "highlight_terms": [
+        "평소"
+      ]
+    },
+    {
+      "id": "07",
+      "word": "학습하다",
+      "meaning": "learn",
+      "type": "동 verb",
+      "example_ko": "한국의 문화를 학습하고자 박물관에 갔습니다.",
+      "example_vi": "We paid a visit to the museums to learn Korean culture.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>학습</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>learn</span></div><div><span class='font-semibold text-gray-700'>학습능력</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>learning ability</span></div><div><span class='font-semibold text-gray-700'>학습자</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>learner</span></div></div>",
+      "highlight_terms": [
+        "학습하고자"
+      ]
+    },
+    {
+      "id": "08",
+      "word": "고객",
+      "meaning": "customer",
+      "type": "명 noun",
+      "example_ko": "고객의 입장에서 다시 한번 생각해 주십시오.",
+      "example_vi": "Please rethink the issue from the position of the customer.",
+      "extra": "<div><span class='font-semibold text-gray-700'>고객센터</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>customer service center</span></div>",
+      "highlight_terms": [
+        "고객"
+      ]
+    },
+    {
+      "id": "09",
+      "word": "고려하다",
+      "meaning": "consider",
+      "type": "동 verb",
+      "example_ko": "여러 가지로 고려했어야 했는데 그렇게 못해서 죄송합니다.",
+      "example_vi": "I should have considered the issue from various points of view. I apologize for not doing that.",
+      "extra": "",
+      "highlight_terms": [
+        "고려했어야"
+      ]
+    },
+    {
+      "id": "10",
+      "word": "고장나다",
+      "meaning": "break",
+      "type": "동 verb",
+      "example_ko": "컴퓨터가 고장나서 자료를 모두 날렸어요.",
+      "example_vi": "My computer crashed and all of my files were gone.",
+      "extra": "",
+      "highlight_terms": [
+        "고장나서"
+      ]
+    },
+    {
+      "id": "11",
+      "word": "교환",
+      "meaning": "exchange",
+      "type": "명 noun",
+      "example_ko": "교환 학생들을 위한 다양한 프로그램이 필요합니다.",
+      "example_vi": "We need various kinds of programs for the exchange students.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>교환하다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>exchange</span></div><div><span class='font-semibold text-gray-700'>환불</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>refund</span></div></div>",
+      "highlight_terms": [
+        "교환"
+      ]
+    },
+    {
+      "id": "12",
+      "word": "그냥",
+      "meaning": "just",
+      "type": "부 adverb",
+      "example_ko": "주말에 특별한 일이 없어서 그냥 집에 있었어요.",
+      "example_vi": "I had no special plans for the weekend so I just stayed home.",
+      "extra": "",
+      "highlight_terms": [
+        "그냥"
+      ]
+    },
+    {
+      "id": "13",
+      "word": "기술",
+      "meaning": "technology",
+      "type": "명 noun",
+      "example_ko": "한국은 IT 기술이 발달된 나라입니다.",
+      "example_vi": "Korea is a country with high Information Technology (IT).",
+      "extra": "<div><span class='font-semibold text-gray-700'>기술적</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>technical</span></div>",
+      "highlight_terms": [
+        "기술"
+      ]
+    },
+    {
+      "id": "14",
+      "word": "나중에",
+      "meaning": "afterward",
+      "type": "부 adverb",
+      "example_ko": "나중에 자세히 말씀드릴게요.",
+      "example_vi": "I will tell you the details afterward.",
+      "extra": "",
+      "highlight_terms": [
+        "나중에"
+      ]
+    },
+    {
+      "id": "15",
+      "word": "드러내다",
+      "meaning": "reveal",
+      "type": "동 verb",
+      "example_ko": "민호 씨는 자신의 감정을 드러내는 경우가 별로 없는 것 같아요.",
+      "example_vi": "It seems that Minho rarely reveals his inner feelings.",
+      "extra": "<div><span class='font-semibold text-gray-700'>드러나다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>be revealed</span></div>",
+      "highlight_terms": [
+        "드러내는"
+      ]
+    },
+    {
+      "id": "16",
+      "word": "디자인",
+      "meaning": "design",
+      "type": "명 noun",
+      "example_ko": "전자제품을 살 때 기능만큼이나 디자인도 많이 봐요.",
+      "example_vi": "When purchasing an electronic product, I consider the product’s design as much as its function.",
+      "extra": "",
+      "highlight_terms": [
+        "디자인"
+      ]
+    },
+    {
+      "id": "17",
+      "word": "마찬가지",
+      "meaning": "as ~ as",
+      "type": "명 noun",
+      "example_ko": "어머니와 마찬가지로 아버지의 역할도 중요합니다.",
+      "example_vi": "The father’s role is as important as that of the mother’s.",
+      "extra": "",
+      "highlight_terms": [
+        "마찬가지로"
+      ]
+    },
+    {
+      "id": "18",
+      "word": "초대하다",
+      "meaning": "invite",
+      "type": "동 verb",
+      "example_ko": "결혼식에 초대할 사람들은 결정했어요?",
+      "example_vi": "Have you decided who to invite to the wedding?",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>초대</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>invitation</span></div><div><span class='font-semibold text-gray-700'>초대장</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>invitation</span></div></div>",
+      "highlight_terms": [
+        "초대할"
+      ]
+    },
+    {
+      "id": "19",
+      "word": "목표",
+      "meaning": "goal",
+      "type": "명 noun",
+      "example_ko": "저는 금메달을 목표로 올림픽에 참가했습니다.",
+      "example_vi": "I have participated in this Olympics with a goal to win the gold medal.",
+      "extra": "<div><span class='font-semibold text-gray-700'>목표를 세우다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>set a goal</span></div>",
+      "highlight_terms": [
+        "목표로"
+      ]
+    },
+    {
+      "id": "20",
+      "word": "방해하다",
+      "meaning": "bother",
+      "type": "동 verb",
+      "example_ko": "공부를 하려고 하는데 동생이 방해했다.",
+      "example_vi": "I was trying to study, but my brother bothered me.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>방해</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>bother</span></div><div><span class='font-semibold text-gray-700'>방해가 되다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>get in the way</span></div></div>",
+      "highlight_terms": [
+        "방해했다"
+      ]
+    },
+    {
+      "id": "21",
+      "word": "보내다",
+      "meaning": "send",
+      "type": "동 verb",
+      "example_ko": "제가 부탁한 자료를 내일까지 이메일로 보내 주세요.",
+      "example_vi": "Please send me the files that I have asked for via e-mail by tomorrow.",
+      "extra": "",
+      "highlight_terms": [
+        "보내"
+      ]
+    },
+    {
+      "id": "22",
+      "word": "빌리다",
+      "meaning": "borrow",
+      "type": "동 verb",
+      "example_ko": "도서관에서 빌린 책을 오늘까지 갖다 줘야 한다.",
+      "example_vi": "I have to return the book that I have borrowed from the library by today.",
+      "extra": "<div><span class='font-semibold text-gray-700'>빌려 주다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>lend</span></div>",
+      "highlight_terms": [
+        "빌린"
+      ]
+    },
+    {
+      "id": "23",
+      "word": "설문조사",
+      "meaning": "survey",
+      "type": "명 noun",
+      "example_ko": "기업 선호도에 대한 설문조사를 실시하였다.",
+      "example_vi": "We carried out a survey to get information about the preference that customers have for the firm.",
+      "extra": "<div><span class='font-semibold text-gray-700'>설문</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>survey</span></div>",
+      "detailBlocks": [
+        {
+          "type": "test_note",
+          "label_ko": "출제 경향",
+          "label_vi": "how this word appears in the test",
+          "title_ko": "쓰기 영역에서는 ‘설문조사’의 결과를 서술하는 문제가 항상 출제되고 있습니다.",
+          "title_vi": "Questions that ask about the result of a survey frequently appear in the writing section.",
+          "body_ko": "‘N을/를 대상으로’, ‘N을/를 조사하다’, ‘N(으)로 나타나다’ 같은 표현이 함께 자주 나옵니다.",
+          "body_vi": "Study survey-related expressions such as “targeting N,” “investigate N,” and “appear as N” together.",
+          "tags": [
+            {
+              "ko": "N을/를 대상으로",
+              "en": "targeting N"
+            },
+            {
+              "ko": "N을/를 조사하다",
+              "en": "investigate N"
+            },
+            {
+              "ko": "N(으)로 나타나다",
+              "en": "appear as N"
+            },
+            {
+              "ko": "비율 / 평균 / 증가율",
+              "en": "rate / average / increasing rate"
+            }
+          ]
+        }
+      ],
+      "highlight_terms": [
+        "설문조사"
+      ]
+    },
+    {
+      "id": "24",
+      "word": "사건",
+      "meaning": "incident, case",
+      "type": "명 noun",
+      "example_ko": "올해는 나에게 여러 가지 사건이 일어나서 정신이 없다.",
+      "example_vi": "Many incidents have happened to me this year and it drove me out of my mind.",
+      "extra": "",
+      "highlight_terms": [
+        "사건"
+      ]
+    },
+    {
+      "id": "25",
+      "word": "실패하다",
+      "meaning": "fail",
+      "type": "동 verb",
+      "example_ko": "이번 시험에서 또 실패했지만 절대로 포기하지 않을 거예요.",
+      "example_vi": "I have failed this test again, but I will never give up.",
+      "extra": "<div><span class='font-semibold text-gray-700'>실패</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>failure</span></div>",
+      "highlight_terms": [
+        "실패했지만"
+      ]
+    },
+    {
+      "id": "26",
+      "word": "실험",
+      "meaning": "experiment",
+      "type": "명 noun",
+      "example_ko": "이번 실험은 위험해서 안전에 대한 준비를 많이 해야 한다.",
+      "example_vi": "This experiment is dangerous. Therefore there should be many preparation on safety.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>실험실</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>experiment lab</span></div><div><span class='font-semibold text-gray-700'>실험하다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>perform an experiment</span></div></div>",
+      "highlight_terms": [
+        "실험"
+      ]
+    },
+    {
+      "id": "27",
+      "word": "아무리",
+      "meaning": "no matter",
+      "type": "부 adverb",
+      "example_ko": "아무리 힘들어도 나는 끝까지 이 일을 할 것이다.",
+      "example_vi": "I will finish this work no matter how hard it is.",
+      "extra": "",
+      "highlight_terms": [
+        "아무리"
+      ]
+    },
+    {
+      "id": "28",
+      "word": "아이디어",
+      "meaning": "idea",
+      "type": "명 noun",
+      "example_ko": "새로운 상품 광고에 대한 좋은 아이디어가 있으면 말씀해 주세요.",
+      "example_vi": "If you have any good idea for the new product commercial, please let me know.",
+      "extra": "",
+      "highlight_terms": [
+        "아이디어가"
+      ]
+    },
+    {
+      "id": "29",
+      "word": "안타깝다",
+      "meaning": "feel sorry for",
+      "type": "형 adjective",
+      "example_ko": "그 친구는 열심히 노력하지만 항상 실패해서 참 안타까워요.",
+      "example_vi": "I feel sorry for him always failing even though he tries his best all the time.",
+      "extra": "",
+      "highlight_terms": [
+        "안타까워요"
+      ]
+    },
+    {
+      "id": "30",
+      "word": "알아보다",
+      "meaning": "recognize",
+      "type": "동 verb",
+      "example_ko": "오랜만에 친구를 만났는데 많이 달라져서 처음에는 못 알아봤다.",
+      "example_vi": "I met my friend after a long time, and I could not recognize him at first because he looked so different.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>알아내다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>find out</span></div><div><span class='font-semibold text-gray-700'>알아차리다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>realize</span></div></div>",
+      "highlight_terms": [
+        "알아봤다"
+      ]
+    },
+    {
+      "id": "31",
+      "word": "연결되다",
+      "meaning": "be connected",
+      "type": "동 verb",
+      "example_ko": "컴퓨터 선이 잘 연결되어 있나요?",
+      "example_vi": "Is the computer line well connected?",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>연결</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>connection</span></div><div><span class='font-semibold text-gray-700'>연결하다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>connect</span></div><div><span class='font-semibold text-gray-700'>연결시키다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>get something connected to</span></div></div>",
+      "highlight_terms": [
+        "연결되어"
+      ]
+    },
+    {
+      "id": "32",
+      "word": "예",
+      "meaning": "example",
+      "type": "명 noun",
+      "example_ko": "잘 이해가 안 되니까 예를 들어 설명해 주세요.",
+      "example_vi": "Please give an example since I do not understand.",
+      "extra": "",
+      "highlight_terms": [
+        "예를 들어"
+      ]
+    },
+    {
+      "id": "33",
+      "word": "변하다",
+      "meaning": "change",
+      "type": "동 verb",
+      "example_ko": "5년 만에 대학교 때 친구를 만났는데 모습이 많이 변했더라고요.",
+      "example_vi": "I met my friend from college in 5 years, and his appearance was changed a lot.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>변함없이</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>as always</span></div><div><span class='font-semibold text-gray-700'>변함이 없다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>have no change</span></div></div>",
+      "detailBlocks": [
+        {
+          "type": "tip_note",
+          "label": "Tip",
+          "question_ko": "‘변함없이’와 ‘그대로’는 어떤 차이가 있을까요?",
+          "question_vi": "What is the difference between “변함없이(as always)” and “그대로(as it is)”?",
+          "body_ko": "‘변함없이’는 긴 시간 동안 변하지 않았을 때 사용하고, ‘그대로’는 비교적 짧은 시간 동안 변화가 없을 때 사용합니다.",
+          "body_vi": "Use “변함없이” when something has not changed for a long time. Use “그대로” when there is no change for a relatively short time.",
+          "examples": [
+            {
+              "ko": "이 다리는 300년 동안 변함없이 튼튼하고 있대요.",
+              "en": "This bridge has remained strong without change for 300 years."
+            },
+            {
+              "ko": "여기서 사진을 찍을 거니까 그대로 있어요.",
+              "en": "I will take a picture, so stay as you are."
+            }
+          ]
+        }
+      ],
+      "highlight_terms": [
+        "변했더라고요"
+      ]
+    }
+  ],
+  "dict": {
+    "submit": "nộp / trình",
+    "continue": "tiếp tục / kéo dài",
+    "concentrate (on)": "tập trung vào",
+    "experience": "trải nghiệm / kinh nghiệm",
+    "do one’s best": "cố gắng hết sức",
+    "usual": "bình thường / thường ngày",
+    "learn": "học / học tập",
+    "customer": "khách hàng",
+    "consider": "cân nhắc / xem xét",
+    "break": "hỏng / bị hỏng",
+    "exchange": "trao đổi / đổi",
+    "just": "chỉ / cứ thế",
+    "technology": "kỹ thuật / công nghệ",
+    "afterward": "sau đó / lát nữa",
+    "reveal": "bộc lộ / để lộ",
+    "design": "thiết kế",
+    "as ~ as": "giống như / cũng như",
+    "invite": "mời",
+    "goal": "mục tiêu",
+    "bother": "làm phiền / cản trở",
+    "send": "gửi",
+    "borrow": "mượn",
+    "survey": "khảo sát / điều tra",
+    "incident, case": "sự kiện / vụ việc",
+    "fail": "thất bại / trượt",
+    "experiment": "thí nghiệm",
+    "no matter": "dù thế nào / cho dù",
+    "idea": "ý tưởng",
+    "feel sorry for": "thấy tiếc / đáng tiếc",
+    "recognize": "nhận ra",
+    "be connected": "được nối / được kết nối",
+    "example": "ví dụ",
+    "change": "thay đổi",
+    "submission": "việc nộp",
+    "the deadline for the document": "hạn nộp hồ sơ",
+    "continuous": "mang tính liên tục",
+    "concentration": "sự tập trung",
+    "be concentrated in": "được tập trung vào",
+    "experience fee": "phí trải nghiệm",
+    "learning by experience": "học qua trải nghiệm",
+    "learning ability": "năng lực học tập",
+    "learner": "người học",
+    "customer service center": "trung tâm chăm sóc khách hàng",
+    "refund": "hoàn tiền",
+    "technical": "mang tính kỹ thuật",
+    "be revealed": "được bộc lộ / lộ ra",
+    "invitation": "lời mời / thiệp mời",
+    "set a goal": "đặt mục tiêu",
+    "get in the way": "gây cản trở",
+    "lend": "cho mượn",
+    "how this word appears in the test": "cách từ này xuất hiện trong đề thi",
+    "Questions that ask about the result of a survey frequently appear in the writing section.": "Các câu hỏi yêu cầu trình bày kết quả khảo sát thường xuất hiện trong phần viết.",
+    "Study survey-related expressions such as “targeting N,” “investigate N,” and “appear as N” together.": "Hãy học cùng các cách diễn đạt liên quan đến khảo sát như “nhắm vào N”, “khảo sát N” và “xuất hiện là N”.",
+    "targeting N": "nhắm vào / đối tượng là N",
+    "investigate N": "khảo sát / điều tra N",
+    "appear as N": "xuất hiện dưới dạng N",
+    "rate / average / increasing rate": "tỉ lệ / trung bình / tỉ lệ tăng",
+    "failure": "sự thất bại",
+    "experiment lab": "phòng thí nghiệm",
+    "perform an experiment": "tiến hành thí nghiệm",
+    "find out": "tìm ra / phát hiện",
+    "realize": "nhận ra",
+    "connection": "sự kết nối",
+    "connect": "kết nối / nối",
+    "get something connected to": "làm cho được kết nối",
+    "as always": "như mọi khi / không đổi",
+    "have no change": "không thay đổi",
+    "What is the difference between “변함없이(as always)” and “그대로(as it is)”?": "‘변함없이’ và ‘그대로’ khác nhau như thế nào?",
+    "Use “변함없이” when something has not changed for a long time. Use “그대로” when there is no change for a relatively short time.": "Dùng “변함없이” khi một trạng thái không thay đổi trong thời gian dài. Dùng “그대로” khi trạng thái không thay đổi trong thời gian tương đối ngắn.",
+    "This bridge has remained strong without change for 300 years.": "Cây cầu này nghe nói vẫn vững chắc không đổi suốt 300 năm.",
+    "I will take a picture, so stay as you are.": "Tôi sẽ chụp ảnh nên cứ đứng/ngồi yên như vậy nhé.",
+    "Please submit your admission document by tomorrow.": "Hãy nộp hồ sơ nhập học trước ngày mai.",
+    "The monsoon will continue for a while.": "Có vẻ mùa mưa sẽ tiếp tục trong một thời gian.",
+    "It is effective for you to concentrate on your study even though it is for a short period of time.": "Dù chỉ trong thời gian ngắn, việc tập trung học cũng rất hiệu quả.",
+    "What does it feel like to experience Korea’s traditional cottage?": "Bạn đã từng đi trải nghiệm nhà nông thôn truyền thống của Hàn Quốc chưa?",
+    "We will do the best we can.": "Chúng tôi sẽ cố gắng hết sức có thể.",
+    "It took more time today since there were much more cars in the street than usual.": "Hôm nay xe đông nên mất nhiều thời gian hơn bình thường.",
+    "We paid a visit to the museums to learn Korean culture.": "Chúng tôi đã đến bảo tàng để học về văn hóa Hàn Quốc.",
+    "Please rethink the issue from the position of the customer.": "Xin hãy suy nghĩ lại từ lập trường của khách hàng.",
+    "I should have considered the issue from various points of view. I apologize for not doing that.": "Lẽ ra tôi phải cân nhắc từ nhiều góc độ, nhưng vì không làm được nên xin lỗi.",
+    "My computer crashed and all of my files were gone.": "Máy tính bị hỏng nên toàn bộ tài liệu của tôi đã mất.",
+    "We need various kinds of programs for the exchange students.": "Cần nhiều chương trình đa dạng dành cho sinh viên trao đổi.",
+    "I had no special plans for the weekend so I just stayed home.": "Cuối tuần tôi không có việc gì đặc biệt nên chỉ ở nhà.",
+    "Korea is a country with high Information Technology (IT).": "Hàn Quốc là quốc gia có công nghệ thông tin phát triển.",
+    "I will tell you the details afterward.": "Sau đó tôi sẽ nói chi tiết.",
+    "It seems that Minho rarely reveals his inner feelings.": "Có vẻ Minho hiếm khi bộc lộ cảm xúc của mình.",
+    "When purchasing an electronic product, I consider the product’s design as much as its function.": "Khi mua đồ điện tử, tôi xem thiết kế nhiều chẳng kém chức năng.",
+    "The father’s role is as important as that of the mother’s.": "Vai trò của người cha cũng quan trọng giống như vai trò của người mẹ.",
+    "Have you decided who to invite to the wedding?": "Bạn đã quyết định sẽ mời ai đến lễ cưới chưa?",
+    "I have participated in this Olympics with a goal to win the gold medal.": "Tôi đã tham gia Olympic với mục tiêu giành huy chương vàng.",
+    "I was trying to study, but my brother bothered me.": "Tôi đang định học thì em trai làm phiền.",
+    "Please send me the files that I have asked for via e-mail by tomorrow.": "Hãy gửi tài liệu tôi đã nhờ qua email trước ngày mai.",
+    "I have to return the book that I have borrowed from the library by today.": "Tôi phải đem trả cuốn sách đã mượn ở thư viện trước hôm nay.",
+    "We carried out a survey to get information about the preference that customers have for the firm.": "Chúng tôi đã tiến hành khảo sát về mức độ yêu thích doanh nghiệp của khách hàng.",
+    "Many incidents have happened to me this year and it drove me out of my mind.": "Năm nay nhiều chuyện xảy ra với tôi nên đầu óc rất rối.",
+    "I have failed this test again, but I will never give up.": "Dù lần này lại thi trượt, tôi tuyệt đối sẽ không bỏ cuộc.",
+    "This experiment is dangerous. Therefore there should be many preparation on safety.": "Thí nghiệm lần này nguy hiểm nên cần chuẩn bị nhiều về an toàn.",
+    "I will finish this work no matter how hard it is.": "Dù vất vả đến đâu, tôi cũng sẽ làm việc này đến cùng.",
+    "If you have any good idea for the new product commercial, please let me know.": "Nếu có ý tưởng hay cho quảng cáo sản phẩm mới, hãy nói cho tôi biết.",
+    "I feel sorry for him always failing even though he tries his best all the time.": "Bạn ấy luôn nỗ lực chăm chỉ nhưng cứ thất bại nên tôi rất thấy tiếc.",
+    "I met my friend after a long time, and I could not recognize him at first because he looked so different.": "Lâu rồi mới gặp bạn, nhưng vì bạn ấy thay đổi nhiều nên ban đầu tôi không nhận ra.",
+    "Is the computer line well connected?": "Dây máy tính đã được kết nối tốt chưa?",
+    "Please give an example since I do not understand.": "Tôi không hiểu rõ, hãy giải thích bằng ví dụ.",
+    "I met my friend from college in 5 years, and his appearance was changed a lot.": "Sau 5 năm tôi gặp lại bạn thời đại học, và diện mạo của bạn ấy đã thay đổi rất nhiều.",
+    "Words that are easy to confuse in TOPIK": "Những từ dễ nhầm lẫn trong TOPIK",
+    "Polysemy": "Từ đa nghĩa",
+    "Antonym": "Từ trái nghĩa",
+    "Synonym": "Từ đồng nghĩa",
+    "rise": "mọc / nổi lên",
+    "knit": "đan",
+    "I want to see the sunrise with you on the New Year’s Day.": "Tôi muốn cùng bạn ngắm mặt trời mọc vào ngày đầu năm mới.",
+    "I knitted gloves and a muffler for the Christmas gifts.": "Tôi đã đan găng tay và khăn quàng cổ làm quà Giáng sinh.",
+    "rare, unusual": "hiếm / ít gặp",
+    "common": "phổ biến / thường gặp",
+    "It is hard to find a man who is as honest as he is.": "Thật khó tìm được người ngay thẳng như người đó.",
+    "Rocks are the most common thing in Jeju.": "Ở Jeju, đá là thứ phổ biến nhất.",
+    "suddenly": "đột nhiên / bỗng nhiên",
+    "all of a sudden": "bỗng nhiên / chợt",
+    "While walking around, I suddenly missed my friend from high school.": "Đang đi dạo, tôi bỗng nhớ người bạn cũ thời trung học.",
+    "Write Korean in English, and English in Korean.": "Hãy viết từ tiếng Hàn sang tiếng Việt, và từ tiếng Việt sang tiếng Hàn.",
+    "Connect the Korean words with the English words of same meaning.": "Hãy nối từ tiếng Hàn với nghĩa tiếng Việt tương ứng.",
+    "Pick and write the suitable word among the options in the blank space.": "Hãy chọn từ phù hợp trong các lựa chọn để điền vào chỗ trống.",
+    "a. customer": "a. khách hàng",
+    "b. exchange": "b. trao đổi / đổi",
+    "c. bother": "c. làm phiền / cản trở",
+    "d. continue": "d. tiếp tục / kéo dài",
+    "e. experiment": "e. thí nghiệm",
+    "f. experience": "f. trải nghiệm",
+    "g. be connected": "g. được kết nối"
+  }
+}

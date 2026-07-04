@@ -1,0 +1,645 @@
+{
+  "day": 7,
+  "vocabData": [
+    {
+      "id": "01",
+      "word": "붙다",
+      "meaning": "stick",
+      "type": "동 verb",
+      "example_ko": "옷에 껌이 붙었는데 어떻게 해야 할지 모르겠다.",
+      "example_vi": "I have gum stuck on my clothes, and I don’t know what to do.",
+      "extra": ""
+    },
+    {
+      "id": "02",
+      "word": "비슷하다",
+      "meaning": "be similar to",
+      "type": "형 adjective",
+      "example_ko": "나와 우리 언니는 성격이 비슷하다.",
+      "example_vi": "My sister and I have very similar personalities.",
+      "extra": ""
+    },
+    {
+      "id": "03",
+      "word": "상담하다",
+      "meaning": "consult",
+      "type": "동 verb",
+      "example_ko": "공부 방법에 대해서 선생님께 상담하러 갈 것이다.",
+      "example_vi": "I am planning to consult with my teacher about my studying habits.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>상담</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>consultation</span></div><div><span class='font-semibold text-gray-700'>상담 창구</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>consulting window</span></div><div><span class='font-semibold text-gray-700'>상담원</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>consultant</span></div><div><span class='font-semibold text-gray-700'>상담 전문가</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>consulting expert</span></div><div><span class='font-semibold text-gray-700'>상담소</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>counseling center</span></div></div>"
+    },
+    {
+      "id": "04",
+      "word": "시설",
+      "meaning": "facility",
+      "type": "명 noun",
+      "example_ko": "우리 병원은 국내 최고의 시설을 자랑합니다.",
+      "example_vi": "Our hospital has the best facilities in the whole country.",
+      "extra": "<div><span class='font-semibold text-gray-700'>시설물</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>facility</span></div>"
+    },
+    {
+      "id": "05",
+      "word": "실수",
+      "meaning": "mistake",
+      "type": "명 noun",
+      "example_ko": "실수를 무서워하면 큰 일을 할 수 없어요.",
+      "example_vi": "You can never accomplish a big thing if you are afraid of making mistakes.",
+      "extra": "<div><span class='font-semibold text-gray-700'>실수하다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>make a mistake</span></div>"
+    },
+    {
+      "id": "06",
+      "word": "안전하다",
+      "meaning": "be safe",
+      "type": "형 adjective",
+      "example_ko": "운전할 때는 휴대전화를 사용하지 않는 것이 안전하다.",
+      "example_vi": "It is safer not to use your cell phone while you are driving.",
+      "extra": "",
+      "detailBlocks": [
+        {
+          "type": "mindmap",
+          "title_ko": "관련어",
+          "title_vi": "Words to memorize together",
+          "center_ko": "안전",
+          "center_vi": "Safety",
+          "nodes": [
+            {
+              "ko": "안전성",
+              "vi": "safety"
+            },
+            {
+              "ko": "안전망",
+              "vi": "safety net"
+            },
+            {
+              "ko": "안전사고",
+              "vi": "negligent accident"
+            },
+            {
+              "ko": "안전교육",
+              "vi": "safety education"
+            },
+            {
+              "ko": "안전점검",
+              "vi": "safety check"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "07",
+      "word": "없애다",
+      "meaning": "get rid of",
+      "type": "동 verb",
+      "example_ko": "남녀 차별을 없애기 위해 많은 사람들이 노력해야 한다.",
+      "example_vi": "Many people should try their best effort to get rid of the discrimination between men and women.",
+      "extra": ""
+    },
+    {
+      "id": "08",
+      "word": "자격",
+      "meaning": "qualification",
+      "type": "명 noun",
+      "example_ko": "입사 지원 자격이 어떻게 됩니까?",
+      "example_vi": "What is the qualification required to apply for the company?",
+      "extra": "<div><span class='font-semibold text-gray-700'>자격증</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>certificate (license)</span></div>",
+      "detailBlocks": [
+        {
+          "type": "test_note",
+          "label_ko": "출제 경향",
+          "label_vi": "how this word appears in the test",
+          "title_ko": "‘자격’은 공고문이나 안내문에서 자주 나오는 단어입니다.",
+          "title_vi": "The word “자격(qualification)” always appears in notifications and announcements.",
+          "body_ko": "이 단어와 함께 나오는 응시자격, 참가자격, 입사 지원 자격, 자격요건 등의 표현을 확인하세요.",
+          "body_vi": "Always remember related expressions such as qualification to take an exam, qualification to participate, job application qualification and requirements.",
+          "tags": [
+            {
+              "ko": "응시자격",
+              "en": "qualification to take an exam"
+            },
+            {
+              "ko": "참가자격",
+              "en": "qualification to participate"
+            },
+            {
+              "ko": "입사 지원 자격",
+              "en": "job application qualification"
+            },
+            {
+              "ko": "자격요건",
+              "en": "requirements"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "09",
+      "word": "작가",
+      "meaning": "writer",
+      "type": "명 noun",
+      "example_ko": "해리포터를 쓴 작가가 한국을 방문할 것이라고 한다.",
+      "example_vi": "They say the writer who wrote Harry Potter is planning to visit Korea.",
+      "extra": "<div><span class='font-semibold text-gray-700'>글쓴이</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>writer</span></div>"
+    },
+    {
+      "id": "10",
+      "word": "전하다",
+      "meaning": "send",
+      "type": "동 verb",
+      "example_ko": "지현 씨에게 안부 좀 전해 주세요.",
+      "example_vi": "Please send regards to Ji-hyun.",
+      "extra": ""
+    },
+    {
+      "id": "11",
+      "word": "제공하다",
+      "meaning": "provide",
+      "type": "동 verb",
+      "example_ko": "대회 참가자에게는 도시락과 물을 제공해 드립니다.",
+      "example_vi": "A packed lunch and bottle of water will be given to every participant of this competition.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>제공</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>provide</span></div><div><span class='font-semibold text-gray-700'>제공되다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>be provided</span></div></div>"
+    },
+    {
+      "id": "12",
+      "word": "제시하다",
+      "meaning": "suggest",
+      "type": "동 verb",
+      "example_ko": "이 문제는 해결책을 제시하기가 힘들다.",
+      "example_vi": "It is hard to suggest a solution to this problem.",
+      "extra": "<div><span class='font-semibold text-gray-700'>제시되다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>be suggested</span></div>"
+    },
+    {
+      "id": "13",
+      "word": "조건",
+      "meaning": "condition",
+      "type": "명 noun",
+      "example_ko": "이 회사에 지원하려면 어떤 조건을 갖춰야 합니까?",
+      "example_vi": "What is the condition required to apply for this company?",
+      "extra": ""
+    },
+    {
+      "id": "14",
+      "word": "조심하다",
+      "meaning": "be careful",
+      "type": "동 verb",
+      "example_ko": "길이 미끄러우니 조심해서 걸어야 합니다.",
+      "example_vi": "You should be careful while you walk since the road is slippery.",
+      "extra": ""
+    },
+    {
+      "id": "15",
+      "word": "즐기다",
+      "meaning": "enjoy",
+      "type": "동 verb",
+      "example_ko": "이 운동은 남녀노소 누구나 즐길 수 있어요.",
+      "example_vi": "This sport can be enjoyed by men and women of all ages.",
+      "extra": ""
+    },
+    {
+      "id": "16",
+      "word": "증가하다",
+      "meaning": "increase",
+      "type": "동 verb",
+      "example_ko": "최근 이혼율이 증가하는 원인이 무엇입니까?",
+      "example_vi": "What is the cause that made the divorce rate increase?",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>증가</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>increase</span></div><div><span class='font-semibold text-gray-700'>증가폭</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>increase</span></div></div>",
+      "detailBlocks": [
+        {
+          "type": "test_note",
+          "label_ko": "출제 경향",
+          "label_vi": "how this word appears in the test",
+          "title_ko": "증가와 감소를 나타내는 표현은 그래프 문제에서 자주 나옵니다.",
+          "title_vi": "Expressions about increase and decrease often appear in graph questions.",
+          "body_ko": "읽기와 쓰기에서 그래프를 설명할 때 자주 사용됩니다. 증가, 증가하다, 증가폭, 증가율, 증가시키다, 증가되다, 줄다 등의 표현을 함께 확인하세요.",
+          "body_vi": "They are often used when explaining graphs in reading and writing questions. Study related expressions such as increase, increase rate, increase amount, to increase, to be increased and decrease together.",
+          "tags": [
+            {
+              "ko": "증가",
+              "en": "increase"
+            },
+            {
+              "ko": "증가하다",
+              "en": "increase"
+            },
+            {
+              "ko": "증가폭",
+              "en": "increase amount"
+            },
+            {
+              "ko": "증가율",
+              "en": "increase rate"
+            },
+            {
+              "ko": "증가시키다",
+              "en": "to increase"
+            },
+            {
+              "ko": "증가되다",
+              "en": "to be increased"
+            },
+            {
+              "ko": "줄다",
+              "en": "decrease"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "17",
+      "word": "취업하다",
+      "meaning": "get a job",
+      "type": "동 verb",
+      "example_ko": "요즘 대학을 졸업해도 취업하기가 쉽지 않습니다.",
+      "example_vi": "Lately, it is hard to get a job even after you graduate from university.",
+      "extra": "",
+      "detailBlocks": [
+        {
+          "type": "mindmap",
+          "title_ko": "관련어",
+          "title_vi": "Words to memorize together",
+          "center_ko": "취업",
+          "center_vi": "getting a job",
+          "nodes": [
+            {
+              "ko": "취업생",
+              "vi": "job applicant"
+            },
+            {
+              "ko": "실업",
+              "vi": "unemployment"
+            },
+            {
+              "ko": "취업률",
+              "vi": "employment rate"
+            },
+            {
+              "ko": "실업자",
+              "vi": "the unemployed"
+            },
+            {
+              "ko": "여성취업",
+              "vi": "female employment"
+            },
+            {
+              "ko": "실업률",
+              "vi": "unemployment rate"
+            },
+            {
+              "ko": "청년실업",
+              "vi": "youth unemployment"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "18",
+      "word": "팔다",
+      "meaning": "sell",
+      "type": "동 verb",
+      "example_ko": "컴퓨터 부품을 파는 데가 어디에 있어요?",
+      "example_vi": "Where do they sell computer parts?",
+      "extra": ""
+    },
+    {
+      "id": "19",
+      "word": "프로그램",
+      "meaning": "program",
+      "type": "명 noun",
+      "example_ko": "이번 주말에 볼 수 있는 TV 프로그램을 확인해 보세요.",
+      "example_vi": "Check the television programs for the weekend.",
+      "extra": ""
+    },
+    {
+      "id": "20",
+      "word": "피하다",
+      "meaning": "avoid",
+      "type": "동 verb",
+      "example_ko": "자전거를 피하려다가 넘어졌어요.",
+      "example_vi": "I fell down trying to avoid the bicycle.",
+      "extra": ""
+    },
+    {
+      "id": "21",
+      "word": "넘다",
+      "meaning": "after",
+      "type": "동 verb",
+      "example_ko": "6시가 넘으면 우체국은 문을 닫아요.",
+      "example_vi": "The post office closes after six.",
+      "extra": ""
+    },
+    {
+      "id": "22",
+      "word": "발길",
+      "meaning": "coming and going",
+      "type": "명 noun",
+      "example_ko": "제주도를 찾는 사람들의 발길이 이어지고 있습니다.",
+      "example_vi": "The trend of people visiting Jeju will likely continue.",
+      "extra": "<div><span class='font-semibold text-gray-700'>발걸음</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>visit</span></div>"
+    },
+    {
+      "id": "23",
+      "word": "가득하다",
+      "meaning": "be filled with",
+      "type": "형 adjective",
+      "example_ko": "웃음이 가득한 집에는 행복이 찾아온다.",
+      "example_vi": "Happiness will visit the house filled with laughter.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>가득</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>full</span></div><div><span class='font-semibold text-gray-700'>가득히</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>full</span></div></div>"
+    },
+    {
+      "id": "24",
+      "word": "가지다(=갖다)",
+      "meaning": "have",
+      "type": "동 verb",
+      "example_ko": "꿈을 가지고 도전해 보세요.",
+      "example_vi": "Have a dream and challenge.",
+      "extra": "",
+      "detailBlocks": [
+        {
+          "type": "tip_combo",
+          "label": "Tip",
+          "question_ko": "‘가지다’는 어떤 단어와 같이 사용할까요?",
+          "question_vi": "What word is used together with the word “가지다(have)”?",
+          "word": "가지다",
+          "word_vi": "have",
+          "items": [
+            {
+              "ko": "꿈",
+              "vi": "a dream"
+            },
+            {
+              "ko": "희망",
+              "vi": "a hope"
+            },
+            {
+              "ko": "관심",
+              "vi": "an interest"
+            },
+            {
+              "ko": "자신감",
+              "vi": "self esteem"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "25",
+      "word": "거의",
+      "meaning": "almost",
+      "type": "부 adverb",
+      "example_ko": "거의 한 달 내내 비가 오는 것 같다.",
+      "example_vi": "I think it has been raining almost all month long.",
+      "extra": ""
+    },
+    {
+      "id": "26",
+      "word": "결국",
+      "meaning": "finally",
+      "type": "부 adverb",
+      "example_ko": "무리하게 일을 하다가 결국 병에 걸렸습니다.",
+      "example_vi": "I finally got sick after working too hard.",
+      "extra": ""
+    },
+    {
+      "id": "27",
+      "word": "공공장소",
+      "meaning": "public place",
+      "type": "명 noun",
+      "example_ko": "공공장소에서는 담배를 피울 수 없습니다.",
+      "example_vi": "You cannot smoke in the public place.",
+      "extra": "",
+      "detailBlocks": [
+        {
+          "type": "mindmap",
+          "title_ko": "관련어",
+          "title_vi": "Words to memorize together",
+          "center_ko": "공공",
+          "center_vi": "Public",
+          "nodes": [
+            {
+              "ko": "공공장소",
+              "vi": "public place"
+            },
+            {
+              "ko": "공공기관",
+              "vi": "public institution"
+            },
+            {
+              "ko": "공공요금",
+              "vi": "public utility charge"
+            },
+            {
+              "ko": "공공이익",
+              "vi": "public interests"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "28",
+      "word": "관광객",
+      "meaning": "tourist",
+      "type": "명 noun",
+      "example_ko": "한국을 찾는 외국인 관광객이 늘었다고 합니다.",
+      "example_vi": "They say the number of foreign tourists has increased.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>관광지</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>tourist site</span></div><div><span class='font-semibold text-gray-700'>관광 명소</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>tourist site</span></div></div>"
+    },
+    {
+      "id": "29",
+      "word": "기대하다",
+      "meaning": "expect",
+      "type": "동 verb",
+      "example_ko": "이번 시험에 합격하기를 기대하겠습니다.",
+      "example_vi": "I expect you to pass the test.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>기대</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>expectation</span></div><div><span class='font-semibold text-gray-700'>기대치</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>expected value</span></div></div>"
+    },
+    {
+      "id": "30",
+      "word": "대신하다",
+      "meaning": "replace, instead (of)",
+      "type": "동 verb",
+      "example_ko": "누구도 다른 사람의 인생을 대신해서 살아 줄 수는 없어요.",
+      "example_vi": "No one can live other people’s life instead.",
+      "extra": "<div><span class='font-semibold text-gray-700'>대신</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>instead of</span></div>"
+    },
+    {
+      "id": "31",
+      "word": "대중교통",
+      "meaning": "public transportation",
+      "type": "명 noun",
+      "example_ko": "더욱 편리하게 대중교통을 이용할 수 있도록 정부에서 노력을 기울이고 있다.",
+      "example_vi": "The government is putting its effort to make it easier for people to use public transportation.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>대중</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>the public</span></div><div><span class='font-semibold text-gray-700'>대중적</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>popular</span></div><div><span class='font-semibold text-gray-700'>대중매체</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>mass media</span></div></div>"
+    },
+    {
+      "id": "32",
+      "word": "미리",
+      "meaning": "in advance",
+      "type": "부 adverb",
+      "example_ko": "시험까지 아직 시간이 많이 남았지만 미리 준비해 놓으세요.",
+      "example_vi": "There is plenty of time until the test, but you should prepare in advance.",
+      "extra": ""
+    },
+    {
+      "id": "33",
+      "word": "반응",
+      "meaning": "reaction",
+      "type": "명 noun",
+      "example_ko": "이번 사건에 대한 사람들의 반응은 다 다르다.",
+      "example_vi": "The reaction on this case differs from people to people.",
+      "extra": "<div><span class='font-semibold text-gray-700'>반응하다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>react</span></div>"
+    }
+  ],
+  "dict": {
+    "stick": "dính / mắc vào",
+    "be similar to": "giống / tương tự",
+    "consult": "tư vấn / trao đổi",
+    "facility": "cơ sở vật chất / thiết bị",
+    "mistake": "lỗi / sai sót",
+    "be safe": "an toàn",
+    "get rid of": "xóa bỏ / loại bỏ",
+    "qualification": "tư cách / điều kiện đủ",
+    "writer": "nhà văn / tác giả",
+    "send": "truyền đạt / gửi lời",
+    "provide": "cung cấp",
+    "suggest": "đề xuất / đưa ra",
+    "condition": "điều kiện",
+    "be careful": "cẩn thận",
+    "enjoy": "tận hưởng / vui thích",
+    "increase": "tăng lên",
+    "get a job": "xin được việc / có việc làm",
+    "sell": "bán",
+    "program": "chương trình",
+    "avoid": "tránh",
+    "after": "quá / sau",
+    "coming and going": "sự qua lại / lượt ghé thăm",
+    "be filled with": "đầy ắp / tràn đầy",
+    "have": "có / mang",
+    "almost": "gần như / hầu như",
+    "finally": "cuối cùng",
+    "public place": "nơi công cộng",
+    "tourist": "khách du lịch",
+    "expect": "kỳ vọng / mong đợi",
+    "replace, instead (of)": "thay thế / thay cho",
+    "public transportation": "giao thông công cộng",
+    "in advance": "trước / sẵn",
+    "reaction": "phản ứng",
+    "consultation": "sự tư vấn",
+    "consulting window": "quầy tư vấn / cửa sổ tư vấn",
+    "consultant": "nhân viên tư vấn",
+    "consulting expert": "chuyên gia tư vấn",
+    "counseling center": "trung tâm tư vấn",
+    "make a mistake": "mắc lỗi",
+    "Safety": "An toàn",
+    "safety": "tính an toàn",
+    "safety net": "mạng lưới an toàn",
+    "negligent accident": "tai nạn do sơ suất",
+    "safety education": "giáo dục an toàn",
+    "safety check": "kiểm tra an toàn",
+    "certificate (license)": "chứng chỉ / bằng cấp",
+    "This word often appears in notices and announcements.": "Từ này thường xuất hiện trong thông báo và hướng dẫn.",
+    "Always remember related expressions such as qualification to apply, qualification to participate, job application qualification and requirements.": "Hãy nhớ các cách nói liên quan như tư cách ứng tuyển, tư cách tham gia, tư cách nộp hồ sơ và điều kiện yêu cầu.",
+    "how this word appears in the test": "cách từ này xuất hiện trong đề thi",
+    "qualification to apply": "tư cách ứng tuyển",
+    "qualification to participate": "tư cách tham gia",
+    "job application qualification": "tư cách ứng tuyển vào công ty",
+    "requirements": "điều kiện yêu cầu",
+    "be provided": "được cung cấp",
+    "be suggested": "được đề xuất",
+    "Expressions about increase and decrease often appear in graph questions.": "Các cách diễn đạt tăng/giảm thường xuất hiện trong câu hỏi biểu đồ.",
+    "They often appear when reading or writing about graphs. Study expressions such as increase, rise, decrease and fall together.": "Các từ này thường xuất hiện khi đọc hoặc viết về biểu đồ. Hãy học cùng các từ tăng, tăng lên, giảm và hạ xuống.",
+    "rise": "tăng lên",
+    "decrease": "giảm",
+    "fall": "hạ xuống",
+    "Words to memorize together": "Nhóm từ nên học cùng nhau",
+    "Getting a job": "Việc làm / xin việc",
+    "unemployment": "thất nghiệp",
+    "employment rate": "tỉ lệ có việc làm",
+    "unemployment rate": "tỉ lệ thất nghiệp",
+    "female employment": "việc làm của nữ giới",
+    "youth unemployment": "thất nghiệp thanh niên",
+    "visit": "sự ghé thăm / lượt đến",
+    "full": "đầy",
+    "What word is used together with the word “가지다(have)”?": "‘가지다’ thường dùng cùng với từ nào?",
+    "a dream": "ước mơ",
+    "a hope": "hy vọng",
+    "an interest": "sự quan tâm",
+    "self esteem": "lòng tự trọng / sự tự tin",
+    "Public": "Công cộng",
+    "public institution": "cơ quan công cộng",
+    "public utility charge": "phí dịch vụ công cộng",
+    "public interests": "lợi ích công cộng",
+    "tourist site": "địa điểm du lịch",
+    "expectation": "sự kỳ vọng",
+    "expected value": "giá trị kỳ vọng",
+    "instead of": "thay cho",
+    "the public": "đại chúng / công chúng",
+    "popular": "phổ biến / đại chúng",
+    "mass media": "phương tiện truyền thông đại chúng",
+    "react": "phản ứng",
+    "I have gum stuck on my clothes, and I don’t know what to do.": "Kẹo cao su dính vào quần áo nên tôi không biết phải làm thế nào.",
+    "My sister and I have very similar personalities.": "Tôi và chị gái tôi có tính cách rất giống nhau.",
+    "I am planning to consult with my teacher about my studying habits.": "Tôi định đến trao đổi với giáo viên về phương pháp học.",
+    "Our hospital has the best facilities in the whole country.": "Bệnh viện chúng tôi tự hào có cơ sở vật chất tốt nhất trong nước.",
+    "You can never accomplish a big thing if you are afraid of making mistakes.": "Nếu sợ mắc lỗi thì không thể làm được việc lớn.",
+    "It is safer not to use your cell phone while you are driving.": "Khi lái xe, không sử dụng điện thoại di động là an toàn.",
+    "Many people should try their best effort to get rid of the discrimination between men and women.": "Nhiều người phải nỗ lực để xóa bỏ phân biệt nam nữ.",
+    "What is the qualification required to apply for the company?": "Để ứng tuyển vào công ty này cần có điều kiện/tư cách gì?",
+    "They say the writer who wrote Harry Potter is planning to visit Korea.": "Nghe nói tác giả viết Harry Potter dự định đến thăm Hàn Quốc.",
+    "Please send regards to Ji-hyun.": "Hãy gửi lời hỏi thăm đến Ji-hyun giúp tôi.",
+    "A packed lunch and bottle of water will be given to every participant of this competition.": "Cơm hộp và nước sẽ được cung cấp cho mọi người tham gia cuộc thi.",
+    "It is hard to suggest a solution to this problem.": "Rất khó đưa ra giải pháp cho vấn đề này.",
+    "You should be careful while you walk since the road is slippery.": "Đường trơn nên phải đi cẩn thận.",
+    "This sport can be enjoyed by men and women of all ages.": "Môn thể thao này ai cũng có thể tận hưởng, không phân biệt nam nữ hay tuổi tác.",
+    "What is the cause that made the divorce rate increase?": "Nguyên nhân khiến tỉ lệ ly hôn gần đây tăng lên là gì?",
+    "Lately, it is hard to get a job even after you graduate from university.": "Dạo này dù tốt nghiệp đại học thì cũng không dễ xin việc.",
+    "Where do they sell computer parts?": "Nơi bán linh kiện máy tính ở đâu?",
+    "Check the television programs for the weekend.": "Hãy kiểm tra các chương trình TV có thể xem vào cuối tuần này.",
+    "I fell down trying to avoid the bicycle.": "Tôi bị ngã khi đang cố tránh chiếc xe đạp.",
+    "The post office closes after six.": "Quá 6 giờ thì bưu điện đóng cửa.",
+    "The trend of people visiting Jeju will likely continue.": "Lượng người tìm đến Jeju có vẻ sẽ tiếp tục.",
+    "Happiness will visit the house filled with laughter.": "Hạnh phúc sẽ đến với ngôi nhà tràn đầy tiếng cười.",
+    "Have a dream and challenge.": "Hãy mang theo ước mơ và thử thách bản thân.",
+    "I think it has been raining almost all month long.": "Có vẻ mưa gần như suốt cả tháng.",
+    "I finally got sick after working too hard.": "Làm việc quá sức, cuối cùng tôi đã đổ bệnh.",
+    "You cannot smoke in the public place.": "Không được hút thuốc ở nơi công cộng.",
+    "They say the number of foreign tourists has increased.": "Nghe nói số lượng khách du lịch nước ngoài đến Hàn Quốc đã tăng.",
+    "I expect you to pass the test.": "Tôi kỳ vọng bạn sẽ đỗ kỳ thi lần này.",
+    "No one can live other people’s life instead.": "Không ai có thể sống thay cuộc đời của người khác.",
+    "The government is putting its effort to make it easier for people to use public transportation.": "Chính phủ đang nỗ lực để người dân có thể sử dụng giao thông công cộng tiện lợi hơn.",
+    "There is plenty of time until the test, but you should prepare in advance.": "Vẫn còn nhiều thời gian đến kỳ thi, nhưng bạn nên chuẩn bị trước.",
+    "The reaction on this case differs from people to people.": "Phản ứng của mọi người về vụ việc này khác nhau.",
+    "Words that are easy to confuse in TOPIK": "Những từ dễ nhầm lẫn trong TOPIK",
+    "Polysemy": "Từ đa nghĩa",
+    "Antonym": "Từ trái nghĩa",
+    "Synonym": "Từ đồng nghĩa",
+    "be cured": "khỏi bệnh / được chữa khỏi",
+    "better than": "tốt hơn",
+    "It is nice to see my grandmother getting cured.": "Thật may vì bà tôi đã khỏi bệnh.",
+    "Based on what my brother does to our parents, he can sometimes be better than me.": "Nhìn cách em trai cư xử với bố mẹ, đôi khi nó còn tốt hơn tôi.",
+    "positive": "tích cực",
+    "negative": "tiêu cực",
+    "I will positively review this occasion.": "Tôi sẽ xem xét việc này theo hướng tích cực.",
+    "You will never be successful with a negative attitude.": "Bạn không thể thành công với lối suy nghĩ tiêu cực.",
+    "make up one’s mind": "quyết tâm / quyết định",
+    "decide": "quyết định",
+    "I have made up my mind to study hard from now on.": "Từ bây giờ tôi đã quyết tâm học chăm chỉ.",
+    "Write Korean in English, and English in Korean.": "Hãy viết từ tiếng Hàn sang tiếng Việt, và từ tiếng Việt sang tiếng Hàn.",
+    "Choose the proper word that fits the sentence more naturally.": "Hãy chọn từ phù hợp để câu tự nhiên hơn.",
+    "The word “자격(qualification)” always appears in notifications and announcements.": "Từ “자격” thường xuất hiện trong các thông báo và hướng dẫn.",
+    "Always remember related expressions such as qualification to take an exam, qualification to participate, job application qualification and requirements.": "Hãy nhớ các cách nói liên quan như tư cách dự thi, tư cách tham gia, tư cách ứng tuyển vào công ty và điều kiện yêu cầu.",
+    "qualification to take an exam": "tư cách dự thi",
+    "They are often used when explaining graphs in reading and writing questions. Study related expressions such as increase, increase rate, increase amount, to increase, to be increased and decrease together.": "Các từ này thường được dùng khi giải thích biểu đồ trong phần đọc và viết. Hãy học cùng các cách nói như sự tăng, tỉ lệ tăng, mức tăng, làm tăng, được tăng lên và giảm.",
+    "increase amount": "mức tăng",
+    "increase rate": "tỉ lệ tăng",
+    "to increase": "làm tăng",
+    "to be increased": "được tăng lên",
+    "getting a job": "việc làm / xin việc",
+    "job applicant": "ứng viên xin việc / người xin việc",
+    "the unemployed": "người thất nghiệp"
+  }
+}

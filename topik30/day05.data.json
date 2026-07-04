@@ -1,0 +1,526 @@
+{
+  "day": 5,
+  "vocabData": [
+    {
+      "id": "01",
+      "word": "정보",
+      "meaning": "information",
+      "type": "명 noun",
+      "example_ko": "많은 정보보다 올바른 정보를 갖는 것이 중요하다.",
+      "example_vi": "It is important to have right information rather than having much information.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>정보실</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>information office</span></div><div><span class='font-semibold text-gray-700'>정보화 사회</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>informational society</span></div></div>"
+    },
+    {
+      "id": "02",
+      "word": "할인되다",
+      "meaning": "discount",
+      "type": "동 verb",
+      "example_ko": "혹시 이 식당에서 할인되는 카드를 가지고 있어요?",
+      "example_vi": "Do you have a card that can get us a discount in this restaurant?",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>할인</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>discount</span></div><div><span class='font-semibold text-gray-700'>할인율</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>discount rate</span></div><div><span class='font-semibold text-gray-700'>할인받다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>get a discount</span></div><div><span class='font-semibold text-gray-700'>할인제도</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>discount policy</span></div><div><span class='font-semibold text-gray-700'>할인하다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>discount</span></div></div>"
+    },
+    {
+      "id": "03",
+      "word": "활용하다",
+      "meaning": "apply, use",
+      "type": "동 verb",
+      "example_ko": "인터넷을 활용한 수업을 진행 중입니다.",
+      "example_vi": "We are taking a class using the internet.",
+      "extra": "<div><span class='font-semibold text-gray-700'>활용도</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>applying degree</span></div>"
+    },
+    {
+      "id": "04",
+      "word": "꿈",
+      "meaning": "dream",
+      "type": "명 noun",
+      "example_ko": "꿈이 없는 사람은 불행한 사람이다.",
+      "example_vi": "The person who does not have a dream is an unhappy person.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>꿈을 꾸다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>have a dream</span></div><div><span class='font-semibold text-gray-700'>꿈을 이루다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>realize one's dream</span></div><div><span class='font-semibold text-gray-700'>꿈을 버리다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>give up one's dream</span></div></div>"
+    },
+    {
+      "id": "05",
+      "word": "노인",
+      "meaning": "older people",
+      "type": "명 noun",
+      "example_ko": "노인들을 위한 시설을 더 늘려야겠습니다.",
+      "example_vi": "We should increase the number of the facilities for the senior citizen.",
+      "extra": "<div><span class='font-semibold text-gray-700'>노인 회관</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>hall for the elderly</span></div>"
+    },
+    {
+      "id": "06",
+      "word": "반면",
+      "meaning": "on the other hand",
+      "type": "명 noun",
+      "example_ko": "어디나 좋은 사람도 있는 반면에 나쁜 사람도 있다.",
+      "example_vi": "Good people exist wherever you go, on the other hand, bad people also exist wherever you go.",
+      "extra": ""
+    },
+    {
+      "id": "07",
+      "word": "자기",
+      "meaning": "self",
+      "type": "명 noun",
+      "example_ko": "그 사람은 자기 스스로에 대한 자부심이 강한 사람이다.",
+      "example_vi": "He is a person who has a strong self-esteem.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>자기 개발</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>self-development</span></div><div><span class='font-semibold text-gray-700'>자기 소개서</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>a letter of self-introduction</span></div></div>"
+    },
+    {
+      "id": "08",
+      "word": "키우다",
+      "meaning": "raise",
+      "type": "동 verb",
+      "example_ko": "라디오 소리가 너무 작아요. 좀 키워 주세요.",
+      "example_vi": "The sound of the radio is too small. Can you please raise the volume?",
+      "extra": ""
+    },
+    {
+      "id": "09",
+      "word": "해외",
+      "meaning": "abroad",
+      "type": "명 noun",
+      "example_ko": "이번 연휴에 해외로 출국하는 사람들이 작년보다 늘어났대요.",
+      "example_vi": "Over the last holiday, the number of people going abroad increased compared to last year.",
+      "extra": "",
+      "detailBlocks": [
+        {
+          "type": "mindmap",
+          "title_ko": "관련어",
+          "title_vi": "Words to memorize together",
+          "center_ko": "해외",
+          "center_vi": "Abroad",
+          "nodes": [
+            {
+              "ko": "해외 시장",
+              "vi": "overseas market"
+            },
+            {
+              "ko": "해외 여행",
+              "vi": "overseas trip"
+            },
+            {
+              "ko": "해외 출장",
+              "vi": "business trip in abroad"
+            },
+            {
+              "ko": "해외 지사",
+              "vi": "overseas branch"
+            },
+            {
+              "ko": "해외 연수",
+              "vi": "studying abroad"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "word": "각종",
+      "meaning": "of every kind",
+      "type": "명 noun",
+      "example_ko": "각종 여행 상품을 한 자리에 모았습니다.",
+      "example_vi": "We have gathered every kind of travel package here.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>각각</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>each</span></div><div><span class='font-semibold text-gray-700'>각자</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>each one</span></div><div><span class='font-semibold text-gray-700'>각국</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>each country</span></div><div><span class='font-semibold text-gray-700'>각기</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>each</span></div><div><span class='font-semibold text-gray-700'>각지</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>every place</span></div></div>"
+    },
+    {
+      "id": "11",
+      "word": "고민",
+      "meaning": "worry",
+      "type": "명 noun",
+      "example_ko": "밤에 잠을 못 자는 걸 보니 고민이 생겼나 봐요.",
+      "example_vi": "He must have some worries, since he cannot get any sleep at nights.",
+      "extra": "<div><span class='font-semibold text-gray-700'>고민하다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>worry about</span></div>"
+    },
+    {
+      "id": "12",
+      "word": "글",
+      "meaning": "(a piece of) writing",
+      "type": "명 noun",
+      "example_ko": "잘 쓰여진 글은 사람들에게 감동을 줍니다.",
+      "example_vi": "A well-written piece of writing moves many people.",
+      "extra": ""
+    },
+    {
+      "id": "13",
+      "word": "따르다",
+      "meaning": "follow",
+      "type": "동 verb",
+      "example_ko": "수영 실력으로는 우리 학교에서 내 동생을 따를 사람이 없어요.",
+      "example_vi": "There is no one who can beat my brother in swimming.",
+      "extra": ""
+    },
+    {
+      "id": "14",
+      "word": "모집",
+      "meaning": "recruitment",
+      "type": "명 noun",
+      "example_ko": "우리 회사는 능력 있는 직원을 모집 중입니다.",
+      "example_vi": "Our company is recruiting a worker with high ability.",
+      "extra": "<div><span class='font-semibold text-gray-700'>모집하다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>recruit</span></div>"
+    },
+    {
+      "id": "15",
+      "word": "믿다",
+      "meaning": "trust",
+      "type": "동 verb",
+      "example_ko": "그 친구는 정말 믿을 만한 사람이에요.",
+      "example_vi": "He is a trustworthy friend.",
+      "extra": "<div><span class='font-semibold text-gray-700'>믿음</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>trust</span></div>"
+    },
+    {
+      "id": "16",
+      "word": "부족하다",
+      "meaning": "be short of",
+      "type": "형 adjective",
+      "example_ko": "시험 볼 때 시간이 너무 부족했어요.",
+      "example_vi": "I was short of time while I was taking the test.",
+      "extra": "<div><span class='font-semibold text-gray-700'>부족</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>shortage</span></div>"
+    },
+    {
+      "id": "17",
+      "word": "상태",
+      "meaning": "status, condition",
+      "type": "명 noun",
+      "example_ko": "수술 후 그 사람의 상태는 더 안 좋아졌다.",
+      "example_vi": "His condition got worse after the surgery.",
+      "extra": ""
+    },
+    {
+      "id": "18",
+      "word": "시민",
+      "meaning": "citizen",
+      "type": "명 noun",
+      "example_ko": "서울시에서는 정책에 시민들의 의견을 반영하고 있다.",
+      "example_vi": "The city of Seoul is reflecting on the opinion of the citizens regarding the policy that they execute.",
+      "extra": ""
+    },
+    {
+      "id": "19",
+      "word": "공연",
+      "meaning": "performance",
+      "type": "명 noun",
+      "example_ko": "예술의 전당에서는 다양한 공연을 개최하고 있습니다.",
+      "example_vi": "Many kinds of performances are being held in the arts center.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>공연장</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>theatre</span></div><div><span class='font-semibold text-gray-700'>공연하다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>perform</span></div><div><span class='font-semibold text-gray-700'>공연되다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>be performed</span></div></div>",
+      "detailBlocks": [
+        {
+          "type": "test_note",
+          "label_ko": "출제 경향",
+          "label_vi": "how this word appears in the test",
+          "title_ko": "공연 포스터 문제에 자주 나오는 단어입니다.",
+          "title_vi": "This word often appears in poster questions.",
+          "body_ko": "읽기 영역에서 뮤지컬, 콘서트, 연극, 오페라 등의 포스터를 자주 볼 수 있으며, 포스터에 있는 정보를 확인하는 문제가 자주 출제됩니다.",
+          "body_vi": "In the reading comprehension test, you can easily see many posters of musicals, concerts, plays, operas, etc. They ask the specific information that you can check based on the information written on the poster.",
+          "tags": [
+            "공연 종류",
+            "날짜/시간",
+            "장소",
+            "관람 방법"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "20",
+      "word": "여성",
+      "meaning": "female",
+      "type": "명 noun",
+      "example_ko": "많은 백화점에서는 여성 고객을 잡기 위해 여러가지 이벤트를 한다.",
+      "example_vi": "Many department stores are having various kinds of events to attract female customers.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>여성운동가</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>female activist</span></div><div><span class='font-semibold text-gray-700'>남성</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>male</span></div></div>"
+    },
+    {
+      "id": "21",
+      "word": "역사",
+      "meaning": "history",
+      "type": "명 noun",
+      "example_ko": "한국의 역사를 알고 싶은데 어떤 책이 좋을까요?",
+      "example_vi": "What kind of books do you recommend in order to know the history of the Republic of Korea?",
+      "extra": "",
+      "detailBlocks": [
+        {
+          "type": "mindmap",
+          "title_ko": "관련어",
+          "title_vi": "Words to memorize together",
+          "center_ko": "역사",
+          "center_vi": "History",
+          "nodes": [
+            {
+              "ko": "역사상",
+              "vi": "historically"
+            },
+            {
+              "ko": "역사적",
+              "vi": "historical"
+            },
+            {
+              "ko": "역사의식",
+              "vi": "historical view"
+            },
+            {
+              "ko": "역사책",
+              "vi": "a history book"
+            },
+            {
+              "ko": "역사학자",
+              "vi": "historian"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "22",
+      "word": "예전",
+      "meaning": "back in the days",
+      "type": "명 noun",
+      "example_ko": "예전에는 지구가 평평하다고 생각했다.",
+      "example_vi": "People believed that the earth is flat back in the days.",
+      "extra": ""
+    },
+    {
+      "id": "23",
+      "word": "원하다",
+      "meaning": "desire",
+      "type": "동 verb",
+      "example_ko": "원하는 일을 하고 있다는 것만으로 행복합니다.",
+      "example_vi": "It is happy just to be able to do what I desire.",
+      "extra": ""
+    },
+    {
+      "id": "24",
+      "word": "유지하다",
+      "meaning": "maintain",
+      "type": "동 verb",
+      "example_ko": "다이어트 후에도 요요현상을 막기 위해 운동량을 유지하고 있다.",
+      "example_vi": "I am keeping the same hours of work out in order to not regain the weight.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>유지</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>maintain</span></div><div><span class='font-semibold text-gray-700'>유지되다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>be maintained</span></div><div><span class='font-semibold text-gray-700'>유지시키다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>have something maintained</span></div></div>"
+    },
+    {
+      "id": "25",
+      "word": "이해하다",
+      "meaning": "understand",
+      "type": "동 verb",
+      "example_ko": "입장을 바꿔 생각해 보면 상대방을 더 잘 이해할 수 있을 거예요.",
+      "example_vi": "You will understand better if you consider from the other's point of view.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>이해</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>understanding</span></div><div><span class='font-semibold text-gray-700'>이해력</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>understanding ability</span></div><div><span class='font-semibold text-gray-700'>이해심</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>understanding</span></div><div><span class='font-semibold text-gray-700'>이해되다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>be understood</span></div><div><span class='font-semibold text-gray-700'>이해시키다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>make one understand</span></div></div>"
+    },
+    {
+      "id": "26",
+      "word": "정리하다",
+      "meaning": "organize",
+      "type": "동 verb",
+      "example_ko": "고향으로 가기 위해 짐을 정리하고 있어요.",
+      "example_vi": "I am packing to visit my hometown.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>정리</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>organize</span></div><div><span class='font-semibold text-gray-700'>정리되다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>be organized</span></div></div>"
+    },
+    {
+      "id": "27",
+      "word": "방식",
+      "meaning": "method",
+      "type": "명 noun",
+      "example_ko": "김 대리와 저는 일하는 방식이 서로 달라서 가끔 마음이 맞지 않아요.",
+      "example_vi": "Sometimes I have trouble with Mr. Kim since the way that we work is totally different from each other.",
+      "extra": ""
+    },
+    {
+      "id": "28",
+      "word": "감정",
+      "meaning": "emotion",
+      "type": "명 noun",
+      "example_ko": "평소에 자신의 생각이나 감정을 잘 표현하는 연습이 필요합니다.",
+      "example_vi": "It is necessary to practice expressing your thoughts and emotions eloquently.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>감정 조절</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>emotion control</span></div><div><span class='font-semibold text-gray-700'>감정적</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>emotional</span></div></div>"
+    },
+    {
+      "id": "29",
+      "word": "과학",
+      "meaning": "science",
+      "type": "명 noun",
+      "example_ko": "과학의 발달로 생활이 편리해졌다.",
+      "example_vi": "Life has become more convenient because of the scientific development.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>과학자</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>scientist</span></div><div><span class='font-semibold text-gray-700'>과학적</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>scientific</span></div></div>"
+    },
+    {
+      "id": "30",
+      "word": "나타나다",
+      "meaning": "appear",
+      "type": "동 verb",
+      "example_ko": "최근 서울시 산 근처 도로에 멧돼지가 나타났다고 합니다.",
+      "example_vi": "It is said that the boars recently appeared in the roads near the mountain.",
+      "extra": "<div><span class='font-semibold text-gray-700'>나타나다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>appear</span></div>"
+    },
+    {
+      "id": "31",
+      "word": "따로",
+      "meaning": "apart",
+      "type": "부 adverb",
+      "example_ko": "저는 부모님과 따로 살고 있어요.",
+      "example_vi": "I live apart from my parents.",
+      "extra": ""
+    },
+    {
+      "id": "32",
+      "word": "밝히다",
+      "meaning": "disclose",
+      "type": "동 verb",
+      "example_ko": "강이 오염된 원인이 밝혀졌다고 합니다.",
+      "example_vi": "The reason that polluted the river was disclosed.",
+      "extra": ""
+    },
+    {
+      "id": "33",
+      "word": "벌써",
+      "meaning": "already",
+      "type": "부 adverb",
+      "example_ko": "벌써 10시네요. 이제 그만 집에 가야겠어요.",
+      "example_vi": "It is already 10 o'clock. I should go home.",
+      "extra": ""
+    }
+  ],
+  "dict": {
+    "information": "thông tin",
+    "discount": "giảm giá",
+    "apply, use": "áp dụng, sử dụng",
+    "dream": "giấc mơ",
+    "older people": "người cao tuổi",
+    "on the other hand": "mặt khác",
+    "self": "bản thân",
+    "raise": "nâng lên / tăng lên",
+    "abroad": "nước ngoài",
+    "of every kind": "các loại",
+    "worry": "nỗi lo / sự lo lắng",
+    "(a piece of) writing": "bài viết / đoạn viết",
+    "follow": "theo / đi theo",
+    "recruitment": "tuyển dụng",
+    "trust": "tin / tin tưởng",
+    "be short of": "thiếu / không đủ",
+    "status, condition": "trạng thái, tình trạng",
+    "citizen": "công dân",
+    "performance": "buổi biểu diễn",
+    "female": "nữ / phụ nữ",
+    "history": "lịch sử",
+    "back in the days": "ngày xưa / trước đây",
+    "desire": "mong muốn",
+    "maintain": "duy trì",
+    "understand": "hiểu",
+    "organize": "sắp xếp / chỉnh lý",
+    "method": "phương pháp",
+    "emotion": "cảm xúc",
+    "science": "khoa học",
+    "appear": "xuất hiện",
+    "apart": "riêng / tách riêng",
+    "disclose": "làm sáng tỏ / công bố",
+    "already": "đã / rồi",
+    "information office": "phòng thông tin",
+    "informational society": "xã hội thông tin",
+    "get a discount": "được giảm giá",
+    "discount rate": "tỷ lệ giảm giá",
+    "discount policy": "chính sách giảm giá",
+    "applying degree": "mức độ ứng dụng",
+    "have a dream": "mơ / có giấc mơ",
+    "realize one's dream": "thực hiện giấc mơ",
+    "give up one's dream": "từ bỏ giấc mơ",
+    "hall for the elderly": "hội quán người cao tuổi",
+    "self-development": "phát triển bản thân",
+    "a letter of self-introduction": "bản tự giới thiệu",
+    "overseas market": "thị trường nước ngoài",
+    "overseas trip": "du lịch nước ngoài",
+    "business trip in abroad": "đi công tác nước ngoài",
+    "overseas branch": "chi nhánh ở nước ngoài",
+    "studying abroad": "du học / tu nghiệp ở nước ngoài",
+    "each": "mỗi",
+    "each one": "mỗi người / mỗi cái",
+    "each country": "mỗi quốc gia",
+    "every place": "mọi nơi",
+    "worry about": "lo lắng về",
+    "recruit": "tuyển dụng",
+    "shortage": "sự thiếu hụt",
+    "theatre": "nhà hát",
+    "perform": "biểu diễn",
+    "be performed": "được biểu diễn",
+    "female activist": "nhà hoạt động nữ",
+    "male": "nam / nam giới",
+    "historically": "về mặt lịch sử",
+    "historical": "mang tính lịch sử",
+    "historical view": "nhận thức lịch sử",
+    "a history book": "sách lịch sử",
+    "historian": "nhà sử học",
+    "be maintained": "được duy trì",
+    "have something maintained": "làm cho được duy trì",
+    "understanding": "sự hiểu biết",
+    "understanding ability": "năng lực hiểu",
+    "be understood": "được hiểu",
+    "make one understand": "làm cho ai hiểu",
+    "be organized": "được sắp xếp",
+    "emotion control": "kiểm soát cảm xúc",
+    "emotional": "mang tính cảm xúc",
+    "scientist": "nhà khoa học",
+    "scientific": "mang tính khoa học",
+    "Words to memorize together": "Nhóm từ nên học cùng nhau",
+    "Abroad": "Nước ngoài",
+    "History": "Lịch sử",
+    "how this word appears in the test": "cách từ này xuất hiện trong đề thi",
+    "This word often appears in poster questions.": "Từ này thường xuất hiện trong câu hỏi về áp phích.",
+    "It is important to have right information rather than having much information.": "Có thông tin đúng quan trọng hơn có nhiều thông tin.",
+    "Do you have a card that can get us a discount in this restaurant?": "Bạn có thẻ được giảm giá ở nhà hàng này không?",
+    "We are taking a class using the internet.": "Chúng tôi đang tiến hành lớp học sử dụng internet.",
+    "The person who does not have a dream is an unhappy person.": "Người không có ước mơ là người bất hạnh.",
+    "We should increase the number of the facilities for the senior citizen.": "Chúng ta nên tăng thêm các cơ sở dành cho người cao tuổi.",
+    "Good people exist wherever you go, on the other hand, bad people also exist wherever you go.": "Dù đi đâu cũng có người tốt, mặt khác cũng có người xấu.",
+    "He is a person who has a strong self-esteem.": "Anh ấy là người có lòng tự trọng mạnh mẽ về bản thân.",
+    "The sound of the radio is too small. Can you please raise the volume?": "Âm thanh radio quá nhỏ. Bạn có thể tăng âm lượng lên một chút không?",
+    "Over the last holiday, the number of people going abroad increased compared to last year.": "Trong kỳ nghỉ vừa rồi, số người xuất cảnh ra nước ngoài đã tăng so với năm ngoái.",
+    "We have gathered every kind of travel package here.": "Chúng tôi đã tập hợp đủ loại sản phẩm du lịch tại một nơi.",
+    "He must have some worries, since he cannot get any sleep at nights.": "Có lẽ anh ấy có chuyện lo lắng vì ban đêm không ngủ được.",
+    "A well-written piece of writing moves many people.": "Một bài viết hay sẽ làm nhiều người xúc động.",
+    "There is no one who can beat my brother in swimming.": "Về khả năng bơi lội thì ở trường tôi không ai theo kịp em trai tôi.",
+    "Our company is recruiting a worker with high ability.": "Công ty chúng tôi đang tuyển nhân viên có năng lực.",
+    "He is a trustworthy friend.": "Người bạn đó là người rất đáng tin cậy.",
+    "I was short of time while I was taking the test.": "Khi làm bài thi, tôi đã không đủ thời gian.",
+    "His condition got worse after the surgery.": "Sau phẫu thuật, tình trạng của người đó trở nên xấu hơn.",
+    "The city of Seoul is reflecting on the opinion of the citizens regarding the policy that they execute.": "Thành phố Seoul đang phản ánh ý kiến của người dân vào chính sách được thực hiện.",
+    "Many kinds of performances are being held in the arts center.": "Nhiều loại buổi biểu diễn đang được tổ chức tại trung tâm nghệ thuật.",
+    "In the reading comprehension test, you can easily see many posters of musicals, concerts, plays, operas, etc. They ask the specific information that you can check based on the information written on the poster.": "Trong phần đọc hiểu, thường có thể thấy các áp phích về nhạc kịch, hòa nhạc, kịch, opera... Các câu hỏi thường yêu cầu kiểm tra thông tin cụ thể dựa trên nội dung ghi trên áp phích.",
+    "Many department stores are having various kinds of events to attract female customers.": "Nhiều trung tâm thương mại tổ chức nhiều sự kiện khác nhau để thu hút khách hàng nữ.",
+    "What kind of books do you recommend in order to know the history of the Republic of Korea?": "Bạn gợi ý loại sách nào để tìm hiểu lịch sử Hàn Quốc?",
+    "People believed that the earth is flat back in the days.": "Ngày xưa, người ta tin rằng Trái Đất phẳng.",
+    "It is happy just to be able to do what I desire.": "Chỉ cần được làm điều mình muốn cũng là hạnh phúc.",
+    "I am keeping the same hours of work out in order to not regain the weight.": "Tôi đang duy trì lượng vận động để tránh hiệu ứng yo-yo sau khi ăn kiêng.",
+    "You will understand better if you consider from the other's point of view.": "Nếu thử đổi vị trí để suy nghĩ, bạn sẽ hiểu đối phương hơn.",
+    "I am packing to visit my hometown.": "Tôi đang sắp xếp hành lý để về quê.",
+    "Sometimes I have trouble with Mr. Kim since the way that we work is totally different from each other.": "Đôi khi tôi không hợp với anh Kim vì cách làm việc của chúng tôi hoàn toàn khác nhau.",
+    "It is necessary to practice expressing your thoughts and emotions eloquently.": "Cần luyện tập để diễn đạt tốt suy nghĩ hoặc cảm xúc của bản thân thường ngày.",
+    "Life has become more convenient because of the scientific development.": "Đời sống trở nên tiện lợi hơn nhờ sự phát triển của khoa học.",
+    "It is said that the boars recently appeared in the roads near the mountain.": "Nghe nói gần đây lợn rừng đã xuất hiện trên đường gần núi ở Seoul.",
+    "I live apart from my parents.": "Tôi đang sống riêng với bố mẹ.",
+    "The reason that polluted the river was disclosed.": "Nguyên nhân khiến con sông bị ô nhiễm đã được làm sáng tỏ.",
+    "It is already 10 o'clock. I should go home.": "Đã 10 giờ rồi. Tôi nên về nhà thôi.",
+    "Words that are easy to confuse in TOPIK": "Những từ dễ nhầm lẫn trong TOPIK",
+    "Polysemy": "Từ đa nghĩa",
+    "Antonym": "Từ trái nghĩa",
+    "Synonym": "Từ đồng nghĩa",
+    "start": "bắt đầu",
+    "get": "trở nên / bị",
+    "happen": "xảy ra",
+    "occur": "xảy ra",
+    "arise": "phát sinh",
+    "lazy": "lười biếng",
+    "diligent": "chăm chỉ",
+    "consult": "bàn bạc / tham khảo ý kiến",
+    "discuss": "thảo luận",
+    "A lazy person cannot succeed.": "Người lười biếng không thể thành công.",
+    "If you work diligently, you will have your chance.": "Nếu làm việc chăm chỉ, bạn cũng sẽ có cơ hội.",
+    "I will decide whether to go abroad and study after discussing with my parents.": "Tôi sẽ quyết định có đi du học hay không sau khi bàn bạc với bố mẹ.",
+    "The rumors got started even before I noticed it.": "Tin đồn đã lan ra lúc tôi không hay biết.",
+    "I started to cough and have a runny nose from this morning.": "Từ sáng tôi bắt đầu ho và chảy nước mũi.",
+    "You should control your emotion even when you get angry.": "Dù tức giận đến đâu cũng nên kiềm chế cảm xúc.",
+    "My cell phone was broken and I went to the service center to get it fixed.": "Điện thoại của tôi bị hỏng nên tôi đã đến trung tâm dịch vụ để sửa.",
+    "Don’t you hear something?": "Bạn không nghe thấy tiếng gì đó sao?",
+    "There was a fire in the next building yesterday and people died.": "Hôm qua tòa nhà bên cạnh xảy ra hỏa hoạn và có người chết.",
+    "A weird smell is coming from somewhere.": "Từ nãy đến giờ có mùi lạ từ đâu đó bay đến.",
+    "Write Korean in English, and English in Korean.": "Hãy viết từ tiếng Hàn sang tiếng Việt, và từ tiếng Việt sang tiếng Hàn.",
+    "Choose the proper word that fits the sentence more naturally.": "Hãy chọn từ phù hợp trong hai từ để câu tự nhiên hơn.",
+    "It is happy only to be able to do what I desire.": "Chỉ cần được làm điều mình muốn cũng là hạnh phúc."
+  }
+}

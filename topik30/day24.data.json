@@ -1,0 +1,743 @@
+{
+  "day": 24,
+  "vocabData": [
+    {
+      "id": "01",
+      "word": "곧",
+      "meaning": "soon",
+      "meaning_vi": "sớm / ngay sau đây",
+      "type": "부 adverb",
+      "example_ko": "곧 돌아올테니까 여기서 기다려.",
+      "example_vi": "I will come back soon so wait here.",
+      "example_vi_vn": "Tôi sẽ quay lại sớm nên hãy đợi ở đây.",
+      "extra": "",
+      "highlight_terms": [
+        "곧"
+      ]
+    },
+    {
+      "id": "02",
+      "word": "골목",
+      "meaning": "street",
+      "meaning_vi": "ngõ / phố nhỏ",
+      "type": "명 noun",
+      "example_ko": "신당동 떡볶이 골목이 얼마나 유명한데요!",
+      "example_vi": "You can’t imagine how famous Sindang-dong ddeokbokki street is!",
+      "example_vi_vn": "Bạn không tưởng tượng được phố tokbokki Sindang-dong nổi tiếng thế nào đâu!",
+      "extra": "",
+      "highlight_terms": [
+        "골목이"
+      ]
+    },
+    {
+      "id": "03",
+      "word": "곱다",
+      "meaning": "pretty",
+      "meaning_vi": "đẹp / mịn màng",
+      "type": "형 adjective",
+      "example_ko": "디자인도 예쁠 뿐만 아니라 색도 아주 곱군요.",
+      "example_vi": "Not only the design but also the color is very pretty.",
+      "example_vi_vn": "Không chỉ thiết kế đẹp mà màu sắc cũng rất đẹp.",
+      "extra": "",
+      "highlight_terms": [
+        "곱군요"
+      ]
+    },
+    {
+      "id": "04",
+      "word": "공격적",
+      "meaning": "offensive",
+      "meaning_vi": "mang tính công kích / hung hăng",
+      "type": "명 noun",
+      "example_ko": "컴퓨터 게임을 많이 한 아이일수록 공격적인 성향을 보입니다.",
+      "example_vi": "A more offensive attitude is shown from the child who played more computer games.",
+      "example_vi_vn": "Trẻ càng chơi trò chơi máy tính nhiều thì càng thể hiện khuynh hướng hung hăng hơn.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>공격</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>offense</span></div><div><span class='font-semibold text-gray-700'>공격적 성향</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>aggressive tendency</span></div><div><span class='font-semibold text-gray-700'>공격성</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>offensiveness</span></div><div><span class='font-semibold text-gray-700'>공격하다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>offend</span></div></div>",
+      "highlight_terms": [
+        "공격적인"
+      ]
+    },
+    {
+      "id": "05",
+      "word": "공급하다",
+      "meaning": "supply",
+      "meaning_vi": "cung cấp",
+      "type": "동 verb",
+      "example_ko": "우리 농장에서는 여러 식당에 신선한 재료를 공급합니다.",
+      "example_vi": "Our farm supplies fresh materials to many different restaurants.",
+      "example_vi_vn": "Trang trại chúng tôi cung cấp nguyên liệu tươi cho nhiều nhà hàng.",
+      "extra": "",
+      "highlight_terms": [
+        "공급합니다"
+      ]
+    },
+    {
+      "id": "06",
+      "word": "명절",
+      "meaning": "holiday",
+      "meaning_vi": "ngày lễ truyền thống",
+      "type": "명 noun",
+      "example_ko": "명절이 되면 많은 사람들이 고향으로 돌아가서 가족과 시간을 보낸다.",
+      "example_vi": "When it is holiday seasons, many people visit their hometown and spend much time with their family.",
+      "example_vi_vn": "Khi đến dịp lễ truyền thống, nhiều người về quê và dành thời gian bên gia đình.",
+      "extra": "",
+      "highlight_terms": [
+        "명절이"
+      ],
+      "detailBlocks": [
+        {
+          "type": "tip_note",
+          "label": "Tip",
+          "question_ko": "한국의 대표적인 명절로 설날(음력 1월 1일)과 추석(음력 8월 15일)이 있어요.",
+          "question_vi": "Các ngày lễ truyền thống tiêu biểu của Hàn Quốc là Seollal (mùng 1 tháng 1 âm lịch) và Chuseok (15 tháng 8 âm lịch).",
+          "no_speak": true
+        }
+      ]
+    },
+    {
+      "id": "07",
+      "word": "공모하다",
+      "meaning": "invite public participation",
+      "meaning_vi": "mời tham gia / mở cuộc thi công khai",
+      "type": "동 verb",
+      "example_ko": "서울시에서 서울 로고 디자인을 공모하고 있습니다.",
+      "example_vi": "The city of Seoul is inviting public participation for a new designed logo of Seoul.",
+      "example_vi_vn": "Thành phố Seoul đang mở cuộc thi/mời tham gia thiết kế logo Seoul.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>공모</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>contest</span></div><div><span class='font-semibold text-gray-700'>공모전</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>contest exhibit</span></div></div>",
+      "highlight_terms": [
+        "공모하고"
+      ]
+    },
+    {
+      "id": "08",
+      "word": "공사",
+      "meaning": "construction",
+      "meaning_vi": "thi công / công trình",
+      "type": "명 noun",
+      "example_ko": "건물을 지을 때 기초 공사를 꼼꼼하게 해 두어야 합니다.",
+      "example_vi": "When new structure is built, you should always solidify the ground work.",
+      "example_vi_vn": "Khi xây tòa nhà, phải làm phần móng thật cẩn thận.",
+      "extra": "<div><span class='font-semibold text-gray-700'>공사 중</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>under construction</span></div>",
+      "highlight_terms": [
+        "공사를"
+      ]
+    },
+    {
+      "id": "09",
+      "word": "과정",
+      "meaning": "process",
+      "meaning_vi": "quá trình / chương trình",
+      "type": "명 noun",
+      "example_ko": "저희 학교의 교육 과정을 소개하겠습니다.",
+      "example_vi": "Let me introduce the educational process of our school.",
+      "example_vi_vn": "Tôi xin giới thiệu chương trình/quá trình giáo dục của trường chúng tôi.",
+      "extra": "",
+      "highlight_terms": [
+        "과정을"
+      ]
+    },
+    {
+      "id": "10",
+      "word": "구독",
+      "meaning": "subscription",
+      "meaning_vi": "đăng ký đọc / đặt mua định kỳ",
+      "type": "명 noun",
+      "example_ko": "작년부터 이 잡지를 정기 구독하게 되었습니다.",
+      "example_vi": "I signed up for subscriptions of this magazine starting from last year.",
+      "example_vi_vn": "Từ năm ngoái tôi đã đăng ký mua định kỳ tạp chí này.",
+      "extra": "<div><span class='font-semibold text-gray-700'>구독료</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>subscription fee</span></div>",
+      "highlight_terms": [
+        "구독하게"
+      ]
+    },
+    {
+      "id": "11",
+      "word": "금지되다",
+      "meaning": "be prohibited",
+      "meaning_vi": "bị cấm",
+      "type": "동 verb",
+      "example_ko": "수업 시간에는 핸드폰 사용이 금지됩니다.",
+      "example_vi": "Using cell phones during the class is prohibited.",
+      "example_vi_vn": "Trong giờ học, việc sử dụng điện thoại bị cấm.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>금지</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>prohibition</span></div><div><span class='font-semibold text-gray-700'>금지시키다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>prohibit</span></div></div>",
+      "highlight_terms": [
+        "금지됩니다"
+      ]
+    },
+    {
+      "id": "12",
+      "word": "기관",
+      "meaning": "organization",
+      "meaning_vi": "cơ quan / tổ chức",
+      "type": "명 noun",
+      "example_ko": "한국어 교육 기관이 늘어나고 있습니다.",
+      "example_vi": "The number of the organizations that teach Korean is increasing.",
+      "example_vi_vn": "Số cơ quan/tổ chức dạy tiếng Hàn đang tăng lên.",
+      "extra": "",
+      "highlight_terms": [
+        "기관이"
+      ]
+    },
+    {
+      "id": "13",
+      "word": "기운",
+      "meaning": "energy",
+      "meaning_vi": "sức lực / sinh khí",
+      "type": "명 noun",
+      "example_ko": "밥을 먹었더니 기운이 나는 것 같아요.",
+      "example_vi": "After having a meal, I feel like having more energy.",
+      "example_vi_vn": "Ăn cơm xong tôi thấy có sức hơn.",
+      "extra": "<div><span class='font-semibold text-gray-700'>감기 기운</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>a slight cold</span></div>",
+      "highlight_terms": [
+        "기운이"
+      ]
+    },
+    {
+      "id": "14",
+      "word": "기존",
+      "meaning": "existing",
+      "meaning_vi": "hiện có / sẵn có",
+      "type": "명 noun",
+      "example_ko": "기존 계획대로 하겠습니다.",
+      "example_vi": "We will go with the existing plan.",
+      "example_vi_vn": "Chúng tôi sẽ làm theo kế hoạch hiện có.",
+      "extra": "",
+      "highlight_terms": [
+        "기존"
+      ]
+    },
+    {
+      "id": "15",
+      "word": "깎다",
+      "meaning": "cut",
+      "meaning_vi": "cắt / cạo / gọt",
+      "type": "동 verb",
+      "example_ko": "수염을 깎았더니 깔끔해 보이네요.",
+      "example_vi": "After shaving myself, I look better.",
+      "example_vi_vn": "Cạo râu xong nhìn gọn gàng hơn.",
+      "extra": "",
+      "highlight_terms": [
+        "깎았더니"
+      ]
+    },
+    {
+      "id": "16",
+      "word": "깨지다",
+      "meaning": "be broken",
+      "meaning_vi": "bị vỡ",
+      "type": "동 verb",
+      "example_ko": "그릇이 깨질 수도 있으니까 조심하세요.",
+      "example_vi": "Be careful not to break the bowl.",
+      "example_vi_vn": "Hãy cẩn thận vì cái bát có thể bị vỡ.",
+      "extra": "",
+      "highlight_terms": [
+        "깨질"
+      ]
+    },
+    {
+      "id": "17",
+      "word": "미루다",
+      "meaning": "delay",
+      "meaning_vi": "trì hoãn / lùi lại",
+      "type": "동 verb",
+      "example_ko": "급한 일이 생겨서 친구와의 약속을 다음날로 미뤘어요.",
+      "example_vi": "I delayed the appointment with my friend since something urgent came up.",
+      "example_vi_vn": "Vì có việc gấp nên tôi đã lùi cuộc hẹn với bạn sang hôm sau.",
+      "extra": "",
+      "highlight_terms": [
+        "미뤘어요"
+      ],
+      "detailBlocks": [
+        {
+          "type": "tip_note",
+          "label": "Tip",
+          "question_ko": "‘미루다’와 ‘연기하다’는 어떤 차이가 있을까요?",
+          "question_vi": "“미루다” và “연기하다” khác nhau như thế nào?",
+          "body_ko": "둘 다 일정이나 약속을 뒤로 늦춘다는 뜻으로 쓸 수 있습니다. 다만 숙제, 과제, 일을 나중으로 넘길 때는 주로 ‘미루다’를 사용합니다.",
+          "body_vi": "Cả hai đều có thể dùng khi dời lịch hoặc cuộc hẹn sang thời điểm sau. Tuy nhiên, “미루다” thường dùng khi trì hoãn bài tập, nhiệm vụ hoặc công việc sang sau.",
+          "tags": [
+            {
+              "ko": "숙제를 미루다",
+              "en": "put off homework"
+            },
+            {
+              "ko": "약속을 미루다/연기하다",
+              "en": "postpone an appointment"
+            },
+            {
+              "ko": "경기를 연기하다",
+              "en": "postpone a game"
+            }
+          ],
+          "no_speak": true
+        }
+      ]
+    },
+    {
+      "id": "18",
+      "word": "껌",
+      "meaning": "gum",
+      "meaning_vi": "kẹo cao su",
+      "type": "명 noun",
+      "example_ko": "껌을 씹은 후에는 종이에 싸서 버려야지요.",
+      "example_vi": "You should wrap the gums with paper when you throw it away.",
+      "example_vi_vn": "Sau khi nhai kẹo cao su, bạn nên gói vào giấy rồi vứt.",
+      "extra": "",
+      "highlight_terms": [
+        "껌을"
+      ],
+      "detailBlocks": [
+        {
+          "type": "test_note",
+          "label_ko": "출제 경향",
+          "label_vi": "how this word appears in the test",
+          "title_ko": "‘껌’은 생활 습관이나 치아 건강과 관련된 주제로 출제될 수 있습니다.",
+          "title_vi": "“껌(gum)” may appear in topics about daily habits or dental health.",
+          "body_ko": "껌을 씹다, 껌을 버리다 같은 표현과 함께 자주 확인해 두세요.",
+          "body_vi": "Check expressions such as “껌을 씹다(chew gum)” and “껌을 버리다(throw away gum)”.",
+          "tags": [
+            {
+              "ko": "껌을 씹다",
+              "en": "chew gum"
+            },
+            {
+              "ko": "껌을 버리다",
+              "en": "throw away gum"
+            }
+          ],
+          "no_speak": true
+        }
+      ]
+    },
+    {
+      "id": "19",
+      "word": "꼽다",
+      "meaning": "pick",
+      "meaning_vi": "꼽다 / 꼽히다",
+      "type": "동 verb",
+      "example_ko": "외국 사람들은 한국 요리 중에서 불고기를 최고로 꼽는다.",
+      "example_vi": "Foreigners pick Bulgogi as their favorite Korean food.",
+      "example_vi_vn": "Người nước ngoài chọn bulgogi là món Hàn yêu thích nhất.",
+      "extra": "",
+      "highlight_terms": [
+        "꼽는다"
+      ]
+    },
+    {
+      "id": "20",
+      "word": "남녀노소",
+      "meaning": "men and women of all ages",
+      "meaning_vi": "mọi lứa tuổi / nam nữ già trẻ",
+      "type": "명 noun",
+      "example_ko": "떡볶이는 남녀노소 누구나 좋아하는 음식입니다.",
+      "example_vi": "Ddeokbokki is the food that men and women of all ages like.",
+      "example_vi_vn": "Tokbokki là món ăn mà mọi lứa tuổi đều thích.",
+      "extra": "",
+      "highlight_terms": [
+        "남녀노소"
+      ]
+    },
+    {
+      "id": "21",
+      "word": "널리",
+      "meaning": "widely",
+      "meaning_vi": "rộng rãi",
+      "type": "부 adverb",
+      "example_ko": "저는 한국 음식을 널리 알리고 싶습니다.",
+      "example_vi": "I want to widely spread the merit of the Korean food.",
+      "example_vi_vn": "Tôi muốn quảng bá rộng rãi món ăn Hàn Quốc.",
+      "extra": "",
+      "highlight_terms": [
+        "널리"
+      ]
+    },
+    {
+      "id": "22",
+      "word": "단체",
+      "meaning": "group",
+      "meaning_vi": "tập thể / nhóm",
+      "type": "명 noun",
+      "example_ko": "오늘 단체 사진을 찍는 줄 몰랐어요.",
+      "example_vi": "I didn’t know that we are taking a group picture today.",
+      "example_vi_vn": "Tôi không biết hôm nay chụp ảnh tập thể.",
+      "extra": "",
+      "highlight_terms": [
+        "단체"
+      ]
+    },
+    {
+      "id": "23",
+      "word": "달리다",
+      "meaning": "run",
+      "meaning_vi": "chạy",
+      "type": "동 verb",
+      "example_ko": "요즘 새벽마다 공원을 달리면서 운동하고 있습니다.",
+      "example_vi": "Lately, I am running in the park every morning.",
+      "example_vi_vn": "Dạo này sáng sớm nào tôi cũng chạy trong công viên để tập thể dục.",
+      "extra": "<div><span class='font-semibold text-gray-700'>달리기</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>running</span></div>",
+      "highlight_terms": [
+        "달리면서"
+      ]
+    },
+    {
+      "id": "24",
+      "word": "답답하다",
+      "meaning": "stuffy",
+      "meaning_vi": "ngột ngạt / bí bách",
+      "type": "형 adjective",
+      "example_ko": "교실이 너무 덥고 답답한데 에어컨을 켤까요?",
+      "example_vi": "The classroom feels very stuffy and hot, should I turn on the air conditioner?",
+      "example_vi_vn": "Phòng học quá nóng và ngột ngạt, bật điều hòa nhé?",
+      "extra": "",
+      "highlight_terms": [
+        "답답한데"
+      ]
+    },
+    {
+      "id": "25",
+      "word": "당일",
+      "meaning": "on that day",
+      "meaning_vi": "trong ngày đó / cùng ngày",
+      "type": "명 noun",
+      "example_ko": "이 표로는 당일 공연만 관람이 가능합니다.",
+      "example_vi": "This is a day ticket which allows you to see on that particular day.",
+      "example_vi_vn": "Vé này chỉ có thể xem buổi biểu diễn trong ngày đó.",
+      "extra": "",
+      "highlight_terms": [
+        "당일"
+      ],
+      "detailBlocks": [
+        {
+          "type": "test_note",
+          "label_ko": "출제 경향",
+          "label_vi": "how this word appears in the test",
+          "title_ko": "이 어휘는 쿠폰이나 티켓에서 자주 볼 수 있습니다.",
+          "title_vi": "This word often appears on coupons or tickets.",
+          "body_ko": "당일 취소는 불가합니다.\n당일 예약만 가능합니다.",
+          "body_vi": "Cancellation on the same day is not allowed.\nOnly same-day reservations are possible.",
+          "tags": [
+            {
+              "ko": "당일 취소",
+              "en": "same-day cancellation"
+            },
+            {
+              "ko": "당일 예약",
+              "en": "same-day reservation"
+            }
+          ],
+          "no_speak": true
+        }
+      ]
+    },
+    {
+      "id": "26",
+      "word": "대비",
+      "meaning": "prepare",
+      "meaning_vi": "chuẩn bị / đối phó",
+      "type": "명 noun",
+      "example_ko": "자연 재해의 피해를 줄이려면 대비가 필요합니다.",
+      "example_vi": "You should well prepare for the natural disaster in order to prevent the damage.",
+      "example_vi_vn": "Để giảm thiệt hại do thiên tai, cần có sự chuẩn bị.",
+      "extra": "",
+      "highlight_terms": [
+        "대비가"
+      ]
+    },
+    {
+      "id": "27",
+      "word": "덜다",
+      "meaning": "take (out)",
+      "meaning_vi": "lấy bớt ra",
+      "type": "동 verb",
+      "example_ko": "밥이 많아서 빈 그릇에 덜었다.",
+      "example_vi": "I took out some rice to an empty bowl since the quantity was too much.",
+      "example_vi_vn": "Vì cơm nhiều quá nên tôi đã lấy bớt sang bát trống.",
+      "extra": "",
+      "highlight_terms": [
+        "덜었다"
+      ]
+    },
+    {
+      "id": "28",
+      "word": "동네",
+      "meaning": "neighborhood",
+      "meaning_vi": "khu phố / khu xóm",
+      "type": "명 noun",
+      "example_ko": "우리 동네에는 공원이 많아서 참 좋아요.",
+      "example_vi": "There are many parks in my neighborhood and I really like it.",
+      "example_vi_vn": "Khu tôi có nhiều công viên nên tôi rất thích.",
+      "extra": "",
+      "highlight_terms": [
+        "동네에는"
+      ]
+    },
+    {
+      "id": "29",
+      "word": "순서",
+      "meaning": "turn",
+      "meaning_vi": "lượt / thứ tự",
+      "type": "명 noun",
+      "example_ko": "사람들이 모두 줄을 서서 자기 순서를 기다리고 있다.",
+      "example_vi": "People are standing in line waiting for their turn.",
+      "example_vi_vn": "Mọi người đều xếp hàng chờ đến lượt mình.",
+      "extra": "<div><span class='font-semibold text-gray-700'>순서대로</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>in turn</span></div>",
+      "highlight_terms": [
+        "순서를"
+      ],
+      "detailBlocks": [
+        {
+          "type": "tip_note",
+          "label": "Tip",
+          "question_ko": "‘순서’와 ‘차례’는 어떤 차이가 있을까요?",
+          "question_vi": "“순서” và “차례” khác nhau như thế nào?",
+          "body_ko": "‘순서’와 ‘차례’는 ‘order’와 ‘turn’의 뜻으로 서로 바꾸어 쓸 수 있습니다. 다만 ‘차례’는 ‘번’의 뜻도 있어서 ‘이번에는’, ‘제 차례’처럼 쓰입니다.",
+          "body_vi": "“순서” và “차례” thường có thể thay thế nhau khi mang nghĩa thứ tự/lượt. Tuy nhiên, “차례” còn mang nghĩa lượt của mình, như “이번에는” hoặc “제 차례”.",
+          "tags": [
+            {
+              "ko": "제 차례예요",
+              "en": "It is my turn"
+            },
+            {
+              "ko": "순서대로",
+              "en": "in order"
+            },
+            {
+              "ko": "차례대로",
+              "en": "in turn"
+            }
+          ],
+          "no_speak": true
+        }
+      ]
+    },
+    {
+      "id": "30",
+      "word": "동시",
+      "meaning": "at the same time",
+      "meaning_vi": "đồng thời / cùng lúc",
+      "type": "명 noun",
+      "example_ko": "두 가지 일을 동시에 하는 것은 무리입니다.",
+      "example_vi": "Working on two works at the same time is too much to handle.",
+      "example_vi_vn": "Làm hai việc cùng lúc là quá sức.",
+      "extra": "",
+      "highlight_terms": [
+        "동시에"
+      ]
+    },
+    {
+      "id": "31",
+      "word": "동의하다",
+      "meaning": "agree with",
+      "meaning_vi": "đồng ý với",
+      "type": "동 verb",
+      "example_ko": "그 사람의 의견에 동의하기 힘듭니다.",
+      "example_vi": "It is hard to agree with his opinion.",
+      "example_vi_vn": "Thật khó đồng ý với ý kiến của người đó.",
+      "extra": "<div><span class='font-semibold text-gray-700'>동의</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>agreement</span></div>",
+      "highlight_terms": [
+        "동의하기"
+      ]
+    },
+    {
+      "id": "32",
+      "word": "둘러보다",
+      "meaning": "look around",
+      "meaning_vi": "xem quanh / nhìn quanh",
+      "type": "동 verb",
+      "example_ko": "옷을 살 때는 여러 매장을 둘러보고 비교해 본 다음에 사는 것이 좋아요.",
+      "example_vi": "It is good for you to buy your clothes after looking around many shops and comparing the price.",
+      "example_vi_vn": "Khi mua quần áo, nên xem quanh nhiều cửa hàng và so sánh rồi hãy mua.",
+      "extra": "",
+      "highlight_terms": [
+        "둘러보고"
+      ]
+    },
+    {
+      "id": "33",
+      "word": "뚜렷하다",
+      "meaning": "clear",
+      "meaning_vi": "rõ ràng",
+      "type": "형 adjective",
+      "example_ko": "민호는 자신의 의견이나 주관이 뚜렷한 편이다.",
+      "example_vi": "Minho has a very clear view on his opinion.",
+      "example_vi_vn": "Minho là người có ý kiến và quan điểm khá rõ ràng.",
+      "extra": "",
+      "highlight_terms": [
+        "뚜렷한"
+      ]
+    },
+    {
+      "id": "34",
+      "word": "마감",
+      "meaning": "deadline",
+      "meaning_vi": "hạn chót",
+      "type": "명 noun",
+      "example_ko": "마감 시간까지 원고를 보내드리지 못할 것 같은데 어떡하죠?",
+      "example_vi": "I am afraid I won’t be able to send you the document before the deadline.",
+      "example_vi_vn": "Tôi e là không thể gửi bản thảo trước hạn chót, phải làm sao đây?",
+      "extra": "",
+      "highlight_terms": [
+        "마감"
+      ]
+    }
+  ],
+  "dict": {
+    "how this word appears in the test": "cách từ này xuất hiện trong đề thi",
+    "Words to memorize together": "Nhóm từ nên học cùng nhau",
+    "Words that are easy to confuse in TOPIK": "Những từ dễ nhầm lẫn trong TOPIK",
+    "Polysemy": "Từ đa nghĩa",
+    "Antonym": "Từ trái nghĩa",
+    "Synonym": "Từ đồng nghĩa",
+    "Write Korean in English, and English in Korean.": "Hãy viết từ tiếng Hàn sang tiếng Việt, và từ tiếng Việt sang tiếng Hàn.",
+    "Connect the Korean words with the English words of same meaning.": "Hãy nối từ tiếng Hàn với nghĩa tiếng Việt tương ứng.",
+    "Pick and write the suitable word among <the options> in the blank space.": "Hãy chọn từ phù hợp trong <gợi ý> để điền vào chỗ trống.",
+    "Pick and write the suitable word among in the blank space.": "Hãy chọn từ phù hợp trong gợi ý để điền vào chỗ trống.",
+    "Choose the proper word that fits the sentence more naturally.": "Hãy chọn từ phù hợp để câu tự nhiên hơn.",
+    "soon": "sớm / ngay sau đây",
+    "street": "ngõ / phố nhỏ",
+    "pretty": "đẹp / mịn màng",
+    "offensive": "mang tính công kích / hung hăng",
+    "supply": "cung cấp",
+    "holiday": "ngày lễ truyền thống",
+    "invite public participation": "mời tham gia / mở cuộc thi công khai",
+    "construction": "thi công / công trình",
+    "process": "quá trình / chương trình",
+    "subscription": "đăng ký đọc / đặt mua định kỳ",
+    "be prohibited": "bị cấm",
+    "organization": "cơ quan / tổ chức",
+    "energy": "sức lực / sinh khí",
+    "existing": "hiện có / sẵn có",
+    "cut": "cắt / cạo / gọt",
+    "be broken": "bị vỡ",
+    "delay": "trì hoãn / lùi lại",
+    "gum": "kẹo cao su",
+    "pick": "꼽다 / 꼽히다",
+    "men and women of all ages": "mọi lứa tuổi / nam nữ già trẻ",
+    "widely": "rộng rãi",
+    "group": "tập thể / nhóm",
+    "run": "chạy",
+    "stuffy": "ngột ngạt / bí bách",
+    "on that day": "trong ngày đó / cùng ngày",
+    "prepare": "chuẩn bị / đối phó",
+    "take (out)": "lấy bớt ra",
+    "neighborhood": "khu phố / khu xóm",
+    "turn": "lượt / thứ tự",
+    "at the same time": "đồng thời / cùng lúc",
+    "agree with": "đồng ý với",
+    "look around": "xem quanh / nhìn quanh",
+    "clear": "rõ ràng",
+    "deadline": "hạn chót",
+    "offense": "sự công kích / tấn công",
+    "aggressive tendency": "khuynh hướng hung hăng",
+    "offensiveness": "tính công kích",
+    "offend": "công kích / xúc phạm",
+    "contest": "cuộc thi / cuộc thi tuyển chọn",
+    "contest exhibit": "cuộc thi công khai / cuộc thi tuyển chọn",
+    "under construction": "đang thi công",
+    "subscription fee": "phí thuê bao / phí đặt mua",
+    "prohibition": "sự cấm đoán",
+    "prohibit": "cấm",
+    "a slight cold": "cảm nhẹ",
+    "postpone an appointment": "hoãn/lùi cuộc hẹn",
+    "put off homework": "trì hoãn bài tập",
+    "postpone a game": "hoãn trận đấu",
+    "chew gum": "nhai kẹo cao su",
+    "throw away gum": "vứt kẹo cao su",
+    "running": "chạy bộ",
+    "same-day cancellation": "hủy trong ngày",
+    "same-day reservation": "đặt trong ngày",
+    "in turn": "theo lượt / lần lượt",
+    "in order": "theo thứ tự",
+    "agreement": "sự đồng ý",
+    "The most famous holidays in Korea are Seollal (Lunar New Year’s Day) and Chuseok.": "Các ngày lễ truyền thống tiêu biểu của Hàn Quốc là Seollal (mùng 1 tháng 1 âm lịch) và Chuseok (15 tháng 8 âm lịch).",
+    "What is the difference between “미루다(delay)” and “연기하다(postpone)”?": "“미루다” và “연기하다” khác nhau như thế nào?",
+    "Both can mean moving a schedule or appointment to a later time. However, “미루다” is commonly used when postponing homework, tasks, or work to later.": "Cả hai đều có thể dùng khi dời lịch/hẹn sang thời điểm sau. Tuy nhiên, “미루다” thường dùng khi trì hoãn bài tập, nhiệm vụ hoặc công việc sang sau.",
+    "“껌(gum)” may appear in topics about daily habits or dental health.": "“껌” có thể xuất hiện trong chủ đề thói quen sinh hoạt hoặc sức khỏe răng miệng.",
+    "Check expressions such as “껌을 씹다(chew gum)” and “껌을 버리다(throw away gum)”.": "Hãy học các cụm như “껌을 씹다” và “껌을 버리다”.",
+    "This word often appears on coupons or tickets.": "Từ này thường xuất hiện trên phiếu giảm giá hoặc vé.",
+    "Cancellation on the same day is not allowed.\nOnly same-day reservations are possible.": "Không được hủy trong ngày.\nChỉ có thể đặt trong ngày.",
+    "What is the difference between “순서(order)” and “차례(turn)”?": "“순서” và “차례” khác nhau như thế nào?",
+    "“순서” and “차례” can often replace each other when they mean order or turn. “차례” can also mean one’s turn/time, as in “제 차례(my turn)”.": "“순서” và “차례” thường có thể thay thế nhau khi mang nghĩa thứ tự/lượt. Tuy nhiên, “차례” còn mang nghĩa lượt của mình, như “이번에는” hoặc “제 차례”.",
+    "It is my turn": "đến lượt tôi",
+    "solve (the problem)": "giải quyết vấn đề",
+    "relieve (the stress)": "giải tỏa căng thẳng",
+    "unwrap (the package)": "mở gói hàng",
+    "get on": "lên xe",
+    "get off": "xuống xe",
+    "stop": "dừng / ngừng",
+    "How long do you think it will take for you to solve the problem?": "Bạn nghĩ sẽ mất bao lâu để giải quyết vấn đề này?",
+    "You should not interfere others with the excuse that you are relieving your stress.": "Đừng gây hại cho người khác với lý do giải tỏa căng thẳng.",
+    "My roommate unwrapped the package that was sent for me.": "Bạn cùng phòng đã mở gói hàng gửi đến tên tôi.",
+    "The bus should not depart until all the passengers are on the bus.": "Xe buýt không được xuất phát cho đến khi tất cả hành khách lên xe.",
+    "Be careful while you are getting off the bus.": "Hãy cẩn thận khi xuống xe buýt.",
+    "I stopped what I was doing, and listened carefully to the story from the radio.": "Tôi dừng việc đang làm và lắng nghe câu chuyện phát ra từ radio.",
+    "a. holiday": "a. ngày lễ",
+    "b. street": "b. ngõ / đường phố",
+    "c. organization": "c. cơ quan / tổ chức",
+    "d. subscription": "d. đăng ký định kỳ",
+    "e. supply": "e. cung cấp",
+    "f. take (out)": "f. lấy bớt / múc ra",
+    "g. delay": "g. trì hoãn",
+    "a. stuffy": "a. ngột ngạt",
+    "b. invite public participation": "b. mời tham gia",
+    "c. clear": "c. rõ ràng",
+    "d. agree with": "d. đồng ý với",
+    "a. 답답한데": "a. ngột ngạt",
+    "b. 공모하고": "b. đang mời tham gia / mở cuộc thi",
+    "c. 뚜렷한": "c. rõ ràng",
+    "d. 동의하기": "d. đồng ý",
+    "The city of Seoul is inviting public participation for a new designed logo of Seoul.": "Thành phố Seoul đang mở cuộc thi/mời tham gia thiết kế logo Seoul.",
+    "The classroom feels very stuffy and hot, should I turn on the air conditioner?": "Phòng học quá nóng và ngột ngạt, bật điều hòa nhé?",
+    "It is hard to agree with his opinion.": "Thật khó đồng ý với ý kiến của người đó.",
+    "Minho has a very clear view on his opinion.": "Minho là người có ý kiến và quan điểm khá rõ ràng.",
+    "Cancellation on the same day is not allowed. Only same-day reservations are possible.": "Không được hủy trong ngày. Chỉ có thể đặt trong ngày.",
+    "I will come back soon so wait here.": "Tôi sẽ quay lại sớm nên hãy đợi ở đây.",
+    "You can’t imagine how famous Sindang-dong ddeokbokki street is!": "Bạn không tưởng tượng được phố tokbokki Sindang-dong nổi tiếng thế nào đâu!",
+    "Not only the design but also the color is very pretty.": "Không chỉ thiết kế đẹp mà màu sắc cũng rất đẹp.",
+    "A more offensive attitude is shown from the child who played more computer games.": "Trẻ càng chơi trò chơi máy tính nhiều thì càng thể hiện khuynh hướng hung hăng hơn.",
+    "Our farm supplies fresh materials to many different restaurants.": "Trang trại chúng tôi cung cấp nguyên liệu tươi cho nhiều nhà hàng.",
+    "When it is holiday seasons, many people visit their hometown and spend much time with their family.": "Khi đến dịp lễ truyền thống, nhiều người về quê và dành thời gian bên gia đình.",
+    "When new structure is built, you should always solidify the ground work.": "Khi xây tòa nhà, phải làm phần móng thật cẩn thận.",
+    "Let me introduce the educational process of our school.": "Tôi xin giới thiệu chương trình/quá trình giáo dục của trường chúng tôi.",
+    "I signed up for subscriptions of this magazine starting from last year.": "Từ năm ngoái tôi đã đăng ký mua định kỳ tạp chí này.",
+    "Using cell phones during the class is prohibited.": "Trong giờ học, việc sử dụng điện thoại bị cấm.",
+    "The number of the organizations that teach Korean is increasing.": "Số cơ quan/tổ chức dạy tiếng Hàn đang tăng lên.",
+    "After having a meal, I feel like having more energy.": "Ăn cơm xong tôi thấy có sức hơn.",
+    "We will go with the existing plan.": "Chúng tôi sẽ làm theo kế hoạch hiện có.",
+    "After shaving myself, I look better.": "Cạo râu xong nhìn gọn gàng hơn.",
+    "Be careful not to break the bowl.": "Hãy cẩn thận vì cái bát có thể bị vỡ.",
+    "I delayed the appointment with my friend since something urgent came up.": "Vì có việc gấp nên tôi đã lùi cuộc hẹn với bạn sang hôm sau.",
+    "You should wrap the gums with paper when you throw it away.": "Sau khi nhai kẹo cao su, bạn nên gói vào giấy rồi vứt.",
+    "Foreigners pick Bulgogi as their favorite Korean food.": "Người nước ngoài chọn bulgogi là món Hàn yêu thích nhất.",
+    "Ddeokbokki is the food that men and women of all ages like.": "Tokbokki là món ăn mà mọi lứa tuổi đều thích.",
+    "I want to widely spread the merit of the Korean food.": "Tôi muốn quảng bá rộng rãi món ăn Hàn Quốc.",
+    "I didn’t know that we are taking a group picture today.": "Tôi không biết hôm nay chụp ảnh tập thể.",
+    "Lately, I am running in the park every morning.": "Dạo này sáng sớm nào tôi cũng chạy trong công viên để tập thể dục.",
+    "This is a day ticket which allows you to see on that particular day.": "Vé này chỉ có thể xem buổi biểu diễn trong ngày đó.",
+    "You should well prepare for the natural disaster in order to prevent the damage.": "Để giảm thiệt hại do thiên tai, cần có sự chuẩn bị.",
+    "I took out some rice to an empty bowl since the quantity was too much.": "Vì cơm nhiều quá nên tôi đã lấy bớt sang bát trống.",
+    "There are many parks in my neighborhood and I really like it.": "Khu tôi có nhiều công viên nên tôi rất thích.",
+    "People are standing in line waiting for their turn.": "Mọi người đều xếp hàng chờ đến lượt mình.",
+    "Working on two works at the same time is too much to handle.": "Làm hai việc cùng lúc là quá sức.",
+    "It is good for you to buy your clothes after looking around many shops and comparing the price.": "Khi mua quần áo, nên xem quanh nhiều cửa hàng và so sánh rồi hãy mua.",
+    "I am afraid I won’t be able to send you the document before the deadline.": "Tôi e là không thể gửi bản thảo trước hạn chót, phải làm sao đây?",
+    "Both can be used to mean delaying a schedule or appointment. However, “미루다” is mainly used when delaying homework, assignments, or work until later.": "Cả hai đều có thể dùng khi dời lịch hoặc cuộc hẹn sang thời điểm sau. Tuy nhiên, “미루다” thường dùng khi trì hoãn bài tập, nhiệm vụ hoặc công việc sang sau.",
+    "“순서” and “차례” can often replace each other when they mean thứ tự/lượt. “차례” can also mean one’s turn/time, as in “제 차례(lượt của tôi)”.": "“순서” và “차례” thường có thể thay thế nhau khi mang nghĩa thứ tự/lượt. Tuy nhiên, “차례” còn mang nghĩa lượt của mình, như “이번에는” hoặc “제 차례”.",
+    "a. soon": "a. sớm / chẳng bao lâu",
+    "b. agree with": "b. đồng ý với",
+    "d. deadline": "d. hạn chót",
+    "e. pretty": "e. đẹp / xinh",
+    "f. supply": "f. cung cấp",
+    "g. widely": "g. rộng rãi",
+    "Các ngày lễ truyền thống tiêu biểu của Hàn Quốc là Seollal (mùng 1 tháng 1 âm lịch) và Chuseok (15 tháng 8 âm lịch).": "Các ngày lễ truyền thống tiêu biểu của Hàn Quốc là Seollal (mùng 1 tháng 1 âm lịch) và Chuseok (15 tháng 8 âm lịch).",
+    "“미루다” và “연기하다” khác nhau như thế nào?": "“미루다” và “연기하다” khác nhau như thế nào?",
+    "Cả hai đều có thể dùng khi dời lịch hoặc cuộc hẹn sang thời điểm sau. Tuy nhiên, “미루다” thường dùng khi trì hoãn bài tập, nhiệm vụ hoặc công việc sang sau.": "Cả hai đều có thể dùng khi dời lịch hoặc cuộc hẹn sang thời điểm sau. Tuy nhiên, “미루다” thường dùng khi trì hoãn bài tập, nhiệm vụ hoặc công việc sang sau.",
+    "“순서” và “차례” khác nhau như thế nào?": "“순서” và “차례” khác nhau như thế nào?",
+    "“순서” và “차례” thường có thể thay thế nhau khi mang nghĩa thứ tự/lượt. Tuy nhiên, “차례” còn mang nghĩa lượt của mình, như “이번에는” hoặc “제 차례”.": "“순서” và “차례” thường có thể thay thế nhau khi mang nghĩa thứ tự/lượt. Tuy nhiên, “차례” còn mang nghĩa lượt của mình, như “이번에는” hoặc “제 차례”.",
+    "public contest": "cuộc thi công khai / tuyển chọn công khai",
+    "competition": "cuộc thi",
+    "open contest": "cuộc thi công khai",
+    "public recruitment": "tuyển chọn công khai",
+    "The city of Seoul is holding a public contest for a new name.": "Thành phố Seoul đang mở cuộc thi/tuyển chọn công khai để chọn tên mới."
+  }
+}

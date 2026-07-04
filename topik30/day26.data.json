@@ -1,0 +1,881 @@
+{
+  "day": 26,
+  "vocabData": [
+    {
+      "id": "01",
+      "word": "세기",
+      "meaning": "century",
+      "meaning_vi": "thế kỷ",
+      "type": "명 noun",
+      "example_ko": "21세기는 인터넷의 발달로 사람들이 빠르게 정보를 공유할 수 있게 되었다.",
+      "example_vi": "The 21st century is the era when people can quickly share information with each other.",
+      "example_vi_vn": "Thế kỷ 21 là thời đại mà nhờ sự phát triển của Internet, con người có thể chia sẻ thông tin nhanh chóng với nhau.",
+      "extra": "",
+      "highlight_terms": [
+        "세기"
+      ]
+    },
+    {
+      "id": "02",
+      "word": "소화",
+      "meaning": "digest",
+      "meaning_vi": "tiêu hóa",
+      "type": "명 noun",
+      "example_ko": "요즘 소화가 잘 안 되는데 병원에 한번 가 봐야 할 것 같다.",
+      "example_vi": "Lately, I have trouble digesting, so I should go to the hospital.",
+      "example_vi_vn": "Dạo này tôi tiêu hóa không tốt nên có lẽ nên đi bệnh viện một lần.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>소화되다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>be digested</span></div><div><span class='font-semibold text-gray-700'>소화제</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>digestive medicine</span></div></div>",
+      "highlight_terms": [
+        "소화가"
+      ]
+    },
+    {
+      "id": "03",
+      "word": "손쉽다",
+      "meaning": "easy (to do)",
+      "meaning_vi": "dễ dàng",
+      "type": "형 adjective",
+      "example_ko": "컴퓨터가 있으면 사람이 하기 어려운 일을 손쉽게 끝낼 수 있다.",
+      "example_vi": "If you have the computer with you, you can do a difficult work easily.",
+      "example_vi_vn": "Nếu có máy tính, ta có thể dễ dàng hoàn thành những việc con người khó làm.",
+      "extra": "",
+      "highlight_terms": [
+        "손쉽게"
+      ]
+    },
+    {
+      "id": "04",
+      "word": "근무",
+      "meaning": "work",
+      "meaning_vi": "làm việc / công việc",
+      "type": "명 noun",
+      "example_ko": "그 회사는 근무 조건이 아주 좋습니다.",
+      "example_vi": "That company’s working condition is really good.",
+      "example_vi_vn": "Điều kiện làm việc của công ty đó rất tốt.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>근무하다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>work</span></div><div><span class='font-semibold text-gray-700'>근무 환경</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>working condition</span></div></div>",
+      "detailBlocks": [
+        {
+          "type": "tip_combo",
+          "label": "Tip",
+          "question_ko": "보통 중요하게 생각하는 ‘근무 조건’으로는 뭐가 있을까요?",
+          "question_vi": "Những “điều kiện làm việc” thường được xem là quan trọng gồm những gì?",
+          "word": "근무 조건",
+          "word_vi": "working condition",
+          "items": [
+            {
+              "ko": "월급",
+              "vi": "salary"
+            },
+            {
+              "ko": "인센티브",
+              "vi": "incentive"
+            },
+            {
+              "ko": "근무 시간",
+              "vi": "working hours"
+            },
+            {
+              "ko": "휴가 일수",
+              "vi": "vacation days"
+            },
+            {
+              "ko": "복지",
+              "vi": "welfare"
+            },
+            {
+              "ko": "보너스",
+              "vi": "bonus"
+            }
+          ],
+          "body_ko": "월급, 인센티브, 근무 시간, 휴가 일수, 복지, 보너스 등이 있어요.",
+          "body_vi": "Có các yếu tố như lương, thưởng khích lệ, thời gian làm việc, số ngày nghỉ phép, phúc lợi và tiền thưởng.",
+          "no_speak": true
+        }
+      ],
+      "highlight_terms": [
+        "근무 조건이"
+      ]
+    },
+    {
+      "id": "05",
+      "word": "수분",
+      "meaning": "water",
+      "meaning_vi": "nước / độ ẩm",
+      "type": "명 noun",
+      "example_ko": "여름철을 건강하게 보내려면 충분한 수분을 섭취해야 한다.",
+      "example_vi": "In order to be healthy during the summer, you should drink plenty of water.",
+      "example_vi_vn": "Để trải qua mùa hè khỏe mạnh, bạn phải bổ sung đủ nước.",
+      "extra": "",
+      "highlight_terms": [
+        "수분을"
+      ]
+    },
+    {
+      "id": "06",
+      "word": "수출",
+      "meaning": "export",
+      "meaning_vi": "xuất khẩu",
+      "type": "명 noun",
+      "example_ko": "수입보다 수출이 증가하면서 나라 경제가 좋아지고 있다.",
+      "example_vi": "As exports increase more than imports, the national economy is getting better.",
+      "example_vi_vn": "Khi xuất khẩu tăng nhiều hơn nhập khẩu, kinh tế quốc gia đang trở nên tốt hơn.",
+      "extra": "<div><span class='font-semibold text-gray-700'>수입</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>import</span></div>",
+      "highlight_terms": [
+        "수출이"
+      ]
+    },
+    {
+      "id": "07",
+      "word": "시급하다",
+      "meaning": "urgent",
+      "meaning_vi": "cấp bách / khẩn cấp",
+      "type": "형 adjective",
+      "example_ko": "그 문제의 원인을 찾는 것보다 그 문제를 해결하는 것이 더 시급하다.",
+      "example_vi": "Solving the problem is more urgent than finding the cause of the problem.",
+      "example_vi_vn": "Giải quyết vấn đề đó cấp bách hơn việc tìm nguyên nhân của nó.",
+      "extra": "",
+      "highlight_terms": [
+        "시급하다"
+      ]
+    },
+    {
+      "id": "08",
+      "word": "시키다",
+      "meaning": "make (someone to do)",
+      "meaning_vi": "sai khiến / bảo ai làm",
+      "type": "동 verb",
+      "example_ko": "할아버지께서 심부름을 시키셨다.",
+      "example_vi": "Grandfather made me run errands.",
+      "example_vi_vn": "Ông đã sai tôi đi làm việc vặt.",
+      "extra": "",
+      "highlight_terms": [
+        "시키셨다"
+      ]
+    },
+    {
+      "id": "09",
+      "word": "신고하다",
+      "meaning": "report",
+      "meaning_vi": "báo cáo / trình báo",
+      "type": "동 verb",
+      "example_ko": "수상한 사람을 보면 경찰에 신고해야 한다.",
+      "example_vi": "If you see a suspicious person, you should report it to the police.",
+      "example_vi_vn": "Nếu thấy người khả nghi thì phải báo cảnh sát.",
+      "extra": "<div><span class='font-semibold text-gray-700'>신고를 받다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>be informed</span></div>",
+      "highlight_terms": [
+        "신고해야"
+      ]
+    },
+    {
+      "id": "10",
+      "word": "신분증",
+      "meaning": "identification",
+      "meaning_vi": "giấy tờ tùy thân / thẻ căn cước",
+      "type": "명 noun",
+      "example_ko": "외부인이 우리 회사에 들어오려면 신분증을 보여줘야 한다.",
+      "example_vi": "When people try to enter the building, they should show their identification.",
+      "example_vi_vn": "Người ngoài muốn vào công ty chúng tôi thì phải xuất trình giấy tờ tùy thân.",
+      "extra": "",
+      "highlight_terms": [
+        "신분증을"
+      ]
+    },
+    {
+      "id": "11",
+      "word": "심사",
+      "meaning": "screening",
+      "meaning_vi": "thẩm định / xét duyệt",
+      "type": "명 noun",
+      "example_ko": "논문 심사를 통과해서 이제 곧 졸업할 거예요.",
+      "example_vi": "The thesis was passed after the defense, so he will soon graduate.",
+      "example_vi_vn": "Luận văn đã vượt qua vòng thẩm định nên bây giờ tôi sắp tốt nghiệp.",
+      "extra": "<div><span class='font-semibold text-gray-700'>심사 위원</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>judge</span></div>",
+      "highlight_terms": [
+        "심사를"
+      ]
+    },
+    {
+      "id": "12",
+      "word": "언어",
+      "meaning": "language",
+      "meaning_vi": "ngôn ngữ",
+      "type": "명 noun",
+      "example_ko": "인간은 동물과 달리 언어가 있다.",
+      "example_vi": "Human beings have language unlike animals.",
+      "example_vi_vn": "Con người khác với động vật ở chỗ có ngôn ngữ.",
+      "extra": "<div><span class='font-semibold text-gray-700'>언어 치료사</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>speech therapist</span></div>",
+      "highlight_terms": [
+        "언어가"
+      ]
+    },
+    {
+      "id": "13",
+      "word": "여부",
+      "meaning": "whether",
+      "meaning_vi": "việc có hay không / liệu có",
+      "type": "명 noun",
+      "example_ko": "지진이 일어나자 많은 사람들이 가족의 생사 여부를 확인하기 위해 애쓰고 있다.",
+      "example_vi": "When the earthquake happened, many people were trying hard to know whether their family members were dead or alive.",
+      "example_vi_vn": "Khi động đất xảy ra, nhiều người đang cố xác nhận việc người thân còn sống hay đã mất.",
+      "extra": "",
+      "highlight_terms": [
+        "여부를"
+      ]
+    },
+    {
+      "id": "14",
+      "word": "열람",
+      "meaning": "reading",
+      "meaning_vi": "đọc / xem tài liệu",
+      "type": "명 noun",
+      "example_ko": "도서관 열람실은 오전 9시부터 오후 6시까지입니다.",
+      "example_vi": "You can read in the library from 9 in the morning to 6 in the evening.",
+      "example_vi_vn": "Phòng đọc của thư viện mở từ 9 giờ sáng đến 6 giờ chiều.",
+      "extra": "<div><span class='font-semibold text-gray-700'>열람실</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>reading room</span></div>",
+      "highlight_terms": [
+        "열람실은"
+      ]
+    },
+    {
+      "id": "15",
+      "word": "열쇠",
+      "meaning": "key",
+      "meaning_vi": "chìa khóa",
+      "type": "명 noun",
+      "example_ko": "요즘은 열쇠보다는 카드키나 번호키를 이용합니다.",
+      "example_vi": "Lately, people are using more card keys or passwords than regular keys.",
+      "example_vi_vn": "Dạo này người ta dùng thẻ khóa hoặc mã số nhiều hơn chìa khóa thường.",
+      "extra": "",
+      "highlight_terms": [
+        "열쇠보다는"
+      ]
+    },
+    {
+      "id": "16",
+      "word": "열차",
+      "meaning": "train",
+      "meaning_vi": "tàu hỏa",
+      "type": "명 noun",
+      "example_ko": "서두르지 않으면 열차를 놓치겠어요.",
+      "example_vi": "We will miss the train if we do not hurry.",
+      "example_vi_vn": "Nếu không nhanh lên thì chúng ta sẽ lỡ tàu.",
+      "extra": "",
+      "highlight_terms": [
+        "열차를"
+      ]
+    },
+    {
+      "id": "17",
+      "word": "영수증",
+      "meaning": "receipt",
+      "meaning_vi": "hóa đơn / biên lai",
+      "type": "명 noun",
+      "example_ko": "교환이나 환불을 할 경우 영수증을 지참해 주십시오.",
+      "example_vi": "When trying to exchange or to get a refund, please bring the receipt with you.",
+      "example_vi_vn": "Khi đổi hoặc hoàn tiền, vui lòng mang theo hóa đơn.",
+      "extra": "",
+      "highlight_terms": [
+        "영수증을"
+      ]
+    },
+    {
+      "id": "18",
+      "word": "내놓다",
+      "meaning": "release",
+      "meaning_vi": "đưa ra / công bố / ra mắt",
+      "type": "동 verb",
+      "example_ko": "작가들이 이번 전시회에서 많은 작품을 내놓았다.",
+      "example_vi": "The artists released many works during this exhibition.",
+      "example_vi_vn": "Các nghệ sĩ đã đưa ra nhiều tác phẩm trong triển lãm lần này.",
+      "extra": "",
+      "detailBlocks": [
+        {
+          "type": "tip_combo",
+          "label": "Tip",
+          "question_ko": "‘내놓다’는 어떤 단어와 같이 사용할까요?",
+          "question_vi": "“내놓다” thường dùng cùng những từ nào?",
+          "word": "내놓다",
+          "word_vi": "release / put out",
+          "items": [
+            {
+              "ko": "대책",
+              "vi": "countermeasure"
+            },
+            {
+              "ko": "작품",
+              "vi": "work"
+            },
+            {
+              "ko": "신제품",
+              "vi": "a new product"
+            },
+            {
+              "ko": "아이디어",
+              "vi": "an idea"
+            }
+          ],
+          "no_speak": true
+        }
+      ],
+      "highlight_terms": [
+        "내놓았다"
+      ]
+    },
+    {
+      "id": "19",
+      "word": "예",
+      "meaning": "old times",
+      "meaning_vi": "xưa / ngày xưa",
+      "type": "명 noun",
+      "example_ko": "예로부터 한국 사람들은 노인에 대한 공경심이 강했다.",
+      "example_vi": "Korean people strongly respected the elders from the old times.",
+      "example_vi_vn": "Từ xưa, người Hàn Quốc đã có lòng kính trọng người lớn tuổi rất mạnh.",
+      "extra": "",
+      "highlight_terms": [
+        "예로부터"
+      ]
+    },
+    {
+      "id": "20",
+      "word": "올라가다",
+      "meaning": "rise",
+      "meaning_vi": "tăng lên / đi lên",
+      "type": "동 verb",
+      "example_ko": "지구 온난화 현상으로 극지방의 온도가 매년 올라간다고 한다.",
+      "example_vi": "Because of global warming, the temperature of the polar regions is rising annually.",
+      "example_vi_vn": "Nghe nói do hiện tượng nóng lên toàn cầu, nhiệt độ ở vùng cực tăng lên hằng năm.",
+      "extra": "",
+      "highlight_terms": [
+        "올라간다고"
+      ]
+    },
+    {
+      "id": "21",
+      "word": "올바르다",
+      "meaning": "right",
+      "meaning_vi": "đúng đắn",
+      "type": "형 adjective",
+      "example_ko": "어린 아이들은 올바른 행동이 무엇인지 때때로 모를 수 있다.",
+      "example_vi": "Youngsters may not know what is the right behavior from time to time.",
+      "example_vi_vn": "Trẻ nhỏ đôi khi có thể không biết hành động đúng đắn là gì.",
+      "extra": "",
+      "highlight_terms": [
+        "올바른"
+      ]
+    },
+    {
+      "id": "22",
+      "word": "욕심",
+      "meaning": "greed",
+      "meaning_vi": "lòng tham / tham vọng",
+      "type": "명 noun",
+      "example_ko": "자기의 욕심만 생각하면 남을 배려하기 어렵다.",
+      "example_vi": "When you only think of your own benefit, it is hard to care for others.",
+      "example_vi_vn": "Nếu chỉ nghĩ đến lòng tham của mình thì khó quan tâm đến người khác.",
+      "extra": "<div><span class='font-semibold text-gray-700'>욕심을 내다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>be greedy</span></div>",
+      "highlight_terms": [
+        "욕심만"
+      ]
+    },
+    {
+      "id": "23",
+      "word": "용도",
+      "meaning": "use",
+      "meaning_vi": "công dụng / mục đích sử dụng",
+      "type": "명 noun",
+      "example_ko": "이 물건은 여러 가지 용도로 쓰일 수 있어 실용적인 것 같아요.",
+      "example_vi": "It is practical since it can be used for many uses.",
+      "example_vi_vn": "Vật này có vẻ thực dụng vì có thể dùng cho nhiều mục đích khác nhau.",
+      "extra": "",
+      "highlight_terms": [
+        "용도로"
+      ]
+    },
+    {
+      "id": "24",
+      "word": "음료수",
+      "meaning": "beverage",
+      "meaning_vi": "đồ uống / nước uống",
+      "type": "명 noun",
+      "example_ko": "운동 후에는 음료수보다 물이 수분 보충에 좋다.",
+      "example_vi": "Drinking water after you work out is better than drinking a beverage for hydration.",
+      "example_vi_vn": "Sau khi vận động, nước tốt cho việc bổ sung nước hơn đồ uống.",
+      "extra": "<div><span class='font-semibold text-gray-700'>음료 광고</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>beverage commercial</span></div>",
+      "highlight_terms": [
+        "음료수보다"
+      ]
+    },
+    {
+      "id": "25",
+      "word": "의무",
+      "meaning": "duty",
+      "meaning_vi": "nghĩa vụ",
+      "type": "명 noun",
+      "example_ko": "선생님과 학생 사이에 서로 지켜야 할 의무가 있다.",
+      "example_vi": "There is a duty that must be followed between teachers and students.",
+      "example_vi_vn": "Giữa giáo viên và học sinh có nghĩa vụ phải tuân thủ lẫn nhau.",
+      "extra": "<div><span class='font-semibold text-gray-700'>의무제</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>policy of duty</span></div>",
+      "highlight_terms": [
+        "의무가"
+      ]
+    },
+    {
+      "id": "26",
+      "word": "의사소통",
+      "meaning": "communicate",
+      "meaning_vi": "giao tiếp / trao đổi ý kiến",
+      "type": "명 noun",
+      "example_ko": "외국에 가면 의사소통 문제가 가장 힘들어요.",
+      "example_vi": "There would be a communication problem when you go abroad.",
+      "example_vi_vn": "Khi ra nước ngoài, vấn đề giao tiếp là khó khăn nhất.",
+      "extra": "",
+      "highlight_terms": [
+        "의사소통"
+      ]
+    },
+    {
+      "id": "27",
+      "word": "이성",
+      "meaning": "opposite sex",
+      "meaning_vi": "người khác giới / giới tính khác",
+      "type": "명 noun",
+      "example_ko": "청소년들의 이성 교제에 대해 무조건 반대하는 것은 좋지 않다.",
+      "example_vi": "Simply objecting to teenagers dating is not right.",
+      "example_vi_vn": "Việc phản đối vô điều kiện chuyện hẹn hò khác giới của thanh thiếu niên là không tốt.",
+      "extra": "",
+      "highlight_terms": [
+        "이성"
+      ]
+    },
+    {
+      "id": "28",
+      "word": "넘어지다",
+      "meaning": "fall",
+      "meaning_vi": "ngã / té",
+      "type": "동 verb",
+      "example_ko": "스키를 타다가 넘어져서 크게 다쳤어요.",
+      "example_vi": "I fell while skiing and hurt myself greatly.",
+      "example_vi_vn": "Tôi bị ngã khi đang trượt tuyết nên bị thương nặng.",
+      "extra": "",
+      "detailBlocks": [
+        {
+          "type": "tip_table",
+          "label": "Tip",
+          "question_ko": "‘넘어지다’와 비슷한 뜻을 가진 단어는 뭐가 있을까요?",
+          "question_vi": "Có những từ nào có nghĩa gần giống “넘어지다”?",
+          "columns": [
+            "단어",
+            "예"
+          ],
+          "rows": [
+            {
+              "ko": "쓰러지다",
+              "en": "faint / collapse",
+              "examples": [
+                {
+                  "ko": "민호 씨가 갑자기 몸을 못 가누고 쓰러졌어요.",
+                  "en": "Minho suddenly fainted and collapsed."
+                }
+              ]
+            },
+            {
+              "ko": "미끄러지다",
+              "en": "slip",
+              "examples": [
+                {
+                  "ko": "눈이 쌓인 길을 걷다가 미끄러졌어요.",
+                  "en": "I slipped while walking on the snowy road."
+                }
+              ]
+            }
+          ],
+          "no_speak": true
+        }
+      ],
+      "highlight_terms": [
+        "넘어져서"
+      ]
+    },
+    {
+      "id": "29",
+      "word": "자극하다",
+      "meaning": "stimulate",
+      "meaning_vi": "kích thích",
+      "type": "동 verb",
+      "example_ko": "요즘 들어 호기심을 자극하는 유아 장난감이 많아졌다.",
+      "example_vi": "These days, there are many toys that stimulate my curiosity.",
+      "example_vi_vn": "Dạo này có nhiều đồ chơi trẻ em kích thích sự tò mò.",
+      "extra": "",
+      "highlight_terms": [
+        "자극하는"
+      ]
+    },
+    {
+      "id": "30",
+      "word": "자동",
+      "meaning": "automatically",
+      "meaning_vi": "tự động",
+      "type": "명 noun",
+      "example_ko": "방 안에 사람이 없으면 자동으로 꺼지는 에어컨이 발명됐다.",
+      "example_vi": "The air conditioner that turns off automatically when there are no people in the room has been invented.",
+      "example_vi_vn": "Máy điều hòa tự động tắt khi trong phòng không có người đã được phát minh.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>자동 응답</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>answering machine</span></div><div><span class='font-semibold text-gray-700'>자동문</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>automatic door</span></div></div>",
+      "highlight_terms": [
+        "자동으로"
+      ]
+    },
+    {
+      "id": "31",
+      "word": "잠시",
+      "meaning": "for a moment",
+      "meaning_vi": "một lát / tạm thời",
+      "type": "부 adverb",
+      "example_ko": "잠시 길 좀 여쭤봐도 될까요?",
+      "example_vi": "May I ask you about the direction for a moment?",
+      "example_vi_vn": "Tôi có thể hỏi đường một lát được không?",
+      "extra": "",
+      "highlight_terms": [
+        "잠시"
+      ]
+    },
+    {
+      "id": "32",
+      "word": "자율",
+      "meaning": "autonomy",
+      "meaning_vi": "tự chủ / tự nguyện",
+      "type": "명 noun",
+      "example_ko": "1월부터 승용차 자율 요일제를 실시한다고 합니다.",
+      "example_vi": "From January, the policy allowing drivers to choose the day of not driving will be executed.",
+      "example_vi_vn": "Nghe nói từ tháng 1 sẽ thực hiện chế độ ngày tự chọn không đi xe con.",
+      "extra": "<div><span class='font-semibold text-gray-700'>자율적</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>freely</span></div>",
+      "detailBlocks": [
+        {
+          "type": "test_note",
+          "label_ko": "출제 경향",
+          "label_vi": "how this word appears in the test",
+          "title_ko": "보기에서 ‘승용차 자율 요일제’가 제시된 적이 있습니다.",
+          "title_vi": "In the test, the phrase “승용차 자율 요일제” has appeared in the options.",
+          "body_ko": "‘승용차 자율 요일제’는 일주일 중 하루를 스스로 선택해 그날은 승용차를 운행하지 않는 제도입니다.",
+          "body_vi": "“승용차 자율 요일제” is a system in which drivers voluntarily choose one day of the week not to drive their car.",
+          "tags": [
+            {
+              "ko": "자율 요일제",
+              "en": "voluntary no-driving day system"
+            },
+            {
+              "ko": "자율적으로 선택하다",
+              "en": "choose voluntarily"
+            }
+          ],
+          "no_speak": true
+        }
+      ],
+      "highlight_terms": [
+        "자율"
+      ]
+    },
+    {
+      "id": "33",
+      "word": "장난",
+      "meaning": "joke",
+      "meaning_vi": "trò đùa",
+      "type": "명 noun",
+      "example_ko": "장난도 심하게 치면 남의 기분을 상하게 할 수 있다.",
+      "example_vi": "A joke can hurt other people’s feelings if they are harsh.",
+      "example_vi_vn": "Trò đùa nếu quá trớn cũng có thể làm tổn thương cảm xúc của người khác.",
+      "extra": "<div><span class='font-semibold text-gray-700'>장난감</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>toy</span></div>",
+      "highlight_terms": [
+        "장난도"
+      ]
+    }
+  ],
+  "dict": {
+    "how this word appears in the test": "cách từ này xuất hiện trong đề thi",
+    "Words to memorize together": "Nhóm từ nên học cùng nhau",
+    "Words that are easy to confuse in TOPIK": "Những từ dễ nhầm lẫn trong TOPIK",
+    "Polysemy": "Từ đa nghĩa",
+    "Antonym": "Từ trái nghĩa",
+    "Synonym": "Từ đồng nghĩa",
+    "Write Korean in English, and English in Korean.": "Hãy viết từ tiếng Hàn sang tiếng Việt, và từ tiếng Việt sang tiếng Hàn.",
+    "Connect the Korean words with the English words of same meaning.": "Hãy nối từ tiếng Hàn với nghĩa tiếng Việt tương ứng.",
+    "Pick and write the suitable word among <the options> in the blank space.": "Hãy chọn từ phù hợp trong <gợi ý> để điền vào chỗ trống.",
+    "Pick and write the suitable word among in the blank space.": "Hãy chọn từ phù hợp trong gợi ý để điền vào chỗ trống.",
+    "Choose the proper word that fits the sentence more naturally.": "Hãy chọn từ phù hợp để câu tự nhiên hơn.",
+    "soon": "sớm / ngay sau đây",
+    "street": "ngõ / phố nhỏ",
+    "pretty": "đẹp / mịn màng",
+    "offensive": "mang tính công kích / hung hăng",
+    "supply": "cung cấp",
+    "holiday": "ngày lễ truyền thống",
+    "invite public participation": "mời tham gia / mở cuộc thi công khai",
+    "construction": "thi công / công trình",
+    "process": "quá trình / chương trình",
+    "subscription": "đăng ký đọc / đặt mua định kỳ",
+    "be prohibited": "bị cấm",
+    "organization": "cơ quan / tổ chức",
+    "energy": "sức lực / sinh khí",
+    "existing": "hiện có / sẵn có",
+    "cut": "cắt / cạo / gọt",
+    "be broken": "bị vỡ",
+    "delay": "trì hoãn / lùi lại",
+    "gum": "kẹo cao su",
+    "pick": "꼽다 / 꼽히다",
+    "men and women of all ages": "mọi lứa tuổi / nam nữ già trẻ",
+    "widely": "rộng rãi",
+    "group": "tập thể / nhóm",
+    "run": "chạy",
+    "stuffy": "ngột ngạt / bí bách",
+    "on that day": "trong ngày đó / cùng ngày",
+    "prepare": "chuẩn bị / đối phó",
+    "take (out)": "lấy bớt ra",
+    "neighborhood": "khu phố / khu xóm",
+    "turn": "lượt / thứ tự",
+    "at the same time": "đồng thời / cùng lúc",
+    "agree with": "đồng ý với",
+    "look around": "xem quanh / nhìn quanh",
+    "clear": "rõ ràng",
+    "deadline": "hạn chót",
+    "offense": "sự công kích / tấn công",
+    "aggressive tendency": "khuynh hướng hung hăng",
+    "offensiveness": "tính công kích",
+    "offend": "công kích / xúc phạm",
+    "contest": "cuộc thi / cuộc thi tuyển chọn",
+    "contest exhibit": "cuộc thi công khai / cuộc thi tuyển chọn",
+    "under construction": "đang thi công",
+    "subscription fee": "phí thuê bao / phí đặt mua",
+    "prohibition": "sự cấm đoán",
+    "prohibit": "cấm",
+    "a slight cold": "cảm nhẹ",
+    "postpone an appointment": "hoãn/lùi cuộc hẹn",
+    "put off homework": "trì hoãn bài tập",
+    "postpone a game": "hoãn trận đấu",
+    "chew gum": "nhai kẹo cao su",
+    "throw away gum": "vứt kẹo cao su",
+    "running": "chạy bộ",
+    "same-day cancellation": "hủy trong ngày",
+    "same-day reservation": "đặt trong ngày",
+    "in turn": "theo lượt / lần lượt",
+    "in order": "theo thứ tự",
+    "agreement": "sự đồng ý",
+    "The most famous holidays in Korea are Seollal (Lunar New Year’s Day) and Chuseok.": "Các ngày lễ truyền thống tiêu biểu của Hàn Quốc là Seollal (mùng 1 tháng 1 âm lịch) và Chuseok (15 tháng 8 âm lịch).",
+    "What is the difference between “미루다(delay)” and “연기하다(postpone)”?": "“미루다” và “연기하다” khác nhau như thế nào?",
+    "Both can mean moving a schedule or appointment to a later time. However, “미루다” is commonly used when postponing homework, tasks, or work to later.": "Cả hai đều có thể dùng khi dời lịch/hẹn sang thời điểm sau. Tuy nhiên, “미루다” thường dùng khi trì hoãn bài tập, nhiệm vụ hoặc công việc sang sau.",
+    "“껌(gum)” may appear in topics about daily habits or dental health.": "“껌” có thể xuất hiện trong chủ đề thói quen sinh hoạt hoặc sức khỏe răng miệng.",
+    "Check expressions such as “껌을 씹다(chew gum)” and “껌을 버리다(throw away gum)”.": "Hãy học các cụm như “껌을 씹다” và “껌을 버리다”.",
+    "This word often appears on coupons or tickets.": "Từ này thường xuất hiện trên phiếu giảm giá hoặc vé.",
+    "Cancellation on the same day is not allowed.\nOnly same-day reservations are possible.": "Không được hủy trong ngày.\nChỉ có thể đặt trong ngày.",
+    "What is the difference between “순서(order)” and “차례(turn)”?": "“순서” và “차례” khác nhau như thế nào?",
+    "“순서” and “차례” can often replace each other when they mean order or turn. “차례” can also mean one’s turn/time, as in “제 차례(my turn)”.": "“순서” và “차례” thường có thể thay thế nhau khi mang nghĩa thứ tự/lượt. Tuy nhiên, “차례” còn mang nghĩa lượt của mình, như “이번에는” hoặc “제 차례”.",
+    "It is my turn": "đến lượt tôi",
+    "solve (the problem)": "giải quyết vấn đề",
+    "relieve (the stress)": "giải tỏa căng thẳng",
+    "unwrap (the package)": "mở gói hàng",
+    "get on": "lên xe",
+    "get off": "xuống xe",
+    "stop": "dừng / ngừng",
+    "How long do you think it will take for you to solve the problem?": "Bạn nghĩ sẽ mất bao lâu để giải quyết vấn đề này?",
+    "You should not interfere others with the excuse that you are relieving your stress.": "Đừng gây hại cho người khác với lý do giải tỏa căng thẳng.",
+    "My roommate unwrapped the package that was sent for me.": "Bạn cùng phòng đã mở gói hàng gửi đến tên tôi.",
+    "The bus should not depart until all the passengers are on the bus.": "Xe buýt không được xuất phát cho đến khi tất cả hành khách lên xe.",
+    "Be careful while you are getting off the bus.": "Hãy cẩn thận khi xuống xe buýt.",
+    "I stopped what I was doing, and listened carefully to the story from the radio.": "Tôi dừng việc đang làm và lắng nghe câu chuyện phát ra từ radio.",
+    "a. holiday": "a. ngày lễ",
+    "b. street": "b. ngõ / đường phố",
+    "c. organization": "c. cơ quan / tổ chức",
+    "d. subscription": "d. đăng ký định kỳ",
+    "e. supply": "e. cung cấp",
+    "f. take (out)": "f. lấy bớt / múc ra",
+    "g. delay": "g. trì hoãn",
+    "a. stuffy": "a. ngột ngạt",
+    "b. invite public participation": "b. mời tham gia",
+    "c. clear": "c. rõ ràng",
+    "d. agree with": "d. đồng ý với",
+    "a. 답답한데": "a. ngột ngạt",
+    "b. 공모하고": "b. đang mời tham gia / mở cuộc thi",
+    "c. 뚜렷한": "c. rõ ràng",
+    "d. 동의하기": "d. đồng ý",
+    "The city of Seoul is inviting public participation for a new designed logo of Seoul.": "Thành phố Seoul đang mở cuộc thi/mời tham gia thiết kế logo Seoul.",
+    "The classroom feels very stuffy and hot, should I turn on the air conditioner?": "Phòng học quá nóng và ngột ngạt, bật điều hòa nhé?",
+    "It is hard to agree with his opinion.": "Thật khó đồng ý với ý kiến của người đó.",
+    "Minho has a very clear view on his opinion.": "Minho là người có ý kiến và quan điểm khá rõ ràng.",
+    "Cancellation on the same day is not allowed. Only same-day reservations are possible.": "Không được hủy trong ngày. Chỉ có thể đặt trong ngày.",
+    "I will come back soon so wait here.": "Tôi sẽ quay lại sớm nên hãy đợi ở đây.",
+    "You can’t imagine how famous Sindang-dong ddeokbokki street is!": "Bạn không tưởng tượng được phố tokbokki Sindang-dong nổi tiếng thế nào đâu!",
+    "Not only the design but also the color is very pretty.": "Không chỉ thiết kế đẹp mà màu sắc cũng rất đẹp.",
+    "A more offensive attitude is shown from the child who played more computer games.": "Trẻ càng chơi trò chơi máy tính nhiều thì càng thể hiện khuynh hướng hung hăng hơn.",
+    "Our farm supplies fresh materials to many different restaurants.": "Trang trại chúng tôi cung cấp nguyên liệu tươi cho nhiều nhà hàng.",
+    "When it is holiday seasons, many people visit their hometown and spend much time with their family.": "Khi đến dịp lễ truyền thống, nhiều người về quê và dành thời gian bên gia đình.",
+    "When new structure is built, you should always solidify the ground work.": "Khi xây tòa nhà, phải làm phần móng thật cẩn thận.",
+    "Let me introduce the educational process of our school.": "Tôi xin giới thiệu chương trình/quá trình giáo dục của trường chúng tôi.",
+    "I signed up for subscriptions of this magazine starting from last year.": "Từ năm ngoái tôi đã đăng ký mua định kỳ tạp chí này.",
+    "Using cell phones during the class is prohibited.": "Trong giờ học, việc sử dụng điện thoại bị cấm.",
+    "The number of the organizations that teach Korean is increasing.": "Số cơ quan/tổ chức dạy tiếng Hàn đang tăng lên.",
+    "After having a meal, I feel like having more energy.": "Ăn cơm xong tôi thấy có sức hơn.",
+    "We will go with the existing plan.": "Chúng tôi sẽ làm theo kế hoạch hiện có.",
+    "After shaving myself, I look better.": "Cạo râu xong nhìn gọn gàng hơn.",
+    "Be careful not to break the bowl.": "Hãy cẩn thận vì cái bát có thể bị vỡ.",
+    "I delayed the appointment with my friend since something urgent came up.": "Vì có việc gấp nên tôi đã lùi cuộc hẹn với bạn sang hôm sau.",
+    "You should wrap the gums with paper when you throw it away.": "Sau khi nhai kẹo cao su, bạn nên gói vào giấy rồi vứt.",
+    "Foreigners pick Bulgogi as their favorite Korean food.": "Người nước ngoài chọn bulgogi là món Hàn yêu thích nhất.",
+    "Ddeokbokki is the food that men and women of all ages like.": "Tokbokki là món ăn mà mọi lứa tuổi đều thích.",
+    "I want to widely spread the merit of the Korean food.": "Tôi muốn quảng bá rộng rãi món ăn Hàn Quốc.",
+    "I didn’t know that we are taking a group picture today.": "Tôi không biết hôm nay chụp ảnh tập thể.",
+    "Lately, I am running in the park every morning.": "Dạo này sáng sớm nào tôi cũng chạy trong công viên để tập thể dục.",
+    "This is a day ticket which allows you to see on that particular day.": "Vé này chỉ có thể xem buổi biểu diễn trong ngày đó.",
+    "You should well prepare for the natural disaster in order to prevent the damage.": "Để giảm thiệt hại do thiên tai, cần có sự chuẩn bị.",
+    "I took out some rice to an empty bowl since the quantity was too much.": "Vì cơm nhiều quá nên tôi đã lấy bớt sang bát trống.",
+    "There are many parks in my neighborhood and I really like it.": "Khu tôi có nhiều công viên nên tôi rất thích.",
+    "People are standing in line waiting for their turn.": "Mọi người đều xếp hàng chờ đến lượt mình.",
+    "Working on two works at the same time is too much to handle.": "Làm hai việc cùng lúc là quá sức.",
+    "It is good for you to buy your clothes after looking around many shops and comparing the price.": "Khi mua quần áo, nên xem quanh nhiều cửa hàng và so sánh rồi hãy mua.",
+    "I am afraid I won’t be able to send you the document before the deadline.": "Tôi e là không thể gửi bản thảo trước hạn chót, phải làm sao đây?",
+    "Both can be used to mean delaying a schedule or appointment. However, “미루다” is mainly used when delaying homework, assignments, or work until later.": "Cả hai đều có thể dùng khi dời lịch hoặc cuộc hẹn sang thời điểm sau. Tuy nhiên, “미루다” thường dùng khi trì hoãn bài tập, nhiệm vụ hoặc công việc sang sau.",
+    "“순서” and “차례” can often replace each other when they mean thứ tự/lượt. “차례” can also mean one’s turn/time, as in “제 차례(lượt của tôi)”.": "“순서” và “차례” thường có thể thay thế nhau khi mang nghĩa thứ tự/lượt. Tuy nhiên, “차례” còn mang nghĩa lượt của mình, như “이번에는” hoặc “제 차례”.",
+    "a. soon": "a. sớm / chẳng bao lâu",
+    "b. agree with": "b. đồng ý với",
+    "d. deadline": "d. hạn chót",
+    "e. pretty": "e. đẹp / xinh",
+    "f. supply": "f. cung cấp",
+    "g. widely": "g. rộng rãi",
+    "Các ngày lễ truyền thống tiêu biểu của Hàn Quốc là Seollal (mùng 1 tháng 1 âm lịch) và Chuseok (15 tháng 8 âm lịch).": "Các ngày lễ truyền thống tiêu biểu của Hàn Quốc là Seollal (mùng 1 tháng 1 âm lịch) và Chuseok (15 tháng 8 âm lịch).",
+    "“미루다” và “연기하다” khác nhau như thế nào?": "“미루다” và “연기하다” khác nhau như thế nào?",
+    "Cả hai đều có thể dùng khi dời lịch hoặc cuộc hẹn sang thời điểm sau. Tuy nhiên, “미루다” thường dùng khi trì hoãn bài tập, nhiệm vụ hoặc công việc sang sau.": "Cả hai đều có thể dùng khi dời lịch hoặc cuộc hẹn sang thời điểm sau. Tuy nhiên, “미루다” thường dùng khi trì hoãn bài tập, nhiệm vụ hoặc công việc sang sau.",
+    "“순서” và “차례” khác nhau như thế nào?": "“순서” và “차례” khác nhau như thế nào?",
+    "“순서” và “차례” thường có thể thay thế nhau khi mang nghĩa thứ tự/lượt. Tuy nhiên, “차례” còn mang nghĩa lượt của mình, như “이번에는” hoặc “제 차례”.": "“순서” và “차례” thường có thể thay thế nhau khi mang nghĩa thứ tự/lượt. Tuy nhiên, “차례” còn mang nghĩa lượt của mình, như “이번에는” hoặc “제 차례”.",
+    "public contest": "cuộc thi công khai / tuyển chọn công khai",
+    "competition": "cuộc thi",
+    "open contest": "cuộc thi công khai",
+    "public recruitment": "tuyển chọn công khai",
+    "The city of Seoul is holding a public contest for a new name.": "Thành phố Seoul đang mở cuộc thi/tuyển chọn công khai để chọn tên mới.",
+    "century": "thế kỷ",
+    "digest": "tiêu hóa",
+    "easy (to do)": "dễ dàng",
+    "work": "tác phẩm / công việc",
+    "water": "nước / độ ẩm",
+    "export": "xuất khẩu",
+    "urgent": "cấp bách / khẩn cấp",
+    "make (someone to do)": "sai khiến / bảo ai làm",
+    "report": "báo cáo / trình báo",
+    "identification": "giấy tờ tùy thân / thẻ căn cước",
+    "screening": "thẩm định / xét duyệt",
+    "language": "ngôn ngữ",
+    "whether": "việc có hay không / liệu có",
+    "reading": "đọc / xem tài liệu",
+    "key": "chìa khóa",
+    "train": "tàu hỏa",
+    "receipt": "hóa đơn / biên lai",
+    "release": "đưa ra / công bố / ra mắt",
+    "old times": "xưa / ngày xưa",
+    "rise": "tăng lên / đi lên",
+    "right": "đúng đắn",
+    "greed": "lòng tham / tham vọng",
+    "use": "công dụng / mục đích sử dụng",
+    "beverage": "đồ uống / nước uống",
+    "duty": "nghĩa vụ",
+    "communicate": "giao tiếp / trao đổi ý kiến",
+    "opposite sex": "người khác giới / giới tính khác",
+    "fall": "ngã / té",
+    "stimulate": "kích thích",
+    "automatically": "tự động",
+    "for a moment": "một lát / tạm thời",
+    "autonomy": "tự chủ / tự nguyện",
+    "joke": "trò đùa",
+    "be digested": "được tiêu hóa",
+    "digestive medicine": "thuốc tiêu hóa",
+    "working condition": "điều kiện làm việc",
+    "salary": "lương",
+    "incentive": "tiền thưởng khích lệ",
+    "working hours": "thời gian làm việc",
+    "vacation days": "số ngày nghỉ phép",
+    "welfare": "phúc lợi",
+    "bonus": "tiền thưởng",
+    "Những “điều kiện làm việc” thường được xem là quan trọng gồm những gì?": "Những “điều kiện làm việc” thường được xem là quan trọng gồm những gì?",
+    "Có các yếu tố như lương, thưởng khích lệ, thời gian làm việc, số ngày nghỉ phép, phúc lợi và tiền thưởng.": "Có các yếu tố như lương, thưởng khích lệ, thời gian làm việc, số ngày nghỉ phép, phúc lợi và tiền thưởng.",
+    "import": "nhập khẩu",
+    "be informed": "được báo / nhận được trình báo",
+    "judge": "giám khảo / ủy viên thẩm định",
+    "speech therapist": "chuyên viên trị liệu ngôn ngữ",
+    "reading room": "phòng đọc",
+    "countermeasure": "đối sách / biện pháp",
+    "a new product": "sản phẩm mới",
+    "an idea": "ý tưởng",
+    "“내놓다” thường dùng cùng những từ nào?": "“내놓다” thường dùng cùng những từ nào?",
+    "release / put out": "đưa ra / công bố / ra mắt",
+    "be greedy": "tham lam / nảy sinh lòng tham",
+    "beverage commercial": "quảng cáo đồ uống",
+    "policy of duty": "chế độ nghĩa vụ",
+    "faint / collapse": "ngã quỵ / ngất xỉu",
+    "slip": "trượt chân",
+    "Có những từ nào có nghĩa gần giống “넘어지다”?": "Có những từ nào có nghĩa gần giống “넘어지다”?",
+    "Minho suddenly fainted and collapsed.": "Minho đột nhiên không giữ được người và ngã quỵ.",
+    "I slipped while walking on the snowy road.": "Tôi bị trượt chân khi đi trên con đường phủ tuyết.",
+    "answering machine": "máy trả lời tự động",
+    "automatic door": "cửa tự động",
+    "freely": "một cách tự do / tự chủ",
+    "voluntary no-driving day system": "chế độ tự chọn ngày không lái xe",
+    "choose voluntarily": "tự nguyện lựa chọn",
+    "In the test, the phrase “승용차 자율 요일제” has appeared in the options.": "Trong đề thi, cụm “승용차 자율 요일제” từng xuất hiện ở phần lựa chọn.",
+    "“승용차 자율 요일제” is a system in which drivers voluntarily choose one day of the week not to drive their car.": "“승용차 자율 요일제” là chế độ người lái xe tự chọn một ngày trong tuần để không lái xe con.",
+    "toy": "đồ chơi",
+    "The 21st century is the era when people can quickly share information with each other.": "Thế kỷ 21 là thời đại mà nhờ sự phát triển của Internet, con người có thể chia sẻ thông tin nhanh chóng với nhau.",
+    "Lately, I have trouble digesting, so I should go to the hospital.": "Dạo này tôi tiêu hóa không tốt nên có lẽ nên đi bệnh viện một lần.",
+    "If you have the computer with you, you can do a difficult work easily.": "Nếu có máy tính, ta có thể dễ dàng hoàn thành những việc con người khó làm.",
+    "That company’s working condition is really good.": "Điều kiện làm việc của công ty đó rất tốt.",
+    "In order to be healthy during the summer, you should drink plenty of water.": "Để trải qua mùa hè khỏe mạnh, bạn phải bổ sung đủ nước.",
+    "As exports increase more than imports, the national economy is getting better.": "Khi xuất khẩu tăng nhiều hơn nhập khẩu, kinh tế quốc gia đang trở nên tốt hơn.",
+    "Solving the problem is more urgent than finding the cause of the problem.": "Giải quyết vấn đề đó cấp bách hơn việc tìm nguyên nhân của nó.",
+    "Grandfather made me run errands.": "Ông đã sai tôi đi làm việc vặt.",
+    "If you see a suspicious person, you should report it to the police.": "Nếu thấy người khả nghi thì phải báo cảnh sát.",
+    "When people try to enter the building, they should show their identification.": "Người ngoài muốn vào công ty thì phải xuất trình giấy tờ tùy thân.",
+    "The thesis was passed after the defense, so he will soon graduate.": "Luận văn đã vượt qua vòng thẩm định nên bây giờ tôi sắp tốt nghiệp.",
+    "Human beings have language unlike animals.": "Con người khác với động vật ở chỗ có ngôn ngữ.",
+    "When the earthquake happened, many people were trying hard to know whether their family members were dead or alive.": "Khi động đất xảy ra, nhiều người đang cố xác nhận việc người thân còn sống hay đã mất.",
+    "You can read in the library from 9 in the morning to 6 in the evening.": "Phòng đọc của thư viện mở từ 9 giờ sáng đến 6 giờ chiều.",
+    "Lately, people are using more card keys or passwords than regular keys.": "Dạo này người ta dùng thẻ khóa hoặc mã số nhiều hơn chìa khóa thường.",
+    "We will miss the train if we do not hurry.": "Nếu không nhanh lên thì chúng ta sẽ lỡ tàu.",
+    "When trying to exchange or to get a refund, please bring the receipt with you.": "Khi đổi hoặc hoàn tiền, vui lòng mang theo hóa đơn.",
+    "The artists released many works during this exhibition.": "Các nghệ sĩ đã đưa ra nhiều tác phẩm trong triển lãm lần này.",
+    "Korean people strongly respected the elders from the old times.": "Từ xưa, người Hàn Quốc đã có lòng kính trọng người lớn tuổi rất mạnh.",
+    "Because of global warming, the temperature of the polar regions is rising annually.": "Nghe nói do hiện tượng nóng lên toàn cầu, nhiệt độ ở vùng cực tăng lên hằng năm.",
+    "Youngsters may not know what is the right behavior from time to time.": "Trẻ nhỏ đôi khi có thể không biết hành động đúng đắn là gì.",
+    "When you only think of your own benefit, it is hard to care for others.": "Nếu chỉ nghĩ đến lòng tham của mình thì khó quan tâm đến người khác.",
+    "It is practical since it can be used for many uses.": "Vật này có vẻ thực dụng vì có thể dùng cho nhiều mục đích khác nhau.",
+    "Drinking water after you work out is better than drinking a beverage for hydration.": "Sau khi vận động, nước tốt cho việc bổ sung nước hơn đồ uống.",
+    "There is a duty that must be followed between teachers and students.": "Giữa giáo viên và học sinh có nghĩa vụ phải tuân thủ lẫn nhau.",
+    "There would be a communication problem when you go abroad.": "Khi ra nước ngoài, vấn đề giao tiếp là khó khăn nhất.",
+    "Simply objecting to teenagers dating is not right.": "Việc phản đối vô điều kiện chuyện hẹn hò khác giới của thanh thiếu niên là không tốt.",
+    "I fell while skiing and hurt myself greatly.": "Tôi bị ngã khi đang trượt tuyết nên bị thương nặng.",
+    "These days, there are many toys that stimulate my curiosity.": "Dạo này có nhiều đồ chơi trẻ em kích thích sự tò mò.",
+    "The air conditioner that turns off automatically when there are no people in the room has been invented.": "Máy điều hòa tự động tắt khi trong phòng không có người đã được phát minh.",
+    "May I ask you about the direction for a moment?": "Tôi có thể hỏi đường một lát được không?",
+    "From January, the policy allowing drivers to choose the day of not driving will be executed.": "Nghe nói từ tháng 1 sẽ thực hiện chế độ ngày tự chọn không đi xe con.",
+    "A joke can hurt other people’s feelings if they are harsh.": "Trò đùa nếu quá trớn cũng có thể làm tổn thương cảm xúc của người khác.",
+    "pay (a fee)": "nộp / đóng tiền",
+    "submit": "nộp / trình",
+    "make (sound)": "phát ra / tạo ra âm thanh",
+    "All the members should pay their membership fee.": "Tất cả hội viên phải nộp hội phí.",
+    "Please submit your reports by this weekend.": "Hãy nộp báo cáo trước cuối tuần này.",
+    "You should not make any big sounds in the library, so please speak quietly.": "Trong thư viện không được gây tiếng ồn lớn, hãy nói chuyện nhỏ thôi.",
+    "different": "khác / khác với",
+    "likewise": "giống như / cũng như",
+    "He was very friendly unlike his first impression.": "Anh ấy rất hòa đồng, khác với ấn tượng ban đầu.",
+    "Korea will unify just like Germany did.": "Hàn Quốc cũng sẽ thống nhất giống như Đức.",
+    "be clear": "rõ ràng",
+    "be sure": "chắc chắn",
+    "It is sure that something must have happened since there was no contact at all.": "Đến giờ vẫn không liên lạc được nên chắc chắn đã có chuyện gì đó xảy ra.",
+    "a. for a moment": "a. một lát",
+    "b. whether": "b. liệu có / hay không",
+    "c. urgent": "c. cấp bách",
+    "d. duty": "d. nghĩa vụ",
+    "e. fall": "e. ngã / té",
+    "f. greed": "f. lòng tham",
+    "g. digest": "g. tiêu hóa",
+    "a. 올바른": "a. đúng đắn",
+    "b. 손쉽게": "b. dễ dàng",
+    "c. 자극하는": "c. kích thích",
+    "d. 신분증을": "d. giấy tờ tùy thân",
+    "If you have the computer with you, you can do a difficult work easy.": "Nếu có máy tính, ta có thể dễ dàng hoàn thành những việc con người khó làm.",
+    "Trong đề thi, cụm “승용차 자율 요일제” từng xuất hiện ở phần lựa chọn.": "Trong đề thi, cụm “승용차 자율 요일제” từng xuất hiện ở phần lựa chọn.",
+    "“승용차 자율 요일제” là chế độ người lái xe tự chọn một ngày trong tuần để không lái xe con.": "“승용차 자율 요일제” là chế độ người lái xe tự chọn một ngày trong tuần để không lái xe con."
+  }
+}

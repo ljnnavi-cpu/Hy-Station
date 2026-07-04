@@ -1,0 +1,660 @@
+{
+  "day": 8,
+  "vocabData": [
+    {
+      "id": "01",
+      "word": "봉사하다",
+      "meaning": "volunteer",
+      "type": "동 verb",
+      "example_ko": "이번 방학 때는 농촌에 가서 봉사하려고 해요.",
+      "example_vi": "I am planning to provide a voluntary service in the rural area during this vacation.",
+      "extra": "",
+      "detailBlocks": [
+        {
+          "type": "mindmap",
+          "title_ko": "관련어",
+          "title_vi": "Words to memorize together",
+          "center_ko": "봉사",
+          "center_vi": "Volunteer",
+          "nodes": [
+            {
+              "ko": "봉사활동",
+              "vi": "voluntary service"
+            },
+            {
+              "ko": "봉사자",
+              "vi": "a volunteer"
+            },
+            {
+              "ko": "봉사단원",
+              "vi": "the member of volunteer"
+            },
+            {
+              "ko": "봉사단",
+              "vi": "a volunteer group"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "02",
+      "word": "서비스",
+      "meaning": "service",
+      "type": "명 noun",
+      "example_ko": "백화점은 시장보다 물건값이 비싸기는 하지만 더 좋은 서비스를 받을 수 있다.",
+      "example_vi": "Even though the price of the goods in the department store is more expensive than that of other markets, you can get better services as well.",
+      "extra": ""
+    },
+    {
+      "id": "03",
+      "word": "스트레스",
+      "meaning": "stress",
+      "type": "명 noun",
+      "example_ko": "요즘에 스트레스를 너무 많이 받아서 밤에 잠이 잘 안 온다.",
+      "example_vi": "I have trouble sleeping because of too much stress.",
+      "extra": ""
+    },
+    {
+      "id": "04",
+      "word": "시청",
+      "meaning": "watch",
+      "type": "명 noun",
+      "example_ko": "하루에 한 시간 이상의 TV 시청은 시력에 좋지 않다고 한다.",
+      "example_vi": "They say it is bad for your eyes to watch television more than one hour a day.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>시청률</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>(viewer) ratings</span></div><div><span class='font-semibold text-gray-700'>시청자</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>viewer</span></div></div>"
+    },
+    {
+      "id": "05",
+      "word": "신문",
+      "meaning": "newspaper",
+      "type": "명 noun",
+      "example_ko": "매일 신문을 읽으면 요즘 어떤 일이 있는지 잘 알 수 있어요.",
+      "example_vi": "If you read the newspaper every day, you will be aware of what is happening these days.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>신문지</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>newspaper</span></div><div><span class='font-semibold text-gray-700'>신문기사</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>news article</span></div></div>"
+    },
+    {
+      "id": "06",
+      "word": "움직이다",
+      "meaning": "move",
+      "type": "동 verb",
+      "example_ko": "다리를 다쳐서 움직이는 것이 힘들어요.",
+      "example_vi": "It is hard for me to move since I have hurt my leg.",
+      "extra": "<div><span class='font-semibold text-gray-700'>움직임</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>movement</span></div>"
+    },
+    {
+      "id": "07",
+      "word": "가격",
+      "meaning": "price",
+      "type": "명 noun",
+      "example_ko": "최근 서울의 아파트 가격이 떨어졌습니다.",
+      "example_vi": "The price of Seoul’s apartment has fallen recently.",
+      "extra": "",
+      "detailBlocks": [
+        {
+          "type": "tip_table",
+          "label": "Tip",
+          "question_ko": "‘가격’과 비슷한 뜻을 가진 단어는 뭐가 있을까요?",
+          "question_vi": "What are the words that have the similar meanings as the word “가격(price)”?",
+          "columns": [
+            "단어",
+            "예"
+          ],
+          "rows": [
+            {
+              "ko": "금액",
+              "en": "The amount of money",
+              "examples": [
+                {
+                  "ko": "계약 금액",
+                  "en": "the deposit for the contract"
+                },
+                {
+                  "ko": "보험 금액",
+                  "en": "the amount of money for the insurance"
+                }
+              ]
+            },
+            {
+              "ko": "비용",
+              "en": "Expense",
+              "examples": [
+                {
+                  "ko": "수출 비용",
+                  "en": "export expense"
+                },
+                {
+                  "ko": "이사 비용",
+                  "en": "moving expense"
+                }
+              ]
+            },
+            {
+              "ko": "N 값",
+              "en": "The cost of N",
+              "examples": [
+                {
+                  "ko": "기름값",
+                  "en": "the oil cost"
+                },
+                {
+                  "ko": "커피값",
+                  "en": "the coffee cost"
+                }
+              ]
+            },
+            {
+              "ko": "요금",
+              "en": "Charge",
+              "examples": [
+                {
+                  "ko": "핸드폰 요금",
+                  "en": "the cell phone charge"
+                },
+                {
+                  "ko": "전기 요금",
+                  "en": "electricity cost"
+                },
+                {
+                  "ko": "수도 요금",
+                  "en": "the charge of water"
+                }
+              ]
+            },
+            {
+              "ko": "N료",
+              "en": "bill",
+              "examples": [
+                {
+                  "ko": "전기료",
+                  "en": "electricity bill"
+                },
+                {
+                  "ko": "수도료",
+                  "en": "water bill"
+                },
+                {
+                  "ko": "도시가스료",
+                  "en": "gas bill"
+                }
+              ]
+            },
+            {
+              "ko": "N비",
+              "en": "Fare",
+              "examples": [
+                {
+                  "ko": "버스비",
+                  "en": "the bus fare"
+                },
+                {
+                  "ko": "목욕비",
+                  "en": "fare to bathe"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "08",
+      "word": "전통",
+      "meaning": "tradition",
+      "type": "명 noun",
+      "example_ko": "나라마다 전통을 지키고자 많은 노력을 하고 있다.",
+      "example_vi": "Each country is doing their best to protect their tradition.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>전통적</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>traditional</span></div><div><span class='font-semibold text-gray-700'>전통 악기</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>traditional musical instrument</span></div><div><span class='font-semibold text-gray-700'>전통 문화</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>traditional culture</span></div><div><span class='font-semibold text-gray-700'>전통 연구소</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>traditional research office</span></div></div>"
+    },
+    {
+      "id": "09",
+      "word": "젊다",
+      "meaning": "young",
+      "type": "형 adjective",
+      "example_ko": "나이보다 정말 젊어 보이시네요.",
+      "example_vi": "You look younger than you really are.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>젊음</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>youth</span></div><div><span class='font-semibold text-gray-700'>젊은이</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>young person</span></div><div><span class='font-semibold text-gray-700'>젊은 사람</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>young people</span></div><div><span class='font-semibold text-gray-700'>젊은 시절</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>in one’s youth</span></div></div>"
+    },
+    {
+      "id": "10",
+      "word": "점",
+      "meaning": "point",
+      "type": "명 noun",
+      "example_ko": "궁금한 점이 있으면 언제든지 연락해 주시기 바랍니다.",
+      "example_vi": "If you have anything to ask, please contact me.",
+      "extra": ""
+    },
+    {
+      "id": "11",
+      "word": "정확하다",
+      "meaning": "precise",
+      "type": "형 adjective",
+      "example_ko": "정확하고 자세한 설명 부탁드립니다.",
+      "example_vi": "Please give a precise and specific explanation.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>정확</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>precision</span></div><div><span class='font-semibold text-gray-700'>정확히</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>precisely</span></div></div>"
+    },
+    {
+      "id": "12",
+      "word": "주문하다",
+      "meaning": "order",
+      "type": "동 verb",
+      "example_ko": "손님, 주문하신 음료 나왔습니다.",
+      "example_vi": "Sir, here is your drink that you ordered.",
+      "extra": "<div><span class='font-semibold text-gray-700'>주문</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>order</span></div>"
+    },
+    {
+      "id": "13",
+      "word": "지나치다",
+      "meaning": "excessively",
+      "type": "동 verb",
+      "example_ko": "이 물건이 좋기는 하지만 지나치게 비싸지 않아요?",
+      "example_vi": "This is really good, but isn’t it excessively expensive?",
+      "extra": ""
+    },
+    {
+      "id": "14",
+      "word": "지원하다",
+      "meaning": "apply for",
+      "type": "동 verb",
+      "example_ko": "그 대학교에 지원하려면 뭐가 필요합니까?",
+      "example_vi": "What do I need to apply for that university?",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>지원</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>apply</span></div><div><span class='font-semibold text-gray-700'>지원서</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>application</span></div><div><span class='font-semibold text-gray-700'>지원자</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>applicant</span></div></div>"
+    },
+    {
+      "id": "15",
+      "word": "청소년",
+      "meaning": "teenager",
+      "type": "명 noun",
+      "example_ko": "청소년들을 대상으로 하는 음악회가 열립니다.",
+      "example_vi": "A concert for teenagers will be held.",
+      "extra": "",
+      "detailBlocks": [
+        {
+          "type": "test_note",
+          "label_ko": "출제 경향",
+          "label_vi": "how this word appears in the test",
+          "title_ko": "청소년 관련 문제는 최근에 한국에서 일어나는 여러 문제들에 대한 내용이 많습니다.",
+          "title_vi": "Many questions consist of the problems of teenagers that occurred recently in South Korea.",
+          "body_ko": "폭력, 흡연, 교사의 체벌 그리고 왕따와 관련된 주제가 시험에 자주 나옵니다.",
+          "body_vi": "Also, many topics related to violence, smoking, teachers’ corporal punishment and bullying appear often in the tests.",
+          "tags": [
+            {
+              "ko": "폭력",
+              "en": "violence"
+            },
+            {
+              "ko": "흡연",
+              "en": "smoking"
+            },
+            {
+              "ko": "교사의 체벌",
+              "en": "teachers’ corporal punishment"
+            },
+            {
+              "ko": "왕따",
+              "en": "bullying"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "16",
+      "word": "추억",
+      "meaning": "memory",
+      "type": "명 noun",
+      "example_ko": "사진을 보니 학교 다닐 때 추억이 떠오른다.",
+      "example_vi": "When I look at the picture, it reminds me of the time when I was in school.",
+      "extra": ""
+    },
+    {
+      "id": "17",
+      "word": "현재",
+      "meaning": "present, now",
+      "type": "명 noun",
+      "example_ko": "현재 상영되는 영화 중에 뭐가 제일 인기 있어요?",
+      "example_vi": "What is the most popular movie playing now?",
+      "extra": ""
+    },
+    {
+      "id": "18",
+      "word": "활동하다",
+      "meaning": "be active",
+      "type": "동 verb",
+      "example_ko": "고양이는 주로 밤에 활동하는 동물입니다.",
+      "example_vi": "The cat is an animal that is mostly active at night.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>활동</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>act</span></div><div><span class='font-semibold text-gray-700'>활동량</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>active mass</span></div><div><span class='font-semibold text-gray-700'>활동내용</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>contents of activities</span></div></div>"
+    },
+    {
+      "id": "19",
+      "word": "희망하다",
+      "meaning": "look forward to",
+      "type": "동 verb",
+      "example_ko": "이 회사에 입사하기를 희망하고 있습니다.",
+      "example_vi": "I am looking forward to getting a job in your company.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>희망</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>hope</span></div><div><span class='font-semibold text-gray-700'>희망자</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>person who has a hope</span></div></div>"
+    },
+    {
+      "id": "20",
+      "word": "관람하다",
+      "meaning": "watch",
+      "type": "동 verb",
+      "example_ko": "공연을 관람하려는 사람들이 길게 늘어서 있다.",
+      "example_vi": "The audiences are standing in line to watch the show.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>관람객</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>audience</span></div><div><span class='font-semibold text-gray-700'>관람권</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>an admission ticket</span></div></div>"
+    },
+    {
+      "id": "21",
+      "word": "기준",
+      "meaning": "standard",
+      "type": "명 noun",
+      "example_ko": "신입 사원을 뽑는 기준을 알려 주세요.",
+      "example_vi": "Please tell me the standard that is applied in the recruitment.",
+      "extra": ""
+    },
+    {
+      "id": "22",
+      "word": "감상하다",
+      "meaning": "appreciate",
+      "type": "동 verb",
+      "example_ko": "이 수업은 한국의 현대시를 이해하고 감상하는 수업입니다.",
+      "example_vi": "This class is to understand and appreciate the Korean modern poetry.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>감상</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>appreciate</span></div><div><span class='font-semibold text-gray-700'>감상문</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>report</span></div><div><span class='font-semibold text-gray-700'>감상평</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>review</span></div></div>"
+    },
+    {
+      "id": "23",
+      "word": "경쟁",
+      "meaning": "competition",
+      "type": "명 noun",
+      "example_ko": "매년 입시 경쟁이 심해지고 있습니다.",
+      "example_vi": "The competition of the admission is getting more intensified each year.",
+      "extra": "<div><span class='font-semibold text-gray-700'>경쟁력</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>competitiveness</span></div>"
+    },
+    {
+      "id": "24",
+      "word": "공기",
+      "meaning": "air",
+      "type": "명 noun",
+      "example_ko": "실내의 공기를 바꾸었더니 머리가 아프지 않습니다.",
+      "example_vi": "After changing the indoor air, I no longer have headache.",
+      "extra": ""
+    },
+    {
+      "id": "25",
+      "word": "담다",
+      "meaning": "contain",
+      "type": "동 verb",
+      "example_ko": "이 소설은 젊은 세대의 여러 가지 고민을 담고 있습니다.",
+      "example_vi": "This novel contains many concerns of the young generation.",
+      "extra": ""
+    },
+    {
+      "id": "26",
+      "word": "도시",
+      "meaning": "city",
+      "type": "명 noun",
+      "example_ko": "도시 생활에 지쳐서 시골로 내려가는 사람들이 증가하는 추세다.",
+      "example_vi": "The number of people who move to rural areas after being exhausted by the city life is increasing.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>도심</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>the central city</span></div><div><span class='font-semibold text-gray-700'>시골</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>rural area</span></div></div>"
+    },
+    {
+      "id": "27",
+      "word": "뛰다",
+      "meaning": "run",
+      "type": "동 verb",
+      "example_ko": "학교에 늦을 것 같은데 우리 뛸까?",
+      "example_vi": "I think we will be late for school, want to run?",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>뛰어가다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>run to</span></div><div><span class='font-semibold text-gray-700'>뛰어오다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>run back</span></div><div><span class='font-semibold text-gray-700'>뛰어내리다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>run off</span></div><div><span class='font-semibold text-gray-700'>뛰어다니다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>run around</span></div><div><span class='font-semibold text-gray-700'>뛰어나가다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>run out</span></div></div>"
+    },
+    {
+      "id": "28",
+      "word": "분위기",
+      "meaning": "atmosphere",
+      "type": "명 noun",
+      "example_ko": "이 식당의 분위기가 마음에 들어서 자주 온다.",
+      "example_vi": "I often come to this restaurant because of the good atmosphere.",
+      "extra": ""
+    },
+    {
+      "id": "29",
+      "word": "빛",
+      "meaning": "light",
+      "type": "명 noun",
+      "example_ko": "길을 잃었지만 멀리 보이는 빛을 보고 다시 길을 찾을 수 있었다.",
+      "example_vi": "I was lost, but I could find my way after seeing the light from far away.",
+      "extra": "<div><span class='font-semibold text-gray-700'>빛나다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>light</span></div>"
+    },
+    {
+      "id": "30",
+      "word": "생명",
+      "meaning": "life",
+      "type": "명 noun",
+      "example_ko": "그 의사는 환자의 생명을 살리기 위해 노력했다.",
+      "example_vi": "The doctor tried hard to save the life of the patient.",
+      "extra": "<div><span class='font-semibold text-gray-700'>생명력</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>vitality</span></div>"
+    },
+    {
+      "id": "31",
+      "word": "세탁하다",
+      "meaning": "wash",
+      "type": "동 verb",
+      "example_ko": "옷에 김치가 묻었을 때 빨리 세탁하면 없앨 수 있어요.",
+      "example_vi": "When you get stains from Kimchi on your clothes, you can get rid of it if you wash them quickly.",
+      "extra": "",
+      "detailBlocks": [
+        {
+          "type": "mindmap",
+          "title_ko": "관련어",
+          "title_vi": "Words to memorize together",
+          "center_ko": "세탁",
+          "center_vi": "Wash",
+          "nodes": [
+            {
+              "ko": "세탁물",
+              "vi": "laundry"
+            },
+            {
+              "ko": "세탁기",
+              "vi": "washing machine"
+            },
+            {
+              "ko": "세탁실",
+              "vi": "laundry room"
+            },
+            {
+              "ko": "세탁소",
+              "vi": "laundromat"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "32",
+      "word": "안정",
+      "meaning": "stability",
+      "type": "명 noun",
+      "example_ko": "정부는 물가 안정을 위해서 노력하고 있다.",
+      "example_vi": "The government is trying to stabilize the prices.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>안정성</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>stability</span></div><div><span class='font-semibold text-gray-700'>안정적</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>stable</span></div><div><span class='font-semibold text-gray-700'>안정되다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>be stabled</span></div><div><span class='font-semibold text-gray-700'>안정시키다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>set at ease</span></div></div>"
+    },
+    {
+      "id": "33",
+      "word": "어울리다",
+      "meaning": "go with",
+      "type": "동 verb",
+      "example_ko": "이 옷은 이 신발과 전혀 어울리지 않아요.",
+      "example_vi": "The clothes do not even slightly match with the shoes.",
+      "extra": ""
+    }
+  ],
+  "dict": {
+    "volunteer": "tình nguyện / làm tình nguyện",
+    "service": "dịch vụ",
+    "stress": "căng thẳng",
+    "watch": "xem / theo dõi",
+    "newspaper": "báo / tờ báo",
+    "move": "di chuyển / cử động",
+    "price": "giá cả",
+    "tradition": "truyền thống",
+    "young": "trẻ",
+    "point": "điểm / điều",
+    "precise": "chính xác",
+    "order": "gọi món / đặt hàng",
+    "excessively": "quá mức",
+    "apply for": "ứng tuyển / nộp đơn",
+    "teenager": "thanh thiếu niên",
+    "memory": "kỷ niệm / hồi ức",
+    "present, now": "hiện tại / bây giờ",
+    "be active": "hoạt động",
+    "look forward to": "mong muốn / hy vọng",
+    "standard": "tiêu chuẩn",
+    "appreciate": "cảm thụ / thưởng thức",
+    "competition": "cạnh tranh",
+    "air": "không khí",
+    "contain": "chứa / 담다",
+    "city": "thành phố / đô thị",
+    "run": "chạy",
+    "atmosphere": "bầu không khí",
+    "light": "ánh sáng",
+    "life": "sinh mạng / sự sống",
+    "wash": "giặt / rửa",
+    "stability": "sự ổn định",
+    "go with": "hợp với / đi với",
+    "Words to memorize together": "Nhóm từ nên học cùng nhau",
+    "Volunteer": "Tình nguyện",
+    "voluntary service": "hoạt động tình nguyện",
+    "a volunteer": "người tình nguyện",
+    "the member of volunteer": "thành viên đội tình nguyện",
+    "a volunteer group": "đội tình nguyện",
+    "(viewer) ratings": "tỉ lệ người xem",
+    "viewer": "người xem",
+    "news article": "bài báo",
+    "movement": "sự chuyển động / cử động",
+    "What are the words that have the similar meanings as the word “가격(price)”?": "Những từ nào có nghĩa tương tự với “가격”?",
+    "The amount of money": "số tiền",
+    "the deposit for the contract": "số tiền hợp đồng",
+    "the amount of money for the insurance": "số tiền bảo hiểm",
+    "Expense": "chi phí",
+    "export expense": "chi phí xuất khẩu",
+    "moving expense": "chi phí chuyển nhà",
+    "The cost of N": "giá của N",
+    "the oil cost": "giá xăng/dầu",
+    "the coffee cost": "giá cà phê",
+    "Charge": "cước phí / khoản phí",
+    "the cell phone charge": "cước điện thoại",
+    "electricity cost": "tiền điện",
+    "the charge of water": "tiền nước",
+    "bill": "hóa đơn / khoản phí",
+    "electricity bill": "hóa đơn tiền điện",
+    "water bill": "hóa đơn tiền nước",
+    "gas bill": "hóa đơn gas",
+    "Fare": "tiền vé / phí",
+    "the bus fare": "tiền xe buýt",
+    "fare to bathe": "tiền tắm",
+    "traditional": "mang tính truyền thống",
+    "traditional musical instrument": "nhạc cụ truyền thống",
+    "traditional culture": "văn hóa truyền thống",
+    "traditional research office": "viện nghiên cứu truyền thống",
+    "youth": "tuổi trẻ / thanh xuân",
+    "young person": "người trẻ",
+    "young people": "người trẻ / giới trẻ",
+    "in one’s youth": "thời trẻ",
+    "precision": "sự chính xác",
+    "precisely": "một cách chính xác",
+    "apply": "việc ứng tuyển / nộp đơn",
+    "application": "đơn ứng tuyển",
+    "applicant": "người ứng tuyển",
+    "how this word appears in the test": "cách từ này xuất hiện trong đề thi",
+    "Many questions consist of the problems of teenagers that occurred recently in South Korea.": "Nhiều câu hỏi nói về các vấn đề thanh thiếu niên gần đây ở Hàn Quốc.",
+    "Also, many topics related to violence, smoking, teachers’ corporal punishment and bullying appear often in the tests.": "Ngoài ra, các chủ đề liên quan đến bạo lực, hút thuốc, hình phạt thể xác của giáo viên và bắt nạt cũng thường xuất hiện trong đề thi.",
+    "violence": "bạo lực",
+    "smoking": "hút thuốc",
+    "teachers’ corporal punishment": "hình phạt thể xác của giáo viên",
+    "bullying": "bắt nạt / cô lập",
+    "act": "hoạt động",
+    "active mass": "lượng hoạt động",
+    "contents of activities": "nội dung hoạt động",
+    "hope": "hy vọng",
+    "person who has a hope": "người có hy vọng / người mong muốn",
+    "audience": "khán giả",
+    "an admission ticket": "vé vào cửa",
+    "report": "bài cảm tưởng / bài báo cáo",
+    "review": "bài nhận xét / đánh giá",
+    "competitiveness": "năng lực cạnh tranh",
+    "the central city": "trung tâm thành phố",
+    "rural area": "vùng nông thôn",
+    "run to": "chạy đến",
+    "run back": "chạy lại",
+    "run off": "chạy xuống / chạy đi",
+    "run around": "chạy quanh",
+    "run out": "chạy ra ngoài",
+    "vitality": "sức sống / sinh lực",
+    "Wash": "Giặt / rửa",
+    "laundry": "đồ giặt",
+    "washing machine": "máy giặt",
+    "laundry room": "phòng giặt",
+    "laundromat": "tiệm giặt / hiệu giặt",
+    "stable": "ổn định",
+    "be stabled": "được ổn định",
+    "set at ease": "làm ổn định / khiến yên tâm",
+    "I am planning to provide a voluntary service in the rural area during this vacation.": "Kỳ nghỉ này tôi định về nông thôn làm hoạt động tình nguyện.",
+    "Even though the price of the goods in the department store is more expensive than that of other markets, you can get better services as well.": "Dù giá hàng ở bách hóa đắt hơn chợ, nhưng có thể nhận được dịch vụ tốt hơn.",
+    "I have trouble sleeping because of too much stress.": "Dạo này tôi bị căng thẳng quá nhiều nên ban đêm ngủ không ngon.",
+    "They say it is bad for your eyes to watch television more than one hour a day.": "Nghe nói xem TV hơn một giờ mỗi ngày không tốt cho thị lực.",
+    "If you read the newspaper every day, you will be aware of what is happening these days.": "Nếu đọc báo mỗi ngày, bạn có thể biết rõ gần đây đang có chuyện gì.",
+    "It is hard for me to move since I have hurt my leg.": "Tôi bị thương ở chân nên việc cử động rất khó.",
+    "The price of Seoul’s apartment has fallen recently.": "Gần đây giá căn hộ ở Seoul đã giảm.",
+    "Each country is doing their best to protect their tradition.": "Mỗi quốc gia đều đang nỗ lực nhiều để bảo vệ truyền thống.",
+    "You look younger than you really are.": "Trông bạn trẻ hơn tuổi thật rất nhiều.",
+    "If you have anything to ask, please contact me.": "Nếu có điều gì thắc mắc, hãy liên lạc với tôi bất cứ lúc nào.",
+    "Please give a precise and specific explanation.": "Xin hãy giải thích chính xác và chi tiết.",
+    "Sir, here is your drink that you ordered.": "Thưa quý khách, đồ uống quý khách đã gọi đã ra rồi.",
+    "This is really good, but isn’t it excessively expensive?": "Món đồ này đúng là tốt nhưng không phải quá đắt sao?",
+    "What do I need to apply for that university?": "Tôi cần gì để ứng tuyển vào trường đại học đó?",
+    "A concert for teenagers will be held.": "Một buổi hòa nhạc dành cho thanh thiếu niên sẽ được tổ chức.",
+    "When I look at the picture, it reminds me of the time when I was in school.": "Nhìn bức ảnh, tôi nhớ lại những kỷ niệm thời đi học.",
+    "What is the most popular movie playing now?": "Trong số các phim đang chiếu hiện nay, phim nào nổi tiếng nhất?",
+    "The cat is an animal that is mostly active at night.": "Mèo là loài động vật chủ yếu hoạt động vào ban đêm.",
+    "I am looking forward to getting a job in your company.": "Tôi đang mong muốn được vào làm tại công ty này.",
+    "The audiences are standing in line to watch the show.": "Những người muốn xem buổi biểu diễn đang xếp hàng dài.",
+    "Please tell me the standard that is applied in the recruitment.": "Xin hãy cho tôi biết tiêu chuẩn được áp dụng khi tuyển nhân viên mới.",
+    "This class is to understand and appreciate the Korean modern poetry.": "Đây là lớp học tìm hiểu và cảm thụ thơ hiện đại Hàn Quốc.",
+    "The competition of the admission is getting more intensified each year.": "Cạnh tranh thi tuyển mỗi năm một trở nên gay gắt hơn.",
+    "After changing the indoor air, I no longer have headache.": "Sau khi thay đổi không khí trong phòng, tôi không còn đau đầu nữa.",
+    "This novel contains many concerns of the young generation.": "Tiểu thuyết này chứa đựng nhiều nỗi trăn trở của thế hệ trẻ.",
+    "The number of people who move to rural areas after being exhausted by the city life is increasing.": "Số người mệt mỏi với cuộc sống đô thị rồi chuyển về nông thôn đang có xu hướng tăng.",
+    "I think we will be late for school, want to run?": "Có vẻ chúng ta sẽ muộn học, chạy nhé?",
+    "I often come to this restaurant because of the good atmosphere.": "Tôi thường đến nhà hàng này vì thích bầu không khí ở đây.",
+    "I was lost, but I could find my way after seeing the light from far away.": "Tôi bị lạc đường nhưng đã tìm lại được đường sau khi nhìn thấy ánh sáng từ xa.",
+    "The doctor tried hard to save the life of the patient.": "Bác sĩ đã nỗ lực để cứu sống bệnh nhân.",
+    "When you get stains from Kimchi on your clothes, you can get rid of it if you wash them quickly.": "Khi quần áo bị dính kim chi, nếu giặt nhanh thì có thể làm sạch.",
+    "The government is trying to stabilize the prices.": "Chính phủ đang nỗ lực để ổn định giá cả.",
+    "The clothes do not even slightly match with the shoes.": "Bộ quần áo này hoàn toàn không hợp với đôi giày này.",
+    "Words that are easy to confuse in TOPIK": "Những từ dễ nhầm lẫn trong TOPIK",
+    "Polysemy": "Từ đa nghĩa",
+    "Antonym": "Từ trái nghĩa",
+    "Synonym": "Từ đồng nghĩa",
+    "have": "có / đặt / để",
+    "give weight to": "đặt trọng tâm vào / coi trọng",
+    "It seems that the number of families with 3 kids has increased recently.": "Dạo này có vẻ số gia đình có ba con đã tăng lên.",
+    "In this recruiting interview, we gave weight to the importance of the personality.": "Trong buổi phỏng vấn tuyển nhân viên mới lần này, chúng tôi coi trọng nhân cách.",
+    "All of the famous celebrities have bodyguards.": "Tất cả những người nổi tiếng đều có vệ sĩ.",
+    "unfamiliar with": "lạ lẫm với / không quen với",
+    "get used to": "quen với",
+    "At first, I was unfamiliar with the surroundings because I was a new comer.": "Lúc đầu tôi rất vất vả vì đến nơi lạ.",
+    "I am getting used to living in Korea.": "Tôi đang dần quen với cuộc sống ở Hàn Quốc.",
+    "be short of": "thiếu",
+    "be insufficient": "không đủ / thiếu",
+    "It would be embarrassing for us to be short of food, therefore prepare plenty of food.": "Nếu thiếu đồ ăn thì sẽ khó xử, nên hãy chuẩn bị dư dả.",
+    "Connect the Korean words with the English words of same meaning.": "Hãy nối từ tiếng Hàn với nghĩa tiếng Việt tương ứng.",
+    "Pick and write the suitable word among the options in the blank space.": "Hãy chọn từ phù hợp trong các lựa chọn để điền vào chỗ trống.",
+    "a. excessively": "a. quá mức",
+    "b. volunteer": "b. tình nguyện / làm tình nguyện",
+    "c. appreciate": "c. cảm thụ / thưởng thức",
+    "d. watch": "d. xem / theo dõi",
+    "e. life": "e. sinh mạng / sự sống",
+    "f. memory": "f. kỷ niệm / hồi ức",
+    "g. competition": "g. cạnh tranh"
+  }
+}

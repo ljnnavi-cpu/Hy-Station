@@ -1,0 +1,740 @@
+{
+  "day": 25,
+  "vocabData": [
+    {
+      "id": "01",
+      "word": "마땅하다",
+      "meaning": "suitable",
+      "meaning_vi": "phù hợp / thích đáng",
+      "type": "형 adjective",
+      "example_ko": "마땅한 일자리를 찾는 것이 쉽지가 않네요.",
+      "example_vi": "It is hard to find a suitable job.",
+      "example_vi_vn": "Tìm một công việc phù hợp thật không dễ.",
+      "extra": "",
+      "highlight_terms": [
+        "마땅한"
+      ]
+    },
+    {
+      "id": "02",
+      "word": "마지막",
+      "meaning": "last",
+      "meaning_vi": "cuối cùng",
+      "type": "명 noun",
+      "example_ko": "누가 교실에서 마지막으로 나왔나요?",
+      "example_vi": "Who was the last to come out of the classroom?",
+      "example_vi_vn": "Ai là người ra khỏi lớp cuối cùng?",
+      "extra": "",
+      "highlight_terms": [
+        "마지막으로"
+      ]
+    },
+    {
+      "id": "03",
+      "word": "만",
+      "meaning": "american age",
+      "meaning_vi": "tuổi quốc tế / tuổi tròn",
+      "type": "명 noun",
+      "example_ko": "제 남동생은 올해로 만 27세입니다.",
+      "example_vi": "My younger brother is 27 in American age.",
+      "example_vi_vn": "Em trai tôi năm nay 27 tuổi theo tuổi quốc tế.",
+      "extra": "",
+      "highlight_terms": [
+        "만"
+      ]
+    },
+    {
+      "id": "04",
+      "word": "약",
+      "meaning": "approximately",
+      "meaning_vi": "khoảng / xấp xỉ",
+      "type": "부 adverb",
+      "example_ko": "그 공연을 보기 위해 약 5천 명의 사람들이 모였다.",
+      "example_vi": "Approximately five thousand people gathered to watch the show.",
+      "example_vi_vn": "Khoảng 5.000 người đã tụ tập để xem buổi biểu diễn đó.",
+      "extra": "",
+      "highlight_terms": [
+        "약"
+      ],
+      "detailBlocks": [
+        {
+          "type": "tip_combo",
+          "label": "Tip",
+          "question_ko": "‘약’과 비슷한 뜻을 가진 단어는 뭐가 있을까요?",
+          "question_vi": "What kind of words have a similar meaning to “약(approximately)”?",
+          "word": "약",
+          "word_vi": "approximately",
+          "items": [
+            {
+              "ko": "5천 명쯤",
+              "vi": "around 5 thousand people"
+            },
+            {
+              "ko": "5천 명 정도",
+              "vi": "about 5 thousand people"
+            },
+            {
+              "ko": "5천여 명",
+              "vi": "over 5 thousand people"
+            },
+            {
+              "ko": "5천 명 남짓",
+              "vi": "a little over/about 5 thousand people"
+            }
+          ],
+          "no_speak": true
+        }
+      ]
+    },
+    {
+      "id": "05",
+      "word": "멈추다",
+      "meaning": "stop",
+      "meaning_vi": "dừng / ngừng",
+      "type": "동 verb",
+      "example_ko": "하던 일을 멈추고 뉴스를 봤다.",
+      "example_vi": "I stopped what I was doing and watched the news.",
+      "example_vi_vn": "Tôi dừng việc đang làm và xem tin tức.",
+      "extra": "",
+      "highlight_terms": [
+        "멈추고"
+      ]
+    },
+    {
+      "id": "06",
+      "word": "명함",
+      "meaning": "business card",
+      "meaning_vi": "danh thiếp",
+      "type": "명 noun",
+      "example_ko": "혹시 명함이 있으시면 한 장 주시겠어요?",
+      "example_vi": "Can you give me your business card if you have one?",
+      "example_vi_vn": "Nếu có danh thiếp, bạn có thể cho tôi một tấm không?",
+      "extra": "",
+      "highlight_terms": [
+        "명함이"
+      ]
+    },
+    {
+      "id": "07",
+      "word": "몰리다",
+      "meaning": "be accused of",
+      "meaning_vi": "bị quy là / bị buộc tội là",
+      "type": "동 verb",
+      "example_ko": "민호는 자신이 도둑으로 몰리자 화를 내면서 나가 버렸다.",
+      "example_vi": "When Minho was accused of stealing, he got angry and went out.",
+      "example_vi_vn": "Khi bị quy là kẻ trộm, Minho tức giận và bỏ ra ngoài.",
+      "extra": "<div><span class='font-semibold text-gray-700'>몰다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>accuse</span></div>",
+      "highlight_terms": [
+        "몰리자"
+      ]
+    },
+    {
+      "id": "08",
+      "word": "무늬",
+      "meaning": "pattern",
+      "meaning_vi": "hoa văn / họa tiết",
+      "type": "명 noun",
+      "example_ko": "미영이는 오늘 물방울 무늬 원피스를 입고 왔어요.",
+      "example_vi": "Miyoung came wearing a polka-dot dress.",
+      "example_vi_vn": "Hôm nay Miyoung mặc váy liền họa tiết chấm bi đến.",
+      "extra": "",
+      "highlight_terms": [
+        "무늬"
+      ]
+    },
+    {
+      "id": "09",
+      "word": "무역",
+      "meaning": "trade",
+      "meaning_vi": "thương mại / mậu dịch",
+      "type": "명 noun",
+      "example_ko": "지금은 어느 나라도 무역을 하지 않고는 살 수 없는 상황이다.",
+      "example_vi": "We are in the situation where no country can survive without international trading with other countries.",
+      "example_vi_vn": "Hiện nay không quốc gia nào có thể tồn tại nếu không giao thương quốc tế.",
+      "extra": "<div><span class='font-semibold text-gray-700'>무역 전시관</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>trade exhibition center</span></div>",
+      "highlight_terms": [
+        "무역을"
+      ]
+    },
+    {
+      "id": "10",
+      "word": "민속",
+      "meaning": "folk",
+      "meaning_vi": "dân gian / truyền thống dân tộc",
+      "type": "명 noun",
+      "example_ko": "명절이면 사람들은 민속놀이를 즐기며 시간을 보낸다.",
+      "example_vi": "When it is a traditional holiday, people spend time playing folk games.",
+      "example_vi_vn": "Vào dịp lễ truyền thống, mọi người dành thời gian chơi các trò chơi dân gian.",
+      "extra": "<div><span class='font-semibold text-gray-700'>민속품</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>folk-craft article</span></div>",
+      "highlight_terms": [
+        "민속놀이를"
+      ]
+    },
+    {
+      "id": "11",
+      "word": "바닥",
+      "meaning": "floor",
+      "meaning_vi": "sàn nhà",
+      "type": "명 noun",
+      "example_ko": "오랫동안 청소를 안 했더니 바닥이 더러워요.",
+      "example_vi": "Since I have not cleaned for a long time, the floor is dirty.",
+      "example_vi_vn": "Vì lâu rồi không dọn nên sàn nhà bẩn.",
+      "extra": "",
+      "highlight_terms": [
+        "바닥이"
+      ]
+    },
+    {
+      "id": "12",
+      "word": "바람직하다",
+      "meaning": "desirable",
+      "meaning_vi": "đáng mong muốn / nên làm",
+      "type": "형 adjective",
+      "example_ko": "건강을 위해서 금연을 하는 것이 바람직하다.",
+      "example_vi": "It is desirable for your health not to smoke.",
+      "example_vi_vn": "Vì sức khỏe, việc không hút thuốc là điều nên làm.",
+      "extra": "",
+      "highlight_terms": [
+        "바람직하다"
+      ]
+    },
+    {
+      "id": "13",
+      "word": "반사되다",
+      "meaning": "be reflected",
+      "meaning_vi": "bị phản chiếu",
+      "type": "동 verb",
+      "example_ko": "창문에 반사된 햇빛 때문에 눈을 뜰 수가 없어요.",
+      "example_vi": "I cannot open my eyes because of the sunlight reflected on the window.",
+      "example_vi_vn": "Tôi không thể mở mắt vì ánh nắng phản chiếu trên cửa sổ.",
+      "extra": "<div><span class='font-semibold text-gray-700'>반사하다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>reflect</span></div>",
+      "highlight_terms": [
+        "반사된"
+      ]
+    },
+    {
+      "id": "14",
+      "word": "발송",
+      "meaning": "send",
+      "meaning_vi": "gửi đi / phát hàng",
+      "type": "명 noun",
+      "example_ko": "주문하신 상품은 내일까지 발송이 가능할 것 같습니다.",
+      "example_vi": "The product that you ordered will be sent until tomorrow.",
+      "example_vi_vn": "Sản phẩm bạn đặt có thể được gửi chậm nhất đến ngày mai.",
+      "extra": "<div><span class='font-semibold text-gray-700'>발송하다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>send</span></div>",
+      "highlight_terms": [
+        "발송이"
+      ]
+    },
+    {
+      "id": "15",
+      "word": "방안",
+      "meaning": "option",
+      "meaning_vi": "phương án / giải pháp",
+      "type": "명 noun",
+      "example_ko": "문제를 해결하기 위한 여러 가지 방안이 논의되고 있다.",
+      "example_vi": "Many options are being discussed in order to solve the problem.",
+      "example_vi_vn": "Nhiều phương án đang được thảo luận để giải quyết vấn đề.",
+      "extra": "",
+      "highlight_terms": [
+        "방안이"
+      ]
+    },
+    {
+      "id": "16",
+      "word": "버릇",
+      "meaning": "habit",
+      "meaning_vi": "thói quen / tật",
+      "type": "명 noun",
+      "example_ko": "오래된 버릇은 고치기가 어렵다.",
+      "example_vi": "Old habits are hard to fix. (Old habits die hard)",
+      "example_vi_vn": "Thói quen lâu năm thì khó sửa.",
+      "extra": "",
+      "highlight_terms": [
+        "버릇은"
+      ]
+    },
+    {
+      "id": "17",
+      "word": "벌이다",
+      "meaning": "start",
+      "meaning_vi": "mở ra / bắt đầu",
+      "type": "동 verb",
+      "example_ko": "내 친구가 이번에 또 새로운 사업을 벌인다고 해요.",
+      "example_vi": "My friend is trying to start a new business.",
+      "example_vi_vn": "Nghe nói lần này bạn tôi lại định bắt đầu một công việc kinh doanh mới.",
+      "extra": "",
+      "highlight_terms": [
+        "벌인다고"
+      ]
+    },
+    {
+      "id": "18",
+      "word": "범죄",
+      "meaning": "crime",
+      "meaning_vi": "tội phạm",
+      "type": "명 noun",
+      "example_ko": "올해는 작년에 비해 청소년의 범죄가 많이 줄었다고 합니다.",
+      "example_vi": "It is known that the number of crimes committed by teenagers this year was decreased.",
+      "example_vi_vn": "Nghe nói năm nay số tội phạm do thanh thiếu niên gây ra đã giảm nhiều so với năm ngoái.",
+      "extra": "",
+      "highlight_terms": [
+        "범죄가"
+      ]
+    },
+    {
+      "id": "19",
+      "word": "변경하다",
+      "meaning": "change",
+      "meaning_vi": "thay đổi / điều chỉnh",
+      "type": "동 verb",
+      "example_ko": "이번 주말에 비가 온다고 해서 여행 일정을 조금 변경할 거예요.",
+      "example_vi": "The travel plans will somewhat change since it has been told that it will rain this weekend.",
+      "example_vi_vn": "Nghe nói cuối tuần này trời mưa nên tôi sẽ thay đổi lịch trình du lịch một chút.",
+      "extra": "<div><span class='font-semibold text-gray-700'>변경되다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>be changed</span></div>",
+      "highlight_terms": [
+        "변경할"
+      ]
+    },
+    {
+      "id": "20",
+      "word": "보람",
+      "meaning": "worthwhile",
+      "meaning_vi": "sự đáng làm / ý nghĩa",
+      "type": "명 noun",
+      "example_ko": "이번에 봉사 활동을 하면서 많은 보람을 느꼈다.",
+      "example_vi": "This volunteer activity was worthwhile to do.",
+      "example_vi_vn": "Lần này khi tham gia hoạt động tình nguyện, tôi cảm thấy rất có ý nghĩa.",
+      "extra": "",
+      "highlight_terms": [
+        "보람을"
+      ]
+    },
+    {
+      "id": "21",
+      "word": "보수",
+      "meaning": "pay",
+      "meaning_vi": "tiền công / thù lao",
+      "type": "명 noun",
+      "example_ko": "내일이면 일주일 동안 아르바이트한 보수를 받을 거예요.",
+      "example_vi": "I will be paid tomorrow for the work I have done for the past one week.",
+      "example_vi_vn": "Ngày mai tôi sẽ nhận tiền công cho một tuần làm thêm.",
+      "extra": "",
+      "highlight_terms": [
+        "보수를"
+      ],
+      "detailBlocks": [
+        {
+          "type": "tip_combo",
+          "label": "Tip",
+          "question_ko": "‘보수’와 비슷한 표현에는 또 뭐가 있을까요?",
+          "question_vi": "What kind of words have a similar meaning to “보수(pay)”?",
+          "word": "보수",
+          "word_vi": "pay",
+          "items": [
+            {
+              "ko": "월급",
+              "vi": "salary"
+            },
+            {
+              "ko": "페이",
+              "vi": "pay"
+            },
+            {
+              "ko": "임금",
+              "vi": "wage"
+            }
+          ],
+          "no_speak": true
+        }
+      ]
+    },
+    {
+      "id": "22",
+      "word": "보상",
+      "meaning": "compensate",
+      "meaning_vi": "bồi thường / đền bù",
+      "type": "명 noun",
+      "example_ko": "공장의 매연 때문에 피해를 입었지만 보상을 받지 못했다.",
+      "example_vi": "Even though I suffered harm because of the exhaust from the factory, I was never compensated.",
+      "example_vi_vn": "Dù bị thiệt hại do khói thải nhà máy nhưng tôi không được bồi thường.",
+      "extra": "<div><span class='font-semibold text-gray-700'>보상하다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>compensate</span></div>",
+      "highlight_terms": [
+        "보상을"
+      ]
+    },
+    {
+      "id": "23",
+      "word": "입원",
+      "meaning": "enter a hospital",
+      "meaning_vi": "nhập viện",
+      "type": "명 noun",
+      "example_ko": "입원 후에는 의사의 지시에 잘 따라야 합니다.",
+      "example_vi": "After you enter the hospital, you should obey what doctor says.",
+      "example_vi_vn": "Sau khi nhập viện, bạn phải làm theo chỉ dẫn của bác sĩ.",
+      "extra": "",
+      "highlight_terms": [
+        "입원"
+      ],
+      "detailBlocks": [
+        {
+          "type": "tip_combo",
+          "label": "Tip",
+          "question_ko": "‘입원’과 관련된 단어는 뭐가 있을까요?",
+          "question_vi": "What are the words that are related to “입원(enter a hospital)”?",
+          "word": "입원",
+          "word_vi": "enter a hospital",
+          "items": [
+            {
+              "ko": "퇴원",
+              "vi": "leave the hospital"
+            },
+            {
+              "ko": "문병",
+              "vi": "visit somebody who is sick"
+            },
+            {
+              "ko": "병원",
+              "vi": "hospital"
+            },
+            {
+              "ko": "환자",
+              "vi": "patient"
+            }
+          ],
+          "no_speak": true
+        }
+      ]
+    },
+    {
+      "id": "24",
+      "word": "부상",
+      "meaning": "injury",
+      "meaning_vi": "chấn thương",
+      "type": "명 noun",
+      "example_ko": "농구하다가 다리에 부상을 입었어요.",
+      "example_vi": "I got injured on my leg while playing basketball.",
+      "example_vi_vn": "Tôi bị chấn thương ở chân khi chơi bóng rổ.",
+      "extra": "",
+      "highlight_terms": [
+        "부상을"
+      ]
+    },
+    {
+      "id": "25",
+      "word": "부작용",
+      "meaning": "side effects",
+      "meaning_vi": "tác dụng phụ",
+      "type": "명 noun",
+      "example_ko": "모든 약을 먹을 때는 부작용을 조심해야 한다.",
+      "example_vi": "No matter what medicine you take, you should always be cautious of side effects.",
+      "example_vi_vn": "Khi dùng bất kỳ loại thuốc nào cũng phải cẩn thận tác dụng phụ.",
+      "extra": "",
+      "highlight_terms": [
+        "부작용을"
+      ]
+    },
+    {
+      "id": "26",
+      "word": "부지런하다",
+      "meaning": "diligent",
+      "meaning_vi": "chăm chỉ / siêng năng",
+      "type": "형 adjective",
+      "example_ko": "내 친구는 부지런한 성격 때문에 매일 집을 깨끗이 청소한다.",
+      "example_vi": "My friend is so diligent that he cleans his room everyday.",
+      "example_vi_vn": "Bạn tôi siêng năng nên ngày nào cũng dọn phòng sạch sẽ.",
+      "extra": "",
+      "highlight_terms": [
+        "부지런한"
+      ]
+    },
+    {
+      "id": "27",
+      "word": "불가능하다",
+      "meaning": "impossible",
+      "meaning_vi": "không thể / bất khả thi",
+      "type": "형 adjective",
+      "example_ko": "차가 많이 막혀서 비행기 시간 안에 공항에 도착하는 것은 불가능할 것 같다.",
+      "example_vi": "It is impossible for me to arrive at the airport in time because of the traffic jam.",
+      "example_vi_vn": "Vì tắc đường nặng nên có lẽ không thể đến sân bay kịp giờ bay.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>불가능</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>impossible</span></div><div><span class='font-semibold text-gray-700'>불가능에 가깝다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>it is almost impossible</span></div></div>",
+      "highlight_terms": [
+        "불가능할"
+      ]
+    },
+    {
+      "id": "28",
+      "word": "빨다",
+      "meaning": "wash",
+      "meaning_vi": "giặt / rửa",
+      "type": "동 verb",
+      "example_ko": "이 옷은 망가지기 쉬우니까 손으로 빨아야 해요.",
+      "example_vi": "These clothes are easy to get ruined so you should wash it with your hands.",
+      "example_vi_vn": "Áo này dễ hỏng nên phải giặt bằng tay.",
+      "extra": "",
+      "highlight_terms": [
+        "빨아야"
+      ]
+    },
+    {
+      "id": "29",
+      "word": "빼다",
+      "meaning": "without",
+      "meaning_vi": "bỏ ra / không cho vào",
+      "type": "동 verb",
+      "example_ko": "저는 매운 음식을 안 좋아하니까 고추는 빼고 요리해 주세요.",
+      "example_vi": "I don’t like spicy food, so can you please cook without using any hot pepper?",
+      "example_vi_vn": "Tôi không thích đồ cay nên vui lòng nấu không cho ớt.",
+      "extra": "",
+      "highlight_terms": [
+        "빼고"
+      ]
+    },
+    {
+      "id": "30",
+      "word": "상승하다",
+      "meaning": "increase",
+      "meaning_vi": "tăng lên",
+      "type": "동 verb",
+      "example_ko": "요즘 물가가 상승해서 생활비가 많이 든다.",
+      "example_vi": "Lately, the price has increased and therefore living expenses also increased.",
+      "example_vi_vn": "Dạo này vật giá tăng nên tốn nhiều chi phí sinh hoạt.",
+      "extra": "",
+      "highlight_terms": [
+        "상승해서"
+      ]
+    },
+    {
+      "id": "31",
+      "word": "서투르다",
+      "meaning": "unskilled",
+      "meaning_vi": "vụng / chưa thạo",
+      "type": "형 adjective",
+      "example_ko": "아직은 운전이 서툴러서 차가 막힐 때는 운전하기 힘들다.",
+      "example_vi": "I am an unskilled driver and it is hard for me to drive when traffic is jammed.",
+      "example_vi_vn": "Tôi vẫn chưa thạo lái xe nên khi tắc đường thì rất khó lái.",
+      "extra": "<div><span class='font-semibold text-gray-700'>서투다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>be poor at</span></div>",
+      "highlight_terms": [
+        "서툴러서"
+      ]
+    },
+    {
+      "id": "32",
+      "word": "선거",
+      "meaning": "election",
+      "meaning_vi": "bầu cử",
+      "type": "명 noun",
+      "example_ko": "모든 사람들이 이번 선거는 깨끗하게 치러지기를 바라고 있다.",
+      "example_vi": "Everyone wants this election to be done clearly.",
+      "example_vi_vn": "Mọi người đều mong cuộc bầu cử lần này được tiến hành minh bạch.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>선거 운동</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>election campaign</span></div><div><span class='font-semibold text-gray-700'>선거일</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>election date</span></div></div>",
+      "highlight_terms": [
+        "선거는"
+      ]
+    },
+    {
+      "id": "33",
+      "word": "선발하다",
+      "meaning": "select",
+      "meaning_vi": "tuyển chọn / chọn ra",
+      "type": "동 verb",
+      "example_ko": "다음달에 세계 대회에 나갈 선수들을 선발할 예정이다.",
+      "example_vi": "We are planning to select the players who will enter the competition.",
+      "example_vi_vn": "Tháng sau chúng tôi dự định tuyển chọn các vận động viên tham gia giải thế giới.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>선발되다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>be selected</span></div><div><span class='font-semibold text-gray-700'>선발 명단</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>list of selected players</span></div></div>",
+      "highlight_terms": [
+        "선발할"
+      ]
+    },
+    {
+      "id": "34",
+      "word": "재학생",
+      "meaning": "registered student",
+      "meaning_vi": "sinh viên/học sinh đang học",
+      "type": "명 noun",
+      "example_ko": "도서 대출은 재학생만 가능합니다.",
+      "example_vi": "Only the registered students can borrow the books from the library.",
+      "example_vi_vn": "Chỉ học sinh/sinh viên đang học mới có thể mượn sách.",
+      "extra": "",
+      "highlight_terms": [
+        "재학생만"
+      ],
+      "detailBlocks": [
+        {
+          "type": "tip_combo",
+          "label": "Tip",
+          "question_ko": "‘재학생’과 관련된 단어는 뭐가 있을까요?",
+          "question_vi": "What words are related to “재학생(registered student)”?",
+          "word": "재학생",
+          "word_vi": "registered student",
+          "items": [
+            {
+              "ko": "복학생",
+              "vi": "student returning to school after a leave"
+            },
+            {
+              "ko": "자퇴생",
+              "vi": "dropout student"
+            },
+            {
+              "ko": "휴학생",
+              "vi": "student on a leave of absence"
+            }
+          ],
+          "no_speak": true
+        }
+      ]
+    }
+  ],
+  "dict": {
+    "how this word appears in the test": "cách từ này xuất hiện trong đề thi",
+    "Words to memorize together": "Nhóm từ nên học cùng nhau",
+    "Words that are easy to confuse in TOPIK": "Những từ dễ nhầm lẫn trong TOPIK",
+    "Polysemy": "Từ đa nghĩa",
+    "Antonym": "Từ trái nghĩa",
+    "Synonym": "Từ đồng nghĩa",
+    "Write Korean in English, and English in Korean.": "Hãy viết từ tiếng Hàn sang tiếng Việt, và từ tiếng Việt sang tiếng Hàn.",
+    "Connect the Korean words with the English words of same meaning.": "Hãy nối từ tiếng Hàn với nghĩa tiếng Việt tương ứng.",
+    "Pick and write the suitable word among <the options> in the blank space.": "Hãy chọn từ phù hợp trong <gợi ý> để điền vào chỗ trống.",
+    "Pick and write the suitable word among in the blank space.": "Hãy chọn từ phù hợp trong gợi ý để điền vào chỗ trống.",
+    "Choose the proper word that fits the sentence more naturally.": "Hãy chọn từ phù hợp để câu tự nhiên hơn.",
+    "suitable": "phù hợp / thích đáng",
+    "last": "cuối cùng",
+    "american age": "tuổi quốc tế / tuổi tròn",
+    "approximately": "khoảng / xấp xỉ",
+    "stop": "dừng / ngừng",
+    "business card": "danh thiếp",
+    "be accused of": "bị quy là / bị buộc tội là",
+    "pattern": "hoa văn / họa tiết",
+    "trade": "thương mại / mậu dịch",
+    "folk": "dân gian / truyền thống dân tộc",
+    "floor": "sàn nhà",
+    "desirable": "đáng mong muốn / nên làm",
+    "be reflected": "bị phản chiếu",
+    "send": "gửi đi / phát hàng",
+    "option": "phương án / giải pháp",
+    "habit": "thói quen / tật",
+    "start": "mở ra / bắt đầu",
+    "crime": "tội phạm",
+    "change": "thay đổi / điều chỉnh",
+    "worthwhile": "sự đáng làm / ý nghĩa",
+    "pay": "tiền công / thù lao",
+    "compensate": "bồi thường / đền bù",
+    "enter a hospital": "nhập viện",
+    "injury": "chấn thương",
+    "side effects": "tác dụng phụ",
+    "diligent": "chăm chỉ / siêng năng",
+    "impossible": "không thể / bất khả thi",
+    "wash": "giặt / rửa",
+    "without": "bỏ ra / không cho vào",
+    "increase": "tăng lên",
+    "unskilled": "vụng / chưa thạo",
+    "election": "bầu cử",
+    "select": "tuyển chọn / chọn ra",
+    "registered student": "sinh viên/học sinh đang học",
+    "accuse": "buộc tội / quy là",
+    "polka-dot dress": "váy chấm bi",
+    "trade exhibition center": "trung tâm triển lãm thương mại",
+    "folk-craft article": "đồ thủ công dân gian",
+    "reflect": "phản chiếu",
+    "be changed": "được thay đổi",
+    "salary": "lương tháng",
+    "wage": "tiền công / tiền lương",
+    "leave the hospital": "xuất viện",
+    "visit somebody who is sick": "thăm bệnh",
+    "hospital": "bệnh viện",
+    "patient": "bệnh nhân",
+    "it is almost impossible": "gần như không thể",
+    "be poor at": "không thạo / vụng về",
+    "election campaign": "chiến dịch bầu cử",
+    "election date": "ngày bầu cử",
+    "be selected": "được tuyển chọn",
+    "list of selected players": "danh sách người được chọn",
+    "student returning to school after a leave": "học sinh/sinh viên quay lại học sau thời gian nghỉ",
+    "dropout student": "học sinh/sinh viên thôi học",
+    "student on a leave of absence": "học sinh/sinh viên đang bảo lưu/nghỉ học tạm thời",
+    "What kind of words have a similar meaning to “약(approximately)”?": "Có những từ nào có nghĩa tương tự “약”?",
+    "around 5 thousand people": "khoảng 5 nghìn người",
+    "about 5 thousand people": "khoảng 5 nghìn người",
+    "over 5 thousand people": "hơn 5 nghìn người",
+    "a little over/about 5 thousand people": "hơn/khoảng 5 nghìn người",
+    "What kind of words have a similar meaning to “보수(pay)”?": "Có những từ nào có nghĩa tương tự “보수”?",
+    "What are the words that are related to “입원(enter a hospital)”?": "Có những từ nào liên quan đến “입원”?",
+    "What words are related to “재학생(registered student)”?": "Có những từ nào liên quan đến “재학생”?",
+    "pour": "đổ / rót",
+    "be puffy": "bị sưng / phù",
+    "simple": "đơn giản",
+    "complex": "phức tạp",
+    "be embarrassed": "xấu hổ / ngượng",
+    "be ashamed": "xấu hổ / ngượng",
+    "You can eat Kupramen only by pouring the hot water without cooking.": "Bạn chỉ cần đổ nước nóng vào mì ly là ăn được, không cần nấu.",
+    "My face is puffy this morning since I drank too much water before I went to bed.": "Sáng nay mặt tôi bị sưng vì tối qua uống quá nhiều nước trước khi ngủ.",
+    "You will realize that the task is simpler than you think.": "Biết rồi thì bạn sẽ thấy công việc đó đơn giản hơn bạn nghĩ.",
+    "I am in a complexed situation, so I will explain it later.": "Tình hình hơi phức tạp nên tôi sẽ giải thích sau.",
+    "I fell from the stairs where there were many people, so I am embarrassed.": "Tôi bị ngã ở cầu thang đông người nên xấu hổ chết đi được.",
+    "a. suitable": "a. phù hợp",
+    "b. last": "b. cuối cùng",
+    "a. business card": "a. danh thiếp",
+    "b. change": "b. thay đổi",
+    "a. diligence": "a. chăm chỉ",
+    "a. trade": "a. thương mại",
+    "b. wash": "b. giặt/rửa",
+    "a. be reflected": "a. bị phản chiếu",
+    "b. floor": "b. sàn nhà",
+    "a. option": "a. phương án",
+    "a. be accused of": "a. bị quy là / buộc tội",
+    "b. be treated": "b. bị đối xử",
+    "a. preparation": "a. chuẩn bị",
+    "b. worthwhile": "b. ý nghĩa / đáng làm",
+    "a. impossible": "a. không thể",
+    "b. enough": "b. đủ",
+    "a. select": "a. tuyển chọn",
+    "b. extend": "b. kéo dài",
+    "a. without": "a. bỏ ra / không cho vào",
+    "b. sell": "b. bán",
+    "a. 몰리자": "a. bị quy là",
+    "b. 당하자": "b. bị chịu / bị gặp",
+    "a. 준비를": "a. sự chuẩn bị",
+    "b. 보람을": "b. ý nghĩa / đáng làm",
+    "a. 불가능할": "a. không thể",
+    "b. 충분할": "b. đủ",
+    "a. 선발할": "a. tuyển chọn",
+    "b. 연장할": "b. kéo dài",
+    "a. 빼고": "a. bỏ ra / không cho vào",
+    "b. 팔고": "b. bán",
+    "When Minho was accused of stealing, he got angry and went out.": "Khi bị quy là kẻ trộm, Minho tức giận và bỏ ra ngoài.",
+    "This volunteer activity was worthwhile to do.": "Lần này khi tham gia hoạt động tình nguyện, tôi cảm thấy rất có ý nghĩa.",
+    "It is impossible for me to arrive at the airport in time because of the traffic jam.": "Vì tắc đường nặng nên có lẽ không thể đến sân bay kịp giờ bay.",
+    "We are planning to select the players who will enter the competition.": "Tháng sau chúng tôi dự định tuyển chọn các vận động viên tham gia giải thế giới.",
+    "I don’t like spicy food, so can you please cook without using any hot pepper?": "Tôi không thích đồ cay nên vui lòng nấu không cho ớt.",
+    "It is hard to find a suitable job.": "Tìm một công việc phù hợp thật không dễ.",
+    "Who was the last to come out of the classroom?": "Ai là người ra khỏi lớp cuối cùng?",
+    "My younger brother is 27 in American age.": "Em trai tôi năm nay 27 tuổi theo tuổi quốc tế.",
+    "Approximately five thousand people gathered to watch the show.": "Khoảng 5.000 người đã tụ tập để xem buổi biểu diễn đó.",
+    "I stopped what I was doing and watched the news.": "Tôi dừng việc đang làm và xem tin tức.",
+    "Can you give me your business card if you have one?": "Nếu có danh thiếp, bạn có thể cho tôi một tấm không?",
+    "Miyoung came wearing a polka-dot dress.": "Hôm nay Miyoung mặc váy liền họa tiết chấm bi đến.",
+    "We are in the situation where no country can survive without international trading with other countries.": "Hiện nay không quốc gia nào có thể tồn tại nếu không giao thương quốc tế.",
+    "When it is a traditional holiday, people spend time playing folk games.": "Vào dịp lễ truyền thống, mọi người dành thời gian chơi các trò chơi dân gian.",
+    "Since I have not cleaned for a long time, the floor is dirty.": "Vì lâu rồi không dọn nên sàn nhà bẩn.",
+    "It is desirable for your health not to smoke.": "Vì sức khỏe, việc không hút thuốc là điều nên làm.",
+    "I cannot open my eyes because of the sunlight reflected on the window.": "Tôi không thể mở mắt vì ánh nắng phản chiếu trên cửa sổ.",
+    "The product that you ordered will be sent until tomorrow.": "Sản phẩm bạn đặt có thể được gửi chậm nhất đến ngày mai.",
+    "Many options are being discussed in order to solve the problem.": "Nhiều phương án đang được thảo luận để giải quyết vấn đề.",
+    "Old habits are hard to fix. (Old habits die hard)": "Thói quen lâu năm thì khó sửa.",
+    "My friend is trying to start a new business.": "Nghe nói lần này bạn tôi lại định bắt đầu một công việc kinh doanh mới.",
+    "It is known that the number of crimes committed by teenagers this year was decreased.": "Nghe nói năm nay số tội phạm do thanh thiếu niên gây ra đã giảm nhiều so với năm ngoái.",
+    "The travel plans will somewhat change since it has been told that it will rain this weekend.": "Nghe nói cuối tuần này trời mưa nên tôi sẽ thay đổi lịch trình du lịch một chút.",
+    "I will be paid tomorrow for the work I have done for the past one week.": "Ngày mai tôi sẽ nhận tiền công cho một tuần làm thêm.",
+    "Even though I suffered harm because of the exhaust from the factory, I was never compensated.": "Dù bị thiệt hại do khói thải nhà máy nhưng tôi không được bồi thường.",
+    "After you enter the hospital, you should obey what doctor says.": "Sau khi nhập viện, bạn phải làm theo chỉ dẫn của bác sĩ.",
+    "I got injured on my leg while playing basketball.": "Tôi bị chấn thương ở chân khi chơi bóng rổ.",
+    "No matter what medicine you take, you should always be cautious of side effects.": "Khi dùng bất kỳ loại thuốc nào cũng phải cẩn thận tác dụng phụ.",
+    "My friend is so diligent that he cleans his room everyday.": "Bạn tôi siêng năng nên ngày nào cũng dọn phòng sạch sẽ.",
+    "These clothes are easy to get ruined so you should wash it with your hands.": "Áo này dễ hỏng nên phải giặt bằng tay.",
+    "Lately, the price has increased and therefore living expenses also increased.": "Dạo này vật giá tăng nên tốn nhiều chi phí sinh hoạt.",
+    "I am an unskilled driver and it is hard for me to drive when traffic is jammed.": "Tôi vẫn chưa thạo lái xe nên khi tắc đường thì rất khó lái.",
+    "Everyone wants this election to be done clearly.": "Mọi người đều mong cuộc bầu cử lần này được tiến hành minh bạch.",
+    "Only the registered students can borrow the books from the library.": "Chỉ học sinh/sinh viên đang học mới có thể mượn sách."
+  }
+}

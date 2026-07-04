@@ -1,0 +1,626 @@
+{
+  "day": 11,
+  "vocabData": [
+    {
+      "id": "01",
+      "word": "운전",
+      "meaning": "drive",
+      "type": "명 noun",
+      "example_ko": "그 교통 사고는 운전자의 졸음 운전으로 일어났다.",
+      "example_vi": "Drowsy driving was a major cause of that car accident.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>운전석</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>driver’s seat</span></div><div><span class='font-semibold text-gray-700'>운전 면허</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>driver’s license</span></div><div><span class='font-semibold text-gray-700'>운전자</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>driver</span></div><div><span class='font-semibold text-gray-700'>음주 운전</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>drunk driving</span></div></div>",
+      "highlight_terms": [
+        "운전자",
+        "운전"
+      ]
+    },
+    {
+      "id": "02",
+      "word": "이미",
+      "meaning": "already",
+      "type": "부 adverb",
+      "example_ko": "내가 역에 도착했을 때 기차는 이미 떠나고 없었다.",
+      "example_vi": "The train had already left when I arrived at the station.",
+      "extra": "<div><span class='font-semibold text-gray-700'>벌써</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>already</span></div>",
+      "highlight_terms": [
+        "이미"
+      ]
+    },
+    {
+      "id": "03",
+      "word": "조용하다",
+      "meaning": "be quiet",
+      "type": "형 adjective",
+      "example_ko": "방학이 되면 학교가 조용하다.",
+      "example_vi": "The school is quiet during the vacation.",
+      "extra": "<div><span class='font-semibold text-gray-700'>조용히</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>quietly</span></div>",
+      "highlight_terms": [
+        "조용하다"
+      ]
+    },
+    {
+      "id": "04",
+      "word": "주로",
+      "meaning": "mainly",
+      "type": "부 adverb",
+      "example_ko": "평일에는 주로 이 식당에서 밥을 먹어요.",
+      "example_vi": "During the weekdays I mainly eat in this restaurant.",
+      "extra": "<div><span class='font-semibold text-gray-700'>보통</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>usually</span></div>",
+      "highlight_terms": [
+        "주로"
+      ]
+    },
+    {
+      "id": "05",
+      "word": "주차장",
+      "meaning": "parking lot",
+      "type": "명 noun",
+      "example_ko": "공연장 근처에 주차장이 있지만 가능하면 대중교통을 이용해 주세요.",
+      "example_vi": "Even though there are parking lots around the concert hall, please use public transportation if possible.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>주차</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>parking</span></div><div><span class='font-semibold text-gray-700'>주차비</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>parking fee</span></div><div><span class='font-semibold text-gray-700'>주차난</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>the parking problem</span></div><div><span class='font-semibold text-gray-700'>주차하다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>park</span></div></div>",
+      "highlight_terms": [
+        "주차장"
+      ]
+    },
+    {
+      "id": "06",
+      "word": "직업",
+      "meaning": "occupation",
+      "type": "명 noun",
+      "example_ko": "사람마다 직업을 선택하는 기준이 다르다.",
+      "example_vi": "People have different standards in choosing their occupation.",
+      "extra": "",
+      "highlight_terms": [
+        "직업"
+      ]
+    },
+    {
+      "id": "07",
+      "word": "특징",
+      "meaning": "(special) feature",
+      "type": "명 noun",
+      "example_ko": "이 제품의 특징은 무엇입니까?",
+      "example_vi": "What is the special feature of this product?",
+      "extra": "",
+      "highlight_terms": [
+        "특징"
+      ]
+    },
+    {
+      "id": "08",
+      "word": "평균",
+      "meaning": "average",
+      "type": "명 noun",
+      "example_ko": "이번 중간 시험 평균이 높지 않습니다.",
+      "example_vi": "The average of this mid-term exam is not high.",
+      "extra": "",
+      "highlight_terms": [
+        "평균"
+      ]
+    },
+    {
+      "id": "09",
+      "word": "끌다",
+      "meaning": "draw (attention)",
+      "type": "동 verb",
+      "example_ko": "이번 전시회에서는 아이디어 제품들이 눈길을 끌었다.",
+      "example_vi": "In this exhibition, so-called “idea products” drew the audience’s attention.",
+      "extra": "",
+      "detailBlocks": [
+        {
+          "type": "tip_combo",
+          "label": "Tip",
+          "question_ko": "‘끌다’는 어떤 단어와 같이 사용할까요?",
+          "question_vi": "What are the words that are used together with the word “끌다(draw)”?,",
+          "word": "끌다",
+          "word_vi": "draw (attention)",
+          "items": [
+            {
+              "ko": "관심을 끌다",
+              "vi": "draw attention"
+            },
+            {
+              "ko": "시선을 끌다",
+              "vi": "catch one’s sight"
+            },
+            {
+              "ko": "인기를 끌다",
+              "vi": "catch popularity"
+            },
+            {
+              "ko": "흥미를 끌다",
+              "vi": "attract one’s interest"
+            }
+          ]
+        }
+      ],
+      "highlight_terms": [
+        "끌었다"
+      ]
+    },
+    {
+      "id": "10",
+      "word": "포기하다",
+      "meaning": "give up",
+      "type": "동 verb",
+      "example_ko": "아무리 힘들어도 포기하지 마세요.",
+      "example_vi": "Do not give up no matter how hard it is.",
+      "extra": "",
+      "highlight_terms": [
+        "포기하지"
+      ]
+    },
+    {
+      "id": "11",
+      "word": "현상",
+      "meaning": "phenomenon",
+      "type": "명 noun",
+      "example_ko": "요즘 고령화 현상이 큰 문제가 되고 있어요.",
+      "example_vi": "The aging phenomenon is becoming a big issue these days.",
+      "extra": "",
+      "detailBlocks": [
+        {
+          "type": "test_note",
+          "label_ko": "출제 경향",
+          "label_vi": "how this word appears in the test",
+          "title_ko": "‘N 현상’이 주제가 되는 경우가 많습니다.",
+          "title_vi": "There are many cases when “N phenomenon” becomes the topic of the test question.",
+          "body_ko": "온난화 현상, 고령화 현상 등이 자주 나옵니다. 또한 이러한 현상에 대한 원인이나 해결 방안을 묻는 문제가 함께 출제될 수 있습니다.",
+          "body_vi": "Expressions such as “global warming phenomenon” and “aging phenomenon” often appear. Questions may also ask about the causes of these phenomena or possible solutions.",
+          "tags": [
+            {
+              "ko": "온난화 현상",
+              "en": "global warming phenomenon"
+            },
+            {
+              "ko": "고령화 현상",
+              "en": "aging phenomenon"
+            },
+            {
+              "ko": "원인",
+              "en": "cause"
+            },
+            {
+              "ko": "해결 방안",
+              "en": "solution"
+            }
+          ]
+        }
+      ],
+      "highlight_terms": [
+        "현상이"
+      ]
+    },
+    {
+      "id": "12",
+      "word": "현실",
+      "meaning": "reality",
+      "type": "명 noun",
+      "example_ko": "드라마와 현실은 다릅니다.",
+      "example_vi": "Drama is different from reality.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>현실화</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>reality</span></div><div><span class='font-semibold text-gray-700'>현실적</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>realistic</span></div></div>",
+      "highlight_terms": [
+        "현실"
+      ]
+    },
+    {
+      "id": "13",
+      "word": "현장",
+      "meaning": "scene",
+      "type": "명 noun",
+      "example_ko": "사고 현장에 경찰이 바로 왔어요.",
+      "example_vi": "The police came to the accident scene right away.",
+      "extra": "",
+      "highlight_terms": [
+        "현장"
+      ]
+    },
+    {
+      "id": "14",
+      "word": "홈페이지",
+      "meaning": "homepage",
+      "type": "명 noun",
+      "example_ko": "학교 홈페이지에 자세한 정보가 있습니다.",
+      "example_vi": "Detailed information is on the school homepage.",
+      "extra": "",
+      "highlight_terms": [
+        "홈페이지"
+      ]
+    },
+    {
+      "id": "15",
+      "word": "환영하다",
+      "meaning": "welcome",
+      "type": "동 verb",
+      "example_ko": "이 곳에 오신 모든 분들을 환영합니다.",
+      "example_vi": "We welcome everyone who has come here.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>환영</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>welcome</span></div><div><span class='font-semibold text-gray-700'>환영식</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>the welcoming ceremony</span></div></div>",
+      "highlight_terms": [
+        "환영합니다"
+      ]
+    },
+    {
+      "id": "16",
+      "word": "양",
+      "meaning": "quantity",
+      "type": "명 noun",
+      "example_ko": "시간이 지날수록 내리는 눈의 양이 점점 많아졌다.",
+      "example_vi": "As time passed, the amount of falling snow increased more and more.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>질</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>quality</span></div><div><span class='font-semibold text-gray-700'>양</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>quantity</span></div><div><span class='font-semibold text-gray-700'>분량</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>amount / volume</span></div></div>",
+      "highlight_terms": [
+        "양이"
+      ]
+    },
+    {
+      "id": "17",
+      "word": "걸리다",
+      "meaning": "catch",
+      "type": "동 verb",
+      "example_ko": "언니가 여름에 독감에 걸려서 고생을 하고 있다.",
+      "example_vi": "My sister caught the flu in the summer and is going through a hard time.",
+      "extra": "",
+      "highlight_terms": [
+        "걸려서"
+      ]
+    },
+    {
+      "id": "18",
+      "word": "경기",
+      "meaning": "game",
+      "type": "명 noun",
+      "example_ko": "축구 경기 규칙을 알아 둘 걸 그랬어요.",
+      "example_vi": "I should have learned the rules for the soccer game.",
+      "extra": "",
+      "highlight_terms": [
+        "경기"
+      ]
+    },
+    {
+      "id": "19",
+      "word": "기타",
+      "meaning": "other, further",
+      "type": "명 noun",
+      "example_ko": "기타 문의사항이 있으신 분들은 아래로 연락해 주시기 바랍니다.",
+      "example_vi": "If you have any further questions to ask, feel free to call the number written below.",
+      "extra": "",
+      "highlight_terms": [
+        "기타"
+      ]
+    },
+    {
+      "id": "20",
+      "word": "긴장",
+      "meaning": "tension",
+      "type": "명 noun",
+      "example_ko": "차라도 한 잔 드시면서 긴장을 풀어 보세요.",
+      "example_vi": "Drink a cup of tea and release your tension.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>긴장감</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>tension</span></div><div><span class='font-semibold text-gray-700'>긴장을 풀다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>release the tension</span></div><div><span class='font-semibold text-gray-700'>긴장하다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>be nervous</span></div><div><span class='font-semibold text-gray-700'>긴장을 풀어주다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>decrease the tension</span></div></div>",
+      "highlight_terms": [
+        "긴장을"
+      ]
+    },
+    {
+      "id": "21",
+      "word": "깊다",
+      "meaning": "deep",
+      "type": "형 adjective",
+      "example_ko": "수심이 깊어서 수영할 수 없습니다.",
+      "example_vi": "The water is too deep to swim.",
+      "extra": "",
+      "highlight_terms": [
+        "깊어서"
+      ]
+    },
+    {
+      "id": "22",
+      "word": "낭비하다",
+      "meaning": "waste",
+      "type": "동 verb",
+      "example_ko": "시간을 낭비하면 나중에 후회하게 됩니다.",
+      "example_vi": "If you waste your time, you will regret it later.",
+      "extra": "<div><span class='font-semibold text-gray-700'>낭비</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>waste</span></div>",
+      "detailBlocks": [
+        {
+          "type": "tip_combo",
+          "label": "Tip",
+          "question_ko": "‘낭비하다’는 어떤 단어와 같이 사용할까요?",
+          "question_vi": "What word is used together with the word “낭비하다(waste)”?,",
+          "word": "낭비하다",
+          "word_vi": "waste",
+          "items": [
+            {
+              "ko": "돈",
+              "vi": "money"
+            },
+            {
+              "ko": "시간",
+              "vi": "time"
+            },
+            {
+              "ko": "자원",
+              "vi": "resource"
+            },
+            {
+              "ko": "전기·물·기름",
+              "vi": "electricity, water, oil"
+            }
+          ]
+        }
+      ],
+      "highlight_terms": [
+        "낭비하면"
+      ]
+    },
+    {
+      "id": "23",
+      "word": "낮잠",
+      "meaning": "nap",
+      "type": "명 noun",
+      "example_ko": "낮잠을 많이 잤더니 밤에 잠이 안 오네요.",
+      "example_vi": "I cannot fall asleep at night because I took a long nap.",
+      "extra": "<div><span class='font-semibold text-gray-700'>늦잠</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>oversleep</span></div>",
+      "highlight_terms": [
+        "낮잠"
+      ]
+    },
+    {
+      "id": "24",
+      "word": "농사",
+      "meaning": "farming",
+      "type": "명 noun",
+      "example_ko": "도시 생활을 그만두고 시골로 가서 농사를 짓는 사람들이 늘어나고 있다.",
+      "example_vi": "The number of people who quit city life and go to rural areas to farm is increasing.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>농촌</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>rural</span></div><div><span class='font-semibold text-gray-700'>농업</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>agriculture</span></div><div><span class='font-semibold text-gray-700'>농사일</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>farming work</span></div><div><span class='font-semibold text-gray-700'>농촌 마을</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>farm village</span></div><div><span class='font-semibold text-gray-700'>농작물</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>crop</span></div><div><span class='font-semibold text-gray-700'>농어촌</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>farming and fishing village</span></div><div><span class='font-semibold text-gray-700'>농업 역사</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>agriculture and history</span></div></div>",
+      "highlight_terms": [
+        "농사를"
+      ]
+    },
+    {
+      "id": "25",
+      "word": "능력",
+      "meaning": "ability",
+      "type": "명 noun",
+      "example_ko": "학력보다 능력을 중요하게 생각하는 분위기가 확산되고 있어요.",
+      "example_vi": "The atmosphere of emphasizing one’s ability over academic background is spreading.",
+      "extra": "",
+      "highlight_terms": [
+        "능력을"
+      ]
+    },
+    {
+      "id": "26",
+      "word": "단",
+      "meaning": "only",
+      "type": "부 adverb",
+      "example_ko": "단 한번 만났을 뿐인데 금방 알아보시네요!",
+      "example_vi": "We only met once, but you recognized me right away!",
+      "extra": "",
+      "highlight_terms": [
+        "단"
+      ]
+    },
+    {
+      "id": "27",
+      "word": "안심하다",
+      "meaning": "calm down",
+      "type": "동 verb",
+      "example_ko": "경찰이 도착했으니까 안심하세요.",
+      "example_vi": "The police arrived, so you should calm down.",
+      "extra": "",
+      "highlight_terms": [
+        "안심하세요"
+      ]
+    },
+    {
+      "id": "28",
+      "word": "대형",
+      "meaning": "big",
+      "type": "명 noun",
+      "example_ko": "어제 고속도로에서 대형 교통사고가 나서 많은 사람들이 죽었다.",
+      "example_vi": "There was a big accident on the highway yesterday and many people died.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>대형 할인점</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>large discount store</span></div><div><span class='font-semibold text-gray-700'>대형 사고</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>big-sized accident</span></div><div><span class='font-semibold text-gray-700'>대형 마트</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>large-sized market</span></div></div>",
+      "highlight_terms": [
+        "대형"
+      ]
+    },
+    {
+      "id": "29",
+      "word": "대화",
+      "meaning": "conversation",
+      "type": "명 noun",
+      "example_ko": "마음이 맞는 친구들과의 대화는 언제나 즐겁다.",
+      "example_vi": "The conversation with close friends is always fun to have.",
+      "extra": "<div><span class='font-semibold text-gray-700'>대화하다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>converse</span></div>",
+      "highlight_terms": [
+        "대화"
+      ]
+    },
+    {
+      "id": "30",
+      "word": "도로",
+      "meaning": "(take it) back",
+      "type": "부 adverb",
+      "example_ko": "이런 비싼 선물은 받을 수 없으니까 도로 가지고 가세요.",
+      "example_vi": "This is too expensive for me to accept, so please take it back.",
+      "extra": "",
+      "highlight_terms": [
+        "도로"
+      ]
+    },
+    {
+      "id": "31",
+      "word": "떠오르다",
+      "meaning": "come up",
+      "type": "동 verb",
+      "example_ko": "여행을 하다가 좋은 아이디어가 떠올랐다.",
+      "example_vi": "A good idea came up while we were traveling.",
+      "extra": "<div><span class='font-semibold text-gray-700'>떠올리다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>recall</span></div>",
+      "highlight_terms": [
+        "떠올랐다"
+      ]
+    },
+    {
+      "id": "32",
+      "word": "만족하다",
+      "meaning": "satisfy",
+      "type": "동 verb",
+      "example_ko": "이 식당의 서비스에 손님들이 모두 만족하였습니다.",
+      "example_vi": "The customers were all satisfied with the service from this restaurant.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>만족</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>satisfaction</span></div><div><span class='font-semibold text-gray-700'>만족도</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>level of satisfaction</span></div><div><span class='font-semibold text-gray-700'>만족시키다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>make one satisfied</span></div></div>",
+      "highlight_terms": [
+        "만족하였습니다"
+      ]
+    },
+    {
+      "id": "33",
+      "word": "멀리하다",
+      "meaning": "keep away from",
+      "type": "동 verb",
+      "example_ko": "나쁜 친구는 멀리하는 것이 좋아요.",
+      "example_vi": "You should keep away from bad friends.",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>멀리</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>far</span></div><div><span class='font-semibold text-gray-700'>멀리서</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>from a distance</span></div></div>",
+      "highlight_terms": [
+        "멀리하는"
+      ]
+    }
+  ],
+  "dict": {
+    "drive": "lái xe / việc lái xe",
+    "already": "đã / rồi",
+    "be quiet": "yên tĩnh",
+    "mainly": "chủ yếu",
+    "parking lot": "bãi đỗ xe",
+    "occupation": "nghề nghiệp",
+    "(special) feature": "đặc điểm / đặc trưng",
+    "average": "trung bình",
+    "draw (attention)": "thu hút / kéo sự chú ý",
+    "give up": "từ bỏ",
+    "phenomenon": "hiện tượng",
+    "reality": "hiện thực / thực tế",
+    "scene": "hiện trường",
+    "homepage": "trang chủ",
+    "welcome": "chào đón / hoan nghênh",
+    "quantity": "lượng / số lượng",
+    "catch": "mắc / bị nhiễm",
+    "game": "trận đấu / trò chơi",
+    "other, further": "khác / thêm",
+    "tension": "sự căng thẳng",
+    "deep": "sâu",
+    "waste": "lãng phí",
+    "nap": "giấc ngủ trưa",
+    "farming": "nông nghiệp / việc làm nông",
+    "ability": "năng lực / khả năng",
+    "only": "chỉ",
+    "calm down": "yên tâm / bình tĩnh",
+    "big": "lớn / cỡ lớn",
+    "conversation": "cuộc trò chuyện / đối thoại",
+    "(take it) back": "mang trả lại / đem lại",
+    "come up": "nảy ra / hiện lên",
+    "satisfy": "hài lòng / làm hài lòng",
+    "keep away from": "tránh xa",
+    "driver’s seat": "ghế lái",
+    "driver’s license": "bằng lái xe",
+    "driver": "người lái xe",
+    "drunk driving": "lái xe khi say rượu",
+    "quietly": "một cách yên lặng",
+    "usually": "thường / thông thường",
+    "parking": "việc đỗ xe",
+    "parking fee": "phí đỗ xe",
+    "the parking problem": "vấn đề thiếu chỗ đỗ xe",
+    "park": "đỗ xe",
+    "draw attention": "thu hút sự chú ý",
+    "catch one’s sight": "thu hút ánh nhìn",
+    "catch popularity": "được ưa chuộng",
+    "attract one’s interest": "thu hút hứng thú",
+    "how this word appears in the test": "cách từ này xuất hiện trong đề thi",
+    "There are many cases when “N phenomenon” becomes the topic of the test question.": "Có nhiều trường hợp ‘hiện tượng N’ trở thành chủ đề của câu hỏi.",
+    "Expressions such as “global warming phenomenon” and “aging phenomenon” often appear. Questions may also ask about the causes of these phenomena or possible solutions.": "Các cách nói như hiện tượng nóng lên toàn cầu, hiện tượng già hóa dân số thường xuất hiện. Đề cũng có thể hỏi nguyên nhân hoặc phương án giải quyết.",
+    "global warming phenomenon": "hiện tượng nóng lên toàn cầu",
+    "aging phenomenon": "hiện tượng già hóa dân số",
+    "cause": "nguyên nhân",
+    "solution": "phương án giải quyết",
+    "realistic": "mang tính hiện thực / thực tế",
+    "the welcoming ceremony": "lễ chào đón",
+    "quality": "chất lượng",
+    "amount / volume": "số lượng / lượng",
+    "release the tension": "giải tỏa căng thẳng",
+    "be nervous": "căng thẳng / hồi hộp",
+    "decrease the tension": "làm giảm căng thẳng",
+    "What word is used together with the word “낭비하다(waste)”?,": "‘낭비하다’ thường dùng cùng với từ nào?",
+    "What are the words that are used together with the word “끌다(draw)”?,": "‘끌다’ thường dùng cùng với những từ nào?",
+    "money": "tiền",
+    "time": "thời gian",
+    "resource": "tài nguyên",
+    "electricity, water, oil": "điện, nước, dầu",
+    "oversleep": "ngủ nướng / ngủ quá giấc",
+    "rural": "nông thôn",
+    "agriculture": "nông nghiệp",
+    "farming work": "việc đồng áng / việc làm nông",
+    "farm village": "làng nông thôn",
+    "crop": "nông sản / cây trồng",
+    "farming and fishing village": "nông ngư thôn",
+    "agriculture and history": "lịch sử nông nghiệp",
+    "large discount store": "siêu thị giảm giá cỡ lớn",
+    "big-sized accident": "tai nạn lớn / nghiêm trọng",
+    "large-sized market": "siêu thị cỡ lớn",
+    "converse": "trò chuyện / đối thoại",
+    "recall": "gợi nhớ / nhớ lại",
+    "satisfaction": "sự hài lòng",
+    "level of satisfaction": "mức độ hài lòng",
+    "make one satisfied": "làm cho ai hài lòng",
+    "far": "xa",
+    "from a distance": "từ xa",
+    "Drowsy driving was a major cause of that car accident.": "Vụ tai nạn giao thông đó xảy ra do tài xế ngủ gật khi lái xe.",
+    "The train had already left when I arrived at the station.": "Khi tôi đến ga thì tàu đã rời đi mất rồi.",
+    "The school is quiet during the vacation.": "Đến kỳ nghỉ thì trường học trở nên yên tĩnh.",
+    "During the weekdays I mainly eat in this restaurant.": "Ngày thường tôi chủ yếu ăn cơm ở nhà hàng này.",
+    "Even though there are parking lots around the concert hall, please use public transportation if possible.": "Dù quanh khu biểu diễn có bãi đỗ xe, nếu có thể hãy sử dụng phương tiện công cộng.",
+    "People have different standards in choosing their occupation.": "Mỗi người có tiêu chuẩn khác nhau khi lựa chọn nghề nghiệp.",
+    "What is the special feature of this product?": "Đặc điểm của sản phẩm này là gì?",
+    "The average of this mid-term exam is not high.": "Điểm trung bình kỳ thi giữa kỳ lần này không cao.",
+    "In this exhibition, so-called “idea products” drew the audience’s attention.": "Trong triển lãm lần này, các sản phẩm ý tưởng đã thu hút sự chú ý của khán giả.",
+    "Do not give up no matter how hard it is.": "Dù khó khăn thế nào cũng đừng từ bỏ.",
+    "The aging phenomenon is becoming a big issue these days.": "Dạo này hiện tượng già hóa đang trở thành vấn đề lớn.",
+    "Drama is different from reality.": "Phim truyền hình khác với hiện thực.",
+    "The police came to the accident scene right away.": "Cảnh sát đã đến ngay hiện trường tai nạn.",
+    "Detailed information is on the school homepage.": "Thông tin chi tiết có trên trang chủ của trường.",
+    "We welcome everyone who has come here.": "Chúng tôi chào đón tất cả mọi người đã đến nơi này.",
+    "As time passed, the amount of falling snow increased more and more.": "Thời gian trôi qua, lượng tuyết rơi ngày càng nhiều hơn.",
+    "My sister caught the flu in the summer and is going through a hard time.": "Chị tôi bị cúm vào mùa hè nên đang rất vất vả.",
+    "I should have learned the rules for the soccer game.": "Lẽ ra tôi nên biết trước luật của trận bóng đá.",
+    "If you have any further questions to ask, feel free to call the number written below.": "Nếu có thêm câu hỏi khác, vui lòng liên hệ theo số bên dưới.",
+    "Drink a cup of tea and release your tension.": "Hãy uống một tách trà và thử giải tỏa căng thẳng.",
+    "The water is too deep to swim.": "Nước quá sâu nên không thể bơi.",
+    "If you waste your time, you will regret it later.": "Nếu lãng phí thời gian, sau này bạn sẽ hối hận.",
+    "I cannot fall asleep at night because I took a long nap.": "Vì ngủ trưa nhiều nên ban đêm tôi không ngủ được.",
+    "The number of people who quit city life and go to rural areas to farm is increasing.": "Số người bỏ cuộc sống đô thị, về nông thôn làm nông đang tăng lên.",
+    "The atmosphere of emphasizing one’s ability over academic background is spreading.": "Bầu không khí coi trọng năng lực hơn học lực đang lan rộng.",
+    "We only met once, but you recognized me right away!": "Chúng ta chỉ gặp nhau một lần mà anh/chị nhận ra tôi ngay!",
+    "The police arrived, so you should calm down.": "Cảnh sát đã đến rồi nên hãy yên tâm.",
+    "There was a big accident on the highway yesterday and many people died.": "Hôm qua trên đường cao tốc xảy ra một vụ tai nạn lớn khiến nhiều người thiệt mạng.",
+    "The conversation with close friends is always fun to have.": "Trò chuyện với những người bạn hợp ý thì lúc nào cũng vui.",
+    "This is too expensive for me to accept, so please take it back.": "Món quà đắt như thế này tôi không thể nhận, nên hãy mang về lại đi.",
+    "A good idea came up while we were traveling.": "Khi đang đi du lịch, một ý tưởng hay đã nảy ra.",
+    "The customers were all satisfied with the service from this restaurant.": "Tất cả khách hàng đều hài lòng với dịch vụ của nhà hàng này.",
+    "You should keep away from bad friends.": "Bạn nên tránh xa những người bạn xấu.",
+    "Words that are easy to confuse in TOPIK": "Những từ dễ nhầm lẫn trong TOPIK",
+    "Polysemy": "Từ đa nghĩa",
+    "Antonym": "Từ trái nghĩa",
+    "Synonym": "Từ đồng nghĩa",
+    "fit": "phù hợp / vừa",
+    "correct": "dò đáp án / sửa đúng",
+    "adjust": "điều chỉnh",
+    "Wearing clothes that fits your age is most natural and beautiful.": "Mặc quần áo phù hợp với tuổi là tự nhiên và đẹp nhất.",
+    "After the test was over, I checked my answers with my friends.": "Sau khi thi xong, tôi đã dò đáp án với bạn bè.",
+    "The focus of the telescope should properly be adjusted in order to see the view.": "Phải điều chỉnh tiêu điểm của kính viễn vọng đúng thì mới nhìn rõ.",
+    "take": "gửi / 맡기다",
+    "pick up": "nhận lại / lấy lại",
+    "I took my clothes to the dry cleaners on my way to work.": "Trên đường đi làm, tôi đã gửi quần áo ở tiệm giặt.",
+    "I am waiting to pick up my baggage.": "Tôi đang chờ để lấy hành lý.",
+    "certainly": "chắc chắn / nhất định",
+    "surely": "chắc chắn",
+    "You will surely get into the university since you have studied hard.": "Vì đã học chăm chỉ đến bây giờ nên chắc chắn bạn sẽ đỗ đại học.",
+    "Write Korean in English, and English in Korean.": "Hãy viết từ tiếng Hàn sang tiếng Việt, và từ tiếng Việt sang tiếng Hàn.",
+    "Choose the proper word that fits the sentence more naturally.": "Hãy chọn từ phù hợp để câu tự nhiên hơn."
+  }
+}
