@@ -653,17 +653,14 @@ function speakText(text) {
       }
 
       if (block.type === 'mindmap') {
-        const positionsByCount = {
-          1: ['left upper'],
-          2: ['left upper', 'right upper'],
-          3: ['left top', 'right upper', 'left bottom'],
-          4: ['left top', 'right top', 'left bottom', 'right bottom'],
-          5: ['left top', 'right top', 'left upper', 'right upper', 'left bottom'],
-          6: ['left top', 'right top', 'left upper', 'right upper', 'left bottom', 'right bottom'],
-          7: ['left top', 'right top', 'left upper', 'right upper', 'left lower', 'right lower', 'left bottom'],
-          8: ['left top', 'right top', 'left upper', 'right upper', 'left lower', 'right lower', 'left bottom', 'right bottom']
-        };
-        const defaultPositions = positionsByCount[8];
+        // Layout cũ dùng 5 vị trí cố định (top/upper/middle/lower/bottom) map
+        // cứng vào 4 hàng lưới, nên khi chỉ có 4 nhánh (top+bottom) thì 2 hàng
+        // giữa luôn bỏ trống -> mindmap bị "quá bự" so với nội dung thực tế.
+        // Giờ chia đơn giản: nhánh chẵn (0,2,4..) bên trái, lẻ (1,3,5..) bên
+        // phải, xếp từ trên xuống liền nhau; số hàng lưới = số nhánh nhiều
+        // nhất ở 1 bên, không dư hàng trống nào. Thứ tự trái/phải theo cách
+        // này giống hệt layout cũ (positionsByCount trước đây cũng luân
+        // phiên trái-phải-trái-phải), nên không đổi cách nhóm từ hiển thị.
         const layoutOrders = {
           '사회': [0, 1, 5, 2, 4, 3],
           '생활': [1, 2, 0, 3, 4, 5],
@@ -673,15 +670,24 @@ function speakText(text) {
         const sourceNodes = order
           ? order.map(index => (block.nodes || [])[index]).filter(Boolean)
           : (block.nodes || []);
-        const positions = positionsByCount[sourceNodes.length] || defaultPositions;
         const displayTitleKo = '관련어';
 
-        const nodeHtmlList = sourceNodes.map((node, index) => `
-          <div class="mind-node ${positions[index] || ''} cursor-pointer hover:border-teal-300 hover:bg-teal-50/40 transition" data-mind-node onclick="t30.speakText('${escapeJsText(node.ko)}')">
+        const leftNodes = [];
+        const rightNodes = [];
+        sourceNodes.forEach((node, i) => (i % 2 === 0 ? leftNodes : rightNodes).push(node));
+        const rowCount = Math.max(leftNodes.length, rightNodes.length, 1);
+
+        const renderNode = (node, rowIndex, column) => `
+          <div class="mind-node cursor-pointer hover:border-teal-300 hover:bg-teal-50/40 transition" data-mind-node style="grid-column:${column};grid-row:${rowIndex + 1};" onclick="t30.speakText('${escapeJsText(node.ko)}')">
             <div class="font-bold text-slate-800 text-[1.05rem]">${escapeHtml(node.ko)} 🔊</div>
             <div class="text-xs text-rose-500 font-medium mt-2 hideable-meaning" onclick="t30.toggleSingleRedSheet(this, event)">${escapeHtml(node.vi || '')}</div>
           </div>
-        `).join('');
+        `;
+
+        const nodeHtmlList = [
+          ...leftNodes.map((node, i) => renderNode(node, i, 1)),
+          ...rightNodes.map((node, i) => renderNode(node, i, 3)),
+        ].join('');
 
         return `
           <div class="study-extra-card mindmap-card">
@@ -691,10 +697,10 @@ function speakText(text) {
               </div>
               ${block.title_vi ? `<span class="text-xs text-slate-500 hideable-meaning" onclick="t30.toggleSingleRedSheet(this, event)">${escapeHtml(block.title_vi)}</span>` : ''}
             </div>
-            <div class="mindmap-board" data-mindmap-board>
+            <div class="mindmap-board" data-mindmap-board style="grid-template-rows: repeat(${rowCount}, minmax(76px, auto));">
               <svg class="mindmap-connector-svg" aria-hidden="true"></svg>
               ${nodeHtmlList}
-              <div class="mindmap-center cursor-pointer hover:bg-teal-50/60 transition" data-mindmap-center onclick="t30.speakText('${escapeJsText(block.center_ko || '')}')">
+              <div class="mindmap-center cursor-pointer hover:bg-teal-50/60 transition" data-mindmap-center style="grid-row: 1 / span ${rowCount};" onclick="t30.speakText('${escapeJsText(block.center_ko || '')}')">
                 <div class="text-2xl font-black text-slate-900">${escapeHtml(block.center_ko || '')}</div>
                 <div class="text-sm text-rose-500 font-bold mt-2 hideable-meaning" onclick="t30.toggleSingleRedSheet(this, event)">${escapeHtml(block.center_vi || '')}</div>
               </div>
@@ -808,7 +814,7 @@ function speakText(text) {
               <div class="flex items-center gap-3">
                 <span class="px-2.5 py-1 bg-teal-600 text-white rounded-lg font-mono text-sm font-bold">${item.id}</span>
                 <h3 class="text-2xl font-bold text-slate-900 cursor-pointer hover:text-teal-600" onclick="t30.speakText('${item.word}')">${item.word} 🔊</h3>
-                <span class="px-2 py-0.5 bg-slate-100 text-slate-600 rounded-md text-xs font-semibold">${item.type}</span>
+                <span class="px-2 py-0.5 bg-[var(--pk2)] text-[var(--pk4)] rounded-md text-xs font-semibold">${item.type}</span>
               </div>
               <span class="text-base font-bold text-teal-600 hideable-meaning meaning-target px-3 py-1 bg-teal-50/50 rounded-lg cursor-pointer" onclick="t30.toggleSingleRedSheet(this, event)" data-en-text="${escapeHtml(item.meaning || '')}" data-vi-text="${escapeHtml(item.meaning_vi || translateToVietnamese(item.meaning || ''))}">${item.meaning}</span>
             </div>
@@ -868,6 +874,7 @@ function speakText(text) {
   if (document.fonts && document.fonts.ready) {
     document.fonts.ready.then(() => scheduleMindmapRedraw(120));
   }
+
   window.t30 = {
     mount,
     speakText,
