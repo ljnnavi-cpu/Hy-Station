@@ -868,7 +868,6 @@ function speakText(text) {
   if (document.fonts && document.fonts.ready) {
     document.fonts.ready.then(() => scheduleMindmapRedraw(120));
   }
-
   window.t30 = {
     mount,
     speakText,
