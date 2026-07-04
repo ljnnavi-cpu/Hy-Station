@@ -16,7 +16,15 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+/* Khai báo thứ tự layer TOÀN TRANG ngay từ đầu: app-base phải đứng TRƯỚC
+   theme/utilities của Tailwind, vì theo spec CSS, style KHÔNG nằm trong layer
+   nào (unlayered) luôn thắng style nằm trong layer bất kể specificity.
+   Nếu không khai báo trước, toàn bộ CSS gốc bên dưới sẽ là "unlayered" và
+   đè lên mọi utility Tailwind trong .t30-scope, khiến nút/tab mất hết
+   màu/bo góc/khoảng cách dù class Tailwind vẫn được áp đúng. */
+@layer app-base, theme, utilities;
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap') layer(app-base);
+@layer app-base {
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
   color-scheme: light only;
@@ -1163,17 +1171,105 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
     margin-bottom: 8px !important;
   }
 }
+} /* đóng @layer app-base */
 </style>
 
 <!-- ===== TOPIK 30 ngày — engine dùng chung cho 30 bài (xem topik30/README.md) ===== -->
 <!-- Tailwind chỉ nạp phần "theme" + "utilities", KHÔNG nạp "preflight" (phần reset
-     mặc định thẻ h1/ul/button...) để không ảnh hưởng tới giao diện gốc của web. -->
+     mặc định thẻ h1/ul/button...) để không ảnh hưởng tới giao diện gốc của web.
+     LƯU Ý QUAN TRỌNG: "theme, utilities" ở đây PHẢI đứng SAU "app-base" (đã khai
+     báo ở <style> đầu file). Vì unlayered CSS luôn thắng CSS trong layer, nếu
+     CSS gốc của app không nằm trong layer "app-base" thì mọi utility Tailwind
+     trong .t30-scope sẽ bị đè, dù selector .t30-scope .foo có specificity cao hơn. -->
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 <style type="text/tailwindcss">
   @layer theme, utilities;
   @import "tailwindcss/theme.css" layer(theme);
+
+  /* Đồng bộ màu sắc trang TOPIK 30 ngày với giao diện chung của web.
+     30 file dayXX.html dùng các class màu Tailwind mặc định (teal, indigo,
+     slate/gray, amber, purple, emerald, orange). Thay vì sửa tay từng file,
+     mình remap thẳng token màu của Tailwind sang đúng bảng màu --pk/--lav/
+     --ylw/--grn/--txt của web tại ĐÂY — mọi class như bg-teal-600,
+     text-indigo-700, border-amber-300... trong cả 30 ngày sẽ tự động đổi
+     theo, không cần đụng vào dayXX.html.
+     Cách map ý nghĩa màu theo web gốc:
+       teal   -> hồng chính (--pk4), dùng cho tab/nút đang active
+       indigo -> hồng đậm hơn 1 chút, dùng cho từ khoá tiếng Hàn in đậm
+       slate  -> xám ấm trùng với --txt/--brd (thay vì xám lạnh mặc định)
+       gray   -> giống slate (web chỉ có 1 tông xám)
+       amber  -> vàng (--ylw), khớp màu "đã ôn/review" của web
+       purple -> tím lavender (--lav)
+       emerald-> xanh lá (--grn), khớp màu "đúng/correct" của web
+       orange -> hồng cam nhạt riêng cho nhãn "예" (ví dụ), không trùng các màu trên */
+  @theme {
+    --color-teal-50: #FFF9FC;
+    --color-teal-100: #FFEAF4;
+    --color-teal-200: #F8C8DC;
+    --color-teal-500: #EF9DC5;
+    --color-teal-600: #D4709A;
+    --color-teal-700: #C0608A;
+    --color-teal-800: #A84D76;
+    --color-teal-950: #4A2032;
+
+    --color-indigo-700: #A8447A;
+
+    --color-slate-50: #FFF9FC;
+    --color-slate-100: #F2E3EA;
+    --color-slate-200: #ECD8E2;
+    --color-slate-300: #D9C3D0;
+    --color-slate-500: #8A7A84;
+    --color-slate-600: #6B5C64;
+    --color-slate-700: #4A4A4A;
+    --color-slate-800: #3A3A3A;
+    --color-slate-900: #262626;
+
+    --color-gray-400: #B0A0A8;
+    --color-gray-500: #8A7A84;
+    --color-gray-600: #6B5C64;
+
+    --color-amber-50: #FFFBF0;
+    --color-amber-100: #FFF3D6;
+    --color-amber-200: #FDE8A0;
+    --color-amber-300: #F7D878;
+    --color-amber-500: #F0C840;
+    --color-amber-600: #D4A828;
+    --color-amber-800: #907020;
+    --color-amber-900: #6B5418;
+
+    --color-purple-50: #F8F6FF;
+    --color-purple-100: #EDE8FC;
+    --color-purple-200: #C5B8F0;
+    --color-purple-300: #B0A0E8;
+    --color-purple-600: #8A72D0;
+    --color-purple-700: #7058B8;
+    --color-purple-800: #5C4498;
+    --color-purple-900: #46337A;
+
+    --color-emerald-50: #F3FBF5;
+    --color-emerald-100: #E3F5E8;
+    --color-emerald-200: #A8D5B5;
+    --color-emerald-300: #8FCAA0;
+    --color-emerald-600: #5AA876;
+    --color-emerald-700: #3F8A5C;
+    --color-emerald-800: #306040;
+    --color-emerald-900: #234830;
+
+    --color-orange-100: #FFE8D6;
+    --color-orange-700: #C07840;
+  }
+
   @layer utilities {
     .t30-scope { @tailwind utilities; }
+  }
+</style>
+<style>
+  /* Từ khoá tiếng Hàn (span/h2 màu indigo) dùng font + logic màu giống web gốc
+     (Noto Sans KR) thay vì thừa hưởng font-sans mặc định của trình duyệt.
+     Chỉ nhắm đúng class .text-indigo-700 — đây là class engine luôn gắn cho
+     từ vựng tiếng Hàn in đậm, không phải h1/h2 tiêu đề tiếng Việt/Anh. */
+  .t30-scope .text-indigo-700 {
+    font-family: 'Noto Sans KR', 'Be Vietnam Pro', sans-serif;
   }
 </style>
 <link rel="stylesheet" href="topik30/t30-styles.css">
@@ -2431,7 +2527,16 @@ function renderTopik30Grid() {
   </div>`).join('');
 }
 
+// Token chống race-condition: mỗi lần gọi loadTopik30Day sẽ tự tăng token.
+// Nếu người dùng bấm sang ngày khác trước khi fetch cũ kịp resolve, request
+// cũ sẽ thấy token của nó không còn là "mới nhất" nữa và tự bỏ qua kết quả
+// (kể cả khi nó fail SAU khi request mới đã render thành công) — tránh việc
+// thông báo lỗi của request cũ đè lên nội dung đã tải đúng của request mới.
+let TOPIK30_LOAD_TOKEN = 0;
+
 async function loadTopik30Day(n) {
+  const myToken = ++TOPIK30_LOAD_TOKEN;
+
   document.getElementById('topik30-day-title').textContent = `Day ${String(n).padStart(2,'0')}`;
   const loadingEl = document.getElementById('topik30-day-loading');
   const errorEl = document.getElementById('topik30-day-error');
@@ -2443,6 +2548,7 @@ async function loadTopik30Day(n) {
 
   const ready = TOPIK30_READY_DAYS.includes(n);
   if (!ready) {
+    if (myToken !== TOPIK30_LOAD_TOKEN) return; // đã có request mới hơn, bỏ qua
     loadingEl.style.display = 'none';
     errorEl.style.display = 'block';
     errorEl.textContent = 'Ngày này chưa có bài học.';
@@ -2458,18 +2564,22 @@ async function loadTopik30Day(n) {
         fetch(TOPIK30_FILE(n)),
         fetch(TOPIK30_DATA_FILE(n))
       ]);
+      if (myToken !== TOPIK30_LOAD_TOKEN) return; // người dùng đã chuyển ngày khác trong lúc fetch
       if (!fragRes.ok || !dataRes.ok) throw new Error('fetch-failed');
       const [fragHtml, data] = await Promise.all([fragRes.text(), dataRes.json()]);
+      if (myToken !== TOPIK30_LOAD_TOKEN) return;
       entry = { fragHtml, data };
       TOPIK30_CACHE[n] = entry;
     }
 
+    if (myToken !== TOPIK30_LOAD_TOKEN) return; // request này đã cũ, không còn là ngày đang xem
     root.innerHTML = entry.fragHtml;
     loadingEl.style.display = 'none';
     root.style.display = 'block';
     // t30-engine.js expose sẵn window.t30 (nạp 1 lần ở cuối trang)
     t30.mount(root, entry.data);
   } catch (err) {
+    if (myToken !== TOPIK30_LOAD_TOKEN) return; // request cũ fail sau khi request mới đã render OK — bỏ qua
     loadingEl.style.display = 'none';
     errorEl.style.display = 'block';
     errorEl.textContent = 'Không tải được bài học. Vui lòng thử lại.';
