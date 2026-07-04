@@ -85,6 +85,16 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
 .greeting-name{font-size:22px;font-weight:700;color:#fff;margin-bottom:4px}
 .greeting-quote{font-size:13px;color:rgba(255,255,255,.9)}
 .pill{display:inline-flex;align-items:center;gap:4px;background:rgba(255,255,255,.3);padding:4px 12px;border-radius:20px;font-size:11px;color:#fff;font-weight:500}
+.countdown-card{background:#fff;border:1.5px solid var(--brd);border-radius:16px;padding:16px 18px;margin-bottom:20px;display:flex;align-items:center;gap:14px}
+.countdown-num-wrap{display:flex;align-items:baseline;gap:5px;flex-shrink:0}
+.countdown-num{font-size:36px;font-weight:800;color:var(--pk4);line-height:1}
+.countdown-unit{font-size:12px;font-weight:700;color:var(--pk4)}
+.countdown-info{flex:1;min-width:0}
+.countdown-label{font-size:12px;font-weight:700;color:var(--txt);margin-bottom:2px}
+.countdown-date{font-size:11px;color:#b0a0a8}
+.countdown-edit-btn{width:32px;height:32px;border-radius:10px;border:1.5px solid var(--brd);background:#fff;color:#8a7a84;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;transition:all .15s}
+.countdown-edit-btn:hover{background:var(--pk2);border-color:var(--pk3);color:var(--pk4)}
+.countdown-card.no-date{background:linear-gradient(135deg,var(--pk2) 0%,#fff 100%)}
 .quick-nav{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:20px}
 .qn-card{background:#fff;border:1.5px solid var(--brd);border-radius:14px;padding:14px;text-align:center;cursor:pointer;transition:all .15s}
 .qn-card:hover{border-color:var(--pk3);transform:translateY(-2px);box-shadow:var(--shadow)}
@@ -1221,6 +1231,14 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
           <span class="pill" id="dash-today">📚 0 thẻ hôm nay</span>
         </div>
       </div>
+      <div class="countdown-card" id="dash-countdown">
+        <div class="countdown-num-wrap"><span class="countdown-num" id="cd-num">—</span><span class="countdown-unit">ngày</span></div>
+        <div class="countdown-info">
+          <div class="countdown-label" id="cd-label">Chưa đặt ngày thi</div>
+          <div class="countdown-date" id="cd-date">Bấm nút bên phải để đặt ngày thi TOPIK của bạn</div>
+        </div>
+        <button class="countdown-edit-btn" onclick="openExamDateModal()" title="Đặt/sửa ngày thi"><i class="ti ti-pencil"></i></button>
+      </div>
       <div class="quick-nav">
         <div class="qn-card" onclick="navTo(null,'topik-exam')"><div class="qn-icon"><i class="ti ti-award"></i></div><div class="qn-label">Luyện đề TOPIK</div></div>
         <div class="qn-card" onclick="navTo(null,'topik30')"><div class="qn-icon"><i class="ti ti-book-2"></i></div><div class="qn-label">TOPIK 30 ngày</div></div>
@@ -1809,6 +1827,17 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
   </div>
 </div>
 
+<div class="modal-overlay" id="exam-date-modal">
+  <div class="modal">
+    <div class="modal-title">🎯 Đặt ngày thi TOPIK <span class="modal-close" onclick="closeModal('exam-date-modal')"><i class="ti ti-x"></i></span></div>
+    <div class="form-group"><label class="form-label">Ngày thi</label><input class="form-input" id="exam-date-input" type="date"/></div>
+    <div style="display:flex;gap:8px;margin-top:8px">
+      <button class="btn" style="flex:1;justify-content:center" onclick="clearExamDate()">Xóa ngày thi</button>
+      <button class="btn btn-primary" style="flex:1;justify-content:center" onclick="saveExamDate()">Lưu</button>
+    </div>
+  </div>
+</div>
+
 <div class="modal-overlay" id="folder-modal">
   <div class="modal">
     <div class="modal-title">📁 Tạo bài học flashcard <span class="modal-close" onclick="closeModal('folder-modal')"><i class="ti ti-x"></i></span></div>
@@ -2032,6 +2061,8 @@ function toggleUserPin(postId) {
 // ============================================================
 const DS = {
   async getAppUsers() { return db.from('app_users').select('id,display_name,initials,role').order('display_name'); },
+  async getExamDate(userId) { return db.from('app_users').select('exam_date').eq('id', userId).single(); },
+  async updateExamDate(userId, examDate) { return db.from('app_users').update({ exam_date: examDate }).eq('id', userId).select('exam_date').single(); },
   async validateKey(rawKey) { return db.rpc('validate_access_key', { raw_key: rawKey }); },
   async getDocs(cat=null) {
     let q = db.from('documents').select('*, app_users!owner_id(display_name)').is('deleted_at', null).order('created_at',{ascending:false});
@@ -2393,6 +2424,7 @@ function loadTopik30Day(n) {
 // DASHBOARD
 // ============================================================
 async function loadDashboard() {
+  loadExamCountdown();
   const {data:docs} = await DS.getDocs();
   const dEl = document.getElementById('dash-docs');
   if (docs?.length) {
@@ -2412,6 +2444,74 @@ async function loadDashboard() {
         <div style="flex:1;min-width:0"><div style="font-size:13px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${p.title}</div><div style="font-size:11px;color:#b0a0a8">${p.app_users?.display_name||'Ẩn danh'} · ${relativeTime(p.created_at)} · 💕 ${p.like_count||0}</div></div>
       </div>`).join('');
   } else { pEl.innerHTML = '<div class="empty" style="margin-top:0"><i class="ti ti-message-off"></i>Chưa có bài viết</div>'; }
+}
+
+// ============================================================
+// EXAM COUNTDOWN
+// ============================================================
+async function loadExamCountdown() {
+  if (!currentUser) return;
+  if (currentUser.exam_date === undefined) {
+    const { data, error } = await DS.getExamDate(currentUser.id);
+    if (!error) currentUser.exam_date = data?.exam_date || null;
+  }
+  renderExamCountdown();
+}
+
+function renderExamCountdown() {
+  const card = document.getElementById('dash-countdown');
+  const numEl = document.getElementById('cd-num'), labelEl = document.getElementById('cd-label'), dateEl = document.getElementById('cd-date');
+  const examDate = currentUser?.exam_date;
+  if (!examDate) {
+    card.classList.add('no-date');
+    numEl.textContent = '—';
+    labelEl.textContent = 'Chưa đặt ngày thi';
+    dateEl.textContent = 'Bấm nút bên phải để đặt ngày thi TOPIK của bạn';
+    return;
+  }
+  card.classList.remove('no-date');
+  const today = new Date(); today.setHours(0,0,0,0);
+  const target = new Date(examDate + 'T00:00:00');
+  const diffDays = Math.round((target - today) / 86400000);
+  const dateStr = target.toLocaleDateString('vi-VN', { day:'2-digit', month:'2-digit', year:'numeric' });
+  if (diffDays > 0) {
+    numEl.textContent = diffDays;
+    labelEl.textContent = '🎯 Còn bao nhiêu ngày nữa thi TOPIK';
+    dateEl.textContent = `Ngày thi: ${dateStr}`;
+  } else if (diffDays === 0) {
+    numEl.textContent = '🔥';
+    labelEl.textContent = 'Thi hôm nay! Cố lên nhé 💪';
+    dateEl.textContent = `Ngày thi: ${dateStr}`;
+  } else {
+    numEl.textContent = Math.abs(diffDays);
+    labelEl.textContent = 'Ngày đã qua bao nhiêu ngày';
+    dateEl.textContent = `Ngày thi đã set: ${dateStr}`;
+  }
+}
+
+function openExamDateModal() {
+  document.getElementById('exam-date-input').value = currentUser?.exam_date || '';
+  openModal('exam-date-modal');
+}
+
+async function saveExamDate() {
+  const val = document.getElementById('exam-date-input').value;
+  if (!val) { showToast('Vui lòng chọn một ngày.'); return; }
+  const { data, error } = await DS.updateExamDate(currentUser.id, val);
+  if (error) { showToast('Lỗi khi lưu ngày thi.'); return; }
+  currentUser.exam_date = data?.exam_date || val;
+  renderExamCountdown();
+  closeModal('exam-date-modal');
+  showToast('Đã lưu ngày thi 🎯');
+}
+
+async function clearExamDate() {
+  const { error } = await DS.updateExamDate(currentUser.id, null);
+  if (error) { showToast('Lỗi khi xóa ngày thi.'); return; }
+  currentUser.exam_date = null;
+  renderExamCountdown();
+  closeModal('exam-date-modal');
+  showToast('Đã xóa ngày thi.');
 }
 
 // ============================================================
