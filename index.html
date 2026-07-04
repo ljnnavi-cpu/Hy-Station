@@ -7,6 +7,7 @@
 <title>Hy Station 🌸 Korean Study Space</title>
 <link rel="apple-touch-icon" sizes="180x180" href="https://pnqxiyhtpkwkqhrofiwl.supabase.co/storage/v1/object/public/app-icon/Icon.jpg?v=6">
 <link rel="icon" type="image/png" href="https://pnqxiyhtpkwkqhrofiwl.supabase.co/storage/v1/object/public/app-icon/Icon.jpg?v=6">
+
 <meta name="apple-mobile-web-app-title" content="🌸 Hy Station">
 <meta name="application-name" content="🌸 Hy Station">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -1268,14 +1269,21 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
     <div class="page" id="page-flashcard">
       <div class="topbar">
         <div class="page-title">🃏 Flashcard từ vựng</div>
-        <button class="btn btn-primary btn-sm" onclick="openModal('folder-modal')"><i class="ti ti-folder-plus"></i> Tạo thư mục</button>
+        <button class="btn btn-primary btn-sm" onclick="openModal('course-modal')"><i class="ti ti-books"></i> Tạo học phần</button>
       </div>
       <div style="display:flex;gap:10px;align-items:center;margin-bottom:14px;flex-wrap:wrap">
         <div class="streak-badge" id="streak-disp">🔥 0 ngày liên tiếp</div>
         <div style="font-size:11px;color:#b0a0a8" id="longest-streak-disp">Kỷ lục: 0 ngày</div>
       </div>
-      <div class="section-title">Bài học / Thư mục</div>
+      <div class="section-title">Học phần</div>
       <div class="fc-folder-grid" id="fc-folder-list"><div class="loading"><div class="spinner"></div></div></div>
+
+      <div class="section-title" style="margin-top:22px;display:flex;align-items:center;justify-content:space-between;gap:8px">
+        <span>Bài học chưa phân loại</span>
+        <button class="btn btn-sm" onclick="pendingUnitId=null;openModal('folder-modal')"><i class="ti ti-plus"></i> Tạo bài học</button>
+      </div>
+      <div class="fc-folder-grid" id="fc-unassigned-list"><div class="loading"><div class="spinner"></div></div></div>
+
       <div class="fc-stat-grid">
         <div class="fc-stat blue"><div class="fc-stat-title">🎯 Đến hạn</div><div class="fc-stat-num" id="ov-due">0</div><div class="fc-stat-sub">thẻ cần ôn</div></div>
         <div class="fc-stat orange"><div class="fc-stat-title">🔥 Streak</div><div class="fc-stat-num" id="ov-streak">0</div><div class="fc-stat-sub">ngày liên tiếp</div></div>
@@ -1301,10 +1309,28 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
       </div>
     </div>
 
-    <!-- FOLDER DETAIL -->
-    <div class="page" id="page-folder-detail">
+    <!-- COURSE DETAIL (Học phần) -->
+    <div class="page" id="page-course-detail">
       <div class="topbar">
         <button class="btn btn-sm" onclick="navTo(null,'flashcard')"><i class="ti ti-arrow-left"></i> Flashcard</button>
+        <div style="display:flex;gap:8px" id="course-detail-actions"></div>
+      </div>
+      <div id="course-detail-content"></div>
+    </div>
+
+    <!-- UNIT DETAIL (Thư mục) -->
+    <div class="page" id="page-unit-detail">
+      <div class="topbar">
+        <button class="btn btn-sm" id="unit-back-btn" onclick="navTo(null,'flashcard')"><i class="ti ti-arrow-left"></i> Flashcard</button>
+        <div style="display:flex;gap:8px" id="unit-detail-actions"></div>
+      </div>
+      <div id="unit-detail-content"></div>
+    </div>
+
+    <!-- FOLDER DETAIL (Bài học) -->
+    <div class="page" id="page-folder-detail">
+      <div class="topbar">
+        <button class="btn btn-sm" id="folder-back-btn" onclick="navTo(null,'flashcard')"><i class="ti ti-arrow-left"></i> Flashcard</button>
         <div style="display:flex;gap:8px" id="folder-detail-actions"></div>
       </div>
       <div id="folder-detail-content"></div>
@@ -1785,12 +1811,51 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
 
 <div class="modal-overlay" id="folder-modal">
   <div class="modal">
-    <div class="modal-title">📁 Tạo thư mục flashcard <span class="modal-close" onclick="closeModal('folder-modal')"><i class="ti ti-x"></i></span></div>
-    <div class="form-group"><label class="form-label">Tên thư mục *</label><input class="form-input" id="folder-name" placeholder="Ví dụ: Bài 1 - Môi trường"/></div>
+    <div class="modal-title">📁 Tạo bài học flashcard <span class="modal-close" onclick="closeModal('folder-modal')"><i class="ti ti-x"></i></span></div>
+    <div class="form-group"><label class="form-label">Tên bài học *</label><input class="form-input" id="folder-name" placeholder="Ví dụ: Bài 1 - Môi trường"/></div>
     <div class="form-group"><label class="form-label">Mô tả</label><textarea class="form-input" id="folder-desc" placeholder="Mục tiêu..."></textarea></div>
     <div style="display:flex;gap:8px;margin-top:8px">
       <button class="btn" style="flex:1;justify-content:center" onclick="closeModal('folder-modal')">Hủy</button>
       <button class="btn btn-primary" style="flex:1;justify-content:center" onclick="saveFolder()">Tạo</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="course-modal">
+  <div class="modal">
+    <div class="modal-title">📚 Tạo học phần <span class="modal-close" onclick="closeModal('course-modal')"><i class="ti ti-x"></i></span></div>
+    <div class="form-group"><label class="form-label">Tên học phần *</label><input class="form-input" id="course-name" placeholder="Ví dụ: HSK 4"/></div>
+    <div class="form-group"><label class="form-label">Icon (emoji)</label><input class="form-input" id="course-icon" placeholder="📚" maxlength="4"/></div>
+    <div class="form-group"><label class="form-label">Mô tả</label><textarea class="form-input" id="course-desc" placeholder="Mục tiêu của học phần..."></textarea></div>
+    <div style="display:flex;gap:8px;margin-top:8px">
+      <button class="btn" style="flex:1;justify-content:center" onclick="closeModal('course-modal')">Hủy</button>
+      <button class="btn btn-primary" style="flex:1;justify-content:center" onclick="saveCourse()">Tạo</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="unit-modal">
+  <div class="modal">
+    <div class="modal-title">🗂️ Tạo thư mục <span class="modal-close" onclick="closeModal('unit-modal')"><i class="ti ti-x"></i></span></div>
+    <div class="form-group"><label class="form-label">Tên thư mục *</label><input class="form-input" id="unit-name" placeholder="Ví dụ: Bài 1"/></div>
+    <div class="form-group"><label class="form-label">Mô tả</label><textarea class="form-input" id="unit-desc" placeholder="Mục tiêu của thư mục..."></textarea></div>
+    <div style="display:flex;gap:8px;margin-top:8px">
+      <button class="btn" style="flex:1;justify-content:center" onclick="closeModal('unit-modal')">Hủy</button>
+      <button class="btn btn-primary" style="flex:1;justify-content:center" onclick="saveUnit()">Tạo</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="assign-unit-modal">
+  <div class="modal">
+    <div class="modal-title">🔗 Gán bài học vào thư mục <span class="modal-close" onclick="closeModal('assign-unit-modal')"><i class="ti ti-x"></i></span></div>
+    <div class="form-group">
+      <label class="form-label">Chọn thư mục</label>
+      <select class="form-input form-select" id="assign-unit-select"></select>
+    </div>
+    <div style="display:flex;gap:8px;margin-top:8px">
+      <button class="btn" style="flex:1;justify-content:center" onclick="closeModal('assign-unit-modal')">Hủy</button>
+      <button class="btn btn-primary" style="flex:1;justify-content:center" onclick="confirmAssignUnit()">Gán</button>
     </div>
   </div>
 </div>
@@ -1903,6 +1968,12 @@ let selectedPickUser = null;
 let currentPage = 'dashboard';
 let allFolders = [];
 let selectedFolder = null;
+let allCourses = [];
+let allUnits = [];
+let selectedCourse = null;
+let selectedUnit = null;
+let pendingUnitId = null; // thư mục đang mở khi tạo bài học mới
+let assigningFolderId = null; // bài học đang được gán vào thư mục
 let allCards = [];
 let filteredCards = [];
 let folderCardIdx = 0;
@@ -2010,6 +2081,16 @@ const DS = {
   async createFolder(data) { return db.from('flashcard_folders').insert(data).select().single(); },
   async updateFolder(id, data) { return db.from('flashcard_folders').update({...data, updated_at:new Date().toISOString()}).eq('id', id); },
   async deleteFolder(id) { return db.from('flashcard_folders').update({deleted_at:new Date().toISOString()}).eq('id', id); },
+  // Học phần (course) — lớp trên cùng
+  async getCourses(ownerId) { return db.from('flashcard_courses').select('*').eq('owner_id', ownerId).is('deleted_at', null).order('created_at',{ascending:true}); },
+  async createCourse(data) { return db.from('flashcard_courses').insert(data).select().single(); },
+  async updateCourse(id, data) { return db.from('flashcard_courses').update({...data, updated_at:new Date().toISOString()}).eq('id', id); },
+  async deleteCourse(id) { return db.from('flashcard_courses').update({deleted_at:new Date().toISOString()}).eq('id', id); },
+  // Thư mục (unit) — thuộc 1 học phần, chứa nhiều bài học
+  async getUnits(ownerId) { return db.from('flashcard_units').select('*').eq('owner_id', ownerId).is('deleted_at', null).order('created_at',{ascending:true}); },
+  async createUnit(data) { return db.from('flashcard_units').insert(data).select().single(); },
+  async updateUnit(id, data) { return db.from('flashcard_units').update({...data, updated_at:new Date().toISOString()}).eq('id', id); },
+  async deleteUnit(id) { return db.from('flashcard_units').update({deleted_at:new Date().toISOString()}).eq('id', id); },
   async getCards(folderId, ownerId) { return db.from('flashcards').select('*').eq('folder_id', folderId).eq('owner_id', ownerId).is('deleted_at', null).order('created_at',{ascending:true}); },
   async createCards(rows) { return db.from('flashcards').insert(rows).select(); },
   async updateCard(id, data) { return db.from('flashcards').update({...data, updated_at:new Date().toISOString()}).eq('id', id); },
@@ -2209,6 +2290,10 @@ function renderRoute() {
   if (docMatch) { showPage('doc-detail'); loadDocDetail(docMatch[1]); updateNav(null); return; }
   const postMatch = path.match(/^\/community\/post\/([^/]+)$/);
   if (postMatch) { showPage('post-detail'); loadPostDetail(postMatch[1]); updateNav('community'); return; }
+  const courseMatch = path.match(/^\/flashcard\/course\/([^/]+)$/);
+  if (courseMatch) { showPage('course-detail'); loadCourseDetail(courseMatch[1]); updateNav('flashcard'); return; }
+  const unitMatch = path.match(/^\/flashcard\/unit\/([^/]+)$/);
+  if (unitMatch) { showPage('unit-detail'); loadUnitDetail(unitMatch[1]); updateNav('flashcard'); return; }
   const folderMatch = path.match(/^\/flashcard\/folder\/([^/]+)$/);
   if (folderMatch) { showPage('folder-detail'); loadFolderDetail(folderMatch[1]); updateNav('flashcard'); return; }
   const vlMatch = path.match(/^\/video-learn\/lesson\/([^/]+)$/);
@@ -2514,26 +2599,233 @@ function searchVocab() { buildTopics(document.getElementById('vocab-search').val
 async function loadFoldersList() {
   if (!currentUser) return;
   const list = document.getElementById('fc-folder-list');
-  const {data} = await DS.getFolders(currentUser.id);
-  allFolders = data || [];
-  if (!allFolders.length) { list.innerHTML = '<div class="empty" style="grid-column:1/-1"><i class="ti ti-folder-off"></i>Chưa có thư mục. Tạo thư mục đầu tiên nhé!</div>'; return; }
-  list.innerHTML = allFolders.map(f => `
+  const uList = document.getElementById('fc-unassigned-list');
+  if (list) list.innerHTML = '<div class="loading"><div class="spinner"></div></div>';
+  if (uList) uList.innerHTML = '<div class="loading"><div class="spinner"></div></div>';
+  const [{data:courses}, {data:units}, {data:folders}] = await Promise.all([
+    DS.getCourses(currentUser.id), DS.getUnits(currentUser.id), DS.getFolders(currentUser.id)
+  ]);
+  allCourses = courses || []; allUnits = units || []; allFolders = folders || [];
+  renderFlashcardHome();
+}
+
+function renderFlashcardHome() {
+  const list = document.getElementById('fc-folder-list');
+  const uList = document.getElementById('fc-unassigned-list');
+  if (list) {
+    if (!allCourses.length) {
+      list.innerHTML = '<div class="empty" style="grid-column:1/-1"><i class="ti ti-books"></i>Chưa có học phần nào. Tạo học phần đầu tiên để gom nhóm các thư mục nhé!</div>';
+    } else {
+      list.innerHTML = allCourses.map(c => {
+        const units = allUnits.filter(u => u.course_id === c.id);
+        const unitIds = units.map(u => u.id);
+        const folders = allFolders.filter(f => unitIds.includes(f.unit_id));
+        const cardTotal = folders.reduce((s,f)=>s+(f.card_count||0),0);
+        return `<div class="fc-folder" onclick="navTo(null,'flashcard','course/${c.id}')">
+          <div style="font-size:20px;margin-bottom:6px">${c.icon||'📚'}</div>
+          <div class="fc-folder-name">${c.name}</div>
+          <div class="fc-folder-count">${units.length} thư mục • ${cardTotal} từ</div>
+        </div>`;
+      }).join('');
+    }
+  }
+  if (uList) {
+    const unassigned = allFolders.filter(f => !f.unit_id);
+    if (!unassigned.length) {
+      uList.innerHTML = '<div class="empty" style="grid-column:1/-1"><i class="ti ti-check"></i>Không có bài học nào chưa phân loại.</div>';
+    } else {
+      uList.innerHTML = unassigned.map(f => `
+        <div class="fc-folder">
+          <div onclick="navTo(null,'flashcard','folder/${f.id}')" style="cursor:pointer">
+            <div style="font-size:20px;margin-bottom:6px">📁</div>
+            <div class="fc-folder-name">${f.name}</div>
+            <div class="fc-folder-count">${f.card_count||0} thẻ</div>
+          </div>
+          <button class="btn btn-sm" style="margin-top:8px;width:100%;justify-content:center" onclick="openAssignUnitModal('${f.id}')"><i class="ti ti-folder-symlink"></i> Gán vào thư mục</button>
+        </div>`).join('');
+    }
+  }
+}
+
+async function saveFolder() {
+  const nameEl = document.getElementById('folder-name'), descEl = document.getElementById('folder-desc');
+  const name = nameEl?.value.trim(), description = descEl?.value.trim() || null;
+  if (!name) { showToast('Vui lòng nhập tên bài học!'); return; }
+  const {data, error} = await DS.createFolder({owner_id:currentUser.id, name, description, unit_id: pendingUnitId || null});
+  if (error) { showToast('Lỗi tạo bài học: '+error.message); return; }
+  nameEl.value = ''; if (descEl) descEl.value = '';
+  closeModal('folder-modal'); allFolders.push(data);
+  if (pendingUnitId) { renderUnitDetail(); } else { renderFlashcardHome(); }
+  pendingUnitId = null;
+  showToast('Đã tạo bài học! 📁');
+}
+
+// ============================================================
+// HỌC PHẦN (COURSE)
+// ============================================================
+async function saveCourse() {
+  const nameEl = document.getElementById('course-name'), iconEl = document.getElementById('course-icon'), descEl = document.getElementById('course-desc');
+  const name = nameEl?.value.trim(), icon = iconEl?.value.trim() || '📚', description = descEl?.value.trim() || null;
+  if (!name) { showToast('Vui lòng nhập tên học phần!'); return; }
+  const {data, error} = await DS.createCourse({owner_id:currentUser.id, name, icon, description});
+  if (error) { showToast('Lỗi tạo học phần: '+error.message); return; }
+  nameEl.value=''; if (iconEl) iconEl.value=''; if (descEl) descEl.value='';
+  closeModal('course-modal'); allCourses.push(data); renderFlashcardHome(); showToast('Đã tạo học phần! 📚');
+}
+
+async function loadCourseDetail(courseId) {
+  if (!allCourses.length) { const {data} = await DS.getCourses(currentUser.id); allCourses = data||[]; }
+  if (!allUnits.length) { const {data} = await DS.getUnits(currentUser.id); allUnits = data||[]; }
+  if (!allFolders.length) { const {data} = await DS.getFolders(currentUser.id); allFolders = data||[]; }
+  selectedCourse = allCourses.find(c => c.id === courseId);
+  if (!selectedCourse) {
+    const {data} = await db.from('flashcard_courses').select('*').eq('id', courseId).eq('owner_id', currentUser.id).single();
+    if (!data) { document.getElementById('course-detail-content').innerHTML = '<div class="empty"><i class="ti ti-folder-off"></i>Không tìm thấy học phần.</div>'; return; }
+    selectedCourse = data;
+  }
+  document.getElementById('course-detail-actions').innerHTML =
+    `<button class="btn btn-sm" onclick="openModal('unit-modal')"><i class="ti ti-folder-plus"></i> Tạo thư mục</button>
+     <button class="btn btn-sm btn-danger" onclick="deleteCourseById('${courseId}')"><i class="ti ti-trash"></i> Xóa học phần</button>`;
+  renderCourseDetail();
+}
+
+function renderCourseDetail() {
+  const wrap = document.getElementById('course-detail-content');
+  if (!wrap || !selectedCourse) return;
+  const units = allUnits.filter(u => u.course_id === selectedCourse.id);
+  const unitCardsHtml = units.map(u => {
+    const folders = allFolders.filter(f => f.unit_id === u.id);
+    const cardTotal = folders.reduce((s,f)=>s+(f.card_count||0),0);
+    return `<div class="fc-folder" onclick="navTo(null,'flashcard','unit/${u.id}')">
+      <div style="font-size:20px;margin-bottom:6px">🗂️</div>
+      <div class="fc-folder-name">${u.name}</div>
+      <div class="fc-folder-count">${folders.length} bài học • ${cardTotal} từ</div>
+    </div>`;
+  }).join('');
+  wrap.innerHTML = `
+    <div class="folder-page-header">
+      <div class="folder-page-icon">${selectedCourse.icon||'📚'}</div>
+      <div style="flex:1">
+        <div class="folder-page-name">${selectedCourse.name}</div>
+        <div class="folder-page-desc">${selectedCourse.description||'Chưa có mô tả'}</div>
+        <div class="folder-page-stats">
+          <span class="folder-stat-chip"><i class="ti ti-folder" style="font-size:13px"></i> ${units.length} thư mục</span>
+        </div>
+      </div>
+    </div>
+    <div class="section-title">Thư mục trong học phần: ${selectedCourse.name}</div>
+    <div class="fc-folder-grid">${unitCardsHtml || '<div class="empty" style="grid-column:1/-1"><i class="ti ti-folder-off"></i>Chưa có thư mục nào. Tạo thư mục đầu tiên nhé!</div>'}</div>`;
+}
+
+async function deleteCourseById(id) {
+  if (!confirm('Xóa học phần này? Các thư mục bên trong sẽ không bị xóa nhưng sẽ mất liên kết với học phần.')) return;
+  const {error} = await DS.deleteCourse(id);
+  if (error) { showToast('Lỗi xóa: '+error.message); return; }
+  const units = allUnits.filter(u => u.course_id === id);
+  for (const u of units) { await DS.updateUnit(u.id, {course_id:null}); u.course_id = null; }
+  allCourses = allCourses.filter(c => c.id !== id);
+  showToast('Đã xóa học phần.'); navTo(null,'flashcard');
+}
+
+// ============================================================
+// THƯ MỤC (UNIT)
+// ============================================================
+async function saveUnit() {
+  if (!selectedCourse) return;
+  const nameEl = document.getElementById('unit-name'), descEl = document.getElementById('unit-desc');
+  const name = nameEl?.value.trim(), description = descEl?.value.trim() || null;
+  if (!name) { showToast('Vui lòng nhập tên thư mục!'); return; }
+  const {data, error} = await DS.createUnit({owner_id:currentUser.id, course_id:selectedCourse.id, name, description});
+  if (error) { showToast('Lỗi tạo thư mục: '+error.message); return; }
+  nameEl.value=''; if (descEl) descEl.value='';
+  closeModal('unit-modal'); allUnits.push(data); renderCourseDetail(); showToast('Đã tạo thư mục! 🗂️');
+}
+
+async function loadUnitDetail(unitId) {
+  if (!allUnits.length) { const {data} = await DS.getUnits(currentUser.id); allUnits = data||[]; }
+  if (!allFolders.length) { const {data} = await DS.getFolders(currentUser.id); allFolders = data||[]; }
+  if (!allCourses.length) { const {data} = await DS.getCourses(currentUser.id); allCourses = data||[]; }
+  selectedUnit = allUnits.find(u => u.id === unitId);
+  if (!selectedUnit) {
+    const {data} = await db.from('flashcard_units').select('*').eq('id', unitId).eq('owner_id', currentUser.id).single();
+    if (!data) { document.getElementById('unit-detail-content').innerHTML = '<div class="empty"><i class="ti ti-folder-off"></i>Không tìm thấy thư mục.</div>'; return; }
+    selectedUnit = data;
+  }
+  selectedCourse = allCourses.find(c => c.id === selectedUnit.course_id) || null;
+  const backBtn = document.getElementById('unit-back-btn');
+  if (backBtn) {
+    backBtn.setAttribute('onclick', selectedCourse ? `navTo(null,'flashcard','course/${selectedCourse.id}')` : `navTo(null,'flashcard')`);
+    backBtn.innerHTML = `<i class="ti ti-arrow-left"></i> ${selectedCourse ? selectedCourse.name : 'Flashcard'}`;
+  }
+  document.getElementById('unit-detail-actions').innerHTML =
+    `<button class="btn btn-sm" onclick="pendingUnitId='${unitId}';openModal('folder-modal')"><i class="ti ti-plus"></i> Tạo bài học</button>
+     <button class="btn btn-sm btn-danger" onclick="deleteUnitById('${unitId}')"><i class="ti ti-trash"></i> Xóa thư mục</button>`;
+  pendingUnitId = unitId;
+  renderUnitDetail();
+}
+
+function renderUnitDetail() {
+  const wrap = document.getElementById('unit-detail-content');
+  if (!wrap || !selectedUnit) return;
+  const folders = allFolders.filter(f => f.unit_id === selectedUnit.id);
+  const html = folders.map(f => `
     <div class="fc-folder" onclick="navTo(null,'flashcard','folder/${f.id}')">
       <div style="font-size:20px;margin-bottom:6px">📁</div>
       <div class="fc-folder-name">${f.name}</div>
       <div class="fc-folder-count">${f.card_count||0} thẻ</div>
       <div style="margin-top:8px;font-size:10px;color:var(--pk4);font-weight:600">Vào học →</div>
     </div>`).join('');
+  wrap.innerHTML = `
+    <div class="folder-page-header">
+      <div class="folder-page-icon">🗂️</div>
+      <div style="flex:1">
+        <div class="folder-page-name">${selectedUnit.name}</div>
+        <div class="folder-page-desc">${selectedUnit.description||'Chưa có mô tả'}${selectedCourse ? ' · Học phần: '+selectedCourse.name : ''}</div>
+        <div class="folder-page-stats">
+          <span class="folder-stat-chip"><i class="ti ti-notebook" style="font-size:13px"></i> ${folders.length} bài học</span>
+        </div>
+      </div>
+    </div>
+    <div class="section-title">Bài học trong thư mục: ${selectedUnit.name}</div>
+    <div class="fc-folder-grid">${html || '<div class="empty" style="grid-column:1/-1"><i class="ti ti-folder-off"></i>Chưa có bài học nào trong thư mục này.</div>'}</div>`;
 }
 
-async function saveFolder() {
-  const nameEl = document.getElementById('folder-name'), descEl = document.getElementById('folder-desc');
-  const name = nameEl?.value.trim(), description = descEl?.value.trim() || null;
-  if (!name) { showToast('Vui lòng nhập tên thư mục!'); return; }
-  const {data, error} = await DS.createFolder({owner_id:currentUser.id, name, description});
-  if (error) { showToast('Lỗi tạo thư mục: '+error.message); return; }
-  nameEl.value = ''; if (descEl) descEl.value = '';
-  closeModal('folder-modal'); allFolders.push(data); await loadFoldersList(); showToast('Đã tạo thư mục! 📁');
+async function deleteUnitById(id) {
+  if (!confirm('Xóa thư mục này? Các bài học bên trong sẽ không bị xóa nhưng sẽ mất liên kết với thư mục.')) return;
+  const {error} = await DS.deleteUnit(id);
+  if (error) { showToast('Lỗi xóa: '+error.message); return; }
+  const folders = allFolders.filter(f => f.unit_id === id);
+  for (const f of folders) { await DS.updateFolder(f.id, {unit_id:null}); f.unit_id = null; }
+  const courseId = selectedCourse?.id || null;
+  allUnits = allUnits.filter(u => u.id !== id);
+  showToast('Đã xóa thư mục.');
+  navTo(null,'flashcard', courseId ? 'course/'+courseId : null);
+}
+
+// ============================================================
+// GÁN BÀI HỌC (chưa phân loại) VÀO THƯ MỤC
+// ============================================================
+function openAssignUnitModal(folderId) {
+  if (!allUnits.length) { showToast('Bạn chưa có thư mục nào. Hãy tạo Học phần và Thư mục trước!'); return; }
+  assigningFolderId = folderId;
+  const sel = document.getElementById('assign-unit-select');
+  sel.innerHTML = allUnits.map(u => {
+    const course = allCourses.find(c => c.id === u.course_id);
+    return `<option value="${u.id}">${course ? course.name+' / ' : ''}${u.name}</option>`;
+  }).join('');
+  openModal('assign-unit-modal');
+}
+
+async function confirmAssignUnit() {
+  const sel = document.getElementById('assign-unit-select');
+  const unitId = sel?.value;
+  if (!unitId || !assigningFolderId) return;
+  const {error} = await DS.updateFolder(assigningFolderId, {unit_id: unitId});
+  if (error) { showToast('Lỗi gán thư mục: '+error.message); return; }
+  const f = allFolders.find(x => x.id === assigningFolderId);
+  if (f) f.unit_id = unitId;
+  closeModal('assign-unit-modal'); assigningFolderId = null;
+  renderFlashcardHome(); showToast('Đã gán bài học vào thư mục! 🔗');
 }
 
 // ============================================================
@@ -2558,8 +2850,18 @@ async function loadFolderDetail(folderId) {
   const savedKey = `fc_idx_${currentUser.id}_${folderId}`;
   const savedIdx = parseInt(sessionStorage.getItem(savedKey)||'0', 10);
   folderCardIdx = (savedIdx > 0 && savedIdx < allCards.length) ? savedIdx : 0;
+  const backBtn = document.getElementById('folder-back-btn');
+  if (backBtn) {
+    if (selectedFolder.unit_id) {
+      backBtn.setAttribute('onclick', `navTo(null,'flashcard','unit/${selectedFolder.unit_id}')`);
+      backBtn.innerHTML = '<i class="ti ti-arrow-left"></i> Quay lại thư mục';
+    } else {
+      backBtn.setAttribute('onclick', `navTo(null,'flashcard')`);
+      backBtn.innerHTML = '<i class="ti ti-arrow-left"></i> Flashcard';
+    }
+  }
   document.getElementById('folder-detail-actions').innerHTML =
-    `<button class="btn btn-sm btn-danger" onclick="deleteFolderById('${folderId}')"><i class="ti ti-trash"></i> Xóa thư mục</button>`;
+    `<button class="btn btn-sm btn-danger" onclick="deleteFolderById('${folderId}')"><i class="ti ti-trash"></i> Xóa bài học</button>`;
   const total=allCards.length, known=allCards.filter(c=>c.status==='young'||c.status==='mature').length;
   const due=allCards.filter(c=>!c.next_review_at||new Date(c.next_review_at)<=new Date()).length;
   const newCount=allCards.filter(c=>!c.status||c.status==='new').length;
@@ -3691,12 +3993,15 @@ function switchFolderTab(tab, el) {
 }
 
 async function deleteFolderById(id) {
-  if(!confirm('Xóa thư mục này và toàn bộ thẻ bên trong?')) return;
+  if(!confirm('Xóa bài học này và toàn bộ thẻ bên trong?')) return;
+  const folder = allFolders.find(f=>f.id===id);
+  const unitId = folder?.unit_id || null;
   const {error} = await DS.deleteFolder(id);
   if (error) { showToast('Lỗi xóa: '+error.message); return; }
   allFolders = allFolders.filter(f=>f.id!==id);
   selectedFolder = null; allCards = []; filteredCards = [];
-  showToast('Đã xóa thư mục.'); navTo(null,'flashcard');
+  showToast('Đã xóa bài học.');
+  navTo(null,'flashcard', unitId ? 'unit/'+unitId : null);
 }
 
 // ============================================================
@@ -9350,12 +9655,15 @@ async function saveVlBulkItems() {
   refreshVlListTab();
   showToast('Đã thêm ' + rows.length + ' mục! 🎉');
 }
+
 function enterVlFullpage() {
   document.getElementById('main-app').classList.add('vl-fullpage');
 }
 function exitVlFullpage() {
   document.getElementById('main-app').classList.remove('vl-fullpage');
 }
+
 </script>
+
 </body>
 </html>
