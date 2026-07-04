@@ -834,6 +834,7 @@ function speakText(text) {
       applyTranslationLanguage();
       scheduleMindmapRedraw(180);
     }
+
   function mount(container, data) {
     if (!container) return;
     state.container = container;
@@ -866,11 +867,13 @@ function speakText(text) {
 
     scheduleMindmapRedraw(260);
   }
+
   window.addEventListener('resize', () => scheduleMindmapRedraw(120));
   window.addEventListener('load', () => scheduleMindmapRedraw(220));
   if (document.fonts && document.fonts.ready) {
     document.fonts.ready.then(() => scheduleMindmapRedraw(120));
   }
+
   window.t30 = {
     mount,
     speakText,
