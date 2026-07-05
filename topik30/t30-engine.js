@@ -576,7 +576,7 @@ async function speakText(text) {
             <p class="mt-3 font-semibold text-slate-800 ${block.no_speak ? '' : 'cursor-pointer hover:text-teal-700'}" ${block.no_speak ? '' : `onclick="t30.speakText('${escapeJsText(block.title_ko || '')}')"`}>${escapeHtml(block.title_ko || '')}${block.no_speak ? '' : ' 🔊'}</p>
             ${block.title_vi ? `<p class="mt-1 text-sm text-slate-600 hideable-meaning vi-meaning-target" onclick="t30.toggleSingleRedSheet(this, event)">${escapeHtml(block.title_vi)}</p>` : ''}
             <p class="mt-3 text-sm leading-relaxed text-slate-700 whitespace-pre-line ${block.no_speak ? '' : 'cursor-pointer hover:text-teal-700'}" ${block.no_speak ? '' : `onclick="t30.speakText('${escapeJsText(block.body_ko || '')}')"`}>${escapeHtml(block.body_ko || '')}${block.no_speak ? '' : ' 🔊'}</p>
-            ${block.body_vi ? `<p class="mt-2 text-sm leading-relaxed text-slate-600 hideable-meaning vi-meaning-target whitespace-pre-line" onclick="t30.toggleSingleRedSheet(this, event)">${escapeHtml(block.body_vi)}</p>` : ''}
+            ${block.body_vi ? `<p class="mt-2 text-sm leading-relaxed text-slate-600 hideable-meaning vi-meaning-target" onclick="t30.toggleSingleRedSheet(this, event)">${escapeHtml(block.body_vi)}</p>` : ''}
             ${tags ? `<div class="mt-3 flex flex-wrap gap-2">${tags}</div>` : ''}
           </div>
         `;
@@ -847,11 +847,13 @@ async function speakText(text) {
       let detailHtml = '';
 
       state.vocabData.forEach(item => {
+        const isAppendixId = /^A\d/.test(item.id || '');
+
         checklistHtml += `
           <div class="flex items-center justify-between p-3 rounded-xl hover:bg-slate-100/70 border border-slate-200/60 transition shadow-2xs bg-white">
             <div class="flex items-center gap-3 overflow-hidden w-full">
               <input type="checkbox" class="w-4 h-4 text-teal-600 rounded border-slate-300 focus:ring-teal-500 cursor-pointer">
-              <span class="font-mono text-xs text-slate-400 font-semibold">${item.id}</span>
+              ${isAppendixId ? '' : `<span class="font-mono text-xs text-slate-400 font-semibold">${item.id}</span>`}
               <span class="font-semibold text-slate-800 cursor-pointer hover:text-teal-600 shrink-0" onclick="t30.speakText('${item.word}')">${item.word} 🔊</span>
               <span class="text-sm text-slate-500 font-medium hideable-meaning meaning-target px-2 py-1 w-full block text-center rounded-md transition duration-150 cursor-pointer" onclick="t30.toggleSingleRedSheet(this, event)" data-en-text="${escapeHtml(item.meaning || '')}" data-vi-text="${escapeHtml(item.meaning_vi || translateToVietnamese(item.meaning || ''))}">${item.meaning}</span>
             </div>
@@ -865,17 +867,23 @@ async function speakText(text) {
           <div class="border border-slate-200 rounded-2xl p-5 shadow-2xs bg-white hover:border-teal-200 transition">
             <div class="flex flex-wrap justify-between items-start gap-4 mb-3">
               <div class="flex items-center gap-3">
-                <span class="px-2.5 py-1 bg-teal-600 text-white rounded-lg font-mono text-sm font-bold">${item.id}</span>
+                ${isAppendixId ? '' : `<span class="px-2.5 py-1 bg-teal-600 text-white rounded-lg font-mono text-sm font-bold">${item.id}</span>`}
                 <h3 class="text-2xl font-bold text-slate-900 cursor-pointer hover:text-teal-600" onclick="t30.speakText('${item.word}')">${item.word} 🔊</h3>
                 <span class="px-2 py-0.5 bg-[var(--pk2)] text-[var(--pk4)] rounded-md text-xs font-semibold">${item.type}</span>
               </div>
               <span class="text-base font-bold text-teal-600 hideable-meaning meaning-target px-3 py-1 bg-teal-50/50 rounded-lg cursor-pointer" onclick="t30.toggleSingleRedSheet(this, event)" data-en-text="${escapeHtml(item.meaning || '')}" data-vi-text="${escapeHtml(item.meaning_vi || translateToVietnamese(item.meaning || ''))}">${item.meaning}</span>
             </div>
 
+            ${item.example_ko ? `
             <div class="bg-slate-50/80 rounded-xl p-4 cursor-pointer hover:bg-teal-50/40 transition border border-slate-100 mb-3" onclick="t30.speakText('${item.example_ko}')">
               <p class="font-semibold text-slate-800 text-base mb-1.5">${highlightedSentence} 🔊</p>
               <p class="text-slate-600 text-sm leading-relaxed hideable-meaning vi-meaning-target" onclick="t30.toggleSingleRedSheet(this, event)" data-en-text="${escapeHtml(item.example_vi || '')}" data-vi-text="${escapeHtml(item.example_vi_vn || translateToVietnamese(item.example_vi || ''))}">${item.example_vi}</p>
             </div>
+            ` : `
+            <div class="bg-slate-50/80 rounded-xl p-4 border border-slate-100 mb-3">
+              <p class="text-slate-600 text-sm leading-relaxed hideable-meaning vi-meaning-target cursor-pointer" onclick="t30.toggleSingleRedSheet(this, event)" data-en-text="${escapeHtml(item.example_vi || '')}" data-vi-text="${escapeHtml(item.example_vi_vn || translateToVietnamese(item.example_vi || ''))}">${item.example_vi}</p>
+            </div>
+            `}
 
             ${renderDetailExtras(item)}
             ${item.extra ? `<div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5 text-xs text-slate-500 bg-slate-50/30 p-4 rounded-xl border border-slate-100 leading-relaxed">${item.extra}</div>` : ''}
