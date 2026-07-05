@@ -857,7 +857,7 @@ async function speakText(text) {
               <input type="checkbox" class="w-4 h-4 text-teal-600 rounded border-slate-300 focus:ring-teal-500 cursor-pointer">
               <span class="font-semibold text-slate-800 cursor-pointer hover:text-teal-600" onclick="t30.speakText('${item.word}')">${item.word} 🔊</span>
             </div>
-            <span class="text-sm text-slate-500 font-medium hideable-meaning meaning-target px-2 py-1 w-full block text-center rounded-md transition duration-150 cursor-pointer" onclick="t30.toggleSingleRedSheet(this, event)" data-en-text="${escapeHtml(item.meaning || '')}" data-vi-text="${escapeHtml(item.meaning_vi || translateToVietnamese(item.meaning || ''))}">${item.meaning}</span>
+            <span class="text-sm text-slate-500 font-medium hideable-meaning meaning-target pl-7 pr-2 py-1 w-full block text-left rounded-md transition duration-150 cursor-pointer" onclick="t30.toggleSingleRedSheet(this, event)" data-en-text="${escapeHtml(item.meaning || '')}" data-vi-text="${escapeHtml(item.meaning_vi || translateToVietnamese(item.meaning || ''))}">${item.meaning}</span>
           </div>
         ` : `
           <div class="flex items-center justify-between p-3 rounded-xl hover:bg-slate-100/70 border border-slate-200/60 transition shadow-2xs bg-white">
