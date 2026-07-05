@@ -2448,6 +2448,8 @@ function renderRoute() {
   if (topikExamMatch) { showPage('topik-exam-run'); loadTopikExamRunner(topikExamMatch[1]); updateNav('topik-exam'); return; }
   const topik30Match = path.match(/^\/topik30\/day\/(\d+)$/);
   if (topik30Match) { showPage('topik30-day'); loadTopik30Day(parseInt(topik30Match[1],10)); updateNav('topik30'); return; }
+  const topik30AppendixMatch = path.match(/^\/topik30\/appendix\/(\d+)$/);
+  if (topik30AppendixMatch) { showPage('topik30-day'); loadTopik30Appendix(parseInt(topik30AppendixMatch[1],10)); updateNav('topik30'); return; }
   const pageId = ROUTES[path] || 'dashboard';
   exitVlFullpage();
   showPage(pageId); updateNav(pageId); onPageLoad(pageId);
@@ -2501,6 +2503,15 @@ const TOPIK30_FILE = n => `${TOPIK30_BASE_PATH}day${String(n).padStart(2,'0')}.h
 const TOPIK30_DATA_FILE = n => `${TOPIK30_BASE_PATH}day${String(n).padStart(2,'0')}.data.json`;
 const TOPIK30_CACHE = {}; // cache fragment+data đã tải, tránh fetch lại khi quay lại ngày cũ
 
+// ---- 부록 Phụ lục ----
+// appendix 1 = 사동사 (Causative verbs), 2 = 피동사 (Passive verbs),
+// 3 = 속담 및 관용표현 (Idioms). 4 (단어장) và 5 (INDEX) chưa có nội dung.
+const TOPIK30_APPENDIX_LABELS = ['사동사 · Causative verbs','피동사 · Passive verbs','속담 및 관용표현 · Idioms','단어장 · Self-vocab','INDEX · Tra cứu'];
+const TOPIK30_APPENDIX_READY = [1, 2, 3];
+const TOPIK30_APPENDIX_FILE = n => `${TOPIK30_BASE_PATH}appendix${String(n).padStart(2,'0')}.html`;
+const TOPIK30_APPENDIX_DATA_FILE = n => `${TOPIK30_BASE_PATH}appendix${String(n).padStart(2,'0')}.data.json`;
+const TOPIK30_APPENDIX_CACHE = {};
+
 function topik30DayCardHtml(n) {
   const ready = TOPIK30_READY_DAYS.includes(n);
   const onclick = ready ? `onclick="navTo(null,'topik30','day/${n}')"` : '';
@@ -2520,11 +2531,17 @@ function renderTopik30Grid() {
   w1.innerHTML = Array.from({length:10},(_,i)=>topik30DayCardHtml(i+1)).join('');
   w2.innerHTML = Array.from({length:10},(_,i)=>topik30DayCardHtml(i+11)).join('');
   w3.innerHTML = Array.from({length:10},(_,i)=>topik30DayCardHtml(i+21)).join('');
-  const appendixLabels = ['사동사 · Causative verbs','피동사 · Passive verbs','속담 및 관용표현 · Idioms','단어장 · Self-vocab','INDEX · Tra cứu'];
-  ap.innerHTML = appendixLabels.map(l=>`<div class="fc-folder" style="opacity:.45;cursor:default">
+  const appendixLabels = TOPIK30_APPENDIX_LABELS;
+  ap.innerHTML = appendixLabels.map((l,i) => {
+    const n = i + 1;
+    const ready = TOPIK30_APPENDIX_READY.includes(n);
+    const onclick = ready ? `onclick="navTo(null,'topik30','appendix/${n}')"` : '';
+    const style = ready ? '' : 'style="opacity:.45;cursor:default"';
+    return `<div class="fc-folder" ${style} ${onclick}>
     <div class="fc-folder-name" style="font-size:11px">${l}</div>
-    <div class="fc-folder-count">Sắp có</div>
-  </div>`).join('');
+    <div class="fc-folder-count">${ready ? 'Đã có · Vào học →' : 'Sắp có'}</div>
+  </div>`;
+  }).join('');
 }
 
 // Token chống race-condition: mỗi lần gọi loadTopik30Day sẽ tự tăng token.
@@ -2536,6 +2553,7 @@ let TOPIK30_LOAD_TOKEN = 0;
 
 async function loadTopik30Day(n) {
   const myToken = ++TOPIK30_LOAD_TOKEN;
+  TOPIK30_APPENDIX_LOAD_TOKEN++; // vô hiệu hoá mọi request loadTopik30Appendix đang chạy dở
 
   document.getElementById('topik30-day-title').textContent = `Day ${String(n).padStart(2,'0')}`;
   const loadingEl = document.getElementById('topik30-day-loading');
@@ -2584,6 +2602,64 @@ async function loadTopik30Day(n) {
     errorEl.style.display = 'block';
     errorEl.textContent = 'Không tải được bài học. Vui lòng thử lại.';
     console.error('loadTopik30Day error:', err);
+  }
+}
+
+// Token chống race-condition riêng cho phần phụ lục (độc lập với
+// TOPIK30_LOAD_TOKEN của các ngày, tránh 2 luồng đè token lẫn nhau).
+let TOPIK30_APPENDIX_LOAD_TOKEN = 0;
+
+async function loadTopik30Appendix(n) {
+  const myToken = ++TOPIK30_APPENDIX_LOAD_TOKEN;
+  TOPIK30_LOAD_TOKEN++; // vô hiệu hoá mọi request loadTopik30Day đang chạy dở
+
+  const label = TOPIK30_APPENDIX_LABELS[n - 1] || `Phụ lục ${n}`;
+  document.getElementById('topik30-day-title').textContent = label;
+  const loadingEl = document.getElementById('topik30-day-loading');
+  const errorEl = document.getElementById('topik30-day-error');
+  const root = document.getElementById('topik30-day-root');
+
+  root.style.display = 'none';
+  errorEl.style.display = 'none';
+  root.innerHTML = '';
+
+  const ready = TOPIK30_APPENDIX_READY.includes(n);
+  if (!ready) {
+    if (myToken !== TOPIK30_APPENDIX_LOAD_TOKEN) return;
+    loadingEl.style.display = 'none';
+    errorEl.style.display = 'block';
+    errorEl.textContent = 'Mục phụ lục này chưa có nội dung.';
+    return;
+  }
+
+  loadingEl.style.display = 'block';
+
+  try {
+    let entry = TOPIK30_APPENDIX_CACHE[n];
+    if (!entry) {
+      const [fragRes, dataRes] = await Promise.all([
+        fetch(TOPIK30_APPENDIX_FILE(n)),
+        fetch(TOPIK30_APPENDIX_DATA_FILE(n))
+      ]);
+      if (myToken !== TOPIK30_APPENDIX_LOAD_TOKEN) return;
+      if (!fragRes.ok || !dataRes.ok) throw new Error('fetch-failed');
+      const [fragHtml, data] = await Promise.all([fragRes.text(), dataRes.json()]);
+      if (myToken !== TOPIK30_APPENDIX_LOAD_TOKEN) return;
+      entry = { fragHtml, data };
+      TOPIK30_APPENDIX_CACHE[n] = entry;
+    }
+
+    if (myToken !== TOPIK30_APPENDIX_LOAD_TOKEN) return;
+    root.innerHTML = entry.fragHtml;
+    loadingEl.style.display = 'none';
+    root.style.display = 'block';
+    t30.mount(root, entry.data);
+  } catch (err) {
+    if (myToken !== TOPIK30_APPENDIX_LOAD_TOKEN) return;
+    loadingEl.style.display = 'none';
+    errorEl.style.display = 'block';
+    errorEl.textContent = 'Không tải được nội dung. Vui lòng thử lại.';
+    console.error('loadTopik30Appendix error:', err);
   }
 }
 
