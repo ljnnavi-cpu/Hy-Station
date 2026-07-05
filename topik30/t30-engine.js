@@ -849,7 +849,17 @@ async function speakText(text) {
       state.vocabData.forEach(item => {
         const isAppendixId = /^A\d/.test(item.id || '');
 
-        checklistHtml += `
+        const isIdiom = /속담|관용구/.test(item.type || '');
+
+        checklistHtml += isIdiom ? `
+          <div class="flex flex-col gap-2 p-3 rounded-xl hover:bg-slate-100/70 border border-slate-200/60 transition shadow-2xs bg-white">
+            <div class="flex items-center gap-3">
+              <input type="checkbox" class="w-4 h-4 text-teal-600 rounded border-slate-300 focus:ring-teal-500 cursor-pointer">
+              <span class="font-semibold text-slate-800 cursor-pointer hover:text-teal-600" onclick="t30.speakText('${item.word}')">${item.word} 🔊</span>
+            </div>
+            <span class="text-sm text-slate-500 font-medium hideable-meaning meaning-target px-2 py-1 w-full block text-center rounded-md transition duration-150 cursor-pointer" onclick="t30.toggleSingleRedSheet(this, event)" data-en-text="${escapeHtml(item.meaning || '')}" data-vi-text="${escapeHtml(item.meaning_vi || translateToVietnamese(item.meaning || ''))}">${item.meaning}</span>
+          </div>
+        ` : `
           <div class="flex items-center justify-between p-3 rounded-xl hover:bg-slate-100/70 border border-slate-200/60 transition shadow-2xs bg-white">
             <div class="flex items-center gap-3 overflow-hidden w-full">
               <input type="checkbox" class="w-4 h-4 text-teal-600 rounded border-slate-300 focus:ring-teal-500 cursor-pointer">
