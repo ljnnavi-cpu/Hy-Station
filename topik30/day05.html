@@ -72,108 +72,146 @@
             <h1 class="text-3xl font-bold tracking-tight text-teal-700">TOPIK에서 혼동하기 쉬운 단어</h1>
             <button type="button" onclick="t30.toggleVietnameseInTab('confuse-tab')" class="px-3 py-1.5 bg-teal-600 hover:bg-teal-700 text-white rounded-full text-xs font-semibold transition-all shadow-xs whitespace-nowrap">Ẩn/Hiện bản dịch</button>
           </div>
-          
           <p class="text-gray-500 italic text-sm mb-4 hideable-meaning vi-meaning-target" onclick="t30.toggleSingleRedSheet(this, event)">Words that are easy to confuse in TOPIK</p>
 
-          <div class="border border-amber-200 rounded-xl p-5 bg-amber-50/10 space-y-4">
-            <h2 class="text-lg font-bold text-amber-800 flex items-center gap-2 border-b border-amber-100 pb-2">
-              <span class="px-2 py-0.5 bg-amber-100 text-amber-800 rounded text-xs font-bold font-mono">다의어</span>
-              다의어 <span class="hideable-meaning text-sm text-slate-500" onclick="t30.toggleSingleRedSheet(this, event)">Polysemy</span>
-            </h2>
-            <div>
-              <h3 class="font-bold text-slate-900 text-xl cursor-pointer hover:text-teal-600 inline-block mb-2" onclick="t30.speakText('나다')">나다 🔊</h3>
-              <div class="space-y-2 pl-4 border-l-2 border-amber-300">
-                <div class="cursor-pointer hover:bg-slate-100 p-2 rounded transition" onclick="t30.speakText('본인도 모르게 소문이 났던 것 같아요.')">
-                  <span class="inline-block px-1.5 py-0.5 bg-slate-200 text-slate-700 text-xs rounded font-bold mr-1">1</span>
-                  <span class="text-sm font-semibold text-slate-800 hideable-meaning px-2 py-1 rounded-md" onclick="t30.toggleSingleRedSheet(this, event)">start</span>
-                  <p class="text-xs text-slate-600 italic mt-0.5">예: 본인도 모르게 소문이 났던 것 같아요. 🔊 <span class="text-teal-700 font-normal hideable-meaning px-2 py-1 rounded-md" onclick="t30.toggleSingleRedSheet(this, event)">The rumors got started even before I noticed it.</span></p>
+          <div class="confuse-book-card border border-amber-200 rounded-2xl overflow-hidden bg-[#fffaf0]">
+            <div class="bg-amber-100/90 px-5 py-3 flex items-center gap-3 border-b border-amber-200">
+              <span class="text-2xl">🧍</span>
+              <span class="text-xl font-black text-amber-900">다의어</span>
+              <span class="hideable-meaning text-sm font-semibold text-slate-600" onclick="t30.toggleSingleRedSheet(this, event)">Polysemy</span>
+            </div>
+            <div class="p-5 md:p-6 space-y-5">
+              <h2 class="text-3xl font-black text-indigo-700 cursor-pointer hover:text-teal-600" onclick="t30.speakText('나다')">나다 🔊</h2>
+              <div class="space-y-4">
+                <div class="pl-1">
+                  <div class="flex items-center gap-3 mb-2">
+                    <span class="inline-flex w-7 h-7 items-center justify-center rounded-full bg-slate-700 text-white text-sm font-black">1</span>
+                    <span class="text-xl font-semibold text-slate-800 hideable-meaning" onclick="t30.toggleSingleRedSheet(this, event)">start</span>
+                  </div>
+                  <div class="ml-10 border-l-4 border-amber-300 pl-4 py-1 cursor-pointer hover:bg-white/70 rounded-r-xl transition" onclick="t30.speakText('본인도 모르게 소문이 났던 것 같아요.')">
+                    <p class="text-lg text-slate-900"><span class="inline-flex px-2 py-0.5 bg-orange-100 text-orange-700 rounded-full text-xs font-bold mr-2">예</span>본인도 모르게 소문이 <span class="text-indigo-700 font-bold">났던</span> 것 같아요. 🔊</p>
+                    <p class="mt-1 text-sm text-slate-600 hideable-meaning vi-meaning-target" onclick="t30.toggleSingleRedSheet(this, event)">The rumors got started even before I noticed it.</p>
+                  </div>
                 </div>
-                <div class="cursor-pointer hover:bg-slate-100 p-2 rounded transition" onclick="t30.speakText('아침부터 기침도 나고 콧물도 났어요.')">
-                  <span class="inline-block px-1.5 py-0.5 bg-slate-200 text-slate-700 text-xs rounded font-bold mr-1">2</span>
-                  <span class="text-sm font-semibold text-slate-800 hideable-meaning px-2 py-1 rounded-md" onclick="t30.toggleSingleRedSheet(this, event)">start</span>
-                  <p class="text-xs text-slate-600 italic mt-0.5">예: 아침부터 기침도 나고 콧물도 났어요. 🔊 <span class="text-teal-700 font-normal hideable-meaning px-2 py-1 rounded-md" onclick="t30.toggleSingleRedSheet(this, event)">I started to cough and have a runny nose from this morning.</span></p>
+                <div class="pl-1">
+                  <div class="flex items-center gap-3 mb-2">
+                    <span class="inline-flex w-7 h-7 items-center justify-center rounded-full bg-slate-700 text-white text-sm font-black">2</span>
+                    <span class="text-xl font-semibold text-slate-800 hideable-meaning" onclick="t30.toggleSingleRedSheet(this, event)">start</span>
+                  </div>
+                  <div class="ml-10 border-l-4 border-amber-300 pl-4 py-1 cursor-pointer hover:bg-white/70 rounded-r-xl transition" onclick="t30.speakText('아침부터 기침도 나고 콧물도 났어요.')">
+                    <p class="text-lg text-slate-900"><span class="inline-flex px-2 py-0.5 bg-orange-100 text-orange-700 rounded-full text-xs font-bold mr-2">예</span>아침부터 기침도 <span class="text-indigo-700 font-bold">나고</span> 콧물도 <span class="text-indigo-700 font-bold">났어요</span>. 🔊</p>
+                    <p class="mt-1 text-sm text-slate-600 hideable-meaning vi-meaning-target" onclick="t30.toggleSingleRedSheet(this, event)">I started to cough and have a runny nose from this morning.</p>
+                  </div>
                 </div>
-                <div class="cursor-pointer hover:bg-slate-100 p-2 rounded transition" onclick="t30.speakText('아무리 화가 나도 참아야지요.')">
-                  <span class="inline-block px-1.5 py-0.5 bg-slate-200 text-slate-700 text-xs rounded font-bold mr-1">3</span>
-                  <span class="text-sm font-semibold text-slate-800 hideable-meaning px-2 py-1 rounded-md" onclick="t30.toggleSingleRedSheet(this, event)">get</span>
-                  <p class="text-xs text-slate-600 italic mt-0.5">예: 아무리 화가 나도 참아야지요. 🔊 <span class="text-teal-700 font-normal hideable-meaning px-2 py-1 rounded-md" onclick="t30.toggleSingleRedSheet(this, event)">You should control your emotion even when you get angry.</span></p>
+                <div class="pl-1">
+                  <div class="flex items-center gap-3 mb-2">
+                    <span class="inline-flex w-7 h-7 items-center justify-center rounded-full bg-slate-700 text-white text-sm font-black">3</span>
+                    <span class="text-xl font-semibold text-slate-800 hideable-meaning" onclick="t30.toggleSingleRedSheet(this, event)">get</span>
+                  </div>
+                  <div class="ml-10 border-l-4 border-amber-300 pl-4 py-1 cursor-pointer hover:bg-white/70 rounded-r-xl transition" onclick="t30.speakText('아무리 화가 나도 참아야지요.')">
+                    <p class="text-lg text-slate-900"><span class="inline-flex px-2 py-0.5 bg-orange-100 text-orange-700 rounded-full text-xs font-bold mr-2">예</span>아무리 화가 <span class="text-indigo-700 font-bold">나도</span> 참아야지요. 🔊</p>
+                    <p class="mt-1 text-sm text-slate-600 hideable-meaning vi-meaning-target" onclick="t30.toggleSingleRedSheet(this, event)">You should control your emotion even when you get angry.</p>
+                  </div>
                 </div>
-                <div class="cursor-pointer hover:bg-slate-100 p-2 rounded transition" onclick="t30.speakText('핸드폰이 고장 나서 서비스센터에 다녀왔어요.')">
-                  <span class="inline-block px-1.5 py-0.5 bg-slate-200 text-slate-700 text-xs rounded font-bold mr-1">4</span>
-                  <span class="text-sm font-semibold text-slate-800 hideable-meaning px-2 py-1 rounded-md" onclick="t30.toggleSingleRedSheet(this, event)">happen</span>
-                  <p class="text-xs text-slate-600 italic mt-0.5">예: 핸드폰이 고장 나서 서비스센터에 다녀왔어요. 🔊 <span class="text-teal-700 font-normal hideable-meaning px-2 py-1 rounded-md" onclick="t30.toggleSingleRedSheet(this, event)">My cell phone was broken and I went to the service center to get it fixed.</span></p>
+                <div class="pl-1">
+                  <div class="flex items-center gap-3 mb-2">
+                    <span class="inline-flex w-7 h-7 items-center justify-center rounded-full bg-slate-700 text-white text-sm font-black">4</span>
+                    <span class="text-xl font-semibold text-slate-800 hideable-meaning" onclick="t30.toggleSingleRedSheet(this, event)">happen</span>
+                  </div>
+                  <div class="ml-10 border-l-4 border-amber-300 pl-4 py-1 cursor-pointer hover:bg-white/70 rounded-r-xl transition" onclick="t30.speakText('핸드폰이 고장 나서 서비스센터에 다녀왔어요.')">
+                    <p class="text-lg text-slate-900"><span class="inline-flex px-2 py-0.5 bg-orange-100 text-orange-700 rounded-full text-xs font-bold mr-2">예</span>핸드폰이 고장 <span class="text-indigo-700 font-bold">나서</span> 서비스센터에 다녀왔어요. 🔊</p>
+                    <p class="mt-1 text-sm text-slate-600 hideable-meaning vi-meaning-target" onclick="t30.toggleSingleRedSheet(this, event)">My cell phone was broken and I went to the service center to get it fixed.</p>
+                  </div>
                 </div>
-                <div class="cursor-pointer hover:bg-slate-100 p-2 rounded transition" onclick="t30.speakText('저쪽에서 무슨 소리가 나는 것 같지 않아요?')">
-                  <span class="inline-block px-1.5 py-0.5 bg-slate-200 text-slate-700 text-xs rounded font-bold mr-1">5</span>
-                  <span class="text-sm font-semibold text-slate-800 hideable-meaning px-2 py-1 rounded-md" onclick="t30.toggleSingleRedSheet(this, event)">appear</span>
-                  <p class="text-xs text-slate-600 italic mt-0.5">예: 저쪽에서 무슨 소리가 나는 것 같지 않아요? 🔊 <span class="text-teal-700 font-normal hideable-meaning px-2 py-1 rounded-md" onclick="t30.toggleSingleRedSheet(this, event)">Don’t you hear something?</span></p>
+                <div class="pl-1">
+                  <div class="flex items-center gap-3 mb-2">
+                    <span class="inline-flex w-7 h-7 items-center justify-center rounded-full bg-slate-700 text-white text-sm font-black">5</span>
+                    <span class="text-xl font-semibold text-slate-800 hideable-meaning" onclick="t30.toggleSingleRedSheet(this, event)">appear</span>
+                  </div>
+                  <div class="ml-10 border-l-4 border-amber-300 pl-4 py-1 cursor-pointer hover:bg-white/70 rounded-r-xl transition" onclick="t30.speakText('저쪽에서 무슨 소리가 나는 것 같지 않아요?')">
+                    <p class="text-lg text-slate-900"><span class="inline-flex px-2 py-0.5 bg-orange-100 text-orange-700 rounded-full text-xs font-bold mr-2">예</span>저쪽에서 무슨 소리가 <span class="text-indigo-700 font-bold">나는</span> 것 같지 않아요? 🔊</p>
+                    <p class="mt-1 text-sm text-slate-600 hideable-meaning vi-meaning-target" onclick="t30.toggleSingleRedSheet(this, event)">Don’t you hear something?</p>
+                  </div>
                 </div>
-                <div class="cursor-pointer hover:bg-slate-100 p-2 rounded transition" onclick="t30.speakText('어제 옆동에서 불이 나서 사람이 죽었대요.')">
-                  <span class="inline-block px-1.5 py-0.5 bg-slate-200 text-slate-700 text-xs rounded font-bold mr-1">6</span>
-                  <span class="text-sm font-semibold text-slate-800 hideable-meaning px-2 py-1 rounded-md" onclick="t30.toggleSingleRedSheet(this, event)">occur</span>
-                  <p class="text-xs text-slate-600 italic mt-0.5">예: 어제 옆동에서 불이 나서 사람이 죽었대요. 🔊 <span class="text-teal-700 font-normal hideable-meaning px-2 py-1 rounded-md" onclick="t30.toggleSingleRedSheet(this, event)">There was a fire in the next building yesterday and people died.</span></p>
+                <div class="pl-1">
+                  <div class="flex items-center gap-3 mb-2">
+                    <span class="inline-flex w-7 h-7 items-center justify-center rounded-full bg-slate-700 text-white text-sm font-black">6</span>
+                    <span class="text-xl font-semibold text-slate-800 hideable-meaning" onclick="t30.toggleSingleRedSheet(this, event)">occur</span>
+                  </div>
+                  <div class="ml-10 border-l-4 border-amber-300 pl-4 py-1 cursor-pointer hover:bg-white/70 rounded-r-xl transition" onclick="t30.speakText('어제 옆동에서 불이 나서 사람이 죽었대요.')">
+                    <p class="text-lg text-slate-900"><span class="inline-flex px-2 py-0.5 bg-orange-100 text-orange-700 rounded-full text-xs font-bold mr-2">예</span>어제 옆동에서 불이 <span class="text-indigo-700 font-bold">나서</span> 사람이 죽었대요. 🔊</p>
+                    <p class="mt-1 text-sm text-slate-600 hideable-meaning vi-meaning-target" onclick="t30.toggleSingleRedSheet(this, event)">There was a fire in the next building yesterday and people died.</p>
+                  </div>
                 </div>
-                <div class="cursor-pointer hover:bg-slate-100 p-2 rounded transition" onclick="t30.speakText('아까부터 이상한 냄새가 나는걸요.')">
-                  <span class="inline-block px-1.5 py-0.5 bg-slate-200 text-slate-700 text-xs rounded font-bold mr-1">7</span>
-                  <span class="text-sm font-semibold text-slate-800 hideable-meaning px-2 py-1 rounded-md" onclick="t30.toggleSingleRedSheet(this, event)">arise</span>
-                  <p class="text-xs text-slate-600 italic mt-0.5">예: 아까부터 이상한 냄새가 나는걸요. 🔊 <span class="text-teal-700 font-normal hideable-meaning px-2 py-1 rounded-md" onclick="t30.toggleSingleRedSheet(this, event)">A weird smell is coming from somewhere.</span></p>
+                <div class="pl-1">
+                  <div class="flex items-center gap-3 mb-2">
+                    <span class="inline-flex w-7 h-7 items-center justify-center rounded-full bg-slate-700 text-white text-sm font-black">7</span>
+                    <span class="text-xl font-semibold text-slate-800 hideable-meaning" onclick="t30.toggleSingleRedSheet(this, event)">arise</span>
+                  </div>
+                  <div class="ml-10 border-l-4 border-amber-300 pl-4 py-1 cursor-pointer hover:bg-white/70 rounded-r-xl transition" onclick="t30.speakText('아까부터 이상한 냄새가 나는걸요.')">
+                    <p class="text-lg text-slate-900"><span class="inline-flex px-2 py-0.5 bg-orange-100 text-orange-700 rounded-full text-xs font-bold mr-2">예</span>아까부터 이상한 냄새가 <span class="text-indigo-700 font-bold">나는</span>걸요. 🔊</p>
+                    <p class="mt-1 text-sm text-slate-600 hideable-meaning vi-meaning-target" onclick="t30.toggleSingleRedSheet(this, event)">A weird smell is coming from somewhere.</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="border border-purple-200 rounded-xl p-5 bg-purple-50/10 space-y-4">
-            <h2 class="text-lg font-bold text-purple-800 flex items-center gap-2 border-b border-purple-100 pb-2">
-              <span class="px-2 py-0.5 bg-purple-100 text-purple-800 rounded text-xs font-bold font-mono">반의어</span>
-              반의어 <span class="hideable-meaning text-sm text-slate-500" onclick="t30.toggleSingleRedSheet(this, event)">Antonym</span>
-            </h2>
-            <div class="flex flex-wrap items-center gap-3">
-              <span class="text-lg font-bold text-slate-900 cursor-pointer hover:text-teal-600" onclick="t30.speakText('게으르다')">게으르다 🔊</span>
-              <span class="hideable-meaning text-sm text-slate-500" onclick="t30.toggleSingleRedSheet(this, event)">lazy</span>
-              <span class="text-purple-600 font-bold">↔</span>
-              <span class="text-lg font-bold text-slate-900 cursor-pointer hover:text-teal-600" onclick="t30.speakText('부지런하다')">부지런하다 🔊</span>
-              <span class="hideable-meaning text-sm text-slate-500" onclick="t30.toggleSingleRedSheet(this, event)">diligent</span>
+          <div class="confuse-book-card border border-purple-200 rounded-2xl overflow-hidden bg-[#fbf7ff]">
+            <div class="bg-purple-100/90 px-5 py-3 flex items-center gap-3 border-b border-purple-200">
+              <span class="text-2xl">🧍‍♀️🧍‍♂️</span>
+              <span class="text-xl font-black text-purple-900">반의어</span>
+              <span class="hideable-meaning text-sm font-semibold text-slate-600" onclick="t30.toggleSingleRedSheet(this, event)">Antonym</span>
             </div>
-            <div class="space-y-2 pl-4 border-l-2 border-purple-300">
-              <div class="cursor-pointer hover:bg-slate-100 p-2 rounded transition" onclick="t30.speakText('게으른 사람은 성공할 수 없다.')">
-                <p class="text-sm text-slate-800"><span class="font-bold text-purple-700">[게으르다]</span> 게으른 사람은 성공할 수 없다. 🔊</p>
-                <p class="text-xs text-slate-500 italic hideable-meaning vi-meaning-target" onclick="t30.toggleSingleRedSheet(this, event)">A lazy person cannot succeed.</p>
+            <div class="p-5 md:p-6 space-y-5">
+              <div class="flex flex-wrap items-center gap-4">
+                <span class="text-3xl font-black text-indigo-700 cursor-pointer hover:text-teal-600" onclick="t30.speakText('게으르다')">게으르다 🔊</span>
+                <span class="text-lg text-slate-600 hideable-meaning" onclick="t30.toggleSingleRedSheet(this, event)">lazy</span>
+                <span class="text-3xl font-black text-purple-600">↔</span>
+                <span class="text-3xl font-black text-indigo-700 cursor-pointer hover:text-teal-600" onclick="t30.speakText('부지런하다')">부지런하다 🔊</span>
+                <span class="text-lg text-slate-600 hideable-meaning" onclick="t30.toggleSingleRedSheet(this, event)">diligent</span>
               </div>
-              <div class="cursor-pointer hover:bg-slate-100 p-2 rounded transition" onclick="t30.speakText('부지런하게 일하다 보면 너에게도 기회가 생길 것이다.')">
-                <p class="text-sm text-slate-800"><span class="font-bold text-purple-700">[부지런하다]</span> 부지런하게 일하다 보면 너에게도 기회가 생길 것이다. 🔊</p>
-                <p class="text-xs text-slate-500 italic hideable-meaning vi-meaning-target" onclick="t30.toggleSingleRedSheet(this, event)">If you work diligently, you will have your chance.</p>
+              <div class="space-y-3 border-l-4 border-purple-300 pl-4">
+                <div class="cursor-pointer hover:bg-white/70 rounded-xl p-2 transition" onclick="t30.speakText('게으른 사람은 성공할 수 없다.')">
+                  <p class="text-lg text-slate-900"><span class="inline-flex px-2 py-0.5 bg-orange-100 text-orange-700 rounded-full text-xs font-bold mr-2">예</span><span class="text-indigo-700 font-bold">게으른</span> 사람은 성공할 수 없다. 🔊</p>
+                  <p class="mt-1 text-sm text-slate-600 hideable-meaning vi-meaning-target" onclick="t30.toggleSingleRedSheet(this, event)">A lazy person cannot succeed.</p>
+                </div>
+                <div class="cursor-pointer hover:bg-white/70 rounded-xl p-2 transition" onclick="t30.speakText('부지런하게 일하다 보면 너에게도 기회가 생길 것이다.')">
+                  <p class="text-lg text-slate-900"><span class="text-indigo-700 font-bold">부지런하게</span> 일하다 보면 너에게도 기회가 생길 것이다. 🔊</p>
+                  <p class="mt-1 text-sm text-slate-600 hideable-meaning vi-meaning-target" onclick="t30.toggleSingleRedSheet(this, event)">If you work diligently, you will have your chance.</p>
+                </div>
               </div>
-            </div>
-          </div>
-
-          <div class="border border-emerald-200 rounded-xl p-5 bg-emerald-50/10 space-y-4">
-            <h2 class="text-lg font-bold text-emerald-800 flex items-center gap-2 border-b border-emerald-100 pb-2">
-              <span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded text-xs font-bold font-mono">유의어</span>
-              유의어 <span class="hideable-meaning text-sm text-slate-500" onclick="t30.toggleSingleRedSheet(this, event)">Synonym</span>
-            </h2>
-            <div class="flex flex-wrap items-center gap-3">
-              <span class="text-lg font-bold text-slate-900 cursor-pointer hover:text-teal-600" onclick="t30.speakText('상의하다')">상의하다 🔊</span>
-              <span class="hideable-meaning text-sm text-slate-500" onclick="t30.toggleSingleRedSheet(this, event)">consult</span>
-              <span class="text-emerald-600 font-bold">≒</span>
-              <span class="text-lg font-bold text-slate-900 cursor-pointer hover:text-teal-600" onclick="t30.speakText('의논하다')">의논하다 🔊</span>
-              <span class="hideable-meaning text-sm text-slate-500" onclick="t30.toggleSingleRedSheet(this, event)">discuss</span>
-            </div>
-            <div class="space-y-2 pl-4 border-l-2 border-emerald-300">
-              <div class="cursor-pointer hover:bg-slate-100 p-2 rounded transition" onclick="t30.speakText('유학을 갈지 안 갈지 부모님과 상의한 후에 결정할 거예요.')">
-                <p class="text-sm text-slate-800">유학을 갈지 안 갈지 부모님과 <span class="font-semibold text-emerald-700">상의한</span> 후에 결정할 거예요. 🔊</p>
-              </div>
-              <div class="cursor-pointer hover:bg-slate-100 p-2 rounded transition" onclick="t30.speakText('유학을 갈지 안 갈지 부모님과 의논한 후에 결정할 거예요.')">
-                <p class="text-sm text-slate-800">유학을 갈지 안 갈지 부모님과 <span class="font-semibold text-emerald-700">의논한</span> 후에 결정할 거예요. 🔊</p>
-              </div>
-              <p class="text-xs text-slate-500 italic pl-2 hideable-meaning vi-meaning-target" onclick="t30.toggleSingleRedSheet(this, event)">I will decide whether to go abroad and study after discussing with my parents.</p>
             </div>
           </div>
 
-
+          <div class="confuse-book-card border border-emerald-200 rounded-2xl overflow-hidden bg-[#f5fff9]">
+            <div class="bg-emerald-100/90 px-5 py-3 flex items-center gap-3 border-b border-emerald-200">
+              <span class="text-2xl">🧍‍♀️🧍‍♀️</span>
+              <span class="text-xl font-black text-emerald-900">유의어</span>
+              <span class="hideable-meaning text-sm font-semibold text-slate-600" onclick="t30.toggleSingleRedSheet(this, event)">Synonym</span>
+            </div>
+            <div class="p-5 md:p-6 space-y-5">
+              <div class="flex flex-wrap items-center gap-4">
+                <span class="text-3xl font-black text-indigo-700 cursor-pointer hover:text-teal-600" onclick="t30.speakText('상의하다')">상의하다 🔊</span>
+                <span class="text-lg text-slate-600 hideable-meaning" onclick="t30.toggleSingleRedSheet(this, event)">consult</span>
+                <span class="text-3xl font-black text-emerald-600">≒</span>
+                <span class="text-3xl font-black text-indigo-700 cursor-pointer hover:text-teal-600" onclick="t30.speakText('의논하다')">의논하다 🔊</span>
+                <span class="text-lg text-slate-600 hideable-meaning" onclick="t30.toggleSingleRedSheet(this, event)">discuss</span>
+              </div>
+              <div class="space-y-2 border-l-4 border-emerald-300 pl-4">
+                <div class="cursor-pointer hover:bg-white/70 rounded-xl p-2 transition" onclick="t30.speakText('유학을 갈지 안 갈지 부모님과 상의한 후에 결정할 거예요.')">
+                  <p class="text-lg text-slate-900"><span class="inline-flex px-2 py-0.5 bg-orange-100 text-orange-700 rounded-full text-xs font-bold mr-2">예</span>유학을 갈지 안 갈지 부모님과 <span class="text-indigo-700 font-bold">상의한</span> 후에 결정할 거예요. 🔊</p>
+                </div>
+                <div class="cursor-pointer hover:bg-white/70 rounded-xl p-2 transition" onclick="t30.speakText('유학을 갈지 안 갈지 부모님과 의논한 후에 결정할 거예요.')">
+                  <p class="text-lg text-slate-900">유학을 갈지 안 갈지 부모님과 <span class="text-indigo-700 font-bold">의논한</span> 후에 결정할 거예요. 🔊</p>
+                </div>
+                <p class="mt-1 text-sm text-slate-600 hideable-meaning vi-meaning-target pl-2" onclick="t30.toggleSingleRedSheet(this, event)">I will decide whether to go abroad and study after discussing with my parents.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-
-      <!-- ================= TAB 4: REVIEW ================= -->
+<!-- ================= TAB 4: REVIEW ================= -->
       <div id="review-tab" class="tab-content hidden">
         <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8 space-y-6">
           <div class="flex flex-wrap justify-between items-center gap-3 border-b border-slate-100 pb-4 mb-6">

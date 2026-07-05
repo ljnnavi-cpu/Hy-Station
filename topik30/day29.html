@@ -67,10 +67,111 @@
 
 
       <!-- ================= TAB 3: CONFUSING WORDS ================= -->
-      <div id="confuse-tab" class="tab-content hidden"><div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8 space-y-6"><div class="flex justify-between items-center border-b border-slate-100 pb-4 mb-6"><h1 class="text-3xl font-bold tracking-tight text-teal-700">TOPIK에서 혼동하기 쉬운 단어</h1><button type="button" onclick="t30.toggleVietnameseInTab('confuse-tab')" class="px-3 py-1.5 bg-teal-600 hover:bg-teal-700 text-white rounded-full text-xs font-semibold transition-all shadow-xs whitespace-nowrap">Ẩn/Hiện bản dịch</button></div><p class="text-gray-500 italic text-sm mb-4 hideable-meaning vi-meaning-target" onclick="t30.toggleSingleRedSheet(this,event)">Words that are easy to confuse in TOPIK</p>
-      <div class="confuse-book-card border border-amber-200 rounded-2xl overflow-hidden bg-[#fffaf0]"><div class="bg-amber-100/90 px-5 py-3 flex items-center gap-3 border-b border-amber-200"><span class="text-2xl">🧍</span><span class="text-xl font-black text-amber-900">다의어</span><span class="hideable-meaning text-sm font-semibold" onclick="t30.toggleSingleRedSheet(this,event)">Polysemy</span></div><div class="p-5 space-y-4"><h2 onclick="t30.speakText('짓다')" class="text-3xl font-black text-indigo-700 cursor-pointer">짓다 🔊</h2><p class="text-xl font-semibold hideable-meaning" onclick="t30.toggleSingleRedSheet(this,event)">build</p><p onclick="t30.speakText('은퇴하고 살 집을 지으려고요.')" class="text-lg border-l-4 border-amber-300 pl-4">은퇴하고 살 집을 <span class="text-indigo-700 font-bold">지으려고요</span>. 🔊</p><p class="text-sm text-slate-600 hideable-meaning vi-meaning-target" onclick="t30.toggleSingleRedSheet(this,event)">I’m planning to build a house to live in after the retirement.</p><p class="text-xl font-semibold hideable-meaning" onclick="t30.toggleSingleRedSheet(this,event)">have something made</p><p onclick="t30.speakText('한방 병원에 가서 아이들에게 줄 한약을 지었다.')" class="text-lg border-l-4 border-amber-300 pl-4">한방 병원에 가서 아이들에게 줄 한약을 <span class="text-indigo-700 font-bold">지었다</span>. 🔊</p><p class="text-sm text-slate-600 hideable-meaning vi-meaning-target" onclick="t30.toggleSingleRedSheet(this,event)">I went to Oriental medicine clinic to have medicines made for my children.</p><p class="text-xl font-semibold hideable-meaning" onclick="t30.toggleSingleRedSheet(this,event)">make</p><p onclick="t30.speakText('새로운 음식을 맛본 사람들이 이상한 표정을 지었다.')" class="text-lg border-l-4 border-amber-300 pl-4">새로운 음식을 맛본 사람들이 이상한 표정을 <span class="text-indigo-700 font-bold">지었다</span>. 🔊</p><p class="text-sm text-slate-600 hideable-meaning vi-meaning-target" onclick="t30.toggleSingleRedSheet(this,event)">People, who have tasted the new dish, made a weird face.</p></div></div>
-      <div class="confuse-book-card border border-purple-200 rounded-2xl overflow-hidden bg-[#fbf7ff]"><div class="bg-purple-100/90 px-5 py-3"><span class="tip-label">반의어</span> <span class="hideable-meaning" onclick="t30.toggleSingleRedSheet(this,event)">Antonym</span></div><div class="p-5"><div class="flex gap-4 items-center"><span onclick="t30.speakText('선명하다')" class="text-3xl text-indigo-700 font-black">선명하다 🔊</span><span class="hideable-meaning" onclick="t30.toggleSingleRedSheet(this,event)">clear</span><span class="text-3xl">↔</span><span onclick="t30.speakText('희미하다')" class="text-3xl text-indigo-700 font-black">희미하다 🔊</span><span class="hideable-meaning" onclick="t30.toggleSingleRedSheet(this,event)">unclear</span></div><p onclick="t30.speakText('결혼식을 한 지 10년이나 됐지만 아직도 그때가 선명하게 기억이 납니다.')" class="text-lg mt-3 border-l-4 border-purple-300 pl-4">결혼식을 한 지 10년이나 됐지만 아직도 그때가 <span class="text-indigo-700 font-bold">선명하게</span> 기억이 납니다. 🔊</p><p class="text-sm hideable-meaning vi-meaning-target" onclick="t30.toggleSingleRedSheet(this,event)">It has been about 10 years since the wedding ceremony, but I still remember the time clearly.</p><p onclick="t30.speakText('시간이 지날수록 추억들이 희미해진다.')" class="text-lg mt-3 border-l-4 border-purple-300 pl-4">시간이 지날수록 추억들이 <span class="text-indigo-700 font-bold">희미해진다</span>. 🔊</p><p class="text-sm hideable-meaning vi-meaning-target" onclick="t30.toggleSingleRedSheet(this,event)">As the time passes, the memories become unclear.</p></div></div>
-      <div class="confuse-book-card border border-emerald-200 rounded-2xl overflow-hidden bg-[#f5fff9]"><div class="bg-emerald-100/90 px-5 py-3"><span class="tip-label">유의어</span> <span class="hideable-meaning" onclick="t30.toggleSingleRedSheet(this,event)">Synonym</span></div><div class="p-5"><div class="flex gap-4 items-center"><span onclick="t30.speakText('예정')" class="text-3xl text-indigo-700 font-black">예정 🔊</span><span class="hideable-meaning" onclick="t30.toggleSingleRedSheet(this,event)">schedule</span><span class="text-3xl">≒</span><span onclick="t30.speakText('계획')" class="text-3xl text-indigo-700 font-black">계획 🔊</span><span class="hideable-meaning" onclick="t30.toggleSingleRedSheet(this,event)">plan</span></div><p onclick="t30.speakText('민호 씨는 내년에 결혼할 예정이라고 합니다.')" class="text-lg mt-3 border-l-4 border-emerald-300 pl-4">민호 씨는 내년에 결혼할 <span class="text-indigo-700 font-bold">예정</span>이라고 합니다. 🔊</p><p onclick="t30.speakText('민호 씨는 내년에 결혼할 계획이라고 합니다.')" class="text-lg mt-2 border-l-4 border-emerald-300 pl-4">민호 씨는 내년에 결혼할 <span class="text-indigo-700 font-bold">계획</span>이라고 합니다. 🔊</p><p class="text-sm hideable-meaning vi-meaning-target" onclick="t30.toggleSingleRedSheet(this,event)">Minho is scheduled to get married next year.</p></div></div></div></div>
+      <div id="confuse-tab" class="tab-content hidden">
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8 space-y-6">
+          <div class="flex justify-between items-center border-b border-slate-100 pb-4 mb-6">
+            <h1 class="text-3xl font-bold tracking-tight text-teal-700">TOPIK에서 혼동하기 쉬운 단어</h1>
+            <button type="button" onclick="t30.toggleVietnameseInTab('confuse-tab')" class="px-3 py-1.5 bg-teal-600 hover:bg-teal-700 text-white rounded-full text-xs font-semibold transition-all shadow-xs whitespace-nowrap">Ẩn/Hiện bản dịch</button>
+          </div>
+          <p class="text-gray-500 italic text-sm mb-4 hideable-meaning vi-meaning-target" onclick="t30.toggleSingleRedSheet(this, event)">Words that are easy to confuse in TOPIK</p>
+
+          <div class="confuse-book-card border border-amber-200 rounded-2xl overflow-hidden bg-[#fffaf0]">
+            <div class="bg-amber-100/90 px-5 py-3 flex items-center gap-3 border-b border-amber-200">
+              <span class="text-2xl">🧍</span>
+              <span class="text-xl font-black text-amber-900">다의어</span>
+              <span class="hideable-meaning text-sm font-semibold text-slate-600" onclick="t30.toggleSingleRedSheet(this, event)">Polysemy</span>
+            </div>
+            <div class="p-5 md:p-6 space-y-5">
+              <h2 class="text-3xl font-black text-indigo-700 cursor-pointer hover:text-teal-600" onclick="t30.speakText('짓다')">짓다 🔊</h2>
+              <div class="space-y-4">
+                <div class="pl-1">
+                  <div class="flex items-center gap-3 mb-2">
+                    <span class="inline-flex w-7 h-7 items-center justify-center rounded-full bg-slate-700 text-white text-sm font-black">1</span>
+                    <span class="text-xl font-semibold text-slate-800 hideable-meaning" onclick="t30.toggleSingleRedSheet(this, event)">build</span>
+                  </div>
+                  <div class="ml-10 border-l-4 border-amber-300 pl-4 py-1 cursor-pointer hover:bg-white/70 rounded-r-xl transition" onclick="t30.speakText('은퇴하고 살 집을 지으려고요.')">
+                    <p class="text-lg text-slate-900"><span class="inline-flex px-2 py-0.5 bg-orange-100 text-orange-700 rounded-full text-xs font-bold mr-2">예</span>은퇴하고 살 집을 <span class="text-indigo-700 font-bold">지으려고요</span>. 🔊</p>
+                    <p class="mt-1 text-sm text-slate-600 hideable-meaning vi-meaning-target" onclick="t30.toggleSingleRedSheet(this, event)">I’m planning to build a house to live in after the retirement.</p>
+                  </div>
+                </div>
+                <div class="pl-1">
+                  <div class="flex items-center gap-3 mb-2">
+                    <span class="inline-flex w-7 h-7 items-center justify-center rounded-full bg-slate-700 text-white text-sm font-black">2</span>
+                    <span class="text-xl font-semibold text-slate-800 hideable-meaning" onclick="t30.toggleSingleRedSheet(this, event)">have something made</span>
+                  </div>
+                  <div class="ml-10 border-l-4 border-amber-300 pl-4 py-1 cursor-pointer hover:bg-white/70 rounded-r-xl transition" onclick="t30.speakText('한방 병원에 가서 아이들에게 줄 한약을 지었다.')">
+                    <p class="text-lg text-slate-900"><span class="inline-flex px-2 py-0.5 bg-orange-100 text-orange-700 rounded-full text-xs font-bold mr-2">예</span>한방 병원에 가서 아이들에게 줄 한약을 <span class="text-indigo-700 font-bold">지었다</span>. 🔊</p>
+                    <p class="mt-1 text-sm text-slate-600 hideable-meaning vi-meaning-target" onclick="t30.toggleSingleRedSheet(this, event)">I went to Oriental medicine clinic to have medicines made for my children.</p>
+                  </div>
+                </div>
+                <div class="pl-1">
+                  <div class="flex items-center gap-3 mb-2">
+                    <span class="inline-flex w-7 h-7 items-center justify-center rounded-full bg-slate-700 text-white text-sm font-black">3</span>
+                    <span class="text-xl font-semibold text-slate-800 hideable-meaning" onclick="t30.toggleSingleRedSheet(this, event)">make</span>
+                  </div>
+                  <div class="ml-10 border-l-4 border-amber-300 pl-4 py-1 cursor-pointer hover:bg-white/70 rounded-r-xl transition" onclick="t30.speakText('새로운 음식을 맛본 사람들이 이상한 표정을 지었다.')">
+                    <p class="text-lg text-slate-900"><span class="inline-flex px-2 py-0.5 bg-orange-100 text-orange-700 rounded-full text-xs font-bold mr-2">예</span>새로운 음식을 맛본 사람들이 이상한 표정을 <span class="text-indigo-700 font-bold">지었다</span>. 🔊</p>
+                    <p class="mt-1 text-sm text-slate-600 hideable-meaning vi-meaning-target" onclick="t30.toggleSingleRedSheet(this, event)">People, who have tasted the new dish, made a weird face.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="confuse-book-card border border-purple-200 rounded-2xl overflow-hidden bg-[#fbf7ff]">
+            <div class="bg-purple-100/90 px-5 py-3 flex items-center gap-3 border-b border-purple-200">
+              <span class="text-2xl">🧍‍♀️🧍‍♂️</span>
+              <span class="text-xl font-black text-purple-900">반의어</span>
+              <span class="hideable-meaning text-sm font-semibold text-slate-600" onclick="t30.toggleSingleRedSheet(this, event)">Antonym</span>
+            </div>
+            <div class="p-5 md:p-6 space-y-5">
+              <div class="flex flex-wrap items-center gap-4">
+                <span class="text-3xl font-black text-indigo-700 cursor-pointer hover:text-teal-600" onclick="t30.speakText('선명하다')">선명하다 🔊</span>
+                <span class="text-lg text-slate-600 hideable-meaning" onclick="t30.toggleSingleRedSheet(this, event)">clear</span>
+                <span class="text-3xl font-black text-purple-600">↔</span>
+                <span class="text-3xl font-black text-indigo-700 cursor-pointer hover:text-teal-600" onclick="t30.speakText('희미하다')">희미하다 🔊</span>
+                <span class="text-lg text-slate-600 hideable-meaning" onclick="t30.toggleSingleRedSheet(this, event)">unclear</span>
+              </div>
+              <div class="space-y-3 border-l-4 border-purple-300 pl-4">
+                <div class="cursor-pointer hover:bg-white/70 rounded-xl p-2 transition" onclick="t30.speakText('결혼식을 한 지 10년이나 됐지만 아직도 그때가 선명하게 기억이 납니다.')">
+                  <p class="text-lg text-slate-900"><span class="inline-flex px-2 py-0.5 bg-orange-100 text-orange-700 rounded-full text-xs font-bold mr-2">예</span>결혼식을 한 지 10년이나 됐지만 아직도 그때가 <span class="text-indigo-700 font-bold">선명하게</span> 기억이 납니다. 🔊</p>
+                  <p class="mt-1 text-sm text-slate-600 hideable-meaning vi-meaning-target" onclick="t30.toggleSingleRedSheet(this, event)">It has been about 10 years since the wedding ceremony, but I still remember the time clearly.</p>
+                </div>
+                <div class="cursor-pointer hover:bg-white/70 rounded-xl p-2 transition" onclick="t30.speakText('시간이 지날수록 추억들이 희미해진다.')">
+                  <p class="text-lg text-slate-900"><span class="inline-flex px-2 py-0.5 bg-orange-100 text-orange-700 rounded-full text-xs font-bold mr-2">예</span>시간이 지날수록 추억들이 <span class="text-indigo-700 font-bold">희미해진다</span>. 🔊</p>
+                  <p class="mt-1 text-sm text-slate-600 hideable-meaning vi-meaning-target" onclick="t30.toggleSingleRedSheet(this, event)">As the time passes, the memories become unclear.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="confuse-book-card border border-emerald-200 rounded-2xl overflow-hidden bg-[#f5fff9]">
+            <div class="bg-emerald-100/90 px-5 py-3 flex items-center gap-3 border-b border-emerald-200">
+              <span class="text-2xl">🧍‍♀️🧍‍♀️</span>
+              <span class="text-xl font-black text-emerald-900">유의어</span>
+              <span class="hideable-meaning text-sm font-semibold text-slate-600" onclick="t30.toggleSingleRedSheet(this, event)">Synonym</span>
+            </div>
+            <div class="p-5 md:p-6 space-y-5">
+              <div class="flex flex-wrap items-center gap-4">
+                <span class="text-3xl font-black text-indigo-700 cursor-pointer hover:text-teal-600" onclick="t30.speakText('예정')">예정 🔊</span>
+                <span class="text-lg text-slate-600 hideable-meaning" onclick="t30.toggleSingleRedSheet(this, event)">schedule</span>
+                <span class="text-3xl font-black text-emerald-600">≒</span>
+                <span class="text-3xl font-black text-indigo-700 cursor-pointer hover:text-teal-600" onclick="t30.speakText('계획')">계획 🔊</span>
+                <span class="text-lg text-slate-600 hideable-meaning" onclick="t30.toggleSingleRedSheet(this, event)">plan</span>
+              </div>
+              <div class="space-y-2 border-l-4 border-emerald-300 pl-4">
+                <div class="cursor-pointer hover:bg-white/70 rounded-xl p-2 transition" onclick="t30.speakText('민호 씨는 내년에 결혼할 예정이라고 합니다.')">
+                  <p class="text-lg text-slate-900"><span class="inline-flex px-2 py-0.5 bg-orange-100 text-orange-700 rounded-full text-xs font-bold mr-2">예</span>민호 씨는 내년에 결혼할 <span class="text-indigo-700 font-bold">예정</span>이라고 합니다. 🔊</p>
+                </div>
+                <div class="cursor-pointer hover:bg-white/70 rounded-xl p-2 transition" onclick="t30.speakText('민호 씨는 내년에 결혼할 계획이라고 합니다.')">
+                  <p class="text-lg text-slate-900">민호 씨는 내년에 결혼할 <span class="text-indigo-700 font-bold">계획</span>이라고 합니다. 🔊</p>
+                </div>
+                <p class="mt-1 text-sm text-slate-600 hideable-meaning vi-meaning-target pl-2" onclick="t30.toggleSingleRedSheet(this, event)">Minho is scheduled to get married next year.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <!-- ================= TAB 4: REVIEW ================= -->
       <div id="review-tab" class="tab-content hidden">
         <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8 space-y-6">
