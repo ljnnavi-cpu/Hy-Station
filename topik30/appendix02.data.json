@@ -1,0 +1,381 @@
+{
+  "day": "appendix02",
+  "vocabData": [
+    {
+      "id": "A2-01",
+      "word": "놓이다",
+      "meaning": "be placed",
+      "meaning_vi": "được đặt",
+      "type": "피동사 passive verb",
+      "example_ko": "저기 테이블 위에 놓여 있는 물건이 뭐예요?",
+      "example_vi": "What is that placed on the table?",
+      "example_vi_vn": "Vật được đặt trên bàn kia là cái gì vậy?",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>놓다 (place)</span></div></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "놓이"
+      ]
+    },
+    {
+      "id": "A2-02",
+      "word": "바뀌다",
+      "meaning": "be changed",
+      "meaning_vi": "được thay đổi",
+      "type": "피동사 passive verb",
+      "example_ko": "혜경 씨가 이사를 가서 주소가 바뀌었어요.",
+      "example_vi": "Hea-Kyung moved and her address changed.",
+      "example_vi_vn": "Hye-kyung đã chuyển nhà nên địa chỉ đã thay đổi.",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>바꾸다 (change)</span></div></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "바뀌"
+      ]
+    },
+    {
+      "id": "A2-03",
+      "word": "보이다",
+      "meaning": "be seen",
+      "meaning_vi": "được nhìn thấy",
+      "type": "피동사 passive verb",
+      "example_ko": "창문을 열면 바다가 보이는 집에 살고 싶어요.",
+      "example_vi": "I want to live in the house where I can see the ocean.",
+      "example_vi_vn": "Tôi muốn sống ở căn nhà mà mở cửa sổ ra là thấy biển.",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>보다 (see)</span></div></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "보이"
+      ]
+    },
+    {
+      "id": "A2-04",
+      "word": "쌓이다",
+      "meaning": "be piled",
+      "meaning_vi": "chất đống, tích tụ",
+      "type": "피동사 passive verb",
+      "example_ko": "한동안 청소를 안 했더니 집에 먼지가 쌓여 있네요.",
+      "example_vi": "There is a pile of dust in the house since I have not cleaned the place for a while.",
+      "example_vi_vn": "Vì lâu rồi không dọn dẹp nên bụi đã chất đầy trong nhà.",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>쌓다 (pile)</span></div></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "쌓이"
+      ]
+    },
+    {
+      "id": "A2-05",
+      "word": "쓰이다",
+      "meaning": "be written",
+      "meaning_vi": "được viết",
+      "type": "피동사 passive verb",
+      "example_ko": "책에 이름이 쓰여 있으니까 주인을 찾을 수 있을 거예요.",
+      "example_vi": "You may find the owner of the book since the name is written on it.",
+      "example_vi_vn": "Vì tên đã được ghi trong sách nên có thể tìm được chủ nhân.",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>쓰다 (write)</span></div></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "쓰이"
+      ]
+    },
+    {
+      "id": "A2-06",
+      "word": "잠기다",
+      "meaning": "be locked",
+      "meaning_vi": "bị khóa",
+      "type": "피동사 passive verb",
+      "example_ko": "가게 문이 잠겨 있는 것을 보니 아무도 없나 봐요.",
+      "example_vi": "There must be no one in the store since the door is locked.",
+      "example_vi_vn": "Thấy cửa tiệm bị khóa chắc là không có ai ở đó.",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>잠그다 (lock)</span></div></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "잠기"
+      ]
+    },
+    {
+      "id": "A2-07",
+      "word": "닫히다",
+      "meaning": "be closed",
+      "meaning_vi": "bị đóng",
+      "type": "피동사 passive verb",
+      "example_ko": "바람 때문에 문이 저절로 닫혔어요.",
+      "example_vi": "The door closed by itself because of the wind.",
+      "example_vi_vn": "Vì gió nên cửa đã tự đóng lại.",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>닫다 (close)</span></div></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "닫히"
+      ]
+    },
+    {
+      "id": "A2-08",
+      "word": "막히다",
+      "meaning": "be blocked",
+      "meaning_vi": "bị tắc, nghẽn",
+      "type": "피동사 passive verb",
+      "example_ko": "출퇴근 시간에는 길이 많이 막혀요.",
+      "example_vi": "The traffic jam is serious every morning and evening when people are going and coming back from work.",
+      "example_vi_vn": "Vào giờ đi làm và tan sở, đường thường bị kẹt rất nhiều.",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>막다 (block)</span></div></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "막히"
+      ]
+    },
+    {
+      "id": "A2-09",
+      "word": "먹히다",
+      "meaning": "be eaten",
+      "meaning_vi": "bị ăn",
+      "type": "피동사 passive verb",
+      "example_ko": "쥐가 고양이에게 먹혔어요.",
+      "example_vi": "The rat was eaten by the cat.",
+      "example_vi_vn": "Con chuột đã bị con mèo ăn thịt.",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>먹다 (eat)</span></div></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "먹히"
+      ]
+    },
+    {
+      "id": "A2-10",
+      "word": "밟히다",
+      "meaning": "be stepped",
+      "meaning_vi": "bị giẫm",
+      "type": "피동사 passive verb",
+      "example_ko": "지하철에 사람이 많아서 계속 발을 밟혔어요.",
+      "example_vi": "Too many people were in the subway and my foot was constantly stepped on.",
+      "example_vi_vn": "Tàu điện ngầm đông người quá nên chân tôi cứ bị giẫm liên tục.",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>밟다 (step)</span></div></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "밟히"
+      ]
+    },
+    {
+      "id": "A2-11",
+      "word": "업히다",
+      "meaning": "carry on one's back",
+      "meaning_vi": "được cõng",
+      "type": "피동사 passive verb",
+      "example_ko": "어젯밤에 혜경 씨는 취해서 친구에게 업혀서 집에 왔어요.",
+      "example_vi": "Last night Hea-Kyung was so drunk that she was carried here on her friend's back.",
+      "example_vi_vn": "Tối qua Hye-kyung say quá nên được bạn cõng về nhà.",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>업다 (carry on back)</span></div></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "업히"
+      ]
+    },
+    {
+      "id": "A2-12",
+      "word": "읽히다",
+      "meaning": "be read",
+      "meaning_vi": "được đọc",
+      "type": "피동사 passive verb",
+      "example_ko": "책 내용이 어려워서 잘 읽히지 않네요.",
+      "example_vi": "The book's content is too challenging, so it is hard to read.",
+      "example_vi_vn": "Nội dung cuốn sách khó quá nên đọc không trôi chảy.",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>읽다 (read)</span></div></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "읽히"
+      ]
+    },
+    {
+      "id": "A2-13",
+      "word": "잡히다",
+      "meaning": "be caught",
+      "meaning_vi": "bị bắt",
+      "type": "피동사 passive verb",
+      "example_ko": "지난주에 일어난 살인사건의 용의자가 잡혔대요.",
+      "example_vi": "The suspect of the homicide was caught last week.",
+      "example_vi_vn": "Nghe nói nghi phạm của vụ giết người tuần trước đã bị bắt.",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>잡다 (catch)</span></div></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "잡히"
+      ]
+    },
+    {
+      "id": "A2-14",
+      "word": "걸리다",
+      "meaning": "be hanged",
+      "meaning_vi": "được treo",
+      "type": "피동사 passive verb",
+      "example_ko": "우리 집에는 가족 사진이 걸려 있어요.",
+      "example_vi": "There is a family picture hanging on our house wall.",
+      "example_vi_vn": "Nhà tôi có treo ảnh gia đình.",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>걸다 (hang)</span></div></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "걸리"
+      ]
+    },
+    {
+      "id": "A2-15",
+      "word": "날리다",
+      "meaning": "fly",
+      "meaning_vi": "bay lên, bị thổi bay",
+      "type": "피동사 passive verb",
+      "example_ko": "봄에는 바람이 불면 꽃잎이 날려서 참 예뻐요.",
+      "example_vi": "It is beautiful in the spring to see the petals fly in the wind.",
+      "example_vi_vn": "Vào mùa xuân, khi gió thổi cánh hoa bay rất đẹp.",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>날다 (fly)</span></div></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "날리"
+      ]
+    },
+    {
+      "id": "A2-16",
+      "word": "들리다",
+      "meaning": "hear",
+      "meaning_vi": "được nghe thấy",
+      "type": "피동사 passive verb",
+      "example_ko": "소리가 잘 안 들리는데 소리를 좀 크게 해 주세요.",
+      "example_vi": "I cannot hear the sound, so can you please turn up the volume?",
+      "example_vi_vn": "Tôi không nghe rõ, làm ơn bật to tiếng lên một chút.",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>듣다 (hear)</span></div></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "들리"
+      ]
+    },
+    {
+      "id": "A2-17",
+      "word": "물리다",
+      "meaning": "be bitten",
+      "meaning_vi": "bị cắn",
+      "type": "피동사 passive verb",
+      "example_ko": "여름철에 창문을 열고 자면 모기에게 많이 물려요.",
+      "example_vi": "If you let your window open in the summer while you are sleeping, you will get many bites from mosquitoes.",
+      "example_vi_vn": "Vào mùa hè nếu mở cửa sổ ngủ thì sẽ bị muỗi cắn nhiều.",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>물다 (bite)</span></div></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "물리"
+      ]
+    },
+    {
+      "id": "A2-18",
+      "word": "열리다",
+      "meaning": "be opened",
+      "meaning_vi": "được mở",
+      "type": "피동사 passive verb",
+      "example_ko": "집에 와 보니 문이 열려 있어서 깜짝 놀랐어요.",
+      "example_vi": "I was shocked to see my window being opened when I came back from work.",
+      "example_vi_vn": "Về nhà thấy cửa đang mở nên tôi rất giật mình.",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>열다 (open)</span></div></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "열리"
+      ]
+    },
+    {
+      "id": "A2-19",
+      "word": "팔리다",
+      "meaning": "be sold",
+      "meaning_vi": "được bán",
+      "type": "피동사 passive verb",
+      "example_ko": "이 옷이 요즘 잘 팔리는 옷이에요.",
+      "example_vi": "These clothes are the ones that are being sold well these days.",
+      "example_vi_vn": "Bộ đồ này là loại đang bán chạy dạo này.",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>팔다 (sell)</span></div></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "팔리"
+      ]
+    },
+    {
+      "id": "A2-20",
+      "word": "풀리다",
+      "meaning": "be solved",
+      "meaning_vi": "được giải",
+      "type": "피동사 passive verb",
+      "example_ko": "이 수학 문제는 너무 어려워서 잘 풀리지 않네요.",
+      "example_vi": "This math problem is too challenging to be solved.",
+      "example_vi_vn": "Bài toán này khó quá nên giải không ra.",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>풀다 (solve)</span></div></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "풀리"
+      ]
+    },
+    {
+      "id": "A2-21",
+      "word": "끊기다",
+      "meaning": "stopped operating",
+      "meaning_vi": "bị ngắt, dừng",
+      "type": "피동사 passive verb",
+      "example_ko": "너무 늦어서 마지막 지하철마저 끊겼어요.",
+      "example_vi": "I was too late that the last subway already left.",
+      "example_vi_vn": "Tôi về muộn quá nên chuyến tàu điện ngầm cuối cùng cũng đã hết.",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>끊다 (disconnect)</span></div></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "끊기"
+      ]
+    },
+    {
+      "id": "A2-22",
+      "word": "담기다",
+      "meaning": "be filled with",
+      "meaning_vi": "được đựng, chứa",
+      "type": "피동사 passive verb",
+      "example_ko": "식탁 위에 있는 소금이 담긴 통을 갖다 주세요.",
+      "example_vi": "Can you please take the jar filled with salt on the kitchen table and bring it to me?",
+      "example_vi_vn": "Hãy lấy giúp tôi hũ đựng muối trên bàn ăn.",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>담다 (put in)</span></div></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "담기"
+      ]
+    },
+    {
+      "id": "A2-23",
+      "word": "빼앗기다",
+      "meaning": "be robbed",
+      "meaning_vi": "bị cướp, bị giật",
+      "type": "피동사 passive verb",
+      "example_ko": "집에 오는 길에 나쁜 사람에게 돈을 빼앗겼어요.",
+      "example_vi": "While I was coming back home, I had a bad man rob me.",
+      "example_vi_vn": "Trên đường về nhà, tôi đã bị một người xấu cướp mất tiền.",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>빼앗다 (rob)</span></div></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "빼앗기"
+      ]
+    },
+    {
+      "id": "A2-24",
+      "word": "안기다",
+      "meaning": "be in one's arm",
+      "meaning_vi": "được ôm, nằm trong lòng",
+      "type": "피동사 passive verb",
+      "example_ko": "아이가 엄마에게 안겨서 자고 있는 모습이 참 귀엽네요.",
+      "example_vi": "The child sleeping in his mother's arms is just too cute.",
+      "example_vi_vn": "Cảnh đứa trẻ ngủ trong lòng mẹ thật đáng yêu.",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>안다 (hug)</span></div></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "안기"
+      ]
+    },
+    {
+      "id": "A2-25",
+      "word": "쫓기다",
+      "meaning": "be chased",
+      "meaning_vi": "bị đuổi, truy đuổi",
+      "type": "피동사 passive verb",
+      "example_ko": "그 도둑은 경찰에게 쫓기다가 넘어졌다.",
+      "example_vi": "The thief tripped while he was chased by the police.",
+      "example_vi_vn": "Tên trộm bị cảnh sát truy đuổi và đã bị ngã.",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>쫓다 (chase)</span></div></div>",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "쫓기"
+      ]
+    }
+  ],
+  "dict": {}
+}

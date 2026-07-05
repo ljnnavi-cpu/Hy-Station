@@ -1,0 +1,82 @@
+<div class="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+    <div class="text-center mb-8">
+      <span class="text-xs uppercase tracking-widest bg-teal-100 text-teal-800 font-bold px-3 py-1 rounded-full">TOPIK 30일 완성 · 부록</span>
+      <h2 class="text-xl font-medium text-slate-500 mt-2">부록 02 · 피동사 (Passive verbs)</h2>
+    </div>
+
+    <!-- Tab Navigation Bar -->
+    <div class="flex justify-center space-x-2 p-1 bg-[var(--pk2)] rounded-xl mb-6 max-w-3xl mx-auto">
+      <button onclick="t30.switchTab('check-tab')" id="btn-check-tab" class="w-full py-2.5 text-sm font-bold leading-5 rounded-xl transition-all duration-200 bg-[var(--pk4)] text-white shadow-[0_4px_14px_rgba(212,112,154,0.28)]">
+        Bảng Kiểm Tra
+      </button>
+      <button onclick="t30.switchTab('detail-tab')" id="btn-detail-tab" class="w-full py-2.5 text-sm font-medium leading-5 rounded-xl transition-all duration-200 text-[#8a7a84] hover:text-[var(--pk4)] hover:bg-[var(--pk2)]">
+        Học Chi Tiết
+      </button>
+      <button onclick="t30.switchTab('confuse-tab')" id="btn-confuse-tab" class="w-full py-2.5 text-sm font-medium leading-5 rounded-xl transition-all duration-200 text-[#8a7a84] hover:text-[var(--pk4)] hover:bg-[var(--pk2)]">
+        Mở Rộng
+      </button>
+      <button onclick="t30.switchTab('review-tab')" id="btn-review-tab" class="w-full py-2.5 text-sm font-medium leading-5 rounded-xl transition-all duration-200 text-[#8a7a84] hover:text-[var(--pk4)] hover:bg-[var(--pk2)]">
+        Ôn Tập
+      </button>
+    </div>
+
+    <!-- Translation Language Toggle -->
+    <div class="flex justify-center mb-6">
+      <button type="button" onclick="t30.toggleTranslationLanguage()" class="inline-flex items-center gap-2 px-4 py-2 bg-white border border-teal-200 text-teal-700 hover:bg-teal-50 rounded-full text-sm font-bold shadow-sm transition-all">
+        <span>🌐</span>
+        <span id="translation-language-label">Bản dịch: English</span>
+      </button>
+    </div>
+
+    <div class="max-w-5xl mx-auto">
+      <!-- ================= TAB 1: CHECK LIST ================= -->
+      <div id="check-tab" class="tab-content">
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8">
+          <div class="flex justify-between items-center border-b border-slate-100 pb-4 mb-6">
+            <h1 class="text-3xl font-bold tracking-tight text-teal-700">DAY 02 - 부록 · 피동사 (Passive verbs)</h1>
+            <button type="button" onclick="t30.toggleVietnameseInTab('check-tab')" class="px-3 py-1.5 bg-teal-600 hover:bg-teal-700 text-white rounded-full text-xs font-semibold transition-all shadow-xs whitespace-nowrap">Ẩn/Hiện bản dịch</button>
+          </div>
+
+          <div class="bg-teal-50/50 border border-teal-100 rounded-xl p-6 mb-8">
+            <h2 class="text-xl font-bold text-teal-800 mb-2 flex items-center gap-2">
+              <span class="inline-block w-2 h-6 bg-teal-500 rounded-full"></span>
+              확인해 보세요 (Hãy kiểm tra thử)
+            </h2>
+            <p class="text-gray-600 text-sm leading-relaxed mb-2">
+              단어의 뜻을 가리고 뜻을 알면, <span class="border border-gray-400 px-1 py-0.5 rounded text-xs">✔</span> 에 <span class="font-bold text-teal-700">✔</span> 해 보세요.
+            </p>
+            <p class="text-gray-500 text-xs italic">
+              (Mẹo: bấm “Ẩn/Hiện bản dịch” ở từng tab, hoặc click trực tiếp vào nghĩa/bản dịch để ẩn/hiện riêng từng dòng.)
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="checklist-container"></div>
+        </div>
+      </div>
+
+      <!-- ================= TAB 2: DETAILED STUDY ================= -->
+      <div id="detail-tab" class="tab-content hidden">
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8 space-y-6">
+          <div class="flex justify-between items-center border-b border-slate-100 pb-4 mb-6">
+            <h1 class="text-3xl font-bold tracking-tight text-teal-700">DAY 02 - 부록 · 피동사 (Passive verbs) - Học chi tiết</h1>
+            <button type="button" onclick="t30.toggleVietnameseInTab('detail-tab')" class="px-3 py-1.5 bg-teal-600 hover:bg-teal-700 text-white rounded-full text-xs font-semibold transition-all shadow-xs whitespace-nowrap">Ẩn/Hiện bản dịch</button>
+          </div>
+          <div class="grid grid-cols-1 gap-6" id="detail-list-container"></div>
+        </div>
+      </div>
+
+      <!-- ================= TAB 3: MỞ RỘNG (không áp dụng cho phần phụ lục này) ================= -->
+      <div id="confuse-tab" class="tab-content hidden">
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-8 text-center text-slate-400 text-sm">
+          Phần "Mở Rộng" không áp dụng cho mục phụ lục này.
+        </div>
+      </div>
+
+      <!-- ================= TAB 4: ÔN TẬP (chưa có bài ôn tập riêng cho phần phụ lục này) ================= -->
+      <div id="review-tab" class="tab-content hidden">
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-8 text-center text-slate-400 text-sm">
+          Phần "Ôn Tập" cho mục phụ lục này sẽ được bổ sung sau.
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,621 @@
+{
+  "day": "appendix03",
+  "vocabData": [
+    {
+      "id": "A3-01",
+      "word": "가는 날이 장날",
+      "meaning": "As luck would have it",
+      "meaning_vi": "Không may lại đúng lúc",
+      "type": "속담·관용구 proverb / idiom",
+      "example_ko": "가는 날이 장날",
+      "example_vi": "This expression is used when you end up with something unexpected while you were doing something.",
+      "example_vi_vn": "Thành ngữ này dùng khi bạn gặp phải điều bất ngờ ngoài ý muốn trong lúc đang làm việc gì đó.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "가는 날이 장날"
+      ]
+    },
+    {
+      "id": "A3-02",
+      "word": "그림의 떡",
+      "meaning": "Pie in the sky",
+      "meaning_vi": "Bánh trong tranh (thứ không thể có được)",
+      "type": "속담·관용구 proverb / idiom",
+      "example_ko": "그림의 떡",
+      "example_vi": "It describes an object that one will never get and almost impossible to reach.",
+      "example_vi_vn": "Dùng để chỉ thứ mà người ta không bao giờ có được, gần như không thể đạt tới.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "그림의 떡"
+      ]
+    },
+    {
+      "id": "A3-03",
+      "word": "가는 말이 고와야 오는 말이 곱다",
+      "meaning": "What goes around comes around",
+      "meaning_vi": "Lời đi đẹp thì lời lại mới đẹp",
+      "type": "속담·관용구 proverb / idiom",
+      "example_ko": "가는 말이 고와야 오는 말이 곱다",
+      "example_vi": "It means that in order to hear good things from the counterpart, you should tell him good things first.",
+      "example_vi_vn": "Có nghĩa là muốn nghe lời hay từ người khác thì trước tiên bản thân phải nói lời hay với họ.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "가는 말이 고와야 오는 말이 곱다"
+      ]
+    },
+    {
+      "id": "A3-04",
+      "word": "긁어 부스럼 만들기",
+      "meaning": "Let sleeping dogs lie",
+      "meaning_vi": "Gãi ra mụn nhọt",
+      "type": "속담·관용구 proverb / idiom",
+      "example_ko": "긁어 부스럼 만들기",
+      "example_vi": "This expression is used when someone is unnecessarily involved with the work and even makes it worse than before.",
+      "example_vi_vn": "Dùng khi ai đó can thiệp không cần thiết vào việc gì và khiến nó tệ hơn trước.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "긁어 부스럼 만들기"
+      ]
+    },
+    {
+      "id": "A3-05",
+      "word": "갈수록 태산이다",
+      "meaning": "Out of the frying pan into the fire",
+      "meaning_vi": "Càng đi càng thấy núi Thái Sơn",
+      "type": "속담·관용구 proverb / idiom",
+      "example_ko": "갈수록 태산이다",
+      "example_vi": "You use this expression when you face work that becomes harder and harder as it proceeds.",
+      "example_vi_vn": "Dùng khi công việc bạn gặp phải ngày càng trở nên khó khăn hơn.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "갈수록 태산이다"
+      ]
+    },
+    {
+      "id": "A3-06",
+      "word": "꿩 대신 닭",
+      "meaning": "Something is better than nothing",
+      "meaning_vi": "Không có chim trĩ thì dùng gà thay",
+      "type": "속담·관용구 proverb / idiom",
+      "example_ko": "꿩 대신 닭",
+      "example_vi": "This is used when something is needed but you don't have it, so you use a different but similar thing instead, one that is usually not as good as the original.",
+      "example_vi_vn": "Dùng khi cần thứ gì đó nhưng không có, nên dùng thứ khác tương tự để thay thế, dù nó thường không tốt bằng thứ ban đầu.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "꿩 대신 닭"
+      ]
+    },
+    {
+      "id": "A3-07",
+      "word": "겉 다르고 속 다르다",
+      "meaning": "Appearances are deceptive",
+      "meaning_vi": "Bề ngoài khác, bên trong khác",
+      "type": "속담·관용구 proverb / idiom",
+      "example_ko": "겉 다르고 속 다르다",
+      "example_vi": "It means that the expression that is revealed outside is totally different from what is in one's mind.",
+      "example_vi_vn": "Có nghĩa là những gì thể hiện ra bên ngoài hoàn toàn khác với những gì thực sự trong lòng người đó.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "겉 다르고 속 다르다"
+      ]
+    },
+    {
+      "id": "A3-08",
+      "word": "남의 떡이 더 커 보인다",
+      "meaning": "The grass is greener on the other side of the fence",
+      "meaning_vi": "Bánh của người khác trông to hơn",
+      "type": "속담·관용구 proverb / idiom",
+      "example_ko": "남의 떡이 더 커 보인다",
+      "example_vi": "You use this expression when the thing that other people have looks better than yours.",
+      "example_vi_vn": "Dùng khi thấy thứ người khác có trông có vẻ tốt hơn thứ của mình.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "남의 떡이 더 커 보인다"
+      ]
+    },
+    {
+      "id": "A3-09",
+      "word": "계란으로 바위 치기",
+      "meaning": "Beat one's head against the wall",
+      "meaning_vi": "Lấy trứng chọi đá",
+      "type": "속담·관용구 proverb / idiom",
+      "example_ko": "계란으로 바위 치기",
+      "example_vi": "This expression is used when you are too weak so that you will never win no matter how hard you try.",
+      "example_vi_vn": "Dùng khi bạn quá yếu nên dù cố gắng thế nào cũng không thể thắng được.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "계란으로 바위 치기"
+      ]
+    },
+    {
+      "id": "A3-10",
+      "word": "도토리 키 재기",
+      "meaning": "A miss is as good as a mile",
+      "meaning_vi": "So chiều cao hạt dẻ",
+      "type": "속담·관용구 proverb / idiom",
+      "example_ko": "도토리 키 재기",
+      "example_vi": "This expression is used when two people argue that he is better than the other, but actually there is no big difference between them.",
+      "example_vi_vn": "Dùng khi hai người tranh cãi ai hơn ai nhưng thực ra cả hai chẳng khác biệt là bao.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "도토리 키 재기"
+      ]
+    },
+    {
+      "id": "A3-11",
+      "word": "공든 탑이 무너지랴",
+      "meaning": "A man's labors will be crowned with success",
+      "meaning_vi": "Tháp xây bằng công sức khó mà sụp đổ",
+      "type": "속담·관용구 proverb / idiom",
+      "example_ko": "공든 탑이 무너지랴",
+      "example_vi": "It means that the work done with painstaking care will always create positive results.",
+      "example_vi_vn": "Có nghĩa là công việc được làm cẩn thận, tỉ mỉ luôn sẽ mang lại kết quả tốt.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "공든 탑이 무너지랴"
+      ]
+    },
+    {
+      "id": "A3-12",
+      "word": "돌다리도 두들겨 보고 건너라",
+      "meaning": "Look before you leap",
+      "meaning_vi": "Cầu đá cũng phải gõ thử rồi mới qua",
+      "type": "속담·관용구 proverb / idiom",
+      "example_ko": "돌다리도 두들겨 보고 건너라",
+      "example_vi": "It means that you should be careful doing whatever you do.",
+      "example_vi_vn": "Có nghĩa là bạn nên cẩn thận trong bất cứ việc gì mình làm.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "돌다리도 두들겨 보고 건너라"
+      ]
+    },
+    {
+      "id": "A3-13",
+      "word": "등잔 밑이 어둡다",
+      "meaning": "A beacon does not shine on its own base",
+      "meaning_vi": "Dưới chân đèn thì tối",
+      "type": "속담·관용구 proverb / idiom",
+      "example_ko": "등잔 밑이 어둡다",
+      "example_vi": "It means that it is rather hard for you to know what happens close to you than what happens far from you.",
+      "example_vi_vn": "Có nghĩa là điều xảy ra gần mình lại khó nhận ra hơn điều xảy ra ở xa.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "등잔 밑이 어둡다"
+      ]
+    },
+    {
+      "id": "A3-14",
+      "word": "밑 빠진 독에 물 붓기",
+      "meaning": "All that is put in a riven dish is lost",
+      "meaning_vi": "Đổ nước vào chum thủng đáy",
+      "type": "속담·관용구 proverb / idiom",
+      "example_ko": "밑 빠진 독에 물 붓기",
+      "example_vi": "This expression is used when there is no positive outcome of what you are doing, or you cannot do anything about it.",
+      "example_vi_vn": "Dùng khi việc bạn làm không mang lại kết quả gì hoặc bạn không thể làm gì được nữa.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "밑 빠진 독에 물 붓기"
+      ]
+    },
+    {
+      "id": "A3-15",
+      "word": "땅 짚고 헤엄치기",
+      "meaning": "It's a piece of cake",
+      "meaning_vi": "Bơi mà chân vẫn chạm đất (dễ như trở bàn tay)",
+      "type": "속담·관용구 proverb / idiom",
+      "example_ko": "땅 짚고 헤엄치기",
+      "example_vi": "It means that the thing that you are trying to do is easy.",
+      "example_vi_vn": "Có nghĩa là việc bạn đang làm rất dễ dàng.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "땅 짚고 헤엄치기"
+      ]
+    },
+    {
+      "id": "A3-16",
+      "word": "배보다 배꼽이 크다",
+      "meaning": "It is the tail wagging the dog",
+      "meaning_vi": "Rốn to hơn bụng",
+      "type": "속담·관용구 proverb / idiom",
+      "example_ko": "배보다 배꼽이 크다",
+      "example_vi": "This is used when the basic thing needs more attention or cost than the main task itself.",
+      "example_vi_vn": "Dùng khi phần phụ lại tốn nhiều công sức, chi phí hơn cả phần việc chính.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "배보다 배꼽이 크다"
+      ]
+    },
+    {
+      "id": "A3-17",
+      "word": "말 속에 뼈가 있다",
+      "meaning": "Many a true word is spoken in jest",
+      "meaning_vi": "Trong lời nói có xương",
+      "type": "속담·관용구 proverb / idiom",
+      "example_ko": "말 속에 뼈가 있다",
+      "example_vi": "You use this expression when you hear a normal expression but it has sarcasm behind the apparent meaning.",
+      "example_vi_vn": "Dùng khi nghe một câu nói bình thường nhưng ẩn chứa ý mỉa mai đằng sau.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "말 속에 뼈가 있다"
+      ]
+    },
+    {
+      "id": "A3-18",
+      "word": "보기 좋은 떡이 먹기에도 좋다",
+      "meaning": "Names and natures do often agree",
+      "meaning_vi": "Bánh đẹp thì ăn cũng ngon",
+      "type": "속담·관용구 proverb / idiom",
+      "example_ko": "보기 좋은 떡이 먹기에도 좋다",
+      "example_vi": "It means that there is a moment when a good appearance is also important.",
+      "example_vi_vn": "Có nghĩa là có những lúc vẻ ngoài đẹp cũng quan trọng không kém.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "보기 좋은 떡이 먹기에도 좋다"
+      ]
+    },
+    {
+      "id": "A3-19",
+      "word": "모르는 게 약",
+      "meaning": "Ignorance is bliss",
+      "meaning_vi": "Không biết là thuốc (không biết thì hơn)",
+      "type": "속담·관용구 proverb / idiom",
+      "example_ko": "모르는 게 약",
+      "example_vi": "It means that it may be better for you not to know about it, since knowing will only make you feel worse.",
+      "example_vi_vn": "Có nghĩa là đôi khi không biết lại tốt hơn, vì biết chỉ khiến bạn thêm đau lòng.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "모르는 게 약"
+      ]
+    },
+    {
+      "id": "A3-20",
+      "word": "산 넘어 산",
+      "meaning": "Out of the frying pan into the fire",
+      "meaning_vi": "Qua núi lại gặp núi",
+      "type": "속담·관용구 proverb / idiom",
+      "example_ko": "산 넘어 산",
+      "example_vi": "It is an expression used when, after getting out of a bad situation, you end up in an even worse one.",
+      "example_vi_vn": "Dùng khi vừa thoát khỏi tình huống xấu lại rơi vào tình huống còn tệ hơn.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "산 넘어 산"
+      ]
+    },
+    {
+      "id": "A3-21",
+      "word": "믿는 도끼에 발등 찍힌다",
+      "meaning": "Stabbed in the back",
+      "meaning_vi": "Bị chính cái rìu mình tin cậy chém vào chân",
+      "type": "속담·관용구 proverb / idiom",
+      "example_ko": "믿는 도끼에 발등 찍힌다",
+      "example_vi": "You use this expression when the work you believed would turn out fine does not, or you were betrayed by the person you believed in.",
+      "example_vi_vn": "Dùng khi việc bạn tin sẽ suôn sẻ lại không thành, hoặc bị chính người bạn tin tưởng phản bội.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "믿는 도끼에 발등 찍힌다"
+      ]
+    },
+    {
+      "id": "A3-22",
+      "word": "쇠귀에 경 읽기",
+      "meaning": "Talking to the wall",
+      "meaning_vi": "Đọc kinh vào tai trâu",
+      "type": "속담·관용구 proverb / idiom",
+      "example_ko": "쇠귀에 경 읽기",
+      "example_vi": "This expression is used when the person you are teaching does not understand what you are saying no matter how many times you repeat it.",
+      "example_vi_vn": "Dùng khi người bạn dạy không hiểu dù đã nhắc lại bao nhiêu lần.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "쇠귀에 경 읽기"
+      ]
+    },
+    {
+      "id": "A3-23",
+      "word": "수박 겉 핥기",
+      "meaning": "Scratching the surface",
+      "meaning_vi": "Liếm vỏ dưa hấu",
+      "type": "속담·관용구 proverb / idiom",
+      "example_ko": "수박 겉 핥기",
+      "example_vi": "This expression is used when someone does a lazy job and does not do the important part that he should do.",
+      "example_vi_vn": "Dùng khi ai đó làm việc qua loa, không đi vào phần quan trọng cần làm.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "수박 겉 핥기"
+      ]
+    },
+    {
+      "id": "A3-24",
+      "word": "아는 길도 물어서 가라",
+      "meaning": "Look before you leap",
+      "meaning_vi": "Đường đã biết cũng nên hỏi lại rồi hãy đi",
+      "type": "속담·관용구 proverb / idiom",
+      "example_ko": "아는 길도 물어서 가라",
+      "example_vi": "It means that you should be cautious even while doing something that you are familiar with.",
+      "example_vi_vn": "Có nghĩa là bạn nên thận trọng ngay cả khi làm việc mình đã quen thuộc.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "아는 길도 물어서 가라"
+      ]
+    },
+    {
+      "id": "A3-25",
+      "word": "시간은 금",
+      "meaning": "Time is gold",
+      "meaning_vi": "Thời gian là vàng",
+      "type": "속담·관용구 proverb / idiom",
+      "example_ko": "시간은 금",
+      "example_vi": "It means that time is as invaluable as gold.",
+      "example_vi_vn": "Có nghĩa là thời gian quý giá như vàng vậy.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "시간은 금"
+      ]
+    },
+    {
+      "id": "A3-26",
+      "word": "아니 땐 굴뚝에 연기 날까",
+      "meaning": "Where there's smoke, there's fire",
+      "meaning_vi": "Không đốt lửa thì khói đâu ra từ ống khói",
+      "type": "속담·관용구 proverb / idiom",
+      "example_ko": "아니 땐 굴뚝에 연기 날까",
+      "example_vi": "It means that when there is a result, there must be a cause that made that result.",
+      "example_vi_vn": "Có nghĩa là khi có kết quả thì chắc chắn phải có nguyên nhân gây ra nó.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "아니 땐 굴뚝에 연기 날까"
+      ]
+    },
+    {
+      "id": "A3-27",
+      "word": "시간이 약",
+      "meaning": "Time heals all wounds",
+      "meaning_vi": "Thời gian là thuốc",
+      "type": "속담·관용구 proverb / idiom",
+      "example_ko": "시간이 약",
+      "example_vi": "It means that even though you have gone through a devastating or heartbreaking thing, time will always heal the pain.",
+      "example_vi_vn": "Có nghĩa là dù trải qua chuyện đau buồn đến đâu, thời gian rồi cũng sẽ chữa lành nỗi đau.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "시간이 약"
+      ]
+    },
+    {
+      "id": "A3-28",
+      "word": "앓던 이가 빠진 것 같다",
+      "meaning": "Feel sudden relief",
+      "meaning_vi": "Như thể chiếc răng đau đã rụng",
+      "type": "속담·관용구 proverb / idiom",
+      "example_ko": "앓던 이가 빠진 것 같다",
+      "example_vi": "This expression is used when someone finally solves a big problem that had been bothering him greatly.",
+      "example_vi_vn": "Dùng khi ai đó cuối cùng cũng giải quyết được vấn đề lớn từng làm phiền họ.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "앓던 이가 빠진 것 같다"
+      ]
+    },
+    {
+      "id": "A3-29",
+      "word": "식은 죽 먹기",
+      "meaning": "It's a piece of cake",
+      "meaning_vi": "Ăn cháo nguội (dễ như ăn cháo)",
+      "type": "속담·관용구 proverb / idiom",
+      "example_ko": "식은 죽 먹기",
+      "example_vi": "It means that the thing that you are trying to do is easy.",
+      "example_vi_vn": "Có nghĩa là việc bạn đang làm rất dễ dàng.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "식은 죽 먹기"
+      ]
+    },
+    {
+      "id": "A3-30",
+      "word": "어깨가 무겁다",
+      "meaning": "Feeling a big burden on my shoulders",
+      "meaning_vi": "Vai nặng trĩu",
+      "type": "속담·관용구 proverb / idiom",
+      "example_ko": "어깨가 무겁다",
+      "example_vi": "This is an expression that describes the state of being highly stressed with heavy responsibility.",
+      "example_vi_vn": "Diễn tả trạng thái đang chịu áp lực lớn vì trách nhiệm nặng nề.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "어깨가 무겁다"
+      ]
+    },
+    {
+      "id": "A3-31",
+      "word": "실패는 성공의 어머니",
+      "meaning": "Failure is but a stepping stone to success",
+      "meaning_vi": "Thất bại là mẹ thành công",
+      "type": "속담·관용구 proverb / idiom",
+      "example_ko": "실패는 성공의 어머니",
+      "example_vi": "This means that in order to succeed in the long run, it is necessary for you to fail first, and you should not be afraid of failing.",
+      "example_vi_vn": "Có nghĩa là để thành công lâu dài, bạn cần trải qua thất bại trước, và không nên sợ thất bại.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "실패는 성공의 어머니"
+      ]
+    },
+    {
+      "id": "A3-32",
+      "word": "열번 찍어 안 넘어가는 나무 없다",
+      "meaning": "Little strokes fell great oaks",
+      "meaning_vi": "Chặt mười nhát không cây nào không đổ",
+      "type": "속담·관용구 proverb / idiom",
+      "example_ko": "열번 찍어 안 넘어가는 나무 없다",
+      "example_vi": "This means that even the hardest work can be done when you constantly try to do it.",
+      "example_vi_vn": "Có nghĩa là dù việc khó đến đâu cũng có thể hoàn thành nếu kiên trì làm mãi.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "열번 찍어 안 넘어가는 나무 없다"
+      ]
+    },
+    {
+      "id": "A3-33",
+      "word": "싼 게 비지떡",
+      "meaning": "You get what you pay for",
+      "meaning_vi": "Rẻ là bánh bã đậu",
+      "type": "속담·관용구 proverb / idiom",
+      "example_ko": "싼 게 비지떡",
+      "example_vi": "It means that the cheap product is bad.",
+      "example_vi_vn": "Có nghĩa là sản phẩm rẻ tiền thường không tốt.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "싼 게 비지떡"
+      ]
+    },
+    {
+      "id": "A3-34",
+      "word": "오르지 못할 나무는 쳐다 보지 마라",
+      "meaning": "Don't bite off more than you can chew",
+      "meaning_vi": "Cây không trèo được thì đừng ngước nhìn",
+      "type": "속담·관용구 proverb / idiom",
+      "example_ko": "오르지 못할 나무는 쳐다 보지 마라",
+      "example_vi": "It means that you should never try to do a thing that is too hard for you given your ability.",
+      "example_vi_vn": "Có nghĩa là bạn không nên cố làm việc vượt quá khả năng của mình.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "오르지 못할 나무는 쳐다 보지 마라"
+      ]
+    },
+    {
+      "id": "A3-35",
+      "word": "윗물이 맑아야 아랫물이 맑다",
+      "meaning": "The fish always stinks from the head downwards",
+      "meaning_vi": "Nước trên có trong thì nước dưới mới trong",
+      "type": "속담·관용구 proverb / idiom",
+      "example_ko": "윗물이 맑아야 아랫물이 맑다",
+      "example_vi": "This means that the elders should act well, so that the young can learn from that and do well in the future.",
+      "example_vi_vn": "Có nghĩa là người lớn phải sống gương mẫu thì người nhỏ mới học theo và làm tốt trong tương lai.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "윗물이 맑아야 아랫물이 맑다"
+      ]
+    },
+    {
+      "id": "A3-36",
+      "word": "하늘의 별 따기",
+      "meaning": "Catching a star in the sky",
+      "meaning_vi": "Hái sao trên trời",
+      "type": "속담·관용구 proverb / idiom",
+      "example_ko": "하늘의 별 따기",
+      "example_vi": "It is an expression that shows that the goal you are trying to achieve is beyond your ability, so the possibility of success is low.",
+      "example_vi_vn": "Diễn tả mục tiêu mà bạn muốn đạt được vượt quá khả năng, nên khả năng thành công rất thấp.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "하늘의 별 따기"
+      ]
+    },
+    {
+      "id": "A3-37",
+      "word": "입에 쓴 약이 병에는 좋다",
+      "meaning": "A good medicine tastes bitter",
+      "meaning_vi": "Thuốc đắng dã tật",
+      "type": "속담·관용구 proverb / idiom",
+      "example_ko": "입에 쓴 약이 병에는 좋다",
+      "example_vi": "This means that even though the course of doing a certain work can be hard, the result will pay off after you endure the pain and accomplish it.",
+      "example_vi_vn": "Có nghĩa là dù quá trình làm việc có khó khăn, kết quả sẽ xứng đáng sau khi bạn chịu đựng và hoàn thành.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "입에 쓴 약이 병에는 좋다"
+      ]
+    },
+    {
+      "id": "A3-38",
+      "word": "원숭이도 나무에서 떨어진다",
+      "meaning": "Even Homer sometimes nods",
+      "meaning_vi": "Khỉ cũng có lúc rơi khỏi cây",
+      "type": "속담·관용구 proverb / idiom",
+      "example_ko": "원숭이도 나무에서 떨어진다",
+      "example_vi": "It means that even an expert can sometimes make a mistake in the field where he specializes.",
+      "example_vi_vn": "Có nghĩa là ngay cả chuyên gia đôi khi cũng mắc sai lầm trong lĩnh vực của mình.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "원숭이도 나무에서 떨어진다"
+      ]
+    },
+    {
+      "id": "A3-39",
+      "word": "자식 이기는 부모 없다",
+      "meaning": "No parent wins over their children",
+      "meaning_vi": "Không cha mẹ nào thắng được con cái",
+      "type": "속담·관용구 proverb / idiom",
+      "example_ko": "자식 이기는 부모 없다",
+      "example_vi": "This means that when a child seriously decides to do a certain thing, no parent can prevent them from doing that.",
+      "example_vi_vn": "Có nghĩa là khi con cái đã quyết tâm làm điều gì đó, cha mẹ không thể ngăn cản được.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "자식 이기는 부모 없다"
+      ]
+    },
+    {
+      "id": "A3-40",
+      "word": "천 리 길도 한 걸음부터",
+      "meaning": "Step by step one goes a long way",
+      "meaning_vi": "Đường ngàn dặm cũng bắt đầu từ một bước chân",
+      "type": "속담·관용구 proverb / idiom",
+      "example_ko": "천 리 길도 한 걸음부터",
+      "example_vi": "This means that no matter how fast you want to finish a certain job, you should never be hasty but be patient, doing the proper things step by step from the beginning.",
+      "example_vi_vn": "Có nghĩa là dù muốn hoàn thành việc gì nhanh đến đâu, bạn cũng không nên vội vàng mà phải kiên nhẫn làm từng bước một từ đầu.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "천 리 길도 한 걸음부터"
+      ]
+    },
+    {
+      "id": "A3-41",
+      "word": "티끌 모아 태산",
+      "meaning": "Many a little makes a mickle",
+      "meaning_vi": "Gom bụi thành núi Thái Sơn",
+      "type": "속담·관용구 proverb / idiom",
+      "example_ko": "티끌 모아 태산",
+      "example_vi": "This means that you can get a big thing in the long run after gathering the smallest things.",
+      "example_vi_vn": "Có nghĩa là bạn có thể có được điều lớn lao về lâu dài nếu tích góp từ những điều nhỏ nhặt.",
+      "extra": "",
+      "detailBlocks": [],
+      "highlight_terms": [
+        "티끌 모아 태산"
+      ]
+    }
+  ],
+  "dict": {}
+}
