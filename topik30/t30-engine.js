@@ -23,17 +23,71 @@
     container: null
   };
 
-function speakText(text) {
-      if ('speechSynthesis' in window) {
-        window.speechSynthesis.cancel();
-        const utterance = new SpeechSynthesisUtterance(text);
-        utterance.lang = 'ko-KR';
-        utterance.rate = 0.85;
-        window.speechSynthesis.speak(utterance);
-      } else {
-        alert("Thiết bị không hỗ trợ phát âm trực tiếp.");
+// Bucket Supabase Storage chứa audio pre-generate bằng Supertonic cho
+// phần TOPIK 30 ngày (tạo bởi script generate_topik30_audio.py).
+const TOPIK30_AUDIO_BUCKET = 'topik30-audio';
+const TOPIK30_HASH_LENGTH = 20;
+
+// Băm nội dung y hệt generate_topik30_audio.py (SHA-256, lấy N ký tự đầu)
+// để suy ra đúng tên file mp3 tương ứng đã được tạo sẵn trên Supabase.
+async function t30TextHash(text) {
+  const bytes = new TextEncoder().encode(text);
+  const digest = await crypto.subtle.digest('SHA-256', bytes);
+  return Array.from(new Uint8Array(digest))
+    .map(b => b.toString(16).padStart(2, '0'))
+    .join('')
+    .slice(0, TOPIK30_HASH_LENGTH);
+}
+
+function t30PlayAudioUrl(url) {
+  return new Promise((resolve, reject) => {
+    const audio = new Audio(url);
+    const timeout = setTimeout(() => reject(new Error('timeout')), 3000);
+    audio.oncanplaythrough = () => {
+      clearTimeout(timeout);
+      audio.play().catch(reject);
+    };
+    audio.onended = resolve;
+    audio.onerror = () => { clearTimeout(timeout); reject(new Error('audio error')); };
+    audio.load();
+  });
+}
+
+function speakWithBrowserTTS(text) {
+  if ('speechSynthesis' in window) {
+    window.speechSynthesis.cancel();
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'ko-KR';
+    utterance.rate = 0.85;
+    window.speechSynthesis.speak(utterance);
+  } else {
+    alert("Thiết bị không hỗ trợ phát âm trực tiếp.");
+  }
+}
+
+async function speakText(text) {
+  if (!text) return;
+  // escapeJsText() (dùng khi gắn onclick) thay '\n' bằng khoảng trắng
+  // trước khi text này thực sự tới tay speakText -> chuẩn hoá lại y hệt
+  // để hash khớp với file đã tạo sẵn.
+  const normalized = String(text).replace(/\n/g, ' ');
+
+  try {
+    if (typeof db !== 'undefined' && db && db.storage && window.crypto && window.crypto.subtle) {
+      const hash = await t30TextHash(normalized);
+      const fileName = `t30_${hash}.mp3`;
+      const { data } = db.storage.from(TOPIK30_AUDIO_BUCKET).getPublicUrl(fileName);
+      if (data && data.publicUrl) {
+        await t30PlayAudioUrl(data.publicUrl);
+        return;
       }
     }
+  } catch (e) {
+    // File chưa được tạo sẵn hoặc lỗi mạng -> rơi xuống đọc bằng trình duyệt
+  }
+
+  speakWithBrowserTTS(normalized);
+}
 
     function switchTab(tabId) {
       document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
