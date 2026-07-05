@@ -7,10 +7,12 @@
 <title>Hy Station 🌸 Korean Study Space</title>
 <link rel="apple-touch-icon" sizes="180x180" href="https://pnqxiyhtpkwkqhrofiwl.supabase.co/storage/v1/object/public/app-icon/Icon.jpg?v=6">
 <link rel="icon" type="image/png" href="https://pnqxiyhtpkwkqhrofiwl.supabase.co/storage/v1/object/public/app-icon/Icon.jpg?v=6">
+
 <meta name="apple-mobile-web-app-title" content="🌸 Hy Station">
 <meta name="application-name" content="🌸 Hy Station">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <style>
@@ -5631,7 +5633,7 @@ async function loadTopikExamModule() {
       <div class="topik-exam-card-header">
         <div class="topik-exam-badge ${badgeCls}">${skLabel}</div>
         <div class="topik-exam-card-title">${exam.title}</div>
-        <div class="topik-exam-subtitle">${exam.level || 'TOPIK II'}${exam.session ? ' · 제'+exam.session+'회' : ''}</div>
+        <div class="topik-exam-subtitle">TOPIK ${exam.level || 'II'}${exam.session ? ' · 제'+exam.session+'회' : ''}</div>
       </div>
       <div class="topik-exam-card-footer">
         <div class="topik-exam-meta-row">
@@ -6129,7 +6131,7 @@ async function teOpenIntro(examId) {
   document.getElementById('te-intro-no').textContent = exam.session ? '제'+exam.session+'회' : 'TOPIK';
   document.getElementById('te-intro-en').textContent = exam.title;
   document.getElementById('te-intro-info-row').innerHTML = `
-    <div class="te-modal-info-item"><div class="te-modal-info-label">Bài thi</div><div class="te-modal-info-val">${exam.level||'TOPIK II'}</div></div>
+    <div class="te-modal-info-item"><div class="te-modal-info-label">Bài thi</div><div class="te-modal-info-val">TOPIK ${exam.level||'II'}</div></div>
     <div class="te-modal-info-item"><div class="te-modal-info-label">Phần</div><div class="te-modal-info-val">${skillLabel(sk)}</div></div>
     <div class="te-modal-info-item"><div class="te-modal-info-label">Thời gian</div><div class="te-modal-info-val">${exam.duration||60} phút</div></div>
     <div class="te-modal-info-item"><div class="te-modal-info-label">Số câu</div><div class="te-modal-info-val">${exam.total_questions||(exam.questions||[]).length} câu</div></div>`;
@@ -6309,7 +6311,7 @@ async function importTopikJson() {
         const examPayload = {
           owner_id: currentUser.id,
           title,
-          level: exam.level || 'TOPIK II',
+          level: String(exam.level || 'II').replace(/^TOPIK\s*/i, '').trim() || 'II',
           skill,
           session: exam.session ? String(exam.session) : null,
           duration: exam.duration || 60,
