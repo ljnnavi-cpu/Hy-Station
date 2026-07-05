@@ -98,7 +98,7 @@ async function speakText(text) {
         if (t === tabId) {
           btn.className = "w-full py-2.5 text-sm font-bold leading-5 rounded-xl transition-all duration-200 bg-[var(--pk4)] text-white shadow-[0_4px_14px_rgba(212,112,154,0.28)]";
         } else {
-          btn.className = "w-full py-2.5 text-sm font-medium leading-5 rounded-xl transition-all duration-200 text-[#8a7a84] hover:text-[var(--pk4)] hover:bg-[var(--pk2)]";
+          btn.className = "w-full py-2.5 text-sm font-bold leading-5 rounded-xl transition-all duration-200 bg-white text-[var(--pk4)] hover:bg-[var(--pk2)]";
         }
       });
       scheduleMindmapRedraw(180);
