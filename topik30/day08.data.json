@@ -35,6 +35,9 @@
             }
           ]
         }
+      ],
+      "highlight_terms": [
+        "봉사하려고"
       ]
     },
     {
@@ -80,7 +83,10 @@
       "type": "동 verb",
       "example_ko": "다리를 다쳐서 움직이는 것이 힘들어요.",
       "example_vi": "It is hard for me to move since I have hurt my leg.",
-      "extra": "<div><span class='font-semibold text-gray-700'>움직임</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>movement</span></div>"
+      "extra": "<div><span class='font-semibold text-gray-700'>움직임</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>movement</span></div>",
+      "highlight_terms": [
+        "움직이는"
+      ]
     },
     {
       "id": "07",
@@ -213,7 +219,10 @@
       "type": "형 adjective",
       "example_ko": "나이보다 정말 젊어 보이시네요.",
       "example_vi": "You look younger than you really are.",
-      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>젊음</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>youth</span></div><div><span class='font-semibold text-gray-700'>젊은이</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>young person</span></div><div><span class='font-semibold text-gray-700'>젊은 사람</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>young people</span></div><div><span class='font-semibold text-gray-700'>젊은 시절</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>in one’s youth</span></div></div>"
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>젊음</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>youth</span></div><div><span class='font-semibold text-gray-700'>젊은이</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>young person</span></div><div><span class='font-semibold text-gray-700'>젊은 사람</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>young people</span></div><div><span class='font-semibold text-gray-700'>젊은 시절</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>in one’s youth</span></div></div>",
+      "highlight_terms": [
+        "젊어"
+      ]
     },
     {
       "id": "10",
@@ -231,7 +240,10 @@
       "type": "형 adjective",
       "example_ko": "정확하고 자세한 설명 부탁드립니다.",
       "example_vi": "Please give a precise and specific explanation.",
-      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>정확</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>precision</span></div><div><span class='font-semibold text-gray-700'>정확히</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>precisely</span></div></div>"
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>정확</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>precision</span></div><div><span class='font-semibold text-gray-700'>정확히</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>precisely</span></div></div>",
+      "highlight_terms": [
+        "정확하고"
+      ]
     },
     {
       "id": "12",
@@ -240,7 +252,10 @@
       "type": "동 verb",
       "example_ko": "손님, 주문하신 음료 나왔습니다.",
       "example_vi": "Sir, here is your drink that you ordered.",
-      "extra": "<div><span class='font-semibold text-gray-700'>주문</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>order</span></div>"
+      "extra": "<div><span class='font-semibold text-gray-700'>주문</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>order</span></div>",
+      "highlight_terms": [
+        "주문하신"
+      ]
     },
     {
       "id": "13",
@@ -249,7 +264,10 @@
       "type": "동 verb",
       "example_ko": "이 물건이 좋기는 하지만 지나치게 비싸지 않아요?",
       "example_vi": "This is really good, but isn’t it excessively expensive?",
-      "extra": ""
+      "extra": "",
+      "highlight_terms": [
+        "지나치게"
+      ]
     },
     {
       "id": "14",
@@ -258,7 +276,10 @@
       "type": "동 verb",
       "example_ko": "그 대학교에 지원하려면 뭐가 필요합니까?",
       "example_vi": "What do I need to apply for that university?",
-      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>지원</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>apply</span></div><div><span class='font-semibold text-gray-700'>지원서</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>application</span></div><div><span class='font-semibold text-gray-700'>지원자</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>applicant</span></div></div>"
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>지원</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>apply</span></div><div><span class='font-semibold text-gray-700'>지원서</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>application</span></div><div><span class='font-semibold text-gray-700'>지원자</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>applicant</span></div></div>",
+      "highlight_terms": [
+        "지원하려면"
+      ]
     },
     {
       "id": "15",
@@ -323,7 +344,10 @@
       "type": "동 verb",
       "example_ko": "고양이는 주로 밤에 활동하는 동물입니다.",
       "example_vi": "The cat is an animal that is mostly active at night.",
-      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>활동</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>act</span></div><div><span class='font-semibold text-gray-700'>활동량</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>active mass</span></div><div><span class='font-semibold text-gray-700'>활동내용</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>contents of activities</span></div></div>"
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>활동</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>act</span></div><div><span class='font-semibold text-gray-700'>활동량</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>active mass</span></div><div><span class='font-semibold text-gray-700'>활동내용</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>contents of activities</span></div></div>",
+      "highlight_terms": [
+        "활동하는"
+      ]
     },
     {
       "id": "19",
@@ -332,7 +356,10 @@
       "type": "동 verb",
       "example_ko": "이 회사에 입사하기를 희망하고 있습니다.",
       "example_vi": "I am looking forward to getting a job in your company.",
-      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>희망</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>hope</span></div><div><span class='font-semibold text-gray-700'>희망자</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>person who has a hope</span></div></div>"
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>희망</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>hope</span></div><div><span class='font-semibold text-gray-700'>희망자</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>person who has a hope</span></div></div>",
+      "highlight_terms": [
+        "희망하고"
+      ]
     },
     {
       "id": "20",
@@ -341,7 +368,10 @@
       "type": "동 verb",
       "example_ko": "공연을 관람하려는 사람들이 길게 늘어서 있다.",
       "example_vi": "The audiences are standing in line to watch the show.",
-      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>관람객</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>audience</span></div><div><span class='font-semibold text-gray-700'>관람권</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>an admission ticket</span></div></div>"
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>관람객</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>audience</span></div><div><span class='font-semibold text-gray-700'>관람권</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>an admission ticket</span></div></div>",
+      "highlight_terms": [
+        "관람하려는"
+      ]
     },
     {
       "id": "21",
@@ -359,7 +389,10 @@
       "type": "동 verb",
       "example_ko": "이 수업은 한국의 현대시를 이해하고 감상하는 수업입니다.",
       "example_vi": "This class is to understand and appreciate the Korean modern poetry.",
-      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>감상</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>appreciate</span></div><div><span class='font-semibold text-gray-700'>감상문</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>report</span></div><div><span class='font-semibold text-gray-700'>감상평</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>review</span></div></div>"
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>감상</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>appreciate</span></div><div><span class='font-semibold text-gray-700'>감상문</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>report</span></div><div><span class='font-semibold text-gray-700'>감상평</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>review</span></div></div>",
+      "highlight_terms": [
+        "감상하는"
+      ]
     },
     {
       "id": "23",
@@ -386,7 +419,10 @@
       "type": "동 verb",
       "example_ko": "이 소설은 젊은 세대의 여러 가지 고민을 담고 있습니다.",
       "example_vi": "This novel contains many concerns of the young generation.",
-      "extra": ""
+      "extra": "",
+      "highlight_terms": [
+        "담고"
+      ]
     },
     {
       "id": "26",
@@ -404,7 +440,10 @@
       "type": "동 verb",
       "example_ko": "학교에 늦을 것 같은데 우리 뛸까?",
       "example_vi": "I think we will be late for school, want to run?",
-      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>뛰어가다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>run to</span></div><div><span class='font-semibold text-gray-700'>뛰어오다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>run back</span></div><div><span class='font-semibold text-gray-700'>뛰어내리다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>run off</span></div><div><span class='font-semibold text-gray-700'>뛰어다니다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>run around</span></div><div><span class='font-semibold text-gray-700'>뛰어나가다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>run out</span></div></div>"
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>뛰어가다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>run to</span></div><div><span class='font-semibold text-gray-700'>뛰어오다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>run back</span></div><div><span class='font-semibold text-gray-700'>뛰어내리다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>run off</span></div><div><span class='font-semibold text-gray-700'>뛰어다니다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>run around</span></div><div><span class='font-semibold text-gray-700'>뛰어나가다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>run out</span></div></div>",
+      "highlight_terms": [
+        "뛸까"
+      ]
     },
     {
       "id": "28",
@@ -467,6 +506,9 @@
             }
           ]
         }
+      ],
+      "highlight_terms": [
+        "세탁하면"
       ]
     },
     {
@@ -485,7 +527,10 @@
       "type": "동 verb",
       "example_ko": "이 옷은 이 신발과 전혀 어울리지 않아요.",
       "example_vi": "The clothes do not even slightly match with the shoes.",
-      "extra": ""
+      "extra": "",
+      "highlight_terms": [
+        "어울리지"
+      ]
     }
   ],
   "dict": {

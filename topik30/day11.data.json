@@ -10,7 +10,6 @@
       "example_vi": "Drowsy driving was a major cause of that car accident.",
       "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>운전석</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>driver’s seat</span></div><div><span class='font-semibold text-gray-700'>운전 면허</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>driver’s license</span></div><div><span class='font-semibold text-gray-700'>운전자</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>driver</span></div><div><span class='font-semibold text-gray-700'>음주 운전</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>drunk driving</span></div></div>",
       "highlight_terms": [
-        "운전자",
         "운전"
       ]
     },

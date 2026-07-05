@@ -35,7 +35,10 @@
       "example_vi": "It is hard to understand this question, so can you explain it once more time?",
       "example_vi_vn": "Câu hỏi này khó hiểu, bạn có thể giải thích lại một lần nữa được không?",
       "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>설명</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>explanation</span></div><div><span class='font-semibold text-gray-700'>설명서</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>manual</span></div><div><span class='font-semibold text-gray-700'>설명회</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>presentations</span></div></div>",
-      "detailBlocks": []
+      "detailBlocks": [],
+      "highlight_terms": [
+        "설명해"
+      ]
     },
     {
       "id": "04",
@@ -127,6 +130,9 @@
             }
           ]
         }
+      ],
+      "highlight_terms": [
+        "안내할"
       ]
     },
     {
@@ -151,7 +157,10 @@
       "example_vi": "You need to participate more actively in every work you do.",
       "example_vi_vn": "Bạn cần có thái độ tham gia tích cực hơn trong mọi việc mình làm.",
       "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>참여</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>participation</span></div></div>",
-      "detailBlocks": []
+      "detailBlocks": [],
+      "highlight_terms": [
+        "참여하는"
+      ]
     },
     {
       "id": "11",
@@ -163,7 +172,10 @@
       "example_vi": "I will call role before I start the class.",
       "example_vi_vn": "Tôi sẽ điểm danh trước khi bắt đầu giờ học.",
       "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>시작</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>start</span></div><div><span class='font-semibold text-gray-700'>시작되다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>being started</span></div></div>",
-      "detailBlocks": []
+      "detailBlocks": [],
+      "highlight_terms": [
+        "시작하기"
+      ]
     },
     {
       "id": "12",
@@ -207,6 +219,9 @@
             }
           ]
         }
+      ],
+      "highlight_terms": [
+        "편하네요"
       ]
     },
     {
@@ -219,7 +234,10 @@
       "example_vi": "After failing many times, the experiment finally succeeded.",
       "example_vi_vn": "Sau nhiều lần thất bại, cuối cùng thí nghiệm đó đã thành công.",
       "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>성공</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>success</span></div><div><span class='font-semibold text-gray-700'>성공적</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>successful</span></div></div>",
-      "detailBlocks": []
+      "detailBlocks": [],
+      "highlight_terms": [
+        "성공했다"
+      ]
     },
     {
       "id": "15",
@@ -243,7 +261,10 @@
       "example_vi": "The problem will turn out fine, so do not worry about it.",
       "example_vi_vn": "Vấn đề đó sẽ được giải quyết tốt nên đừng lo lắng quá.",
       "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>걱정</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>worry</span></div><div><span class='font-semibold text-gray-700'>걱정거리</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>anxiety</span></div><div><span class='font-semibold text-gray-700'>걱정스럽다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>be anxious about</span></div></div>",
-      "detailBlocks": []
+      "detailBlocks": [],
+      "highlight_terms": [
+        "걱정하지"
+      ]
     },
     {
       "id": "17",
@@ -267,7 +288,10 @@
       "example_vi": "I am saving money to travel around the world.",
       "example_vi_vn": "Tôi đang tiết kiệm tiền để đi du lịch vòng quanh thế giới.",
       "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>모임</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>gathering</span></div><div><span class='font-semibold text-gray-700'>모이다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>gather</span></div></div>",
-      "detailBlocks": []
+      "detailBlocks": [],
+      "highlight_terms": [
+        "모으고"
+      ]
     },
     {
       "id": "19",
@@ -327,7 +351,10 @@
       "example_vi": "It has been said that the drugs that are now sold in the pharmacy will be sold in the convenience store.",
       "example_vi_vn": "Nghe nói các loại thuốc hiện đang bán ở hiệu thuốc sẽ được bán ở cửa hàng tiện lợi.",
       "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>판매</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>sell</span></div><div><span class='font-semibold text-gray-700'>판매원</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>salesperson</span></div><div><span class='font-semibold text-gray-700'>판매량</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>sales volume</span></div></div>",
-      "detailBlocks": []
+      "detailBlocks": [],
+      "highlight_terms": [
+        "판매하는"
+      ]
     },
     {
       "id": "24",
@@ -351,7 +378,10 @@
       "example_vi": "This bag is still usable so do not throw it away.",
       "example_vi_vn": "Cái túi này vẫn còn dùng được nên đừng vứt đi.",
       "extra": "",
-      "detailBlocks": []
+      "detailBlocks": [],
+      "highlight_terms": [
+        "버리지"
+      ]
     },
     {
       "id": "26",
@@ -387,7 +417,10 @@
       "example_vi": "The repair is done so you should come and pick it up.",
       "example_vi_vn": "Việc sửa chữa đã xong nên bạn hãy đến lấy.",
       "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>끝</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>end</span></div><div><span class='font-semibold text-gray-700'>끝나다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>finish</span></div><div><span class='font-semibold text-gray-700'>끝없이</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>endlessly</span></div><div><span class='font-semibold text-gray-700'>끝내다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>finish</span></div><div><span class='font-semibold text-gray-700'>끝맺다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>end</span></div><div><span class='font-semibold text-gray-700'>끝으로</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>at last</span></div></div>",
-      "detailBlocks": []
+      "detailBlocks": [],
+      "highlight_terms": [
+        "끝났으니까"
+      ]
     },
     {
       "id": "29",
@@ -399,7 +432,10 @@
       "example_vi": "He became successful in this area at a young age.",
       "example_vi_vn": "Người đó đã thành công trong lĩnh vực này khi còn trẻ.",
       "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>어린이</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>children</span></div><div><span class='font-semibold text-gray-700'>어린이날</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>Children’s Day</span></div><div><span class='font-semibold text-gray-700'>어린시절</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>youth</span></div></div>",
-      "detailBlocks": []
+      "detailBlocks": [],
+      "highlight_terms": [
+        "어린"
+      ]
     },
     {
       "id": "30",
@@ -473,7 +509,10 @@
       "example_vi": "The elevator was out of order and it was inconvenient.",
       "example_vi_vn": "Thang máy bị hỏng nên rất bất tiện.",
       "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>불편</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>inconvenience</span></div><div><span class='font-semibold text-gray-700'>불편을 겪다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>go through inconvenience</span></div><div><span class='font-semibold text-gray-700'>불편을 느끼다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>feel inconvenient</span></div></div>",
-      "detailBlocks": []
+      "detailBlocks": [],
+      "highlight_terms": [
+        "불편했다"
+      ]
     }
   ],
   "dict": {

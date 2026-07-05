@@ -8,7 +8,10 @@
       "type": "동 verb",
       "example_ko": "비자를 연장하기 위해서는 어떤 서류가 필요합니까?",
       "example_vi": "What kind of documents do I need to extend my visa?",
-      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>연장</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>extension</span></div><div><span class='font-semibold text-gray-700'>연장 신청</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>apply for extension</span></div><div><span class='font-semibold text-gray-700'>연장되다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>be extended</span></div></div>"
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>연장</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>extension</span></div><div><span class='font-semibold text-gray-700'>연장 신청</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>apply for extension</span></div><div><span class='font-semibold text-gray-700'>연장되다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>be extended</span></div></div>",
+      "highlight_terms": [
+        "연장하기"
+      ]
     },
     {
       "id": "02",
@@ -17,7 +20,10 @@
       "type": "동 verb",
       "example_ko": "한국에서 직장을 자주 옮기는 것은 사회성에 문제가 있어 보일 수 있다.",
       "example_vi": "Changing jobs frequently in Korea may be considered as a problem in sociability.",
-      "extra": ""
+      "extra": "",
+      "highlight_terms": [
+        "옮기는"
+      ]
     },
     {
       "id": "03",
@@ -26,7 +32,10 @@
       "type": "동 verb",
       "example_ko": "요즘은 짧은 머리에 짧은 치마가 유행한다고 해요.",
       "example_vi": "They say wearing short skirts with short hair is in fashion these days.",
-      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>유행</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>fashion</span></div><div><span class='font-semibold text-gray-700'>유행을 따르다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>follow the fashion</span></div></div>"
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>유행</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>fashion</span></div><div><span class='font-semibold text-gray-700'>유행을 따르다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>follow the fashion</span></div></div>",
+      "highlight_terms": [
+        "유행한다고"
+      ]
     },
     {
       "id": "04",
@@ -53,7 +62,10 @@
       "type": "동 verb",
       "example_ko": "밀린 일을 다 처리하느라고 퇴근이 늦었어요.",
       "example_vi": "I left the office late after handling all the delayed work.",
-      "extra": "<div><span class='font-semibold text-gray-700'>처리</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>handle</span></div>"
+      "extra": "<div><span class='font-semibold text-gray-700'>처리</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>handle</span></div>",
+      "highlight_terms": [
+        "처리하느라고"
+      ]
     },
     {
       "id": "07",
@@ -89,7 +101,10 @@
       "type": "동 verb",
       "example_ko": "사치품을 구매하려는 사람들이 점점 늘어나고 있다.",
       "example_vi": "People who are trying to buy luxurious goods are increasing.",
-      "extra": "<div><span class='font-semibold text-gray-700'>구매</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>purchase</span></div>"
+      "extra": "<div><span class='font-semibold text-gray-700'>구매</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>purchase</span></div>",
+      "highlight_terms": [
+        "구매하려는"
+      ]
     },
     {
       "id": "11",
@@ -116,7 +131,10 @@
       "type": "형 adjective",
       "example_ko": "다리를 다쳐서 걸을 수가 없어요.",
       "example_vi": "I injured my leg and cannot walk.",
-      "extra": ""
+      "extra": "",
+      "highlight_terms": [
+        "다쳐서"
+      ]
     },
     {
       "id": "14",
@@ -193,7 +211,10 @@
       "type": "동 verb",
       "example_ko": "그 연구원은 설문 조사를 분석해서 그 결과를 발표했다.",
       "example_vi": "The researcher analyzed the result of the survey and announced it.",
-      "extra": "<div><span class='font-semibold text-gray-700'>분석되다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>be analyzed</span></div>"
+      "extra": "<div><span class='font-semibold text-gray-700'>분석되다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>be analyzed</span></div>",
+      "highlight_terms": [
+        "분석해서"
+      ]
     },
     {
       "id": "20",
@@ -202,7 +223,10 @@
       "type": "동 verb",
       "example_ko": "좋은 물건을 사려면 여러 물건을 비교한 후에 사야 한다.",
       "example_vi": "You should compare many products before you purchase in order to get a good one.",
-      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>비교</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>comparison</span></div><div><span class='font-semibold text-gray-700'>비교적</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>comparatively</span></div></div>"
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>비교</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>comparison</span></div><div><span class='font-semibold text-gray-700'>비교적</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>comparatively</span></div></div>",
+      "highlight_terms": [
+        "비교한"
+      ]
     },
     {
       "id": "21",
@@ -220,7 +244,10 @@
       "type": "동 verb",
       "example_ko": "중고 물건을 살 때는 문제가 없는지 잘 살펴보고 사야 한다.",
       "example_vi": "When you are buying the used product, you should look carefully whether the product has any problems.",
-      "extra": ""
+      "extra": "",
+      "highlight_terms": [
+        "살펴보고"
+      ]
     },
     {
       "id": "23",
@@ -238,7 +265,10 @@
       "type": "동 verb",
       "example_ko": "손을 자주 씻는 것만으로도 많은 질병을 예방할 수 있다.",
       "example_vi": "You can prevent yourself from getting a disease only by washing your hands often.",
-      "extra": "<div><span class='font-semibold text-gray-700'>예방</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>prevention</span></div>"
+      "extra": "<div><span class='font-semibold text-gray-700'>예방</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>prevention</span></div>",
+      "highlight_terms": [
+        "예방할"
+      ]
     },
     {
       "id": "25",
@@ -274,7 +304,10 @@
       "type": "동 verb",
       "example_ko": "그 사람의 무례한 말이 싸움을 일으켰다.",
       "example_vi": "His insulting words raised an argument.",
-      "extra": ""
+      "extra": "",
+      "highlight_terms": [
+        "일으켰다"
+      ]
     },
     {
       "id": "29",
@@ -342,6 +375,9 @@
             }
           ]
         }
+      ],
+      "highlight_terms": [
+        "얻을"
       ]
     },
     {

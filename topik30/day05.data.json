@@ -23,7 +23,10 @@
       "example_vi": "Do you have a card that can get us a discount in this restaurant?",
       "example_vi_vn": "Bạn có thẻ được giảm giá ở nhà hàng này không?",
       "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>할인</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>discount</span></div><div><span class='font-semibold text-gray-700'>할인율</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>discount rate</span></div><div><span class='font-semibold text-gray-700'>할인받다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>get a discount</span></div><div><span class='font-semibold text-gray-700'>할인제도</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>discount policy</span></div><div><span class='font-semibold text-gray-700'>할인하다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>discount</span></div></div>",
-      "detailBlocks": []
+      "detailBlocks": [],
+      "highlight_terms": [
+        "할인되는"
+      ]
     },
     {
       "id": "03",
@@ -35,7 +38,10 @@
       "example_vi": "We are taking a class using the internet.",
       "example_vi_vn": "Chúng tôi đang tiến hành lớp học sử dụng internet.",
       "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>활용도</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>applying degree</span></div></div>",
-      "detailBlocks": []
+      "detailBlocks": [],
+      "highlight_terms": [
+        "활용한"
+      ]
     },
     {
       "id": "04",
@@ -95,7 +101,10 @@
       "example_vi": "The sound of the radio is too small. Can you please raise the volume?",
       "example_vi_vn": "Âm thanh radio quá nhỏ. Bạn có thể tăng âm lượng lên một chút không?",
       "extra": "",
-      "detailBlocks": []
+      "detailBlocks": [],
+      "highlight_terms": [
+        "키워"
+      ]
     },
     {
       "id": "09",
@@ -185,7 +194,10 @@
       "example_vi": "There is no one who can beat my brother in swimming.",
       "example_vi_vn": "Về khả năng bơi lội thì ở trường tôi không ai theo kịp em trai tôi.",
       "extra": "",
-      "detailBlocks": []
+      "detailBlocks": [],
+      "highlight_terms": [
+        "따를"
+      ]
     },
     {
       "id": "14",
@@ -209,7 +221,10 @@
       "example_vi": "He is a trustworthy friend.",
       "example_vi_vn": "Người bạn đó là người rất đáng tin cậy.",
       "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>믿음</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>trust</span></div></div>",
-      "detailBlocks": []
+      "detailBlocks": [],
+      "highlight_terms": [
+        "믿을"
+      ]
     },
     {
       "id": "16",
@@ -221,7 +236,10 @@
       "example_vi": "I was short of time while I was taking the test.",
       "example_vi_vn": "Khi làm bài thi, tôi đã không đủ thời gian.",
       "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>부족</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>shortage</span></div></div>",
-      "detailBlocks": []
+      "detailBlocks": [],
+      "highlight_terms": [
+        "부족했어요"
+      ]
     },
     {
       "id": "17",
@@ -363,7 +381,10 @@
       "example_vi": "It is happy just to be able to do what I desire.",
       "example_vi_vn": "Chỉ cần được làm điều mình muốn cũng là hạnh phúc.",
       "extra": "",
-      "detailBlocks": []
+      "detailBlocks": [],
+      "highlight_terms": [
+        "원하는"
+      ]
     },
     {
       "id": "24",
@@ -375,7 +396,10 @@
       "example_vi": "I am keeping the same hours of work out in order to not regain the weight.",
       "example_vi_vn": "Tôi đang duy trì lượng vận động để tránh hiệu ứng yo-yo sau khi ăn kiêng.",
       "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>유지</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>maintain</span></div><div><span class='font-semibold text-gray-700'>유지되다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>be maintained</span></div><div><span class='font-semibold text-gray-700'>유지시키다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>have something maintained</span></div></div>",
-      "detailBlocks": []
+      "detailBlocks": [],
+      "highlight_terms": [
+        "유지하고"
+      ]
     },
     {
       "id": "25",
@@ -387,7 +411,10 @@
       "example_vi": "You will understand better if you consider from the other's point of view.",
       "example_vi_vn": "Nếu thử đổi vị trí để suy nghĩ, bạn sẽ hiểu đối phương hơn.",
       "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>이해</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>understanding</span></div><div><span class='font-semibold text-gray-700'>이해력</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>understanding ability</span></div><div><span class='font-semibold text-gray-700'>이해심</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>understanding</span></div><div><span class='font-semibold text-gray-700'>이해되다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>be understood</span></div><div><span class='font-semibold text-gray-700'>이해시키다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>make one understand</span></div></div>",
-      "detailBlocks": []
+      "detailBlocks": [],
+      "highlight_terms": [
+        "이해할"
+      ]
     },
     {
       "id": "26",
@@ -399,7 +426,10 @@
       "example_vi": "I am packing to visit my hometown.",
       "example_vi_vn": "Tôi đang sắp xếp hành lý để về quê.",
       "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>정리</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>organize</span></div><div><span class='font-semibold text-gray-700'>정리되다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>be organized</span></div></div>",
-      "detailBlocks": []
+      "detailBlocks": [],
+      "highlight_terms": [
+        "정리하고"
+      ]
     },
     {
       "id": "27",
@@ -447,7 +477,10 @@
       "example_vi": "It is said that the boars recently appeared in the roads near the mountain.",
       "example_vi_vn": "Nghe nói gần đây lợn rừng đã xuất hiện trên đường gần núi ở Seoul.",
       "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>나타나다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>appear</span></div></div>",
-      "detailBlocks": []
+      "detailBlocks": [],
+      "highlight_terms": [
+        "나타났다고"
+      ]
     },
     {
       "id": "31",
@@ -471,7 +504,10 @@
       "example_vi": "The reason that polluted the river was disclosed.",
       "example_vi_vn": "Nguyên nhân khiến con sông bị ô nhiễm đã được làm sáng tỏ.",
       "extra": "",
-      "detailBlocks": []
+      "detailBlocks": [],
+      "highlight_terms": [
+        "밝혀졌다고"
+      ]
     },
     {
       "id": "33",

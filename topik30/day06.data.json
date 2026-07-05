@@ -59,7 +59,10 @@
       "example_vi": "It is dangerous for children to swim in this area since it is too deep.",
       "example_vi_vn": "Chỗ này sâu nên trẻ em bơi ở đây rất nguy hiểm.",
       "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>위험</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>danger</span></div><div><span class='font-semibold text-gray-700'>위험성</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>dangerousness</span></div></div>",
-      "detailBlocks": []
+      "detailBlocks": [],
+      "highlight_terms": [
+        "위험합니다"
+      ]
     },
     {
       "id": "06",
@@ -107,7 +110,10 @@
       "example_vi": "Practicing to speak naturally is essential when you learn a foreign language.",
       "example_vi_vn": "Khi học ngoại ngữ, việc luyện nói sao cho tự nhiên là cần thiết.",
       "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>자연적</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>natural</span></div><div><span class='font-semibold text-gray-700'>자연현상</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>natural phenomenon</span></div></div>",
-      "detailBlocks": []
+      "detailBlocks": [],
+      "highlight_terms": [
+        "자연스럽게"
+      ]
     },
     {
       "id": "08",
@@ -119,7 +125,10 @@
       "example_vi": "You should go for treatment when your teeth are a little bit rotten.",
       "example_vi_vn": "Khi răng mới hơi bị sâu thì phải nhanh chóng điều trị.",
       "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>치료</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>treatment</span></div></div>",
-      "detailBlocks": []
+      "detailBlocks": [],
+      "highlight_terms": [
+        "치료해야"
+      ]
     },
     {
       "id": "09",
@@ -254,7 +263,10 @@
       "example_vi": "The environmental pollution is becoming more serious than before.",
       "example_vi_vn": "Ô nhiễm môi trường đang ngày càng trở nên nghiêm trọng.",
       "extra": "",
-      "detailBlocks": []
+      "detailBlocks": [],
+      "highlight_terms": [
+        "심각해지고"
+      ]
     },
     {
       "id": "18",
@@ -266,7 +278,10 @@
       "example_vi": "If you see his painting in person, you have no choice but to appreciate his ability.",
       "example_vi_vn": "Nếu trực tiếp xem tranh của người đó, bạn sẽ không thể không công nhận thực lực của anh ấy.",
       "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>인정받다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>be recognized</span></div></div>",
-      "detailBlocks": []
+      "detailBlocks": [],
+      "highlight_terms": [
+        "인정할"
+      ]
     },
     {
       "id": "19",
@@ -278,7 +293,10 @@
       "example_vi": "Many people joined the event that was in progress from 9am to 6pm.",
       "example_vi_vn": "Nhiều người đã tham gia sự kiện diễn ra từ 9 giờ sáng đến 6 giờ chiều.",
       "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>진행</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>progress</span></div><div><span class='font-semibold text-gray-700'>진행자</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>presenter</span></div><div><span class='font-semibold text-gray-700'>진행하다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>present</span></div></div>",
-      "detailBlocks": []
+      "detailBlocks": [],
+      "highlight_terms": [
+        "진행된"
+      ]
     },
     {
       "id": "20",
@@ -302,7 +320,10 @@
       "example_vi": "Everyone wants to live happy.",
       "example_vi_vn": "Mọi người đều muốn sống hạnh phúc.",
       "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>행복</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>happiness</span></div><div><span class='font-semibold text-gray-700'>불행</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>unhappiness</span></div><div><span class='font-semibold text-gray-700'>행복감</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>euphoria</span></div><div><span class='font-semibold text-gray-700'>불행하다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>unhappy</span></div></div>",
-      "detailBlocks": []
+      "detailBlocks": [],
+      "highlight_terms": [
+        "행복한"
+      ]
     },
     {
       "id": "22",
@@ -314,7 +335,10 @@
       "example_vi": "The proper temperature indoors is 20 degree Celsius.",
       "example_vi_vn": "Nhiệt độ thích hợp trong phòng là 20 độ C.",
       "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>적당히</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>properly</span></div></div>",
-      "detailBlocks": []
+      "detailBlocks": [],
+      "highlight_terms": [
+        "적당한"
+      ]
     },
     {
       "id": "23",
@@ -338,7 +362,10 @@
       "example_vi": "After getting a shot, the temperature decreased.",
       "example_vi_vn": "Sau khi tiêm, cơn sốt đã hạ.",
       "extra": "",
-      "detailBlocks": []
+      "detailBlocks": [],
+      "highlight_terms": [
+        "내렸어요"
+      ]
     },
     {
       "id": "25",
@@ -362,7 +389,10 @@
       "example_vi": "There are many people leaving their hometowns.",
       "example_vi_vn": "Gần đây có nhiều người rời quê hương.",
       "extra": "",
-      "detailBlocks": []
+      "detailBlocks": [],
+      "highlight_terms": [
+        "떠나는"
+      ]
     },
     {
       "id": "27",
@@ -397,6 +427,9 @@
             }
           ]
         }
+      ],
+      "highlight_terms": [
+        "그만두려고요"
       ]
     },
     {
@@ -433,7 +466,10 @@
       "example_vi": "I wish you live happy and healthily.",
       "example_vi_vn": "Tôi mong bạn sống khỏe mạnh và hạnh phúc.",
       "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>바람</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>wish</span></div></div>",
-      "detailBlocks": []
+      "detailBlocks": [],
+      "highlight_terms": [
+        "바랍니다"
+      ]
     },
     {
       "id": "31",
@@ -445,7 +481,10 @@
       "example_vi": "Recently, the automobile that operates by electricity was invented.",
       "example_vi_vn": "Gần đây ô tô chạy bằng điện đã được phát minh.",
       "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>발명</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>invention</span></div><div><span class='font-semibold text-gray-700'>발명품</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>invention</span></div><div><span class='font-semibold text-gray-700'>발명가</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>inventor</span></div></div>",
-      "detailBlocks": []
+      "detailBlocks": [],
+      "highlight_terms": [
+        "발명되었다"
+      ]
     },
     {
       "id": "32",

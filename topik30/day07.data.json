@@ -8,7 +8,10 @@
       "type": "동 verb",
       "example_ko": "옷에 껌이 붙었는데 어떻게 해야 할지 모르겠다.",
       "example_vi": "I have gum stuck on my clothes, and I don’t know what to do.",
-      "extra": ""
+      "extra": "",
+      "highlight_terms": [
+        "붙었는데"
+      ]
     },
     {
       "id": "02",
@@ -17,7 +20,10 @@
       "type": "형 adjective",
       "example_ko": "나와 우리 언니는 성격이 비슷하다.",
       "example_vi": "My sister and I have very similar personalities.",
-      "extra": ""
+      "extra": "",
+      "highlight_terms": [
+        "비슷하다"
+      ]
     },
     {
       "id": "03",
@@ -26,7 +32,10 @@
       "type": "동 verb",
       "example_ko": "공부 방법에 대해서 선생님께 상담하러 갈 것이다.",
       "example_vi": "I am planning to consult with my teacher about my studying habits.",
-      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>상담</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>consultation</span></div><div><span class='font-semibold text-gray-700'>상담 창구</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>consulting window</span></div><div><span class='font-semibold text-gray-700'>상담원</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>consultant</span></div><div><span class='font-semibold text-gray-700'>상담 전문가</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>consulting expert</span></div><div><span class='font-semibold text-gray-700'>상담소</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>counseling center</span></div></div>"
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>상담</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>consultation</span></div><div><span class='font-semibold text-gray-700'>상담 창구</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>consulting window</span></div><div><span class='font-semibold text-gray-700'>상담원</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>consultant</span></div><div><span class='font-semibold text-gray-700'>상담 전문가</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>consulting expert</span></div><div><span class='font-semibold text-gray-700'>상담소</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>counseling center</span></div></div>",
+      "highlight_terms": [
+        "상담하러"
+      ]
     },
     {
       "id": "04",
@@ -84,6 +93,9 @@
             }
           ]
         }
+      ],
+      "highlight_terms": [
+        "안전하다"
       ]
     },
     {
@@ -93,7 +105,10 @@
       "type": "동 verb",
       "example_ko": "남녀 차별을 없애기 위해 많은 사람들이 노력해야 한다.",
       "example_vi": "Many people should try their best effort to get rid of the discrimination between men and women.",
-      "extra": ""
+      "extra": "",
+      "highlight_terms": [
+        "없애기"
+      ]
     },
     {
       "id": "08",
@@ -149,7 +164,10 @@
       "type": "동 verb",
       "example_ko": "지현 씨에게 안부 좀 전해 주세요.",
       "example_vi": "Please send regards to Ji-hyun.",
-      "extra": ""
+      "extra": "",
+      "highlight_terms": [
+        "전해"
+      ]
     },
     {
       "id": "11",
@@ -158,7 +176,10 @@
       "type": "동 verb",
       "example_ko": "대회 참가자에게는 도시락과 물을 제공해 드립니다.",
       "example_vi": "A packed lunch and bottle of water will be given to every participant of this competition.",
-      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>제공</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>provide</span></div><div><span class='font-semibold text-gray-700'>제공되다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>be provided</span></div></div>"
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>제공</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>provide</span></div><div><span class='font-semibold text-gray-700'>제공되다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>be provided</span></div></div>",
+      "highlight_terms": [
+        "제공해"
+      ]
     },
     {
       "id": "12",
@@ -167,7 +188,10 @@
       "type": "동 verb",
       "example_ko": "이 문제는 해결책을 제시하기가 힘들다.",
       "example_vi": "It is hard to suggest a solution to this problem.",
-      "extra": "<div><span class='font-semibold text-gray-700'>제시되다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>be suggested</span></div>"
+      "extra": "<div><span class='font-semibold text-gray-700'>제시되다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>be suggested</span></div>",
+      "highlight_terms": [
+        "제시하기가"
+      ]
     },
     {
       "id": "13",
@@ -185,7 +209,10 @@
       "type": "동 verb",
       "example_ko": "길이 미끄러우니 조심해서 걸어야 합니다.",
       "example_vi": "You should be careful while you walk since the road is slippery.",
-      "extra": ""
+      "extra": "",
+      "highlight_terms": [
+        "조심해서"
+      ]
     },
     {
       "id": "15",
@@ -194,7 +221,10 @@
       "type": "동 verb",
       "example_ko": "이 운동은 남녀노소 누구나 즐길 수 있어요.",
       "example_vi": "This sport can be enjoyed by men and women of all ages.",
-      "extra": ""
+      "extra": "",
+      "highlight_terms": [
+        "즐길"
+      ]
     },
     {
       "id": "16",
@@ -244,6 +274,9 @@
             }
           ]
         }
+      ],
+      "highlight_terms": [
+        "증가하는"
       ]
     },
     {
@@ -292,6 +325,9 @@
             }
           ]
         }
+      ],
+      "highlight_terms": [
+        "취업하기가"
       ]
     },
     {
@@ -301,7 +337,10 @@
       "type": "동 verb",
       "example_ko": "컴퓨터 부품을 파는 데가 어디에 있어요?",
       "example_vi": "Where do they sell computer parts?",
-      "extra": ""
+      "extra": "",
+      "highlight_terms": [
+        "파는"
+      ]
     },
     {
       "id": "19",
@@ -319,7 +358,10 @@
       "type": "동 verb",
       "example_ko": "자전거를 피하려다가 넘어졌어요.",
       "example_vi": "I fell down trying to avoid the bicycle.",
-      "extra": ""
+      "extra": "",
+      "highlight_terms": [
+        "피하려다가"
+      ]
     },
     {
       "id": "21",
@@ -328,7 +370,10 @@
       "type": "동 verb",
       "example_ko": "6시가 넘으면 우체국은 문을 닫아요.",
       "example_vi": "The post office closes after six.",
-      "extra": ""
+      "extra": "",
+      "highlight_terms": [
+        "넘으면"
+      ]
     },
     {
       "id": "22",
@@ -346,7 +391,10 @@
       "type": "형 adjective",
       "example_ko": "웃음이 가득한 집에는 행복이 찾아온다.",
       "example_vi": "Happiness will visit the house filled with laughter.",
-      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>가득</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>full</span></div><div><span class='font-semibold text-gray-700'>가득히</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>full</span></div></div>"
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>가득</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>full</span></div><div><span class='font-semibold text-gray-700'>가득히</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>full</span></div></div>",
+      "highlight_terms": [
+        "가득한"
+      ]
     },
     {
       "id": "24",
@@ -383,6 +431,9 @@
             }
           ]
         }
+      ],
+      "highlight_terms": [
+        "가지고"
       ]
     },
     {
@@ -455,7 +506,10 @@
       "type": "동 verb",
       "example_ko": "이번 시험에 합격하기를 기대하겠습니다.",
       "example_vi": "I expect you to pass the test.",
-      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>기대</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>expectation</span></div><div><span class='font-semibold text-gray-700'>기대치</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>expected value</span></div></div>"
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>기대</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>expectation</span></div><div><span class='font-semibold text-gray-700'>기대치</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>expected value</span></div></div>",
+      "highlight_terms": [
+        "기대하겠습니다"
+      ]
     },
     {
       "id": "30",
@@ -464,7 +518,10 @@
       "type": "동 verb",
       "example_ko": "누구도 다른 사람의 인생을 대신해서 살아 줄 수는 없어요.",
       "example_vi": "No one can live other people’s life instead.",
-      "extra": "<div><span class='font-semibold text-gray-700'>대신</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>instead of</span></div>"
+      "extra": "<div><span class='font-semibold text-gray-700'>대신</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>instead of</span></div>",
+      "highlight_terms": [
+        "대신해서"
+      ]
     },
     {
       "id": "31",

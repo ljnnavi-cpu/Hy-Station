@@ -35,7 +35,10 @@
       "example_vi": "This will be enough food for 5 people to eat.",
       "example_vi_vn": "Mức này là đủ để 5 người ăn.",
       "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>충분히</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>sufficiently</span></div></div>",
-      "detailBlocks": []
+      "detailBlocks": [],
+      "highlight_terms": [
+        "충분합니다"
+      ]
     },
     {
       "id": "04",
@@ -47,7 +50,10 @@
       "example_vi": "That person is good at expressing his feelings.",
       "example_vi_vn": "Người đó khá giỏi bày tỏ cảm xúc của mình.",
       "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>표현</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>expression</span></div></div>",
-      "detailBlocks": []
+      "detailBlocks": [],
+      "highlight_terms": [
+        "표현하는"
+      ]
     },
     {
       "id": "05",
@@ -59,7 +65,10 @@
       "example_vi": "That is not a problem that I can solve.",
       "example_vi_vn": "Đó không phải là vấn đề mà tôi có thể giải quyết.",
       "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>해결</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>solve</span></div><div><span class='font-semibold text-gray-700'>해결되다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>be solved</span></div></div>",
-      "detailBlocks": []
+      "detailBlocks": [],
+      "highlight_terms": [
+        "해결할"
+      ]
     },
     {
       "id": "06",
@@ -95,7 +104,10 @@
       "example_vi": "I will send it no later than 12 o’clock.",
       "example_vi_vn": "Dù muộn thế nào, tôi cũng sẽ gửi trước 12 giờ.",
       "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>늦추다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>postpone</span></div><div><span class='font-semibold text-gray-700'>늦어지다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>be delayed</span></div></div>",
-      "detailBlocks": []
+      "detailBlocks": [],
+      "highlight_terms": [
+        "늦어도"
+      ]
     },
     {
       "id": "09",
@@ -107,7 +119,10 @@
       "example_vi": "That singer’s dance looks easy, but hard to follow.",
       "example_vi_vn": "Nhìn thì điệu nhảy của ca sĩ đó có vẻ dễ, nhưng làm theo thì khó.",
       "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>따라오다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>follow</span></div><div><span class='font-semibold text-gray-700'>따라가다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>follow</span></div></div>",
-      "detailBlocks": []
+      "detailBlocks": [],
+      "highlight_terms": [
+        "따라하면"
+      ]
     },
     {
       "id": "10",
@@ -143,7 +158,10 @@
       "example_vi": "When you are doing business, the most important thing for you is to always keep the promised time.",
       "example_vi_vn": "Khi làm kinh doanh, điều quan trọng nhất là luôn giữ lời hứa.",
       "extra": "",
-      "detailBlocks": []
+      "detailBlocks": [],
+      "highlight_terms": [
+        "지키는"
+      ]
     },
     {
       "id": "13",
@@ -155,7 +173,10 @@
       "example_vi": "I came to this school through the academy that helped me go abroad for study.",
       "example_vi_vn": "Tôi đã đến trường này thông qua trung tâm tư vấn du học.",
       "extra": "",
-      "detailBlocks": []
+      "detailBlocks": [],
+      "highlight_terms": [
+        "통해서"
+      ]
     },
     {
       "id": "14",
@@ -191,6 +212,9 @@
             }
           ]
         }
+      ],
+      "highlight_terms": [
+        "참가하는"
       ]
     },
     {
@@ -215,7 +239,10 @@
       "example_vi": "The war movie that was released recently is receiving great attention from many people.",
       "example_vi_vn": "Bộ phim chiến tranh mới công chiếu đang nhận được nhiều sự chú ý.",
       "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>받아들이다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>admit</span></div></div>",
-      "detailBlocks": []
+      "detailBlocks": [],
+      "highlight_terms": [
+        "받고"
+      ]
     },
     {
       "id": "17",
@@ -239,7 +266,10 @@
       "example_vi": "Because of my severe cold, I should stay home and rest.",
       "example_vi_vn": "Vì cảm lạnh nặng nên tôi phải nghỉ ở nhà.",
       "extra": "",
-      "detailBlocks": []
+      "detailBlocks": [],
+      "highlight_terms": [
+        "심해서"
+      ]
     },
     {
       "id": "19",
@@ -275,7 +305,10 @@
       "example_vi": "We are trying hard to develop a new technology.",
       "example_vi_vn": "Chúng tôi đang nỗ lực để phát triển công nghệ mới.",
       "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>개발</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>develop</span></div><div><span class='font-semibold text-gray-700'>개발자</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>developer</span></div><div><span class='font-semibold text-gray-700'>개발되다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>be developed</span></div></div>",
-      "detailBlocks": []
+      "detailBlocks": [],
+      "highlight_terms": [
+        "개발하기"
+      ]
     },
     {
       "id": "22",
@@ -287,7 +320,10 @@
       "example_vi": "I purchased a new smart phone.",
       "example_vi_vn": "Tôi đã mua một chiếc điện thoại thông minh mới vài ngày trước.",
       "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>구입</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>purchase</span></div></div>",
-      "detailBlocks": []
+      "detailBlocks": [],
+      "highlight_terms": [
+        "구입했습니다"
+      ]
     },
     {
       "id": "23",
@@ -371,7 +407,10 @@
       "example_vi": "If you set the time of appointment, please let me know.",
       "example_vi_vn": "Khi giờ hẹn được xác định, hãy cho tôi biết với.",
       "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>알림</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>notice</span></div><div><span class='font-semibold text-gray-700'>알리다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>inform</span></div><div><span class='font-semibold text-gray-700'>알려지다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>be well known</span></div><div><span class='font-semibold text-gray-700'>알게되다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>come to know</span></div></div>",
-      "detailBlocks": []
+      "detailBlocks": [],
+      "highlight_terms": [
+        "알려주세요"
+      ]
     },
     {
       "id": "30",
@@ -383,7 +422,10 @@
       "example_vi": "Is the electricity fee included in the whole dormitory fee?",
       "example_vi_vn": "Phí điện có được bao gồm trong phí ký túc xá không?",
       "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>포함</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>include</span></div><div><span class='font-semibold text-gray-700'>포함하다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>include</span></div></div>",
-      "detailBlocks": []
+      "detailBlocks": [],
+      "highlight_terms": [
+        "포함되나요"
+      ]
     },
     {
       "id": "31",
