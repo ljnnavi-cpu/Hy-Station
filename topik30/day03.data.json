@@ -370,11 +370,11 @@
         {
           "type": "test_note",
           "label_ko": "출제 경향",
-          "label_vi": "how this word appears in the test",
+          "label_vi": "Từ này thường xuất hiện trong đề thi như thế nào",
           "title_ko": "‘참가하다, 참여하다, 참석하다’는 시험에 자주 나오는 단어입니다.",
-          "title_vi": "The words ‘participate, take part in, attend’ often appear in TOPIK.",
+          "title_vi": "Các từ ‘참가하다, 참여하다, 참석하다’ (tham gia, dự) thường xuất hiện trong bài thi TOPIK.",
           "body_ko": "‘참가하다’, ‘참여하다’, ‘참석하다’는 TOPIK 시험에 자주 나오는 단어이므로 꼭 기억하세요.",
-          "body_vi": "These words frequently appear in the TOPIK test, so remember them together.",
+          "body_vi": "Các từ ‘참가하다’, ‘참여하다’, ‘참석하다’ thường xuất hiện trong bài thi TOPIK nên hãy nhớ kỹ.",
           "tags": [
             "참가하다 participate in",
             "참여하다 participate in",
@@ -994,6 +994,7 @@
     "prepare": "chuẩn bị",
     "We should quickly prepare our winter clothes before it gets colder.": "Chúng ta nên nhanh chóng chuẩn bị quần áo mùa đông trước khi trời lạnh hơn.",
     "Write Korean in English, and English in Korean.": "Hãy viết từ tiếng Hàn sang tiếng Việt, và từ tiếng Việt sang tiếng Hàn.",
-    "Choose the proper word that fits the sentence more naturally.": "Hãy chọn từ phù hợp trong hai từ để câu tự nhiên hơn."
+    "Choose the proper word that fits the sentence more naturally.": "Hãy chọn từ phù hợp trong hai từ để câu tự nhiên hơn.",
+    "When you are doing business, the most important thing for you is to keep the promised time.": "Khi làm việc kinh doanh, điều quan trọng nhất là phải giữ đúng thời gian đã hẹn."
   }
 }

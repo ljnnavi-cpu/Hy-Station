@@ -221,29 +221,29 @@
         {
           "type": "mindmap",
           "title_ko": "관련어",
-          "title_vi": "Words to memorize together",
+          "title_vi": "Những từ nên học cùng nhau",
           "center_ko": "해외",
-          "center_vi": "Abroad",
+          "center_vi": "Nước ngoài",
           "nodes": [
             {
               "ko": "해외 시장",
-              "vi": "overseas market"
+              "vi": "thị trường nước ngoài"
             },
             {
               "ko": "해외 여행",
-              "vi": "overseas trip"
+              "vi": "du lịch nước ngoài"
             },
             {
               "ko": "해외 출장",
-              "vi": "business trip in abroad"
+              "vi": "công tác nước ngoài"
             },
             {
               "ko": "해외 지사",
-              "vi": "overseas branch"
+              "vi": "chi nhánh nước ngoài"
             },
             {
               "ko": "해외 연수",
-              "vi": "studying abroad"
+              "vi": "du học/tu nghiệp nước ngoài"
             }
           ]
         }
@@ -452,11 +452,11 @@
         {
           "type": "test_note",
           "label_ko": "출제 경향",
-          "label_vi": "how this word appears in the test",
+          "label_vi": "Từ này thường xuất hiện trong đề thi như thế nào",
           "title_ko": "공연 포스터 문제에 자주 나오는 단어입니다.",
-          "title_vi": "This word often appears in poster questions.",
+          "title_vi": "Từ này thường xuất hiện trong các câu hỏi về áp phích biểu diễn.",
           "body_ko": "읽기 영역에서 뮤지컬, 콘서트, 연극, 오페라 등의 포스터를 자주 볼 수 있으며, 포스터에 있는 정보를 확인하는 문제가 자주 출제됩니다.",
-          "body_vi": "In the reading comprehension test, you can easily see many posters of musicals, concerts, plays, operas, etc. They ask the specific information that you can check based on the information written on the poster.",
+          "body_vi": "Trong phần đọc, bạn thường gặp áp phích của nhạc kịch, buổi hòa nhạc, kịch nói, opera... Đề thi thường hỏi về thông tin cụ thể có trên áp phích đó.",
           "tags": [
             "공연 종류",
             "날짜/시간",
@@ -529,29 +529,29 @@
         {
           "type": "mindmap",
           "title_ko": "관련어",
-          "title_vi": "Words to memorize together",
+          "title_vi": "Những từ nên học cùng nhau",
           "center_ko": "역사",
-          "center_vi": "History",
+          "center_vi": "Lịch sử",
           "nodes": [
             {
               "ko": "역사상",
-              "vi": "historically"
+              "vi": "trong lịch sử"
             },
             {
               "ko": "역사적",
-              "vi": "historical"
+              "vi": "mang tính lịch sử"
             },
             {
               "ko": "역사의식",
-              "vi": "historical view"
+              "vi": "ý thức lịch sử"
             },
             {
               "ko": "역사책",
-              "vi": "a history book"
+              "vi": "sách lịch sử"
             },
             {
               "ko": "역사학자",
-              "vi": "historian"
+              "vi": "nhà sử học"
             }
           ]
         }

@@ -220,11 +220,11 @@
         {
           "type": "test_note",
           "label_ko": "출제 경향",
-          "label_vi": "how this word appears in the test",
+          "label_vi": "Từ này thường xuất hiện trong đề thi như thế nào",
           "title_ko": "그래프 문제에 자주 나오는 단어입니다.",
-          "title_vi": "This word often appears in graph questions.",
+          "title_vi": "Đây là từ thường xuất hiện trong các câu hỏi về biểu đồ.",
           "body_ko": "그래프 문제를 풀 때는 항상 나오는 단어입니다. 이 단어의 반대말인 ‘줄다’의 의미도 확인하세요.",
-          "body_vi": "This word always appears in the question that includes graphs. Be sure to check the meaning of ‘줄다(decrease)’ along with this word.",
+          "body_vi": "Từ này luôn xuất hiện trong các câu hỏi có biểu đồ. Hãy nhớ kèm theo nghĩa của từ trái nghĩa ‘줄다’ (giảm).",
           "tags": [
             "반대말: 줄다 decrease",
             "그래프 문제"
@@ -346,25 +346,25 @@
           "type": "tip_combo",
           "label": "Tip",
           "question_ko": "‘생기다’는 어떤 단어와 같이 사용할까요?",
-          "question_vi": "What word is used together with the word “appear(생기다)”?",
+          "question_vi": "‘생기다’ thường được dùng cùng với từ nào?",
           "word": "생기다",
-          "word_vi": "appear",
+          "word_vi": "xuất hiện / phát sinh",
           "items": [
             {
               "ko": "관심",
-              "vi": "interest"
+              "vi": "sự quan tâm"
             },
             {
               "ko": "문제",
-              "vi": "problem"
+              "vi": "vấn đề"
             },
             {
               "ko": "얼룩",
-              "vi": "stain"
+              "vi": "vết bẩn"
             },
             {
               "ko": "두통",
-              "vi": "headache"
+              "vi": "đau đầu"
             }
           ]
         }
@@ -413,25 +413,25 @@
         {
           "type": "mindmap",
           "title_ko": "관련어",
-          "title_vi": "Words to memorize together",
+          "title_vi": "Những từ nên học cùng nhau",
           "center_ko": "환경",
-          "center_vi": "Environment",
+          "center_vi": "Môi trường",
           "nodes": [
             {
               "ko": "환경보호",
-              "vi": "protection of the environment"
+              "vi": "bảo vệ môi trường"
             },
             {
               "ko": "환경오염",
-              "vi": "environmental pollution"
+              "vi": "ô nhiễm môi trường"
             },
             {
               "ko": "환경문제",
-              "vi": "environmental issues"
+              "vi": "vấn đề môi trường"
             },
             {
               "ko": "환경운동가",
-              "vi": "environmentalist"
+              "vi": "nhà hoạt động môi trường"
             }
           ]
         }
@@ -487,33 +487,33 @@
         {
           "type": "mindmap",
           "title_ko": "관련어",
-          "title_vi": "Words to memorize together",
+          "title_vi": "Những từ nên học cùng nhau",
           "center_ko": "사회",
-          "center_vi": "Society",
+          "center_vi": "Xã hội",
           "nodes": [
             {
               "ko": "사회운동",
-              "vi": "social movement"
+              "vi": "phong trào xã hội"
             },
             {
               "ko": "사회생활",
-              "vi": "social life"
+              "vi": "đời sống xã hội"
             },
             {
               "ko": "사회문제",
-              "vi": "social problem"
+              "vi": "vấn đề xã hội"
             },
             {
               "ko": "사회경험",
-              "vi": "social experience"
+              "vi": "kinh nghiệm xã hội"
             },
             {
               "ko": "사회활동",
-              "vi": "social activities"
+              "vi": "hoạt động xã hội"
             },
             {
               "ko": "사회현상",
-              "vi": "social phenomenon"
+              "vi": "hiện tượng xã hội"
             }
           ]
         }
@@ -533,33 +533,33 @@
         {
           "type": "mindmap",
           "title_ko": "관련어",
-          "title_vi": "Words to memorize together",
+          "title_vi": "Những từ nên học cùng nhau",
           "center_ko": "생활",
-          "center_vi": "Living",
+          "center_vi": "Cuộc sống / Sinh hoạt",
           "nodes": [
             {
               "ko": "생활공간",
-              "vi": "the place to live"
+              "vi": "không gian sống"
             },
             {
               "ko": "생활비",
-              "vi": "the cost of living"
+              "vi": "chi phí sinh hoạt"
             },
             {
               "ko": "생활리듬",
-              "vi": "the rhythm of life"
+              "vi": "nhịp sống"
             },
             {
               "ko": "생활습관",
-              "vi": "lifestyle"
+              "vi": "thói quen sinh hoạt"
             },
             {
               "ko": "생활수준",
-              "vi": "the standard of living"
+              "vi": "mức sống"
             },
             {
               "ko": "생활용품",
-              "vi": "household items"
+              "vi": "đồ dùng sinh hoạt"
             }
           ]
         }
@@ -846,25 +846,25 @@
         {
           "type": "mindmap",
           "title_ko": "관련어",
-          "title_vi": "Words to memorize together",
+          "title_vi": "Những từ nên học cùng nhau",
           "center_ko": "전문",
-          "center_vi": "Professional",
+          "center_vi": "Chuyên môn",
           "nodes": [
             {
               "ko": "전문 서점",
-              "vi": "specialist bookshop"
+              "vi": "hiệu sách chuyên ngành"
             },
             {
               "ko": "전문 지식",
-              "vi": "expertise"
+              "vi": "kiến thức chuyên môn"
             },
             {
               "ko": "전문 회사",
-              "vi": "specialized company"
+              "vi": "công ty chuyên ngành"
             },
             {
               "ko": "전문 요리사",
-              "vi": "professed cook"
+              "vi": "đầu bếp chuyên nghiệp"
             }
           ]
         }

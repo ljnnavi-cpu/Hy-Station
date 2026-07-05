@@ -171,11 +171,11 @@
         {
           "type": "test_note",
           "label_ko": "출제 경향",
-          "label_vi": "how this word appears in the test",
+          "label_vi": "Từ này thường xuất hiện trong đề thi như thế nào",
           "title_ko": "읽기와 듣기 영역에 ‘안내문’ 문제가 자주 출제됩니다.",
-          "title_vi": "This word often appears in questions about notices.",
+          "title_vi": "Các câu hỏi về ‘thông báo, hướng dẫn’ thường xuất hiện trong phần đọc và nghe.",
           "body_ko": "안내문과 관련된 단어는 읽기와 듣기 문제에서 자주 나오므로 함께 기억해 두세요.",
-          "body_vi": "The questions that consist of notices always appear in the reading and listening sections. Remember words related to notices together.",
+          "body_vi": "Các từ liên quan đến bảng thông báo thường xuất hiện trong phần đọc và nghe, hãy ghi nhớ cùng nhau.",
           "tags": [
             "안내문 notice",
             "초대장 invitation",
@@ -342,9 +342,9 @@
           "label_ko": "Tip",
           "label_vi": "Tip",
           "title_ko": "‘편하다’와 ‘편리하다’는 어떻게 다를까요?",
-          "title_vi": "What is the difference between ‘comfortable’ and ‘convenient’?",
+          "title_vi": "‘편하다’ và ‘편리하다’ khác nhau như thế nào?",
           "body_ko": "‘편하다’는 주로 몸과 마음의 느낌이 좋을 때 쓰고, ‘편리하다’는 시설이나 기술 등이 쓰기 좋고 생활을 쉽게 만들 때 씁니다.",
-          "body_vi": "‘편하다’ is mostly used when the subject is giving comfort physically and psychologically, and ‘편리하다’ is used when a facility or technology makes life convenient.",
+          "body_vi": "‘편하다’ chủ yếu dùng khi cơ thể và tâm trạng cảm thấy thoải mái, dễ chịu, còn ‘편리하다’ dùng khi một thiết bị, tiện nghi hay kỹ thuật nào đó giúp cuộc sống trở nên tiện lợi hơn.",
           "tags": [
             "몸/마음이 편하다",
             "사용하기 편리하다"
@@ -860,25 +860,25 @@
         {
           "type": "mindmap",
           "title_ko": "관련어",
-          "title_vi": "Words to memorize together",
+          "title_vi": "Những từ nên học cùng nhau",
           "center_ko": "관리",
-          "center_vi": "Management",
+          "center_vi": "Quản lý",
           "nodes": [
             {
               "ko": "관리자",
-              "vi": "manager"
+              "vi": "người quản lý"
             },
             {
               "ko": "관리비",
-              "vi": "maintenance fee"
+              "vi": "phí quản lý"
             },
             {
               "ko": "관리직",
-              "vi": "managing position"
+              "vi": "vị trí quản lý"
             },
             {
               "ko": "관리 사무소",
-              "vi": "management office"
+              "vi": "văn phòng quản lý"
             }
           ]
         }

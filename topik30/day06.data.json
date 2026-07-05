@@ -135,11 +135,11 @@
         {
           "type": "test_note",
           "label_ko": "출제 경향",
-          "label_vi": "how this word appears in the test",
+          "label_vi": "Từ này thường xuất hiện trong đề thi như thế nào",
           "title_ko": "교육 관련 문제에서 자주 나오는 단어입니다.",
-          "title_vi": "This word often appears in questions related to education.",
+          "title_vi": "Từ này thường xuất hiện trong các câu hỏi liên quan đến giáo dục.",
           "body_ko": "교육, 부모와 자녀의 관계, 입시 문제, 청소년 문제, 잘못된 자녀 교육과 관련된 글에서 자주 나옵니다.",
-          "body_vi": "It often appears in passages about education, relationships between parents and children, admission issues, youth problems, and improper child education.",
+          "body_vi": "Từ này thường xuất hiện trong các đoạn văn về giáo dục, mối quan hệ giữa cha mẹ và con cái, thi cử, vấn đề thanh thiếu niên, và việc giáo dục con cái sai cách.",
           "tags": [
             "교육 문제",
             "부모와 자녀",
@@ -336,25 +336,25 @@
           "type": "tip_combo",
           "label": "Tip",
           "question_ko": "맛에는 또 뭐가 있을까요?",
-          "question_vi": "What kind of taste do we have?",
+          "question_vi": "Còn những vị nào khác nữa?",
           "word": "맛",
-          "word_vi": "taste",
+          "word_vi": "vị / mùi vị",
           "items": [
             {
               "ko": "단맛",
-              "vi": "sweet"
+              "vi": "vị ngọt"
             },
             {
               "ko": "매운 맛",
-              "vi": "hot"
+              "vi": "vị cay"
             },
             {
               "ko": "신맛",
-              "vi": "sour"
+              "vi": "vị chua"
             },
             {
               "ko": "짠맛",
-              "vi": "salty"
+              "vi": "vị mặn"
             }
           ]
         }
@@ -605,21 +605,21 @@
           "type": "tip_combo",
           "label": "Tip",
           "question_ko": "‘그만두다’는 어떤 단어와 같이 사용할까요?",
-          "question_vi": "What kind of word is used together with the word “그만두다(quit)”?",
+          "question_vi": "‘그만두다’ thường được dùng cùng với từ nào?",
           "word": "그만두다",
-          "word_vi": "quit",
+          "word_vi": "nghỉ / bỏ (việc)",
           "items": [
             {
               "ko": "회사",
-              "vi": "job"
+              "vi": "công ty"
             },
             {
               "ko": "일",
-              "vi": "work"
+              "vi": "công việc"
             },
             {
               "ko": "학교",
-              "vi": "school"
+              "vi": "trường học"
             }
           ]
         }
