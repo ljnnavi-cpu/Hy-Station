@@ -10,10 +10,10 @@
       "example_ko": "커피를 마시려고 물을 끓였어요.",
       "example_vi": "I boiled water to drink coffee.",
       "example_vi_vn": "Tôi đã đun sôi nước để uống cà phê.",
-      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>끓다 (boil)</span></div></div>",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>끓다 (boil) - sôi</span></div></div>",
       "detailBlocks": [],
       "highlight_terms": [
-        "끓이"
+        "끓였"
       ]
     },
     {
@@ -25,7 +25,7 @@
       "example_ko": "가격을 높이면 물건 판매량이 줄어들 거예요.",
       "example_vi": "If you increase the price, the product will sell less.",
       "example_vi_vn": "Nếu tăng giá thì lượng hàng bán ra sẽ giảm.",
-      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>높다 (high)</span></div></div>",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>높다 (high) - cao</span></div></div>",
       "detailBlocks": [],
       "highlight_terms": [
         "높이"
@@ -40,7 +40,7 @@
       "example_ko": "기침을 심하게 하면 아이에게 이 약을 먹이세요.",
       "example_vi": "When your kid severely coughs, feed him this medicine.",
       "example_vi_vn": "Nếu bé ho nặng thì hãy cho bé uống thuốc này.",
-      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>먹다 (eat)</span></div></div>",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>먹다 (eat) - ăn</span></div></div>",
       "detailBlocks": [],
       "highlight_terms": [
         "먹이"
@@ -55,10 +55,10 @@
       "example_ko": "신분증을 보여야 이 건물로 들어갈 수 있습니다.",
       "example_vi": "You should show your identification to enter the building.",
       "example_vi_vn": "Bạn phải xuất trình giấy tờ tùy thân mới vào được tòa nhà này.",
-      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>보다 (see)</span></div></div>",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>보다 (see) - xem, nhìn</span></div></div>",
       "detailBlocks": [],
       "highlight_terms": [
-        "보이"
+        "보여"
       ]
     },
     {
@@ -70,10 +70,10 @@
       "example_ko": "신청서에 꼭 사진을 붙여 주세요.",
       "example_vi": "Please attach a photograph on the application form.",
       "example_vi_vn": "Vui lòng dán ảnh vào đơn đăng ký.",
-      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>붙다 (stick)</span></div></div>",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>붙다 (stick) - dính</span></div></div>",
       "detailBlocks": [],
       "highlight_terms": [
-        "붙이"
+        "붙여"
       ]
     },
     {
@@ -85,7 +85,7 @@
       "example_ko": "다른 사람을 자주 속이는 사람과는 친구가 되고 싶지 않아요.",
       "example_vi": "I do not want to be friends with the person who tricks others.",
       "example_vi_vn": "Tôi không muốn làm bạn với người hay lừa dối người khác.",
-      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>속다 (be fooled)</span></div></div>",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>속다 (be fooled) - bị lừa</span></div></div>",
       "detailBlocks": [],
       "highlight_terms": [
         "속이"
@@ -100,7 +100,7 @@
       "example_ko": "저는 벌레를 무서워해서 죽이지 못해요.",
       "example_vi": "I cannot kill bugs because I get scared of them.",
       "example_vi_vn": "Tôi sợ côn trùng nên không giết được chúng.",
-      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>죽다 (die)</span></div></div>",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>죽다 (die) - chết</span></div></div>",
       "detailBlocks": [],
       "highlight_terms": [
         "죽이"
@@ -115,10 +115,10 @@
       "example_ko": "바지가 너무 길어서 길이를 좀 줄여야겠어요.",
       "example_vi": "The pants are too long so it should be shortened.",
       "example_vi_vn": "Quần dài quá nên phải sửa ngắn lại một chút.",
-      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>줄다 (decrease)</span></div></div>",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>줄다 (decrease) - giảm</span></div></div>",
       "detailBlocks": [],
       "highlight_terms": [
-        "줄이"
+        "줄여"
       ]
     },
     {
@@ -130,7 +130,7 @@
       "example_ko": "이 일을 끝내면 좀 쉬고 싶어요.",
       "example_vi": "I want to take a break after this is finished.",
       "example_vi_vn": "Sau khi xong việc này tôi muốn nghỉ ngơi một chút.",
-      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>끝나다 (be finished)</span></div></div>",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>끝나다 (be finished) - kết thúc, xong</span></div></div>",
       "detailBlocks": [],
       "highlight_terms": [
         "끝내"
@@ -145,7 +145,7 @@
       "example_ko": "우리 집이 좁아서 집을 넓히는 공사를 했어요.",
       "example_vi": "Our house was small, so we built an extention to it.",
       "example_vi_vn": "Nhà tôi chật nên đã xây thêm để mở rộng ra.",
-      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>넓다 (broad)</span></div></div>",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>넓다 (broad) - rộng</span></div></div>",
       "detailBlocks": [],
       "highlight_terms": [
         "넓히"
@@ -160,10 +160,10 @@
       "example_ko": "잠이 든 아이를 침대에 눕혔어요.",
       "example_vi": "I laid the sleeping baby on the bed.",
       "example_vi_vn": "Tôi đã đặt em bé đang ngủ nằm xuống giường.",
-      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>눕다 (lie)</span></div></div>",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>눕다 (lie) - nằm</span></div></div>",
       "detailBlocks": [],
       "highlight_terms": [
-        "눕히"
+        "눕혔"
       ]
     },
     {
@@ -175,7 +175,7 @@
       "example_ko": "아이에게 주사를 맞히기는 쉽지가 않네요.",
       "example_vi": "It is not easy to make the children get a shot.",
       "example_vi_vn": "Cho trẻ con tiêm không phải là chuyện dễ dàng.",
-      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>맞다 (be hit)</span></div></div>",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>맞다 (be hit) - đúng, bị trúng</span></div></div>",
       "detailBlocks": [],
       "highlight_terms": [
         "맞히"
@@ -190,10 +190,10 @@
       "example_ko": "버스가 곧 출발하니까 아이를 자리에 앉혀 주세요.",
       "example_vi": "The bus will depart soon, so please have your child seated.",
       "example_vi_vn": "Xe buýt sắp chạy rồi, hãy cho bé ngồi vào chỗ.",
-      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>앉다 (sit)</span></div></div>",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>앉다 (sit) - ngồi</span></div></div>",
       "detailBlocks": [],
       "highlight_terms": [
-        "앉히"
+        "앉혀"
       ]
     },
     {
@@ -205,10 +205,10 @@
       "example_ko": "선생님이 상희 씨에게 책을 읽혔어요.",
       "example_vi": "Teacher has Sang-hee read his book.",
       "example_vi_vn": "Giáo viên đã cho Sang-hee đọc sách.",
-      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>읽다 (read)</span></div></div>",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>읽다 (read) - đọc</span></div></div>",
       "detailBlocks": [],
       "highlight_terms": [
-        "읽히"
+        "읽혔"
       ]
     },
     {
@@ -220,10 +220,10 @@
       "example_ko": "이 옷이 잘 어울릴 것 같은데 아이에게 한번 입혀 보세요.",
       "example_vi": "This outfit seems to look good on your child, have him try this.",
       "example_vi_vn": "Bộ đồ này chắc hợp với bé lắm, hãy thử mặc cho bé xem.",
-      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>입다 (wear)</span></div></div>",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>입다 (wear) - mặc</span></div></div>",
       "detailBlocks": [],
       "highlight_terms": [
-        "입히"
+        "입혀"
       ]
     },
     {
@@ -235,10 +235,10 @@
       "example_ko": "종이 비행기를 만들어서 창 밖으로 날렸어요.",
       "example_vi": "I made an airplane out of paper and had it fly outside the window.",
       "example_vi_vn": "Tôi đã gấp máy bay giấy và thả nó bay ra ngoài cửa sổ.",
-      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>날다 (fly)</span></div></div>",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>날다 (fly) - bay</span></div></div>",
       "detailBlocks": [],
       "highlight_terms": [
-        "날리"
+        "날렸"
       ]
     },
     {
@@ -250,10 +250,10 @@
       "example_ko": "저는 세탁기를 돌릴 테니까 혜경 씨는 청소를 해 주세요.",
       "example_vi": "I will do the laundry, Hea-Kyung please clean the apartment.",
       "example_vi_vn": "Tôi sẽ giặt đồ, Hye-kyung hãy dọn dẹp nhà giúp nhé.",
-      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>돌다 (operate)</span></div></div>",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>돌다 (operate) - quay, chạy (máy)</span></div></div>",
       "detailBlocks": [],
       "highlight_terms": [
-        "돌리"
+        "돌릴"
       ]
     },
     {
@@ -265,10 +265,10 @@
       "example_ko": "의사가 물에 빠진 아이를 살렸어요.",
       "example_vi": "The doctor saved the drowning child.",
       "example_vi_vn": "Bác sĩ đã cứu sống đứa trẻ bị đuối nước.",
-      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>살다 (live)</span></div></div>",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>살다 (live) - sống</span></div></div>",
       "detailBlocks": [],
       "highlight_terms": [
-        "살리"
+        "살렸"
       ]
     },
     {
@@ -280,10 +280,10 @@
       "example_ko": "새로운 소식이 있으면 꼭 저에게 알려 주세요.",
       "example_vi": "If you have any new information, please tell me what it is.",
       "example_vi_vn": "Nếu có tin tức gì mới thì nhất định hãy báo cho tôi biết.",
-      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>알다 (know)</span></div></div>",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>알다 (know) - biết</span></div></div>",
       "detailBlocks": [],
       "highlight_terms": [
-        "알리"
+        "알려"
       ]
     },
     {
@@ -295,10 +295,10 @@
       "example_ko": "저는 어렸을 때 동생을 자주 울렸어요.",
       "example_vi": "When I was young, I often made my younger brother cry.",
       "example_vi_vn": "Hồi nhỏ tôi hay làm em trai khóc.",
-      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>울다 (cry)</span></div></div>",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>울다 (cry) - khóc</span></div></div>",
       "detailBlocks": [],
       "highlight_terms": [
-        "울리"
+        "울렸"
       ]
     },
     {
@@ -310,10 +310,10 @@
       "example_ko": "미용실에 가면 미용사가 제 머리를 감겨 줘서 참 편해요.",
       "example_vi": "When I visit hair salon, it is really comfortable since the hair dresser washes my hair.",
       "example_vi_vn": "Khi đến tiệm làm tóc, thợ gội đầu cho tôi nên rất thoải mái.",
-      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>감다 (wash hair)</span></div></div>",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>감다 (wash hair) - gội (đầu)</span></div></div>",
       "detailBlocks": [],
       "highlight_terms": [
-        "감기"
+        "감겨"
       ]
     },
     {
@@ -325,7 +325,7 @@
       "example_ko": "밥을 남기지 말고 다 드세요.",
       "example_vi": "Do not leave any food on your plate and eat all of them.",
       "example_vi_vn": "Đừng để thừa cơm, hãy ăn hết đi.",
-      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>남다 (remain)</span></div></div>",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>남다 (remain) - còn lại, dư</span></div></div>",
       "detailBlocks": [],
       "highlight_terms": [
         "남기"
@@ -340,10 +340,10 @@
       "example_ko": "그 옷은 세탁기에 빨지 말고 세탁소에 맡겨야 해요.",
       "example_vi": "You should take those clothes to the laundry instead of washing them yourself.",
       "example_vi_vn": "Bộ đồ đó đừng giặt bằng máy giặt mà hãy đem ra tiệm giặt ủi.",
-      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>맡다 (take charge)</span></div></div>",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>맡다 (take charge) - đảm nhận, phụ trách</span></div></div>",
       "detailBlocks": [],
       "highlight_terms": [
-        "맡기"
+        "맡겨"
       ]
     },
     {
@@ -355,10 +355,10 @@
       "example_ko": "아이가 비를 맞고 집에 와서 젖은 옷을 벗겨 줬어요.",
       "example_vi": "My kid came back home soaked in rain, so I took his clothes off.",
       "example_vi_vn": "Con tôi bị ướt mưa về nhà nên tôi đã cởi đồ ướt cho bé.",
-      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>벗다 (take off)</span></div></div>",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>벗다 (take off) - cởi, tháo</span></div></div>",
       "detailBlocks": [],
       "highlight_terms": [
-        "벗기"
+        "벗겨"
       ]
     },
     {
@@ -370,7 +370,7 @@
       "example_ko": "그 사람 표정을 보니까 뭔가 숨기는 것이 있는 것 같아요.",
       "example_vi": "The look on his face says that he is hiding something.",
       "example_vi_vn": "Nhìn vẻ mặt của người đó, có vẻ như đang giấu điều gì đó.",
-      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>숨다 (hide)</span></div></div>",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>숨다 (hide) - trốn, ẩn nấp</span></div></div>",
       "detailBlocks": [],
       "highlight_terms": [
         "숨기"
@@ -385,10 +385,10 @@
       "example_ko": "지금 나가야 하니까 얼른 아이에게 신발을 신겨 주세요.",
       "example_vi": "We have to go out now, so please have the child wear his shoes.",
       "example_vi_vn": "Bây giờ phải đi rồi nên hãy mang giày nhanh cho bé.",
-      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>신다 (wear (shoes))</span></div></div>",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>신다 (wear (shoes)) - mang, đi (giày)</span></div></div>",
       "detailBlocks": [],
       "highlight_terms": [
-        "신기"
+        "신겨"
       ]
     },
     {
@@ -400,10 +400,10 @@
       "example_ko": "강아지가 더러워서 좀 씻겨야겠어요.",
       "example_vi": "You should wash your dog.",
       "example_vi_vn": "Con chó bẩn quá nên phải tắm cho nó.",
-      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>씻다 (wash)</span></div></div>",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>씻다 (wash) - rửa</span></div></div>",
       "detailBlocks": [],
       "highlight_terms": [
-        "씻기"
+        "씻겨"
       ]
     },
     {
@@ -415,7 +415,7 @@
       "example_ko": "전 재미있는 말로 다른 사람들을 웃기는 것을 좋아해요.",
       "example_vi": "I like to make other people laugh with funny stories.",
       "example_vi_vn": "Tôi thích làm người khác cười bằng những câu chuyện thú vị.",
-      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>웃다 (laugh)</span></div></div>",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>웃다 (laugh) - cười</span></div></div>",
       "detailBlocks": [],
       "highlight_terms": [
         "웃기"
@@ -430,7 +430,7 @@
       "example_ko": "시간이 없으니까 빨리 상희 씨를 깨우세요.",
       "example_vi": "There's no time, so wake Sang-hee up.",
       "example_vi_vn": "Không còn thời gian nữa, hãy đánh thức Sang-hee nhanh lên.",
-      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>깨다 (wake up)</span></div></div>",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>깨다 (wake up) - thức dậy, tỉnh giấc</span></div></div>",
       "detailBlocks": [],
       "highlight_terms": [
         "깨우"
@@ -445,10 +445,10 @@
       "example_ko": "사무실 쓰레기통을 누가 비웠지요?",
       "example_vi": "Who emptied the trashcan in the office?",
       "example_vi_vn": "Ai đã đổ thùng rác ở văn phòng vậy?",
-      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>비다 (empty)</span></div></div>",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>비다 (empty) - trống, rỗng</span></div></div>",
       "detailBlocks": [],
       "highlight_terms": [
-        "비우"
+        "비웠"
       ]
     },
     {
@@ -460,7 +460,7 @@
       "example_ko": "친구 집 앞에 차를 세우고 기다렸어요.",
       "example_vi": "I stopped the car in front of my friend's house and waited.",
       "example_vi_vn": "Tôi đã đỗ xe trước nhà bạn và chờ.",
-      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>서다 (stop)</span></div></div>",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>서다 (stop) - dừng, đứng</span></div></div>",
       "detailBlocks": [],
       "highlight_terms": [
         "세우"
@@ -475,10 +475,10 @@
       "example_ko": "밖이 추우니까 아이에게 모자를 씌워 주세요.",
       "example_vi": "It is cold outside so have your kid wear a cap.",
       "example_vi_vn": "Ngoài trời lạnh nên hãy đội mũ cho bé.",
-      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>쓰다 (wear (hat))</span></div></div>",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>쓰다 (wear (hat)) - đội (mũ)</span></div></div>",
       "detailBlocks": [],
       "highlight_terms": [
-        "씌우"
+        "씌워"
       ]
     },
     {
@@ -490,10 +490,10 @@
       "example_ko": "아기를 재워야하니 잠시만 조용히 해 주세요.",
       "example_vi": "Please be silent since I need to have the baby asleep.",
       "example_vi_vn": "Tôi cần cho bé ngủ nên hãy giữ yên lặng một chút.",
-      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>자다 (sleep)</span></div></div>",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>자다 (sleep) - ngủ</span></div></div>",
       "detailBlocks": [],
       "highlight_terms": [
-        "재우"
+        "재워"
       ]
     },
     {
@@ -505,7 +505,7 @@
       "example_ko": "승준 씨는 여자 친구를 자전거에 태우고 소풍을 갔어요.",
       "example_vi": "Seung-Jun went on a picnic with his girlfriend, riding on the back of his bike.",
       "example_vi_vn": "Seung-jun đã chở bạn gái bằng xe đạp đi dã ngoại.",
-      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='font-semibold text-gray-700'>기본형</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>타다 (ride)</span></div></div>",
+      "extra": "<div class='grid grid-cols-1 gap-1.5'><div><span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>타다 (ride) - đi (xe), cưỡi</span></div></div>",
       "detailBlocks": [],
       "highlight_terms": [
         "태우"
