@@ -5,35 +5,33 @@
       "id": "01",
       "word": "봉사하다",
       "meaning": "volunteer",
-      "meaning_vi": "phục vụ, tình nguyện",
       "type": "동 verb",
       "example_ko": "이번 방학 때는 농촌에 가서 봉사하려고 해요.",
       "example_vi": "I am planning to provide a voluntary service in the rural area during this vacation.",
-      "example_vi_vn": "Kỳ nghỉ này tôi định về nông thôn để làm tình nguyện.",
       "extra": "",
       "detailBlocks": [
         {
           "type": "mindmap",
           "title_ko": "관련어",
-          "title_vi": "Những từ nên học cùng nhau",
+          "title_vi": "Words to memorize together",
           "center_ko": "봉사",
-          "center_vi": "Tình nguyện",
+          "center_vi": "Volunteer",
           "nodes": [
             {
               "ko": "봉사활동",
-              "vi": "hoạt động tình nguyện"
+              "vi": "voluntary service"
             },
             {
               "ko": "봉사자",
-              "vi": "người tình nguyện"
+              "vi": "a volunteer"
             },
             {
               "ko": "봉사단원",
-              "vi": "thành viên đội tình nguyện"
+              "vi": "the member of volunteer"
             },
             {
               "ko": "봉사단",
-              "vi": "đội tình nguyện"
+              "vi": "a volunteer group"
             }
           ]
         }
@@ -43,73 +41,61 @@
       "id": "02",
       "word": "서비스",
       "meaning": "service",
-      "meaning_vi": "dịch vụ",
       "type": "명 noun",
       "example_ko": "백화점은 시장보다 물건값이 비싸기는 하지만 더 좋은 서비스를 받을 수 있다.",
       "example_vi": "Even though the price of the goods in the department store is more expensive than that of other markets, you can get better services as well.",
-      "example_vi_vn": "Tuy hàng hóa ở trung tâm thương mại đắt hơn ở chợ, nhưng có thể nhận được dịch vụ tốt hơn.",
       "extra": ""
     },
     {
       "id": "03",
       "word": "스트레스",
       "meaning": "stress",
-      "meaning_vi": "căng thẳng, stress",
       "type": "명 noun",
       "example_ko": "요즘에 스트레스를 너무 많이 받아서 밤에 잠이 잘 안 온다.",
       "example_vi": "I have trouble sleeping because of too much stress.",
-      "example_vi_vn": "Dạo này tôi bị căng thẳng quá nhiều nên ban đêm khó ngủ.",
       "extra": ""
     },
     {
       "id": "04",
       "word": "시청",
       "meaning": "watch",
-      "meaning_vi": "xem (ti vi)",
       "type": "명 noun",
       "example_ko": "하루에 한 시간 이상의 TV 시청은 시력에 좋지 않다고 한다.",
       "example_vi": "They say it is bad for your eyes to watch television more than one hour a day.",
-      "example_vi_vn": "Nghe nói xem ti vi hơn một tiếng mỗi ngày không tốt cho thị lực.",
       "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>시청률</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>(viewer) ratings</span></div><div><span class='font-semibold text-gray-700'>시청자</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>viewer</span></div></div>"
     },
     {
       "id": "05",
       "word": "신문",
       "meaning": "newspaper",
-      "meaning_vi": "báo, tờ báo",
       "type": "명 noun",
       "example_ko": "매일 신문을 읽으면 요즘 어떤 일이 있는지 잘 알 수 있어요.",
       "example_vi": "If you read the newspaper every day, you will be aware of what is happening these days.",
-      "example_vi_vn": "Nếu đọc báo mỗi ngày thì có thể biết rõ dạo này có chuyện gì xảy ra.",
       "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>신문지</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>newspaper</span></div><div><span class='font-semibold text-gray-700'>신문기사</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>news article</span></div></div>"
     },
     {
       "id": "06",
       "word": "움직이다",
       "meaning": "move",
-      "meaning_vi": "di chuyển, cử động",
       "type": "동 verb",
       "example_ko": "다리를 다쳐서 움직이는 것이 힘들어요.",
       "example_vi": "It is hard for me to move since I have hurt my leg.",
-      "example_vi_vn": "Tôi bị đau chân nên việc di chuyển rất khó khăn.",
       "extra": "<div><span class='font-semibold text-gray-700'>움직임</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>movement</span></div>"
     },
     {
       "id": "07",
       "word": "가격",
       "meaning": "price",
-      "meaning_vi": "giá cả",
       "type": "명 noun",
       "example_ko": "최근 서울의 아파트 가격이 떨어졌습니다.",
       "example_vi": "The price of Seoul’s apartment has fallen recently.",
-      "example_vi_vn": "Gần đây giá căn hộ ở Seoul đã giảm xuống.",
       "extra": "",
       "detailBlocks": [
         {
           "type": "tip_table",
           "label": "Tip",
           "question_ko": "‘가격’과 비슷한 뜻을 가진 단어는 뭐가 있을까요?",
-          "question_vi": "Có những từ nào mang nghĩa tương tự như ‘가격’ (giá cả)?",
+          "question_vi": "What are the words that have the similar meanings as the word “가격(price)”?",
           "columns": [
             "단어",
             "예"
@@ -215,98 +201,82 @@
       "id": "08",
       "word": "전통",
       "meaning": "tradition",
-      "meaning_vi": "truyền thống",
       "type": "명 noun",
       "example_ko": "나라마다 전통을 지키고자 많은 노력을 하고 있다.",
       "example_vi": "Each country is doing their best to protect their tradition.",
-      "example_vi_vn": "Mỗi quốc gia đều đang nỗ lực nhiều để gìn giữ truyền thống.",
       "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>전통적</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>traditional</span></div><div><span class='font-semibold text-gray-700'>전통 악기</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>traditional musical instrument</span></div><div><span class='font-semibold text-gray-700'>전통 문화</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>traditional culture</span></div><div><span class='font-semibold text-gray-700'>전통 연구소</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>traditional research office</span></div></div>"
     },
     {
       "id": "09",
       "word": "젊다",
       "meaning": "young",
-      "meaning_vi": "trẻ, trẻ tuổi",
       "type": "형 adjective",
       "example_ko": "나이보다 정말 젊어 보이시네요.",
       "example_vi": "You look younger than you really are.",
-      "example_vi_vn": "Anh/Chị trông trẻ hơn so với tuổi thật đấy.",
       "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>젊음</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>youth</span></div><div><span class='font-semibold text-gray-700'>젊은이</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>young person</span></div><div><span class='font-semibold text-gray-700'>젊은 사람</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>young people</span></div><div><span class='font-semibold text-gray-700'>젊은 시절</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>in one’s youth</span></div></div>"
     },
     {
       "id": "10",
       "word": "점",
       "meaning": "point",
-      "meaning_vi": "điểm (một chi tiết, khía cạnh)",
       "type": "명 noun",
       "example_ko": "궁금한 점이 있으면 언제든지 연락해 주시기 바랍니다.",
       "example_vi": "If you have anything to ask, please contact me.",
-      "example_vi_vn": "Nếu có điểm nào thắc mắc, xin hãy liên hệ bất cứ lúc nào.",
       "extra": ""
     },
     {
       "id": "11",
       "word": "정확하다",
       "meaning": "precise",
-      "meaning_vi": "chính xác",
       "type": "형 adjective",
       "example_ko": "정확하고 자세한 설명 부탁드립니다.",
       "example_vi": "Please give a precise and specific explanation.",
-      "example_vi_vn": "Xin hãy giải thích một cách chính xác và chi tiết.",
       "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>정확</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>precision</span></div><div><span class='font-semibold text-gray-700'>정확히</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>precisely</span></div></div>"
     },
     {
       "id": "12",
       "word": "주문하다",
       "meaning": "order",
-      "meaning_vi": "gọi món, đặt hàng",
       "type": "동 verb",
       "example_ko": "손님, 주문하신 음료 나왔습니다.",
       "example_vi": "Sir, here is your drink that you ordered.",
-      "example_vi_vn": "Thưa quý khách, đồ uống quý khách gọi đã có rồi ạ.",
       "extra": "<div><span class='font-semibold text-gray-700'>주문</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>order</span></div>"
     },
     {
       "id": "13",
       "word": "지나치다",
       "meaning": "excessively",
-      "meaning_vi": "quá mức, thái quá",
       "type": "동 verb",
       "example_ko": "이 물건이 좋기는 하지만 지나치게 비싸지 않아요?",
       "example_vi": "This is really good, but isn’t it excessively expensive?",
-      "example_vi_vn": "Món đồ này tốt thật, nhưng có phải đắt quá không?",
       "extra": ""
     },
     {
       "id": "14",
       "word": "지원하다",
       "meaning": "apply for",
-      "meaning_vi": "ứng tuyển, đăng ký",
       "type": "동 verb",
       "example_ko": "그 대학교에 지원하려면 뭐가 필요합니까?",
       "example_vi": "What do I need to apply for that university?",
-      "example_vi_vn": "Để ứng tuyển vào trường đại học đó thì cần những gì?",
       "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>지원</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>apply</span></div><div><span class='font-semibold text-gray-700'>지원서</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>application</span></div><div><span class='font-semibold text-gray-700'>지원자</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>applicant</span></div></div>"
     },
     {
       "id": "15",
       "word": "청소년",
       "meaning": "teenager",
-      "meaning_vi": "thanh thiếu niên",
       "type": "명 noun",
       "example_ko": "청소년들을 대상으로 하는 음악회가 열립니다.",
       "example_vi": "A concert for teenagers will be held.",
-      "example_vi_vn": "Một buổi hòa nhạc dành cho thanh thiếu niên sẽ được tổ chức.",
       "extra": "",
       "detailBlocks": [
         {
           "type": "test_note",
           "label_ko": "출제 경향",
-          "label_vi": "Từ này thường xuất hiện trong đề thi như thế nào",
+          "label_vi": "how this word appears in the test",
           "title_ko": "청소년 관련 문제는 최근에 한국에서 일어나는 여러 문제들에 대한 내용이 많습니다.",
-          "title_vi": "Nhiều câu hỏi liên quan đến các vấn đề của thanh thiếu niên xảy ra gần đây ở Hàn Quốc.",
+          "title_vi": "Many questions consist of the problems of teenagers that occurred recently in South Korea.",
           "body_ko": "폭력, 흡연, 교사의 체벌 그리고 왕따와 관련된 주제가 시험에 자주 나옵니다.",
-          "body_vi": "Ngoài ra, các chủ đề về bạo lực, hút thuốc, giáo viên phạt học sinh và bắt nạt học đường cũng thường xuất hiện trong đề thi.",
+          "body_vi": "Also, many topics related to violence, smoking, teachers’ corporal punishment and bullying appear often in the tests.",
           "tags": [
             {
               "ko": "폭력",
@@ -332,200 +302,168 @@
       "id": "16",
       "word": "추억",
       "meaning": "memory",
-      "meaning_vi": "kỷ niệm",
       "type": "명 noun",
       "example_ko": "사진을 보니 학교 다닐 때 추억이 떠오른다.",
       "example_vi": "When I look at the picture, it reminds me of the time when I was in school.",
-      "example_vi_vn": "Nhìn tấm ảnh, tôi nhớ lại những kỷ niệm thời đi học.",
       "extra": ""
     },
     {
       "id": "17",
       "word": "현재",
       "meaning": "present, now",
-      "meaning_vi": "hiện tại",
       "type": "명 noun",
       "example_ko": "현재 상영되는 영화 중에 뭐가 제일 인기 있어요?",
       "example_vi": "What is the most popular movie playing now?",
-      "example_vi_vn": "Trong số các phim đang chiếu hiện tại, phim nào được yêu thích nhất?",
       "extra": ""
     },
     {
       "id": "18",
       "word": "활동하다",
       "meaning": "be active",
-      "meaning_vi": "hoạt động",
       "type": "동 verb",
       "example_ko": "고양이는 주로 밤에 활동하는 동물입니다.",
       "example_vi": "The cat is an animal that is mostly active at night.",
-      "example_vi_vn": "Mèo là loài động vật chủ yếu hoạt động vào ban đêm.",
       "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>활동</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>act</span></div><div><span class='font-semibold text-gray-700'>활동량</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>active mass</span></div><div><span class='font-semibold text-gray-700'>활동내용</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>contents of activities</span></div></div>"
     },
     {
       "id": "19",
       "word": "희망하다",
       "meaning": "look forward to",
-      "meaning_vi": "hy vọng, mong muốn",
       "type": "동 verb",
       "example_ko": "이 회사에 입사하기를 희망하고 있습니다.",
       "example_vi": "I am looking forward to getting a job in your company.",
-      "example_vi_vn": "Tôi mong muốn được vào làm việc tại công ty này.",
       "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>희망</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>hope</span></div><div><span class='font-semibold text-gray-700'>희망자</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>person who has a hope</span></div></div>"
     },
     {
       "id": "20",
       "word": "관람하다",
       "meaning": "watch",
-      "meaning_vi": "xem, thưởng lãm (biểu diễn, triển lãm)",
       "type": "동 verb",
       "example_ko": "공연을 관람하려는 사람들이 길게 늘어서 있다.",
       "example_vi": "The audiences are standing in line to watch the show.",
-      "example_vi_vn": "Những người muốn xem buổi biểu diễn đang xếp hàng dài.",
       "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>관람객</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>audience</span></div><div><span class='font-semibold text-gray-700'>관람권</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>an admission ticket</span></div></div>"
     },
     {
       "id": "21",
       "word": "기준",
       "meaning": "standard",
-      "meaning_vi": "tiêu chuẩn",
       "type": "명 noun",
       "example_ko": "신입 사원을 뽑는 기준을 알려 주세요.",
       "example_vi": "Please tell me the standard that is applied in the recruitment.",
-      "example_vi_vn": "Xin hãy cho biết tiêu chuẩn tuyển nhân viên mới.",
       "extra": ""
     },
     {
       "id": "22",
       "word": "감상하다",
       "meaning": "appreciate",
-      "meaning_vi": "thưởng thức, cảm thụ",
       "type": "동 verb",
       "example_ko": "이 수업은 한국의 현대시를 이해하고 감상하는 수업입니다.",
       "example_vi": "This class is to understand and appreciate the Korean modern poetry.",
-      "example_vi_vn": "Đây là môn học giúp hiểu và cảm thụ thơ hiện đại Hàn Quốc.",
       "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>감상</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>appreciate</span></div><div><span class='font-semibold text-gray-700'>감상문</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>report</span></div><div><span class='font-semibold text-gray-700'>감상평</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>review</span></div></div>"
     },
     {
       "id": "23",
       "word": "경쟁",
       "meaning": "competition",
-      "meaning_vi": "cạnh tranh",
       "type": "명 noun",
       "example_ko": "매년 입시 경쟁이 심해지고 있습니다.",
       "example_vi": "The competition of the admission is getting more intensified each year.",
-      "example_vi_vn": "Mỗi năm sự cạnh tranh trong thi cử ngày càng gay gắt hơn.",
       "extra": "<div><span class='font-semibold text-gray-700'>경쟁력</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>competitiveness</span></div>"
     },
     {
       "id": "24",
       "word": "공기",
       "meaning": "air",
-      "meaning_vi": "không khí",
       "type": "명 noun",
       "example_ko": "실내의 공기를 바꾸었더니 머리가 아프지 않습니다.",
       "example_vi": "After changing the indoor air, I no longer have headache.",
-      "example_vi_vn": "Sau khi thay đổi không khí trong phòng, tôi không còn thấy đau đầu nữa.",
       "extra": ""
     },
     {
       "id": "25",
       "word": "담다",
       "meaning": "contain",
-      "meaning_vi": "chứa đựng",
       "type": "동 verb",
       "example_ko": "이 소설은 젊은 세대의 여러 가지 고민을 담고 있습니다.",
       "example_vi": "This novel contains many concerns of the young generation.",
-      "example_vi_vn": "Cuốn tiểu thuyết này chứa đựng nhiều nỗi trăn trở của thế hệ trẻ.",
       "extra": ""
     },
     {
       "id": "26",
       "word": "도시",
       "meaning": "city",
-      "meaning_vi": "thành phố, đô thị",
       "type": "명 noun",
       "example_ko": "도시 생활에 지쳐서 시골로 내려가는 사람들이 증가하는 추세다.",
       "example_vi": "The number of people who move to rural areas after being exhausted by the city life is increasing.",
-      "example_vi_vn": "Xu hướng những người mệt mỏi với cuộc sống đô thị chuyển về nông thôn đang tăng lên.",
       "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>도심</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>the central city</span></div><div><span class='font-semibold text-gray-700'>시골</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>rural area</span></div></div>"
     },
     {
       "id": "27",
       "word": "뛰다",
       "meaning": "run",
-      "meaning_vi": "chạy",
       "type": "동 verb",
       "example_ko": "학교에 늦을 것 같은데 우리 뛸까?",
       "example_vi": "I think we will be late for school, want to run?",
-      "example_vi_vn": "Có vẻ chúng ta sắp trễ học rồi, hay là chạy đi?",
       "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>뛰어가다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>run to</span></div><div><span class='font-semibold text-gray-700'>뛰어오다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>run back</span></div><div><span class='font-semibold text-gray-700'>뛰어내리다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>run off</span></div><div><span class='font-semibold text-gray-700'>뛰어다니다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>run around</span></div><div><span class='font-semibold text-gray-700'>뛰어나가다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>run out</span></div></div>"
     },
     {
       "id": "28",
       "word": "분위기",
       "meaning": "atmosphere",
-      "meaning_vi": "bầu không khí, không gian",
       "type": "명 noun",
       "example_ko": "이 식당의 분위기가 마음에 들어서 자주 온다.",
       "example_vi": "I often come to this restaurant because of the good atmosphere.",
-      "example_vi_vn": "Tôi thích bầu không khí của nhà hàng này nên hay đến đây.",
       "extra": ""
     },
     {
       "id": "29",
       "word": "빛",
       "meaning": "light",
-      "meaning_vi": "ánh sáng",
       "type": "명 noun",
       "example_ko": "길을 잃었지만 멀리 보이는 빛을 보고 다시 길을 찾을 수 있었다.",
       "example_vi": "I was lost, but I could find my way after seeing the light from far away.",
-      "example_vi_vn": "Tôi bị lạc đường nhưng nhờ nhìn thấy ánh sáng ở xa mà tìm lại được đường đi.",
       "extra": "<div><span class='font-semibold text-gray-700'>빛나다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>light</span></div>"
     },
     {
       "id": "30",
       "word": "생명",
       "meaning": "life",
-      "meaning_vi": "sinh mạng, mạng sống",
       "type": "명 noun",
       "example_ko": "그 의사는 환자의 생명을 살리기 위해 노력했다.",
       "example_vi": "The doctor tried hard to save the life of the patient.",
-      "example_vi_vn": "Vị bác sĩ đó đã nỗ lực để cứu sống mạng sống của bệnh nhân.",
       "extra": "<div><span class='font-semibold text-gray-700'>생명력</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>vitality</span></div>"
     },
     {
       "id": "31",
       "word": "세탁하다",
       "meaning": "wash",
-      "meaning_vi": "giặt (quần áo)",
       "type": "동 verb",
       "example_ko": "옷에 김치가 묻었을 때 빨리 세탁하면 없앨 수 있어요.",
       "example_vi": "When you get stains from Kimchi on your clothes, you can get rid of it if you wash them quickly.",
-      "example_vi_vn": "Khi quần áo bị dính kim chi, nếu giặt ngay thì có thể tẩy sạch được.",
       "extra": "",
       "detailBlocks": [
         {
           "type": "mindmap",
           "title_ko": "관련어",
-          "title_vi": "Những từ nên học cùng nhau",
+          "title_vi": "Words to memorize together",
           "center_ko": "세탁",
-          "center_vi": "Giặt giũ",
+          "center_vi": "Wash",
           "nodes": [
             {
               "ko": "세탁물",
-              "vi": "đồ giặt"
+              "vi": "laundry"
             },
             {
               "ko": "세탁기",
-              "vi": "máy giặt"
+              "vi": "washing machine"
             },
             {
               "ko": "세탁실",
-              "vi": "phòng giặt"
+              "vi": "laundry room"
             },
             {
               "ko": "세탁소",
-              "vi": "tiệm giặt ủi"
+              "vi": "laundromat"
             }
           ]
         }
@@ -535,22 +473,18 @@
       "id": "32",
       "word": "안정",
       "meaning": "stability",
-      "meaning_vi": "sự ổn định",
       "type": "명 noun",
       "example_ko": "정부는 물가 안정을 위해서 노력하고 있다.",
       "example_vi": "The government is trying to stabilize the prices.",
-      "example_vi_vn": "Chính phủ đang nỗ lực để ổn định vật giá.",
       "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>안정성</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>stability</span></div><div><span class='font-semibold text-gray-700'>안정적</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>stable</span></div><div><span class='font-semibold text-gray-700'>안정되다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>be stabled</span></div><div><span class='font-semibold text-gray-700'>안정시키다</span> <span class='hideable-meaning' onclick='toggleSingleRedSheet(this, event)'>set at ease</span></div></div>"
     },
     {
       "id": "33",
       "word": "어울리다",
       "meaning": "go with",
-      "meaning_vi": "hợp, phù hợp (với)",
       "type": "동 verb",
       "example_ko": "이 옷은 이 신발과 전혀 어울리지 않아요.",
       "example_vi": "The clothes do not even slightly match with the shoes.",
-      "example_vi_vn": "Bộ quần áo này hoàn toàn không hợp với đôi giày này.",
       "extra": ""
     }
   ],

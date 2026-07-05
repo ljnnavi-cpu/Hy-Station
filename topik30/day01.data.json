@@ -10,33 +10,8 @@
       "example_ko": "호텔에 계시면서 필요한 것이 있으면 바로 전화 주세요.",
       "example_vi": "If you need anything while staying in the hotel, give us a call right away.",
       "example_vi_vn": "Nếu bạn cần gì trong thời gian lưu trú tại khách sạn, hãy gọi cho chúng tôi ngay.",
-      "extra": "",
-      "detailBlocks": [
-        {
-          "type": "tip_note",
-          "label": "확장 표현",
-          "question_ko": "필요하다",
-          "question_vi": "cần thiết",
-          "examples": [
-            {
-              "ko": "필요",
-              "en": "need"
-            },
-            {
-              "ko": "필요로 하다",
-              "en": "require"
-            },
-            {
-              "ko": "필요성",
-              "en": "necessity"
-            },
-            {
-              "ko": "필요가 있다/없다",
-              "en": "necessary/unnecessary"
-            }
-          ]
-        }
-      ]
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>필요</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>need</span></div><div><span class='font-semibold text-gray-700'>필요로 하다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>require</span></div><div><span class='font-semibold text-gray-700'>필요성</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>necessity</span></div><div><span class='font-semibold text-gray-700'>필요가 있다/없다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>necessary/unnecessary</span></div></div>",
+      "detailBlocks": []
     },
     {
       "id": "02",
@@ -59,41 +34,8 @@
       "example_ko": "대중교통 이용하는 게 이제는 익숙해졌어요.",
       "example_vi": "Now I am used to using public transportation.",
       "example_vi_vn": "Bây giờ tôi đã quen với việc sử dụng phương tiện công cộng.",
-      "extra": "",
-      "detailBlocks": [
-        {
-          "type": "tip_note",
-          "label": "확장 표현",
-          "question_ko": "이용하다",
-          "question_vi": "sử dụng, đi / dùng",
-          "examples": [
-            {
-              "ko": "이용",
-              "en": "use"
-            },
-            {
-              "ko": "이용료",
-              "en": "(specific behavior) fee"
-            },
-            {
-              "ko": "이용증",
-              "en": "using license"
-            },
-            {
-              "ko": "이용객",
-              "en": "user"
-            },
-            {
-              "ko": "이용자",
-              "en": "user"
-            },
-            {
-              "ko": "이용되다",
-              "en": "be used"
-            }
-          ]
-        }
-      ]
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>이용</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>use</span></div><div><span class='font-semibold text-gray-700'>이용료</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>(specific behavior) fee</span></div><div><span class='font-semibold text-gray-700'>이용증</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>using license</span></div><div><span class='font-semibold text-gray-700'>이용객</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>user</span></div><div><span class='font-semibold text-gray-700'>이용자</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>user</span></div><div><span class='font-semibold text-gray-700'>이용되다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>be used</span></div></div>",
+      "detailBlocks": []
     },
     {
       "id": "04",
@@ -104,33 +46,8 @@
       "example_ko": "친구와 싸웠는데 다시 생각해 보니 내가 잘못한 것 같다.",
       "example_vi": "I had a fight with my friend, but I think it was my fault that we had a fight.",
       "example_vi_vn": "Tôi đã cãi nhau với bạn, nhưng nghĩ lại thì có vẻ đó là lỗi của tôi.",
-      "extra": "",
-      "detailBlocks": [
-        {
-          "type": "tip_note",
-          "label": "확장 표현",
-          "question_ko": "생각하다",
-          "question_vi": "suy nghĩ",
-          "examples": [
-            {
-              "ko": "생각",
-              "en": "thought"
-            },
-            {
-              "ko": "생각이 나다",
-              "en": "remember"
-            },
-            {
-              "ko": "생각되다",
-              "en": "be regarded as"
-            },
-            {
-              "ko": "생각이 들다",
-              "en": "have a thought that~"
-            }
-          ]
-        }
-      ]
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>생각</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>thought</span></div><div><span class='font-semibold text-gray-700'>생각이 나다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>remember</span></div><div><span class='font-semibold text-gray-700'>생각되다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>be regarded as</span></div><div><span class='font-semibold text-gray-700'>생각이 들다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>have a thought that~</span></div></div>",
+      "detailBlocks": []
     },
     {
       "id": "05",
@@ -141,29 +58,8 @@
       "example_ko": "처음에는 사람들이 관심을 안 보였지만, 반복해서 말하자 관심을 보이기 시작했습니다.",
       "example_vi": "At first, no one gave any attention to it, but after repeating it over and over they started to give attention to the subject.",
       "example_vi_vn": "Lúc đầu không ai quan tâm, nhưng sau khi nói đi nói lại nhiều lần thì mọi người bắt đầu chú ý đến vấn đề đó.",
-      "extra": "",
-      "detailBlocks": [
-        {
-          "type": "tip_note",
-          "label": "확장 표현",
-          "question_ko": "관심",
-          "question_vi": "sự quan tâm / chú ý",
-          "examples": [
-            {
-              "ko": "관심을 갖다(가지다)",
-              "en": "give attention to"
-            },
-            {
-              "ko": "관심을 끌다",
-              "en": "draw attention"
-            },
-            {
-              "ko": "관심이 있다",
-              "en": "be interested in"
-            }
-          ]
-        }
-      ]
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>관심을 갖다(가지다)</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>give attention to</span></div><div><span class='font-semibold text-gray-700'>관심을 끌다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>draw attention</span></div><div><span class='font-semibold text-gray-700'>관심이 있다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>be interested in</span></div></div>",
+      "detailBlocks": []
     },
     {
       "id": "06",
@@ -174,25 +70,8 @@
       "example_ko": "가능하면 그렇게 처리해 주십시오.",
       "example_vi": "If it is possible, please process it as such.",
       "example_vi_vn": "Nếu có thể, xin hãy xử lý như vậy.",
-      "extra": "",
-      "detailBlocks": [
-        {
-          "type": "tip_note",
-          "label": "확장 표현",
-          "question_ko": "가능하다",
-          "question_vi": "có thể / khả thi",
-          "examples": [
-            {
-              "ko": "가능",
-              "en": "possible"
-            },
-            {
-              "ko": "가능성",
-              "en": "possibility"
-            }
-          ]
-        }
-      ]
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>가능</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>possible</span></div><div><span class='font-semibold text-gray-700'>가능성</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>possibility</span></div></div>",
+      "detailBlocks": []
     },
     {
       "id": "07",
@@ -220,14 +99,20 @@
         {
           "type": "test_note",
           "label_ko": "출제 경향",
-          "label_vi": "Từ này thường xuất hiện trong đề thi như thế nào",
+          "label_vi": "how this word appears in the test",
           "title_ko": "그래프 문제에 자주 나오는 단어입니다.",
-          "title_vi": "Đây là từ thường xuất hiện trong các câu hỏi về biểu đồ.",
+          "title_vi": "This word often appears in graph questions.",
           "body_ko": "그래프 문제를 풀 때는 항상 나오는 단어입니다. 이 단어의 반대말인 ‘줄다’의 의미도 확인하세요.",
-          "body_vi": "Từ này luôn xuất hiện trong các câu hỏi có biểu đồ. Hãy nhớ kèm theo nghĩa của từ trái nghĩa ‘줄다’ (giảm).",
+          "body_vi": "This word always appears in the question that includes graphs. Be sure to check the meaning of ‘줄다(decrease)’ along with this word.",
           "tags": [
-            "반대말: 줄다 decrease",
-            "그래프 문제"
+            {
+              "ko": "반대말: 줄다",
+              "en": "decrease"
+            },
+            {
+              "ko": "그래프 문제",
+              "en": "graph question"
+            }
           ]
         }
       ]
@@ -253,21 +138,8 @@
       "example_ko": "노력하면 안 되는 일이 어디 있겠어요?",
       "example_vi": "There is no such thing that you cannot do if you make an effort.",
       "example_vi_vn": "Nếu nỗ lực thì không có việc gì là không thể làm được.",
-      "extra": "",
-      "detailBlocks": [
-        {
-          "type": "tip_note",
-          "label": "확장 표현",
-          "question_ko": "노력하다",
-          "question_vi": "nỗ lực / cố gắng",
-          "examples": [
-            {
-              "ko": "노력",
-              "en": "effort"
-            }
-          ]
-        }
-      ]
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>노력</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>effort</span></div></div>",
+      "detailBlocks": []
     },
     {
       "id": "11",
@@ -278,21 +150,8 @@
       "example_ko": "그 영화를 보고 느낀 점을 말해 봅시다.",
       "example_vi": "Tell us what you felt after watching the movie.",
       "example_vi_vn": "Hãy nói về điều bạn cảm nhận sau khi xem bộ phim.",
-      "extra": "",
-      "detailBlocks": [
-        {
-          "type": "tip_note",
-          "label": "확장 표현",
-          "question_ko": "느끼다",
-          "question_vi": "cảm thấy",
-          "examples": [
-            {
-              "ko": "느낌",
-              "en": "feeling"
-            }
-          ]
-        }
-      ]
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>느낌</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>feeling</span></div></div>",
+      "detailBlocks": []
     },
     {
       "id": "12",
@@ -315,21 +174,8 @@
       "example_ko": "백화점에 가면 여러 가지 상품들이 보기 좋게 진열되어 있다.",
       "example_vi": "If you go to the department store, various kinds of goods are displayed neatly.",
       "example_vi_vn": "Nếu đến trung tâm thương mại, nhiều loại hàng hóa được trưng bày gọn gàng đẹp mắt.",
-      "extra": "",
-      "detailBlocks": [
-        {
-          "type": "tip_note",
-          "label": "확장 표현",
-          "question_ko": "상품",
-          "question_vi": "hàng hóa / sản phẩm",
-          "examples": [
-            {
-              "ko": "상품권",
-              "en": "gift card"
-            }
-          ]
-        }
-      ]
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>상품권</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>gift card</span></div></div>",
+      "detailBlocks": []
     },
     {
       "id": "14",
@@ -346,25 +192,25 @@
           "type": "tip_combo",
           "label": "Tip",
           "question_ko": "‘생기다’는 어떤 단어와 같이 사용할까요?",
-          "question_vi": "‘생기다’ thường được dùng cùng với từ nào?",
+          "question_vi": "What word is used together with the word “appear(생기다)”?",
           "word": "생기다",
-          "word_vi": "xuất hiện / phát sinh",
+          "word_vi": "appear",
           "items": [
             {
               "ko": "관심",
-              "vi": "sự quan tâm"
+              "vi": "interest"
             },
             {
               "ko": "문제",
-              "vi": "vấn đề"
+              "vi": "problem"
             },
             {
               "ko": "얼룩",
-              "vi": "vết bẩn"
+              "vi": "stain"
             },
             {
               "ko": "두통",
-              "vi": "đau đầu"
+              "vi": "headache"
             }
           ]
         }
@@ -379,25 +225,8 @@
       "example_ko": "처음 미국에 갔을 때 그 친구에게 많은 도움을 받았습니다.",
       "example_vi": "When I first went to the states, that buddy helped me out a lot.",
       "example_vi_vn": "Khi lần đầu đến Mỹ, người bạn đó đã giúp đỡ tôi rất nhiều.",
-      "extra": "",
-      "detailBlocks": [
-        {
-          "type": "tip_note",
-          "label": "확장 표현",
-          "question_ko": "도움",
-          "question_vi": "sự giúp đỡ",
-          "examples": [
-            {
-              "ko": "돕다",
-              "en": "help"
-            },
-            {
-              "ko": "도우미",
-              "en": "helper"
-            }
-          ]
-        }
-      ]
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>돕다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>help</span></div><div><span class='font-semibold text-gray-700'>도우미</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>helper</span></div></div>",
+      "detailBlocks": []
     },
     {
       "id": "16",
@@ -413,25 +242,25 @@
         {
           "type": "mindmap",
           "title_ko": "관련어",
-          "title_vi": "Những từ nên học cùng nhau",
+          "title_vi": "Words to memorize together",
           "center_ko": "환경",
-          "center_vi": "Môi trường",
+          "center_vi": "Environment",
           "nodes": [
             {
               "ko": "환경보호",
-              "vi": "bảo vệ môi trường"
+              "vi": "protection of the environment"
             },
             {
               "ko": "환경오염",
-              "vi": "ô nhiễm môi trường"
+              "vi": "environmental pollution"
             },
             {
               "ko": "환경문제",
-              "vi": "vấn đề môi trường"
+              "vi": "environmental issues"
             },
             {
               "ko": "환경운동가",
-              "vi": "nhà hoạt động môi trường"
+              "vi": "environmentalist"
             }
           ]
         }
@@ -487,33 +316,33 @@
         {
           "type": "mindmap",
           "title_ko": "관련어",
-          "title_vi": "Những từ nên học cùng nhau",
+          "title_vi": "Words to memorize together",
           "center_ko": "사회",
-          "center_vi": "Xã hội",
+          "center_vi": "Society",
           "nodes": [
             {
               "ko": "사회운동",
-              "vi": "phong trào xã hội"
+              "vi": "social movement"
             },
             {
               "ko": "사회생활",
-              "vi": "đời sống xã hội"
+              "vi": "social life"
             },
             {
               "ko": "사회문제",
-              "vi": "vấn đề xã hội"
+              "vi": "social problem"
             },
             {
               "ko": "사회경험",
-              "vi": "kinh nghiệm xã hội"
+              "vi": "social experience"
             },
             {
               "ko": "사회활동",
-              "vi": "hoạt động xã hội"
+              "vi": "social activities"
             },
             {
               "ko": "사회현상",
-              "vi": "hiện tượng xã hội"
+              "vi": "social phenomenon"
             }
           ]
         }
@@ -533,33 +362,33 @@
         {
           "type": "mindmap",
           "title_ko": "관련어",
-          "title_vi": "Những từ nên học cùng nhau",
+          "title_vi": "Words to memorize together",
           "center_ko": "생활",
-          "center_vi": "Cuộc sống / Sinh hoạt",
+          "center_vi": "Living",
           "nodes": [
             {
               "ko": "생활공간",
-              "vi": "không gian sống"
+              "vi": "the place to live"
             },
             {
               "ko": "생활비",
-              "vi": "chi phí sinh hoạt"
+              "vi": "the cost of living"
             },
             {
               "ko": "생활리듬",
-              "vi": "nhịp sống"
+              "vi": "the rhythm of life"
             },
             {
               "ko": "생활습관",
-              "vi": "thói quen sinh hoạt"
+              "vi": "lifestyle"
             },
             {
               "ko": "생활수준",
-              "vi": "mức sống"
+              "vi": "the standard of living"
             },
             {
               "ko": "생활용품",
-              "vi": "đồ dùng sinh hoạt"
+              "vi": "household items"
             }
           ]
         }
@@ -586,25 +415,8 @@
       "example_ko": "학력보다는 그 사람이 어떠한 경험을 했는가가 중요합니다.",
       "example_vi": "The kind of experience a person did is more important than what kind of academic background he has.",
       "example_vi_vn": "Những kinh nghiệm mà một người đã trải qua quan trọng hơn học lực của người đó.",
-      "extra": "",
-      "detailBlocks": [
-        {
-          "type": "tip_note",
-          "label": "확장 표현",
-          "question_ko": "경험",
-          "question_vi": "kinh nghiệm / trải nghiệm",
-          "examples": [
-            {
-              "ko": "경험하다",
-              "en": "experience"
-            },
-            {
-              "ko": "사회경험",
-              "en": "social experience"
-            }
-          ]
-        }
-      ]
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>경험하다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>experience</span></div><div><span class='font-semibold text-gray-700'>사회경험</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>social experience</span></div></div>",
+      "detailBlocks": []
     },
     {
       "id": "24",
@@ -615,21 +427,8 @@
       "example_ko": "요즘 서점에서는 다양한 잡지를 접할 수 있습니다.",
       "example_vi": "Nowadays, you can read many different kinds of magazines in the book store.",
       "example_vi_vn": "Dạo gần đây, bạn có thể đọc nhiều loại tạp chí khác nhau ở hiệu sách.",
-      "extra": "",
-      "detailBlocks": [
-        {
-          "type": "tip_note",
-          "label": "확장 표현",
-          "question_ko": "다양하다",
-          "question_vi": "đa dạng, nhiều loại khác nhau",
-          "examples": [
-            {
-              "ko": "다양성",
-              "en": "diversity"
-            }
-          ]
-        }
-      ]
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>다양성</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>diversity</span></div></div>",
+      "detailBlocks": []
     },
     {
       "id": "25",
@@ -652,25 +451,8 @@
       "example_ko": "전공은 오랫동안 고민한 후에 선택해야 후회가 없다.",
       "example_vi": "When choosing your major, you will not regret your decision only if you make up your mind after thinking it over a lot.",
       "example_vi_vn": "Khi chọn chuyên ngành, bạn sẽ không hối hận nếu quyết định sau khi suy nghĩ thật kỹ.",
-      "extra": "",
-      "detailBlocks": [
-        {
-          "type": "tip_note",
-          "label": "확장 표현",
-          "question_ko": "선택하다",
-          "question_vi": "chọn, lựa chọn, quyết định",
-          "examples": [
-            {
-              "ko": "선택",
-              "en": "decision"
-            },
-            {
-              "ko": "선택되다",
-              "en": "be selected"
-            }
-          ]
-        }
-      ]
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>선택</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>decision</span></div><div><span class='font-semibold text-gray-700'>선택되다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>be selected</span></div></div>",
+      "detailBlocks": []
     },
     {
       "id": "27",
@@ -681,21 +463,8 @@
       "example_ko": "꾸준히 운동했더니 마침내 효과가 나타났어요.",
       "example_vi": "After constantly exercising, the result finally appeared.",
       "example_vi_vn": "Sau khi kiên trì tập thể dục, cuối cùng hiệu quả đã xuất hiện.",
-      "extra": "",
-      "detailBlocks": [
-        {
-          "type": "tip_note",
-          "label": "확장 표현",
-          "question_ko": "효과",
-          "question_vi": "hiệu quả / tác dụng",
-          "examples": [
-            {
-              "ko": "효과적",
-              "en": "effective"
-            }
-          ]
-        }
-      ]
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>효과적</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>effective</span></div></div>",
+      "detailBlocks": []
     },
     {
       "id": "28",
@@ -706,29 +475,8 @@
       "example_ko": "문제가 좀 생겼는데 와서 도와줄래요?",
       "example_vi": "I have a problem, can you help me with it?",
       "example_vi_vn": "Tôi đang có vấn đề, bạn có thể đến giúp tôi được không?",
-      "extra": "",
-      "detailBlocks": [
-        {
-          "type": "tip_note",
-          "label": "확장 표현",
-          "question_ko": "문제",
-          "question_vi": "vấn đề",
-          "examples": [
-            {
-              "ko": "문제점",
-              "en": "problem"
-            },
-            {
-              "ko": "문제가 되다",
-              "en": "become a problem"
-            },
-            {
-              "ko": "문제거리",
-              "en": "problem"
-            }
-          ]
-        }
-      ]
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>문제점</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>problem</span></div><div><span class='font-semibold text-gray-700'>문제가 되다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>become a problem</span></div><div><span class='font-semibold text-gray-700'>문제거리</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>problem</span></div></div>",
+      "detailBlocks": []
     },
     {
       "id": "29",
@@ -751,41 +499,8 @@
       "example_ko": "외출해야 하는데 열쇠를 찾을 수가 없어요.",
       "example_vi": "I should go out, but I cannot find my keys.",
       "example_vi_vn": "Tôi phải ra ngoài nhưng không thể tìm thấy chìa khóa.",
-      "extra": "",
-      "detailBlocks": [
-        {
-          "type": "tip_note",
-          "label": "확장 표현",
-          "question_ko": "찾다",
-          "question_vi": "tìm thấy / tìm kiếm",
-          "examples": [
-            {
-              "ko": "찾아 오다",
-              "en": "visit"
-            },
-            {
-              "ko": "찾아 내다",
-              "en": "find out"
-            },
-            {
-              "ko": "찾아 뵙다",
-              "en": "pay a visit"
-            },
-            {
-              "ko": "찾아 가다",
-              "en": "pay a visit"
-            },
-            {
-              "ko": "찾아 보다",
-              "en": "look for"
-            },
-            {
-              "ko": "찾아 다니다",
-              "en": "look around for"
-            }
-          ]
-        }
-      ]
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>찾아 오다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>visit</span></div><div><span class='font-semibold text-gray-700'>찾아 내다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>find out</span></div><div><span class='font-semibold text-gray-700'>찾아 뵙다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>pay a visit</span></div><div><span class='font-semibold text-gray-700'>찾아 가다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>pay a visit</span></div><div><span class='font-semibold text-gray-700'>찾아 보다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>look for</span></div><div><span class='font-semibold text-gray-700'>찾아 다니다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>look around for</span></div></div>",
+      "detailBlocks": []
     },
     {
       "id": "31",
@@ -796,29 +511,8 @@
       "example_ko": "성공한 사람들은 대부분 인간 관계가 좋았다고 합니다.",
       "example_vi": "Most of the successful men have good personal relationships.",
       "example_vi_vn": "Nghe nói phần lớn những người thành công đều có quan hệ cá nhân tốt.",
-      "extra": "",
-      "detailBlocks": [
-        {
-          "type": "tip_note",
-          "label": "확장 표현",
-          "question_ko": "관계",
-          "question_vi": "mối quan hệ",
-          "examples": [
-            {
-              "ko": "관계자",
-              "en": "the persons concerned"
-            },
-            {
-              "ko": "관계당국",
-              "en": "the authorities concerned"
-            },
-            {
-              "ko": "관계 없다",
-              "en": "have no relation to"
-            }
-          ]
-        }
-      ]
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>관계자</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>the persons concerned</span></div><div><span class='font-semibold text-gray-700'>관계당국</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>the authorities concerned</span></div><div><span class='font-semibold text-gray-700'>관계 없다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>have no relation to</span></div></div>",
+      "detailBlocks": []
     },
     {
       "id": "32",
@@ -846,25 +540,25 @@
         {
           "type": "mindmap",
           "title_ko": "관련어",
-          "title_vi": "Những từ nên học cùng nhau",
+          "title_vi": "Words to memorize together",
           "center_ko": "전문",
-          "center_vi": "Chuyên môn",
+          "center_vi": "Professional",
           "nodes": [
             {
               "ko": "전문 서점",
-              "vi": "hiệu sách chuyên ngành"
+              "vi": "specialist bookshop"
             },
             {
               "ko": "전문 지식",
-              "vi": "kiến thức chuyên môn"
+              "vi": "expertise"
             },
             {
               "ko": "전문 회사",
-              "vi": "công ty chuyên ngành"
+              "vi": "specialized company"
             },
             {
               "ko": "전문 요리사",
-              "vi": "đầu bếp chuyên nghiệp"
+              "vi": "professed cook"
             }
           ]
         }
@@ -1024,6 +718,9 @@
     "Words that are easy to confuse in TOPIK": "Những từ dễ nhầm lẫn trong TOPIK",
     "Write Korean in English, and English in Korean.": "Hãy viết từ tiếng Hàn sang tiếng Việt, và từ tiếng Việt sang tiếng Hàn.",
     "Choose the proper word that fits the sentence more naturally.": "Hãy chọn từ phù hợp trong hai từ để câu trở nên tự nhiên.",
-    "Đã chọn. Bấm “Kiểm tra đáp án” để xem kết quả.": "Đã chọn. Bấm “Kiểm tra đáp án” để xem kết quả."
+    "Đã chọn. Bấm “Kiểm tra đáp án” để xem kết quả.": "Đã chọn. Bấm “Kiểm tra đáp án” để xem kết quả.",
+    "use": "sử dụng",
+    "decrease": "giảm",
+    "graph question": "câu hỏi biểu đồ"
   }
 }

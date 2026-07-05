@@ -10,21 +10,8 @@
       "example_ko": "비가 와서 행사가 취소되었습니다.",
       "example_vi": "The event was canceled because of the rain.",
       "example_vi_vn": "Sự kiện đã bị hủy vì trời mưa.",
-      "extra": "",
-      "detailBlocks": [
-        {
-          "type": "tip_note",
-          "label": "확장 표현",
-          "question_ko": "행사",
-          "question_vi": "sự kiện",
-          "examples": [
-            {
-              "ko": "행사장",
-              "en": "event hall"
-            }
-          ]
-        }
-      ]
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>행사장</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>event hall</span></div></div>",
+      "detailBlocks": []
     },
     {
       "id": "02",
@@ -47,29 +34,8 @@
       "example_ko": "이 문제가 이해가 잘 안 되는데 다시 한번 설명해 주세요.",
       "example_vi": "It is hard to understand this question, so can you explain it once more time?",
       "example_vi_vn": "Câu hỏi này khó hiểu, bạn có thể giải thích lại một lần nữa được không?",
-      "extra": "",
-      "detailBlocks": [
-        {
-          "type": "tip_note",
-          "label": "확장 표현",
-          "question_ko": "설명하다",
-          "question_vi": "giải thích",
-          "examples": [
-            {
-              "ko": "설명",
-              "en": "explanation"
-            },
-            {
-              "ko": "설명서",
-              "en": "manual"
-            },
-            {
-              "ko": "설명회",
-              "en": "presentations"
-            }
-          ]
-        }
-      ]
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>설명</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>explanation</span></div><div><span class='font-semibold text-gray-700'>설명서</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>manual</span></div><div><span class='font-semibold text-gray-700'>설명회</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>presentations</span></div></div>",
+      "detailBlocks": []
     },
     {
       "id": "04",
@@ -80,33 +46,8 @@
       "example_ko": "암에 대한 연구가 활발히 진행되고 있습니다.",
       "example_vi": "The cancer research is being carried out actively.",
       "example_vi_vn": "Nghiên cứu về ung thư đang được tiến hành tích cực.",
-      "extra": "",
-      "detailBlocks": [
-        {
-          "type": "tip_note",
-          "label": "확장 표현",
-          "question_ko": "연구",
-          "question_vi": "nghiên cứu",
-          "examples": [
-            {
-              "ko": "연구자",
-              "en": "researcher"
-            },
-            {
-              "ko": "연구소",
-              "en": "research laboratory"
-            },
-            {
-              "ko": "연구 결과",
-              "en": "the result of research"
-            },
-            {
-              "ko": "연구하다",
-              "en": "research"
-            }
-          ]
-        }
-      ]
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>연구자</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>researcher</span></div><div><span class='font-semibold text-gray-700'>연구소</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>research laboratory</span></div><div><span class='font-semibold text-gray-700'>연구 결과</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>the result of research</span></div><div><span class='font-semibold text-gray-700'>연구하다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>research</span></div></div>",
+      "detailBlocks": []
     },
     {
       "id": "05",
@@ -117,21 +58,8 @@
       "example_ko": "그런 일은 네가 직접 말하는 것이 좋겠어.",
       "example_vi": "It would be better for you to tell that in person.",
       "example_vi_vn": "Việc đó bạn nên trực tiếp nói thì tốt hơn.",
-      "extra": "",
-      "detailBlocks": [
-        {
-          "type": "tip_note",
-          "label": "확장 표현",
-          "question_ko": "직접",
-          "question_vi": "trực tiếp",
-          "examples": [
-            {
-              "ko": "직접적",
-              "en": "directly"
-            }
-          ]
-        }
-      ]
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>직접적</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>directly</span></div></div>",
+      "detailBlocks": []
     },
     {
       "id": "06",
@@ -166,41 +94,36 @@
       "example_ko": "외국에서 온 손님들에게 우리 학교를 안내할 거예요.",
       "example_vi": "We will show our school around to the visitors from other countries.",
       "example_vi_vn": "Chúng tôi sẽ hướng dẫn khách đến từ nước ngoài tham quan trường của chúng tôi.",
-      "extra": "",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>안내</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>show</span></div><div><span class='font-semibold text-gray-700'>안내소</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>information desk</span></div><div><span class='font-semibold text-gray-700'>안내문</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>notice</span></div></div>",
       "detailBlocks": [
         {
           "type": "test_note",
           "label_ko": "출제 경향",
-          "label_vi": "Từ này thường xuất hiện trong đề thi như thế nào",
+          "label_vi": "how this word appears in the test",
           "title_ko": "읽기와 듣기 영역에 ‘안내문’ 문제가 자주 출제됩니다.",
-          "title_vi": "Các câu hỏi về ‘thông báo, hướng dẫn’ thường xuất hiện trong phần đọc và nghe.",
+          "title_vi": "This word often appears in questions about notices.",
           "body_ko": "안내문과 관련된 단어는 읽기와 듣기 문제에서 자주 나오므로 함께 기억해 두세요.",
-          "body_vi": "Các từ liên quan đến bảng thông báo thường xuất hiện trong phần đọc và nghe, hãy ghi nhớ cùng nhau.",
+          "body_vi": "The questions that consist of notices always appear in the reading and listening sections. Remember words related to notices together.",
           "tags": [
-            "안내문 notice",
-            "초대장 invitation",
-            "영수증 receipt",
-            "사용설명서 manual",
-            "기한 deadline"
-          ]
-        },
-        {
-          "type": "tip_note",
-          "label": "확장 표현",
-          "question_ko": "안내하다",
-          "question_vi": "hướng dẫn / chỉ cho xem",
-          "examples": [
-            {
-              "ko": "안내",
-              "en": "show"
-            },
-            {
-              "ko": "안내소",
-              "en": "information desk"
-            },
             {
               "ko": "안내문",
               "en": "notice"
+            },
+            {
+              "ko": "초대장",
+              "en": "invitation"
+            },
+            {
+              "ko": "영수증",
+              "en": "receipt"
+            },
+            {
+              "ko": "사용설명서",
+              "en": "manual"
+            },
+            {
+              "ko": "기한",
+              "en": "deadline"
             }
           ]
         }
@@ -215,33 +138,8 @@
       "example_ko": "지영 씨가 드디어 좋은 직장을 구했대요.",
       "example_vi": "Ji-young finally got a good job.",
       "example_vi_vn": "Cuối cùng Ji-young cũng đã kiếm được một công việc tốt.",
-      "extra": "",
-      "detailBlocks": [
-        {
-          "type": "tip_note",
-          "label": "확장 표현",
-          "question_ko": "직장",
-          "question_vi": "công việc / nơi làm việc",
-          "examples": [
-            {
-              "ko": "직장인",
-              "en": "office worker"
-            },
-            {
-              "ko": "직장 생활",
-              "en": "work life"
-            },
-            {
-              "ko": "직장 상사",
-              "en": "boss"
-            },
-            {
-              "ko": "일자리",
-              "en": "job/occupation"
-            }
-          ]
-        }
-      ]
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>직장인</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>office worker</span></div><div><span class='font-semibold text-gray-700'>직장 생활</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>work life</span></div><div><span class='font-semibold text-gray-700'>직장 상사</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>boss</span></div><div><span class='font-semibold text-gray-700'>일자리</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>job/occupation</span></div></div>",
+      "detailBlocks": []
     },
     {
       "id": "10",
@@ -252,21 +150,8 @@
       "example_ko": "모든 일에 적극적으로 참여하는 태도가 필요합니다.",
       "example_vi": "You need to participate more actively in every work you do.",
       "example_vi_vn": "Bạn cần có thái độ tham gia tích cực hơn trong mọi việc mình làm.",
-      "extra": "",
-      "detailBlocks": [
-        {
-          "type": "tip_note",
-          "label": "확장 표현",
-          "question_ko": "참여하다",
-          "question_vi": "tham gia",
-          "examples": [
-            {
-              "ko": "참여",
-              "en": "participation"
-            }
-          ]
-        }
-      ]
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>참여</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>participation</span></div></div>",
+      "detailBlocks": []
     },
     {
       "id": "11",
@@ -277,25 +162,8 @@
       "example_ko": "수업을 시작하기 전에 출석을 먼저 부르겠어요.",
       "example_vi": "I will call role before I start the class.",
       "example_vi_vn": "Tôi sẽ điểm danh trước khi bắt đầu giờ học.",
-      "extra": "",
-      "detailBlocks": [
-        {
-          "type": "tip_note",
-          "label": "확장 표현",
-          "question_ko": "시작하다",
-          "question_vi": "bắt đầu",
-          "examples": [
-            {
-              "ko": "시작",
-              "en": "start"
-            },
-            {
-              "ko": "시작되다",
-              "en": "being started"
-            }
-          ]
-        }
-      ]
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>시작</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>start</span></div><div><span class='font-semibold text-gray-700'>시작되다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>being started</span></div></div>",
+      "detailBlocks": []
     },
     {
       "id": "12",
@@ -306,25 +174,8 @@
       "example_ko": "나이가 많은 사람들은 젊은 사람들보다 변화에 적응하기 어렵다.",
       "example_vi": "The old has more trouble adapting to the change.",
       "example_vi_vn": "Người lớn tuổi khó thích nghi với sự thay đổi hơn người trẻ.",
-      "extra": "",
-      "detailBlocks": [
-        {
-          "type": "tip_note",
-          "label": "확장 표현",
-          "question_ko": "변화",
-          "question_vi": "sự thay đổi / thay đổi",
-          "examples": [
-            {
-              "ko": "변화하다",
-              "en": "change"
-            },
-            {
-              "ko": "변화시키다",
-              "en": "make change"
-            }
-          ]
-        }
-      ]
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>변화하다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>change</span></div><div><span class='font-semibold text-gray-700'>변화시키다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>make change</span></div></div>",
+      "detailBlocks": []
     },
     {
       "id": "13",
@@ -342,12 +193,18 @@
           "label_ko": "Tip",
           "label_vi": "Tip",
           "title_ko": "‘편하다’와 ‘편리하다’는 어떻게 다를까요?",
-          "title_vi": "‘편하다’ và ‘편리하다’ khác nhau như thế nào?",
+          "title_vi": "What is the difference between ‘comfortable’ and ‘convenient’?",
           "body_ko": "‘편하다’는 주로 몸과 마음의 느낌이 좋을 때 쓰고, ‘편리하다’는 시설이나 기술 등이 쓰기 좋고 생활을 쉽게 만들 때 씁니다.",
-          "body_vi": "‘편하다’ chủ yếu dùng khi cơ thể và tâm trạng cảm thấy thoải mái, dễ chịu, còn ‘편리하다’ dùng khi một thiết bị, tiện nghi hay kỹ thuật nào đó giúp cuộc sống trở nên tiện lợi hơn.",
+          "body_vi": "‘편하다’ is mostly used when the subject is giving comfort physically and psychologically, and ‘편리하다’ is used when a facility or technology makes life convenient.",
           "tags": [
-            "몸/마음이 편하다",
-            "사용하기 편리하다"
+            {
+              "ko": "몸/마음이 편하다",
+              "en": "comfortable physically/mentally"
+            },
+            {
+              "ko": "사용하기 편리하다",
+              "en": "convenient to use"
+            }
           ]
         }
       ]
@@ -361,25 +218,8 @@
       "example_ko": "여러 번의 실패를 거듭한 후 드디어 그 실험에 성공했다.",
       "example_vi": "After failing many times, the experiment finally succeeded.",
       "example_vi_vn": "Sau nhiều lần thất bại, cuối cùng thí nghiệm đó đã thành công.",
-      "extra": "",
-      "detailBlocks": [
-        {
-          "type": "tip_note",
-          "label": "확장 표현",
-          "question_ko": "성공하다",
-          "question_vi": "thành công",
-          "examples": [
-            {
-              "ko": "성공",
-              "en": "success"
-            },
-            {
-              "ko": "성공적",
-              "en": "successful"
-            }
-          ]
-        }
-      ]
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>성공</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>success</span></div><div><span class='font-semibold text-gray-700'>성공적</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>successful</span></div></div>",
+      "detailBlocks": []
     },
     {
       "id": "15",
@@ -390,29 +230,8 @@
       "example_ko": "화가이신 어머니의 영향으로 일찍부터 그림을 배우기 시작했어요.",
       "example_vi": "My mother, being the artist, influenced me to learn to draw very early.",
       "example_vi_vn": "Nhờ ảnh hưởng của mẹ là họa sĩ, tôi đã bắt đầu học vẽ từ rất sớm.",
-      "extra": "",
-      "detailBlocks": [
-        {
-          "type": "tip_note",
-          "label": "확장 표현",
-          "question_ko": "영향",
-          "question_vi": "ảnh hưởng",
-          "examples": [
-            {
-              "ko": "영향을 받다",
-              "en": "get influenced by"
-            },
-            {
-              "ko": "영향을 주다",
-              "en": "give influence to"
-            },
-            {
-              "ko": "영향을 미치다",
-              "en": "influence"
-            }
-          ]
-        }
-      ]
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>영향을 받다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>get influenced by</span></div><div><span class='font-semibold text-gray-700'>영향을 주다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>give influence to</span></div><div><span class='font-semibold text-gray-700'>영향을 미치다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>influence</span></div></div>",
+      "detailBlocks": []
     },
     {
       "id": "16",
@@ -423,29 +242,8 @@
       "example_ko": "그 문제는 잘 해결될 테니까 너무 걱정하지 마세요.",
       "example_vi": "The problem will turn out fine, so do not worry about it.",
       "example_vi_vn": "Vấn đề đó sẽ được giải quyết tốt nên đừng lo lắng quá.",
-      "extra": "",
-      "detailBlocks": [
-        {
-          "type": "tip_note",
-          "label": "확장 표현",
-          "question_ko": "걱정하다",
-          "question_vi": "lo lắng về",
-          "examples": [
-            {
-              "ko": "걱정",
-              "en": "worry"
-            },
-            {
-              "ko": "걱정거리",
-              "en": "anxiety"
-            },
-            {
-              "ko": "걱정스럽다",
-              "en": "be anxious about"
-            }
-          ]
-        }
-      ]
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>걱정</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>worry</span></div><div><span class='font-semibold text-gray-700'>걱정거리</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>anxiety</span></div><div><span class='font-semibold text-gray-700'>걱정스럽다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>be anxious about</span></div></div>",
+      "detailBlocks": []
     },
     {
       "id": "17",
@@ -456,33 +254,8 @@
       "example_ko": "우리 학교는 다 좋지만 교통이 불편해요.",
       "example_vi": "The only problem that my school has is the inconvenient transportation.",
       "example_vi_vn": "Trường tôi mọi thứ đều tốt nhưng giao thông bất tiện.",
-      "extra": "",
-      "detailBlocks": [
-        {
-          "type": "tip_note",
-          "label": "확장 표현",
-          "question_ko": "교통",
-          "question_vi": "giao thông",
-          "examples": [
-            {
-              "ko": "교통비",
-              "en": "transportation fee"
-            },
-            {
-              "ko": "교통문제",
-              "en": "transportation problem"
-            },
-            {
-              "ko": "교통질서",
-              "en": "traffic order"
-            },
-            {
-              "ko": "교통수단",
-              "en": "means of transportation"
-            }
-          ]
-        }
-      ]
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>교통비</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>transportation fee</span></div><div><span class='font-semibold text-gray-700'>교통문제</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>transportation problem</span></div><div><span class='font-semibold text-gray-700'>교통질서</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>traffic order</span></div><div><span class='font-semibold text-gray-700'>교통수단</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>means of transportation</span></div></div>",
+      "detailBlocks": []
     },
     {
       "id": "18",
@@ -493,25 +266,8 @@
       "example_ko": "세계 여행을 하기 위해서 돈을 모으고 있어요.",
       "example_vi": "I am saving money to travel around the world.",
       "example_vi_vn": "Tôi đang tiết kiệm tiền để đi du lịch vòng quanh thế giới.",
-      "extra": "",
-      "detailBlocks": [
-        {
-          "type": "tip_note",
-          "label": "확장 표현",
-          "question_ko": "모으다",
-          "question_vi": "tiết kiệm / gom góp",
-          "examples": [
-            {
-              "ko": "모임",
-              "en": "gathering"
-            },
-            {
-              "ko": "모이다",
-              "en": "gather"
-            }
-          ]
-        }
-      ]
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>모임</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>gathering</span></div><div><span class='font-semibold text-gray-700'>모이다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>gather</span></div></div>",
+      "detailBlocks": []
     },
     {
       "id": "19",
@@ -522,25 +278,8 @@
       "example_ko": "세계 여러 나라 선수들이 한자리에 모였다.",
       "example_vi": "Athletes from all around the world gathered in one place.",
       "example_vi_vn": "Các vận động viên từ nhiều nước trên thế giới đã tụ họp tại một nơi.",
-      "extra": "",
-      "detailBlocks": [
-        {
-          "type": "tip_note",
-          "label": "확장 표현",
-          "question_ko": "세계",
-          "question_vi": "thế giới",
-          "examples": [
-            {
-              "ko": "세계화",
-              "en": "globalization"
-            },
-            {
-              "ko": "세계적",
-              "en": "global"
-            }
-          ]
-        }
-      ]
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>세계화</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>globalization</span></div><div><span class='font-semibold text-gray-700'>세계적</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>global</span></div></div>",
+      "detailBlocks": []
     },
     {
       "id": "20",
@@ -551,33 +290,8 @@
       "example_ko": "다음 학기 신청은 이번주까지예요.",
       "example_vi": "The due date to apply for the next semester is by this week.",
       "example_vi_vn": "Hạn đăng ký học kỳ sau là đến hết tuần này.",
-      "extra": "",
-      "detailBlocks": [
-        {
-          "type": "tip_note",
-          "label": "확장 표현",
-          "question_ko": "신청",
-          "question_vi": "đăng ký / nộp đơn",
-          "examples": [
-            {
-              "ko": "신청서",
-              "en": "application"
-            },
-            {
-              "ko": "신청 방법",
-              "en": "how to apply"
-            },
-            {
-              "ko": "신청 기간",
-              "en": "a period for application"
-            },
-            {
-              "ko": "신청하다",
-              "en": "apply"
-            }
-          ]
-        }
-      ]
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>신청서</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>application</span></div><div><span class='font-semibold text-gray-700'>신청 방법</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>how to apply</span></div><div><span class='font-semibold text-gray-700'>신청 기간</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>a period for application</span></div><div><span class='font-semibold text-gray-700'>신청하다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>apply</span></div></div>",
+      "detailBlocks": []
     },
     {
       "id": "21",
@@ -600,25 +314,8 @@
       "example_ko": "지역의 특성에 맞는 개발이 필요합니다.",
       "example_vi": "The development that suits the aspect of the area under concern is needed.",
       "example_vi_vn": "Cần có sự phát triển phù hợp với đặc điểm của khu vực.",
-      "extra": "",
-      "detailBlocks": [
-        {
-          "type": "tip_note",
-          "label": "확장 표현",
-          "question_ko": "지역",
-          "question_vi": "khu vực",
-          "examples": [
-            {
-              "ko": "지역성",
-              "en": "regionality"
-            },
-            {
-              "ko": "지역문제",
-              "en": "regional problem"
-            }
-          ]
-        }
-      ]
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>지역성</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>regionality</span></div><div><span class='font-semibold text-gray-700'>지역문제</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>regional problem</span></div></div>",
+      "detailBlocks": []
     },
     {
       "id": "23",
@@ -629,29 +326,8 @@
       "example_ko": "현재 약국에서 판매하는 약을 앞으로 편의점에서 판매할 거라고 해요.",
       "example_vi": "It has been said that the drugs that are now sold in the pharmacy will be sold in the convenience store.",
       "example_vi_vn": "Nghe nói các loại thuốc hiện đang bán ở hiệu thuốc sẽ được bán ở cửa hàng tiện lợi.",
-      "extra": "",
-      "detailBlocks": [
-        {
-          "type": "tip_note",
-          "label": "확장 표현",
-          "question_ko": "판매하다",
-          "question_vi": "bán",
-          "examples": [
-            {
-              "ko": "판매",
-              "en": "sell"
-            },
-            {
-              "ko": "판매원",
-              "en": "salesperson"
-            },
-            {
-              "ko": "판매량",
-              "en": "sales volume"
-            }
-          ]
-        }
-      ]
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>판매</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>sell</span></div><div><span class='font-semibold text-gray-700'>판매원</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>salesperson</span></div><div><span class='font-semibold text-gray-700'>판매량</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>sales volume</span></div></div>",
+      "detailBlocks": []
     },
     {
       "id": "24",
@@ -662,29 +338,8 @@
       "example_ko": "계속 한국에서 살기로 결정했습니다.",
       "example_vi": "I have decided to keep on living in Korea.",
       "example_vi_vn": "Tôi đã quyết định tiếp tục sống ở Hàn Quốc.",
-      "extra": "",
-      "detailBlocks": [
-        {
-          "type": "tip_note",
-          "label": "확장 표현",
-          "question_ko": "계속",
-          "question_vi": "tiếp tục",
-          "examples": [
-            {
-              "ko": "계속적",
-              "en": "continuously"
-            },
-            {
-              "ko": "계속되다",
-              "en": "be continued"
-            },
-            {
-              "ko": "계속하다",
-              "en": "do continuously"
-            }
-          ]
-        }
-      ]
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>계속적</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>continuously</span></div><div><span class='font-semibold text-gray-700'>계속되다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>be continued</span></div><div><span class='font-semibold text-gray-700'>계속하다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>do continuously</span></div></div>",
+      "detailBlocks": []
     },
     {
       "id": "25",
@@ -719,25 +374,8 @@
       "example_ko": "아무리 계획을 세워도 지키지 않으면 소용이 없겠지요.",
       "example_vi": "It is no use if you plan things over and over and are not do it.",
       "example_vi_vn": "Dù lập kế hoạch bao nhiêu lần đi nữa, nếu không thực hiện thì cũng vô ích.",
-      "extra": "",
-      "detailBlocks": [
-        {
-          "type": "tip_note",
-          "label": "확장 표현",
-          "question_ko": "계획",
-          "question_vi": "kế hoạch",
-          "examples": [
-            {
-              "ko": "계획적",
-              "en": "premeditated"
-            },
-            {
-              "ko": "계획하다",
-              "en": "plan"
-            }
-          ]
-        }
-      ]
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>계획적</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>premeditated</span></div><div><span class='font-semibold text-gray-700'>계획하다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>plan</span></div></div>",
+      "detailBlocks": []
     },
     {
       "id": "28",
@@ -748,41 +386,8 @@
       "example_ko": "수리가 끝났으니까 찾아가시기 바랍니다.",
       "example_vi": "The repair is done so you should come and pick it up.",
       "example_vi_vn": "Việc sửa chữa đã xong nên bạn hãy đến lấy.",
-      "extra": "",
-      "detailBlocks": [
-        {
-          "type": "tip_note",
-          "label": "확장 표현",
-          "question_ko": "끝나다",
-          "question_vi": "kết thúc / hoàn thành",
-          "examples": [
-            {
-              "ko": "끝",
-              "en": "end"
-            },
-            {
-              "ko": "끝나다",
-              "en": "finish"
-            },
-            {
-              "ko": "끝없이",
-              "en": "endlessly"
-            },
-            {
-              "ko": "끝내다",
-              "en": "finish"
-            },
-            {
-              "ko": "끝맺다",
-              "en": "end"
-            },
-            {
-              "ko": "끝으로",
-              "en": "at last"
-            }
-          ]
-        }
-      ]
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>끝</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>end</span></div><div><span class='font-semibold text-gray-700'>끝나다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>finish</span></div><div><span class='font-semibold text-gray-700'>끝없이</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>endlessly</span></div><div><span class='font-semibold text-gray-700'>끝내다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>finish</span></div><div><span class='font-semibold text-gray-700'>끝맺다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>end</span></div><div><span class='font-semibold text-gray-700'>끝으로</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>at last</span></div></div>",
+      "detailBlocks": []
     },
     {
       "id": "29",
@@ -793,29 +398,8 @@
       "example_ko": "그 사람은 어린 나이에 이 분야에서 성공했다.",
       "example_vi": "He became successful in this area at a young age.",
       "example_vi_vn": "Người đó đã thành công trong lĩnh vực này khi còn trẻ.",
-      "extra": "",
-      "detailBlocks": [
-        {
-          "type": "tip_note",
-          "label": "확장 표현",
-          "question_ko": "어리다",
-          "question_vi": "trẻ",
-          "examples": [
-            {
-              "ko": "어린이",
-              "en": "children"
-            },
-            {
-              "ko": "어린이날",
-              "en": "Children’s Day"
-            },
-            {
-              "ko": "어린시절",
-              "en": "youth"
-            }
-          ]
-        }
-      ]
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>어린이</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>children</span></div><div><span class='font-semibold text-gray-700'>어린이날</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>Children’s Day</span></div><div><span class='font-semibold text-gray-700'>어린시절</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>youth</span></div></div>",
+      "detailBlocks": []
     },
     {
       "id": "30",
@@ -826,25 +410,8 @@
       "example_ko": "다음 달에 직원을 새로 뽑으려고 합니다.",
       "example_vi": "We are planning to hire a new employee next month.",
       "example_vi_vn": "Chúng tôi dự định tuyển nhân viên mới vào tháng sau.",
-      "extra": "",
-      "detailBlocks": [
-        {
-          "type": "tip_note",
-          "label": "확장 표현",
-          "question_ko": "직원",
-          "question_vi": "nhân viên",
-          "examples": [
-            {
-              "ko": "직원 교육",
-              "en": "staff training"
-            },
-            {
-              "ko": "직원 채용",
-              "en": "hire people"
-            }
-          ]
-        }
-      ]
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>직원 교육</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>staff training</span></div><div><span class='font-semibold text-gray-700'>직원 채용</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>hire people</span></div></div>",
+      "detailBlocks": []
     },
     {
       "id": "31",
@@ -860,25 +427,25 @@
         {
           "type": "mindmap",
           "title_ko": "관련어",
-          "title_vi": "Những từ nên học cùng nhau",
+          "title_vi": "Words to memorize together",
           "center_ko": "관리",
-          "center_vi": "Quản lý",
+          "center_vi": "Management",
           "nodes": [
             {
               "ko": "관리자",
-              "vi": "người quản lý"
+              "vi": "manager"
             },
             {
               "ko": "관리비",
-              "vi": "phí quản lý"
+              "vi": "maintenance fee"
             },
             {
               "ko": "관리직",
-              "vi": "vị trí quản lý"
+              "vi": "managing position"
             },
             {
               "ko": "관리 사무소",
-              "vi": "văn phòng quản lý"
+              "vi": "management office"
             }
           ]
         }
@@ -893,21 +460,8 @@
       "example_ko": "더 이상 숨기지 말고 사실을 말해 주세요.",
       "example_vi": "Do not disguise anymore and just tell me the truth.",
       "example_vi_vn": "Đừng che giấu nữa, hãy nói sự thật với tôi.",
-      "extra": "",
-      "detailBlocks": [
-        {
-          "type": "tip_note",
-          "label": "확장 표현",
-          "question_ko": "사실",
-          "question_vi": "sự thật",
-          "examples": [
-            {
-              "ko": "사실적",
-              "en": "realistic"
-            }
-          ]
-        }
-      ]
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>사실적</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>realistic</span></div></div>",
+      "detailBlocks": []
     },
     {
       "id": "33",
@@ -918,29 +472,8 @@
       "example_ko": "엘리베이터가 고장나서 불편했다.",
       "example_vi": "The elevator was out of order and it was inconvenient.",
       "example_vi_vn": "Thang máy bị hỏng nên rất bất tiện.",
-      "extra": "",
-      "detailBlocks": [
-        {
-          "type": "tip_note",
-          "label": "확장 표현",
-          "question_ko": "불편하다",
-          "question_vi": "bất tiện",
-          "examples": [
-            {
-              "ko": "불편",
-              "en": "inconvenience"
-            },
-            {
-              "ko": "불편을 겪다",
-              "en": "go through inconvenience"
-            },
-            {
-              "ko": "불편을 느끼다",
-              "en": "feel inconvenient"
-            }
-          ]
-        }
-      ]
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>불편</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>inconvenience</span></div><div><span class='font-semibold text-gray-700'>불편을 겪다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>go through inconvenience</span></div><div><span class='font-semibold text-gray-700'>불편을 느끼다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>feel inconvenient</span></div></div>",
+      "detailBlocks": []
     }
   ],
   "dict": {
@@ -1096,6 +629,11 @@
     "moreover": "hơn nữa",
     "The road was already crowded but there was an accident. Moreover, on-going construction has jammed the traffic all day.": "Đường vốn đã đông lại còn xảy ra tai nạn. Hơn nữa, công trình đang thi công khiến xe bị kẹt cả ngày.",
     "Connect the Korean words with the English words of same meaning.": "Hãy nối từ tiếng Hàn với từ tiếng Anh có cùng nghĩa.",
-    "Pick the suitable word from the options for each blank.": "Hãy chọn và viết từ phù hợp trong các lựa chọn vào chỗ trống."
+    "Pick the suitable word from the options for each blank.": "Hãy chọn và viết từ phù hợp trong các lựa chọn vào chỗ trống.",
+    "invitation": "thư mời / giấy mời",
+    "receipt": "hóa đơn / biên nhận",
+    "deadline": "hạn chót / thời hạn",
+    "comfortable physically/mentally": "thoải mái về thể chất/tinh thần",
+    "convenient to use": "tiện lợi khi sử dụng"
   }
 }
