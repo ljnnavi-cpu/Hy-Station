@@ -354,6 +354,21 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
 .fillbatch-nextbar{margin-top:16px}
 .fillbatch-next-btn:disabled{opacity:.45;cursor:not-allowed}
 .fillbatch-redo-banner{text-align:center;background:var(--pk2);border:1.5px solid var(--pk3);border-radius:12px;padding:10px 12px;font-size:12px;font-weight:700;color:var(--pk4);margin-bottom:14px}
+.fillbatch-card{background:#fff;border:1.5px solid var(--brd);border-radius:16px;padding:14px;box-shadow:var(--shadow)}
+.fillbatch-table-head{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:9px 0;border-bottom:1.5px solid var(--brd);font-size:11px;font-weight:800;color:#8a7a84;text-transform:uppercase;letter-spacing:.02em}
+.fillbatch-muted{font-size:11px;color:#b0a0a8;line-height:1.6}
+.fillbatch-mini-stat{display:inline-flex;align-items:center;gap:4px;background:var(--pk2);border:1px solid var(--brd);border-radius:999px;padding:4px 9px;font-size:11px;font-weight:700;color:var(--pk4)}
+@media(max-width:640px){
+  .fillbatch-card{padding:10px}
+  .fillbatch-table-head{display:grid;grid-template-columns:minmax(96px,42%) minmax(0,58%);gap:8px;padding:8px 0;font-size:10px}
+  .fillbatch-row{grid-template-columns:minmax(96px,42%) minmax(0,58%);gap:8px;padding:10px 0;align-items:start}
+  .fillbatch-prompt-label{font-size:9px}
+  .fillbatch-prompt-text{font-size:12px;line-height:1.35}
+  .fillbatch-prompt-text.kr{font-size:15px}
+  .fillbatch-input{font-size:14px;padding:9px 30px 9px 10px}
+  .fillbatch-reveal-row{font-size:10px;gap:4px;align-items:flex-start}
+  .fillbatch-reveal-btn{font-size:10px;padding:1px 2px}
+}
 
 /* Add words */
 .add-words-tabs{display:flex;gap:6px;margin-bottom:16px}
@@ -2158,6 +2173,8 @@ let quizRound = 1;                 // lượt hiện tại
 let quizSessionWords = [];         // toàn bộ từ của phiên quiz này (cố định từ lượt 1)
 let quizSessionMistakes = {};      // {cardId: số lần làm sai trong cả phiên} — dùng để báo "từ hay sai"
 let _pendingRoundWrong = [];       // danh sách thẻ sai của lượt vừa xong, chờ qua lượt tiếp theo
+const FILLBATCH_SIZE = 10;        // Tự điền hàng loạt: mỗi màn tối đa 10 từ
+let fillBatchState = { rows:{} };  // {cardId:{value,status,checked,revealedOnce}}
 let sessionStart = null, sessionCards = 0;
 let todayStats = { total:0, correct:0, wrong:0, newCards:0, reviewCards:0, timeSecs:0 };
 let sessions = [];
@@ -3563,7 +3580,7 @@ function buildQuizTab() {
     <div class="quiz-type-grid">
       <div class="quiz-type-card" id="qt-matching" onclick="selectQuizType('matching',this)"><div class="quiz-icon">🔗</div><div class="quiz-label">Ghép thẻ</div><div class="quiz-desc">Nối từ Hàn với nghĩa Việt</div></div>
       <div class="quiz-type-card" id="qt-multiple" onclick="selectQuizType('multiple',this)"><div class="quiz-icon">📝</div><div class="quiz-label">Trắc nghiệm</div><div class="quiz-desc">4 đáp án, chọn 1 đúng</div></div>
-      <div class="quiz-type-card" id="qt-fillin" onclick="selectQuizType('fillin',this)"><div class="quiz-icon">✍️</div><div class="quiz-label">Tự điền</div><div class="quiz-desc">Nhập nghĩa tiếng Việt hoặc Hàn</div></div>
+      <div class="quiz-type-card" id="qt-fillin" onclick="selectQuizType('fillin',this)"><div class="quiz-icon">✍️</div><div class="quiz-label">Tự điền</div><div class="quiz-desc">Nhập hàng loạt 10 từ/lần</div></div>
       <div class="quiz-type-card" id="qt-dictation" onclick="selectQuizType('dictation',this)"><div class="quiz-icon">🎧</div><div class="quiz-label">Nghe chép</div><div class="quiz-desc">Nghe câu ví dụ rồi chép lại</div></div>
     </div>
     <div id="fillin-mode-row" style="display:none;margin-bottom:14px;background:var(--pk2);border-radius:10px;padding:10px 14px">
@@ -3673,23 +3690,25 @@ function buildMistakeSummaryHtml() {
 function showRoundTransition(wrongCardsThisRound) {
   _pendingRoundWrong = dedupeCards(wrongCardsThisRound);
   const area = document.getElementById('quiz-run-area'); if (!area) return;
+  const isFillBatch = quizType === 'fillin';
   area.innerHTML = `
     <div class="quiz-result-header" style="background:linear-gradient(135deg,var(--ylw),var(--pk))">
       <div style="font-size:36px;margin-bottom:4px">🔄</div>
       <div class="quiz-score-label" style="font-size:15px;font-weight:700;color:var(--txt)">Hoàn thành lượt ${quizRound}!</div>
-      <div class="quiz-score-label">Còn ${_pendingRoundWrong.length} từ chưa thuộc → sẽ làm lại ở lượt ${quizRound+1}</div>
+      <div class="quiz-score-label">${isFillBatch ? `Còn ${_pendingRoundWrong.length} từ cần làm lại để hoàn thiện bài làm.` : `Còn ${_pendingRoundWrong.length} từ chưa thuộc → sẽ làm lại ở lượt ${quizRound+1}`}</div>
     </div>
     <div class="quiz-wrong-list">
       <div style="font-size:12px;font-weight:700;color:#c05050;margin-bottom:8px">📌 Từ cần làm lại:</div>
       ${_pendingRoundWrong.map(c=>`<div class="quiz-wrong-item">
-        <span style="font-family:'Noto Sans KR';font-weight:700;color:var(--pk4);font-size:13px">${c.korean}</span>
+        <span style="font-family:'Noto Sans KR';font-weight:700;color:var(--pk4);font-size:13px">${escHtmlSafe(c.korean)}</span>
         <span style="color:#b0a0a8">→</span>
-        <span style="font-size:12px;color:var(--txt)">${c.vietnamese}</span>
+        <span style="font-size:12px;color:var(--txt)">${escHtmlSafe(c.vietnamese)}</span>
       </div>`).join('')}
     </div>
     <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:12px" onclick="startNextQuizRound()">
-      <i class="ti ti-arrow-right"></i> Vào lượt ${quizRound+1} (${_pendingRoundWrong.length} từ)
-    </button>`;
+      <i class="ti ti-refresh"></i> ${isFillBatch ? `Làm lại các câu sai (${_pendingRoundWrong.length} từ)` : `Vào lượt ${quizRound+1} (${_pendingRoundWrong.length} từ)`}
+    </button>
+    ${isFillBatch ? '<div class="fillbatch-muted" style="text-align:center;margin-top:10px">Các câu sai sẽ tiếp tục hiện theo dạng lưới hàng loạt, tối đa 10 từ/lần.</div>' : ''}`;
 }
 
 // Bắt đầu lượt kế tiếp, chỉ gồm các từ vừa làm sai ở lượt trước
@@ -3698,6 +3717,7 @@ function startNextQuizRound() {
   quizRound++;
   quizCards = shuffle(wrongCardsThisRound);
   quizIdx = 0; quizCorrect = 0; quizWrongCards = [];
+  fillBatchState = { rows:{} };
   if (quizType === 'dictation') {
     dictState = { cards: quizCards, idx:0, correct:0, wrong:0, hintsUsed:0, hintsLeft:10, answered:false, wrongCards:[], mode: dictState.mode || quizDictMode };
     _dictHintRevealed = 0;
@@ -3882,6 +3902,7 @@ function startQuiz() {
   quizIdx = 0; quizCorrect = 0; quizWrongCards = [];
   // Reset phiên "học đến khi thuộc"
   quizRound = 1; quizSessionMistakes = {}; quizSessionWords = [...quizCards];
+  fillBatchState = { rows:{} };
 
   openQuizRunPage();
 
@@ -3894,8 +3915,272 @@ function startQuiz() {
   }
 }
 
+
+// ============================================================
+// TỰ ĐIỀN HÀNG LOẠT (10 từ/lần)
+// - Kiểm tra khi blur hoặc Enter
+// - Nút Tiếp chỉ bật khi đã điền đủ ô trong nhóm hiện tại
+// - Câu sai vẫn sửa được trước khi bấm Tiếp
+// - Bấm Học lại sẽ hiện đáp án và đẩy từ về trạng thái Chưa thuộc/Đang học
+// ============================================================
+function fillBatchTarget(card) {
+  return quizFillMode === 'kr' ? (card.korean||'') : (card.vietnamese||'');
+}
+
+function fillBatchPrompt(card) {
+  return quizFillMode === 'kr' ? (card.vietnamese||'') : (card.korean||'');
+}
+
+function fillBatchPromptLabel() {
+  return quizFillMode === 'kr' ? 'Vietnamese' : 'Korean';
+}
+
+function fillBatchAnswerLabel() {
+  return quizFillMode === 'kr' ? 'Từ vựng tiếng Hàn' : 'Nghĩa tiếng Việt';
+}
+
+function fillBatchPlaceholder() {
+  return quizFillMode === 'kr' ? 'Nhập tiếng Hàn...' : 'Nhập nghĩa tiếng Việt...';
+}
+
+function fillBatchNormalize(s) {
+  return String(s||'')
+    .normalize('NFC')
+    .replace(/[“”"'`]/g,'')
+    .replace(/[.,;:!?，。！？、]/g,'')
+    .replace(/\s+/g,' ')
+    .trim()
+    .toLowerCase();
+}
+
+function fillBatchAnswerParts(correct) {
+  const raw = String(correct||'');
+  const parts = raw.split(/[,/;|\n]+/).map(fillBatchNormalize).filter(Boolean);
+  const whole = fillBatchNormalize(raw);
+  return Array.from(new Set([whole, ...parts].filter(Boolean)));
+}
+
+function fillBatchIsCorrect(card, value) {
+  const val = fillBatchNormalize(value);
+  if (!val) return false;
+  return fillBatchAnswerParts(fillBatchTarget(card)).includes(val);
+}
+
+function fillBatchGetRow(cardId) {
+  fillBatchState.rows = fillBatchState.rows || {};
+  if (!fillBatchState.rows[cardId]) fillBatchState.rows[cardId] = { value:'', status:'empty', checked:false, revealedOnce:false };
+  return fillBatchState.rows[cardId];
+}
+
+function fillBatchCurrentCards() {
+  return quizCards.slice(quizIdx, Math.min(quizIdx + FILLBATCH_SIZE, quizCards.length));
+}
+
+function fillBatchStatusIcon(status) {
+  if (status === 'correct') return '✅';
+  if (status === 'wrong') return '❌';
+  if (status === 'revealed') return '👀';
+  return '';
+}
+
+function fillBatchInputClass(status) {
+  if (status === 'correct') return 'st-correct';
+  if (status === 'wrong') return 'st-wrong';
+  if (status === 'revealed') return 'st-revealed';
+  return '';
+}
+
+function fillBatchRender() {
+  const area = document.getElementById('quiz-run-area'); if (!area) return;
+  if (quizIdx >= quizCards.length) { handleRoundComplete(); return; }
+  const batch = fillBatchCurrentCards();
+  const startNo = quizIdx + 1;
+  const endNo = quizIdx + batch.length;
+  const progress = ((quizIdx / quizCards.length) * 100).toFixed(0);
+  const isKrMode = quizFillMode === 'kr';
+  const rowsHtml = batch.map((c, idx)=>{
+    const row = fillBatchGetRow(c.id);
+    const safeId = escJs(c.id);
+    const inputId = `fillbatch-input-${c.id}`;
+    const promptClass = isKrMode ? '' : 'kr';
+    const answer = fillBatchTarget(c);
+    return `<div class="fillbatch-row" data-card-id="${escHtmlSafe(c.id)}">
+      <div class="fillbatch-prompt">
+        <div class="fillbatch-prompt-label">${startNo + idx}. ${fillBatchPromptLabel()}</div>
+        <div class="fillbatch-prompt-text ${promptClass}">${escHtmlSafe(fillBatchPrompt(c))}</div>
+      </div>
+      <div class="fillbatch-answer">
+        <div class="fillbatch-input-wrap">
+          <input class="fillbatch-input ${fillBatchInputClass(row.status)}" id="${escHtmlSafe(inputId)}"
+            value="${escHtmlSafe(row.value)}"
+            placeholder="${fillBatchPlaceholder()}"
+            autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+            name="fillbatch-${escHtmlSafe(c.id)}-${Date.now()}"
+            oninput="fillBatchOnInput('${safeId}')"
+            onblur="fillBatchCheck('${safeId}')"
+            onkeydown="if(event.key==='Enter'){event.preventDefault();fillBatchCheck('${safeId}', true)}" />
+          <span class="fillbatch-status-icon" id="fillbatch-icon-${escHtmlSafe(c.id)}">${fillBatchStatusIcon(row.status)}</span>
+        </div>
+        <div class="fillbatch-reveal-row">
+          <span class="fillbatch-correct-hint" id="fillbatch-hint-${escHtmlSafe(c.id)}">${row.status==='wrong'?'Sai rồi, sửa lại hoặc bấm Học lại.':row.status==='revealed'?`Đáp án: ${escHtmlSafe(answer)}`:''}</span>
+          <button type="button" class="fillbatch-reveal-btn" onclick="fillBatchReveal('${safeId}')"><i class="ti ti-eye"></i> Học lại</button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+  const allFilled = fillBatchIsBatchFilled();
+  const nextLabel = endNo >= quizCards.length ? 'Hoàn thành lượt này' : `Tiếp ${Math.min(FILLBATCH_SIZE, quizCards.length - endNo)} từ`;
+  area.innerHTML = `<div class="quiz-progress"><div class="quiz-progress-fill" style="width:${progress}%"></div></div>
+    ${quizRound>1?`<div class="fillbatch-redo-banner">🔄 Lượt ${quizRound}: Làm lại các câu sai</div>`:''}
+    <div class="fillbatch-head">
+      <div>
+        <div style="font-size:14px;font-weight:800;color:var(--txt)">✍️ Tự điền hàng loạt</div>
+        <div class="fillbatch-head-info">${quizRound>1?`Lượt ${quizRound} · `:''}Từ ${startNo}–${endNo} / ${quizCards.length} · ✅ ${quizCorrect} đúng</div>
+      </div>
+      <span class="fillbatch-mini-stat">10 từ/lần</span>
+    </div>
+    <div class="fillbatch-muted" style="margin-bottom:10px">Kiểm tra khi rời khỏi ô hoặc bấm Enter. Ô đỏ có thể sửa lại cho đến khi chuyển xanh. Nút Tiếp chỉ bật khi đã điền đủ nhóm hiện tại.</div>
+    <div class="fillbatch-card">
+      <div class="fillbatch-table-head"><div>${fillBatchPromptLabel()}</div><div>${fillBatchAnswerLabel()}</div></div>
+      <div class="fillbatch-list">${rowsHtml}</div>
+    </div>
+    <div class="fillbatch-nextbar">
+      <button class="btn btn-primary fillbatch-next-btn" id="fillbatch-next-btn" ${allFilled?'':'disabled'} style="width:100%;justify-content:center" onclick="fillBatchGoNext()">
+        ${endNo >= quizCards.length ? '<i class="ti ti-flag-check"></i>' : '<i class="ti ti-arrow-right"></i>'} ${nextLabel}
+      </button>
+    </div>`;
+  fillBatchUpdateNextButton();
+  setTimeout(()=>{
+    const first = batch.map(c=>document.getElementById(`fillbatch-input-${c.id}`)).find(inp=>inp && !inp.value.trim());
+    (first || document.getElementById(`fillbatch-input-${batch[0]?.id}`))?.focus();
+  },50);
+}
+
+function fillBatchOnInput(cardId) {
+  const row = fillBatchGetRow(cardId);
+  const input = document.getElementById(`fillbatch-input-${cardId}`);
+  row.value = input ? input.value : row.value;
+  // Khi người dùng sửa lại, bỏ trạng thái cũ. Chỉ kiểm tra lại khi blur/Enter hoặc khi bấm Tiếp.
+  if (row.status === 'wrong' || row.status === 'correct' || row.status === 'revealed') {
+    row.status = row.value.trim() ? 'filled' : 'empty';
+    row.checked = false;
+    fillBatchPaintRow(cardId);
+  }
+  fillBatchUpdateNextButton();
+}
+
+function fillBatchCheck(cardId, moveNext=false) {
+  const card = quizCards.find(c=>c.id===cardId); if (!card) return false;
+  const row = fillBatchGetRow(cardId);
+  const input = document.getElementById(`fillbatch-input-${cardId}`);
+  row.value = input ? input.value : row.value;
+  if (!row.value.trim()) {
+    row.status = 'empty'; row.checked = false;
+    fillBatchPaintRow(cardId);
+    fillBatchUpdateNextButton();
+    return false;
+  }
+  const ok = fillBatchIsCorrect(card, row.value);
+  row.status = ok ? 'correct' : 'wrong';
+  row.checked = true;
+  fillBatchPaintRow(cardId);
+  fillBatchUpdateNextButton();
+  if (moveNext && ok) {
+    const inputs = fillBatchCurrentCards().map(c=>document.getElementById(`fillbatch-input-${c.id}`)).filter(Boolean);
+    const idx = inputs.findIndex(inp=>inp.id === `fillbatch-input-${cardId}`);
+    const next = inputs.slice(idx+1).find(inp=>!inp.value.trim() || !fillBatchGetRow(inp.id.replace('fillbatch-input-','')).checked);
+    (next || inputs[idx+1])?.focus();
+  }
+  return ok;
+}
+
+function fillBatchPaintRow(cardId) {
+  const row = fillBatchGetRow(cardId);
+  const input = document.getElementById(`fillbatch-input-${cardId}`);
+  const icon = document.getElementById(`fillbatch-icon-${cardId}`);
+  const hint = document.getElementById(`fillbatch-hint-${cardId}`);
+  const card = quizCards.find(c=>c.id===cardId);
+  if (input) {
+    input.classList.remove('st-correct','st-wrong','st-revealed');
+    const cls = fillBatchInputClass(row.status);
+    if (cls) input.classList.add(cls);
+  }
+  if (icon) icon.textContent = fillBatchStatusIcon(row.status);
+  if (hint) {
+    if (row.status === 'wrong') hint.textContent = 'Sai rồi, sửa lại hoặc bấm Học lại.';
+    else if (row.status === 'revealed') hint.textContent = `Đáp án: ${fillBatchTarget(card)}`;
+    else hint.textContent = '';
+  }
+}
+
+function fillBatchIsBatchFilled() {
+  const batch = fillBatchCurrentCards();
+  return batch.length > 0 && batch.every(c=>{
+    const row = fillBatchGetRow(c.id);
+    const input = document.getElementById(`fillbatch-input-${c.id}`);
+    const val = input ? input.value : row.value;
+    return String(val||'').trim().length > 0;
+  });
+}
+
+function fillBatchUpdateNextButton() {
+  const btn = document.getElementById('fillbatch-next-btn');
+  if (btn) btn.disabled = !fillBatchIsBatchFilled();
+}
+
+function quizMarkLearningOnly(card) {
+  if (!card) return;
+  const updates = { status:'learning' };
+  DS.updateCard(card.id, updates).catch(()=>{});
+  Object.assign(card, updates);
+  const inAll = allCards.find(x=>x.id===card.id); if (inAll) Object.assign(inAll, updates);
+}
+
+function fillBatchReveal(cardId) {
+  const card = quizCards.find(c=>c.id===cardId); if (!card) return;
+  const row = fillBatchGetRow(cardId);
+  const answer = fillBatchTarget(card);
+  row.value = answer;
+  row.status = 'revealed';
+  row.checked = true;
+  row.revealedOnce = true;
+  const input = document.getElementById(`fillbatch-input-${cardId}`);
+  if (input) input.value = answer;
+  quizMarkLearningOnly(card);
+  fillBatchPaintRow(cardId);
+  fillBatchUpdateNextButton();
+}
+
+function fillBatchGoNext() {
+  const batch = fillBatchCurrentCards();
+  if (!fillBatchIsBatchFilled()) { showToast('Hãy điền đủ các ô trong nhóm này trước khi bấm Tiếp.'); return; }
+  let batchCorrect = 0, batchWrong = 0;
+  for (const card of batch) {
+    const row = fillBatchGetRow(card.id);
+    if (!row.revealedOnce) fillBatchCheck(card.id);
+    const finalRow = fillBatchGetRow(card.id);
+    const isCorrect = finalRow.status === 'correct' && !finalRow.revealedOnce;
+    if (isCorrect) {
+      batchCorrect++;
+      quizCorrect++;
+      quizMarkMastered(card);
+    } else {
+      batchWrong++;
+      if (!quizWrongCards.some(c=>c.id===card.id)) quizWrongCards.push(card);
+      quizMarkWrong(card);
+    }
+  }
+  const nextStart = quizIdx + batch.length;
+  fillBatchState = { rows:{} };
+  quizIdx = nextStart;
+  if (batchWrong > 0) showToast(`Đã lưu ${batchWrong} câu sai để làm lại sau.`);
+  if (quizIdx >= quizCards.length) handleRoundComplete();
+  else fillBatchRender();
+}
+
 function renderQuizQuestion() {
   const area = document.getElementById('quiz-run-area'); if(!area) return;
+  if (quizType === 'fillin') { fillBatchRender(); return; }
   if (quizIdx >= quizCards.length) { handleRoundComplete(); return; }
   const c = quizCards[quizIdx];
   const progress = ((quizIdx/quizCards.length)*100).toFixed(0);
