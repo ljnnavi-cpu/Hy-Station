@@ -7,10 +7,12 @@
 <title>Hy Station 🌸 Korean Study Space</title>
 <link rel="apple-touch-icon" sizes="180x180" href="https://pnqxiyhtpkwkqhrofiwl.supabase.co/storage/v1/object/public/app-icon/Icon.jpg?v=6">
 <link rel="icon" type="image/png" href="https://pnqxiyhtpkwkqhrofiwl.supabase.co/storage/v1/object/public/app-icon/Icon.jpg?v=6">
+
 <meta name="apple-mobile-web-app-title" content="🌸 Hy Station">
 <meta name="application-name" content="🌸 Hy Station">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <style>
@@ -326,6 +328,32 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
 .quiz-wrong-list{background:#fff3f3;border:1.5px solid #f5a0a0;border-radius:12px;padding:12px 14px;margin-top:12px}
 .quiz-wrong-item{display:flex;align-items:center;gap:10px;padding:6px 0;border-bottom:1px solid #f5d0d0;font-size:12px}
 .quiz-wrong-item:last-child{border-bottom:none}
+
+/* Fill-in batch (Tự điền hàng loạt) */
+.fillbatch-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.fillbatch-head-info{font-size:11px;color:#b0a0a8}
+.fillbatch-list{display:flex;flex-direction:column;gap:2px}
+.fillbatch-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:12px 0;border-top:1px solid var(--brd)}
+.fillbatch-row:first-child{border-top:none}
+.fillbatch-prompt{display:flex;flex-direction:column;justify-content:center;gap:2px}
+.fillbatch-prompt-label{font-size:10px;color:#b0a0a8;font-weight:600}
+.fillbatch-prompt-text{font-size:14px;font-weight:700;color:var(--txt)}
+.fillbatch-prompt-text.kr{font-family:'Noto Sans KR',sans-serif;font-size:18px;color:var(--pk4)}
+.fillbatch-answer{display:flex;flex-direction:column;gap:4px}
+.fillbatch-input-wrap{position:relative;display:flex;align-items:center}
+.fillbatch-input{width:100%;padding:10px 34px 10px 12px;border:1.5px solid var(--brd);border-radius:10px;font-size:14px;font-family:inherit;outline:none;background:#fff;transition:border-color .15s,background .15s}
+.fillbatch-input:focus{border-color:var(--pk3)}
+.fillbatch-input.st-correct{border-color:#80c090;background:var(--grn);color:#306040;font-weight:600}
+.fillbatch-input.st-wrong{border-color:#f5a0a0;background:#fde8e8;color:#a04040;font-weight:600}
+.fillbatch-input.st-revealed{border-color:var(--lav);background:#f1eefc;color:#6a5cb0;font-weight:600}
+.fillbatch-status-icon{position:absolute;right:10px;font-size:15px;pointer-events:none}
+.fillbatch-reveal-row{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:11px}
+.fillbatch-correct-hint{color:#c05050;flex:1}
+.fillbatch-reveal-btn{border:none;background:none;color:var(--pk4);font-weight:700;cursor:pointer;font-size:11px;display:inline-flex;align-items:center;gap:3px;padding:2px 4px;white-space:nowrap}
+.fillbatch-reveal-btn:hover{text-decoration:underline}
+.fillbatch-nextbar{margin-top:16px}
+.fillbatch-next-btn:disabled{opacity:.45;cursor:not-allowed}
+.fillbatch-redo-banner{text-align:center;background:var(--pk2);border:1.5px solid var(--pk3);border-radius:12px;padding:10px 12px;font-size:12px;font-weight:700;color:var(--pk4);margin-bottom:14px}
 
 /* Add words */
 .add-words-tabs{display:flex;gap:6px;margin-bottom:16px}
