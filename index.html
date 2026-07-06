@@ -333,15 +333,15 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
 .fillbatch-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
 .fillbatch-head-info{font-size:11px;color:#b0a0a8}
 .fillbatch-list{display:flex;flex-direction:column;gap:2px}
-.fillbatch-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:12px 0;border-top:1px solid var(--brd)}
+.fillbatch-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:14px 0;border-top:1px solid var(--brd)}
 .fillbatch-row:first-child{border-top:none}
 .fillbatch-prompt{display:flex;flex-direction:column;justify-content:center;gap:2px}
 .fillbatch-prompt-label{font-size:10px;color:#b0a0a8;font-weight:600}
-.fillbatch-prompt-text{font-size:14px;font-weight:700;color:var(--txt)}
-.fillbatch-prompt-text.kr{font-family:'Noto Sans KR',sans-serif;font-size:18px;color:var(--pk4)}
+.fillbatch-prompt-text{font-size:15px;font-weight:700;color:var(--txt)}
+.fillbatch-prompt-text.kr{font-family:'Noto Sans KR',sans-serif;font-size:20px;color:var(--pk4)}
 .fillbatch-answer{display:flex;flex-direction:column;gap:4px}
 .fillbatch-input-wrap{position:relative;display:flex;align-items:center}
-.fillbatch-input{width:100%;padding:10px 34px 10px 12px;border:1.5px solid var(--brd);border-radius:10px;font-size:14px;font-family:inherit;outline:none;background:#fff;transition:border-color .15s,background .15s}
+.fillbatch-input{width:100%;padding:12px 36px 12px 14px;border:1.5px solid var(--brd);border-radius:10px;font-size:15px;font-family:inherit;outline:none;background:#fff;transition:border-color .15s,background .15s}
 .fillbatch-input:focus{border-color:var(--pk3)}
 .fillbatch-input.st-correct{border-color:#80c090;background:var(--grn);color:#306040;font-weight:600}
 .fillbatch-input.st-wrong{border-color:#f5a0a0;background:#fde8e8;color:#a04040;font-weight:600}
@@ -354,8 +354,8 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
 .fillbatch-nextbar{margin-top:16px}
 .fillbatch-next-btn:disabled{opacity:.45;cursor:not-allowed}
 .fillbatch-redo-banner{text-align:center;background:var(--pk2);border:1.5px solid var(--pk3);border-radius:12px;padding:10px 12px;font-size:12px;font-weight:700;color:var(--pk4);margin-bottom:14px}
-.fillbatch-card{background:#fff;border:1.5px solid var(--brd);border-radius:16px;padding:14px;box-shadow:var(--shadow)}
-.fillbatch-table-head{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:9px 0;border-bottom:1.5px solid var(--brd);font-size:11px;font-weight:800;color:#8a7a84;text-transform:uppercase;letter-spacing:.02em}
+.fillbatch-card{background:#fff;border:1.5px solid var(--brd);border-radius:16px;padding:18px 20px;box-shadow:var(--shadow)}
+.fillbatch-table-head{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:9px 0;border-bottom:1.5px solid var(--brd);font-size:12px;font-weight:800;color:#8a7a84;text-transform:uppercase;letter-spacing:.02em}
 .fillbatch-muted{font-size:11px;color:#b0a0a8;line-height:1.6}
 .fillbatch-mini-stat{display:inline-flex;align-items:center;gap:4px;background:var(--pk2);border:1px solid var(--brd);border-radius:999px;padding:4px 9px;font-size:11px;font-weight:700;color:var(--pk4)}
 @media(max-width:640px){
@@ -571,6 +571,10 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
   .vl-detail-left{position:static;flex:none;width:100%}
   .vl-detail-right{flex:none;width:100%;max-height:none;overflow-y:visible;padding-right:0}
 }
+
+
+
+
 .mobile-nav{display:none}
 @media(max-width:640px){
   .mobile-nav{position:fixed;left:12px;right:12px;bottom:12px;height:68px;background:#fff;border:1.5px solid var(--brd);border-radius:22px;box-shadow:0 8px 28px rgba(212,112,154,.18);display:flex;justify-content:space-around;align-items:center;z-index:9999}
@@ -580,6 +584,7 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
   .mobile-nav button.active{color:var(--pk4)}
 }
 
+
 /* QUIZ RUN PAGE */
 .quiz-run-overlay{display:none;position:fixed;inset:0;background:var(--bg);z-index:200;overflow-y:auto;padding:24px}
 .quiz-run-overlay.open{display:block}
@@ -587,7 +592,7 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
 .quiz-run-back{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:10px;font-size:13px;font-weight:600;border:1.5px solid var(--brd);background:#fff;color:var(--txt);cursor:pointer;font-family:inherit;transition:all .15s}
 .quiz-run-back:hover{background:var(--pk2);border-color:var(--pk3)}
 .quiz-run-title{font-size:16px;font-weight:700;color:var(--txt)}
-.quiz-run-content{max-width:720px;margin:0 auto}
+.quiz-run-content{max-width:960px;width:100%;margin:0 auto}
 
 /* TOPIK EXAM MODULE */
 .topik-exam-hero{background:linear-gradient(135deg,var(--pk),var(--lav));border-radius:20px;padding:22px;margin-bottom:16px;color:#fff;position:relative;overflow:hidden}
@@ -3884,6 +3889,7 @@ function openQuizRunPage(titleLabel) {
 }
 
 function closeQuizRunPage() {
+  stopAllAudio();
   document.getElementById('quiz-run-overlay').classList.remove('open');
   document.body.style.overflow = '';
 }
@@ -5360,6 +5366,7 @@ function build7DayBars() {
 // TTS
 // ============================================================
 let ttsWs=null, ttsRequestId=0;
+let currentPlayingAudio=null; // audio (Supabase/TTS) đang phát, để có thể dừng hẳn khi thoát quiz
 const SUPABASE_AUDIO_BUCKET = 'flashcard-audio'; // tên bucket trên Supabase
 
 function speakCardById(cardId) {
@@ -5392,8 +5399,10 @@ async function speakText(text, cardId=null, mode='word') {
 async function playAudioUrl(url) {
   return new Promise((resolve, reject) => {
     const audio = new Audio(url);
-    audio.onended = resolve;
-    audio.onerror = () => reject(new Error('audio error'));
+    currentPlayingAudio = audio;
+    const cleanup = () => { if (currentPlayingAudio === audio) currentPlayingAudio = null; };
+    audio.onended = () => { cleanup(); resolve(); };
+    audio.onerror = () => { cleanup(); reject(new Error('audio error')); };
     // Nếu file không tồn tại (404) → reject sau 3s
     const timeout = setTimeout(() => reject(new Error('timeout')), 3000);
     audio.oncanplaythrough = () => {
@@ -5408,6 +5417,16 @@ function speakWithBrowser(text) {
   if(!('speechSynthesis' in window)){showToast('Không phát âm được.');return;}
   const utt=new SpeechSynthesisUtterance(text); utt.lang='ko-KR'; utt.rate=0.9;
   speechSynthesis.cancel(); speechSynthesis.speak(utt);
+}
+
+// Dừng hẳn mọi audio đang phát (file mp3 pre-generate, TTS trình duyệt, TTS Supertonic)
+function stopAllAudio() {
+  if (currentPlayingAudio) {
+    try { currentPlayingAudio.pause(); currentPlayingAudio.currentTime = 0; } catch(e) {}
+    currentPlayingAudio = null;
+  }
+  if ('speechSynthesis' in window) speechSynthesis.cancel();
+  ttsRequestId++; // vô hiệu hoá mọi phản hồi TTS websocket đang chờ (xem speakWithSupertonic)
 }
 
 async function speakWithSupertonic(text) {
