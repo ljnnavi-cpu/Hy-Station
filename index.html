@@ -7,6 +7,7 @@
 <title>Hy Station 🌸 Korean Study Space</title>
 <link rel="apple-touch-icon" sizes="180x180" href="https://pnqxiyhtpkwkqhrofiwl.supabase.co/storage/v1/object/public/app-icon/Icon.jpg?v=6">
 <link rel="icon" type="image/png" href="https://pnqxiyhtpkwkqhrofiwl.supabase.co/storage/v1/object/public/app-icon/Icon.jpg?v=6">
+
 <meta name="apple-mobile-web-app-title" content="🌸 Hy Station">
 <meta name="application-name" content="🌸 Hy Station">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -296,6 +297,12 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
 .word-table th{padding:9px 12px;background:var(--pk2);color:var(--pk4);font-weight:700;text-align:left;border-bottom:1.5px solid var(--brd);font-size:13px}
 .word-table td{padding:11px 12px;border-bottom:1px solid var(--brd);vertical-align:middle}
 .word-table tr:hover td{background:var(--pk2)}
+.col-toggle-bar{background:#fff;border:1.5px solid var(--brd);border-radius:14px;padding:10px 14px;margin-bottom:14px;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.col-toggle-title{font-size:12px;font-weight:700;color:var(--pk4);display:flex;align-items:center;gap:6px;margin-right:6px;white-space:nowrap}
+.col-toggle-chip{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border:1.5px solid var(--brd);border-radius:20px;font-size:12px;font-weight:600;color:#8a7a84;cursor:pointer;background:#fff;transition:all .15s;user-select:none}
+.col-toggle-chip:hover{border-color:var(--pk3)}
+.col-toggle-chip.active{background:var(--pk2);border-color:var(--pk3);color:var(--pk4)}
+.col-toggle-chip input[type=checkbox]{width:14px;height:14px;accent-color:var(--pk4);cursor:pointer;margin:0}
 .status-pill{padding:2px 8px;border-radius:16px;font-size:10px;font-weight:700}
 .status-new{background:#f0f0f0;color:#888}
 .status-learning{background:#e8f0fe;color:#5278e0}
@@ -2160,6 +2167,8 @@ let pendingUnitId = null; // thư mục đang mở khi tạo bài học mới
 let assigningFolderId = null; // bài học đang được gán vào thư mục
 let allCards = [];
 let filteredCards = [];
+// Cột hiển thị trong bảng "Danh sách từ" (reset về mặc định mỗi lần vào lại — không lưu)
+let wordListColState = { kr:true, vn:true, type:true, ex:true, status:true, review:true };
 let folderCardIdx = 0;
 let folderFlipped = false;
 let folderFilterMode = 'all';
@@ -3513,24 +3522,65 @@ function wordExampleHtml(c) {
   if (!kr && !vi) return '—';
 
   return `
-    ${kr ? `<div style="font-family:'Noto Sans KR';font-style:italic;color:#8a7a84;line-height:1.5;font-size:13px">${kr}</div>` : ''}
+    ${kr ? `<div style="display:flex;align-items:flex-start;gap:4px"><button class="btn btn-sm btn-icon" onclick="speakText('${kr.replace(/'/g,"\\'")}', '${c.id}', 'example')" style="flex-shrink:0" title="Phát âm ví dụ"><i class="ti ti-volume" style="font-size:12px"></i></button><div style="font-family:'Noto Sans KR';font-style:italic;color:#8a7a84;line-height:1.5;font-size:13px;padding-top:4px">${kr}</div></div>` : ''}
     ${vi ? `<div style="font-size:12px;color:#b0a0a8;line-height:1.5;margin-top:3px">→ ${vi}</div>` : ''}
   `;
 }
+
+// Danh sách cột có thể ẩn/hiện trong bảng "Danh sách từ"
+const WORD_LIST_COLUMNS = [
+  { key:'kr', label:'Tiếng Hàn' },
+  { key:'vn', label:'Nghĩa' },
+  { key:'type', label:'Loại từ' },
+  { key:'ex', label:'Ví dụ' },
+  { key:'status', label:'Trạng thái' },
+  { key:'review', label:'Ôn lại' },
+];
+
+function buildColToggleBar() {
+  return `<div class="col-toggle-bar">
+    <div class="col-toggle-title"><i class="ti ti-list-details"></i> Cột hiển thị</div>
+    ${WORD_LIST_COLUMNS.map(col => `
+      <label class="col-toggle-chip ${wordListColState[col.key] ? 'active' : ''}" data-colchip="${col.key}">
+        <input type="checkbox" ${wordListColState[col.key] ? 'checked' : ''} onchange="toggleWordListCol('${col.key}', this.checked)"/>
+        <span>${col.label}</span>
+      </label>
+    `).join('')}
+  </div>`;
+}
+
+function toggleWordListCol(key, checked) {
+  wordListColState[key] = checked;
+  const chip = document.querySelector(`.col-toggle-chip[data-colchip="${key}"]`);
+  if (chip) chip.classList.toggle('active', checked);
+  document.querySelectorAll(`.word-table [data-col="${key}"]`).forEach(el => {
+    el.style.display = checked ? '' : 'none';
+  });
+}
+
 function buildWordListTable() {
-  if (!allCards.length) return '<div class="empty"><i class="ti ti-table-off"></i>Chưa có từ nào.</div>';
-  return `<div style="overflow-x:auto;margin-top:4px">
+  if (!allCards.length) return buildColToggleBar() + '<div class="empty"><i class="ti ti-table-off"></i>Chưa có từ nào.</div>';
+  const dn = k => wordListColState[k] ? '' : 'display:none;';
+  return `${buildColToggleBar()}<div style="overflow-x:auto;margin-top:4px">
     <table class="word-table">
-      <thead><tr><th>Tiếng Hàn</th><th>Nghĩa</th><th>Loại từ</th><th>Ví dụ</th><th>Trạng thái</th><th>Ôn lại</th><th></th></tr></thead>
+      <thead><tr>
+        <th data-col="kr" style="${dn('kr')}">Tiếng Hàn</th>
+        <th data-col="vn" style="${dn('vn')}">Nghĩa</th>
+        <th data-col="type" style="${dn('type')}">Loại từ</th>
+        <th data-col="ex" style="${dn('ex')}">Ví dụ</th>
+        <th data-col="status" style="${dn('status')}">Trạng thái</th>
+        <th data-col="review" style="${dn('review')}">Ôn lại</th>
+        <th></th>
+      </tr></thead>
       <tbody>${allCards.map(c=>`<tr id="wrow-${c.id}">
-        <td style="font-family:'Noto Sans KR';font-weight:700;color:var(--pk4);font-size:15px"><button class="btn btn-sm btn-icon" onclick="speakCardById('${c.id}')" style="margin-right:4px" title="Phát âm"><i class="ti ti-volume" style="font-size:12px"></i></button>${c.korean}</td>
-        <td style="max-width:140px;white-space:normal">${c.vietnamese}</td>
-        <td style="color:#b0a0a8;font-size:12px">${c.word_type||'—'}</td>
-        <td style="font-size:12px;max-width:320px;white-space:normal">
+        <td data-col="kr" style="${dn('kr')}font-family:'Noto Sans KR';font-weight:700;color:var(--pk4);font-size:15px"><button class="btn btn-sm btn-icon" onclick="speakCardById('${c.id}')" style="margin-right:4px" title="Phát âm"><i class="ti ti-volume" style="font-size:12px"></i></button>${c.korean}</td>
+        <td data-col="vn" style="${dn('vn')}max-width:140px;white-space:normal">${c.vietnamese}</td>
+        <td data-col="type" style="${dn('type')}color:#b0a0a8;font-size:12px">${c.word_type||'—'}</td>
+        <td data-col="ex" style="${dn('ex')}font-size:12px;max-width:320px;white-space:normal">
   ${wordExampleHtml(c)}
 </td>
-        <td style="font-size:11px;color:#b0a0a8">${c.next_review_at?new Date(c.next_review_at).toLocaleDateString('vi'):'—'}</td>
-        <td><div style="display:flex;gap:4px">
+        <td data-col="status" style="${dn('status')}font-size:11px;color:#b0a0a8">${c.next_review_at?new Date(c.next_review_at).toLocaleDateString('vi'):'—'}</td>
+        <td data-col="review" style="${dn('review')}"><div style="display:flex;gap:4px">
           <button class="btn btn-sm btn-icon" onclick="openEditWord('${c.id}')"><i class="ti ti-pencil"></i></button>
           <button class="btn btn-sm btn-icon btn-danger" onclick="deleteCardInTable('${c.id}')"><i class="ti ti-trash"></i></button>
         </div></td>
