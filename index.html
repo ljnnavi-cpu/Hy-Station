@@ -50,8 +50,9 @@ body{font-family:'Be Vietnam Pro',sans-serif;background:var(--bg);color:var(--tx
 .user-name{font-size:12px;font-weight:600;color:var(--txt)}
 .user-role{font-size:10px;color:#b0a0a8}
 .main{flex:1;overflow-y:auto;background:var(--bg)}
-.page{display:none;padding:24px;animation:fadeIn .2s ease;min-height:100vh}
+.page{display:none;padding:24px;min-height:100vh}
 .page.active{display:block}
+.page.active.page-enter{animation:fadeIn .18s ease}
 @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
 .topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;gap:12px;flex-wrap:wrap}
 .page-title{font-size:20px;font-weight:700;color:var(--txt)}
@@ -2507,9 +2508,24 @@ function renderRoute() {
 }
 
 function showPage(id) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   const pg = document.getElementById('page-'+id);
-  if (pg) pg.classList.add('active');
+  if (!pg) return;
+
+  // Reset scroll BEFORE swapping, so the incoming page never renders
+  // mid-scroll (that's what makes the switch look like it "jumps").
+  const scrollHost = document.getElementById('main-content');
+  if (scrollHost) scrollHost.scrollTop = 0;
+  window.scrollTo(0, 0); // mobile layout scrolls the window/body instead
+
+  const prev = document.querySelector('.page.active');
+  if (prev && prev !== pg) prev.classList.remove('active');
+
+  // Force the entrance animation to restart cleanly only for the page
+  // that's actually changing (avoids touching/reflowing every .page node).
+  pg.classList.remove('page-enter');
+  void pg.offsetWidth; // reflow to reset the animation
+  pg.classList.add('active', 'page-enter');
+
   currentPage = id;
 }
 
