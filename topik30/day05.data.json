@@ -435,7 +435,7 @@
       "id": "27",
       "word": "방식",
       "meaning": "method",
-      "meaning_vi": "phương pháp",
+      "meaning_vi": "phương thức / cách thức",
       "type": "명 noun",
       "example_ko": "김 대리와 저는 일하는 방식이 서로 달라서 가끔 마음이 맞지 않아요.",
       "example_vi": "Sometimes I have trouble with Mr. Kim since the way that we work is totally different from each other.",
@@ -476,7 +476,7 @@
       "example_ko": "최근 서울시 산 근처 도로에 멧돼지가 나타났다고 합니다.",
       "example_vi": "It is said that the boars recently appeared in the roads near the mountain.",
       "example_vi_vn": "Nghe nói gần đây lợn rừng đã xuất hiện trên đường gần núi ở Seoul.",
-      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>나타나다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>appear</span></div></div>",
+      "extra": "<div class='grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5'><div><span class='font-semibold text-gray-700'>나타내다</span> <span class='hideable-meaning' onclick='t30.toggleSingleRedSheet(this, event)'>express / indicate</span></div></div>",
       "detailBlocks": [],
       "highlight_terms": [
         "나타났다고"
@@ -549,7 +549,7 @@
     "maintain": "duy trì",
     "understand": "hiểu",
     "organize": "sắp xếp / chỉnh lý",
-    "method": "phương pháp",
+    "method": "phương thức / cách thức",
     "emotion": "cảm xúc",
     "science": "khoa học",
     "appear": "xuất hiện",
@@ -669,6 +669,7 @@
     "type of performance": "loại hình biểu diễn",
     "date/time": "ngày/giờ",
     "location": "địa điểm",
-    "how to watch": "cách xem/tham dự"
+    "how to watch": "cách xem/tham dự",
+    "express / indicate": "thể hiện / biểu thị"
   }
 }
