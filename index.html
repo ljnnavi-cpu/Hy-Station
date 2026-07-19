@@ -911,6 +911,25 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
 .dict-next-btn.show{display:block}
 .dict-no-example{background:var(--pk2);border-radius:10px;padding:10px 14px;font-size:12px;color:#8a7a84;margin-bottom:8px}
 
+/* ══ Nghe & sắp xếp câu (arrange) — giao diện mới ══ */
+.arrange-card{background:transparent;border:none;padding:0;text-align:left;overflow:visible}
+.arrange-play-btn{display:inline-flex;align-items:center;gap:10px;background:var(--pk4);color:#fff;font-weight:700;font-size:15px;padding:14px 26px;border:none;border-radius:999px;cursor:pointer;box-shadow:var(--shadow);transition:all .15s;margin-bottom:20px;font-family:inherit}
+.arrange-play-btn:hover{background:#c0608a;transform:translateY(-1px)}
+.arrange-play-btn:active{transform:translateY(0)}
+.arrange-play-btn.playing{animation:dictPulse .8s infinite}
+.arrange-play-btn i{font-size:19px}
+.arrange-answer-zone{min-height:72px;border:2px dashed var(--pk3);background:var(--pk2);border-radius:16px;padding:14px 16px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:18px;transition:border-color .15s}
+.arrange-pool{display:flex;flex-wrap:wrap;gap:10px}
+.arrange-chip{background:#fff;border:1.5px solid var(--brd);border-radius:999px;padding:10px 18px;font-size:14px;font-weight:600;color:var(--txt);cursor:pointer;user-select:none;transition:all .15s;font-family:'Noto Sans KR','Be Vietnam Pro',sans-serif}
+.arrange-chip:hover{border-color:var(--pk3);background:var(--pk2);transform:translateY(-1px)}
+.arrange-chip:active{transform:translateY(0)}
+.arrange-chip-picked{background:var(--pk4);color:#fff;border-color:var(--pk4)}
+.arrange-chip-picked:hover{background:#c0608a;border-color:#c0608a}
+@media(max-width:640px){
+  .arrange-play-btn{padding:12px 20px;font-size:14px;width:100%;justify-content:center}
+  .arrange-chip{padding:9px 14px;font-size:13px}
+}
+
 /* Result */
 .topik-result-bar{background:#fff;border:1px solid var(--brd);border-radius:16px;padding:24px;margin-bottom:20px;text-align:center}
 .topik-result-score{font-size:52px;font-weight:700;color:var(--pk4);font-family:'Noto Sans KR',sans-serif;line-height:1.1}
@@ -5067,29 +5086,13 @@ function normalizeKoreanForArrange(sentence) {
   return String(sentence || '').normalize('NFKC').trim().replace(/\s+/g, ' ');
 }
 
-// Gộp các đơn vị (eojeol) ngắn thành tối đa `maxPieces` cụm liền kề có nghĩa,
-// ưu tiên "ít mảnh dài" hơn là "nhiều mảnh nhỏ vụn". Không dùng AI.
-function mergeKoreanUnits(units, maxPieces) {
-  const n = units.length;
-  if (n <= maxPieces) return units.slice();
-  const chunkSize = Math.ceil(n / maxPieces);
-  const pieces = [];
-  for (let i = 0; i < n; i += chunkSize) {
-    pieces.push(units.slice(i, i + chunkSize).join(' '));
-  }
-  return pieces;
-}
-
+// Tách câu thành từng mảnh theo đúng DẤU CÁCH (mỗi eojeol = 1 mảnh riêng),
+// không gộp nhiều từ lại với nhau nữa — để mỗi mảnh chỉ là 1 từ như trong
+// nguyên văn câu ví dụ.
 function splitKoreanSentenceIntoPieces(sentence) {
   const clean = normalizeKoreanForArrange(sentence);
   if (!clean) return [];
-  const units = clean.split(/\s+/).filter(Boolean);
-  if (units.length <= 2) return units;
-  const maxPieces =
-    units.length <= 5 ? 3 :
-    units.length <= 10 ? 5 :
-    units.length <= 16 ? 7 : 10;
-  return mergeKoreanUnits(units, maxPieces);
+  return clean.split(/\s+/).filter(Boolean);
 }
 
 // Cache theo ID thẻ + nội dung câu: cùng 1 câu luôn có cùng cách chia mảnh
@@ -5117,7 +5120,8 @@ function prepareArrangeQuestion(card) {
 
 function renderArrangeChip(item, loc) {
   const action = loc === 'pool' ? `moveArrangePiece('${item.id}')` : `returnArrangePiece('${item.id}')`;
-  return `<div class="arrange-chip" draggable="true" data-piece-id="${item.id}" onclick="${action}"
+  const locClass = loc === 'picked' ? ' arrange-chip-picked' : '';
+  return `<div class="arrange-chip${locClass}" draggable="true" data-piece-id="${item.id}" onclick="${action}"
     ondragstart="onArrangeDragStart(event,'${item.id}')">${escHtmlSafe(item.text)}</div>`;
 }
 function renderArrangePoolHtml() {
@@ -5150,15 +5154,9 @@ function renderArrangeDictationCard() {
     </div>
     <div class="dict-progress"><div class="dict-progress-fill" style="width:${progress}%"></div></div>
 
-    <div class="dict-card">
-      <div class="dict-instruction">🧩 Nghe câu rồi sắp xếp các mảnh theo đúng thứ tự</div>
-      <div class="dict-content-row">
-        <button class="dict-play-btn" id="dict-play-btn" onclick="dictSpeak()" title="Nghe câu"><i class="ti ti-volume" style="font-size:24px;color:var(--pk4)"></i></button>
-        <button type="button" class="btn btn-sm" onclick="dictSpeak()"><i class="ti ti-repeat"></i> Nghe lại</button>
-      </div>
-      <div style="font-size:12px;font-weight:700;color:#8a7a84;margin:14px 0 6px">Sắp xếp câu bạn vừa nghe:</div>
+    <div class="dict-card arrange-card">
+      <button class="arrange-play-btn" id="dict-play-btn" onclick="dictSpeak()" title="Nghe câu"><i class="ti ti-volume"></i> Nghe câu</button>
       <div class="arrange-answer-zone" id="arrange-answer-zone" ondragover="event.preventDefault()" ondrop="onArrangeDrop(event,'picked')">${renderArrangePickedHtml()}</div>
-      <div style="font-size:11px;color:#b0a0a8;margin:12px 0 6px">Các mảnh câu:</div>
       <div class="arrange-pool" id="arrange-pool" ondragover="event.preventDefault()" ondrop="onArrangeDrop(event,'pool')">${renderArrangePoolHtml()}</div>
     </div>
 
