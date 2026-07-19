@@ -148,11 +148,15 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
 .fc-stat-num{font-size:28px;font-weight:800;color:#1a1a1a;line-height:1}
 .fc-stat-sub{font-size:10px;color:#888;margin-top:4px}
 .fc-card-wrap{perspective:1000px;margin-bottom:16px}
-.fc-card{width:100%;height:200px;position:relative;transform-style:preserve-3d;transition:transform .45s;cursor:pointer;border-radius:20px}
-.fc-card.flipped{transform:rotateY(180deg)}
-.fc-front,.fc-back{position:absolute;inset:0;backface-visibility:hidden;border-radius:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;border:1.5px solid var(--brd)}
-.fc-front{background:#fff}
-.fc-back{background:var(--pk2);transform:rotateY(180deg)}
+.fc-card{width:100%;height:200px;position:relative;cursor:pointer;border-radius:20px;background:#fff;border:1.5px solid var(--brd);transition:background-color .25s ease}
+.fc-card.flipped{background:var(--pk2)}
+.fc-front,.fc-back{position:absolute;inset:0;border-radius:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px}
+.fc-front{background:transparent}
+.fc-back{background:transparent;display:none}
+.fc-card.flipped .fc-front{display:none}
+.fc-card.flipped .fc-back{display:flex}
+.fc-text-flip{animation:fcTextFlip .4s ease}
+@keyframes fcTextFlip{0%{transform:rotateX(-90deg);opacity:0}60%{transform:rotateX(8deg);opacity:1}100%{transform:rotateX(0deg);opacity:1}}
 .fc-kr{font-family:'Noto Sans KR',sans-serif;font-size:34px;font-weight:700;color:var(--pk4);margin-bottom:6px}
 .fc-status-badge{font-size:11px;color:#d0b0c0;margin-top:2px}
 .fc-hint{font-size:12px;color:#c0b0b8}
@@ -189,8 +193,17 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
 .fc-kindtabs{display:flex;gap:8px;margin-bottom:14px}
 .fc-kindtab{flex:1;text-align:center;padding:10px;border-radius:14px;font-weight:700;font-size:13px;cursor:pointer;border:1.5px solid var(--brd);background:#fff;color:#8a7a84;display:flex;align-items:center;justify-content:center;gap:6px;transition:all .15s}
 .fc-kindtab.active{background:var(--pk);border-color:var(--pk3);color:var(--pk4)}
-.fc-autoplay-settings{display:flex;align-items:center;gap:4px;font-size:11px;color:#8a7a84}
-.fc-autoplay-settings input{width:42px;padding:4px 6px;border:1.5px solid var(--brd);border-radius:8px;font-size:12px;text-align:center;font-family:inherit}
+.ap-row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--brd)}
+.ap-row:last-of-type{border-bottom:none}
+.ap-row-title{font-size:14px;font-weight:700;color:var(--txt)}
+.ap-row-sub{font-size:12px;color:#b0a0a8;margin-top:2px}
+.ap-stepper{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.ap-step-btn{width:36px;height:36px;border-radius:12px;border:1.5px solid var(--brd);background:#fff;font-size:18px;font-weight:700;color:var(--txt);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;font-family:inherit}
+.ap-step-btn:hover{background:var(--pk2);border-color:var(--pk3)}
+.ap-step-val{width:48px;height:36px;border-radius:12px;border:1.5px solid var(--brd);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;color:var(--txt)}
+.ap-unit{font-size:13px;color:#b0a0a8}
+.ap-note{background:var(--pk2);border:1.5px dashed var(--pk3);border-radius:12px;padding:12px 14px;font-size:12px;color:#8a7a84;line-height:1.6;margin:14px 0}
+.ap-footer{display:flex;justify-content:flex-end;gap:8px;margin-top:4px}
 .fc-blank{display:inline-block;min-width:50px;color:var(--pk4);font-weight:800;letter-spacing:1px}
 .fc-example-front{font-size:19px;line-height:1.7;font-family:'Noto Sans KR',sans-serif;text-align:center;color:var(--txt);padding:0 6px}
 .fc-btn-toggle.on{background:var(--pk4);border-color:var(--pk4);color:#fff}
@@ -1943,6 +1956,42 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
   </div>
 </div>
 
+<!-- FLASHCARD AUTO-PLAY SETTINGS MODAL -->
+<div class="modal-overlay" id="autoplay-modal">
+  <div class="modal" style="width:480px">
+    <div class="modal-title">Tự động phát thẻ <span class="modal-close" onclick="closeAutoplayModal()"><i class="ti ti-x"></i></span></div>
+    <div class="ap-row">
+      <div class="ap-row-text">
+        <div class="ap-row-title">Thời gian để lật thẻ</div>
+        <div class="ap-row-sub">Hiện mặt trước bao lâu rồi lật sang mặt sau</div>
+      </div>
+      <div class="ap-stepper">
+        <button type="button" class="ap-step-btn" onclick="apAdjustSec('front',-1)">−</button>
+        <div class="ap-step-val" id="ap-front-val">3</div>
+        <button type="button" class="ap-step-btn" onclick="apAdjustSec('front',1)">+</button>
+        <span class="ap-unit">giây</span>
+      </div>
+    </div>
+    <div class="ap-row">
+      <div class="ap-row-text">
+        <div class="ap-row-title">Thời gian để sang thẻ mới</div>
+        <div class="ap-row-sub">Xem mặt sau bao lâu rồi chuyển sang thẻ kế tiếp</div>
+      </div>
+      <div class="ap-stepper">
+        <button type="button" class="ap-step-btn" onclick="apAdjustSec('back',-1)">−</button>
+        <div class="ap-step-val" id="ap-back-val">4</div>
+        <button type="button" class="ap-step-btn" onclick="apAdjustSec('back',1)">+</button>
+        <span class="ap-unit">giây</span>
+      </div>
+    </div>
+    <div class="ap-note">Khi phát, thẻ Từ vựng sẽ tự đọc audio từ; thẻ Ví dụ sẽ tự đọc audio câu ví dụ.</div>
+    <div class="ap-footer">
+      <button class="btn" style="flex:1;justify-content:center" onclick="closeAutoplayModal()">Hủy</button>
+      <button class="btn btn-primary" style="flex:1;justify-content:center" onclick="confirmStartAutoplay()"><i class="ti ti-player-play"></i> Bắt đầu</button>
+    </div>
+  </div>
+</div>
+
 <!-- MODALS -->
 <div class="modal-overlay" id="upload-modal">
   <div class="modal">
@@ -2193,9 +2242,10 @@ let fcFrontMode = 'src2vi';     // 'src2vi' (Từ gốc → VI) | 'vi2src' (VI �
 let fcUndoStack = [];           // ngăn xếp hoàn tác: {idx, cardId, prevSnapshot, prevTodayStats}
 let fcAutoplay = { active:false, timer:null, frontSec:3, backSec:4 };
 let quizType = null, quizCards = [], quizIdx = 0, quizCorrect = 0, quizAnswered = false;
+let quizCountMode = 'custom'; // 'custom' (nhập số câu) | 'all' (tất cả)
 let quizWrongCards = []; // wrong answers of the CURRENT round (carried to next round)
-let quizFillMode = 'vi'; // NEW: 'vi' or 'kr'
-let quizDictMode = 'sentence'; // 'sentence' (audio đọc câu ví dụ) or 'word' (audio đọc từ vựng)
+let quizFillMode = 'vi'; // 'vi' | 'kr' | 'example_vi_to_kr' (dịch câu ví dụ VI→KO)
+let quizDictMode = 'sentence'; // 'sentence' (nghe & chép câu) | 'word' (nghe & chép từ) | 'arrange' (nghe & sắp xếp câu)
 // ── "Học đến khi thuộc" multi-round quiz session state ──
 let quizRound = 1;                 // lượt hiện tại
 let quizSessionWords = [];         // toàn bộ từ của phiên quiz này (cố định từ lượt 1)
@@ -2203,6 +2253,8 @@ let quizSessionMistakes = {};      // {cardId: số lần làm sai trong cả ph
 let _pendingRoundWrong = [];       // danh sách thẻ sai của lượt vừa xong, chờ qua lượt tiếp theo
 const FILLBATCH_SIZE = 10;        // Tự điền hàng loạt: mỗi màn tối đa 10 từ
 let fillBatchState = { rows:{} };  // {cardId:{value,status,checked,revealedOnce}}
+const generatedKoreanArrangeParts = {}; // cache: {cardId: {text, pieces}} — giữ cố định cách chia mảnh cho cùng 1 câu
+let _arrangeDragId = null; // id mảnh đang được kéo (drag & drop) trong quiz "Nghe & sắp xếp câu"
 let sessionStart = null, sessionCards = 0;
 let todayStats = { total:0, correct:0, wrong:0, newCards:0, reviewCards:0, timeSecs:0 };
 let sessions = [];
@@ -2529,6 +2581,11 @@ function renderRoute() {
 function showPage(id) {
   const pg = document.getElementById('page-'+id);
   if (!pg) return;
+
+  // Thoát khỏi trang học flashcard → dừng hẳn auto-play + mọi audio đang phát
+  if (currentPage === 'folder-detail' && id !== 'folder-detail') {
+    stopAutoplay(); stopAllAudio();
+  }
 
   // Reset scroll BEFORE swapping, so the incoming page never renders
   // mid-scroll (that's what makes the switch look like it "jumps").
@@ -3370,11 +3427,6 @@ function buildFolderFlashcardTab() {
       <div class="fc-toolrow-right">
         <button class="btn btn-sm" id="fc-dir-btn" onclick="toggleFrontMode()" title="Đổi chiều học"><i class="ti ti-arrows-left-right"></i> <span id="fc-dir-label">KR → VI</span></button>
         <button class="btn btn-sm" id="fc-autoplay-btn" onclick="toggleAutoplay()" title="Tự động phát thẻ"><i class="ti ti-player-play" id="fc-autoplay-icon"></i> <span id="fc-autoplay-label">Tự động phát thẻ</span></button>
-        <span class="fc-autoplay-settings" title="Thời gian mặt trước / mặt sau (giây)">
-          <input type="number" id="fc-front-sec" min="1" max="30" value="${fcAutoplay.frontSec}" onchange="updateAutoplaySec(this,'front')"/>s
-          <i class="ti ti-arrow-right" style="font-size:11px"></i>
-          <input type="number" id="fc-back-sec" min="1" max="30" value="${fcAutoplay.backSec}" onchange="updateAutoplaySec(this,'back')"/>s
-        </span>
         <button class="btn btn-sm" onclick="undoLastAction()" title="Hoàn tác"><i class="ti ti-arrow-back-up"></i> Undo</button>
         <button class="btn btn-sm" onclick="resetCardOrder()" title="Đặt lại thứ tự thẻ mặc định"><i class="ti ti-refresh"></i> Reset thẻ</button>
         <button class="btn btn-sm" onclick="shuffleCardOrder()" title="Trộn ngẫu nhiên thứ tự thẻ"><i class="ti ti-arrows-shuffle"></i> Trộn thẻ</button>
@@ -3537,9 +3589,19 @@ function renderFlashUnit() {
 
 function loadFolderCard() { rebuildUnits(fcUnits[fcIdx]?.id); renderFlashUnit(); }
 
+// Chỉ flip nội dung chữ (mặt trước/sau), không xoay cả khung thẻ
+function playFlipTextAnim() {
+  const side = document.getElementById(fcFlipped ? 'folder-fc-back' : 'folder-fc-front');
+  if (!side) return;
+  side.classList.remove('fc-text-flip');
+  void side.offsetWidth; // reflow để restart animation
+  side.classList.add('fc-text-flip');
+}
+
 function folderFlipCard() {
   fcFlipped = !fcFlipped;
   document.getElementById('folder-fc-card')?.classList.toggle('flipped', fcFlipped);
+  playFlipTextAnim();
 }
 
 function saveCardIdx() { saveProgressState({ idx: fcIdx }); }
@@ -3668,16 +3730,33 @@ function shuffleCardOrder() {
   showToast('Đã trộn thẻ 🔀');
 }
 
-function updateAutoplaySec(input, which) {
-  let v = parseInt(input.value, 10) || (which === 'front' ? 3 : 4);
+// Tự động phát thẻ: bấm nút → nếu đang phát thì dừng ngay; nếu chưa phát thì mở popup cài đặt thời gian
+function toggleAutoplay() { fcAutoplay.active ? stopAutoplay() : openAutoplayModal(); }
+
+function openAutoplayModal() {
+  if (!fcUnits.length) { showToast('Không có thẻ để phát!'); return; }
+  const fEl = document.getElementById('ap-front-val'); if (fEl) fEl.textContent = fcAutoplay.frontSec;
+  const bEl = document.getElementById('ap-back-val'); if (bEl) bEl.textContent = fcAutoplay.backSec;
+  openModal('autoplay-modal');
+}
+function closeAutoplayModal() { closeModal('autoplay-modal'); }
+
+function apAdjustSec(which, delta) {
+  const el = document.getElementById(which === 'front' ? 'ap-front-val' : 'ap-back-val');
+  if (!el) return;
+  let v = (parseInt(el.textContent, 10) || (which === 'front' ? 3 : 4)) + delta;
   v = Math.max(1, Math.min(30, v));
-  input.value = v;
-  if (which === 'front') fcAutoplay.frontSec = v; else fcAutoplay.backSec = v;
-  saveProgressState({ front_sec: fcAutoplay.frontSec, back_sec: fcAutoplay.backSec });
+  el.textContent = v;
 }
 
-// Tự động phát thẻ: hiện mặt trước → đọc audio → tự lật → chờ → sang thẻ tiếp → lặp lại
-function toggleAutoplay() { fcAutoplay.active ? stopAutoplay() : startAutoplay(); }
+function confirmStartAutoplay() {
+  const fEl = document.getElementById('ap-front-val'), bEl = document.getElementById('ap-back-val');
+  fcAutoplay.frontSec = Math.max(1, Math.min(30, parseInt(fEl?.textContent, 10) || 3));
+  fcAutoplay.backSec = Math.max(1, Math.min(30, parseInt(bEl?.textContent, 10) || 4));
+  saveProgressState({ front_sec: fcAutoplay.frontSec, back_sec: fcAutoplay.backSec });
+  closeAutoplayModal();
+  startAutoplay();
+}
 
 function startAutoplay() {
   if (!fcUnits.length) { showToast('Không có thẻ để phát!'); return; }
@@ -3703,6 +3782,7 @@ function runAutoplayStep() {
     if (!fcAutoplay.active) return;
     fcFlipped = true;
     document.getElementById('folder-fc-card')?.classList.add('flipped');
+    playFlipTextAnim();
     fcAutoplay.timer = setTimeout(() => {
       if (!fcAutoplay.active) return;
       goNextUnit();
@@ -3915,27 +3995,45 @@ function buildQuizTab() {
     </div>
     <div id="fillin-mode-row" style="display:none;margin-bottom:14px;background:var(--pk2);border-radius:10px;padding:10px 14px">
       <div style="font-size:12px;font-weight:700;color:#8a7a84;margin-bottom:8px">Chế độ tự điền:</div>
-      <div style="display:flex;gap:8px">
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
         <button class="fc-filter-btn active" id="fmbtn-vi" onclick="setFillMode('vi',this)">Nhập nghĩa tiếng Việt</button>
-        <button class="fc-filter-btn" id="fmbtn-kr" onclick="setFillMode('kr',this)">Nhập tiếng Hàn</button>
+        <button class="fc-filter-btn" id="fmbtn-kr" onclick="setFillMode('kr',this)">Nhập từ tiếng Hàn</button>
+        <button class="fc-filter-btn" id="fmbtn-example-vi-ko" onclick="setFillMode('example_vi_to_kr',this)">Dịch câu ví dụ VI → KO</button>
       </div>
     </div>
     <div id="dictation-mode-row" style="display:none;margin-bottom:14px;background:var(--pk2);border-radius:10px;padding:10px 14px">
-      <div style="font-size:12px;font-weight:700;color:#8a7a84;margin-bottom:8px">Chế độ nghe chép:</div>
-      <div style="display:flex;gap:8px">
-        <button class="fc-filter-btn active" id="dmbtn-sentence" onclick="setDictMode('sentence',this)">Audio đọc câu ví dụ</button>
-        <button class="fc-filter-btn" id="dmbtn-word" onclick="setDictMode('word',this)">Audio đọc từ vựng</button>
+      <div style="font-size:12px;font-weight:700;color:#8a7a84;margin-bottom:8px">Chế độ nghe:</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button class="fc-filter-btn active" id="dmbtn-sentence" onclick="setDictMode('sentence',this)">Nghe và chép câu</button>
+        <button class="fc-filter-btn" id="dmbtn-word" onclick="setDictMode('word',this)">Nghe và chép từ</button>
+        <button class="fc-filter-btn" id="dmbtn-arrange" onclick="setDictMode('arrange',this)">Nghe & sắp xếp câu</button>
       </div>
-      <div style="font-size:11px;color:#b0a0a8;margin-top:8px">Câu ví dụ: nghe câu rồi chép lại. Từ vựng: nghe từ/vocab rồi nhập lại từ đó.</div>
+      <div style="font-size:11px;color:#b0a0a8;margin-top:8px">Câu ví dụ: nghe câu rồi chép lại. Từ vựng: nghe từ/vocab rồi nhập lại từ đó. Sắp xếp câu: nghe rồi sắp xếp các cụm từ theo đúng thứ tự.</div>
     </div>
-    <div style="display:flex;gap:8px;align-items:center;margin-bottom:16px">
+    <div style="display:flex;gap:10px;align-items:center;margin-bottom:16px;flex-wrap:wrap">
       <div style="font-size:12px;font-weight:600;color:#8a7a84">Số câu:</div>
-      <select class="form-input form-select" id="quiz-count" style="width:100px;padding:6px 10px">
-        <option value="5">5 câu</option><option value="10" selected>10 câu</option><option value="20">20 câu</option><option value="all">Tất cả</option>
-      </select>
+      <button type="button" class="fc-filter-btn ${quizCountMode==='custom'?'active':''}" id="qc-mode-custom" onclick="setQuizCountMode('custom')">Nhập số câu</button>
+      <button type="button" class="fc-filter-btn ${quizCountMode==='all'?'active':''}" id="qc-mode-all" onclick="setQuizCountMode('all')">Tất cả</button>
+      <input type="number" class="form-input" id="quiz-count-input" min="1" max="${Math.max(allCards.length,1)}" value="${Math.min(10, Math.max(allCards.length,1))}" style="width:90px;padding:6px 10px;display:${quizCountMode==='all'?'none':''}" oninput="clampQuizCountInput(this)"/>
+      <span style="font-size:12px;color:#b0a0a8">/ ${allCards.length} từ</span>
     </div>
     <button class="btn btn-primary" onclick="startQuiz()" style="width:100%;justify-content:center"><i class="ti ti-player-play"></i> Bắt đầu Quiz</button>
   </div>`;
+}
+
+function setQuizCountMode(mode) {
+  quizCountMode = mode;
+  document.getElementById('qc-mode-custom')?.classList.toggle('active', mode === 'custom');
+  document.getElementById('qc-mode-all')?.classList.toggle('active', mode === 'all');
+  const input = document.getElementById('quiz-count-input');
+  if (input) input.style.display = mode === 'all' ? 'none' : '';
+}
+
+function clampQuizCountInput(input) {
+  const max = Math.max(allCards.length, 1);
+  let v = parseInt(input.value, 10) || 1;
+  v = Math.max(1, Math.min(max, v));
+  input.value = v;
 }
 
 function selectQuizType(type, el) {
@@ -4049,9 +4147,9 @@ function startNextQuizRound() {
   quizIdx = 0; quizCorrect = 0; quizWrongCards = [];
   fillBatchState = { rows:{} };
   if (quizType === 'dictation') {
-    dictState = { cards: quizCards, idx:0, correct:0, wrong:0, hintsUsed:0, hintsLeft:10, answered:false, wrongCards:[], mode: dictState.mode || quizDictMode };
+    dictState = { cards: quizCards, idx:0, correct:0, wrong:0, hintsUsed:0, hintsLeft:10, answered:false, wrongCards:[], mode: dictState.mode || quizDictMode, arrangePool:[], arrangePicked:[], arrangeCardId:null };
     _dictHintRevealed = 0;
-    renderDictCard();
+    if (dictState.mode === 'arrange') renderArrangeDictationCard(); else renderDictCard();
   } else {
     renderQuizQuestion();
   }
@@ -4227,8 +4325,10 @@ function closeQuizRunPage() {
 function startQuiz() {
   if (!quizType) { showToast('Vui lòng chọn loại quiz!'); return; }
   if (allCards.length < 2) { showToast('Cần ít nhất 2 từ để tạo quiz!'); return; }
-  const countSel = document.getElementById('quiz-count')?.value;
-  const maxCount = countSel==='all'?allCards.length:parseInt(countSel)||10;
+  const maxAvail = allCards.length;
+  const maxCount = quizCountMode === 'all'
+    ? maxAvail
+    : Math.max(1, Math.min(maxAvail, parseInt(document.getElementById('quiz-count-input')?.value, 10) || 10));
   quizCards = shuffle([...allCards]).slice(0, Math.min(maxCount, allCards.length));
   quizIdx = 0; quizCorrect = 0; quizWrongCards = [];
   // Reset phiên "học đến khi thuộc"
@@ -4239,6 +4339,8 @@ function startQuiz() {
 
   if (quizType === 'matching') {
     startMatchingGame(quizCards);
+  } else if (quizType === 'fillin' && quizFillMode === 'example_vi_to_kr') {
+    startExampleTranslationQuiz(quizCards);
   } else if (quizType === 'dictation') {
     startDictationQuiz(quizCards, quizDictMode);
   } else {
@@ -4509,8 +4611,122 @@ function fillBatchGoNext() {
   else fillBatchRender();
 }
 
+// ============================================================
+// TỰ ĐIỀN — "Dịch câu ví dụ VI → KO"
+// Người học đọc bản dịch tiếng Việt của câu ví dụ đã học, rồi
+// nhập lại đúng câu tiếng Hàn gốc (không phải dịch tự do).
+// Hiển thị mỗi lần 1 câu (không dùng bảng 10 từ/lần như "Tự điền").
+// ============================================================
+
+// Chuẩn hoá câu tiếng Hàn trước khi so sánh: bỏ khoảng trắng thừa,
+// khoảng trắng trước dấu câu, và dấu kết câu ở cuối. Không bỏ qua
+// sai từ/thiếu từ/thừa từ/sai trợ từ/sai trật tự.
+function normalizeKoreanSentence(value) {
+  return String(value || '')
+    .normalize('NFKC')
+    .trim()
+    .replace(/\s+/g, ' ')
+    .replace(/\s+([,.!?。！？])/g, '$1')
+    .replace(/[。.!！?？]+$/g, '');
+}
+
+function startExampleTranslationQuiz(cards) {
+  const area = document.getElementById('quiz-run-area'); if (!area) return;
+  const validCards = cards.filter(card => card.example_kr?.trim() && card.example_vi?.trim());
+  if (!validCards.length) {
+    area.innerHTML = `<div class="dict-no-example">
+      <strong>⚠️ Chưa có câu ví dụ phù hợp</strong><br>
+      Chế độ này cần thẻ có cả câu ví dụ tiếng Hàn và bản dịch tiếng Việt.<br>
+      Hãy bổ sung câu ví dụ ở "Thêm từ" hoặc "Danh sách từ" rồi thử lại!
+    </div>
+    <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:8px" onclick="startQuiz()">
+      <i class="ti ti-refresh"></i> Thử lại
+    </button>`;
+    return;
+  }
+  quizCards = validCards;
+  quizSessionWords = [...validCards]; // chỉ tính các thẻ thực sự đủ điều kiện cho chế độ dịch câu
+  quizIdx = 0; quizCorrect = 0; quizWrongCards = [];
+  renderExampleTranslationQuestion();
+}
+
+function renderExampleTranslationQuestion() {
+  const area = document.getElementById('quiz-run-area'); if (!area) return;
+  if (quizIdx >= quizCards.length) { handleRoundComplete(); return; }
+  const c = quizCards[quizIdx];
+  const progress = ((quizIdx / quizCards.length) * 100).toFixed(0);
+  quizAnswered = false;
+  area.innerHTML = `
+    <div class="quiz-progress"><div class="quiz-progress-fill" style="width:${progress}%"></div></div>
+    <div style="font-size:11px;color:#b0a0a8;margin-bottom:12px">${quizRound>1?`Lượt ${quizRound} · `:''}Câu ${quizIdx+1} / ${quizCards.length} · ✅ ${quizCorrect} đúng</div>
+    <div class="quiz-question">✍️ Dịch câu ví dụ Việt → Hàn</div>
+    <div class="example-translate-prompt">“${escHtmlSafe(c.example_vi.trim())}”</div>
+    <textarea class="form-input example-translation-input" id="ex-translate-input" placeholder="Nhập câu tiếng Hàn..."
+      autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+      onkeydown="if(event.key==='Enter' && !event.shiftKey){event.preventDefault();submitExampleTranslation('${c.id}')}"></textarea>
+    <div style="display:flex;gap:8px;margin-top:8px">
+      <button type="button" class="btn" style="flex:1;justify-content:center" onclick="showExampleTranslationAnswer('${c.id}')">Xem đáp án</button>
+      <button type="button" class="btn btn-primary" style="flex:1;justify-content:center" id="ex-translate-check-btn" onclick="submitExampleTranslation('${c.id}')">Kiểm tra</button>
+    </div>
+    ${c.korean ? `<div style="font-size:11px;color:#b0a0a8;margin-top:10px">Từ trọng tâm: <strong style="color:var(--pk4);font-family:'Noto Sans KR'">${escHtmlSafe(c.korean)}</strong></div>` : ''}
+    <div id="quiz-feedback" style="margin-top:10px"></div>`;
+  setTimeout(()=>document.getElementById('ex-translate-input')?.focus(), 50);
+}
+
+function submitExampleTranslation(cardId) {
+  if (quizAnswered) return;
+  const input = document.getElementById('ex-translate-input'); if (!input) return;
+  const userVal = input.value;
+  if (!userVal.trim()) { showToast('Hãy nhập câu trả lời trước!'); input.focus(); return; }
+  const card = quizCards.find(c=>c.id===cardId); if (!card) return;
+  quizAnswered = true;
+  input.disabled = true;
+  const checkBtn = document.getElementById('ex-translate-check-btn'); if (checkBtn) checkBtn.disabled = true;
+
+  const userNormalized = normalizeKoreanSentence(userVal);
+  const correctNormalized = normalizeKoreanSentence(card.example_kr);
+  const isCorrect = userNormalized === correctNormalized;
+  const fb = document.getElementById('quiz-feedback');
+
+  if (isCorrect) {
+    quizCorrect++;
+    quizMarkMastered(card);
+    if (fb) fb.innerHTML = `<div style="color:#306040;font-weight:700;font-size:13px">✅ Chính xác!</div>
+      <div style="font-family:'Noto Sans KR';font-size:15px;color:var(--pk4);margin-top:4px">${escHtmlSafe(card.example_kr.trim())}</div>`;
+    setTimeout(()=>{ quizIdx++; renderExampleTranslationQuestion(); }, 600);
+  } else {
+    quizWrongCards.push(card);
+    quizMarkWrong(card);
+    if (fb) fb.innerHTML = `<div style="color:#c05050;font-weight:700;font-size:13px">❌ Chưa chính xác</div>
+      <div style="font-size:12px;color:#8a7a84;margin-top:6px">Bạn nhập:</div>
+      <div style="font-family:'Noto Sans KR';font-size:14px;color:#c05050">${escHtmlSafe(userVal.trim())}</div>
+      <div style="font-size:12px;color:#8a7a84;margin-top:6px">Đáp án tham khảo:</div>
+      <div style="font-family:'Noto Sans KR';font-size:14px;color:var(--pk4)">${escHtmlSafe(card.example_kr.trim())}</div>
+      <button type="button" class="btn btn-sm" style="margin-top:8px" onclick="speakText('${escJs(card.example_kr.trim())}','${card.id}','example')"><i class="ti ti-volume"></i> Nghe đáp án</button>`;
+    setTimeout(()=>{ quizIdx++; renderExampleTranslationQuestion(); }, 1800);
+  }
+}
+
+function showExampleTranslationAnswer(cardId) {
+  if (quizAnswered) return;
+  const card = quizCards.find(c=>c.id===cardId); if (!card) return;
+  const input = document.getElementById('ex-translate-input');
+  quizAnswered = true;
+  if (input) input.disabled = true;
+  const checkBtn = document.getElementById('ex-translate-check-btn'); if (checkBtn) checkBtn.disabled = true;
+  // Xem đáp án luôn tính là sai và đưa câu này vào lượt học tiếp theo
+  quizWrongCards.push(card);
+  quizMarkWrong(card);
+  const fb = document.getElementById('quiz-feedback');
+  if (fb) fb.innerHTML = `<div style="color:#c05050;font-weight:700;font-size:13px">👀 Đã xem đáp án</div>
+    <div style="font-family:'Noto Sans KR';font-size:15px;color:var(--pk4);margin-top:4px">${escHtmlSafe(card.example_kr.trim())}</div>
+    <button type="button" class="btn btn-sm" style="margin-top:8px" onclick="speakText('${escJs(card.example_kr.trim())}','${card.id}','example')"><i class="ti ti-volume"></i> Nghe đáp án</button>`;
+  setTimeout(()=>{ quizIdx++; renderExampleTranslationQuestion(); }, 1800);
+}
+
 function renderQuizQuestion() {
   const area = document.getElementById('quiz-run-area'); if(!area) return;
+  if (quizType === 'fillin' && quizFillMode === 'example_vi_to_kr') { renderExampleTranslationQuestion(); return; }
   if (quizType === 'fillin') { fillBatchRender(); return; }
   if (quizIdx >= quizCards.length) { handleRoundComplete(); return; }
   const c = quizCards[quizIdx];
@@ -4583,12 +4799,41 @@ let dictState = {
   hintsUsed: 0,
   hintsLeft: 10,
   answered: false,
+  // Dùng riêng cho chế độ "Nghe & sắp xếp câu":
+  arrangePool: [],
+  arrangePicked: [],
+  arrangeCardId: null,
 };
 let _dictHintRevealed = 0;
 
 function startDictationQuiz(cards, mode) {
   mode = mode || 'sentence';
   const area = document.getElementById('quiz-run-area');
+
+  if (mode === 'arrange') {
+    // Chế độ "sắp xếp câu": chỉ lấy thẻ có câu ví dụ chia được ít nhất 2 mảnh
+    const validCards = cards.filter(c => {
+      if (!c.example_kr || !c.example_kr.trim()) return false;
+      const pieces = getKoreanArrangePieces(c.id, c.example_kr);
+      return pieces.length >= 2;
+    });
+    if (!validCards.length) {
+      area.innerHTML = `<div class="dict-no-example">
+        <strong>⚠️ Chưa có câu ví dụ phù hợp</strong><br>
+        Chế độ này cần thẻ có câu ví dụ tiếng Hàn để chia thành các mảnh sắp xếp.<br>
+        Hãy bổ sung câu ví dụ ở "Thêm từ" hoặc "Danh sách từ" rồi thử lại!
+      </div>
+      <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:8px" onclick="startQuiz()">
+        <i class="ti ti-refresh"></i> Thử lại
+      </button>`;
+      return;
+    }
+    dictState = { cards: validCards, idx: 0, correct: 0, wrong: 0, hintsUsed: 0, hintsLeft: 10, answered: false, wrongCards: [], mode: 'arrange', arrangePool: [], arrangePicked: [], arrangeCardId: null };
+    quizSessionWords = [...validCards];
+    renderArrangeDictationCard();
+    return;
+  }
+
   // Chế độ "câu ví dụ": chỉ lấy thẻ có example_kr. Chế độ "từ vựng": mọi thẻ đều có sẵn tiếng Hàn nên dùng tất cả.
   const validCards = mode === 'word' ? cards.slice() : cards.filter(c => c.example_kr && c.example_kr.trim().length > 0);
   if (!validCards.length) {
@@ -4602,7 +4847,7 @@ function startDictationQuiz(cards, mode) {
     </button>`;
     return;
   }
-  dictState = { cards: validCards, idx: 0, correct: 0, wrong: 0, hintsUsed: 0, hintsLeft: 10, answered: false, wrongCards: [], mode };
+  dictState = { cards: validCards, idx: 0, correct: 0, wrong: 0, hintsUsed: 0, hintsLeft: 10, answered: false, wrongCards: [], mode, arrangePool: [], arrangePicked: [], arrangeCardId: null };
   _dictHintRevealed = 0;
   quizSessionWords = [...validCards]; // chỉ tính các thẻ thực sự được đưa vào quiz nghe chép
   renderDictCard();
@@ -4811,6 +5056,229 @@ function dictCheck() {
   if (nextBtn) nextBtn.classList.add('show');
 }
 
+// ============================================================
+// NGHE & SẮP XẾP CÂU (arrange) — tách câu ví dụ thành các mảnh
+// có nghĩa, xáo trộn, người học nghe rồi sắp xếp lại đúng thứ tự.
+// Chỉ dùng audio câu ví dụ hiện có (không đọc từ vựng/nghĩa tiếng Việt).
+// ============================================================
+
+// Dọn khoảng trắng thừa, không tách nhỏ theo từng ký tự Hangul
+function normalizeKoreanForArrange(sentence) {
+  return String(sentence || '').normalize('NFKC').trim().replace(/\s+/g, ' ');
+}
+
+// Gộp các đơn vị (eojeol) ngắn thành tối đa `maxPieces` cụm liền kề có nghĩa,
+// ưu tiên "ít mảnh dài" hơn là "nhiều mảnh nhỏ vụn". Không dùng AI.
+function mergeKoreanUnits(units, maxPieces) {
+  const n = units.length;
+  if (n <= maxPieces) return units.slice();
+  const chunkSize = Math.ceil(n / maxPieces);
+  const pieces = [];
+  for (let i = 0; i < n; i += chunkSize) {
+    pieces.push(units.slice(i, i + chunkSize).join(' '));
+  }
+  return pieces;
+}
+
+function splitKoreanSentenceIntoPieces(sentence) {
+  const clean = normalizeKoreanForArrange(sentence);
+  if (!clean) return [];
+  const units = clean.split(/\s+/).filter(Boolean);
+  if (units.length <= 2) return units;
+  const maxPieces =
+    units.length <= 5 ? 3 :
+    units.length <= 10 ? 5 :
+    units.length <= 16 ? 7 : 10;
+  return mergeKoreanUnits(units, maxPieces);
+}
+
+// Cache theo ID thẻ + nội dung câu: cùng 1 câu luôn có cùng cách chia mảnh
+// giữa các lần học — chỉ xáo trộn VỊ TRÍ hiển thị, không chia lại mỗi lần.
+function getKoreanArrangePieces(cardId, sentence) {
+  const key = String(cardId);
+  const text = normalizeKoreanForArrange(sentence);
+  const cached = generatedKoreanArrangeParts[key];
+  if (cached && cached.text === text) return cached.pieces;
+  const pieces = splitKoreanSentenceIntoPieces(text);
+  generatedKoreanArrangeParts[key] = { text, pieces };
+  return pieces;
+}
+
+// Xáo trộn các mảnh của 1 câu, gán lại originalIndex để chấm điểm không phụ
+// thuộc vào nội dung hiển thị (tránh lỗi khi có 2 mảnh trùng chữ)
+function prepareArrangeQuestion(card) {
+  const pieces = getKoreanArrangePieces(card.id, card.example_kr);
+  const items = pieces.map((text, index) => ({ id: `${card.id}-${index}`, text, originalIndex: index }));
+  dictState.arrangePool = shuffle(items);
+  dictState.arrangePicked = [];
+  dictState.arrangeCardId = card.id;
+  dictState.answered = false;
+}
+
+function renderArrangeChip(item, loc) {
+  const action = loc === 'pool' ? `moveArrangePiece('${item.id}')` : `returnArrangePiece('${item.id}')`;
+  return `<div class="arrange-chip" draggable="true" data-piece-id="${item.id}" onclick="${action}"
+    ondragstart="onArrangeDragStart(event,'${item.id}')">${escHtmlSafe(item.text)}</div>`;
+}
+function renderArrangePoolHtml() {
+  if (!dictState.arrangePool.length) return '<div style="font-size:12px;color:#c0b0b8;padding:6px 2px">— hết mảnh —</div>';
+  return dictState.arrangePool.map(item => renderArrangeChip(item, 'pool')).join('');
+}
+function renderArrangePickedHtml() {
+  if (!dictState.arrangePicked.length) return '<div style="font-size:12px;color:#c0b0b8;padding:6px 2px">Bấm hoặc kéo mảnh vào đây…</div>';
+  return dictState.arrangePicked.map(item => renderArrangeChip(item, 'picked')).join('');
+}
+function refreshArrangeZones() {
+  const poolEl = document.getElementById('arrange-pool'); if (poolEl) poolEl.innerHTML = renderArrangePoolHtml();
+  const zoneEl = document.getElementById('arrange-answer-zone'); if (zoneEl) zoneEl.innerHTML = renderArrangePickedHtml();
+}
+
+function renderArrangeDictationCard() {
+  const area = document.getElementById('quiz-run-area');
+  const { cards, idx, correct, wrong } = dictState;
+  if (idx >= cards.length) { handleDictRoundComplete(); return; }
+  const c = cards[idx];
+  if (dictState.arrangeCardId !== c.id) prepareArrangeQuestion(c);
+  const progress = ((idx / cards.length) * 100).toFixed(0);
+  const total = cards.length;
+
+  area.innerHTML = `
+  <div class="dict-wrap">
+    <div class="dict-progress-row">
+      <span class="dict-prog">${quizRound>1?`Lượt ${quizRound} · `:''}Câu ${idx + 1} / ${total}</span>
+      <span class="dict-score">✅ ${correct} · ❌ ${wrong}</span>
+    </div>
+    <div class="dict-progress"><div class="dict-progress-fill" style="width:${progress}%"></div></div>
+
+    <div class="dict-card">
+      <div class="dict-instruction">🧩 Nghe câu rồi sắp xếp các mảnh theo đúng thứ tự</div>
+      <div class="dict-content-row">
+        <button class="dict-play-btn" id="dict-play-btn" onclick="dictSpeak()" title="Nghe câu"><i class="ti ti-volume" style="font-size:24px;color:var(--pk4)"></i></button>
+        <button type="button" class="btn btn-sm" onclick="dictSpeak()"><i class="ti ti-repeat"></i> Nghe lại</button>
+      </div>
+      <div style="font-size:12px;font-weight:700;color:#8a7a84;margin:14px 0 6px">Sắp xếp câu bạn vừa nghe:</div>
+      <div class="arrange-answer-zone" id="arrange-answer-zone" ondragover="event.preventDefault()" ondrop="onArrangeDrop(event,'picked')">${renderArrangePickedHtml()}</div>
+      <div style="font-size:11px;color:#b0a0a8;margin:12px 0 6px">Các mảnh câu:</div>
+      <div class="arrange-pool" id="arrange-pool" ondragover="event.preventDefault()" ondrop="onArrangeDrop(event,'pool')">${renderArrangePoolHtml()}</div>
+    </div>
+
+    <div class="dict-btn-row">
+      <button type="button" class="dict-hint-btn" onclick="resetArrangeQuestion()"><i class="ti ti-refresh"></i> Làm lại câu</button>
+      <button class="dict-check-btn" id="dict-check-btn" onclick="checkArrangeAnswer()">Kiểm tra</button>
+    </div>
+    <div style="text-align:center;margin-top:8px">
+      <button type="button" class="btn btn-sm" onclick="showArrangeAnswer()"><i class="ti ti-eye"></i> Xem đáp án</button>
+    </div>
+    <div class="dict-feedback" id="dict-feedback"></div>
+    <button class="dict-next-btn" id="dict-next-btn" onclick="dictNext()">
+      ${idx + 1 < total ? 'Câu tiếp theo →' : 'Xem kết quả 🎉'}
+    </button>
+  </div>`;
+
+  setTimeout(() => dictSpeak(), 200);
+}
+
+// Click (mobile & desktop): đưa mảnh giữa 2 vùng
+function moveArrangePiece(pieceId) {
+  if (dictState.answered) return;
+  const idx = dictState.arrangePool.findIndex(p => p.id === pieceId);
+  if (idx < 0) return;
+  const [item] = dictState.arrangePool.splice(idx, 1);
+  dictState.arrangePicked.push(item);
+  refreshArrangeZones();
+}
+function returnArrangePiece(pieceId) {
+  if (dictState.answered) return;
+  const idx = dictState.arrangePicked.findIndex(p => p.id === pieceId);
+  if (idx < 0) return;
+  const [item] = dictState.arrangePicked.splice(idx, 1);
+  dictState.arrangePool.push(item);
+  refreshArrangeZones();
+}
+
+// Drag & drop (desktop)
+function onArrangeDragStart(e, pieceId) {
+  _arrangeDragId = pieceId;
+  try { e.dataTransfer.effectAllowed = 'move'; e.dataTransfer.setData('text/plain', pieceId); } catch (err) {}
+}
+function onArrangeDrop(e, targetLoc) {
+  e.preventDefault();
+  if (dictState.answered) return;
+  const pieceId = _arrangeDragId || e.dataTransfer.getData('text/plain');
+  if (!pieceId) return;
+  if (targetLoc === 'picked') {
+    const idx = dictState.arrangePool.findIndex(p => p.id === pieceId);
+    if (idx >= 0) { const [item] = dictState.arrangePool.splice(idx, 1); dictState.arrangePicked.push(item); }
+  } else {
+    const idx = dictState.arrangePicked.findIndex(p => p.id === pieceId);
+    if (idx >= 0) { const [item] = dictState.arrangePicked.splice(idx, 1); dictState.arrangePool.push(item); }
+  }
+  _arrangeDragId = null;
+  refreshArrangeZones();
+}
+
+// "Làm lại câu": trả toàn bộ mảnh về pool và xáo trộn lại (không tính là sai)
+function resetArrangeQuestion() {
+  if (dictState.answered) return;
+  const card = dictState.cards[dictState.idx]; if (!card) return;
+  prepareArrangeQuestion(card);
+  refreshArrangeZones();
+}
+
+// Chấm theo originalIndex (thứ tự đúng = 0,1,2,...), không chấm theo text hiển thị
+function checkArrangeAnswer() {
+  if (dictState.answered) return;
+  const card = dictState.cards[dictState.idx]; if (!card) return;
+  const totalPieces = getKoreanArrangePieces(card.id, card.example_kr).length;
+  if (dictState.arrangePicked.length < totalPieces) {
+    showToast('Hãy sắp xếp đủ các mảnh câu trước khi kiểm tra!');
+    return;
+  }
+  const userIndexes = dictState.arrangePicked.map(item => item.originalIndex);
+  const correctIndexes = dictState.arrangePicked.map((_, index) => index);
+  const isCorrect = userIndexes.length === correctIndexes.length &&
+    userIndexes.every((value, index) => value === correctIndexes[index]);
+  handleArrangeResult(card, isCorrect, false);
+}
+
+function showArrangeAnswer() {
+  if (dictState.answered) return;
+  const card = dictState.cards[dictState.idx]; if (!card) return;
+  const pieces = getKoreanArrangePieces(card.id, card.example_kr);
+  dictState.arrangePicked = pieces.map((text, index) => ({ id: `${card.id}-${index}`, text, originalIndex: index }));
+  dictState.arrangePool = [];
+  refreshArrangeZones();
+  handleArrangeResult(card, false, true);
+}
+
+function handleArrangeResult(card, isCorrect, viaReveal) {
+  dictState.answered = true;
+  const checkBtn = document.getElementById('dict-check-btn'); if (checkBtn) checkBtn.disabled = true;
+  const nextBtn = document.getElementById('dict-next-btn');
+  const fb = document.getElementById('dict-feedback');
+  const correctSentence = getKoreanArrangePieces(card.id, card.example_kr).join(' ');
+
+  if (isCorrect) {
+    dictState.correct++;
+    quizMarkMastered(card);
+    if (fb) { fb.className = 'dict-feedback show correct'; fb.innerHTML = `✅ Chính xác!
+      <div style="margin-top:5px;font-family:'Noto Sans KR';font-size:14px">${escHtmlSafe(correctSentence)}</div>`; }
+  } else {
+    dictState.wrong++;
+    dictState.wrongCards = dictState.wrongCards || [];
+    dictState.wrongCards.push(card);
+    quizMarkWrong(card);
+    const userSentence = dictState.arrangePicked.map(p => p.text).join(' ');
+    if (fb) { fb.className = 'dict-feedback show wrong'; fb.innerHTML = `${viaReveal ? '👀 Đã xem đáp án' : '❌ Thứ tự chưa đúng'}
+      <div style="margin-top:6px;font-size:12px;color:#8a7a84">Bạn sắp xếp:</div>
+      <div style="font-family:'Noto Sans KR';font-size:14px;color:#c05050">${escHtmlSafe(userSentence)}</div>
+      <div style="margin-top:6px;font-size:12px;color:#8a7a84">Đáp án:</div>
+      <div style="font-family:'Noto Sans KR';font-size:14px;color:var(--pk4)">${escHtmlSafe(correctSentence)}</div>
+      ${card.example_vi ? `<div style="margin-top:6px;font-size:12px;font-style:italic;color:#8a7a84">${escHtmlSafe(card.example_vi)}</div>` : ''}`; }
+  }
+  if (nextBtn) nextBtn.classList.add('show');
+}
+
 // Kết thúc 1 lượt Nghe chép: nếu còn câu sai → qua lượt mới, hết thì hiện kết quả cuối
 function handleDictRoundComplete() {
   if (dictState.wrongCards && dictState.wrongCards.length) {
@@ -4825,7 +5293,8 @@ function dictNext() {
   dictState.hintsLeft = 10;
   dictState.hintsUsed = 0;
   _dictHintRevealed = 0;
-  renderDictCard();
+  if (dictState.mode === 'arrange') renderArrangeDictationCard();
+  else renderDictCard();
 }
 
 function renderDictResult() {
@@ -4852,7 +5321,7 @@ function renderDictResult() {
       <i class="ti ti-refresh"></i> Làm lại
     </button>
   </div>`;
-  DS.saveQuizResult({owner_id:currentUser.id,user_id:currentUser.id,folder_id:selectedFolder?.id||null,quiz_type:'dictation',score:pct,total_questions:totalWords,correct_count:totalWords,wrong_count:totalMistakes}).catch(()=>{});
+  DS.saveQuizResult({owner_id:currentUser.id,user_id:currentUser.id,folder_id:selectedFolder?.id||null,quiz_type: dictState.mode==='arrange' ? 'dictation_arrange' : 'dictation',score:pct,total_questions:totalWords,correct_count:totalWords,wrong_count:totalMistakes}).catch(()=>{});
 }
 async function renderQuizResult() {
   const area = document.getElementById('quiz-run-area'); if(!area) return;
@@ -4872,7 +5341,7 @@ async function renderQuizResult() {
     <div style="font-size:13px;text-align:center;color:#8a7a84;margin:12px 0 16px">${pct>=80?'Tuyệt vời, bạn học rất tốt!':pct>=60?'Khá tốt, cố lên nhé!':'Bạn đã kiên trì làm lại đến khi thuộc hết — rất đáng khen! 💪'}</div>
     ${mistakeHtml}
     <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:12px" onclick="startQuiz()"><i class="ti ti-refresh"></i> Làm lại</button>`;
-  DS.saveQuizResult({owner_id:currentUser.id,user_id:currentUser.id,folder_id:selectedFolder?.id||null,quiz_type:quizType,score:pct,total_questions:totalWords,correct_count:totalWords,wrong_count:totalMistakes}).catch(()=>{});
+  DS.saveQuizResult({owner_id:currentUser.id,user_id:currentUser.id,folder_id:selectedFolder?.id||null,quiz_type: (quizType==='fillin' && quizFillMode==='example_vi_to_kr') ? 'fillin_example_vi_to_kr' : quizType,score:pct,total_questions:totalWords,correct_count:totalWords,wrong_count:totalMistakes}).catch(()=>{});
 }
 
 // Add words tab
@@ -4970,7 +5439,7 @@ function handleExcelImport(input) {
 }
 
 function switchFolderTab(tab, el) {
-  if (currentFolderTab === 'flashcard' && tab !== 'flashcard') stopAutoplay();
+  if (currentFolderTab === 'flashcard' && tab !== 'flashcard') { stopAutoplay(); stopAllAudio(); }
   currentFolderTab = tab;
   document.querySelectorAll('#ftabs .folder-tab').forEach(t=>t.classList.remove('active')); el.classList.add('active');
   document.querySelectorAll('.folder-tab-content').forEach(c=>c.classList.remove('active'));
