@@ -182,6 +182,18 @@ textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
 .fc-swipe-hint{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:18px;font-weight:800;border-radius:14px;padding:10px 22px;opacity:0;pointer-events:none;transition:opacity .1s;z-index:10;white-space:nowrap}
 .fc-swipe-hint.show-left{opacity:1;background:rgba(253,232,232,.97);color:#c05050;border:2.5px solid #f5a0a0;box-shadow:0 2px 14px rgba(192,80,80,.2)}
 .fc-swipe-hint.show-right{opacity:1;background:rgba(220,248,236,.97);color:#1a8c58;border:2.5px solid #5ecfa0;box-shadow:0 2px 14px rgba(80,180,130,.2)}
+.fc-toolrow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;margin-bottom:12px}
+.fc-toolrow-left{font-size:12px;color:#8a7a84;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.fc-toolrow-right{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.fc-badge-status{background:var(--ylw);color:#907020;padding:2px 10px;border-radius:20px;font-weight:700;font-size:11px}
+.fc-kindtabs{display:flex;gap:8px;margin-bottom:14px}
+.fc-kindtab{flex:1;text-align:center;padding:10px;border-radius:14px;font-weight:700;font-size:13px;cursor:pointer;border:1.5px solid var(--brd);background:#fff;color:#8a7a84;display:flex;align-items:center;justify-content:center;gap:6px;transition:all .15s}
+.fc-kindtab.active{background:var(--pk);border-color:var(--pk3);color:var(--pk4)}
+.fc-autoplay-settings{display:flex;align-items:center;gap:4px;font-size:11px;color:#8a7a84}
+.fc-autoplay-settings input{width:42px;padding:4px 6px;border:1.5px solid var(--brd);border-radius:8px;font-size:12px;text-align:center;font-family:inherit}
+.fc-blank{display:inline-block;min-width:50px;color:var(--pk4);font-weight:800;letter-spacing:1px}
+.fc-example-front{font-size:19px;line-height:1.7;font-family:'Noto Sans KR',sans-serif;text-align:center;color:var(--txt);padding:0 6px}
+.fc-btn-toggle.on{background:var(--pk4);border-color:var(--pk4);color:#fff}
 .fc-bars{display:flex;gap:6px;align-items:flex-end;height:60px}
 .fc-bar-col{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px}
 .fc-bar{width:100%;background:var(--pk3);border-radius:4px 4px 0 0;min-height:4px}
@@ -2173,6 +2185,13 @@ let wordListColState = { kr:true, vn:true, type:true, ex:true, status:true, revi
 let folderCardIdx = 0;
 let folderFlipped = false;
 let folderFilterMode = 'all';
+// ── Flashcard study module (units, direction, autoplay, undo, shuffle) ──
+let fcUnits = [];               // danh sách đơn vị học hiện tại: {id:'v_'+wordId|'e_'+wordId, wordId, kind:'vocab'|'example'}
+let fcIdx = 0;                  // vị trí đang xem trong fcUnits
+let fcFlipped = false;          // mặt thẻ hiện tại đã lật chưa
+let fcFrontMode = 'src2vi';     // 'src2vi' (Từ gốc → VI) | 'vi2src' (VI → Từ gốc)
+let fcUndoStack = [];           // ngăn xếp hoàn tác: {idx, cardId, prevSnapshot, prevTodayStats}
+let fcAutoplay = { active:false, timer:null, frontSec:3, backSec:4 };
 let quizType = null, quizCards = [], quizIdx = 0, quizCorrect = 0, quizAnswered = false;
 let quizWrongCards = []; // wrong answers of the CURRENT round (carried to next round)
 let quizFillMode = 'vi'; // NEW: 'vi' or 'kr'
@@ -3256,10 +3275,15 @@ async function loadFolderDetail(folderId) {
   filteredCards = [...allCards];
   folderFlipped = false;
   folderFilterMode = 'all';
-  // Khôi phục vị trí thẻ đã lưu (Bug 2)
-  const savedKey = `fc_idx_${currentUser.id}_${folderId}`;
-  const savedIdx = parseInt(sessionStorage.getItem(savedKey)||'0', 10);
-  folderCardIdx = (savedIdx > 0 && savedIdx < allCards.length) ? savedIdx : 0;
+  stopAutoplay();
+  fcUndoStack = [];
+  const prog = loadProgressState();
+  fcFrontMode = (prog && prog.front_mode) || 'src2vi';
+  fcAutoplay.frontSec = (prog && prog.front_sec) || 3;
+  fcAutoplay.backSec = (prog && prog.back_sec) || 4;
+  rebuildUnits();
+  fcIdx = (prog && Number.isInteger(prog.idx) && prog.idx >= 0 && prog.idx < fcUnits.length) ? prog.idx : 0;
+  fcFlipped = false;
   const backBtn = document.getElementById('folder-back-btn');
   if (backBtn) {
     if (selectedFolder.unit_id) {
@@ -3332,21 +3356,49 @@ function buildFolderFlashcardTab() {
       <div class="fc-filter-btn" onclick="folderFilterCards('new',this)">Chưa học <span class="fc-filter-count">${counts.new}</span></div>
       <div class="fc-filter-btn" onclick="folderFilterCards('learning',this)">Đang học <span class="fc-filter-count">${counts.learning}</span></div>
       <div class="fc-filter-btn" onclick="folderFilterCards('known',this)">Đã thuộc <span class="fc-filter-count">${counts.known}</span></div>
-      <div class="fc-filter-btn" onclick="folderFilterCards('due',this)">Đến hạn <span class="fc-filter-count">${counts.due}</span></div>
+      <div class="fc-filter-btn" onclick="folderFilterCards('due',this)">Cần ôn lại <span class="fc-filter-count">${counts.due}</span></div>
     </div>
+
+    <div class="fc-toolrow">
+      <div class="fc-toolrow-left">
+        <span>Đang học thẻ <strong id="folder-fc-idxtxt">0/0</strong></span>
+        <span>·</span>
+        <span id="folder-fc-kindtxt">🏷️ Từ vựng</span>
+        <span>·</span>
+        <span>trạng thái: <span class="fc-badge-status" id="folder-fc-status">Chưa thuộc</span></span>
+      </div>
+      <div class="fc-toolrow-right">
+        <button class="btn btn-sm" id="fc-dir-btn" onclick="toggleFrontMode()" title="Đổi chiều học"><i class="ti ti-arrows-left-right"></i> <span id="fc-dir-label">KR → VI</span></button>
+        <button class="btn btn-sm" id="fc-autoplay-btn" onclick="toggleAutoplay()" title="Tự động phát thẻ"><i class="ti ti-player-play" id="fc-autoplay-icon"></i> <span id="fc-autoplay-label">Tự động phát thẻ</span></button>
+        <span class="fc-autoplay-settings" title="Thời gian mặt trước / mặt sau (giây)">
+          <input type="number" id="fc-front-sec" min="1" max="30" value="${fcAutoplay.frontSec}" onchange="updateAutoplaySec(this,'front')"/>s
+          <i class="ti ti-arrow-right" style="font-size:11px"></i>
+          <input type="number" id="fc-back-sec" min="1" max="30" value="${fcAutoplay.backSec}" onchange="updateAutoplaySec(this,'back')"/>s
+        </span>
+        <button class="btn btn-sm" onclick="undoLastAction()" title="Hoàn tác"><i class="ti ti-arrow-back-up"></i> Undo</button>
+        <button class="btn btn-sm" onclick="resetCardOrder()" title="Đặt lại thứ tự thẻ mặc định"><i class="ti ti-refresh"></i> Reset thẻ</button>
+        <button class="btn btn-sm" onclick="shuffleCardOrder()" title="Trộn ngẫu nhiên thứ tự thẻ"><i class="ti ti-arrows-shuffle"></i> Trộn thẻ</button>
+      </div>
+    </div>
+
+    <div class="fc-kindtabs">
+      <div class="fc-kindtab active" id="fc-tab-vocab" onclick="goToKind('vocab')"><i class="ti ti-tag"></i> Từ vựng</div>
+      <div class="fc-kindtab" id="fc-tab-example" onclick="goToKind('example')"><i class="ti ti-file-text"></i> Ví dụ</div>
+    </div>
+
     <div class="fc-card-wrap" id="folder-fc-swipe-wrap">
       <div class="fc-swipe-mover" id="folder-fc-mover">
         <div class="fc-card" id="folder-fc-card" onclick="folderFlipCard()">
-          <div class="fc-front">
+          <div class="fc-front" id="folder-fc-front">
             <div class="fc-kr" id="folder-fc-kr">—</div>
-            <div style="font-size:11px;color:#b0a0a8;margin-top:4px" id="folder-fc-type"></div>
-            <div class="fc-status-badge" id="folder-fc-status">🌱 Thẻ mới</div>
-            <div class="fc-hint" style="margin-top:8px">Nhấn để xem nghĩa</div>
+            <div class="fc-hint" style="margin-top:8px" id="folder-fc-fronthint">Nhấn để xem nghĩa</div>
+            <button class="btn btn-sm btn-icon" id="folder-fc-front-audio" style="margin-top:10px" onclick="event.stopPropagation();folderSpeakCurrent('auto')" title="Nghe"><i class="ti ti-volume"></i></button>
           </div>
-          <div class="fc-back">
+          <div class="fc-back" id="folder-fc-back">
             <div class="fc-vn" id="folder-fc-vn">—</div>
             <div class="fc-pron" id="folder-fc-pron"></div>
             <div class="fc-ex" id="folder-fc-ex"></div>
+            <button class="btn btn-sm btn-icon" id="folder-fc-back-audio" style="margin-top:6px" onclick="event.stopPropagation();folderSpeakCurrent('word')" title="Nghe từ"><i class="ti ti-volume"></i></button>
           </div>
         </div>
       </div>
@@ -3367,95 +3419,308 @@ function buildFolderFlashcardTab() {
       <button class="fc-btn correct" onclick="folderMarkCard('correct')">✅ Đã thuộc</button>
     </div>
     <div style="background:var(--pk2);border-radius:10px;padding:10px 14px;font-size:11px;color:#8a7a84;line-height:1.8">
-      <strong>Phím tắt:</strong><br>→ Đã thuộc · ← Chưa thuộc · Space = Thẻ trước · Enter = Lật thẻ · Delete = Đọc ví dụ · Shift = Đọc từ
+      <strong>Phím tắt:</strong><br>→ Đã thuộc · ← Chưa thuộc · Space = Thẻ trước · Enter = Lật thẻ · Delete = Đọc ví dụ · Shift = Đọc từ · K = Đổi Từ vựng/Ví dụ · U = Hoàn tác
     </div>
   </div>`;
 }
 
-function loadFolderCard() {
-  const cards = filteredCards, el = id => document.getElementById(id);
-  if (!cards.length) { if(el('folder-fc-kr')) el('folder-fc-kr').textContent='—'; if(el('folder-fc-prog')) el('folder-fc-prog').textContent='0/0'; return; }
-  if (folderCardIdx >= cards.length) folderCardIdx = 0;
-  const c = cards[folderCardIdx];
-  folderFlipped = false;
-  el('folder-fc-card')?.classList.remove('flipped');
-  if(el('folder-fc-kr')) el('folder-fc-kr').textContent = c.korean;
-  if(el('folder-fc-vn')) el('folder-fc-vn').textContent = c.vietnamese;
-  if(el('folder-fc-pron')) el('folder-fc-pron').textContent = c.pronunciation||'';
-  if(el('folder-fc-ex')) el('folder-fc-ex').innerHTML = (c.example_kr||'')+(c.example_vi?'<br><span style="color:#b0a0a8">'+c.example_vi+'</span>':'');
-  if(el('folder-fc-status')) el('folder-fc-status').textContent = statusLabel(c.status);
-  if(el('folder-fc-type')) el('folder-fc-type').textContent = c.word_type||'';
-  if(el('folder-fc-prog')) el('folder-fc-prog').textContent = 'Thẻ '+(folderCardIdx+1)+' / '+cards.length;
+// ============================================================
+// FLASHCARD STUDY MODULE — units, direction, autoplay, undo, shuffle
+// ============================================================
+
+// Mỗi từ tạo ra 2 đơn vị học riêng: thẻ Từ vựng (v_id) và thẻ Ví dụ (e_id)
+function buildUnitsFromCards(cards) {
+  const units = [];
+  cards.forEach(w => {
+    units.push({ id: 'v_' + w.id, wordId: w.id, kind: 'vocab' });
+    units.push({ id: 'e_' + w.id, wordId: w.id, kind: 'example' });
+  });
+  return units;
 }
 
-function folderFlipCard() { folderFlipped=!folderFlipped; document.getElementById('folder-fc-card')?.classList.toggle('flipped',folderFlipped); }
-function saveCardIdx() {
-  if (!selectedFolder || !currentUser) return;
-  sessionStorage.setItem(`fc_idx_${currentUser.id}_${selectedFolder.id}`, folderCardIdx);
+function progressKey() {
+  if (!currentUser || !selectedFolder) return null;
+  return `flashcard_progress_${currentUser.id}_${selectedFolder.id}`;
 }
-function folderNextCard() { if(!filteredCards.length)return; folderCardIdx=(folderCardIdx+1)%filteredCards.length; saveCardIdx(); loadFolderCard(); }
-function folderPrevCard() { if(!filteredCards.length)return; folderCardIdx=(folderCardIdx-1+filteredCards.length)%filteredCards.length; saveCardIdx(); loadFolderCard(); }
+function loadProgressState() {
+  const key = progressKey(); if (!key) return null;
+  try { return JSON.parse(localStorage.getItem(key)) || null; } catch (e) { return null; }
+}
+function saveProgressState(patch) {
+  const key = progressKey(); if (!key) return;
+  const next = Object.assign(loadProgressState() || {}, patch);
+  localStorage.setItem(key, JSON.stringify(next));
+}
+
+// Khôi phục thứ tự thẻ đã lưu (nếu có bật trộn thẻ), nếu không thì dùng thứ tự mặc định
+function orderedCards() {
+  const natural = buildUnitsFromCards(filteredCards);
+  const prog = loadProgressState();
+  if (prog && prog.shuffle_enabled && Array.isArray(prog.order_ids) && prog.order_ids.length) {
+    const map = new Map(natural.map(u => [u.id, u]));
+    const ordered = prog.order_ids.map(id => map.get(id)).filter(Boolean);
+    const seen = new Set(ordered.map(u => u.id));
+    natural.forEach(u => { if (!seen.has(u.id)) ordered.push(u); }); // thẻ mới thêm sau khi trộn
+    return ordered;
+  }
+  return natural;
+}
+
+function rebuildUnits(preserveUnitId) {
+  fcUnits = orderedCards();
+  if (preserveUnitId) {
+    const idx = fcUnits.findIndex(u => u.id === preserveUnitId);
+    fcIdx = idx >= 0 ? idx : 0;
+  } else if (fcIdx >= fcUnits.length) fcIdx = 0;
+}
+
+function currentWord() {
+  const unit = fcUnits[fcIdx]; if (!unit) return null;
+  return filteredCards.find(w => w.id === unit.wordId) || allCards.find(w => w.id === unit.wordId) || null;
+}
+
+// Xoá dấu ngoặc từ trong câu ví dụ để tạo bài "điền từ / đoán từ"
+function blankExample(word) {
+  const ex = (word.example_kr || '').trim();
+  if (!ex) return '<span style="color:#c0b0b8">Chưa có ví dụ</span>';
+  if (word.korean && ex.includes(word.korean)) {
+    return ex.split(word.korean).join('<span class="fc-blank">▁▁▁▁</span>');
+  }
+  return ex;
+}
+
+function renderFlashUnit() {
+  const el = id => document.getElementById(id);
+  if (!fcUnits.length) {
+    if (el('folder-fc-kr')) el('folder-fc-kr').textContent = '—';
+    if (el('folder-fc-prog')) el('folder-fc-prog').textContent = '0/0';
+    if (el('folder-fc-idxtxt')) el('folder-fc-idxtxt').textContent = '0/0';
+    return;
+  }
+  if (fcIdx >= fcUnits.length) fcIdx = 0;
+  const unit = fcUnits[fcIdx];
+  const w = currentWord();
+  if (!w) return;
+  fcFlipped = false;
+  el('folder-fc-card')?.classList.remove('flipped');
+
+  el('fc-tab-vocab')?.classList.toggle('active', unit.kind === 'vocab');
+  el('fc-tab-example')?.classList.toggle('active', unit.kind === 'example');
+  if (el('folder-fc-kindtxt')) el('folder-fc-kindtxt').textContent = unit.kind === 'vocab' ? '🏷️ Từ vựng' : '📄 Ví dụ';
+  if (el('folder-fc-status')) el('folder-fc-status').textContent = statusLabel(w.status);
+  if (el('folder-fc-idxtxt')) el('folder-fc-idxtxt').textContent = (fcIdx + 1) + '/' + fcUnits.length;
+  if (el('folder-fc-prog')) el('folder-fc-prog').textContent = 'Thẻ ' + (fcIdx + 1) + ' / ' + fcUnits.length;
+
+  const frontHint = el('folder-fc-fronthint');
+  if (unit.kind === 'vocab') {
+    if (fcFrontMode === 'src2vi') {
+      if (el('folder-fc-kr')) el('folder-fc-kr').innerHTML = w.korean;
+      if (frontHint) frontHint.textContent = 'Nhấn để xem nghĩa';
+    } else {
+      if (el('folder-fc-kr')) el('folder-fc-kr').innerHTML = w.vietnamese;
+      if (frontHint) frontHint.textContent = 'Nhấn để xem từ gốc';
+    }
+    if (el('folder-fc-vn')) el('folder-fc-vn').textContent = fcFrontMode === 'src2vi' ? w.vietnamese : w.korean;
+    if (el('folder-fc-pron')) el('folder-fc-pron').textContent = w.pronunciation || '';
+    if (el('folder-fc-ex')) el('folder-fc-ex').innerHTML = '';
+  } else {
+    if (el('folder-fc-kr')) el('folder-fc-kr').innerHTML = `<div class="fc-example-front">${blankExample(w)}</div>`;
+    if (frontHint) frontHint.textContent = 'Nhấn để xem đáp án';
+    if (el('folder-fc-vn')) el('folder-fc-vn').textContent = w.korean;
+    if (el('folder-fc-pron')) el('folder-fc-pron').textContent = w.pronunciation || '';
+    if (el('folder-fc-ex')) el('folder-fc-ex').innerHTML = (w.vietnamese ? w.vietnamese : '') + (w.example_vi ? '<br><span style="color:#b0a0a8">' + w.example_vi + '</span>' : '');
+  }
+
+  const dirLabel = el('fc-dir-label');
+  if (dirLabel) dirLabel.textContent = fcFrontMode === 'src2vi' ? 'KR → VI' : 'VI → KR';
+}
+
+function loadFolderCard() { rebuildUnits(fcUnits[fcIdx]?.id); renderFlashUnit(); }
+
+function folderFlipCard() {
+  fcFlipped = !fcFlipped;
+  document.getElementById('folder-fc-card')?.classList.toggle('flipped', fcFlipped);
+}
+
+function saveCardIdx() { saveProgressState({ idx: fcIdx }); }
+
+function goNextUnit() { if (!fcUnits.length) return; fcIdx = (fcIdx + 1) % fcUnits.length; saveCardIdx(); renderFlashUnit(); }
+function goPrevUnit() { if (!fcUnits.length) return; fcIdx = (fcIdx - 1 + fcUnits.length) % fcUnits.length; saveCardIdx(); renderFlashUnit(); }
+function folderNextCard() { stopAutoplay(); goNextUnit(); }
+function folderPrevCard() { stopAutoplay(); goPrevUnit(); }
+
+// Chuyển nhanh giữa thẻ Từ vựng ⇄ Ví dụ của CÙNG một từ (v_<wordId> ⇄ e_<wordId>)
+function switchCardKind() {
+  const cur = fcUnits[fcIdx]; if (!cur) return;
+  const targetId = (cur.kind === 'vocab' ? 'e_' : 'v_') + cur.wordId;
+  const idx = fcUnits.findIndex(u => u.id === targetId);
+  if (idx < 0) { showToast('Không tìm thấy thẻ tương ứng!'); return; }
+  fcIdx = idx; saveCardIdx(); renderFlashUnit();
+}
+function goToKind(kind) {
+  const cur = fcUnits[fcIdx]; if (!cur) return;
+  if (cur.kind === kind) return;
+  switchCardKind();
+}
+
+// Học hai chiều: KR → VI hoặc VI → KR
+function toggleFrontMode() {
+  fcFrontMode = fcFrontMode === 'src2vi' ? 'vi2src' : 'src2vi';
+  saveProgressState({ front_mode: fcFrontMode });
+  renderFlashUnit();
+}
 
 function folderFilterCards(f, btn) {
-  folderFilterMode = f; filteredCards = getFilteredCards(); folderCardIdx = 0;
-  saveCardIdx();
-  document.querySelectorAll('#ftab-flashcard .fc-filter-btn').forEach(b=>b.classList.remove('active'));
-  if(btn) btn.classList.add('active');
-  if(!filteredCards.length) showToast('Không có thẻ nào thuộc bộ lọc này!');
-  loadFolderCard();
+  stopAutoplay();
+  folderFilterMode = f; filteredCards = getFilteredCards();
+  rebuildUnits(); fcIdx = 0; saveCardIdx();
+  document.querySelectorAll('#ftab-flashcard .fc-filter-btn').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  if (!filteredCards.length) showToast('Không có thẻ nào thuộc bộ lọc này!');
+  renderFlashUnit();
 }
 
 function getFilteredCards() {
   const f = folderFilterMode;
-  return f==='all'?[...allCards]
-    :f==='new'?allCards.filter(c=>!c.status||c.status==='new')
-    :f==='learning'?allCards.filter(c=>c.status==='learning')
-    :f==='known'?allCards.filter(c=>c.status==='young'||c.status==='mature')
-    :f==='due'?allCards.filter(c=>!c.next_review_at||new Date(c.next_review_at)<=new Date())
-    :[...allCards];
+  return f === 'all' ? [...allCards]
+    : f === 'new' ? allCards.filter(c => !c.status || c.status === 'new')
+    : f === 'learning' ? allCards.filter(c => c.status === 'learning')
+    : f === 'known' ? allCards.filter(c => c.status === 'young' || c.status === 'mature')
+    : f === 'due' ? allCards.filter(c => !c.next_review_at || new Date(c.next_review_at) <= new Date())
+    : [...allCards];
 }
 
 async function folderMarkCard(type) {
-  if (!filteredCards.length) return;
-  const c = filteredCards[folderCardIdx];
-  const now = new Date(), intervals = [1,3,7,14,30];
+  if (!fcUnits.length) return;
+  const w = currentWord(); if (!w) return;
+  const now = new Date(), intervals = [1, 3, 7, 14, 30];
+
+  // Lưu snapshot để có thể Undo (trạng thái, số lần đúng/sai, vị trí thẻ)
+  fcUndoStack.push({
+    idx: fcIdx,
+    cardId: w.id,
+    prevSnapshot: { status: w.status, review_count: w.review_count, correct_count: w.correct_count, wrong_count: w.wrong_count, last_reviewed_at: w.last_reviewed_at, next_review_at: w.next_review_at },
+    prevTodayStats: { ...todayStats }
+  });
+  if (fcUndoStack.length > 50) fcUndoStack.shift();
+
   let updates;
   if (type === 'review') {
-    // Ôn lại: giữ nguyên status & correct_count, chỉ đặt next_review_at = +1 ngày
-    const nextReview = new Date(now); nextReview.setDate(nextReview.getDate()+1);
-    updates = {
-      review_count: (c.review_count||0)+1,
-      last_reviewed_at: now.toISOString(),
-      next_review_at: nextReview.toISOString()
-    };
+    const nextReview = new Date(now); nextReview.setDate(nextReview.getDate() + 1);
+    updates = { review_count: (w.review_count || 0) + 1, last_reviewed_at: now.toISOString(), next_review_at: nextReview.toISOString() };
   } else {
-    const correctCount = (c.correct_count||0)+(type==='correct'?1:0);
-    const nextReview = new Date(now); nextReview.setDate(nextReview.getDate()+intervals[Math.min(correctCount,intervals.length-1)]);
-    const newStatus = type==='correct'?(correctCount>=2?'mature':'young'):'learning';
+    const correctCount = (w.correct_count || 0) + (type === 'correct' ? 1 : 0);
+    const nextReview = new Date(now); nextReview.setDate(nextReview.getDate() + intervals[Math.min(correctCount, intervals.length - 1)]);
+    const newStatus = type === 'correct' ? (correctCount >= 2 ? 'mature' : 'young') : 'learning';
     updates = {
-      status: newStatus,
-      review_count: (c.review_count||0)+1,
-      correct_count: type==='correct' ? correctCount : (c.correct_count||0),
-      wrong_count: type==='wrong' ? (c.wrong_count||0)+1 : (c.wrong_count||0),
-      last_reviewed_at: now.toISOString(),
-      next_review_at: nextReview.toISOString()
+      status: newStatus, review_count: (w.review_count || 0) + 1,
+      correct_count: type === 'correct' ? correctCount : (w.correct_count || 0),
+      wrong_count: type === 'wrong' ? (w.wrong_count || 0) + 1 : (w.wrong_count || 0),
+      last_reviewed_at: now.toISOString(), next_review_at: nextReview.toISOString()
     };
   }
-  await DS.updateCard(c.id, updates); Object.assign(c, updates);
-  const inAll = allCards.find(x=>x.id===c.id); if(inAll) Object.assign(inAll, updates);
+  await DS.updateCard(w.id, updates); Object.assign(w, updates);
+  const inAll = allCards.find(x => x.id === w.id); if (inAll) Object.assign(inAll, updates);
   todayStats.total++;
-  if(type==='correct') todayStats.correct++;
-  else if(type==='wrong') todayStats.wrong++;
+  if (type === 'correct') todayStats.correct++;
+  else if (type === 'wrong') todayStats.wrong++;
   updateTodayStatsUI(); recordStudyDay();
-  showToast({wrong:'Cố lên! ❌',review:'Ôn lại 🔄',correct:'Tuyệt! ✅'}[type]);
+  showToast({ wrong: 'Cố lên! ❌', review: 'Ôn lại 🔄', correct: 'Tuyệt! ✅' }[type]);
   updateFilterCounts();
-  folderNextCard();
+  goNextUnit();
+}
+
+// Hoàn tác hành động đánh giá gần nhất: khôi phục trạng thái, số đúng/sai và vị trí thẻ
+function undoLastAction() {
+  if (!fcUndoStack.length) { showToast('Không có gì để hoàn tác!'); return; }
+  const entry = fcUndoStack.pop();
+  const w = allCards.find(x => x.id === entry.cardId);
+  if (w) {
+    Object.assign(w, entry.prevSnapshot);
+    DS.updateCard(entry.cardId, entry.prevSnapshot);
+    const inFiltered = filteredCards.find(x => x.id === entry.cardId); if (inFiltered) Object.assign(inFiltered, entry.prevSnapshot);
+  }
+  Object.assign(todayStats, entry.prevTodayStats);
+  updateTodayStatsUI();
+  fcIdx = entry.idx; saveCardIdx();
+  renderFlashUnit(); updateFilterCounts();
+  showToast('Đã hoàn tác ↩️');
+}
+
+// Đặt lại thứ tự thẻ về mặc định (tắt trộn thẻ) — vẫn giữ tiến trình học (trạng thái/đúng-sai)
+function resetCardOrder() {
+  if (!confirm('Đặt lại thứ tự thẻ về mặc định? (Tiến trình học đã lưu sẽ được giữ nguyên)')) return;
+  stopAutoplay();
+  saveProgressState({ shuffle_enabled: false, order_ids: null, idx: 0 });
+  rebuildUnits(); fcIdx = 0; renderFlashUnit();
+  showToast('Đã đặt lại thứ tự thẻ 🔄');
+}
+
+// Trộn ngẫu nhiên thứ tự thẻ, lưu thứ tự ID vào flashcard_progress.order_ids / shuffle_enabled
+function shuffleCardOrder() {
+  stopAutoplay();
+  const natural = buildUnitsFromCards(filteredCards);
+  const arr = natural.slice();
+  for (let i = arr.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1));[arr[i], arr[j]] = [arr[j], arr[i]]; }
+  const orderIds = arr.map(u => u.id);
+  saveProgressState({ shuffle_enabled: true, order_ids: orderIds, idx: 0 });
+  fcUnits = arr; fcIdx = 0; renderFlashUnit();
+  showToast('Đã trộn thẻ 🔀');
+}
+
+function updateAutoplaySec(input, which) {
+  let v = parseInt(input.value, 10) || (which === 'front' ? 3 : 4);
+  v = Math.max(1, Math.min(30, v));
+  input.value = v;
+  if (which === 'front') fcAutoplay.frontSec = v; else fcAutoplay.backSec = v;
+  saveProgressState({ front_sec: fcAutoplay.frontSec, back_sec: fcAutoplay.backSec });
+}
+
+// Tự động phát thẻ: hiện mặt trước → đọc audio → tự lật → chờ → sang thẻ tiếp → lặp lại
+function toggleAutoplay() { fcAutoplay.active ? stopAutoplay() : startAutoplay(); }
+
+function startAutoplay() {
+  if (!fcUnits.length) { showToast('Không có thẻ để phát!'); return; }
+  fcAutoplay.active = true;
+  const btn = document.getElementById('fc-autoplay-label'); if (btn) btn.textContent = 'Dừng phát';
+  const icon = document.getElementById('fc-autoplay-icon'); if (icon) icon.className = 'ti ti-player-pause';
+  runAutoplayStep();
+}
+function stopAutoplay() {
+  fcAutoplay.active = false;
+  if (fcAutoplay.timer) { clearTimeout(fcAutoplay.timer); fcAutoplay.timer = null; }
+  const btn = document.getElementById('fc-autoplay-label'); if (btn) btn.textContent = 'Tự động phát thẻ';
+  const icon = document.getElementById('fc-autoplay-icon'); if (icon) icon.className = 'ti ti-player-play';
+}
+function runAutoplayStep() {
+  if (!fcAutoplay.active) return;
+  if (currentPage !== 'folder-detail' || currentFolderTab !== 'flashcard') { stopAutoplay(); return; }
+  fcFlipped = false;
+  document.getElementById('folder-fc-card')?.classList.remove('flipped');
+  renderFlashUnit();
+  folderSpeakCurrent('auto');
+  fcAutoplay.timer = setTimeout(() => {
+    if (!fcAutoplay.active) return;
+    fcFlipped = true;
+    document.getElementById('folder-fc-card')?.classList.add('flipped');
+    fcAutoplay.timer = setTimeout(() => {
+      if (!fcAutoplay.active) return;
+      goNextUnit();
+      runAutoplayStep();
+    }, fcAutoplay.backSec * 1000);
+  }, fcAutoplay.frontSec * 1000);
 }
 
 function folderSpeakCurrent(mode) {
-  if (!filteredCards.length) return;
-  const c = filteredCards[folderCardIdx];
-  speakText(mode === 'word' ? c.korean : (c.example_kr || c.korean), c.id, mode);
+  const w = currentWord(); if (!w) return;
+  const unit = fcUnits[fcIdx];
+  if (mode === 'auto') {
+    // Đọc theo mặt trước hiện tại: ví dụ → audio ví dụ; từ vựng → audio từ
+    if (unit.kind === 'example') speakText(w.example_kr || w.korean, w.id, 'example');
+    else speakText(w.korean, w.id, 'word');
+    return;
+  }
+  speakText(mode === 'word' ? w.korean : (w.example_kr || w.korean), w.id, mode);
 }
 
 // ── Swipe support for flashcard ──
@@ -4705,6 +4970,7 @@ function handleExcelImport(input) {
 }
 
 function switchFolderTab(tab, el) {
+  if (currentFolderTab === 'flashcard' && tab !== 'flashcard') stopAutoplay();
   currentFolderTab = tab;
   document.querySelectorAll('#ftabs .folder-tab').forEach(t=>t.classList.remove('active')); el.classList.add('active');
   document.querySelectorAll('.folder-tab-content').forEach(c=>c.classList.remove('active'));
@@ -5527,12 +5793,14 @@ function setupKeyboardShortcuts() {
     if (currentFolderTab !== 'flashcard') return; // only active on flashcard tab
     const active = document.activeElement;
     if (['INPUT','TEXTAREA','SELECT'].includes(active?.tagName) || active?.isContentEditable) return;
-    if (e.key === 'ArrowLeft') { e.preventDefault(); folderMarkCard('wrong'); }
-    else if (e.key === 'ArrowRight') { e.preventDefault(); folderMarkCard('correct'); }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); stopAutoplay(); folderMarkCard('wrong'); }
+    else if (e.key === 'ArrowRight') { e.preventDefault(); stopAutoplay(); folderMarkCard('correct'); }
     else if (e.key === ' ') { e.preventDefault(); folderPrevCard(); }
     else if (e.key === 'Delete' || e.key === 'Backspace') { e.preventDefault(); folderSpeakCurrent('example'); }
     else if (e.key === 'Enter') { e.preventDefault(); folderFlipCard(); }
     else if (e.key === 'Shift') { e.preventDefault(); folderSpeakCurrent('word'); }
+    else if (e.key === 'k' || e.key === 'K') { e.preventDefault(); switchCardKind(); }
+    else if (e.key === 'u' || e.key === 'U') { e.preventDefault(); undoLastAction(); }
   });
 }
 
