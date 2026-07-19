@@ -4765,7 +4765,7 @@ function checkMultiple(el, chosen, correct, cardId) {
     if(card) quizMarkMastered(card);
   }
   document.getElementById('quiz-feedback').innerHTML=isCorrect?'<div style="color:#306040;font-weight:700;font-size:13px">✅ Chính xác!</div>':`<div style="color:#c05050;font-weight:700;font-size:13px">❌ Đáp án đúng: <strong>${correct}</strong></div>`;
-  setTimeout(()=>{quizIdx++;renderQuizQuestion();},1200);
+  setTimeout(()=>{quizIdx++;renderQuizQuestion();},5000);
 }
 
 function checkFillin(cardId, correct) {
@@ -4784,7 +4784,7 @@ function checkFillin(cardId, correct) {
   input.style.borderColor=isCorrect?'#80c090':'#f5a0a0';
   input.style.background=isCorrect?'var(--grn)':'#fde8e8';
   document.getElementById('quiz-feedback').innerHTML=isCorrect?'<div style="color:#306040;font-weight:700;font-size:13px">✅ Chính xác!</div>':`<div style="color:#c05050;font-weight:700;font-size:13px">❌ Đáp án: <strong>${correct}</strong></div>`;
-  setTimeout(()=>{quizIdx++;renderQuizQuestion();},1400);
+  setTimeout(()=>{quizIdx++;renderQuizQuestion();},5000);
 }
 
 // ============================================================
