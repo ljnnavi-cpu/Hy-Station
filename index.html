@@ -3633,6 +3633,20 @@ function goPrevUnit() { if (!fcUnits.length) return; fcIdx = (fcIdx - 1 + fcUnit
 function folderNextCard() { stopAutoplay(); goNextUnit(); }
 function folderPrevCard() { stopAutoplay(); goPrevUnit(); }
 
+// Chuyển sang thẻ tiếp theo CÙNG loại (vocab hoặc example) với thẻ hiện tại —
+// dùng riêng cho "Tự động phát thẻ" để không bị nhảy lẫn lộn giữa 2 chế độ.
+// Nếu chỉ có 1 loại trong danh sách (hoặc không tìm thấy thẻ cùng loại nào
+// khác) thì rơi về hành vi mặc định (chuyển kế tiếp bình thường).
+function goNextUnitSameKind() {
+  if (!fcUnits.length) return;
+  const kind = fcUnits[fcIdx]?.kind;
+  if (!kind) { goNextUnit(); return; }
+  for (let step = 1; step <= fcUnits.length; step++) {
+    const i = (fcIdx + step) % fcUnits.length;
+    if (fcUnits[i].kind === kind) { fcIdx = i; saveCardIdx(); renderFlashUnit(); return; }
+  }
+}
+
 // Chuyển nhanh giữa thẻ Từ vựng ⇄ Ví dụ của CÙNG một từ (v_<wordId> ⇄ e_<wordId>)
 function switchCardKind() {
   const cur = fcUnits[fcIdx]; if (!cur) return;
@@ -3800,30 +3814,41 @@ function runAutoplayStep() {
   fcFlipped = false;
   document.getElementById('folder-fc-card')?.classList.remove('flipped');
   renderFlashUnit();
-  folderSpeakCurrent('auto');
-  fcAutoplay.timer = setTimeout(() => {
+
+  const minFrontMs = fcAutoplay.frontSec * 1000;
+  const t0 = Date.now();
+  // Chờ audio (mp3 hoặc TTS) đọc THỰC SỰ xong rồi mới lật thẻ, để câu ví dụ
+  // dài không bị cắt ngang giữa chừng do hết giờ đếm ngược. Vẫn giữ tối thiểu
+  // frontSec để không lật quá nhanh khi audio lỗi/không có.
+  Promise.race([
+    folderSpeakCurrent('auto').catch(() => {}),
+    new Promise(res => setTimeout(res, 15000)), // chặn treo vô hạn nếu audio bị kẹt
+  ]).then(() => {
     if (!fcAutoplay.active) return;
-    fcFlipped = true;
-    document.getElementById('folder-fc-card')?.classList.add('flipped');
-    playFlipTextAnim();
+    const remain = Math.max(0, minFrontMs - (Date.now() - t0));
     fcAutoplay.timer = setTimeout(() => {
       if (!fcAutoplay.active) return;
-      goNextUnit();
-      runAutoplayStep();
-    }, fcAutoplay.backSec * 1000);
-  }, fcAutoplay.frontSec * 1000);
+      fcFlipped = true;
+      document.getElementById('folder-fc-card')?.classList.add('flipped');
+      playFlipTextAnim();
+      fcAutoplay.timer = setTimeout(() => {
+        if (!fcAutoplay.active) return;
+        goNextUnitSameKind();
+        runAutoplayStep();
+      }, fcAutoplay.backSec * 1000);
+    }, remain);
+  });
 }
 
 function folderSpeakCurrent(mode) {
-  const w = currentWord(); if (!w) return;
+  const w = currentWord(); if (!w) return Promise.resolve();
   const unit = fcUnits[fcIdx];
   if (mode === 'auto') {
     // Đọc theo mặt trước hiện tại: ví dụ → audio ví dụ; từ vựng → audio từ
-    if (unit.kind === 'example') speakText(w.example_kr || w.korean, w.id, 'example');
-    else speakText(w.korean, w.id, 'word');
-    return;
+    if (unit.kind === 'example') return speakText(w.example_kr || w.korean, w.id, 'example');
+    return speakText(w.korean, w.id, 'word');
   }
-  speakText(mode === 'word' ? w.korean : (w.example_kr || w.korean), w.id, mode);
+  return speakText(mode === 'word' ? w.korean : (w.example_kr || w.korean), w.id, mode);
 }
 
 // ── Swipe support for flashcard ──
@@ -6216,7 +6241,7 @@ async function speakText(text, cardId=null, mode='word') {
   }
 
   // Ưu tiên 2: Web Speech API (giọng trình duyệt)
-  speakWithBrowser(text, key);
+  return speakWithBrowser(text, key);
 }
 
 async function playAudioUrl(url, key=null) {
@@ -6234,8 +6259,9 @@ async function playAudioUrl(url, key=null) {
     // Audio phát hết → reset tự động (cleanup xoá key nên nút quay lại trạng thái ban đầu)
     audio.onended = () => { cleanup(); resolve(); };
     audio.onerror = () => { cleanup(); reject(new Error('audio error')); };
-    // Nếu file không tồn tại (404) → reject sau 3s
-    const timeout = setTimeout(() => { cleanup(); reject(new Error('timeout')); }, 3000);
+    // Nếu file không tồn tại (404) → reject sau 1.2s (rút ngắn để chuyển sang
+    // đọc TTS nhanh hơn, tránh mất audio ví dụ do chờ quá lâu)
+    const timeout = setTimeout(() => { cleanup(); reject(new Error('timeout')); }, 1200);
     audio.oncanplaythrough = () => {
       clearTimeout(timeout);
       audio.play().catch(err => { cleanup(); reject(err); });
@@ -6245,15 +6271,23 @@ async function playAudioUrl(url, key=null) {
 }
 
 function speakWithBrowser(text, key=null) {
-  if(!('speechSynthesis' in window)){showToast('Không phát âm được.');return;}
-  const utt=new SpeechSynthesisUtterance(text); utt.lang='ko-KR'; utt.rate=0.9;
-  speechSynthesis.cancel();
-  audioPlayback = { key, kind: 'tts', el: null };
-  refreshAudioPlayButtons();
-  const clearIfCurrent = () => { if (audioPlayback.key === key) { audioPlayback = { key: null, kind: null, el: null }; refreshAudioPlayButtons(); } };
-  utt.onend = clearIfCurrent;
-  utt.onerror = clearIfCurrent;
-  speechSynthesis.speak(utt);
+  if(!('speechSynthesis' in window)){showToast('Không phát âm được.');return Promise.resolve();}
+  return new Promise(resolve => {
+    speechSynthesis.cancel();
+    audioPlayback = { key, kind: 'tts', el: null };
+    refreshAudioPlayButtons();
+    const clearIfCurrent = () => { if (audioPlayback.key === key) { audioPlayback = { key: null, kind: null, el: null }; refreshAudioPlayButtons(); } resolve(); };
+    // Một số trình duyệt (đặc biệt Chrome) "nuốt mất" utterance nếu speak()
+    // được gọi ngay sau cancel() không có khoảng nghỉ → chờ 1 nhịp rồi mới đọc.
+    setTimeout(() => {
+      if (audioPlayback.key !== key) { resolve(); return; } // đã bị nguồn khác thay thế trong lúc chờ
+      const utt = new SpeechSynthesisUtterance(text);
+      utt.lang = 'ko-KR'; utt.rate = 0.9;
+      utt.onend = clearIfCurrent;
+      utt.onerror = clearIfCurrent;
+      speechSynthesis.speak(utt);
+    }, 60);
+  });
 }
 
 // Dừng hẳn mọi audio đang phát (file mp3 pre-generate, TTS trình duyệt, TTS Supertonic)
